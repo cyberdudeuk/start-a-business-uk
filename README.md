@@ -9,7 +9,7 @@
 | | |
 |---|---|
 | **What it is** | Nineteen linked pages: a founder's plan, every step, public body and identifier, the rules an activity triggers, tailored circumstances, every way in and out of owning a business, the four nations, an international comparison, service blueprints, a knowledge layer and a verification register |
-| **Status** | Prototype (release 11.0). Independent work; **not an official government service**. Content last verified 17 September 2026: check GOV.UK, nidirect, mygov.scot or gov.wales before you act |
+| **Status** | Prototype (release 11.0). Independent work; **not an official government service**. Content built and verified 17 September 2026; sources and time-sensitive facts [rechecked 22 November 2026](https://cyberdudeuk.github.io/start-a-business-uk/recheck/). Check GOV.UK, nidirect, mygov.scot or gov.wales before you act |
 | **Who it is for** | People starting a business, people who advise them, and the service teams who design the journey |
 | **Contact** | By [contact form](https://github.com/cyberdudeuk/start-a-business-uk/issues/new?template=contact.yml) only. There is no email route |
 | **Part of** | [Public Good Works](https://cyberdudeuk.github.io/), the launchpad for every project in this account |
@@ -47,19 +47,27 @@ GitHub Pages serves the `main` branch as it is: there is no build step.
 
 ```bash
 python3 tools/publish.py /path/to/exports   # after re-exporting pages; needs segno and python-barcode
-python3 tools/check.py                      # 6 checks on every page
+python3 tools/check.py                      # 8 checks on every page
 python3 tools/check.py --negative           # proves each check fails on a deliberate break
 ```
 
 Every page also checks itself in your browser on load (structure, links, accessibility basics, its own age) and says
 so at the foot of the page. Features that need Claude, such as the page assistant, hide themselves here.
 
+## Rechecks
+
+Each recheck is recorded in `data/recheck-YYYY-MM-DD.json`: what was requested, the facts checked against official
+sources, wording corrected, addresses that moved (applied to every page, with tracking parameters stripped) and
+sources that have gone. `tools/publish.py` applies it on every publish and builds the public
+[recheck page](https://cyberdudeuk.github.io/start-a-business-uk/recheck/); check C7 fails if any of it is undone.
+
 ## Running it: effort for one person
 
 | Task | When | Effort |
 |---|---|---|
 | Nothing: the site is static and checks run on every push | Always | None |
-| Re-verify sources and re-export changed pages | Each quarter, or when a rule changes | Half a day |
+| Recheck sources and time-sensitive facts (scripted link check, then official sources for fees, thresholds and dates) | Each quarter, or when a rule changes | Half a day |
+| Replace or withdraw claims resting on sources that have gone (43 at the last recheck) | After each recheck | A day for the current backlog |
 | Answer contact-form issues | As they come | Minutes each |
 
 The pages flag their own age: from 90 days after the build date they say re-verification is due.
