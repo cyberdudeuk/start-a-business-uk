@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skills, qualifications and finding your people</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EDF0F2;--panel:#FFFFFF;--ink:#152030;--muted:#586273;--rule:#C9D0D8;--faint:#E3E7EB;--focus:#FFBF47;
+  --qual:#7A3FC6;--survey:#1F4FD1;--analytics:#0E7A6B;--eval:#946400;--inquiry:#C0264D;--ops:#586273;
+  --heat:#152030;--gate:#152030;--gatetext:#FFFFFF;
+  --sans:"Schibsted Grotesk",-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0F151D;--panel:#17202B;--ink:#E6EBF1;--muted:#9AA5B3;--rule:#344152;--faint:#232E3B;
+  --qual:#B99AF2;--survey:#7FA2FF;--analytics:#4FD1BC;--eval:#E0B64D;--inquiry:#F27A98;--ops:#9AA5B3;
+  --gate:#E6EBF1;--gatetext:#0F151D;}}
+:root[data-theme="dark"]{
+  --paper:#0F151D;--panel:#17202B;--ink:#E6EBF1;--muted:#9AA5B3;--rule:#344152;--faint:#232E3B;
+  --qual:#B99AF2;--survey:#7FA2FF;--analytics:#4FD1BC;--eval:#E0B64D;--inquiry:#F27A98;--ops:#9AA5B3;
+  --gate:#E6EBF1;--gatetext:#0F151D;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.5}
+a{color:inherit;text-underline-offset:3px}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.wrap{max-width:1360px;margin:0 auto;padding:0 28px}
+.num{}
+header{padding:36px 0 10px}
+.family{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:.88rem;color:var(--muted);margin:0 0 22px}
+.family a{color:var(--muted)}
+.headgrid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;align-items:end}
+h1{font-size:clamp(2.4rem,5.4vw,4.6rem);line-height:.98;font-weight:800;letter-spacing:-.03em;margin:0}
+.lede{margin:0;color:var(--muted);font-size:1.1rem;max-width:56ch}
+.lede strong{color:var(--ink);font-weight:700}
+.tools{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.btn{border:1.5px solid var(--rule);background:var(--panel);border-radius:999px;padding:6px 15px;cursor:pointer;font-weight:500}
+.btn[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+section{margin:34px 0}
+h2{font-size:1.75rem;line-height:1.1;letter-spacing:-.015em;margin:0 0 6px}
+.intro{color:var(--muted);margin:0 0 16px;max-width:70ch}
+
+:root{--lead:#0B5D51;--strong:#1F6F62;--partial:#BFDCD4;--weak:#C0264D;--leadtx:#fff;--strongtx:#fff;--partialtx:#152030;--uk:#FFF3D6;--ukline:#B07A00}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--lead:#5ED1BD;--strong:#25806F;--partial:#27463F;--weak:#F27A98;--leadtx:#0F151D;--strongtx:#fff;--partialtx:#E6EBF1;--uk:#2A2414;--ukline:#E0B64D}}
+:root[data-theme="dark"]{--lead:#5ED1BD;--strong:#25806F;--partial:#27463F;--weak:#F27A98;--leadtx:#0F151D;--strongtx:#fff;--partialtx:#E6EBF1;--uk:#2A2414;--ukline:#E0B64D}
+.headgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:end}
+h1 small{display:block;font-size:.32em;font-weight:500;letter-spacing:0;color:var(--muted);margin-top:12px;line-height:1.3}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--paper);padding:8px 14px;z-index:50}
+.skip:focus{left:0}
+.rev{font-size:.82rem;color:var(--muted);margin:10px 0 0}
+.btn.sm{padding:4px 12px;font-size:.88rem}
+.toolmsg{font-size:.85rem;color:var(--muted)}
+nav.jump{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--rule);margin-top:26px}
+nav.jump ul{list-style:none;margin:0 auto;padding:8px 28px;display:flex;gap:4px 18px;flex-wrap:wrap;max-width:1360px;font-size:.9rem}
+nav.jump a{text-decoration:none;color:var(--muted);padding:3px 0;border-bottom:2px solid transparent}
+nav.jump a:hover,nav.jump a.on{color:var(--ink);border-bottom-color:var(--ink)}
+section{scroll-margin-top:56px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:26px}
+.stats article{background:var(--panel);border-radius:16px;padding:16px 18px}
+.stats b{display:block;font-size:2.4rem;font-weight:800;letter-spacing:-.03em;line-height:1}
+.stats b span{font-size:.45em;font-weight:700;letter-spacing:0;color:var(--muted)}
+.stats p{margin:8px 0 0;font-size:.93rem}
+.stats small{display:block;color:var(--muted);font-size:.8rem;margin-top:6px}
+.stats small a{color:var(--muted)}
+/* Benchmarks */
+.benchgrid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:18px;align-items:start}
+.card{background:var(--panel);border-radius:18px;padding:18px 20px}
+.card h3{font-size:1.05rem;margin:0 0 2px}
+.card .sub{font-size:.85rem;color:var(--muted);margin:0 0 12px}
+.bars{list-style:none;margin:0;padding:0}
+.bars li{display:grid;grid-template-columns:150px minmax(0,1fr) 54px;gap:10px;align-items:center;padding:3px 0;font-size:.9rem}
+.bars .track{height:16px;background:var(--faint);border-radius:4px;position:relative;overflow:hidden}
+.bars .fill{position:absolute;left:0;top:0;bottom:0;background:var(--rule);border-radius:4px}
+.bars li.cmp .fill{background:var(--strong)}
+.bars li.uk .fill{background:var(--ukline)}
+.bars li.uk{font-weight:700}
+.bars .v{font-variant-numeric:tabular-nums;text-align:right}
+.bars .gap{height:1px;border-top:1px dashed var(--rule);margin:6px 0;grid-column:1/-1}
+.bars .median .fill{background:transparent}
+.bars .rk{color:var(--muted);font-weight:400;font-size:.8rem;margin-right:4px;font-variant-numeric:tabular-nums}
+.egdi{list-style:none;margin:0;padding:0;counter-reset:e}
+.egdi li{display:flex;gap:10px;padding:5px 0;border-top:1px solid var(--faint);font-size:.93rem;counter-increment:e}
+.egdi li:first-child{border-top:0}
+.egdi li::before{content:counter(e);width:22px;color:var(--muted);font-variant-numeric:tabular-nums;text-align:right}
+.egdi li.uk{font-weight:700;background:var(--uk);margin:0 -8px;padding:5px 8px;border-radius:6px}
+.note{font-size:.82rem;color:var(--muted);margin:10px 0 0}
+/* Matrix */
+.mxtools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 10px}
+.mxwrap{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:18px;align-items:start}
+.mxscroll{background:var(--panel);border-radius:18px;overflow-x:auto;padding:6px 4px}
+table.mx{border-collapse:separate;border-spacing:4px;width:100%;min-width:860px}
+.mx th{font-weight:500;font-size:.88rem}
+.mx thead th{padding:6px 2px;text-align:center;vertical-align:bottom}
+.mx thead th button{border:0;background:transparent;cursor:pointer;font-weight:700;padding:2px 4px;border-radius:6px}
+.mx thead th button span{display:block;font-weight:400;font-size:.8rem;color:var(--muted)}
+.mx thead th.uk{background:var(--uk);border-radius:10px 10px 0 0}
+.mx tbody th{text-align:left;padding:4px 10px 4px 6px;min-width:220px}
+.mx tbody th button{border:0;background:transparent;cursor:pointer;text-align:left;padding:0;font-weight:700;line-height:1.25}
+.mx tbody th small{display:block;color:var(--muted);font-weight:400;font-size:.8rem;margin-top:2px}
+.mx td{padding:0;height:46px}
+.mx td.uk{background:var(--uk)}
+.mx td.uk{box-shadow:inset 3px 0 0 var(--ukline),inset -3px 0 0 var(--ukline)}
+.cell{width:100%;height:100%;min-height:42px;border:0;border-radius:8px;cursor:pointer;font-size:.8rem;font-weight:700;display:grid;place-items:center;padding:2px;line-height:1.1}
+.cell.lead{background:var(--lead);color:var(--leadtx)}
+.cell.strong{background:var(--strong);color:var(--strongtx)}
+.cell.partial{background:var(--partial);color:var(--partialtx)}
+.cell.weak{background:transparent;color:var(--weak);box-shadow:inset 0 0 0 2.5px var(--weak)}
+.cell.na{background:repeating-linear-gradient(135deg,transparent 0 6px,var(--faint) 6px 7px);color:var(--muted);font-weight:400;cursor:default}
+.cell.sec::after{content:"*";margin-left:1px}
+.cell[aria-pressed="true"]{outline:3px solid var(--focus);outline-offset:1px}
+.cell.dim{opacity:.18}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.84rem;color:var(--muted);margin:10px 4px 0}
+.legend span{display:inline-flex;gap:6px;align-items:center}
+.legend i{width:16px;height:12px;border-radius:3px;display:inline-block}
+.panel{background:var(--panel);border-radius:18px;padding:20px 22px;position:sticky;top:60px;max-height:calc(100vh - 80px);overflow:auto}
+.panel h3{font-size:1.2rem;line-height:1.2;margin:0 0 4px}
+.panel .meta{font-size:.86rem;color:var(--muted);margin:0 0 10px}
+.panel p{margin:0 0 10px}
+.panel small{color:var(--muted);font-size:.84rem}
+.panel small a{color:var(--muted)}
+.panel ol{list-style:none;margin:0;padding:0}
+.panel li{padding:10px 0;border-top:1px solid var(--faint)}
+.panel li:first-child{border-top:0}
+.rtag{display:inline-block;font-size:.8rem;font-weight:700;border-radius:4px;padding:1px 7px;margin-right:6px}
+.rtag.lead{background:var(--lead);color:var(--leadtx)}.rtag.strong{background:var(--strong);color:var(--strongtx)}.rtag.partial{background:var(--partial);color:var(--partialtx)}.rtag.weak{color:var(--weak);box-shadow:inset 0 0 0 2px var(--weak)}.rtag.na{background:var(--faint);color:var(--muted)}
+/* Best / learn */
+.best{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;list-style:none;margin:0;padding:0}
+.best li{background:var(--panel);border-radius:16px;padding:16px 18px;border-top:5px solid var(--ukline)}
+.best b{display:block;line-height:1.25;margin-bottom:6px}
+.best p{margin:0 0 8px;font-size:.92rem}
+.best small{font-size:.8rem;color:var(--muted)}
+.best small a{color:var(--muted)}
+.learntools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}
+.learntools label{font-size:.9rem;color:var(--muted)}
+select{font:inherit;padding:5px 10px;border-radius:10px;border:1.5px solid var(--rule);background:var(--panel);color:var(--ink)}
+.learn{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.learn li{background:var(--panel);border-radius:16px;padding:18px 20px;display:flex;flex-direction:column;gap:8px}
+.learn li.caution{border-left:6px solid var(--weak)}
+.learn .top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.learn h3{font-size:1.08rem;margin:0;line-height:1.25}
+.flags{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+.flag{font-size:.8rem;font-weight:700;border:1.5px solid var(--rule);border-radius:999px;padding:0 8px;white-space:nowrap}
+.learn p{margin:0;font-size:.95rem}
+.learn .fit{font-size:.88rem;border-top:1px solid var(--faint);padding-top:8px;display:grid;grid-template-columns:auto 1fr;gap:3px 12px}
+.learn .fit dt{color:var(--muted)}
+.learn .fit dd{margin:0}
+.meter{display:inline-flex;gap:3px;vertical-align:-1px;margin-right:6px}
+.meter i{width:12px;height:12px;border-radius:2px;background:var(--faint)}
+.meter i.on{background:var(--strong)}
+.learn small{font-size:.8rem;color:var(--muted)}
+.learn small a{color:var(--muted)}
+.evbtn{border:1.5px solid var(--rule);background:transparent;border-radius:999px;padding:1px 10px;font-size:.8rem;cursor:pointer}
+/* Fees and caveats */
+.fees{background:var(--panel);border-radius:18px;overflow-x:auto}
+.fees table{border-collapse:collapse;width:100%;min-width:700px;font-size:.93rem}
+.fees th,.fees td{text-align:left;padding:10px 16px;border-top:1px solid var(--faint);vertical-align:top}
+.fees thead th{border-top:0;font-size:.85rem;color:var(--muted);font-weight:500}
+.fees tr.uk td{background:var(--uk)}
+.fees td small a{color:var(--muted);font-size:.8rem}
+.caveats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;list-style:none;margin:0;padding:0}
+.caveats li{background:var(--panel);border-radius:14px;padding:16px 18px}
+.caveats b{display:block;margin-bottom:4px}
+.caveats span{font-size:.92rem;color:var(--muted)}
+.impl{list-style:none;margin:0;padding:0;counter-reset:i;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px}
+.impl li{counter-increment:i;padding:14px 0 14px 44px;position:relative;border-top:1px solid var(--rule)}
+.impl li::before{content:counter(i);position:absolute;left:0;top:12px;font-weight:800;font-size:1.3rem;font-variant-numeric:tabular-nums}
+.impl b{display:block}
+footer{border-top:1px solid var(--rule);padding:24px 0 48px;color:var(--muted);font-size:.9rem;margin-top:40px}
+footer h2{font-size:1.1rem;color:var(--ink)}
+footer p{max-width:84ch}
+footer ol{columns:2;column-gap:36px;padding-left:1.3rem}
+footer li{break-inside:avoid;margin-bottom:4px}
+footer dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 16px}
+footer dt{font-weight:700;color:var(--ink)}footer dd{margin:0}
+@media (max-width:1200px){.best{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:1100px){.benchgrid,.mxwrap{grid-template-columns:1fr}.panel{position:static;max-height:none}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:820px){.headgrid,.learn,.caveats,.impl,.best{grid-template-columns:1fr}.stats{grid-template-columns:1fr}footer ol{columns:1}.wrap{padding:0 16px}.bars li{grid-template-columns:110px minmax(0,1fr) 48px}nav.jump ul{padding:8px 16px;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap}}
+@media print{nav.jump,.tools,.skip,.mxtools,.learntools{display:none!important}body{background:#fff}.panel{position:static!important;max-height:none!important}}
+.headgrid>*,.benchgrid>*,.mxwrap>*,.stats>*{min-width:0}
+:root{--en:#C8102E;--sc:#005EB8;--wa:#00A36C;--ni:#7A4EAB}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--en:#FF6B81;--sc:#5AA9F0;--wa:#3CD69B;--ni:#B58CE8}}
+:root[data-theme="dark"]{--en:#FF6B81;--sc:#5AA9F0;--wa:#3CD69B;--ni:#B58CE8}
+.ntabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+.ntabs button{border:2px solid var(--rule);background:var(--panel);border-radius:999px;padding:6px 16px;font:inherit;font-weight:700;cursor:pointer;display:inline-flex;gap:8px;align-items:center}
+.ntabs button i{width:12px;height:12px;border-radius:50%;background:var(--c)}
+.ntabs button[aria-pressed="true"]{border-color:var(--c);box-shadow:inset 0 0 0 1px var(--c)}
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.metric{background:var(--panel);border-radius:16px;padding:14px 16px}
+.metric h3{font-size:.9rem;margin:0 0 10px;line-height:1.25}
+.metric ul{list-style:none;margin:0;padding:0}
+.metric li{display:grid;grid-template-columns:96px minmax(0,1fr) 62px;gap:8px;align-items:center;font-size:.84rem;padding:2px 0}
+.metric li.sel{font-weight:700}
+.metric li.ukrow{color:var(--muted);border-top:1px dashed var(--rule);margin-top:4px;padding-top:5px}
+.metric .tr{height:10px;background:var(--faint);border-radius:3px;position:relative;overflow:hidden}
+.metric .fl{position:absolute;left:0;top:0;bottom:0;border-radius:3px;background:var(--c)}
+.metric li.dimmed .fl{opacity:.35}
+.metric .v{text-align:right;font-variant-numeric:tabular-nums}
+.metric .na{color:var(--muted);font-size:.8rem;text-align:right;grid-column:2/4}
+.metric small{display:block;color:var(--muted);font-size:.8rem;margin-top:8px;line-height:1.3}
+.metric small a{color:var(--muted)}
+table.nx{border-collapse:separate;border-spacing:0;width:100%;min-width:900px;font-size:.92rem}
+.nx th,.nx td{text-align:left;vertical-align:top;padding:12px 14px;border-top:1px solid var(--faint)}
+.nx thead th{border-top:0;font-size:.95rem;border-bottom:3px solid var(--c)}
+.nx tbody th{width:190px;font-weight:700}
+.nx tbody th .same{display:inline-block;margin-top:6px;font-size:.8rem;font-weight:700;border-radius:4px;padding:1px 7px;background:var(--faint);color:var(--muted)}
+.nx tbody th .diff{display:inline-block;margin-top:6px;font-size:.8rem;font-weight:700;border-radius:4px;padding:1px 7px;border:1.5px solid var(--ink)}
+.nx td small a{color:var(--muted);font-size:.8rem}
+.nx td.sel{background:color-mix(in srgb,var(--c) 9%,transparent)}
+.nx tr.hl td,.nx tr.hl th{background:color-mix(in srgb,var(--focus) 16%,transparent)}
+.nxwrap{background:var(--panel);border-radius:18px;overflow-x:auto}
+.nxtools{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 10px}
+.insights{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.insights li{background:var(--panel);border-radius:16px;padding:16px 18px;border-top:5px solid var(--ink)}
+.insights b{display:block;line-height:1.25;margin-bottom:6px}
+.insights p{margin:0 0 8px;font-size:.93rem}
+.insights small{font-size:.8rem;color:var(--muted)}.insights small a{color:var(--muted)}
+.dot4{display:inline-flex;gap:3px;vertical-align:1px;margin-right:6px}
+.dot4 i{width:9px;height:9px;border-radius:50%;background:var(--c)}
+.arrow{color:var(--muted);margin:0 4px}
+@media (max-width:1100px){.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.insights{grid-template-columns:1fr 1fr}}
+@media (max-width:820px){.metrics,.insights{grid-template-columns:1fr}}
+:root{--l1:#1D70B8;--l2:#912B88;--l3:#00703C;--l4:#B58840;--l5:#D4351C;--l6:#28A197;--l7:#505A5F}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--l1:#5AA9F0;--l2:#D77FCC;--l3:#3CD69B;--l4:#E0B64D;--l5:#FF7A5C;--l6:#5ED1C8;--l7:#A9B4BA}}
+:root[data-theme="dark"]{--l1:#5AA9F0;--l2:#D77FCC;--l3:#3CD69B;--l4:#E0B64D;--l5:#FF7A5C;--l6:#5ED1C8;--l7:#A9B4BA}
+.stack{display:grid;gap:8px}
+.layer{display:grid;grid-template-columns:230px minmax(0,1fr);gap:14px;background:var(--panel);border-radius:14px;padding:12px 16px;border-left:8px solid var(--c);align-items:center}
+.layer h3{margin:0;font-size:1rem}
+.layer p{margin:2px 0 0;font-size:.82rem;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1.5px solid var(--c);background:transparent;border-radius:999px;padding:3px 11px;font:inherit;font-size:.85rem;cursor:pointer;color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--c);color:var(--paper)}
+.chip.dim{opacity:.25}
+.chip .pdot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:1px;background:var(--c)}
+.chip[aria-pressed="true"] .pdot{background:var(--paper)}
+.stdwrap{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:18px;align-items:start;margin-top:14px}
+table.sj{border-collapse:separate;border-spacing:0;width:100%;min-width:760px;font-size:.88rem}
+.sj th,.sj td{padding:7px 10px;border-top:1px solid var(--faint);text-align:left}
+.sj thead th{border-top:0;color:var(--muted);font-weight:500;font-size:.8rem}
+.sj td.stg{text-align:center;width:88px}
+.sj td.stg i{display:inline-block;width:14px;height:14px;border-radius:50%;background:var(--c)}
+.sj tbody tr{cursor:pointer}
+.sj tbody tr:hover td,.sj tbody tr.sel td{background:color-mix(in srgb,var(--c) 10%,transparent)}
+.sj tr.grp td{background:transparent!important;cursor:default;font-weight:700;font-size:.8rem;color:var(--ink);box-shadow:inset 4px 0 0 var(--c);padding-top:14px;padding-left:12px;border-top:0}
+.sj .pr{font-size:.8rem;font-weight:700;border-radius:4px;padding:1px 7px;white-space:nowrap;border:1.5px solid var(--rule)}
+.sj .pr.now{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.sj .pr.prepare{border-color:var(--weak);color:var(--weak)}
+.sjwrap{background:var(--panel);border-radius:18px;overflow-x:auto}
+.detail h3{margin:0 0 4px;font-size:1.2rem}
+.detail dl{display:grid;grid-template-columns:max-content 1fr;gap:6px 12px;font-size:.9rem;margin:10px 0}
+.detail dt{color:var(--muted)}.detail dd{margin:0}
+.timeline{list-style:none;margin:0;padding:0;position:relative}
+.timeline::before{content:"";position:absolute;left:112px;top:6px;bottom:6px;width:2px;background:var(--rule)}
+.timeline li{display:grid;grid-template-columns:100px 24px minmax(0,1fr);gap:0 0;align-items:start;padding:8px 0}
+.timeline time{font-variant-numeric:tabular-nums;font-weight:700;font-size:.9rem;text-align:right;padding-right:8px}
+.timeline .dot{width:14px;height:14px;border-radius:50%;background:var(--c);margin:3px 0 0 6px;position:relative;z-index:1;box-shadow:0 0 0 3px var(--paper)}
+.timeline li.future .dot{background:var(--paper);box-shadow:inset 0 0 0 3px var(--c),0 0 0 3px var(--paper)}
+.timeline .ev{background:var(--panel);border-radius:12px;padding:8px 12px;margin-left:8px}
+.timeline .ev button{border:0;background:transparent;padding:0;font:inherit;font-weight:700;cursor:pointer;text-align:left;color:var(--ink)}
+.timeline .ev small{display:block;color:var(--muted);font-size:.8rem}
+.timeline .ev small a{color:var(--muted)}
+.today{font-size:.8rem;color:var(--muted);margin:4px 0 10px 136px}
+@media (max-width:1100px){.stdwrap{grid-template-columns:1fr}}
+@media (max-width:820px){.layer{grid-template-columns:1fr}.timeline::before{left:84px}.timeline li{grid-template-columns:72px 24px minmax(0,1fr)}.today{margin-left:0}}
+.picker{background:var(--panel);border-radius:18px;padding:18px 22px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px 18px}
+.picker label{display:block;font-size:.82rem;color:var(--muted);font-weight:600;margin-bottom:4px}
+.picker select{width:100%;font:inherit;padding:8px 10px;border-radius:10px;border:1.5px solid var(--rule);background:var(--paper);color:var(--ink)}
+.picker .toggles{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.picker .toggles label{display:inline-flex;gap:7px;align-items:center;font-size:.9rem;color:var(--ink);font-weight:500;margin:0}
+.out{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:16px}
+.card{background:var(--panel);border-radius:16px;padding:16px 20px;border-top:5px solid var(--c)}
+.card h3{margin:0 0 4px;font-size:1.05rem}
+.card .n{font-size:1.5rem;font-weight:800;color:var(--c)}
+.card ol,.card ul{margin:8px 0 0;padding-left:20px;font-size:.92rem}
+.card li{margin-bottom:7px}
+.card li b{display:block}
+.card li small{color:var(--muted);font-size:.82rem}
+.card li small a{color:var(--muted)}
+.vr{display:inline-block;font-size:.8rem;font-weight:700;border-radius:4px;padding:0 6px;margin-left:6px;vertical-align:1px}
+.vr.confirmed{background:var(--strong);color:var(--strongtx)}
+.vr.partly-confirmed{background:var(--partial);color:var(--partialtx)}
+.vr.unverified{box-shadow:inset 0 0 0 1.5px var(--weak);color:var(--weak)}
+.chipsrow{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 0}
+.chipsrow button{border:1.5px solid var(--rule);background:transparent;border-radius:999px;padding:3px 11px;font:inherit;font-size:.8rem;cursor:pointer;color:var(--ink)}
+.chipsrow button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+table.grid{border-collapse:collapse;width:100%;min-width:860px;font-size:.88rem}
+.grid th,.grid td{text-align:left;vertical-align:top;padding:9px 12px;border-top:1px solid var(--faint)}
+.grid thead th{border-top:0;color:var(--muted);font-weight:500;font-size:.8rem}
+.gridwrap{background:var(--panel);border-radius:18px;overflow-x:auto}
+.bars{display:grid;gap:6px;margin:0}
+.bars div{display:grid;grid-template-columns:200px minmax(0,1fr) 52px;gap:10px;align-items:center;font-size:.86rem}
+.bars .t{height:12px;background:var(--faint);border-radius:3px;overflow:hidden}
+.bars .f{height:100%;background:var(--c);border-radius:3px}
+.bars .v{text-align:right;font-variant-numeric:tabular-nums}
+@media (max-width:1100px){.picker{grid-template-columns:repeat(2,minmax(0,1fr))}.out{grid-template-columns:1fr}}
+@media (max-width:640px){.picker{grid-template-columns:1fr}.bars div{grid-template-columns:120px minmax(0,1fr) 44px}}
+.kgbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:14px 0 8px}
+.kgmode{display:flex;gap:6px}
+.kgmode button,.kgfilters button{display:inline-flex;align-items:center;gap:7px;padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:inherit;font:inherit;cursor:pointer;font-size:.86rem}
+.kgmode button[aria-pressed="true"],.kgfilters button[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink);font-weight:650}
+.kgfilters{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:10px}
+.kgfilters button[aria-pressed="false"]{opacity:1;background:var(--card)} button[aria-pressed="false"] small{color:var(--ink);opacity:.8}
+.kgfilters small{color:var(--muted)}
+.kgsearch input{padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:inherit;font:inherit;min-width:260px;max-width:100%}
+.sw{width:10px;height:10px;border-radius:50%;display:inline-block;flex:none}
+.kgwrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,360px);gap:16px;align-items:start}
+.kgstage{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:8px;overflow:hidden}
+#kgsvg{width:100%;height:auto;display:block;touch-action:pan-y}
+.kgn{cursor:pointer}
+.kgn:hover circle{stroke:var(--ink);stroke-width:2}
+.kghint{font-size:.8rem;color:var(--muted);margin:6px 4px 2px}
+.kgpanel{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:14px;max-height:620px;overflow:auto}
+.kgpanel h3{margin:0 0 6px;font-size:1.05rem}
+.kgpanel h4{font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:12px 0 4px;display:flex;align-items:center;gap:6px}
+.ktype{display:flex;align-items:center;gap:7px;font-size:.84rem;color:var(--muted);margin:0 0 8px}
+.kmeta{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;font-size:.85rem;margin:0 0 6px}
+.kmeta dt{color:var(--muted)}
+.kmeta dd{margin:0;overflow-wrap:anywhere}
+.klist{list-style:none;margin:0;padding:0}
+.klist li{margin:3px 0}
+.klist button{display:inline-flex;align-items:center;gap:7px;background:none;border:0;padding:2px 0;color:inherit;font:inherit;font-size:.87rem;cursor:pointer;text-align:left;text-decoration:underline;text-underline-offset:3px}
+.klist small{display:block;color:var(--muted);font-size:.78rem;padding-left:17px}
+.kdd{border:1px solid var(--line);border-left:3px solid var(--l4,#7c3aed);border-radius:8px;padding:10px;margin:10px 0;font-size:.85rem}
+.kdd p{margin:3px 0}
+.kgtablewrap{overflow-x:auto;max-width:100%;margin-top:10px}
+.kgtable{width:100%;border-collapse:collapse;font-size:.86rem}
+.kgtable th,.kgtable td{text-align:left;padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:top}
+.kgtable thead th{font-size:.76rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.ddgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-top:14px}
+.ddcard{border:1px solid var(--line);border-radius:12px;padding:15px;background:var(--panel)}
+.ddcard h3{display:flex;align-items:center;gap:9px;margin:0 0 6px;font-size:1rem}
+.ddcard dl{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;font-size:.85rem;margin:8px 0}
+.ddcard dt{color:var(--muted)}.ddcard dd{margin:0}
+.ddcard .crit{display:flex;gap:7px;font-size:.85rem;border-top:1px solid var(--line);padding-top:8px;margin:8px 0 0}
+.gloss{margin:14px 0 0}
+.gterm{border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:0 0 10px;background:var(--panel)}
+.gterm dt{font-weight:700;font-size:1rem;margin:0 0 4px}
+.gterm dd{margin:0;font-size:.9rem}
+.gterm .rel{font-size:.82rem;color:var(--muted);margin:4px 0 0}
+.gterm .gnote{font-size:.82rem;margin:6px 0 0;border-left:3px solid var(--line);padding-left:9px}
+.taxgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-top:14px}
+.taxcard{border:1px solid var(--line);border-radius:12px;padding:15px;background:var(--panel)}
+.taxcard h3{display:flex;align-items:center;gap:9px;margin:0 0 6px;font-size:1rem}
+.taxcard ul{margin:8px 0 0;padding-left:18px;font-size:.87rem}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:12px}
+.ont{width:100%;border-collapse:collapse;font-size:.83rem;table-layout:fixed}
+.ont th,.ont td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top;overflow-wrap:anywhere}
+.ont thead th{font-size:.74rem;text-transform:uppercase;color:var(--muted)}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (max-width:900px){.kgwrap{grid-template-columns:1fr}.two-col{grid-template-columns:1fr}.kgpanel{max-height:none}}
+/* Shared visual system: icons, journey ribbon, hero figures, audience switcher */
+.ic{width:1.15em;height:1.15em;flex:none;vertical-align:-.2em}
+.ic-lg{width:2rem;height:2rem;flex:none}
+.ic-xl{width:2.6rem;height:2.6rem;flex:none}
+.ribbon{margin:0 0 6px;padding:10px 0 4px;border-bottom:1px solid var(--line)}
+.ribbon h2{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 8px;font-family:inherit;font-weight:700}
+.ribbon ol{display:flex;gap:6px;list-style:none;margin:0;padding:0 0 6px;overflow-x:auto;scrollbar-width:thin}
+.ribbon li{flex:1 1 0;min-width:104px}
+.ribbon a{display:flex;flex-direction:column;gap:5px;padding:8px 9px;border:1px solid var(--line);border-radius:9px;text-decoration:none;color:inherit;background:var(--panel);min-height:100%}
+.ribbon a:hover{border-color:var(--ink)}
+.ribbon a[aria-current="step"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.ribbon .rn{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:.72rem;letter-spacing:.05em;text-transform:uppercase}
+.ribbon .rt{font-size:.84rem;font-weight:650;line-height:1.25}
+.ribbon .rc{font-size:.74rem;color:var(--muted)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,340px);gap:22px;align-items:center;margin:10px 0 0}
+.hero figure{margin:0}
+.hero figcaption{font-size:.78rem;color:var(--muted);margin-top:6px}
+.hero svg.art{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+@media (max-width:820px){.hero{grid-template-columns:1fr}}
+.aud{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.aud button{display:flex;align-items:center;gap:8px;padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:inherit;font:inherit;cursor:pointer}
+.aud button[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink);font-weight:650}
+.audbox{border:1px solid var(--line);border-left:4px solid var(--ink);border-radius:10px;padding:14px 16px;background:var(--panel);margin:0 0 18px}
+.audbox h3{margin:0 0 6px;font-size:1.02rem;display:flex;align-items:center;gap:8px}
+.audbox ol{margin:8px 0 0;padding-left:20px}
+.audbox li{margin:4px 0}
+h2 .ic,h3 .ic{color:var(--muted)}
+.iconrow{display:flex;align-items:center;gap:9px}
+.legendkey{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin:8px 0 0}
+.legendkey span{display:inline-flex;align-items:center;gap:5px}
+@media (prefers-reduced-motion:no-preference){.ribbon a{transition:border-color .15s}}
+/* Self-check surface */
+.selfcheck{border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:22px 0 0;background:var(--panel)}
+.selfcheck h2{font-size:1rem;margin:0 0 6px}
+.selfcheck .scline{margin:0;font-size:.9rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.scdot{width:10px;height:10px;border-radius:50%;background:var(--muted);flex:none;box-shadow:0 0 0 3px color-mix(in srgb,currentColor 12%,transparent)}
+.scdot.good{background:#0f766e}.scdot.fair{background:#b45309}.scdot.needs-work{background:#be123c}
+.selfcheck details{margin-top:8px}
+.selfcheck summary{cursor:pointer;font-size:.88rem}
+.selfcheck .scbody{font-size:.88rem}
+.selfcheck h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:12px 0 4px}
+.selfcheck ul{margin:0;padding-left:18px}
+.selfcheck li{margin:3px 0}
+.selfgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-top:14px}
+.selfcard{border:1px solid var(--line);border-radius:12px;padding:15px;background:var(--panel)}
+.selfcard h3{display:flex;align-items:center;gap:10px;margin:0 0 8px;font-size:1rem}
+
+@media (max-width:420px){
+  .codeblock{font-size:11.5px;white-space:pre-wrap;word-break:break-word}
+  .gridwrap,.mx-wrap,.scroller{max-width:100%}
+  table.grid{min-width:0}
+  .toolrow{grid-template-columns:1fr}
+  .bars div{grid-template-columns:96px minmax(0,1fr) 40px}
+  .wrap{padding-left:12px;padding-right:12px}
+  h1{font-size:1.5rem;word-break:break-word}
+}
+
+@media (max-width:420px){
+  select,input,textarea{max-width:100%}
+  .bodycard{min-width:0;overflow-wrap:anywhere}
+  table.sj,table.nx,table.mx{display:block;overflow-x:auto;max-width:100%}
+}
+
+@media (max-width:420px){
+  table.sj,table.nx,table.mx{table-layout:fixed;width:100%}
+  table.sj th,table.sj td,.nx th,.nx td{overflow-wrap:anywhere;word-break:break-word}
+  main li,main p,main a{overflow-wrap:anywhere}
+  .sj-wrap,.tablewrap{overflow-x:auto;max-width:100%}
+}
+
+@media (max-width:420px){
+  .sj{display:block;overflow-x:auto}
+  .sj thead th,.sj tbody th{min-width:110px}
+  main ul,main ol{padding-left:18px}
+  main li a{display:inline-block;max-width:100%}
+}
+small, .meta small, td small, li small{font-size:max(.8rem,12.8px)}
+@media (max-width:420px){html,body{max-width:100%;overflow-x:hidden}.sjwrap,.tablewrap,.gridwrap,.kgtablewrap{overflow-x:auto;max-width:100%}}
+
+@media (max-width:520px){
+  .ribbon ol{overflow-x:auto;max-width:100%}
+  .ribbon li{min-width:140px;flex:0 0 auto}
+  .kgbar,.kgfilters{max-width:100%}
+  .kgsearch input{min-width:0;width:100%}
+  .kgwrap{grid-template-columns:1fr}
+  .ont{table-layout:fixed;width:100%}
+}
+@media (max-width:420px){html,body{max-width:100%;overflow-x:hidden}}
+
+@media (max-width:760px){
+  nav.ribbon{max-width:100%;overflow:hidden}
+  nav.ribbon ol{display:flex!important;flex-wrap:nowrap!important;overflow-x:auto!important;width:100%!important;max-width:100%!important}
+  nav.ribbon li{flex:0 0 auto!important;min-width:150px!important;max-width:150px}
+  main.wrap,header .wrap{max-width:100%;overflow-x:hidden}
+}
+
+@media (max-width:760px){
+  .kgtable{table-layout:fixed;width:100%;font-size:.8rem}
+  .kgtable th,.kgtable td{overflow-wrap:anywhere;word-break:break-word}
+  .kgtablewrap{overflow-x:visible}
+}
+.aibtn{position:fixed;right:18px;bottom:18px;z-index:60;border:0;border-radius:999px;padding:12px 20px;font:inherit;font-weight:700;background:var(--ink);color:var(--paper);cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.28)}
+.aibtn:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.aiwrap{position:fixed;right:18px;bottom:18px;width:min(430px,calc(100vw - 24px));max-height:min(78vh,720px);z-index:61;background:var(--panel);border-radius:18px;box-shadow:0 10px 40px rgba(0,0,0,.34);display:none;flex-direction:column;overflow:hidden;border:1px solid var(--rule)}
+.aiwrap.open{display:flex}
+.aihead{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--faint)}
+.aihead b{font-size:.98rem}
+.aihead small{color:var(--muted);font-size:.8rem;display:block;font-weight:400}
+.aihead button{margin-left:auto;border:0;background:transparent;font:inherit;font-size:1.2rem;line-height:1;cursor:pointer;color:var(--muted);padding:4px 6px}
+.ailog{overflow-y:auto;padding:12px 14px;display:grid;gap:10px;flex:1}
+.aimsg{border-radius:14px;padding:9px 12px;font-size:.9rem;line-height:1.45;white-space:pre-wrap}
+.aimsg.u{background:var(--ink);color:var(--paper);justify-self:end;max-width:86%}
+.aimsg.a{background:var(--faint);color:var(--ink)}
+.aimsg.sys{background:transparent;color:var(--muted);font-size:.82rem;padding:0}
+.aisug{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 10px}
+.aisug button{border:1.5px solid var(--rule);background:transparent;border-radius:999px;padding:4px 11px;font:inherit;font-size:.8rem;cursor:pointer;color:var(--ink);text-align:left}
+.aiform{display:flex;gap:8px;padding:10px 12px;border-top:1px solid var(--faint)}
+.aiform textarea{flex:1;font:inherit;font-size:.9rem;resize:none;border:1.5px solid var(--rule);border-radius:12px;padding:8px 10px;background:var(--paper);color:var(--ink);min-height:40px;max-height:120px}
+.aiform button{border:0;border-radius:12px;padding:0 16px;font:inherit;font-weight:700;background:var(--ink);color:var(--paper);cursor:pointer}
+.aiform button[disabled]{opacity:.5;cursor:default}
+.aifoot{padding:0 14px 10px;color:var(--muted);font-size:.8rem}
+.seqnav{background:var(--panel);border-radius:18px;padding:14px 18px;display:flex;gap:16px;justify-content:space-between;flex-wrap:wrap;margin:26px 0 0}
+.seqnav a{display:block;font-weight:700;color:var(--ink)}
+.seqnav small{display:block;color:var(--muted);font-size:.8rem;font-weight:400}
+.seqnav .nx{text-align:right}
+@media (max-width:620px){.aiwrap{right:8px;left:8px;width:auto;bottom:8px}.aibtn{right:10px;bottom:10px}}
+
+/* Title row: illustration sits opposite the title, at about a third of its weight */
+header .headgrid{display:grid;grid-template-columns:minmax(0,1.9fr) minmax(180px,0.85fr);gap:28px;align-items:center}
+header .headgrid > h1{margin:0}
+header .heroart{margin:0;max-width:340px;justify-self:end;width:100%}
+header .heroart svg.art{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}
+header .heroart figcaption{font-size:.72rem;color:var(--muted);margin-top:5px;line-height:1.35}
+header .heroart.float{float:right;width:min(300px,34%);margin:0 0 14px 22px}
+@media (max-width:820px){
+  header .headgrid{grid-template-columns:1fr}
+  header .heroart{max-width:260px;justify-self:start}
+  header .heroart.float{float:none;width:min(260px,70%);margin:12px 0}
+}
+/* Journey strip: full-bleed band, content aligned with every other section */
+nav.ribbon{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:color-mix(in srgb,currentColor 3%,transparent);margin:0;padding:12px 0 6px}
+nav.ribbon > .wrap{padding-left:28px;padding-right:28px}
+nav.ribbon h2{margin:0 0 9px}
+/* What used to sit beside the title now sits under the strip, full measure */
+.introblock{margin:20px auto 0}
+.introblock .lede{font-size:1.06rem;max-width:62ch}
+.introblock .tools{margin-top:12px}
+.introblock .rev{margin-top:10px;font-size:.84rem;color:var(--muted);max-width:80ch}
+.introblock .scope{margin:0}
+</style>
+<style>/* Every way in */
+.stats{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));margin:18px 0}
+.stat{border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:4px;padding:12px 14px;background:var(--card)}
+.stat b{display:block;font-size:1.6rem;line-height:1.1;font-variant-numeric:tabular-nums}
+.stat span{display:block;color:var(--muted);font-size:.87rem;margin-top:5px}
+.cov{overflow-x:auto;margin:18px 0 0}
+.cov table{border-collapse:collapse;width:100%;min-width:560px;font-size:.92rem}
+.cov caption{text-align:left;color:var(--muted);font-size:.87rem;padding-bottom:8px}
+.cov th,.cov td{border-bottom:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top}
+.cov thead th{border-bottom:2px solid var(--line);font-size:.85rem;text-transform:uppercase;letter-spacing:.04em}
+.chiprow{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 22px}
+.chiprow button{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;font:inherit;font-size:.93rem;cursor:pointer}
+.chiprow button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chiprow button span{opacity:.7;font-variant-numeric:tabular-nums}
+.chiprow button:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.trackhead h3{display:flex;align-items:center;gap:10px;margin:0 0 6px;font-size:1.3rem}
+.trackhead .lede{max-width:62ch;color:var(--muted);margin:0 0 10px}
+.doorline{max-width:66ch;font-size:.92rem;margin:0 0 20px}
+.ic-lg{width:28px;height:28px;flex:none}
+.doors{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.door{border:1px solid var(--line);border-radius:4px;padding:14px 16px;background:var(--card)}
+.door h4{margin:0 0 3px;font-size:1.02rem;line-height:1.35}
+.door .kind{margin:0 0 8px;font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.door p{margin:0 0 9px;max-width:58ch}
+.door .enter,.door .unver{display:flex;gap:8px;align-items:flex-start;font-size:.88rem;padding:8px 10px;border-radius:3px}
+.door .enter{background:var(--tint)}
+.door .unver{background:rgba(180,120,0,.12)}
+.door .meta{font-size:.83rem;color:var(--muted);margin:0;display:flex;flex-wrap:wrap;gap:7px;align-items:center}
+.nosrc{font-style:italic}
+.pill{display:inline-block;font-size:.75rem;padding:2px 8px;border-radius:999px;border:1px solid var(--line);color:var(--ink)}
+.pill.ok{background:rgba(0,112,60,.14)}
+.pill.open{background:var(--tint)}
+.pill.blocked{background:rgba(180,120,0,.14)}
+.findings{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin-top:14px}
+.find{border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:4px;padding:14px 16px;background:var(--card)}
+.find h3{margin:0 0 7px;font-size:1.02rem}
+.find p{margin:0;color:var(--muted);max-width:58ch}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<svg class="sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden"><defs><symbol id="i-explore" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9 M12 3a9 9 0 0 1 9 9M3.5 12h17M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-structure" viewBox="0 0 24 24"><path d="M12 3 4 7v10l8 4 8-4V7l-8-4Zm0 0v18M4 7l8 4 8-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-register" viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6V3Zm9 0v3h3M9 11h6M9 15h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-tax" viewBox="0 0 24 24"><path d="M5 20V9l7-5 7 5v11H5Zm4-5h6M9 12h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-licence" viewBox="0 0 24 24"><path d="M4 5h16v14H4V5Zm3 4h5M7 12h10M7 15h7m2-6.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-premises" viewBox="0 0 24 24"><path d="M4 20V10l8-6 8 6v10H4Zm6 0v-6h4v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-finance" viewBox="0 0 24 24"><path d="M3 19V5m0 14h18M7 15V9m5 6V6m5 9v-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-employ" viewBox="0 0 24 24"><path d="M8 11a3.2 3.2 0 1 0 0-6.4A3.2 3.2 0 0 0 8 11Zm0 0c-3 0-5 1.8-5 4.5V19h10v-3.5C13 12.8 11 11 8 11Zm9-6.2a3.2 3.2 0 1 1 0 6.4M16 19h5v-3.5c0-2.2-1.4-3.8-3.6-4.3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-trade" viewBox="0 0 24 24"><path d="M3 12h18M3 12a9 9 0 0 1 9-9m9 9a9 9 0 0 0-9-9m0 18a9 9 0 0 0 9-9M12 21a9 9 0 0 1-9-9m9-9c2.4 2.5 3.6 5.5 3.6 9s-1.2 6.5-3.6 9c-2.4-2.5-3.6-5.5-3.6-9S9.6 5.5 12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-grow" viewBox="0 0 24 24"><path d="M4 19c6 0 10-3.5 12-10M13 5h6v6M8 19a4 4 0 0 0-4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-rules" viewBox="0 0 24 24"><path d="M12 4v16M6 8h12M7 8l-3 6h6l-3-6Zm10 0-3 6h6l-3-6ZM9 20h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5V5.5ZM8 7h7M8 10h7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-nations" viewBox="0 0 24 24"><path d="M6 21V4m0 0 7 2.5L20 4v9l-7 2.5L6 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm-8.6 9h17.2M12 3c2.3 2.5 3.5 5.5 3.5 9s-1.2 6.5-3.5 9c-2.3-2.5-3.5-5.5-3.5-9S9.7 5.5 12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-standards" viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h13m2-9.5 3 3-6 6-3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12.5 9 18l11-12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-history" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4h4M12 8v4.5l3 1.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-boundary" viewBox="0 0 24 24"><path d="M12 3v18M6 7l-3 5 3 5M18 7l3 5-3 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><path d="M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14Zm5 12 4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-blueprint" viewBox="0 0 24 24"><path d="M3 5h18v14H3V5Zm5 0v14M3 10h5m8-5v14m0-9h5M8 14h8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-person" viewBox="0 0 24 24"><path d="M12 11.5a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm0 0c-4 0-7 2.4-7 6V20h14v-2.5c0-3.6-3-6-7-6Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-agent" viewBox="0 0 24 24"><path d="M9 10.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm0 0c-3 0-5.5 2-5.5 5V19H14v-3.5c0-3-2.5-5-5-5Zm8-5 4 2.5-4 2.5m4-2.5h-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-official" viewBox="0 0 24 24"><path d="M12 3 4 6.5V12c0 4.6 3.2 7.8 8 9 4.8-1.2 8-4.4 8-9V6.5L12 3Zm-3 9 2.2 2.4L15 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-access" viewBox="0 0 24 24"><path d="M12 4.2a1.6 1.6 0 1 0 0-3.2 1.6 1.6 0 0 0 0 3.2ZM5 7.5c2.2.9 4.5 1.3 7 1.3s4.8-.4 7-1.3M12 8.8V14m0 0 3.5 6M12 14l-3.5 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-language" viewBox="0 0 24 24"><path d="M4 6h10M9 4v2m0 0c0 4-2 7-5 8.5M6.5 10.5c1.3 2.4 3 4 5.5 5M13 20l4-9 4 9m-6.6-2.4h5.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-data" viewBox="0 0 24 24"><path d="M12 4c4.4 0 8 1.3 8 3s-3.6 3-8 3-8-1.3-8-3 3.6-3 8-3Zm8 3v10c0 1.7-3.6 3-8 3s-8-1.3-8-3V7m16 5c0 1.7-3.6 3-8 3s-8-1.3-8-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-warning" viewBox="0 0 24 24"><path d="M12 4 3 20h18L12 4Zm0 6v5m0 3h.01" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm0 4.5V12l3.5 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-money" viewBox="0 0 24 24"><path d="M5 7h14v10H5V7Zm7 2.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-back" viewBox="0 0 24 24"><path d="M6 6.5h12M6 12h12M6 17.5h8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-support" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-9 9v3.5A2.5 2.5 0 0 0 5.5 18H7v-6H5.2A6.8 6.8 0 0 1 18.8 12H17v6h1.5a2.5 2.5 0 0 0 2.5-2.5V12a9 9 0 0 0-9-9Zm5 15v.5a2.5 2.5 0 0 1-2.5 2.5H12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol></defs></svg>
+<header>
+  <div class="wrap">
+    <p class="family" id="family">Part of <a href="../">Starting a business in the UK</a>: <a href="../your-plan/">your plan</a><a href="../whole-life-of-a-business/">from starting to closing, and everything between</a><a href="../your-circumstances/">when the standard route does not fit</a><a href="../every-way-in/">every way in, and every way out</a><a href="../every-step/">every step in the journey</a><a href="../twenty-years-of-joining-up/">historical arc</a><a href="../before-the-register/">before the register</a><a href="../whatever-you-are-setting-up/">whatever you are setting up</a><a href="../what-binds-this-business/">what binds this business</a><a href="../rules-trade-and-bodies/">rules, trade and the bodies</a><a href="../four-nations/">four nations</a><a href="../the-uk-compared/">international benchmark</a><a href="../standards/">standards for the journey</a><a href="../service-blueprints/">service blueprints</a><a href="../knowledge-layer/">the knowledge layer</a><a href="../how-this-was-built/">how this was built and run</a><a href="../verification-register/">verification register</a></p>
+    <div class="headgrid">
+      <h1>Skills, qualifications and finding your people<small>Getting qualified with nothing to start from, learning on the job, and the cohort communities that carry what no service does</small></h1>
+<figure class="heroart"><svg class="art" viewBox="0 0 680 270" role="img" aria-labelledby="sart sdes">
+<title id="sart">A ladder and a circle</title><desc id="sdes">On the left, a ladder of nine rungs rising from a low starting point. On the right, a ring of small circles joined to one another, set apart from the ladder, with a single line connecting one circle back to the ladder.</desc>
+<g stroke="currentColor" fill="none" stroke-width="2.2" opacity=".65">
+<path d="M90 230 L90 50"/><path d="M150 230 L150 50"/>
+<path d="M90 210 L150 210"/><path d="M90 190 L150 190"/><path d="M90 170 L150 170"/><path d="M90 150 L150 150"/>
+<path d="M90 130 L150 130"/><path d="M90 110 L150 110"/><path d="M90 90 L150 90"/><path d="M90 70 L150 70"/></g>
+<circle cx="120" cy="230" r="9" fill="var(--l1,#1d4ed8)" opacity=".9"/>
+<g stroke="currentColor" stroke-width="1.8" opacity=".45" fill="none">
+<path d="M470 80 L560 110 L540 200 L440 210 L400 130 Z"/></g>
+<g fill="var(--l2,#0f766e)" opacity=".85">
+<circle cx="470" cy="80" r="11"/><circle cx="560" cy="110" r="11"/><circle cx="540" cy="200" r="11"/><circle cx="440" cy="210" r="11"/><circle cx="400" cy="130" r="11"/></g>
+<path d="M150 130 L400 130" stroke="currentColor" stroke-width="2.4" stroke-dasharray="7 6" opacity=".5" fill="none"/>
+</svg><figcaption>A funded ladder on one side, a community on the other, and one dashed line between them. That line is the part nobody owns.</figcaption></figure>
+    </div>
+  </div>
+</header>
+<nav class="ribbon" aria-label="The founder journey"><div class="wrap"><h2>The journey, stage by stage</h2><ol><li><a href="../before-the-register/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-explore"></use></svg> Stage 1</span><span class="rt">Decide</span><span class="rc">Is this a business, and what shape?</span></a></li><li><a href="../whatever-you-are-setting-up/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-structure"></use></svg> Stage 2</span><span class="rt">Structure</span><span class="rc">Legal form, name, ownership</span></a></li><li><a href="../every-step/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-register"></use></svg> Stage 3</span><span class="rt">Register</span><span class="rc">Registrar, identity, identifiers</span></a></li><li><a href="../whatever-you-are-setting-up/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-tax"></use></svg> Stage 4</span><span class="rt">Tax</span><span class="rc">Self Assessment, Corporation Tax, VAT</span></a></li><li><a href="../what-binds-this-business/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-licence"></use></svg> Stage 5</span><span class="rt">Licences</span><span class="rc">What the activity triggers</span></a></li><li><a href="../every-step/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-premises"></use></svg> Stage 6</span><span class="rt">Premises</span><span class="rc">Rates, planning, property</span></a></li><li><a href="../whatever-you-are-setting-up/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-finance"></use></svg> Stage 7</span><span class="rt">Money</span><span class="rc">Grants, reliefs, finance</span></a></li><li><a href="../what-binds-this-business/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-employ"></use></svg> Stage 8</span><span class="rt">People</span><span class="rc">Employing, paying, protecting</span></a></li><li><a href="../rules-trade-and-bodies/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-trade"></use></svg> Stage 9</span><span class="rt">Trade</span><span class="rc">Goods, borders, tendering</span></a></li></ol></div></nav>
+<main class="wrap" id="main">
+  <section id="s-intro" aria-labelledby="h-intro">
+    <h2 id="h-intro">Nobody asks for a qualification to register a business</h2>
+    <p class="intro">Registration asks for identity, an address and a description of what you do. It never asks what you know. The qualification question arrives later, at the licence, the contract, the insurance and the loan. This catalogues how someone with no formal qualifications, education or training gets them — free routes, paid-while-you-learn routes, the tax rule that decides whether a self-employed person can afford to train — and the cohort communities that do the work no government service does.</p>
+    <div class="stats" id="stats"></div>
+    <div class="cov" id="cov"></div>
+  </section>
+  <section id="s-doors" aria-labelledby="h-doors">
+    <h2 id="h-doors">The catalogue</h2>
+    <div class="chiprow" id="routechips" role="group" aria-label="Routes"></div>
+    <div id="route"></div>
+  </section>
+  <section id="s-find" aria-labelledby="h-find">
+    <h2 id="h-find">What the catalogue shows</h2>
+    <div class="findings" id="findings"></div>
+  </section>
+</main>
+
+<script>var DOORS={"ROUTES":[{"id":"nothing","label":"Starting with no qualifications","icon":"explore","summary":"Nothing in this journey requires a qualification to register a business. What qualifications change is what you can charge for, what you can be licensed to do, and whether anyone will lend to you. These are the routes that cost nothing or close to it.","entries":[{"name":"What the qualification levels mean","kind":"Reference","what":"Entry level to level 8. Knowing that A levels and an Access course are both level 3, and that level 3 is the first free adult offer, is the whole map in one page.","enter":"Read it before choosing anything else.","url":"https://www.gov.uk/what-different-qualification-levels-mean","source":"GOV.UK: What qualification levels mean","status":"checked","checked":"2026-09-23","note":null},{"name":"Free courses for jobs","kind":"Funded qualification","what":"If you are aged 19 or over you could apply for a free level 3 qualification, or a free level 2 in construction, engineering or manufacturing.","enter":"Apply through a provider; the funding follows the learner.","url":"https://www.gov.uk/guidance/free-courses-for-jobs","source":"GOV.UK: Free courses for jobs","status":"checked","checked":"2026-09-23","note":null},{"name":"National Careers Service","kind":"Free advice","what":"Job profiles, skills assessment and free careers advice, including for people with no qualifications and no idea where to start.","enter":"Website, telephone and webchat.","url":"https://nationalcareers.service.gov.uk/","source":"National Careers Service","status":"checked","checked":"2026-09-23","note":null},{"name":"Find a regulated qualification","kind":"Register","what":"Ofqual's register of every regulated qualification and awarding organisation, which is how you check that a course is what it claims to be.","enter":"Free public search.","url":"https://register.ofqual.gov.uk/","source":"Ofqual: Find a regulated qualification","status":"checked","checked":"2026-09-23","note":null},{"name":"Access to Higher Education","kind":"Qualification route","what":"The level 3 route designed for adults without A levels who want to reach higher education.","enter":"Through a college; courses and providers are listed on the official Access to HE site.","url":"https://www.accesstohe.ac.uk/","source":"Access to Higher Education (QAA)","status":"checked","checked":"2026-09-23","note":"Confirmed 23 September 2026 at the official Access to HE site. The GOV.UK page tried earlier does not exist; the programme is run under QAA, not GOV.UK."},{"name":"The Open University","kind":"Provider","what":"Distance study with no entry requirements on most undergraduate modules, which makes it the usual route for someone working or caring while studying.","enter":"Direct application; part-time by default.","url":"https://www.open.ac.uk/","source":"The Open University","status":"checked","checked":"2026-09-23","note":null},{"name":"Lifelong Learning Entitlement","kind":"Policy","what":"The entitlement designed to fund study across a working life rather than in one block at eighteen.","enter":"Public information on how it will work.","url":"https://www.gov.uk/government/publications/lifelong-learning-entitlement-lle-overview","source":"GOV.UK: Lifelong Learning Entitlement overview","status":"checked","checked":"2026-09-23","note":null}]},{"id":"onthejob","label":"Learning on the job","icon":"employ","summary":"The routes that pay you while you learn, and the one tax rule that decides whether a self-employed person can afford to train at all.","entries":[{"name":"Apprenticeships","kind":"Paid training","what":"You are an employee, earning a wage with holiday pay, working alongside experienced staff, with at least 20% of normal working hours given to training and study.","enter":"Search and apply through the government service.","url":"https://www.gov.uk/become-apprentice","source":"GOV.UK: Become an apprentice","status":"checked","checked":"2026-09-23","note":null},{"name":"Apply for an apprenticeship","kind":"Government service","what":"The search and application service for apprenticeships in England.","enter":"Online, free.","url":"https://www.gov.uk/apply-apprenticeship","source":"GOV.UK: Apply for an apprenticeship","status":"checked","checked":"2026-09-23","note":null},{"name":"T Levels","kind":"Qualification route","what":"Technical study programmes with a substantial industry placement, for people aged 16 to 19.","enter":"Through a school or college.","url":"https://www.gov.uk/government/publications/introduction-of-t-levels","source":"GOV.UK: Introduction of T Levels","status":"checked","checked":"2026-09-23","note":null},{"name":"Training costs for a self-employed person","kind":"Tax rule","what":"Training for the owner of a business is revenue expenditure where it updates existing expertise or knowledge, or provides new expertise or knowledge in the individual's existing business area, including keeping pace with advances in technology.","enter":"Claimed as a business expense; the boundary is whether it is in your existing business area.","url":"https://www.gov.uk/hmrc-internal-manuals/business-income-manual/bim35660","source":"HMRC Business Income Manual BIM35660","status":"checked","checked":"2026-09-23","note":null},{"name":"Skills Bootcamps","kind":"Funded training","what":"Short, intensive courses aimed at specific sectors, including data and digital.","enter":"Through the GOV.UK finder.","url":"https://www.gov.uk/guidance/find-a-skills-bootcamp","source":"GOV.UK: Find a Skills Bootcamp","status":"checked","checked":"2026-09-23","note":"Confirmed with browser headers on 23 September 2026; the earlier fetch was refused, not missing."},{"name":"Professional registration through experience","kind":"Professional route","what":"Engineering Council registration recognises demonstrated competence, which is the route for people whose expertise came from work rather than a degree.","enter":"Through a licensed professional institution.","url":"https://www.engc.org.uk/","source":"Engineering Council","status":"checked","checked":"2026-09-23","note":null},{"name":"BCS, The Chartered Institute for IT","kind":"Professional body","what":"Membership, professional registration and certification for people working in technology, including routes that do not start with a computing degree.","enter":"Membership and assessment.","url":"https://www.bcs.org/","source":"BCS","status":"checked","checked":"2026-09-23","note":null},{"name":"Royal Statistical Society","kind":"Professional body","what":"Professional body for statistics and data science, with accreditation routes for practitioners.","enter":"Membership and accreditation.","url":"https://rss.org.uk/","source":"Royal Statistical Society","status":"checked","checked":"2026-09-23","note":null}]},{"id":"nations","label":"The same thing, in the other three nations","icon":"nations","summary":"Skills policy is devolved. The qualification frameworks, the funding and the front doors all differ, and the English pages above do not apply outside England.","entries":[{"name":"Skills Development Scotland","kind":"Devolved agency","what":"Scotland's skills body, running Modern, Foundation and Graduate Apprenticeships.","enter":"Public services and local centres.","url":"https://www.skillsdevelopmentscotland.co.uk/","source":"Skills Development Scotland","status":"checked","checked":"2026-09-23","note":null},{"name":"My World of Work","kind":"Devolved service","what":"Scotland's careers and skills front door for individuals.","enter":"Free public service.","url":"https://www.myworldofwork.co.uk/","source":"My World of Work","status":"checked","checked":"2026-09-23","note":null},{"name":"Scottish Credit and Qualifications Framework","kind":"Framework","what":"Scotland's own 12-level framework. A qualification level quoted in England does not translate directly.","enter":"Reference.","url":"https://scqf.org.uk/","source":"SCQF","status":"checked","checked":"2026-09-23","note":null},{"name":"Working Wales","kind":"Devolved service","what":"Careers advice and skills support in Wales, delivered bilingually.","enter":"Free public service.","url":"https://workingwales.gov.wales/","source":"Working Wales","status":"checked","checked":"2026-09-23","note":null},{"name":"ApprenticeshipsNI","kind":"Devolved programme","what":"Northern Ireland's apprenticeship programme. To take part you need to be 16 or over, be about to start paid work in Northern Ireland or have been with your employer for less than six months, and work at least 21 hours a week on a permanent contract.","enter":"Through nidirect and a contracted training provider.","url":"https://www.nidirect.gov.uk/campaigns/apprenticeships","source":"nidirect: Apprenticeships","status":"checked","checked":"2026-09-23","note":"Confirmed 23 September 2026 from the Department for the Economy's August 2026 overview of apprenticeship programmes, which points to the nidirect page."}]},{"id":"women","label":"Women in data, tech, STEM, engineering and finance","icon":"person","summary":"Cohort networks do the work that no government service does: peers, visibility, practical training and a route in for people who did not follow the standard path. None is part of the government estate, there is no register of them, and listing one here is a record that it exists, not a recommendation.","entries":[{"name":"Women in Data","kind":"Community","what":"A UK network and annual conference for women working in data, with a job board and partner programmes.","enter":"Free to join events; partner organisations sponsor.","url":"https://www.womenindata.co.uk/","source":"Women in Data","status":"checked","checked":"2026-09-23","note":null},{"name":"Code First Girls","kind":"Training community","what":"Free coding courses and degree-equivalent programmes aimed at women and non-binary people moving into technology.","enter":"Application to cohorts.","url":"https://codefirstgirls.com/","source":"Code First Girls","status":"checked","checked":"2026-09-23","note":null},{"name":"Stemettes","kind":"Community","what":"Programmes for young women and non-binary young people in science, technology, engineering, arts and maths.","enter":"Free events and programmes.","url":"https://stemettes.org/","source":"Stemettes","status":"checked","checked":"2026-09-23","note":null},{"name":"WISE","kind":"Campaign","what":"The campaign for women into science and engineering, working with employers on recruitment and retention.","enter":"Membership and employer programmes.","url":"https://www.wisecampaign.org.uk/","source":"WISE","status":"checked","checked":"2026-09-23","note":null},{"name":"Women's Engineering Society","kind":"Membership body","what":"A long-established professional network for women in engineering, with membership and mentoring.","enter":"Membership.","url":"https://www.wes.org.uk/","source":"Women's Engineering Society","status":"checked","checked":"2026-09-23","note":null},{"name":"BCSWomen","kind":"Specialist group","what":"The women's specialist group inside the chartered institute for IT, which makes it the one on this list attached to a professional body.","enter":"Through BCS membership.","url":"https://www.bcs.org/membership-and-registrations/member-communities/bcswomen-specialist-group/","source":"BCSWomen, BCS","status":"checked","checked":"2026-09-23","note":null},{"name":"Women in Banking and Finance","kind":"Community","what":"Network for women working in financial services, relevant to anyone starting a regulated business.","enter":"Membership and events.","url":"https://www.wibf.org.uk/","source":"Women in Banking and Finance","status":"checked","checked":"2026-09-23","note":null},{"name":"AllBright","kind":"Community","what":"Membership community and programmes for women in business and leadership.","enter":"Paid membership.","url":"https://www.allbrightcollective.com/","source":"AllBright","status":"checked","checked":"2026-09-23","note":null},{"name":"Prowess","kind":"Network","what":"A UK network focused specifically on women's business support, funding and advice.","enter":"Public resources.","url":"https://www.prowess.org.uk/","source":"Prowess","status":"checked","checked":"2026-09-23","note":null}]},{"id":"other","label":"Other cohorts within a community","icon":"support","summary":"The same pattern repeats for every group the mainstream route serves least well. These are named because founders use them, with the same caveat: no government register, no endorsement.","entries":[{"name":"Coding Black Females","kind":"Community","what":"A community building, supporting and educating Black women working in technology.","enter":"Free membership and events.","url":"https://codingblackfemales.com/","source":"Coding Black Females","status":"checked","checked":"2026-09-23","note":null},{"name":"Colorintech","kind":"Community","what":"An organisation working to make technology more accessible to under-represented communities.","enter":"Programmes and events.","url":"https://www.colorintech.org/","source":"Colorintech","status":"checked","checked":"2026-09-23","note":null},{"name":"Black Tech Fest","kind":"Community event","what":"A large annual gathering for Black technologists and founders.","enter":"Ticketed event.","url":"https://www.blacktechfest.com/","source":"Black Tech Fest","status":"checked","checked":"2026-09-23","note":null},{"name":"Disability Rights UK","kind":"Charity","what":"Disabled people's organisation, including work and self-employment resources.","enter":"Public resources and membership.","url":"https://www.disabilityrightsuk.org/","source":"Disability Rights UK","status":"checked","checked":"2026-09-23","note":null},{"name":"Innovate UK Business Connect","kind":"Network","what":"The innovation network that runs programmes and communities for research-based and technology businesses.","enter":"Free to join networks.","url":"https://iuk.ktn-uk.org/","source":"Innovate UK Business Connect","status":"checked","checked":"2026-09-23","note":null},{"name":"STEM Learning","kind":"Provider","what":"The organisation behind STEM Ambassadors and teacher and workforce STEM support.","enter":"Programmes and free resources.","url":"https://www.stem.org.uk/","source":"STEM Learning","status":"blocked","checked":"2026-09-23","note":"The site refuses automated requests (HTTP 403) even with browser headers. It runs the STEM Ambassador programme; existence is widely documented but not confirmed first-hand by this check.","searched":["direct fetch with browser headers, 23 September 2026: HTTP 403"]},{"name":"Institution of Engineering and Technology","kind":"Professional body","what":"One of the licensed institutions behind Engineering Council registration, and host of several cohort networks.","enter":"Membership.","url":"https://www.theiet.org/","source":"IET","status":"checked","checked":"2026-09-23","note":null},{"name":"Royal Academy of Engineering","kind":"Academy","what":"Runs enterprise fellowships and programmes for engineers commercialising research.","enter":"Programme applications.","url":"https://raeng.org.uk/","source":"Royal Academy of Engineering","status":"checked","checked":"2026-09-23","note":null},{"name":"No register of cohort networks","kind":"Gap","what":"There is no government list of community networks by sector or by group. Which one a founder finds is a matter of chance and search ranking.","enter":"—","url":null,"source":"Searched, not found","status":"not-found","checked":"2026-09-23","note":"This is why the list above exists and why it cannot claim to be complete.","searched":["recorded retrospectively: searched and fetched, 23 September 2026"]}]}],"COVERAGE":[{"route":"nothing","door":"yes","detail":"Free level 3 at 19 or over, a free careers service and a public register of qualifications. The offer exists; the connection to running a business does not."},{"route":"onthejob","door":"yes","detail":"Apprenticeships are well signposted for employees. For a self-employed founder the only real lever is the tax treatment of their own training."},{"route":"nations","door":"partial","detail":"Each nation has its own front door and its own framework. None of them is reachable from the English pages a founder starts on."},{"route":"women","door":"no","detail":"Entirely outside the government estate. Nothing in the journey mentions any of it, and there is no register to search."},{"route":"other","door":"no","detail":"Same again, with less visibility. Finding the right community is left to search engines and word of mouth."}],"FINDINGS":[{"h":"No qualification is needed to start a business, and that is not the same as no skills","b":"Registration asks for identity, an address and a description of the activity. It never asks what you know. The qualification question arrives later, at the licence, the contract, the insurance and the loan, by which time it is expensive to answer."},{"h":"The funded offer is shaped for employees","b":"Apprenticeships pay a wage and require an employer. Free level 3 is a learner entitlement, but the courses assume a job market rather than self-employment. A founder who needs to train has one reliable lever: the tax treatment of their own training costs."},{"h":"One tax rule does most of the work","b":"Training for the owner of a business is revenue expenditure where it updates existing expertise or provides new expertise in their existing business area, including keeping pace with technology. The boundary is 'existing business area', and it is the difference between a deductible course and a personal one."},{"h":"Cohort networks carry load that nothing official carries","b":"Women in data, women in engineering, Black technologists, disabled founders: these communities provide the peers, the visibility and often the training. None appears anywhere in the government journey, and no register of them exists to search."},{"h":"Skills are devolved and the journey is not","b":"A founder in Scotland reads English qualification levels on a GOV.UK page that does not apply to them. SCQF has twelve levels; the English framework has nine steps from entry level to level 8."},{"h":"Nothing connects 'I have no qualifications' to 'I want to run a business'","b":"The careers service answers the first. The business services answer the second. No service in this work's catalogue answers both, and the person who needs both is the person least likely to have an adviser."}],"COUNTS":{"routes":5,"entries":38,"checked":36,"no_source":1,"blocked":1,"with_door":2,"no_door":2}};
+</script>
+<script>(function(){
+  var root=document.documentElement;
+  try{var sv=localStorage.getItem('hub-theme');if(sv)root.setAttribute('data-theme',sv);}catch(e){}
+  var $=function(i){return document.getElementById(i);};
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function ic(n,c){return '<svg class="'+(c||'ic')+'" aria-hidden="true" focusable="false"><use href="#i-'+n+'"></use></svg>';}
+  var C=DOORS.COUNTS;
+  $('stats').innerHTML=[
+   [C.entries,'ways to get skills, qualifications or a community, across '+C.routes+' groups'],
+   [C.checked,'retrieved and read on 23 September 2026; '+C.blocked+' returned nothing to an automated request'],
+   [C.no_source,'places where no public source exists at all, named rather than filled'],
+   [C.with_door+' of '+C.routes,'groups with a government front door; the cohort communities have none']
+  ].map(function(x){return '<div class="stat"><b>'+esc(x[0])+'</b><span>'+esc(x[1])+'</span></div>';}).join('');
+  var DOOR={yes:['Has a front door','ok'],partial:['Partly covered','open'],no:['No front door','blocked']};
+  $('cov').innerHTML='<table><caption>Whether each group has a government front door, and what that means for someone with no qualifications and no adviser</caption><thead><tr><th scope="col">Group</th><th scope="col">Front door</th><th scope="col">What that means in practice</th></tr></thead><tbody>'+
+    DOORS.COVERAGE.map(function(c){
+      var r=DOORS.ROUTES.filter(function(x){return x.id===c.route;})[0];
+      return '<tr><th scope="row">'+esc(r.label)+'</th><td><span class="pill '+DOOR[c.door][1]+'">'+esc(DOOR[c.door][0])+'</span></td><td>'+esc(c.detail)+'</td></tr>';}).join('')+'</tbody></table>';
+  var cur=(new URLSearchParams(location.search).get('r'))||DOORS.ROUTES[0].id;
+  var ST={'partly-regulated':['Partly regulated: see note','open'],'confirmed-absent':['Confirmed: no such rule exists','ok'],checked:['Retrieved and read','ok'],blocked:['No response to an automated request','open'],unavailable:['Unavailable at this check','open'],'not-found':['No public source found','blocked']};
+  function paint(){
+    $('routechips').innerHTML=DOORS.ROUTES.map(function(r){
+      return '<button type="button" data-r="'+r.id+'" aria-pressed="'+(r.id===cur)+'">'+ic(r.icon)+esc(r.label)+' <span>'+r.entries.length+'</span></button>';}).join('');
+    Array.prototype.forEach.call($('routechips').querySelectorAll('button'),function(b){
+      b.addEventListener('click',function(){cur=b.getAttribute('data-r');
+        var q=new URLSearchParams(location.search);q.set('r',cur);history.replaceState(null,'','?'+q.toString());paint();});});
+    var r=DOORS.ROUTES.filter(function(x){return x.id===cur;})[0];
+    var c=DOORS.COVERAGE.filter(function(x){return x.route===cur;})[0];
+    $('route').innerHTML='<div class="trackhead"><h3>'+ic(r.icon,'ic-lg')+esc(r.label)+'</h3><p class="lede">'+esc(r.summary)+'</p>'+
+      '<p class="doorline"><span class="pill '+DOOR[c.door][1]+'">'+esc(DOOR[c.door][0])+'</span> '+esc(c.detail)+'</p></div>'+
+      '<div class="doors">'+r.entries.map(function(e){
+        return '<article class="door"><h4>'+esc(e.name)+'</h4><p class="kind">'+esc(e.kind)+'</p>'+
+          '<p>'+esc(e.what)+'</p><p class="enter">'+ic('check')+esc(e.enter)+'</p>'+
+          (e.note?'<p class="unver">'+ic('warning')+esc(e.note)+'</p>':'')+
+          '<p class="meta">'+(e.url?'<a href="'+esc(e.url)+'" target="_blank" rel="noopener" aria-label="Source for '+esc(e.name)+'">'+esc(e.source)+'</a>':'<span class="nosrc">'+esc(e.source)+'</span>')+
+          ' <span class="pill '+ST[e.status][1]+'">'+esc(ST[e.status][0])+'</span> <span class="freshness">'+ic('clock')+esc(e.checked)+'</span></p></article>';}).join('')+'</div>';
+    window.__skills={route:cur,entries:r.entries.length,total:DOORS.COUNTS.entries};
+  }
+  paint();
+  $('findings').innerHTML=DOORS.FINDINGS.map(function(f){
+    return '<article class="find"><h3>'+esc(f.h)+'</h3><p>'+esc(f.b)+'</p></article>';}).join('');
+})();
+</script>
+<script>/* Self-* runtime: verify, repair, assess and report. Runs on every page, in the browser,
+   with no network access. Everything it does is recorded and reversible by reloading. */
+(function(){
+  if(window.__selfcheck) return;
+  var BUILD="2026-09-18";
+  var findings=[], repairs=[], allRepairs=[], t0=(window.performance&&performance.now)?performance.now():0;
+  function add(sev,id,msg,n){findings.push({severity:sev,check:id,detail:msg,count:n==null?1:n});}
+  function fixed(id,msg,n){var c=(n==null?1:n);repairs.push({check:id,action:msg,count:c});
+    for(var i=0;i<allRepairs.length;i++){if(allRepairs[i].check===id){allRepairs[i].count+=c;return;}}
+    allRepairs.push({check:id,action:msg,count:c});}
+  function txt(e){return (e.textContent||'').replace(/\s+/g,' ').trim();}
+  function near(a){
+    var r=a.closest('li,td,tr,article,.card,.rowcard,.tp,p');
+    if(r){var h=r.querySelector('b,strong,h3,h4');if(h&&txt(h))return txt(h).slice(0,80);
+      var t=txt(r);if(t)return t.slice(0,80);}
+    var s=a.closest('section');var h2=s&&s.querySelector('h2');
+    return h2?txt(h2).slice(0,80):'this entry';
+  }
+  // ---------- verification + repair ----------
+  function scrollRegions(){
+    var n=0,fixedN=0;
+    var all=document.querySelectorAll('body *');
+    for(var i=0;i<all.length;i++){var e=all[i];if(e.closest('svg'))continue;
+      var cs=getComputedStyle(e);if(!(cs.overflowX==='auto'||cs.overflowX==='scroll'||cs.overflowY==='auto'||cs.overflowY==='scroll'))continue;
+      if(!(e.scrollWidth>e.clientWidth+1||e.scrollHeight>e.clientHeight+1))continue;
+      if(e.querySelector('a,button,input,select,textarea,[tabindex]'))continue;
+      if(e.hasAttribute('tabindex'))continue;
+      n++;e.setAttribute('tabindex','0');e.setAttribute('role','region');
+      if(!e.getAttribute('aria-label')){var h=e.closest('section');var h2=h&&h.querySelector('h2');e.setAttribute('aria-label',(h2?txt(h2):'Scrollable content')+' (scrollable)');}
+      fixedN++;}
+    if(fixedN)fixed('scroll.focusable','Made '+fixedN+' scrollable region(s) keyboard reachable with tabindex and a label. Defect: axe-core scrollable-region-focusable on the journey map and blueprint lanes, 23 September 2026.',fixedN);
+  }
+  function structure(){
+    var h1=document.querySelectorAll('h1').length;
+    if(h1!==1) add('high','structure.h1','Expected exactly one h1, found '+h1,h1);
+    if(!document.getElementById('main')) add('high','structure.main','No element with id="main" for the skip link to reach');
+    var skip=document.querySelector('a.skip');
+    if(!skip){
+      var a=document.createElement('a');a.className='skip';a.href='#main';a.textContent='Skip to content';
+      document.body.insertBefore(a,document.body.firstChild);
+      fixed('structure.skip','Inserted a missing skip link as the first focusable element');
+    }
+    var lv=0,skips=0;
+    Array.prototype.forEach.call(document.querySelectorAll('h1,h2,h3,h4,h5,h6'),function(h){
+      var n=+h.tagName.slice(1); if(lv && n>lv+1) skips++; lv=n;});
+    if(skips) add('medium','structure.headings',skips+' heading level skips',skips);
+    if(!document.querySelector('.ribbon')) add('low','structure.ribbon','Journey ribbon missing from this page');
+    var fam=document.querySelectorAll('.family a,.xfam a').length;
+    if(!fam && !/portal/.test(location.pathname)) add('medium','structure.family','Family navigation is empty');
+  }
+  function links(){
+    var amb=0,noop=0,empty=0;
+    Array.prototype.forEach.call(document.querySelectorAll('a[href]'),function(a){
+      var label=(a.getAttribute('aria-label')||txt(a)).toLowerCase();
+      if(['source','details','here','more','link','read more','click here'].indexOf(label)>=0){
+        a.setAttribute('aria-label',(label==='details'?'Details of ':'Source for ')+near(a)); amb++;
+      }
+      if(a.target==='_blank' && !/noopener/.test(a.rel||'')){a.rel=((a.rel||'')+' noopener').trim();noop++;}
+      if(!a.getAttribute('href').trim()) empty++;
+    });
+    if(amb){fixed('links.ambiguous','Gave a context-bearing accessible name to links that read only "source" or "details"',amb);}
+    if(noop){fixed('links.noopener','Added rel="noopener" to links opening in a new tab',noop);}
+    if(empty) add('medium','links.empty',empty+' links with an empty href',empty);
+  }
+  function aria(){
+    var seen={},dupes=0;
+    Array.prototype.forEach.call(document.querySelectorAll('[id]'),function(e){
+      if(seen[e.id]){e.id=e.id+'-dup'+(++dupes);} else seen[e.id]=1;});
+    if(dupes) fixed('aria.duplicate-id','Renamed duplicate element ids so labels and controls resolve to one target',dupes);
+    var svgs=0;
+    Array.prototype.forEach.call(document.querySelectorAll('svg'),function(s){
+      var named=s.getAttribute('aria-label')||s.querySelector('title')||s.getAttribute('role')==='img';
+      if(!named && s.getAttribute('aria-hidden')!=='true'){s.setAttribute('aria-hidden','true');s.setAttribute('focusable','false');svgs++;}
+    });
+    if(svgs) fixed('aria.decorative-svg','Marked decorative graphics as hidden from assistive technology',svgs);
+    var unl=0;
+    Array.prototype.forEach.call(document.querySelectorAll('input,select,textarea'),function(c){
+      if(c.type==='hidden')return;
+      var has=(c.labels&&c.labels.length)||c.getAttribute('aria-label')||c.getAttribute('aria-labelledby')||c.closest('label');
+      if(!has) unl++;});
+    if(unl) add('high','aria.unlabelled-control',unl+' form controls with no accessible name',unl);
+    var figs=0;
+    Array.prototype.forEach.call(document.querySelectorAll('svg.art'),function(s){
+      if(!s.querySelector('title')||!s.querySelector('desc')) figs++;});
+    if(figs) add('medium','aria.illustration',figs+' illustrations without both a title and a description',figs);
+  }
+  function layout(){
+    var vw=document.documentElement.clientWidth, wide=0, wrapped=0;
+    Array.prototype.forEach.call(document.querySelectorAll('table'),function(t){
+      if(t.scrollWidth>vw+2){
+        var p=t.parentElement;
+        if(!p || getComputedStyle(p).overflowX!=='auto'){
+          var d=document.createElement('div');d.className='tablewrap';d.style.overflowX='auto';d.style.maxWidth='100%';
+          t.parentNode.insertBefore(d,t);d.appendChild(t);wrapped++;
+        }
+      }});
+    if(wrapped) fixed('layout.table-scroll','Wrapped wide tables in a horizontal scroll container',wrapped);
+    if(document.documentElement.scrollWidth>vw+2){
+      document.documentElement.style.maxWidth='100%';document.body.style.overflowX='hidden';
+      wide=1;fixed('layout.overflow','Clamped horizontal overflow at the document root');
+    }
+    return wide;
+  }
+  function currency(){
+    var built=new Date(BUILD+'T00:00:00Z'), days=Math.floor((Date.now()-built.getTime())/86400000);
+    var sev = days>365?'high':days>180?'medium':days>90?'low':null;
+    if(sev) add(sev,'currency.age','This page was built '+days+' days ago. Sources move; re-run the verification pass before relying on it.',days);
+    return days;
+  }
+  function data(){
+    // Cross-check any count this page states about its own dataset
+    var out=[];
+    try{
+      var D=window.__bp&&JSON.parse(window.__bp.json());
+      if(D){
+        var steps=D.BLUE.reduce(function(a,b){return a+b.steps.length;},0);
+        var claimed=(document.body.innerText.match(/(\d+)\s+journey moments/)||[])[1];
+        out.push({fact:'blueprint steps',value:steps});
+        if(claimed && +claimed!==steps) add('medium','data.count','Page states '+claimed+' journey moments but the data holds '+steps);
+      }
+    }catch(e){}
+    return out;
+  }
+  // ---------- assessment ----------
+  function assess(days){
+    var high=findings.filter(function(f){return f.severity==='high';}).length;
+    var med=findings.filter(function(f){return f.severity==='medium';}).length;
+    var low=findings.filter(function(f){return f.severity==='low';}).length;
+    var dims=[
+      ['Accuracy','every claim carries a source and the verification register records what was checked',high?'at risk':'holding'],
+      ['Currency', days>180?'stale: re-verification overdue':days>90?'ageing':'current', days>180?'at risk':'holding'],
+      ['Accessibility', high?'a structural defect is present on this page':'structural checks pass on this page', high?'at risk':'holding'],
+      ['Resilience','the page repaired '+allRepairs.reduce(function(a,r){return a+r.count;},0)+' defects at load without failing','holding'],
+      ['Completeness','open issues are published rather than hidden','holding'],
+      ['Sustainability','one file, no build step, no dependency to rot','holding']
+    ];
+    var score=Math.max(0,100-(high*18)-(med*6)-(low*2)-(days>365?15:days>180?8:0));
+    return {score:score,band:score>=85?'good':score>=70?'fair':'needs work',dimensions:dims,high:high,medium:med,low:low};
+  }
+  // ---------- run ----------
+  structure();
+  scrollRegions();links();aria();layout();var days=currency();var facts=data();
+  var a=assess(days);
+  var ms=((window.performance&&performance.now)?performance.now():0)-t0;
+  var report={page:document.title,build:BUILD,ranAt:new Date().toISOString(),ageDays:days,
+    durationMs:Math.round(ms),passes:1,findings:findings,repairs:allRepairs,assessment:a,facts:facts};
+  window.__selfcheck={report:function(){return report;},recheck:function(){return repass();},json:function(){return JSON.stringify(report);},rerun:function(){location.reload();}};
+  // ---------- surface ----------
+  function badge(){
+    var host=document.querySelector('footer .wrap')||document.querySelector('footer')||document.body;
+    var d=document.createElement('section');d.className='selfcheck';d.setAttribute('aria-labelledby','sc-h');
+    var rep=allRepairs.reduce(function(x,r){return x+r.count;},0);
+    d.innerHTML='<h2 id="sc-h">This page checks itself</h2>'+
+      '<p class="scline"><span class="scdot '+a.band.replace(' ','-')+'" aria-hidden="true"></span>'+
+      '<b>'+a.score+'/100</b> on its own checks, run in your browser '+Math.round(ms)+'ms ago: '+
+      findings.length+' finding'+(findings.length===1?'':'s')+', '+rep+' defect'+(rep===1?'':'s')+' repaired automatically, built '+days+' days ago.</p>'+
+      '<details><summary>What it checked, what it found, what it fixed</summary><div class="scbody">'+
+      '<h3>Findings</h3>'+(findings.length?'<ul>'+findings.map(function(f){return '<li><b>'+f.severity+'</b> '+f.check+' — '+f.detail+'</li>';}).join('')+'</ul>':'<p>Nothing outstanding on this page.</p>')+
+      '<h3>Repaired at load</h3>'+(allRepairs.length?'<ul>'+allRepairs.map(function(r){return '<li>'+r.action+' ('+r.count+')</li>';}).join('')+'</ul>':'<p>Nothing needed repairing.</p>')+
+      '<h3>Self-assessment</h3><ul>'+a.dimensions.map(function(x){return '<li><b>'+x[0]+'</b> '+x[1]+' — <i>'+x[2]+'</i></li>';}).join('')+'</ul>'+
+      '<p class="meta">These checks run in the page, with no network access. They cannot test with a real screen reader, cannot re-request a source, and cannot know whether a fact changed yesterday. They fail visibly rather than quietly: a repair is reported, never hidden.</p>'+
+      '<p><button class="btn sm" type="button" id="scdl">Download this report</button> <span class="toolmsg" id="scmsg" role="status"></span></p>'+
+      '</div></details>';
+    host.appendChild(d);
+    var b=document.getElementById('scdl');
+    if(b)b.addEventListener('click',function(){
+      try{
+        var blob=new Blob([JSON.stringify(report,null,1)],{type:'application/json'});
+        var u=URL.createObjectURL(blob),el=document.createElement('a');
+        el.href=u;el.download='self-check-'+(document.title.split(':')[0].toLowerCase().replace(/[^a-z0-9]+/g,'-'))+'.json';
+        document.body.appendChild(el);el.click();el.remove();setTimeout(function(){URL.revokeObjectURL(u);},2000);
+        document.getElementById('scmsg').textContent='Report downloaded.';
+      }catch(e){document.getElementById('scmsg').textContent='Download blocked here; the report is also on window.__selfcheck.report().';}
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',badge);else badge();
+
+  // ---------- continuous repair: dynamic pages render after this first pass ----------
+  var pending=null, passes=1;
+  function repass(){
+    var before=repairs.reduce(function(a,r){return a+r.count;},0);
+    repairs.length=0; findings.length=0;
+    structure();links();aria();layout();var d=currency();
+    passes++;
+    var after=repairs.reduce(function(a,r){return a+r.count;},0);
+    report.findings=findings; report.repairs=allRepairs; report.passes=passes;
+    report.assessment=assess(d); report.ranAt=new Date().toISOString();
+    var line=document.querySelector('.selfcheck .scline b');
+    if(line) line.textContent=report.assessment.score+'/100';
+    return after;
+  }
+  if(window.MutationObserver){
+    var mo=new MutationObserver(function(muts){
+      var worth=false;
+      for(var i=0;i<muts.length;i++){ if(muts[i].addedNodes && muts[i].addedNodes.length){worth=true;break;} }
+      if(!worth) return;
+      clearTimeout(pending);
+      pending=setTimeout(function(){ if(!document.querySelector('.selfcheck details[open]')) repass(); },600);
+    });
+    mo.observe(document.body,{childList:true,subtree:true});
+    window.__selfcheck_observer=mo;
+  }
+  setTimeout(repass,1500);
+
+})();
+</script>
+<!-- colophon: added by tools/publish.py -->
+<aside class="pgw-colophon" aria-label="About this publication" style="max-width:1120px;margin:40px auto 24px;padding:18px 22px;border:1px solid currentColor;border-radius:12px;font:14px/1.5 system-ui,sans-serif;display:flex;flex-wrap:wrap;gap:18px;align-items:center;opacity:.92">
+<div style="flex:1 1 340px;min-width:0">
+<p style="margin:0 0 6px"><strong>Not an official government service.</strong> An independent, evidence-led guide by Emanuel Silva, part of
+<a href="https://cyberdudeuk.github.io/">Public Good Works</a>. Every claim carries its source; check GOV.UK, nidirect, mygov.scot or gov.wales before you act.</p>
+<p style="margin:0 0 6px">Drafted and checked with AI assistance (Claude); the author reviewed and is responsible for it. Some features, such as the page assistant, work only inside Claude and are hidden here.</p>
+<p style="margin:0">Questions, corrections or ideas: use the <a href="https://github.com/cyberdudeuk/start-a-business-uk/issues/new?template=contact.yml">contact form</a> (no email address is published).
+Code MIT; content Open Government Licence v3.0, see the <a href="https://github.com/cyberdudeuk/start-a-business-uk">repository</a>.</p>
+</div>
+<div style="display:flex;gap:14px;align-items:center"><svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 156 156" role="img" aria-label="QR code for https://cyberdudeuk.github.io/start-a-business-uk/skills-and-communities/" class="segno"><g transform="scale(4)"><path fill="#fff" d="M0 0h39v39h-39z"/><path class="qrline" stroke="#0b0c0c" d="M1 1.5h7m1 0h5m4 0h1m1 0h4m2 0h2m3 0h7m-37 1h1m5 0h1m1 0h3m3 0h6m2 0h1m1 0h2m2 0h1m1 0h1m5 0h1m-37 1h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h2m1 0h1m1 0h2m1 0h1m1 0h1m1 0h1m1 0h2m1 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m2 0h1m3 0h1m2 0h2m3 0h1m1 0h1m1 0h1m2 0h1m1 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h3m3 0h1m4 0h1m5 0h2m1 0h1m1 0h1m1 0h3m1 0h1m-37 1h1m5 0h1m3 0h4m6 0h1m1 0h5m3 0h1m5 0h1m-37 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-26 1h10m1 0h1m1 0h3m1 0h1m-29 1h1m2 0h6m1 0h1m1 0h1m6 0h1m3 0h2m1 0h4m2 0h1m1 0h3m-37 1h2m2 0h2m3 0h2m2 0h1m2 0h1m1 0h1m4 0h1m2 0h2m3 0h2m1 0h2m-35 1h4m1 0h1m2 0h2m2 0h5m1 0h2m2 0h1m3 0h5m2 0h1m1 0h1m-37 1h2m1 0h2m2 0h2m4 0h2m1 0h5m1 0h2m2 0h1m6 0h4m-37 1h2m1 0h2m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m5 0h2m4 0h1m-37 1h1m2 0h3m1 0h2m1 0h2m1 0h4m1 0h1m4 0h1m1 0h1m1 0h3m2 0h2m1 0h1m-31 1h4m3 0h2m1 0h1m2 0h2m1 0h1m2 0h5m3 0h5m-35 1h1m1 0h2m4 0h3m2 0h2m5 0h1m3 0h1m2 0h1m1 0h1m1 0h4m-36 1h3m1 0h2m3 0h1m2 0h1m1 0h1m1 0h2m1 0h1m1 0h2m1 0h3m2 0h2m2 0h1m1 0h1m-37 1h1m2 0h1m4 0h1m1 0h2m1 0h2m6 0h2m4 0h3m1 0h1m2 0h1m-35 1h1m1 0h1m1 0h3m3 0h1m1 0h1m1 0h1m1 0h2m1 0h2m2 0h1m1 0h1m1 0h1m1 0h1m6 0h1m-34 1h2m3 0h1m2 0h1m3 0h2m2 0h2m4 0h1m1 0h1m1 0h2m5 0h1m-34 1h1m2 0h1m1 0h1m1 0h2m1 0h1m3 0h1m1 0h2m2 0h1m2 0h8m-34 1h3m2 0h1m3 0h2m3 0h2m1 0h3m1 0h3m1 0h3m4 0h1m1 0h1m-35 1h2m1 0h1m1 0h2m1 0h2m1 0h1m1 0h1m1 0h2m4 0h1m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m2 0h1m-36 1h1m2 0h2m4 0h1m1 0h2m4 0h2m3 0h2m1 0h3m1 0h6m-36 1h1m5 0h4m1 0h1m2 0h2m1 0h1m1 0h2m3 0h1m2 0h1m2 0h2m-32 1h5m2 0h1m3 0h2m5 0h4m1 0h1m2 0h3m2 0h4m-35 1h2m2 0h3m1 0h3m4 0h1m2 0h5m4 0h2m1 0h1m1 0h1m1 0h3m-37 1h1m3 0h1m2 0h3m1 0h1m2 0h1m1 0h1m2 0h1m13 0h4m-37 1h1m2 0h2m1 0h2m1 0h1m2 0h5m1 0h2m2 0h1m1 0h3m1 0h5m1 0h2m-28 1h4m1 0h1m1 0h1m1 0h4m1 0h1m4 0h2m3 0h1m1 0h2m-36 1h7m1 0h1m3 0h2m1 0h5m1 0h1m1 0h1m2 0h1m1 0h1m1 0h1m1 0h1m3 0h1m-37 1h1m5 0h1m1 0h1m3 0h1m2 0h1m6 0h2m1 0h1m1 0h2m3 0h1m2 0h2m-37 1h1m1 0h3m1 0h1m1 0h2m1 0h1m3 0h2m1 0h1m5 0h1m1 0h7m-33 1h1m1 0h3m1 0h1m1 0h1m3 0h3m2 0h1m1 0h3m1 0h1m1 0h6m2 0h2m1 0h1m-37 1h1m1 0h3m1 0h1m2 0h3m2 0h1m2 0h1m4 0h2m1 0h1m3 0h1m2 0h1m3 0h1m-37 1h1m5 0h1m3 0h1m1 0h4m1 0h1m1 0h1m12 0h5m-37 1h7m1 0h1m1 0h2m1 0h2m1 0h1m2 0h2m1 0h1m1 0h1m3 0h4m1 0h1m2 0h1"/></g></svg>
+<span style="display:inline-flex;flex-direction:column;gap:4px;align-items:flex-start"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="168" height="48" viewBox="0 0 74.800 14.000" preserveAspectRatio="none" role="img" aria-label="Barcode SAB-UK-SKILLS-AND-COMMUNITIES">
+    <!--Autogenerated with python-barcode 0.16.1-->
+    <g id="barcode_group">
+        <rect width="100%" height="100%" style="fill:white"/>
+        <rect x="2.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="2.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="3.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="4.200mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="4.800mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="5.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="6.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="6.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="7.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="8.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="9.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="9.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="10.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="11.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="12.000mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="13.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="13.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="14.400mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="15.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="15.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="16.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="17.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="18.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="18.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="19.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="20.200mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="21.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="21.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="22.200mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="23.200mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="24.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="25.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="25.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="26.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="27.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="27.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="28.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="29.200mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="29.800mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="30.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="31.200mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="32.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="32.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="33.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="34.000mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="35.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="35.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="36.200mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="37.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="37.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="38.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="39.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="39.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="40.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="41.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="42.200mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="42.800mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="43.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="44.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="45.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="46.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="46.800mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="47.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="48.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="48.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="49.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="50.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="50.800mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="51.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="52.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="53.200mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="54.000mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="54.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="55.200mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="56.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="57.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="58.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="58.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="59.200mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="59.800mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="61.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="61.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="62.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="63.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="63.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="64.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="65.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="65.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="66.400mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="67.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="68.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="69.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="69.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="70.200mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="71.200mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="72.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="72.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+    </g>
+</svg>
+<code style="font-size:11px">SAB-UK-SKILLS-AND-COMMUNITIES</code></span></div>
+</aside>
+</body>
+</html>

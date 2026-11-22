@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: If you use this guide, please cite it as below.
+title: "Starting a business in the UK: the whole journey"
+type: dataset
+authors:
+  - family-names: Silva
+    given-names: Emanuel
+    orcid: https://orcid.org/0009-0000-5880-7219
+repository-code: https://github.com/cyberdudeuk/start-a-business-uk
+url: https://cyberdudeuk.github.io/start-a-business-uk/
+abstract: >-
+  An evidence-led guide to starting and running a business in the UK across every step, public body, rule and
+  nation, with a founder's plan, tailored circumstances, a four-nations and international comparison, service
+  blueprints, a knowledge layer and a verification register tracing every claim to its source. A prototype, not an
+  official government service.
+keywords: [starting a business, UK government, public services, regulation, service design, open data]
+license: [MIT, OGL-UK-3.0]
+version: 11.0.0
+date-released: 2026-11-22

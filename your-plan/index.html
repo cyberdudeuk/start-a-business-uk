@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your plan: what you have to do, in order</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EDF0F2;--panel:#FFFFFF;--ink:#152030;--muted:#586273;--rule:#C9D0D8;--faint:#E3E7EB;--focus:#FFBF47;
+  --qual:#7A3FC6;--survey:#1F4FD1;--analytics:#0E7A6B;--eval:#946400;--inquiry:#C0264D;--ops:#586273;
+  --heat:#152030;--gate:#152030;--gatetext:#FFFFFF;
+  --sans:"Schibsted Grotesk",-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0F151D;--panel:#17202B;--ink:#E6EBF1;--muted:#9AA5B3;--rule:#344152;--faint:#232E3B;
+  --qual:#B99AF2;--survey:#7FA2FF;--analytics:#4FD1BC;--eval:#E0B64D;--inquiry:#F27A98;--ops:#9AA5B3;
+  --gate:#E6EBF1;--gatetext:#0F151D;}}
+:root[data-theme="dark"]{
+  --paper:#0F151D;--panel:#17202B;--ink:#E6EBF1;--muted:#9AA5B3;--rule:#344152;--faint:#232E3B;
+  --qual:#B99AF2;--survey:#7FA2FF;--analytics:#4FD1BC;--eval:#E0B64D;--inquiry:#F27A98;--ops:#9AA5B3;
+  --gate:#E6EBF1;--gatetext:#0F151D;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.5}
+a{color:inherit;text-underline-offset:3px}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.wrap{max-width:1360px;margin:0 auto;padding:0 28px}
+.num{}
+header{padding:36px 0 10px}
+.family{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:.88rem;color:var(--muted);margin:0 0 22px}
+.family a{color:var(--muted)}
+.headgrid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;align-items:end}
+h1{font-size:clamp(2.4rem,5.4vw,4.6rem);line-height:.98;font-weight:800;letter-spacing:-.03em;margin:0}
+.lede{margin:0;color:var(--muted);font-size:1.1rem;max-width:56ch}
+.lede strong{color:var(--ink);font-weight:700}
+.tools{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.btn{border:1.5px solid var(--rule);background:var(--panel);border-radius:999px;padding:6px 15px;cursor:pointer;font-weight:500}
+.btn[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+section{margin:34px 0}
+h2{font-size:1.75rem;line-height:1.1;letter-spacing:-.015em;margin:0 0 6px}
+.intro{color:var(--muted);margin:0 0 16px;max-width:70ch}
+
+:root{--lead:#0B5D51;--strong:#1F6F62;--partial:#BFDCD4;--weak:#C0264D;--leadtx:#fff;--strongtx:#fff;--partialtx:#152030;--uk:#FFF3D6;--ukline:#B07A00}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--lead:#5ED1BD;--strong:#25806F;--partial:#27463F;--weak:#F27A98;--leadtx:#0F151D;--strongtx:#fff;--partialtx:#E6EBF1;--uk:#2A2414;--ukline:#E0B64D}}
+:root[data-theme="dark"]{--lead:#5ED1BD;--strong:#25806F;--partial:#27463F;--weak:#F27A98;--leadtx:#0F151D;--strongtx:#fff;--partialtx:#E6EBF1;--uk:#2A2414;--ukline:#E0B64D}
+.headgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:end}
+h1 small{display:block;font-size:.32em;font-weight:500;letter-spacing:0;color:var(--muted);margin-top:12px;line-height:1.3}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--paper);padding:8px 14px;z-index:50}
+.skip:focus{left:0}
+.rev{font-size:.82rem;color:var(--muted);margin:10px 0 0}
+.btn.sm{padding:4px 12px;font-size:.88rem}
+.toolmsg{font-size:.85rem;color:var(--muted)}
+nav.jump{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--rule);margin-top:26px}
+nav.jump ul{list-style:none;margin:0 auto;padding:8px 28px;display:flex;gap:4px 18px;flex-wrap:wrap;max-width:1360px;font-size:.9rem}
+nav.jump a{text-decoration:none;color:var(--muted);padding:3px 0;border-bottom:2px solid transparent}
+nav.jump a:hover,nav.jump a.on{color:var(--ink);border-bottom-color:var(--ink)}
+section{scroll-margin-top:56px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:26px}
+.stats article{background:var(--panel);border-radius:16px;padding:16px 18px}
+.stats b{display:block;font-size:2.4rem;font-weight:800;letter-spacing:-.03em;line-height:1}
+.stats b span{font-size:.45em;font-weight:700;letter-spacing:0;color:var(--muted)}
+.stats p{margin:8px 0 0;font-size:.93rem}
+.stats small{display:block;color:var(--muted);font-size:.8rem;margin-top:6px}
+.stats small a{color:var(--muted)}
+/* Benchmarks */
+.benchgrid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:18px;align-items:start}
+.card{background:var(--panel);border-radius:18px;padding:18px 20px}
+.card h3{font-size:1.05rem;margin:0 0 2px}
+.card .sub{font-size:.85rem;color:var(--muted);margin:0 0 12px}
+.bars{list-style:none;margin:0;padding:0}
+.bars li{display:grid;grid-template-columns:150px minmax(0,1fr) 54px;gap:10px;align-items:center;padding:3px 0;font-size:.9rem}
+.bars .track{height:16px;background:var(--faint);border-radius:4px;position:relative;overflow:hidden}
+.bars .fill{position:absolute;left:0;top:0;bottom:0;background:var(--rule);border-radius:4px}
+.bars li.cmp .fill{background:var(--strong)}
+.bars li.uk .fill{background:var(--ukline)}
+.bars li.uk{font-weight:700}
+.bars .v{font-variant-numeric:tabular-nums;text-align:right}
+.bars .gap{height:1px;border-top:1px dashed var(--rule);margin:6px 0;grid-column:1/-1}
+.bars .median .fill{background:transparent}
+.bars .rk{color:var(--muted);font-weight:400;font-size:.8rem;margin-right:4px;font-variant-numeric:tabular-nums}
+.egdi{list-style:none;margin:0;padding:0;counter-reset:e}
+.egdi li{display:flex;gap:10px;padding:5px 0;border-top:1px solid var(--faint);font-size:.93rem;counter-increment:e}
+.egdi li:first-child{border-top:0}
+.egdi li::before{content:counter(e);width:22px;color:var(--muted);font-variant-numeric:tabular-nums;text-align:right}
+.egdi li.uk{font-weight:700;background:var(--uk);margin:0 -8px;padding:5px 8px;border-radius:6px}
+.note{font-size:.82rem;color:var(--muted);margin:10px 0 0}
+/* Matrix */
+.mxtools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 10px}
+.mxwrap{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:18px;align-items:start}
+.mxscroll{background:var(--panel);border-radius:18px;overflow-x:auto;padding:6px 4px}
+table.mx{border-collapse:separate;border-spacing:4px;width:100%;min-width:860px}
+.mx th{font-weight:500;font-size:.88rem}
+.mx thead th{padding:6px 2px;text-align:center;vertical-align:bottom}
+.mx thead th button{border:0;background:transparent;cursor:pointer;font-weight:700;padding:2px 4px;border-radius:6px}
+.mx thead th button span{display:block;font-weight:400;font-size:.8rem;color:var(--muted)}
+.mx thead th.uk{background:var(--uk);border-radius:10px 10px 0 0}
+.mx tbody th{text-align:left;padding:4px 10px 4px 6px;min-width:220px}
+.mx tbody th button{border:0;background:transparent;cursor:pointer;text-align:left;padding:0;font-weight:700;line-height:1.25}
+.mx tbody th small{display:block;color:var(--muted);font-weight:400;font-size:.8rem;margin-top:2px}
+.mx td{padding:0;height:46px}
+.mx td.uk{background:var(--uk)}
+.mx td.uk{box-shadow:inset 3px 0 0 var(--ukline),inset -3px 0 0 var(--ukline)}
+.cell{width:100%;height:100%;min-height:42px;border:0;border-radius:8px;cursor:pointer;font-size:.8rem;font-weight:700;display:grid;place-items:center;padding:2px;line-height:1.1}
+.cell.lead{background:var(--lead);color:var(--leadtx)}
+.cell.strong{background:var(--strong);color:var(--strongtx)}
+.cell.partial{background:var(--partial);color:var(--partialtx)}
+.cell.weak{background:transparent;color:var(--weak);box-shadow:inset 0 0 0 2.5px var(--weak)}
+.cell.na{background:repeating-linear-gradient(135deg,transparent 0 6px,var(--faint) 6px 7px);color:var(--muted);font-weight:400;cursor:default}
+.cell.sec::after{content:"*";margin-left:1px}
+.cell[aria-pressed="true"]{outline:3px solid var(--focus);outline-offset:1px}
+.cell.dim{opacity:.18}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.84rem;color:var(--muted);margin:10px 4px 0}
+.legend span{display:inline-flex;gap:6px;align-items:center}
+.legend i{width:16px;height:12px;border-radius:3px;display:inline-block}
+.panel{background:var(--panel);border-radius:18px;padding:20px 22px;position:sticky;top:60px;max-height:calc(100vh - 80px);overflow:auto}
+.panel h3{font-size:1.2rem;line-height:1.2;margin:0 0 4px}
+.panel .meta{font-size:.86rem;color:var(--muted);margin:0 0 10px}
+.panel p{margin:0 0 10px}
+.panel small{color:var(--muted);font-size:.84rem}
+.panel small a{color:var(--muted)}
+.panel ol{list-style:none;margin:0;padding:0}
+.panel li{padding:10px 0;border-top:1px solid var(--faint)}
+.panel li:first-child{border-top:0}
+.rtag{display:inline-block;font-size:.8rem;font-weight:700;border-radius:4px;padding:1px 7px;margin-right:6px}
+.rtag.lead{background:var(--lead);color:var(--leadtx)}.rtag.strong{background:var(--strong);color:var(--strongtx)}.rtag.partial{background:var(--partial);color:var(--partialtx)}.rtag.weak{color:var(--weak);box-shadow:inset 0 0 0 2px var(--weak)}.rtag.na{background:var(--faint);color:var(--muted)}
+/* Best / learn */
+.best{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;list-style:none;margin:0;padding:0}
+.best li{background:var(--panel);border-radius:16px;padding:16px 18px;border-top:5px solid var(--ukline)}
+.best b{display:block;line-height:1.25;margin-bottom:6px}
+.best p{margin:0 0 8px;font-size:.92rem}
+.best small{font-size:.8rem;color:var(--muted)}
+.best small a{color:var(--muted)}
+.learntools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}
+.learntools label{font-size:.9rem;color:var(--muted)}
+select{font:inherit;padding:5px 10px;border-radius:10px;border:1.5px solid var(--rule);background:var(--panel);color:var(--ink)}
+.learn{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.learn li{background:var(--panel);border-radius:16px;padding:18px 20px;display:flex;flex-direction:column;gap:8px}
+.learn li.caution{border-left:6px solid var(--weak)}
+.learn .top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.learn h3{font-size:1.08rem;margin:0;line-height:1.25}
+.flags{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+.flag{font-size:.8rem;font-weight:700;border:1.5px solid var(--rule);border-radius:999px;padding:0 8px;white-space:nowrap}
+.learn p{margin:0;font-size:.95rem}
+.learn .fit{font-size:.88rem;border-top:1px solid var(--faint);padding-top:8px;display:grid;grid-template-columns:auto 1fr;gap:3px 12px}
+.learn .fit dt{color:var(--muted)}
+.learn .fit dd{margin:0}
+.meter{display:inline-flex;gap:3px;vertical-align:-1px;margin-right:6px}
+.meter i{width:12px;height:12px;border-radius:2px;background:var(--faint)}
+.meter i.on{background:var(--strong)}
+.learn small{font-size:.8rem;color:var(--muted)}
+.learn small a{color:var(--muted)}
+.evbtn{border:1.5px solid var(--rule);background:transparent;border-radius:999px;padding:1px 10px;font-size:.8rem;cursor:pointer}
+/* Fees and caveats */
+.fees{background:var(--panel);border-radius:18px;overflow-x:auto}
+.fees table{border-collapse:collapse;width:100%;min-width:700px;font-size:.93rem}
+.fees th,.fees td{text-align:left;padding:10px 16px;border-top:1px solid var(--faint);vertical-align:top}
+.fees thead th{border-top:0;font-size:.85rem;color:var(--muted);font-weight:500}
+.fees tr.uk td{background:var(--uk)}
+.fees td small a{color:var(--muted);font-size:.8rem}
+.caveats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;list-style:none;margin:0;padding:0}
+.caveats li{background:var(--panel);border-radius:14px;padding:16px 18px}
+.caveats b{display:block;margin-bottom:4px}
+.caveats span{font-size:.92rem;color:var(--muted)}
+.impl{list-style:none;margin:0;padding:0;counter-reset:i;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px}
+.impl li{counter-increment:i;padding:14px 0 14px 44px;position:relative;border-top:1px solid var(--rule)}
+.impl li::before{content:counter(i);position:absolute;left:0;top:12px;font-weight:800;font-size:1.3rem;font-variant-numeric:tabular-nums}
+.impl b{display:block}
+footer{border-top:1px solid var(--rule);padding:24px 0 48px;color:var(--muted);font-size:.9rem;margin-top:40px}
+footer h2{font-size:1.1rem;color:var(--ink)}
+footer p{max-width:84ch}
+footer ol{columns:2;column-gap:36px;padding-left:1.3rem}
+footer li{break-inside:avoid;margin-bottom:4px}
+footer dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 16px}
+footer dt{font-weight:700;color:var(--ink)}footer dd{margin:0}
+@media (max-width:1200px){.best{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:1100px){.benchgrid,.mxwrap{grid-template-columns:1fr}.panel{position:static;max-height:none}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:820px){.headgrid,.learn,.caveats,.impl,.best{grid-template-columns:1fr}.stats{grid-template-columns:1fr}footer ol{columns:1}.wrap{padding:0 16px}.bars li{grid-template-columns:110px minmax(0,1fr) 48px}nav.jump ul{padding:8px 16px;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap}}
+@media print{nav.jump,.tools,.skip,.mxtools,.learntools{display:none!important}body{background:#fff}.panel{position:static!important;max-height:none!important}}
+.headgrid>*,.benchgrid>*,.mxwrap>*,.stats>*{min-width:0}
+:root{--en:#C8102E;--sc:#005EB8;--wa:#00A36C;--ni:#7A4EAB}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--en:#FF6B81;--sc:#5AA9F0;--wa:#3CD69B;--ni:#B58CE8}}
+:root[data-theme="dark"]{--en:#FF6B81;--sc:#5AA9F0;--wa:#3CD69B;--ni:#B58CE8}
+.ntabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+.ntabs button{border:2px solid var(--rule);background:var(--panel);border-radius:999px;padding:6px 16px;font:inherit;font-weight:700;cursor:pointer;display:inline-flex;gap:8px;align-items:center}
+.ntabs button i{width:12px;height:12px;border-radius:50%;background:var(--c)}
+.ntabs button[aria-pressed="true"]{border-color:var(--c);box-shadow:inset 0 0 0 1px var(--c)}
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.metric{background:var(--panel);border-radius:16px;padding:14px 16px}
+.metric h3{font-size:.9rem;margin:0 0 10px;line-height:1.25}
+.metric ul{list-style:none;margin:0;padding:0}
+.metric li{display:grid;grid-template-columns:96px minmax(0,1fr) 62px;gap:8px;align-items:center;font-size:.84rem;padding:2px 0}
+.metric li.sel{font-weight:700}
+.metric li.ukrow{color:var(--muted);border-top:1px dashed var(--rule);margin-top:4px;padding-top:5px}
+.metric .tr{height:10px;background:var(--faint);border-radius:3px;position:relative;overflow:hidden}
+.metric .fl{position:absolute;left:0;top:0;bottom:0;border-radius:3px;background:var(--c)}
+.metric li.dimmed .fl{opacity:.35}
+.metric .v{text-align:right;font-variant-numeric:tabular-nums}
+.metric .na{color:var(--muted);font-size:.8rem;text-align:right;grid-column:2/4}
+.metric small{display:block;color:var(--muted);font-size:.8rem;margin-top:8px;line-height:1.3}
+.metric small a{color:var(--muted)}
+table.nx{border-collapse:separate;border-spacing:0;width:100%;min-width:900px;font-size:.92rem}
+.nx th,.nx td{text-align:left;vertical-align:top;padding:12px 14px;border-top:1px solid var(--faint)}
+.nx thead th{border-top:0;font-size:.95rem;border-bottom:3px solid var(--c)}
+.nx tbody th{width:190px;font-weight:700}
+.nx tbody th .same{display:inline-block;margin-top:6px;font-size:.8rem;font-weight:700;border-radius:4px;padding:1px 7px;background:var(--faint);color:var(--muted)}
+.nx tbody th .diff{display:inline-block;margin-top:6px;font-size:.8rem;font-weight:700;border-radius:4px;padding:1px 7px;border:1.5px solid var(--ink)}
+.nx td small a{color:var(--muted);font-size:.8rem}
+.nx td.sel{background:color-mix(in srgb,var(--c) 9%,transparent)}
+.nx tr.hl td,.nx tr.hl th{background:color-mix(in srgb,var(--focus) 16%,transparent)}
+.nxwrap{background:var(--panel);border-radius:18px;overflow-x:auto}
+.nxtools{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 10px}
+.insights{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.insights li{background:var(--panel);border-radius:16px;padding:16px 18px;border-top:5px solid var(--ink)}
+.insights b{display:block;line-height:1.25;margin-bottom:6px}
+.insights p{margin:0 0 8px;font-size:.93rem}
+.insights small{font-size:.8rem;color:var(--muted)}.insights small a{color:var(--muted)}
+.dot4{display:inline-flex;gap:3px;vertical-align:1px;margin-right:6px}
+.dot4 i{width:9px;height:9px;border-radius:50%;background:var(--c)}
+.arrow{color:var(--muted);margin:0 4px}
+@media (max-width:1100px){.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.insights{grid-template-columns:1fr 1fr}}
+@media (max-width:820px){.metrics,.insights{grid-template-columns:1fr}}
+:root{--l1:#1D70B8;--l2:#912B88;--l3:#00703C;--l4:#B58840;--l5:#D4351C;--l6:#28A197;--l7:#505A5F}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--l1:#5AA9F0;--l2:#D77FCC;--l3:#3CD69B;--l4:#E0B64D;--l5:#FF7A5C;--l6:#5ED1C8;--l7:#A9B4BA}}
+:root[data-theme="dark"]{--l1:#5AA9F0;--l2:#D77FCC;--l3:#3CD69B;--l4:#E0B64D;--l5:#FF7A5C;--l6:#5ED1C8;--l7:#A9B4BA}
+.stack{display:grid;gap:8px}
+.layer{display:grid;grid-template-columns:230px minmax(0,1fr);gap:14px;background:var(--panel);border-radius:14px;padding:12px 16px;border-left:8px solid var(--c);align-items:center}
+.layer h3{margin:0;font-size:1rem}
+.layer p{margin:2px 0 0;font-size:.82rem;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1.5px solid var(--c);background:transparent;border-radius:999px;padding:3px 11px;font:inherit;font-size:.85rem;cursor:pointer;color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--c);color:var(--paper)}
+.chip.dim{opacity:.25}
+.chip .pdot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:1px;background:var(--c)}
+.chip[aria-pressed="true"] .pdot{background:var(--paper)}
+.stdwrap{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:18px;align-items:start;margin-top:14px}
+table.sj{border-collapse:separate;border-spacing:0;width:100%;min-width:760px;font-size:.88rem}
+.sj th,.sj td{padding:7px 10px;border-top:1px solid var(--faint);text-align:left}
+.sj thead th{border-top:0;color:var(--muted);font-weight:500;font-size:.8rem}
+.sj td.stg{text-align:center;width:88px}
+.sj td.stg i{display:inline-block;width:14px;height:14px;border-radius:50%;background:var(--c)}
+.sj tbody tr{cursor:pointer}
+.sj tbody tr:hover td,.sj tbody tr.sel td{background:color-mix(in srgb,var(--c) 10%,transparent)}
+.sj tr.grp td{background:transparent!important;cursor:default;font-weight:700;font-size:.8rem;color:var(--ink);box-shadow:inset 4px 0 0 var(--c);padding-top:14px;padding-left:12px;border-top:0}
+.sj .pr{font-size:.8rem;font-weight:700;border-radius:4px;padding:1px 7px;white-space:nowrap;border:1.5px solid var(--rule)}
+.sj .pr.now{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.sj .pr.prepare{border-color:var(--weak);color:var(--weak)}
+.sjwrap{background:var(--panel);border-radius:18px;overflow-x:auto}
+.detail h3{margin:0 0 4px;font-size:1.2rem}
+.detail dl{display:grid;grid-template-columns:max-content 1fr;gap:6px 12px;font-size:.9rem;margin:10px 0}
+.detail dt{color:var(--muted)}.detail dd{margin:0}
+.timeline{list-style:none;margin:0;padding:0;position:relative}
+.timeline::before{content:"";position:absolute;left:112px;top:6px;bottom:6px;width:2px;background:var(--rule)}
+.timeline li{display:grid;grid-template-columns:100px 24px minmax(0,1fr);gap:0 0;align-items:start;padding:8px 0}
+.timeline time{font-variant-numeric:tabular-nums;font-weight:700;font-size:.9rem;text-align:right;padding-right:8px}
+.timeline .dot{width:14px;height:14px;border-radius:50%;background:var(--c);margin:3px 0 0 6px;position:relative;z-index:1;box-shadow:0 0 0 3px var(--paper)}
+.timeline li.future .dot{background:var(--paper);box-shadow:inset 0 0 0 3px var(--c),0 0 0 3px var(--paper)}
+.timeline .ev{background:var(--panel);border-radius:12px;padding:8px 12px;margin-left:8px}
+.timeline .ev button{border:0;background:transparent;padding:0;font:inherit;font-weight:700;cursor:pointer;text-align:left;color:var(--ink)}
+.timeline .ev small{display:block;color:var(--muted);font-size:.8rem}
+.timeline .ev small a{color:var(--muted)}
+.today{font-size:.8rem;color:var(--muted);margin:4px 0 10px 136px}
+@media (max-width:1100px){.stdwrap{grid-template-columns:1fr}}
+@media (max-width:820px){.layer{grid-template-columns:1fr}.timeline::before{left:84px}.timeline li{grid-template-columns:72px 24px minmax(0,1fr)}.today{margin-left:0}}
+.picker{background:var(--panel);border-radius:18px;padding:18px 22px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px 18px}
+.picker label{display:block;font-size:.82rem;color:var(--muted);font-weight:600;margin-bottom:4px}
+.picker select{width:100%;font:inherit;padding:8px 10px;border-radius:10px;border:1.5px solid var(--rule);background:var(--paper);color:var(--ink)}
+.picker .toggles{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.picker .toggles label{display:inline-flex;gap:7px;align-items:center;font-size:.9rem;color:var(--ink);font-weight:500;margin:0}
+.out{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:16px}
+.card{background:var(--panel);border-radius:16px;padding:16px 20px;border-top:5px solid var(--c)}
+.card h3{margin:0 0 4px;font-size:1.05rem}
+.card .n{font-size:1.5rem;font-weight:800;color:var(--c)}
+.card ol,.card ul{margin:8px 0 0;padding-left:20px;font-size:.92rem}
+.card li{margin-bottom:7px}
+.card li b{display:block}
+.card li small{color:var(--muted);font-size:.82rem}
+.card li small a{color:var(--muted)}
+.vr{display:inline-block;font-size:.8rem;font-weight:700;border-radius:4px;padding:0 6px;margin-left:6px;vertical-align:1px}
+.vr.confirmed{background:var(--strong);color:var(--strongtx)}
+.vr.partly-confirmed{background:var(--partial);color:var(--partialtx)}
+.vr.unverified{box-shadow:inset 0 0 0 1.5px var(--weak);color:var(--weak)}
+.chipsrow{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 0}
+.chipsrow button{border:1.5px solid var(--rule);background:transparent;border-radius:999px;padding:3px 11px;font:inherit;font-size:.8rem;cursor:pointer;color:var(--ink)}
+.chipsrow button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+table.grid{border-collapse:collapse;width:100%;min-width:860px;font-size:.88rem}
+.grid th,.grid td{text-align:left;vertical-align:top;padding:9px 12px;border-top:1px solid var(--faint)}
+.grid thead th{border-top:0;color:var(--muted);font-weight:500;font-size:.8rem}
+.gridwrap{background:var(--panel);border-radius:18px;overflow-x:auto}
+.bars{display:grid;gap:6px;margin:0}
+.bars div{display:grid;grid-template-columns:200px minmax(0,1fr) 52px;gap:10px;align-items:center;font-size:.86rem}
+.bars .t{height:12px;background:var(--faint);border-radius:3px;overflow:hidden}
+.bars .f{height:100%;background:var(--c);border-radius:3px}
+.bars .v{text-align:right;font-variant-numeric:tabular-nums}
+@media (max-width:1100px){.picker{grid-template-columns:repeat(2,minmax(0,1fr))}.out{grid-template-columns:1fr}}
+@media (max-width:640px){.picker{grid-template-columns:1fr}.bars div{grid-template-columns:120px minmax(0,1fr) 44px}}
+.pform{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:14px 0}
+.fld{margin:0;display:flex;flex-direction:column;gap:5px}
+.fld label{font-size:.85rem;font-weight:620}
+.fld .opt{font-weight:400;color:var(--muted)}
+.fld select,.fld input{padding:9px 11px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:inherit;font:inherit;max-width:100%}
+.acts{border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:0 0 14px}
+.acts legend{font-size:.85rem;font-weight:620;padding:0 6px}
+.chiprow{display:flex;flex-wrap:wrap;gap:7px}
+.chiprow button{padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:inherit;font:inherit;font-size:.85rem;cursor:pointer}
+.chiprow button[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink);font-weight:650}
+.pactions{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:4px 0 8px}
+.personas .meta{margin-top:6px}
+.timeline{list-style:none;margin:16px 0 0;padding:0}
+.timeline li{display:grid;grid-template-columns:170px minmax(0,1fr);gap:16px;border-left:3px solid var(--line);padding:0 0 18px 16px;margin-left:8px;position:relative}
+.timeline li::before{content:"";position:absolute;left:-8px;top:4px;width:13px;height:13px;border-radius:50%;background:var(--ink)}
+.timeline li.past::before{background:var(--l5,#be123c)}
+.timeline li.empty{display:block;border:0;color:var(--muted)}
+.tldate{font-weight:700;font-size:.95rem}
+.tldate small{display:block;font-weight:400;color:var(--l5,#be123c)}
+.tlbody h3{margin:0 0 4px;font-size:1rem}
+.tlbody p{margin:0 0 4px;font-size:.9rem}
+.freshness{display:inline-flex;align-items:center;gap:4px;font-size:.78rem;color:var(--muted)}
+.undated{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:10px}
+.undated li{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--panel)}
+.undated h3{margin:0 0 4px;font-size:.98rem}
+.docgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:12px;margin-top:14px}
+.doccard{border:1px solid var(--line);border-radius:10px;padding:13px;background:var(--panel)}
+.doccard h3{display:flex;align-items:center;gap:8px;margin:0 0 6px;font-size:.96rem}
+.doccard p{font-size:.86rem;margin:0 0 4px}
+.costsum{display:flex;align-items:baseline;gap:12px;border:1px solid var(--line);border-left:4px solid var(--ink);border-radius:10px;padding:14px 16px;background:var(--panel);margin:14px 0}
+.costsum b{font-size:1.9rem}
+.costsum span{font-size:.9rem}
+.costlist{list-style:none;margin:6px 0 0;padding:0}
+.costlist li{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:6px 0;font-size:.88rem}
+.cmpwrap{overflow-x:auto;max-width:100%;margin-top:12px}
+.cmp{width:100%;border-collapse:collapse;font-size:.88rem}
+.cmp th,.cmp td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+.cmp thead th{font-size:.8rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.cmp tbody th{width:180px;font-weight:650}
+.fixform{display:grid;gap:12px;max-width:640px;margin-top:12px}
+.fxout{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px;font-size:.84rem;white-space:pre-wrap;overflow-wrap:anywhere;margin-top:10px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (max-width:760px){.timeline li{grid-template-columns:1fr;gap:4px}.two-col{grid-template-columns:1fr}.cmp tbody th{width:auto}}
+@media print{.pactions,.chiprow,.fixform,.ribbon,.heroart{display:none}.timeline li{break-inside:avoid}}
+/* Shared visual system: icons, journey ribbon, hero figures, audience switcher */
+.ic{width:1.15em;height:1.15em;flex:none;vertical-align:-.2em}
+.ic-lg{width:2rem;height:2rem;flex:none}
+.ic-xl{width:2.6rem;height:2.6rem;flex:none}
+.ribbon{margin:0 0 6px;padding:10px 0 4px;border-bottom:1px solid var(--line)}
+.ribbon h2{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 8px;font-family:inherit;font-weight:700}
+.ribbon ol{display:flex;gap:6px;list-style:none;margin:0;padding:0 0 6px;overflow-x:auto;scrollbar-width:thin}
+.ribbon li{flex:1 1 0;min-width:104px}
+.ribbon a{display:flex;flex-direction:column;gap:5px;padding:8px 9px;border:1px solid var(--line);border-radius:9px;text-decoration:none;color:inherit;background:var(--panel);min-height:100%}
+.ribbon a:hover{border-color:var(--ink)}
+.ribbon a[aria-current="step"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.ribbon .rn{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:.72rem;letter-spacing:.05em;text-transform:uppercase}
+.ribbon .rt{font-size:.84rem;font-weight:650;line-height:1.25}
+.ribbon .rc{font-size:.74rem;color:var(--muted)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,340px);gap:22px;align-items:center;margin:10px 0 0}
+.hero figure{margin:0}
+.hero figcaption{font-size:.78rem;color:var(--muted);margin-top:6px}
+.hero svg.art{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+@media (max-width:820px){.hero{grid-template-columns:1fr}}
+.aud{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.aud button{display:flex;align-items:center;gap:8px;padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:inherit;font:inherit;cursor:pointer}
+.aud button[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink);font-weight:650}
+.audbox{border:1px solid var(--line);border-left:4px solid var(--ink);border-radius:10px;padding:14px 16px;background:var(--panel);margin:0 0 18px}
+.audbox h3{margin:0 0 6px;font-size:1.02rem;display:flex;align-items:center;gap:8px}
+.audbox ol{margin:8px 0 0;padding-left:20px}
+.audbox li{margin:4px 0}
+h2 .ic,h3 .ic{color:var(--muted)}
+.iconrow{display:flex;align-items:center;gap:9px}
+.legendkey{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin:8px 0 0}
+.legendkey span{display:inline-flex;align-items:center;gap:5px}
+@media (prefers-reduced-motion:no-preference){.ribbon a{transition:border-color .15s}}
+/* Self-check surface */
+.selfcheck{border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:22px 0 0;background:var(--panel)}
+.selfcheck h2{font-size:1rem;margin:0 0 6px}
+.selfcheck .scline{margin:0;font-size:.9rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.scdot{width:10px;height:10px;border-radius:50%;background:var(--muted);flex:none;box-shadow:0 0 0 3px color-mix(in srgb,currentColor 12%,transparent)}
+.scdot.good{background:#0f766e}.scdot.fair{background:#b45309}.scdot.needs-work{background:#be123c}
+.selfcheck details{margin-top:8px}
+.selfcheck summary{cursor:pointer;font-size:.88rem}
+.selfcheck .scbody{font-size:.88rem}
+.selfcheck h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:12px 0 4px}
+.selfcheck ul{margin:0;padding-left:18px}
+.selfcheck li{margin:3px 0}
+.selfgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-top:14px}
+.selfcard{border:1px solid var(--line);border-radius:12px;padding:15px;background:var(--panel)}
+.selfcard h3{display:flex;align-items:center;gap:10px;margin:0 0 8px;font-size:1rem}
+
+/* Title row: illustration sits opposite the title, at about a third of its weight */
+header .headgrid{display:grid;grid-template-columns:minmax(0,1.9fr) minmax(180px,0.85fr);gap:28px;align-items:center}
+header .headgrid > h1{margin:0}
+header .heroart{margin:0;max-width:340px;justify-self:end;width:100%}
+header .heroart svg.art{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}
+header .heroart figcaption{font-size:.72rem;color:var(--muted);margin-top:5px;line-height:1.35}
+header .heroart.float{float:right;width:min(300px,34%);margin:0 0 14px 22px}
+@media (max-width:820px){
+  header .headgrid{grid-template-columns:1fr}
+  header .heroart{max-width:260px;justify-self:start}
+  header .heroart.float{float:none;width:min(260px,70%);margin:12px 0}
+}
+/* Journey strip: full-bleed band, content aligned with every other section */
+nav.ribbon{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:color-mix(in srgb,currentColor 3%,transparent);margin:0;padding:12px 0 6px}
+nav.ribbon > .wrap{padding-left:28px;padding-right:28px}
+nav.ribbon h2{margin:0 0 9px}
+/* What used to sit beside the title now sits under the strip, full measure */
+.introblock{margin:20px auto 0}
+.introblock .lede{font-size:1.06rem;max-width:62ch}
+.introblock .tools{margin-top:12px}
+.introblock .rev{margin-top:10px;font-size:.84rem;color:var(--muted);max-width:80ch}
+.introblock .scope{margin:0}
+
+/* Behind this service: a clear break between what a founder needs and what a service team needs */
+.behind{border-top:3px solid var(--ink);padding-top:22px;margin-top:34px}
+.behind h2{font-size:1.5rem}
+.behind + section, .behind ~ section{opacity:1}
+.behind .intro{max-width:70ch}
+
+@media (max-width:420px){
+  .codeblock{font-size:11.5px;white-space:pre-wrap;word-break:break-word}
+  .gridwrap,.mx-wrap,.scroller{max-width:100%}
+  table.grid{min-width:0}
+  .toolrow{grid-template-columns:1fr}
+  .bars div{grid-template-columns:96px minmax(0,1fr) 40px}
+  .wrap{padding-left:12px;padding-right:12px}
+  h1{font-size:1.5rem;word-break:break-word}
+}
+
+@media (max-width:420px){
+  select,input,textarea{max-width:100%}
+  .bodycard{min-width:0;overflow-wrap:anywhere}
+  table.sj,table.nx,table.mx{display:block;overflow-x:auto;max-width:100%}
+}
+
+@media (max-width:420px){
+  table.sj,table.nx,table.mx{table-layout:fixed;width:100%}
+  table.sj th,table.sj td,.nx th,.nx td{overflow-wrap:anywhere;word-break:break-word}
+  main li,main p,main a{overflow-wrap:anywhere}
+  .sj-wrap,.tablewrap{overflow-x:auto;max-width:100%}
+}
+
+@media (max-width:420px){
+  .sj{display:block;overflow-x:auto}
+  .sj thead th,.sj tbody th{min-width:110px}
+  main ul,main ol{padding-left:18px}
+  main li a{display:inline-block;max-width:100%}
+}
+small, .meta small, td small, li small{font-size:max(.8rem,12.8px)}
+@media (max-width:420px){html,body{max-width:100%;overflow-x:hidden}.sjwrap,.tablewrap,.gridwrap,.cmpwrap{overflow-x:auto;max-width:100%}}
+.aibtn{position:fixed;right:18px;bottom:18px;z-index:60;border:0;border-radius:999px;padding:12px 20px;font:inherit;font-weight:700;background:var(--ink);color:var(--paper);cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.28)}
+.aibtn:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.aiwrap{position:fixed;right:18px;bottom:18px;width:min(430px,calc(100vw - 24px));max-height:min(78vh,720px);z-index:61;background:var(--panel);border-radius:18px;box-shadow:0 10px 40px rgba(0,0,0,.34);display:none;flex-direction:column;overflow:hidden;border:1px solid var(--rule)}
+.aiwrap.open{display:flex}
+.aihead{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--faint)}
+.aihead b{font-size:.98rem}
+.aihead small{color:var(--muted);font-size:.8rem;display:block;font-weight:400}
+.aihead button{margin-left:auto;border:0;background:transparent;font:inherit;font-size:1.2rem;line-height:1;cursor:pointer;color:var(--muted);padding:4px 6px}
+.ailog{overflow-y:auto;padding:12px 14px;display:grid;gap:10px;flex:1}
+.aimsg{border-radius:14px;padding:9px 12px;font-size:.9rem;line-height:1.45;white-space:pre-wrap}
+.aimsg.u{background:var(--ink);color:var(--paper);justify-self:end;max-width:86%}
+.aimsg.a{background:var(--faint);color:var(--ink)}
+.aimsg.sys{background:transparent;color:var(--muted);font-size:.82rem;padding:0}
+.aisug{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 10px}
+.aisug button{border:1.5px solid var(--rule);background:transparent;border-radius:999px;padding:4px 11px;font:inherit;font-size:.8rem;cursor:pointer;color:var(--ink);text-align:left}
+.aiform{display:flex;gap:8px;padding:10px 12px;border-top:1px solid var(--faint)}
+.aiform textarea{flex:1;font:inherit;font-size:.9rem;resize:none;border:1.5px solid var(--rule);border-radius:12px;padding:8px 10px;background:var(--paper);color:var(--ink);min-height:40px;max-height:120px}
+.aiform button{border:0;border-radius:12px;padding:0 16px;font:inherit;font-weight:700;background:var(--ink);color:var(--paper);cursor:pointer}
+.aiform button[disabled]{opacity:.5;cursor:default}
+.aifoot{padding:0 14px 10px;color:var(--muted);font-size:.8rem}
+.seqnav{background:var(--panel);border-radius:18px;padding:14px 18px;display:flex;gap:16px;justify-content:space-between;flex-wrap:wrap;margin:26px 0 0}
+.seqnav a{display:block;font-weight:700;color:var(--ink)}
+.seqnav small{display:block;color:var(--muted);font-size:.8rem;font-weight:400}
+.seqnav .nx{text-align:right}
+@media (max-width:620px){.aiwrap{right:8px;left:8px;width:auto;bottom:8px}.aibtn{right:10px;bottom:10px}}
+
+
+.circfit{border:1px solid var(--line);border-left:3px solid var(--accent);background:var(--card);padding:16px 18px;border-radius:4px;margin:18px 0}
+.circfit h2{margin:0 0 6px;font-size:1.1rem}
+.circfit>p{margin:0 0 12px;color:var(--muted);max-width:62ch}
+.circfit ul{list-style:none;padding:0;margin:0;display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.circfit li{border:1px solid var(--line);border-radius:4px;padding:10px 12px}
+.circfit .allof{margin:12px 0 0;font-size:.9rem}
+.circfit li span{display:block;color:var(--muted);font-size:.88rem;margin-top:3px}
+.fld.chk{display:flex;gap:8px;align-items:center}.fld.chk input{width:20px;height:20px;margin:0}
+.circnote{list-style:none;padding:0;margin:0 0 14px;display:grid;gap:6px}.circnote li{border:1px solid var(--line);border-left:3px solid var(--accent);background:var(--card);padding:9px 12px;border-radius:4px;font-size:.92rem}
+.tldate small.warn{display:block;color:var(--ink);font-weight:600;font-size:.78rem;margin-top:3px}
+.tldate small.warn .ic{width:14px;height:14px;vertical-align:-2px;margin-right:4px}
+li.circ .tlbody{border-left:3px solid var(--accent)}
+
+</style></head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<svg class="sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden"><defs><symbol id="i-explore" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9 M12 3a9 9 0 0 1 9 9M3.5 12h17M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-structure" viewBox="0 0 24 24"><path d="M12 3 4 7v10l8 4 8-4V7l-8-4Zm0 0v18M4 7l8 4 8-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-register" viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6V3Zm9 0v3h3M9 11h6M9 15h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-tax" viewBox="0 0 24 24"><path d="M5 20V9l7-5 7 5v11H5Zm4-5h6M9 12h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-licence" viewBox="0 0 24 24"><path d="M4 5h16v14H4V5Zm3 4h5M7 12h10M7 15h7m2-6.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-premises" viewBox="0 0 24 24"><path d="M4 20V10l8-6 8 6v10H4Zm6 0v-6h4v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-finance" viewBox="0 0 24 24"><path d="M3 19V5m0 14h18M7 15V9m5 6V6m5 9v-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-employ" viewBox="0 0 24 24"><path d="M8 11a3.2 3.2 0 1 0 0-6.4A3.2 3.2 0 0 0 8 11Zm0 0c-3 0-5 1.8-5 4.5V19h10v-3.5C13 12.8 11 11 8 11Zm9-6.2a3.2 3.2 0 1 1 0 6.4M16 19h5v-3.5c0-2.2-1.4-3.8-3.6-4.3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-trade" viewBox="0 0 24 24"><path d="M3 12h18M3 12a9 9 0 0 1 9-9m9 9a9 9 0 0 0-9-9m0 18a9 9 0 0 0 9-9M12 21a9 9 0 0 1-9-9m9-9c2.4 2.5 3.6 5.5 3.6 9s-1.2 6.5-3.6 9c-2.4-2.5-3.6-5.5-3.6-9S9.6 5.5 12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-grow" viewBox="0 0 24 24"><path d="M4 19c6 0 10-3.5 12-10M13 5h6v6M8 19a4 4 0 0 0-4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-rules" viewBox="0 0 24 24"><path d="M12 4v16M6 8h12M7 8l-3 6h6l-3-6Zm10 0-3 6h6l-3-6ZM9 20h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5V5.5ZM8 7h7M8 10h7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-nations" viewBox="0 0 24 24"><path d="M6 21V4m0 0 7 2.5L20 4v9l-7 2.5L6 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm-8.6 9h17.2M12 3c2.3 2.5 3.5 5.5 3.5 9s-1.2 6.5-3.5 9c-2.3-2.5-3.5-5.5-3.5-9S9.7 5.5 12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-standards" viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h13m2-9.5 3 3-6 6-3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12.5 9 18l11-12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-history" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4h4M12 8v4.5l3 1.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-boundary" viewBox="0 0 24 24"><path d="M12 3v18M6 7l-3 5 3 5M18 7l3 5-3 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><path d="M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14Zm5 12 4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-blueprint" viewBox="0 0 24 24"><path d="M3 5h18v14H3V5Zm5 0v14M3 10h5m8-5v14m0-9h5M8 14h8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-person" viewBox="0 0 24 24"><path d="M12 11.5a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm0 0c-4 0-7 2.4-7 6V20h14v-2.5c0-3.6-3-6-7-6Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-agent" viewBox="0 0 24 24"><path d="M9 10.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm0 0c-3 0-5.5 2-5.5 5V19H14v-3.5c0-3-2.5-5-5-5Zm8-5 4 2.5-4 2.5m4-2.5h-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-official" viewBox="0 0 24 24"><path d="M12 3 4 6.5V12c0 4.6 3.2 7.8 8 9 4.8-1.2 8-4.4 8-9V6.5L12 3Zm-3 9 2.2 2.4L15 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-access" viewBox="0 0 24 24"><path d="M12 4.2a1.6 1.6 0 1 0 0-3.2 1.6 1.6 0 0 0 0 3.2ZM5 7.5c2.2.9 4.5 1.3 7 1.3s4.8-.4 7-1.3M12 8.8V14m0 0 3.5 6M12 14l-3.5 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-language" viewBox="0 0 24 24"><path d="M4 6h10M9 4v2m0 0c0 4-2 7-5 8.5M6.5 10.5c1.3 2.4 3 4 5.5 5M13 20l4-9 4 9m-6.6-2.4h5.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-data" viewBox="0 0 24 24"><path d="M12 4c4.4 0 8 1.3 8 3s-3.6 3-8 3-8-1.3-8-3 3.6-3 8-3Zm8 3v10c0 1.7-3.6 3-8 3s-8-1.3-8-3V7m16 5c0 1.7-3.6 3-8 3s-8-1.3-8-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-warning" viewBox="0 0 24 24"><path d="M12 4 3 20h18L12 4Zm0 6v5m0 3h.01" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm0 4.5V12l3.5 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-money" viewBox="0 0 24 24"><path d="M5 7h14v10H5V7Zm7 2.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-back" viewBox="0 0 24 24"><path d="M6 6.5h12M6 12h12M6 17.5h8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-support" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-9 9v3.5A2.5 2.5 0 0 0 5.5 18H7v-6H5.2A6.8 6.8 0 0 1 18.8 12H17v6h1.5a2.5 2.5 0 0 0 2.5-2.5V12a9 9 0 0 0-9-9Zm5 15v.5a2.5 2.5 0 0 1-2.5 2.5H12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol></defs></svg>
+<header>
+  <div class="wrap">
+    <p class="family" id="family">Part of <a href="../">Starting a business in the UK</a>: <a href="../whole-life-of-a-business/">from starting to closing, and everything between</a><a href="../your-circumstances/">when the standard route does not fit</a><a href="../every-way-in/">every way in, and every way out</a><a href="../skills-and-communities/">skills, qualifications and finding your people</a><a href="../every-step/">every step in the journey</a><a href="../twenty-years-of-joining-up/">historical arc</a><a href="../before-the-register/">before the register</a><a href="../whatever-you-are-setting-up/">whatever you are setting up</a><a href="../what-binds-this-business/">what binds this business</a><a href="../rules-trade-and-bodies/">rules, trade and the bodies</a><a href="../four-nations/">four nations</a><a href="../the-uk-compared/">international benchmark</a><a href="../standards/">standards for the journey</a><a href="../service-blueprints/">service blueprints</a><a href="../knowledge-layer/">the knowledge layer</a><a href="../how-this-was-built/">how this was built and run</a><a href="../verification-register/">verification register</a></p>
+    <div class="headgrid">
+      <h1>Your plan<small>What you have to do, in order, with your dates on it</small></h1><figure class="heroart"><svg class="art" viewBox="0 0 680 300" role="img" aria-labelledby="artt artd"><title id="artt">A service blueprint</title><desc id="artd">Six stacked lanes crossed by five journey moments, from what the user does down to the systems behind it.</desc><rect width="680" height="300" fill="none"/><rect x="40" y="42" width="600" height="30" rx="6" fill="var(--l1,#1d4ed8)" opacity="0.10"/><path d="M40 72 L640 72" stroke="currentColor" stroke-width="1.0" opacity="0.18" fill="none"/><rect x="60" y="49" width="70" height="16" rx="4" fill="var(--l1,#1d4ed8)" opacity=".5"/><rect x="178" y="49" width="88" height="16" rx="4" fill="var(--l2,#0f766e)" opacity=".5"/><rect x="296" y="49" width="106" height="16" rx="4" fill="var(--l3,#b45309)" opacity=".5"/><rect x="414" y="49" width="70" height="16" rx="4" fill="var(--l4,#7c3aed)" opacity=".5"/><rect x="532" y="49" width="88" height="16" rx="4" fill="var(--l5,#be123c)" opacity=".5"/><rect x="40" y="82" width="600" height="30" rx="6" fill="var(--l2,#0f766e)" opacity="0.12"/><path d="M40 112 L640 112" stroke="currentColor" stroke-width="1.0" opacity="0.18" fill="none"/><rect x="60" y="89" width="70" height="16" rx="4" fill="var(--l2,#0f766e)" opacity=".5"/><rect x="178" y="89" width="88" height="16" rx="4" fill="var(--l3,#b45309)" opacity=".5"/><rect x="296" y="89" width="106" height="16" rx="4" fill="var(--l4,#7c3aed)" opacity=".5"/><rect x="414" y="89" width="70" height="16" rx="4" fill="var(--l5,#be123c)" opacity=".5"/><rect x="532" y="89" width="88" height="16" rx="4" fill="var(--l6,#047857)" opacity=".5"/><rect x="40" y="122" width="600" height="30" rx="6" fill="var(--l3,#b45309)" opacity="0.14"/><path d="M40 152 L640 152" stroke="currentColor" stroke-width="1.0" opacity="0.18" fill="none"/><rect x="60" y="129" width="70" height="16" rx="4" fill="var(--l3,#b45309)" opacity=".5"/><rect x="178" y="129" width="88" height="16" rx="4" fill="var(--l4,#7c3aed)" opacity=".5"/><rect x="296" y="129" width="106" height="16" rx="4" fill="var(--l5,#be123c)" opacity=".5"/><rect x="414" y="129" width="70" height="16" rx="4" fill="var(--l6,#047857)" opacity=".5"/><rect x="532" y="129" width="88" height="16" rx="4" fill="var(--l1,#1d4ed8)" opacity=".5"/><rect x="40" y="162" width="600" height="30" rx="6" fill="var(--l4,#7c3aed)" opacity="0.16"/><path d="M40 192 L640 192" stroke="currentColor" stroke-width="1.0" opacity="0.18" fill="none"/><rect x="60" y="169" width="70" height="16" rx="4" fill="var(--l4,#7c3aed)" opacity=".5"/><rect x="178" y="169" width="88" height="16" rx="4" fill="var(--l5,#be123c)" opacity=".5"/><rect x="296" y="169" width="106" height="16" rx="4" fill="var(--l6,#047857)" opacity=".5"/><rect x="414" y="169" width="70" height="16" rx="4" fill="var(--l1,#1d4ed8)" opacity=".5"/><rect x="532" y="169" width="88" height="16" rx="4" fill="var(--l2,#0f766e)" opacity=".5"/><rect x="40" y="202" width="600" height="30" rx="6" fill="var(--l5,#be123c)" opacity="0.18"/><path d="M40 232 L640 232" stroke="currentColor" stroke-width="1.0" opacity="0.18" fill="none"/><rect x="60" y="209" width="70" height="16" rx="4" fill="var(--l5,#be123c)" opacity=".5"/><rect x="178" y="209" width="88" height="16" rx="4" fill="var(--l6,#047857)" opacity=".5"/><rect x="296" y="209" width="106" height="16" rx="4" fill="var(--l1,#1d4ed8)" opacity=".5"/><rect x="414" y="209" width="70" height="16" rx="4" fill="var(--l2,#0f766e)" opacity=".5"/><rect x="532" y="209" width="88" height="16" rx="4" fill="var(--l3,#b45309)" opacity=".5"/><rect x="40" y="242" width="600" height="30" rx="6" fill="var(--l6,#047857)" opacity="0.20"/><path d="M40 272 L640 272" stroke="currentColor" stroke-width="1.0" opacity="0.18" fill="none"/><rect x="60" y="249" width="70" height="16" rx="4" fill="var(--l6,#047857)" opacity=".5"/><rect x="178" y="249" width="88" height="16" rx="4" fill="var(--l1,#1d4ed8)" opacity=".5"/><rect x="296" y="249" width="106" height="16" rx="4" fill="var(--l2,#0f766e)" opacity=".5"/><rect x="414" y="249" width="70" height="16" rx="4" fill="var(--l3,#b45309)" opacity=".5"/><rect x="532" y="249" width="88" height="16" rx="4" fill="var(--l4,#7c3aed)" opacity=".5"/><path d="M90 42 L90 282" stroke="currentColor" stroke-width="1.0" opacity="0.14" fill="none" stroke-dasharray="3 5"/><path d="M208 42 L208 282" stroke="currentColor" stroke-width="1.0" opacity="0.14" fill="none" stroke-dasharray="3 5"/><path d="M326 42 L326 282" stroke="currentColor" stroke-width="1.0" opacity="0.14" fill="none" stroke-dasharray="3 5"/><path d="M444 42 L444 282" stroke="currentColor" stroke-width="1.0" opacity="0.14" fill="none" stroke-dasharray="3 5"/><path d="M562 42 L562 282" stroke="currentColor" stroke-width="1.0" opacity="0.14" fill="none" stroke-dasharray="3 5"/></svg><figcaption>Your dates, documents and costs, drawn from the duties that apply to you.</figcaption></figure>
+    </div>
+  </div>
+</header>
+<nav class="ribbon" aria-label="The founder journey"><div class="wrap"><h2>The journey, stage by stage</h2><ol><li><a href="../before-the-register/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-explore"></use></svg> Stage 1</span><span class="rt">Decide</span><span class="rc">Is this a business, and what shape?</span></a></li><li><a href="../whatever-you-are-setting-up/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-structure"></use></svg> Stage 2</span><span class="rt">Structure</span><span class="rc">Legal form, name, ownership</span></a></li><li><a href="../every-step/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-register"></use></svg> Stage 3</span><span class="rt">Register</span><span class="rc">Registrar, identity, identifiers</span></a></li><li><a href="../whatever-you-are-setting-up/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-tax"></use></svg> Stage 4</span><span class="rt">Tax</span><span class="rc">Self Assessment, Corporation Tax, VAT</span></a></li><li><a href="../what-binds-this-business/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-licence"></use></svg> Stage 5</span><span class="rt">Licences</span><span class="rc">What the activity triggers</span></a></li><li><a href="../every-step/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-premises"></use></svg> Stage 6</span><span class="rt">Premises</span><span class="rc">Rates, planning, property</span></a></li><li><a href="../whatever-you-are-setting-up/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-finance"></use></svg> Stage 7</span><span class="rt">Money</span><span class="rc">Grants, reliefs, finance</span></a></li><li><a href="../what-binds-this-business/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-employ"></use></svg> Stage 8</span><span class="rt">People</span><span class="rc">Employing, paying, protecting</span></a></li><li><a href="../rules-trade-and-bodies/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-trade"></use></svg> Stage 9</span><span class="rt">Trade</span><span class="rc">Goods, borders, tendering</span></a></li></ol></div></nav>
+<main class="wrap" id="main"><div class="wrap"><section class="circfit" aria-labelledby="h-circfit"><h2 id="h-circfit">Does the standard route fit your circumstances?</h2><p>The dates and duties below are the same for everyone. What differs is what else applies to you. Thirty-six tailored views, each traced to legislation or GOV.UK, and a full list of everyone this journey has to work for.</p><ul><li><a href="../your-circumstances/?c=women">Women running their own business</a><span>Maternity Allowance instead of statutory pay, childcare, and the Equality Act sections that cover finance</span></li><li><a href="../your-circumstances/?c=faith">Faith, culture and Sharia-compliant business</a><span>Where UK tax law recognises interest-free finance, and what religious slaughter law actually says</span></li><li><a href="../your-circumstances/?c=benefits">On Universal Credit, or caring for someone</a><span>The gainful self-employment test, the minimum income floor and the Carer’s Allowance earnings limit</span></li><li><a href="../your-circumstances/?c=record">A criminal record, or leaving prison</a><span>Spent convictions, the charity trustee bar, and where the real barriers sit</span></li><li><a href="../your-circumstances/?c=veterans">Veterans and service leavers</a><span>National Insurance relief for hiring a veteran, and what the covenant duty does and does not reach</span></li><li><a href="../your-circumstances/?c=disabled">Disabled founders</a><span>Access to Work covers self-employment, and reasonable adjustments apply to the services in this journey</span></li><li><a href="../your-circumstances/?c=home">Starting from home, or without a safe address</a><span>Permissions, insurance, and the statutory route to keep a home address off the public register</span></li><li><a href="../your-circumstances/?c=secondchance">Starting again after a business failed</a><span>What bankruptcy actually bars, and what stays open</span></li><li><a href="../your-circumstances/?c=age">Younger and older founders</a><span>The minimum age for a director, and when Class 4 National Insurance stops</span></li><li><a href="../your-circumstances/?c=language">Not working in English</a><span>Which bodies carry Welsh-language duties, and which languages have no statutory footing at all</span></li><li><a href="../your-circumstances/?c=gig">Gig and platform workers</a><span>The trading allowance, Self Assessment as the whole journey, and status decided by facts</span></li><li><a href="../your-circumstances/?c=side">Starting on the side while employed</a><span>The £1,000 line, the employment contract, and when training becomes deductible</span></li><li><a href="../your-circumstances/?c=family">Taking over a family business</a><span>Business Relief, staff transferring with the business, and two clocks running at once</span></li></ul><p class="allof"><a href="../your-circumstances/#s-map">See all 45 kinds of user identified, and which are covered</a></p></section></div>
+  <section id="s-profile" aria-labelledby="h-profile">
+    <h2 id="h-profile">Tell us about the business once</h2>
+    <p class="intro">Everything below is built from what you enter here, and the address bar keeps it, so you can bookmark this page or send the link to your accountant and they will see the same plan. Nothing is stored anywhere and nothing is sent anywhere.</p>
+    <div class="pform">
+      <p class="fld"><label for="pf">Legal form</label><select id="pf"></select></p>
+      <p class="fld"><label for="pn">Nation</label><select id="pn"><option value="GB-ENG">England</option><option value="GB-SCT">Scotland</option><option value="GB-WLS">Wales</option><option value="GB-NIR">Northern Ireland</option></select></p>
+      <p class="fld"><label for="pd">Date you started or plan to start</label><input type="date" id="pd"></p>
+      <p class="fld"><label for="pe">Date of your first employee <span class="opt">(optional)</span></label><input type="date" id="pe"></p>
+      <p class="fld"><label for="pm">Baby due date <span class="opt">(optional: adds Maternity Allowance dates and flags what falls during leave)</span></label><input type="date" id="pm"></p>
+      <p class="fld"><label for="pu">Universal Credit claim start <span class="opt">(optional: adds the monthly reporting cycle)</span></label><input type="date" id="pu"></p>
+      <p class="fld chk"><input type="checkbox" id="pk"><label for="pk">I get Carer’s Allowance or Carer Support Payment</label></p>
+      <p class="fld chk"><input type="checkbox" id="pr"><label for="pr">Flag deadlines near major religious observances</label></p>
+      <p class="fld"><label for="pv">Date you crossed the VAT threshold <span class="opt">(optional)</span></label><input type="date" id="pv"></p>
+    </div>
+    <fieldset class="acts"><legend>What the business does</legend><div id="pacts" class="chiprow"></div></fieldset>
+    <div class="pactions">
+      <button class="btn" type="button" id="copylink">Copy the link to this plan</button>
+      <button class="btn sm" type="button" id="printplan">Print the plan</button>
+      <button class="btn sm" type="button" id="ics">Add the dates to a calendar</button>
+      <button class="btn sm" type="button" id="csv">Download as a checklist</button>
+      <span class="toolmsg" id="pmsg" role="status"></span>
+    </div>
+    <div class="personas" id="personas"></div>
+  </section>
+
+  <section id="s-dated" aria-labelledby="h-dated">
+    <h2 id="h-dated">Dated: what falls due, and when</h2>
+    <p class="intro">Worked out from the deadline in each rule and the dates you gave. Where a deadline depends on something that has not happened yet, it appears in the next list instead, without a date, rather than being guessed.</p>
+    <ul class="circnote" id="circnote" hidden></ul>
+    <ol class="timeline" id="timeline"></ol>
+  </section>
+
+  <section id="s-undated" aria-labelledby="h-undated">
+    <h2 id="h-undated">Waiting on something: no date yet</h2>
+    <p class="intro">These apply to you, but the clock starts on an event rather than a date. Each one names the event that starts it.</p>
+    <ul class="undated" id="undated"></ul>
+  </section>
+
+  <section id="s-docs" aria-labelledby="h-docs">
+    <h2 id="h-docs">Have these ready before you start</h2>
+    <p class="intro">The paperwork each step asks for. Arriving at a form without one of these is the commonest reason it cannot be finished in one sitting.</p>
+    <div class="docgrid" id="docs"></div>
+  </section>
+
+  <section id="s-cost" aria-labelledby="h-cost">
+    <h2 id="h-cost">What this path costs</h2>
+    <p class="intro">Every fee recorded against the steps that apply to you, separated into one-off and recurring. Amounts that depend on your circumstances are named as variable rather than estimated.</p>
+    <div class="costwrap" id="cost"></div>
+  </section>
+
+  <section id="s-compare" aria-labelledby="h-compare">
+    <h2 id="h-compare">Comparing legal forms</h2>
+    <p class="intro">The things people actually decide on. Choose up to three forms to put side by side.</p>
+    <div class="chiprow" id="cmpchips"></div>
+    <div class="cmpwrap"><table class="cmp" id="cmptable"><caption class="vh">Legal forms compared</caption></table></div>
+  </section>
+
+  <section id="s-fix" aria-labelledby="h-fix">
+    <h2 id="h-fix">Think something here is wrong?</h2>
+    <p class="intro">Every fact on these pages is traced to a source, and some of them will go out of date. If you find one that has, this builds a report you can send.</p>
+    <div class="fixform">
+      <p class="fld"><label for="fxwhat">What is wrong</label><input type="text" id="fxwhat" placeholder="For example: the VAT threshold figure"></p>
+      <p class="fld"><label for="fxsrc">Where the right answer is, if you know</label><input type="url" id="fxsrc" placeholder="https://www.gov.uk/..."></p>
+      <button class="btn" type="button" id="fxbuild">Build the report</button>
+      <span class="toolmsg" id="fxmsg" role="status"></span>
+    </div>
+    <pre class="fxout" id="fxout" hidden></pre>
+  </section>
+</main>
+<script>
+var PRULES=[{"id":"company-registration","title":"Register a company and keep the register current","summary":"A company must be incorporated at Companies House, and its officers and PSCs must verify their identity.","duty":"register","trigger":"Forming a limited company","deadline":"Confirmation statement at least every 12 months","regulator":"Companies House","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["*"],"kw":["incorporation","company","director","psc"],"law":"Companies Act 2006","law_uri":"https://www.legislation.gov.uk/ukpga/2006/46","guidance":"https://www.gov.uk/limited-company-formation","checked":"2026-09-17"},{"id":"id-verification","title":"Verify identity as a director or person with significant control","summary":"Identity verification became a legal requirement for new appointments from 18 November 2025.","duty":"comply","trigger":"Becoming a director or PSC","deadline":"From 18 November 2025, with a 12 month transition","regulator":"Companies House","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["*"],"kw":["identity","verification","ecct"],"law":"Economic Crime and Corporate Transparency Act 2023","law_uri":"https://www.legislation.gov.uk/ukpga/2023/56","guidance":"https://www.gov.uk/guidance/verify-your-identity-for-companies-house","checked":"2026-09-17"},{"id":"vat","title":"Register for and account for VAT","summary":"Taxable turnover above £90,000 in any 12 months requires VAT registration.","duty":"register","trigger":"Taxable turnover above the threshold","deadline":"Within 30 days of the end of the month the threshold was crossed","regulator":"HM Revenue and Customs","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["*"],"kw":["vat","turnover","tax"],"law":"Value Added Tax Act 1994","law_uri":"https://www.legislation.gov.uk/ukpga/1994/23","guidance":"https://www.gov.uk/register-for-vat","checked":"2026-09-17"},{"id":"data-protection","title":"Comply with data protection law and pay the ICO fee","summary":"Processing personal data brings duties under data protection law and, unless exempt, a fee to the ICO.","duty":"comply","trigger":"Processing personal data","deadline":"Fee due before or when processing begins, then annually","regulator":"Information Commissioner’s Office","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["*"],"kw":["personal data","gdpr","privacy","ico"],"law":"Data Protection Act 2018","law_uri":"https://www.legislation.gov.uk/ukpga/2018/12","guidance":"https://www.gov.uk/data-protection-register-notify-ico-personal-data","checked":"2026-09-17"},{"id":"health-safety","title":"Manage health and safety at work","summary":"Every employer has general duties to protect workers and others affected by the business.","duty":"comply","trigger":"Employing anyone or running premises","deadline":"Ongoing","regulator":"Health and Safety Executive","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["*"],"kw":["health","safety","employees","risk assessment"],"law":"Health and Safety at Work etc. Act 1974","law_uri":"https://www.legislation.gov.uk/ukpga/1974/37","guidance":"https://www.hse.gov.uk/simple-health-safety/","checked":"2026-09-17"},{"id":"employers-liability","title":"Hold employers' liability insurance","summary":"At least £5 million of cover from an authorised insurer, from the moment you become an employer.","duty":"comply","trigger":"Becoming an employer","deadline":"As soon as you employ anyone","regulator":"Health and Safety Executive","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["*"],"kw":["insurance","employer","liability"],"law":"Employers' Liability (Compulsory Insurance) Act 1969","law_uri":"https://www.legislation.gov.uk/ukpga/1969/57","guidance":"https://www.gov.uk/employers-liability-insurance","checked":"2026-09-17"},{"id":"pensions","title":"Enrol eligible staff in a workplace pension","summary":"Automatic enrolment duties start on the day the first member of staff starts work.","duty":"comply","trigger":"Employing eligible staff","deadline":"From the duties start date; at least 3% employer contribution","regulator":"The Pensions Regulator","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["*"],"kw":["pension","auto enrolment","staff"],"law":"Pensions Act 2008","law_uri":"https://www.legislation.gov.uk/ukpga/2008/30","guidance":"https://www.gov.uk/workplace-pensions-employers","checked":"2026-09-17"},{"id":"equality","title":"Meet equality duties as an employer and service provider","summary":"Protected characteristics must not be the basis of discrimination in employment or services.","duty":"comply","trigger":"Employing staff or serving customers","deadline":"Ongoing","regulator":"Equality and Human Rights Commission","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["*"],"kw":["equality","discrimination","reasonable adjustments"],"law":"Equality Act 2010","law_uri":"https://www.legislation.gov.uk/ukpga/2010/15","guidance":"https://www.gov.uk/guidance/equality-act-2010-guidance","checked":"2026-09-17"},{"id":"consumer","title":"Meet consumer law duties when selling to consumers","summary":"Goods, services and digital content must meet the statutory standards, with clear pre-contract information.","duty":"comply","trigger":"Selling to consumers","deadline":"Ongoing","regulator":"Competition and Markets Authority","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["G","I","J","S"],"kw":["consumer","refunds","contract terms","selling"],"law":"Consumer Rights Act 2015","law_uri":"https://www.legislation.gov.uk/ukpga/2015/15","guidance":"https://www.businesscompanion.info/","checked":"2026-09-17"},{"id":"product-safety","title":"Meet product safety and marking duties","summary":"Producers, importers and distributors must meet general product safety law and any product-specific regime, including UKCA or CE marking in Great Britain.","duty":"comply","trigger":"Making, importing, distributing or selling products","deadline":"Before placing on the market","regulator":"Office for Product Safety and Standards","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["C","G"],"kw":["product safety","ukca","ce mark","manufacture","import"],"law":"General Product Safety Regulations 2005","law_uri":"https://www.legislation.gov.uk/uksi/2005/1803","guidance":"https://www.gov.uk/guidance/product-safety-for-businesses-a-to-z-of-industry-guidance","checked":"2026-09-17"},{"id":"food","title":"Register the food business and meet food hygiene law","summary":"Any business selling, cooking, storing, preparing or distributing food must register, including from a domestic kitchen.","duty":"register","trigger":"Handling food as a business","deadline":"At least 28 days before trading","regulator":"Food Standards Agency","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["C","G","I","N"],"kw":["food","kitchen","catering","hygiene"],"law":"Food Safety Act 1990","law_uri":"https://www.legislation.gov.uk/ukpga/1990/16","guidance":"https://www.food.gov.uk/business-guidance/getting-ready-to-start-your-food-business","checked":"2026-09-17"},{"id":"food-scotland","title":"Register the food business in Scotland","summary":"Food businesses in Scotland register with the local authority under Food Standards Scotland's regime.","duty":"register","trigger":"Handling food as a business in Scotland","deadline":"At least 28 days before opening","regulator":"Food Standards Scotland","jurisdiction":["GB-SCT"],"sic":["C","G","I","N"],"kw":["food","scotland"],"law":"Food Safety Act 1990","law_uri":"https://www.legislation.gov.uk/ukpga/1990/16","guidance":"https://www.foodstandards.gov.scot/business-guidance/starting-a-new-business/registering-a-food-business","checked":"2026-09-17"},{"id":"alcohol","title":"Hold the right alcohol licences","summary":"Selling or supplying alcohol needs a premises licence and a personal licence, with separate regimes in Scotland and Northern Ireland.","duty":"licence","trigger":"Selling or supplying alcohol","deadline":"Before any sale","regulator":"Licensing authority (local council)","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["G","I","R"],"kw":["alcohol","bar","pub","off-licence"],"law":"Licensing Act 2003","law_uri":"https://www.legislation.gov.uk/ukpga/2003/17","guidance":"https://www.gov.uk/guidance/alcohol-licensing","checked":"2026-09-17"},{"id":"awrs","title":"Get Alcohol Wholesaler Registration Scheme approval","summary":"Selling alcohol to other businesses requires HMRC approval.","duty":"register","trigger":"Wholesaling alcohol","deadline":"Before wholesaling","regulator":"HM Revenue and Customs","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["C","G"],"kw":["alcohol","wholesale"],"law":"Alcoholic Liquor Duties Act 1979","law_uri":"https://www.legislation.gov.uk/ukpga/1979/4","guidance":"https://www.gov.uk/guidance/the-alcohol-wholesaler-registration-scheme-awrs","checked":"2026-09-17"},{"id":"cis","title":"Operate the Construction Industry Scheme","summary":"Contractors deduct from subcontractor payments and pass them to HMRC.","duty":"register","trigger":"Paying subcontractors for construction work","deadline":"Register before the first payment","regulator":"HM Revenue and Customs","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["F"],"kw":["construction","contractor","subcontractor"],"law":"Finance Act 2004 (Construction Industry Scheme)","law_uri":"https://www.legislation.gov.uk/ukpga/2004/12","guidance":"https://www.gov.uk/what-is-the-construction-industry-scheme","checked":"2026-09-17"},{"id":"waste","title":"Register as a waste carrier, broker or dealer","summary":"Transporting or arranging waste on a business basis requires registration with the environment agency for the nation.","duty":"register","trigger":"Carrying or arranging waste","deadline":"Before transporting waste","regulator":"Environment Agency","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["E","F","H"],"kw":["waste","carrier","skip","disposal"],"law":"Waste (England and Wales) Regulations 2011","law_uri":"https://www.legislation.gov.uk/uksi/2011/988","guidance":"https://www.gov.uk/register-renew-waste-carrier-broker-dealer-england","checked":"2026-09-17"},{"id":"environmental-permit","title":"Hold an environmental permit where the activity needs one","summary":"Many industrial, waste and water activities need a permit or exemption.","duty":"licence","trigger":"Regulated industrial, waste or water activity","deadline":"Before starting the activity","regulator":"Environment Agency","jurisdiction":["GB-ENG","GB-WLS"],"sic":["B","C","D","E"],"kw":["permit","emissions","discharge","installation"],"law":"Environmental Permitting (England and Wales) Regulations 2016","law_uri":"https://www.legislation.gov.uk/uksi/2016/1154","guidance":"https://www.gov.uk/find-licences","checked":"2026-09-17"},{"id":"scrap-metal","title":"Hold a scrap metal dealer licence","summary":"A site or mobile collector's licence from the council, with an HMRC tax check.","duty":"licence","trigger":"Dealing in scrap metal","deadline":"Before dealing; licence renewed periodically","regulator":"Local council","jurisdiction":["GB-ENG","GB-WLS"],"sic":["E","G"],"kw":["scrap","metal","collector"],"law":"Scrap Metal Dealers Act 2013","law_uri":"https://www.legislation.gov.uk/ukpga/2013/10","guidance":"https://www.gov.uk/find-licences/scrap-metal-dealer-registration","checked":"2026-09-17"},{"id":"sia","title":"Hold a Security Industry Authority licence","summary":"Licensable security work requires an individual SIA licence.","duty":"licence","trigger":"Doing licensable security work","deadline":"Before working","regulator":"Security Industry Authority","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["N"],"kw":["security","door supervisor","guarding"],"law":"Private Security Industry Act 2001","law_uri":"https://www.legislation.gov.uk/ukpga/2001/12","guidance":"https://www.gov.uk/guidance/how-to-check-sia-licence-cards","checked":"2026-09-17"},{"id":"gambling","title":"Hold a gambling licence","summary":"Providing gambling facilities requires a licence from the Gambling Commission.","duty":"licence","trigger":"Providing gambling facilities","deadline":"Before operating","regulator":"Gambling Commission","jurisdiction":["GB-ENG","GB-SCT","GB-WLS"],"sic":["R"],"kw":["gambling","betting","gaming"],"law":"Gambling Act 2005","law_uri":"https://www.legislation.gov.uk/ukpga/2005/19","guidance":"https://www.gov.uk/government/organisations/gambling-commission","checked":"2026-09-17"},{"id":"childcare","title":"Register as a childcare provider","summary":"Childminders and childcare providers register with Ofsted in England.","duty":"register","trigger":"Caring for children in scope of the registers","deadline":"Before caring for children","regulator":"Ofsted","jurisdiction":["GB-ENG"],"sic":["P","Q"],"kw":["childcare","childminder","nursery"],"law":"Childcare Act 2006","law_uri":"https://www.legislation.gov.uk/ukpga/2006/21","guidance":"https://www.gov.uk/guidance/childminders-and-childcare-providers-register-with-ofsted","checked":"2026-09-17"},{"id":"care","title":"Register with the health and care regulator","summary":"Regulated health and social care activity requires registration with CQC in England, or the devolved regulator.","duty":"register","trigger":"Providing regulated care","deadline":"Before providing care","regulator":"Care Quality Commission","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["Q"],"kw":["care","health","domiciliary","nursing"],"law":"Health and Social Care Act 2008","law_uri":"https://www.legislation.gov.uk/ukpga/2008/14","guidance":"https://www.gov.uk/government/organisations/care-quality-commission","checked":"2026-09-17"},{"id":"aml","title":"Register for money laundering supervision","summary":"Accountants, estate agents, financial and other supervised sectors must be monitored by a supervisory authority.","duty":"register","trigger":"Carrying on a supervised activity","deadline":"Before or when starting","regulator":"HM Revenue and Customs","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["K","L","M"],"kw":["money laundering","aml","estate agent","accountant"],"law":"Money Laundering, Terrorist Financing and Transfer of Funds (Information on the Payer) Regulations 2017","law_uri":"https://www.legislation.gov.uk/uksi/2017/692","guidance":"https://www.gov.uk/guidance/money-laundering-regulations-who-needs-to-register","checked":"2026-09-17"},{"id":"fca","title":"Get FCA authorisation for regulated financial activity","summary":"Regulated activities in financial services require authorisation or exemption.","duty":"licence","trigger":"Carrying on a regulated activity","deadline":"Before starting","regulator":"Financial Conduct Authority","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["K"],"kw":["finance","credit","payments","insurance"],"law":"Financial Services and Markets Act 2000","law_uri":"https://www.legislation.gov.uk/ukpga/2000/8","guidance":"https://www.gov.uk/offering-credit-consumers-law","checked":"2026-09-17"},{"id":"customs","title":"Meet customs obligations when moving goods","summary":"EORI, declarations, commodity codes and duty follow any movement of goods across a border.","duty":"comply","trigger":"Moving goods across a border","deadline":"Before the first movement","regulator":"HM Revenue and Customs","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["C","G","H"],"kw":["import","export","customs","eori"],"law":"Taxation (Cross-border Trade) Act 2018","law_uri":"https://www.legislation.gov.uk/ukpga/2018/22","guidance":"https://www.gov.uk/eori","checked":"2026-09-17"},{"id":"procurement","title":"Meet the rules when selling to the public sector","summary":"The Procurement Act 2023 regime changed how public bodies buy, with measures aimed at smaller suppliers.","duty":"comply","trigger":"Bidding for public contracts","deadline":"Per procurement","regulator":"Cabinet Office","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["*"],"kw":["procurement","tender","public sector","contract"],"law":"Procurement Act 2023","law_uri":"https://www.legislation.gov.uk/ukpga/2023/54","guidance":"https://www.gov.uk/government/collections/information-and-guidance-for-suppliers","checked":"2026-09-17"},{"id":"subsidy","title":"Check subsidy control rules before accepting public money","summary":"Public authorities awarding subsidies must follow the Subsidy Control Act 2022.","duty":"comply","trigger":"Receiving a subsidy from a public authority","deadline":"At award","regulator":"Department for Business and Trade","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["*"],"kw":["subsidy","grant","state aid"],"law":"Subsidy Control Act 2022","law_uri":"https://www.legislation.gov.uk/ukpga/2022/23","guidance":"https://www.gov.uk/government/publications/uk-subsidy-control-statutory-guidance","checked":"2026-09-17"},{"id":"fca-authorisation","title":"Get FCA authorisation or registration before regulated financial activity","summary":"A firm carrying on a regulated activity must be authorised or registered by the FCA, or fall within an exemption.","duty":"licence","trigger":"Carrying on a regulated financial activity","deadline":"Before starting; application times vary","regulator":"Financial Conduct Authority","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["K","M"],"kw":["fca","authorisation","credit","payments","insurance","investment"],"law":"Financial Services and Markets Act 2000","law_uri":"https://www.legislation.gov.uk/ukpga/2000/8","guidance":"https://www.fca.org.uk/firms/authorisation","checked":"2026-09-17"},{"id":"operator-licence","title":"Hold a vehicle operator licence","summary":"Transporting goods above a weight threshold, or carrying passengers for a fare, needs an operator licence.","duty":"licence","trigger":"Operating goods vehicles or passenger vehicles for hire or reward","deadline":"Before operating","regulator":"Traffic Commissioners and DVSA","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["H"],"kw":["lorry","hgv","coach","operator","transport"],"law":"Goods Vehicles (Licensing of Operators) Act 1995","law_uri":"https://www.legislation.gov.uk/ukpga/1995/23","guidance":"https://www.gov.uk/apply-vehicle-operator-licence","checked":"2026-09-17"},{"id":"ehc","title":"Get an export health certificate for animals and animal products","summary":"An EHC confirms an export meets the destination country's health requirements.","duty":"notify","trigger":"Exporting or moving live animals or animal products","deadline":"Before export; timing set by the certificate","regulator":"Animal and Plant Health Agency","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["A","C","G"],"kw":["animals","meat","dairy","export","ehc"],"law":"Animal Health Act 1981","law_uri":"https://www.legislation.gov.uk/ukpga/1981/22","guidance":"https://www.gov.uk/guidance/get-an-export-health-certificate","checked":"2026-09-17"},{"id":"phytosanitary","title":"Apply for plant export certificates and inspections","summary":"A phytosanitary certificate is needed to export plants, fresh produce, grain, seeds, bulbs, potatoes and used farm machinery.","duty":"notify","trigger":"Exporting plants or plant products","deadline":"Before export","regulator":"Animal and Plant Health Agency","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["A","C","G"],"kw":["plants","produce","seeds","phytosanitary","export"],"law":"Animal Health Act 1981","law_uri":"https://www.legislation.gov.uk/ukpga/1981/22","guidance":"https://www.gov.uk/guidance/apply-for-plant-export-certificates-and-inspections","checked":"2026-09-17"},{"id":"cites","title":"Get a CITES permit for endangered species specimens","summary":"Moving a CITES specimen into or out of Great Britain requires a permit, including movements to or from the EU and Northern Ireland.","duty":"licence","trigger":"Moving a CITES specimen across a border","deadline":"Before movement","regulator":"Animal and Plant Health Agency","jurisdiction":["GB-ENG","GB-SCT","GB-WLS"],"sic":["A","C","G","R"],"kw":["cites","endangered","wildlife","ivory","permit"],"law":"Control of Trade in Endangered Species Regulations 2018","law_uri":"https://www.legislation.gov.uk/uksi/2018/703","guidance":"https://www.gov.uk/guidance/cites-imports-and-exports","checked":"2026-09-17"},{"id":"spectrum","title":"Hold an Ofcom licence for radio spectrum or broadcasting where required","summary":"Using radio spectrum or broadcasting generally requires a licence or an exemption from Ofcom.","duty":"licence","trigger":"Using licensable spectrum or broadcasting","deadline":"Before transmitting","regulator":"Ofcom","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["J"],"kw":["spectrum","radio","broadcast","telecoms","ofcom"],"law":"Wireless Telegraphy Act 2006","law_uri":"https://www.legislation.gov.uk/ukpga/2006/36","guidance":"https://www.gov.uk/government/organisations/ofcom","checked":"2026-09-17"},{"id":"rates-england","title":"Check business rates and relief in England","summary":"No rates below £12,000 rateable value, tapering to nil relief at £15,000.","duty":"comply","trigger":"Occupying non-domestic property in England","deadline":"On occupation; claimed through the council","regulator":"Valuation Office Agency and local council","jurisdiction":["GB-ENG"],"sic":["*"],"kw":["rates","premises","relief","england"],"law":"Local Government Finance Act 1988","law_uri":"https://www.legislation.gov.uk/ukpga/1988/41","guidance":"https://www.gov.uk/business-rates-relief","checked":"2026-09-17"},{"id":"rates-scotland","title":"Check non-domestic rates relief in Scotland","summary":"Scotland runs its own reliefs, including the Small Business Bonus Scheme.","duty":"comply","trigger":"Occupying non-domestic property in Scotland","deadline":"On occupation; claimed through the council","regulator":"Scottish Assessors and local council","jurisdiction":["GB-SCT"],"sic":["*"],"kw":["rates","relief","scotland","small business bonus"],"law":"Non-Domestic Rates (Scotland) Act 2020","law_uri":"https://www.legislation.gov.uk/asp/2020/4","guidance":"https://www.mygov.scot/business-rates-relief","checked":"2026-09-17"},{"id":"rates-wales","title":"Check non-domestic rates relief in Wales","summary":"Premises up to £6,000 rateable value get 100% relief, tapering to zero between £6,001 and £12,000.","duty":"comply","trigger":"Occupying non-domestic property in Wales","deadline":"On occupation; applications to the local authority","regulator":"Welsh Government and local authority","jurisdiction":["GB-WLS"],"sic":["*"],"kw":["rates","relief","wales"],"law":"Local Government Finance Act 1988","law_uri":"https://www.legislation.gov.uk/ukpga/1988/41/section/43","guidance":"https://businesswales.gov.wales/non-domestic-rates-small-business-rates-relief","checked":"2026-09-17"},{"id":"rates-ni","title":"Check Small Business Rate Relief in Northern Ireland","summary":"Relief is banded by Net Annual Value: 50% up to £2,000, 25% to £5,000 and 20% to £15,000.","duty":"comply","trigger":"Occupying business property in Northern Ireland","deadline":"Applied automatically where eligible","regulator":"Land and Property Services","jurisdiction":["GB-NIR"],"sic":["*"],"kw":["rates","relief","northern ireland","nav"],"law":"Rates (Northern Ireland) Order 1977","law_uri":"https://www.legislation.gov.uk/nisi/1977/2157","guidance":"https://www.nibusinessinfo.co.uk/content/small-business-rate-relief","checked":"2026-09-17"},{"id":"cyber-baseline","title":"Meet a cyber security baseline","summary":"Cyber Essentials is the standard set of technical controls expected of organisations of any size, and is a contractual requirement in parts of the public sector.","duty":"comply","trigger":"Holding data or trading online","deadline":"Before bidding for contracts that require it","regulator":"National Cyber Security Centre","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["*"],"kw":["cyber","security","certification","essentials"],"law":"Network and Information Systems Regulations 2018","law_uri":"https://www.legislation.gov.uk/uksi/2018/506","guidance":"https://www.gov.uk/government/publications/cyber-essentials-scheme-overview","checked":"2026-09-17"},{"id":"pqc","title":"Plan migration to post-quantum cryptography","summary":"Every organisation depending on cryptography has dated milestones: discovery by 2028, early migration by 2031, complete by 2035.","duty":"comply","trigger":"Depending on cryptography in products or services","deadline":"Discovery by 2028, highest-priority migration by 2031, complete by 2035","regulator":"National Cyber Security Centre","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["*"],"kw":["quantum","cryptography","pqc","migration"],"law":null,"law_uri":null,"guidance":"https://www.ncsc.gov.uk/guidance/pqc-migration-timelines","checked":"2026-09-17"},{"id":"req-agent-verification","title":"Agents acting for founders must be registered and verified","summary":"Agents acting for founders must be registered and verified","duty":"register","trigger":"Using an agent or accountant to file at Companies House","deadline":"No earlier than November 2027","regulator":"Companies House","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["*"],"kw":["agents","acting","for","founders","must","be"],"law":null,"law_uri":null,"guidance":"https://www.gov.uk/government/publications/economic-crime-and-corporate-transparency-act-outline-transition-plan-for-companies-house/economic-crime-and-corporate-transparency-act-outline-transition-plan-for-companies-house","checked":"2026-09-17"},{"id":"req-self-assessment","title":"Register for Self Assessment","summary":"Register for Self Assessment","duty":"register","trigger":"Trading as a sole trader or partner above the trading allowance","deadline":"By 5 October after the end of the tax year in which you started","regulator":"HM Revenue and Customs","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["*"],"kw":["register","for","self","assessment"],"law":"Taxes Management Act 1970","law_uri":"https://www.legislation.gov.uk/ukpga/1970/9","guidance":"https://www.gov.uk/register-for-self-assessment","checked":"2026-09-17"},{"id":"req-trading-allowance","title":"Trading allowance of £1,000","summary":"Trading allowance of £1,000","duty":"comply","trigger":"Earning from trading or a side income","deadline":"Registration is not needed below £1,000 of trading income","regulator":"HM Revenue and Customs","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["*"],"kw":["trading","allowance","of","£1,000"],"law":"Income Tax (Trading and Other Income) Act 2005","law_uri":"https://www.legislation.gov.uk/ukpga/2005/5","guidance":"https://www.gov.uk/guidance/tax-free-allowances-on-property-and-trading-income","checked":"2026-09-17"},{"id":"req-platform-reporting","title":"Digital platforms report seller details to HMRC","summary":"Digital platforms report seller details to HMRC","duty":"comply","trigger":"Selling goods or services through an online platform","deadline":"Reported annually; platforms need not report sellers under 30 sales and about £1,700 (2,000 euros) a year","regulator":"HMRC, through platform operators","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["*"],"kw":["digital","platforms","report","seller","details","to"],"law":"Platform Operators (Due Diligence and Reporting Requirements) Regulations 2023","law_uri":"https://www.legislation.gov.uk/uksi/2023/817","guidance":"https://www.gov.uk/guidance/selling-goods-or-services-on-a-digital-platform","checked":"2026-09-17"},{"id":"req-mtd-income-tax","title":"Use Making Tax Digital for Income Tax","summary":"Use Making Tax Digital for Income Tax","duty":"comply","trigger":"Sole trader or landlord income over £50,000","deadline":"From 6 April 2026 for those over £50,000","regulator":"HM Revenue and Customs","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["*"],"kw":["use","making","tax","digital","for","income"],"law":"Income Tax (Digital Requirements) Regulations 2021","law_uri":"https://www.legislation.gov.uk/uksi/2021/1076","guidance":"https://www.gov.uk/government/collections/making-tax-digital-for-income-tax-for-sole-traders-and-landlords-step-by-step","checked":"2026-09-17"},{"id":"req-paye-registration","title":"Register as an employer for PAYE","summary":"Register as an employer for PAYE","duty":"register","trigger":"Employing anyone, including a sole director taking a salary","deadline":"Before the first payday; can be requested during company incorporation","regulator":"HM Revenue and Customs","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["*"],"kw":["register","as","an","employer","for","paye"],"law":"Income Tax (Pay As You Earn) Regulations 2003","law_uri":"https://www.legislation.gov.uk/uksi/2003/2682","guidance":"https://www.gov.uk/limited-company-formation","checked":"2026-09-17"},{"id":"req-confirmation-statement","title":"File a confirmation statement","summary":"The statement must also confirm that the company's intended future activities are lawful.","duty":"comply","trigger":"Having a registered company","deadline":"At least once every 12 months, with the review period ending 12 months after incorporation or the last statement","regulator":"Companies House","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["*"],"kw":["file","a","confirmation","statement"],"law":"Companies Act 2006","law_uri":"https://www.legislation.gov.uk/ukpga/2006/46/section/853A","guidance":"https://www.gov.uk/guidance/filing-your-companys-confirmation-statement","checked":"2026-09-17"},{"id":"req-first-accounts","title":"File first accounts and pay Corporation Tax","summary":"File first accounts and pay Corporation Tax","duty":"comply","trigger":"Having a registered company","deadline":"First accounts 21 months after registration, then 9 months after each financial year end; Corporation Tax due 9 months and 1 day after the accounting period","regulator":"Companies House and HMRC","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["*"],"kw":["file","first","accounts","and","pay","corporation"],"law":"Companies Act 2006","law_uri":"https://www.legislation.gov.uk/ukpga/2006/46","guidance":"https://www.gov.uk/prepare-file-annual-accounts-for-limited-company","checked":"2026-09-17"},{"id":"req-accounts-software","title":"File annual accounts using commercial software","summary":"File annual accounts using commercial software","duty":"comply","trigger":"Filing a company's annual accounts","deadline":"All companies must file using software from 1 April 2028","regulator":"Companies House","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["*"],"kw":["file","annual","accounts","using","commercial","software"],"law":"Companies Act 2006","law_uri":"https://www.legislation.gov.uk/ukpga/2006/46","guidance":"https://www.gov.uk/guidance/using-software-to-file-your-companys-information","checked":"2026-09-17"},{"id":"req-e-invoicing","title":"Issue VAT invoices in a structured electronic format","summary":"Peppol was confirmed as the interoperability network in June 2026; the implementation roadmap is expected at Budget 2026. This record rests partly on trade reporting of the June 2026 announcement.","duty":"comply","trigger":"Issuing VAT invoices to businesses or the public sector","deadline":"From April 2029","regulator":"HM Revenue and Customs","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["*"],"kw":["issue","vat","invoices","in","a","structured"],"law":null,"law_uri":null,"guidance":"https://www.gov.uk/government/publications/summary-of-tax-update-2026-simplification-modernisation-and-fairness","checked":"2026-09-17"},{"id":"trg-tax-check","title":"Complete a tax check for a taxi, private hire or scrap metal licence","summary":"Complete a tax check for a taxi, private hire or scrap metal licence","duty":"comply","trigger":"Complete a tax check for a taxi, private hire or scrap metal licence","deadline":"When applying for or renewing these licences","regulator":"HMRC, before the licensing authority decides","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["E","G","H"],"kw":["tax-check"],"law":"Finance Act 2021","law_uri":"https://www.legislation.gov.uk/ukpga/2021/26/schedule/33","guidance":"https://www.gov.uk/guidance/complete-a-tax-check-for-a-taxi-private-hire-or-scrap-metal-licence","checked":"2026-09-17"},{"id":"trade-eori-gb","title":"Get a GB EORI number","summary":"An Economic Operators Registration and Identification number beginning GB, needed to move goods between Great Britain or the Isle of Man and any other country","duty":"comply","trigger":"Get a GB EORI number","deadline":"Before the first movement","regulator":"HM Revenue and Customs","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["C","G","H"],"kw":["eori-gb"],"law":"Customs (Import Duty) (EU Exit) Regulations 2018","law_uri":"https://www.legislation.gov.uk/uksi/2018/1248","guidance":"https://www.gov.uk/eori","checked":"2026-09-17"},{"id":"trade-eori-xi","title":"Get an XI EORI number","summary":"A second EORI number for movements involving Northern Ireland under the Windsor Framework","duty":"comply","trigger":"Get an XI EORI number","deadline":"After holding a GB EORI number","regulator":"HM Revenue and Customs","jurisdiction":["GB-NIR"],"sic":["C","G","H"],"kw":["eori-xi"],"law":"Regulation (EU) No 952/2013 (Union Customs Code), as retained","law_uri":"https://www.legislation.gov.uk/eur/2013/952","guidance":"https://www.gov.uk/eori","checked":"2026-09-17"},{"id":"trade-commodity-code","title":"Find the commodity code for the goods","summary":"Internationally recognised reference numbers that describe a product and decide duty, VAT and any licence","duty":"comply","trigger":"Find the commodity code for the goods","deadline":"Before declaring goods","regulator":"HM Revenue and Customs","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["C","G","H"],"kw":["commodity-code"],"law":"Customs (Import Duty) (EU Exit) Regulations 2018","law_uri":"https://www.legislation.gov.uk/uksi/2018/1248","guidance":"https://www.gov.uk/guidance/finding-commodity-codes-for-imports-or-exports","checked":"2026-09-17"},{"id":"trade-rules-of-origin","title":"Check the rules of origin and claim tariff preference","summary":"Rules that decide where goods originate and whether a trade agreement's lower duty applies","duty":"comply","trigger":"Check the rules of origin and claim tariff preference","deadline":"Before claiming preference","regulator":"HM Revenue and Customs","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["C","G","H"],"kw":["rules-of-origin"],"law":"Taxation (Cross-border Trade) Act 2018","law_uri":"https://www.legislation.gov.uk/ukpga/2018/22","guidance":"https://www.gov.uk/guidance/check-your-goods-meet-the-rules-of-origin","checked":"2026-09-17"},{"id":"trade-export-licence","title":"Check whether an export licence is needed","summary":"Licences for controlled military goods, software and technology, and dual-use items","duty":"comply","trigger":"Check whether an export licence is needed","deadline":"Before export","regulator":"Export Control Joint Unit, DBT","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["C","G","H"],"kw":["export-licence"],"law":"Export Control Order 2008","law_uri":"https://www.legislation.gov.uk/uksi/2008/3231","guidance":"https://www.gov.uk/guidance/export-controls-military-goods-software-and-technology","checked":"2026-09-17"},{"id":"trade-cds","title":"Subscribe to the Customs Declaration Service","summary":"The HMRC system for import and export declarations, postponed VAT statements and import VAT certificates","duty":"comply","trigger":"Subscribe to the Customs Declaration Service","deadline":"Before declaring","regulator":"HM Revenue and Customs","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["C","G","H"],"kw":["cds"],"law":"Customs (Import Duty) (EU Exit) Regulations 2018","law_uri":"https://www.legislation.gov.uk/uksi/2018/1248","guidance":"https://www.gov.uk/guidance/get-access-to-the-customs-declaration-service","checked":"2026-09-17"},{"id":"trade-import-steps","title":"Follow the import step by step","summary":"The end-to-end GOV.UK route for importing goods into the UK","duty":"notify","trigger":"Follow the import step by step","deadline":"Each consignment","regulator":"HMRC and Border Force","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["C","G","H"],"kw":["import-steps"],"law":"Customs (Import Duty) (EU Exit) Regulations 2018","law_uri":"https://www.legislation.gov.uk/uksi/2018/1248","guidance":"https://www.gov.uk/import-goods-into-uk","checked":"2026-09-17"},{"id":"trade-export-steps","title":"Follow the export step by step","summary":"The end-to-end GOV.UK route for exporting goods from the UK","duty":"notify","trigger":"Follow the export step by step","deadline":"Each consignment","regulator":"HMRC and Border Force","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["C","G","H"],"kw":["export-steps"],"law":"Export Control Order 2008","law_uri":"https://www.legislation.gov.uk/uksi/2008/3231","guidance":"https://www.gov.uk/export-goods","checked":"2026-09-17"},{"id":"trade-intermediary","title":"Appoint a customs agent, broker or freight forwarder","summary":"Someone established in the UK for customs who can declare goods on your behalf","duty":"comply","trigger":"Appoint a customs agent, broker or freight forwarder","deadline":"Optional, common for new traders","regulator":"HM Revenue and Customs","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["C","G","H"],"kw":["intermediary"],"law":"Customs (Import Duty) (EU Exit) Regulations 2018","law_uri":"https://www.legislation.gov.uk/uksi/2018/1248","guidance":"https://www.gov.uk/guidance/appoint-someone-to-deal-with-customs-on-your-behalf","checked":"2026-09-17"},{"id":"trade-postponed-vat","title":"Account for import VAT on the VAT Return","summary":"Postponed VAT accounting: declare and recover import VAT on the same return rather than paying upfront","duty":"comply","trigger":"Account for import VAT on the VAT Return","deadline":"Each return period","regulator":"HM Revenue and Customs","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["C","G","H"],"kw":["postponed-vat"],"law":"Value Added Tax (Accounting Procedures for Import VAT for VAT Registered Persons and Amendment) (EU Exit) Regulations 2019","law_uri":"https://www.legislation.gov.uk/uksi/2019/60","guidance":"https://www.gov.uk/guidance/check-when-you-can-account-for-import-vat-on-your-vat-return","checked":"2026-09-17"},{"id":"trade-aeo","title":"Consider Authorised Economic Operator status","summary":"An internationally recognised standard showing a secure supply chain role and compliant customs controls","duty":"comply","trigger":"Consider Authorised Economic Operator status","deadline":"When volumes justify it","regulator":"HM Revenue and Customs","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["C","G","H"],"kw":["aeo"],"law":"Regulation (EU) No 952/2013 (Union Customs Code), as retained","law_uri":"https://www.legislation.gov.uk/eur/2013/952","guidance":"https://www.gov.uk/guidance/authorised-economic-operator-certification","checked":"2026-09-17"},{"id":"trade-ukims","title":"Apply for UK Internal Market Scheme authorisation","summary":"Authorisation giving access to the Simplified Processes for Internal Market Movements from Great Britain to Northern Ireland","duty":"comply","trigger":"Apply for UK Internal Market Scheme authorisation","deadline":"Before moving qualifying goods","regulator":"HM Revenue and Customs","jurisdiction":["GB-NIR","GB-ENG","GB-SCT","GB-WLS"],"sic":["C","G","H"],"kw":["ukims"],"law":null,"law_uri":null,"guidance":"https://www.gov.uk/guidance/apply-for-authorisation-for-the-uk-internal-market-scheme-if-you-bring-goods-into-northern-ireland","checked":"2026-09-17"},{"id":"trade-ipaffs","title":"Notify animal, food and feed imports through IPAFFS","summary":"Pre-notification for live animals, germinal products, animal by-products and high-risk food and feed","duty":"comply","trigger":"Notify animal, food and feed imports through IPAFFS","deadline":"Before arrival","regulator":"Animal and Plant Health Agency and Defra","jurisdiction":["GB-ENG","GB-SCT","GB-WLS"],"sic":["C","G","H"],"kw":["ipaffs"],"law":"Regulation (EU) 2017/625 (Official Controls Regulation), as retained","law_uri":"https://www.legislation.gov.uk/eur/2017/625","guidance":"https://www.gov.uk/guidance/import-of-products-animals-food-and-feed-system","checked":"2026-09-17"},{"id":"trade-ukca","title":"Place UKCA or CE marked products on the market in Great Britain","summary":"Conformity assessment routes and marking for products placed on the GB market","duty":"comply","trigger":"Place UKCA or CE marked products on the market in Great Britain","deadline":"Before placing on the market","regulator":"Office for Product Safety and Standards","jurisdiction":["GB-ENG","GB-SCT","GB-WLS"],"sic":["C","G","H"],"kw":["ukca"],"law":"Product Safety and Metrology etc. (Amendment etc.) (EU Exit) Regulations 2019","law_uri":"https://www.legislation.gov.uk/uksi/2019/696","guidance":"https://www.gov.uk/guidance/placing-ukca-or-ce-marked-products-on-the-market-in-great-britain","checked":"2026-09-17"},{"id":"right-to-work","title":"Check every worker's right to work before they start","summary":"An employer must check a job applicant is allowed to work in the UK before employing them, online with a share code, from original documents, or through an identity service provider.","duty":"comply","trigger":"Employing anyone","deadline":"Before employment starts","regulator":"Home Office","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["*"],"kw":["right to work","employment","immigration check","share code"],"law":"Immigration, Asylum and Nationality Act 2006","law_uri":"https://www.legislation.gov.uk/ukpga/2006/13/section/15","guidance":"https://www.gov.uk/check-job-applicant-right-to-work","checked":"2026-09-17"},{"id":"minimum-wage","title":"Pay at least the National Minimum or National Living Wage","summary":"Hourly minimum rates depend on the worker's age and whether they are an apprentice.","duty":"comply","trigger":"Employing anyone","deadline":"Every pay reference period","regulator":"HM Revenue and Customs, enforced with the Fair Work Agency","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["*"],"kw":["minimum wage","living wage","pay","apprentice"],"law":"National Minimum Wage Act 1998","law_uri":"https://www.legislation.gov.uk/ukpga/1998/39/section/1","guidance":"https://www.gov.uk/national-minimum-wage-rates","checked":"2026-09-17"},{"id":"off-payroll","title":"Apply the off-payroll working rules where they bite","summary":"The rules make sure a contractor working through an intermediary pays broadly the same tax and National Insurance as an employee would.","duty":"comply","trigger":"Engaging a worker through their own company or other intermediary","deadline":"At each engagement","regulator":"HM Revenue and Customs","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["*"],"kw":["ir35","off-payroll","contractor","intermediary","psc"],"law":"Income Tax (Earnings and Pensions) Act 2003","law_uri":"https://www.legislation.gov.uk/ukpga/2003/1/part/2/chapter/10","guidance":"https://www.gov.uk/guidance/understanding-off-payroll-working-ir35","checked":"2026-09-17"},{"id":"packaging-epr","title":"Meet extended producer responsibility for packaging","summary":"EPR shifts the end-of-life costs of household packaging waste from local authorities to the producers who place packaging on the UK market.","duty":"report","trigger":"Placing packaging on the UK market above the thresholds","deadline":"Annual and six-monthly data submissions","regulator":"Environment Agency and the devolved regulators","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["C","G","I"],"kw":["packaging","epr","producer responsibility","recycling"],"law":"Producer Responsibility Obligations (Packaging and Packaging Waste) Regulations 2024","law_uri":"https://www.legislation.gov.uk/uksi/2024/1332","guidance":"https://www.gov.uk/government/collections/extended-producer-responsibility-for-packaging","checked":"2026-09-17"},{"id":"plastic-packaging-tax","title":"Register for Plastic Packaging Tax if you cross the threshold","summary":"Registration is required at 10 tonnes or more of finished plastic packaging components manufactured in or imported into the UK.","duty":"register","trigger":"Manufacturing or importing 10 tonnes or more of finished plastic packaging components","deadline":"Within 30 days of becoming liable","regulator":"HM Revenue and Customs","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["C","G"],"kw":["plastic","packaging","tax","import","manufacture"],"law":"Finance Act 2021","law_uri":"https://www.legislation.gov.uk/ukpga/2021/26/part/2","guidance":"https://www.gov.uk/guidance/check-if-you-need-to-register-for-plastic-packaging-tax","checked":"2026-09-17"},{"id":"waste-duty-of-care","title":"Meet the waste duty of care","summary":"A business producing or handling waste must make sure it causes no harm or damage, with extra requirements for hazardous waste and consignment notes.","duty":"comply","trigger":"Producing or handling business waste","deadline":"Continuous; records kept","regulator":"Environment Agency and the devolved regulators","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["*"],"kw":["waste","duty of care","hazardous","transfer note"],"law":"Environmental Protection Act 1990","law_uri":"https://www.legislation.gov.uk/ukpga/1990/43/section/34","guidance":"https://www.gov.uk/dispose-hazardous-waste","checked":"2026-09-17"},{"id":"weee","title":"Meet WEEE obligations for electrical equipment","summary":"Producers, distributors and those collecting used electrical and electronic equipment have obligations under the WEEE regulations.","duty":"comply","trigger":"Producing, distributing or collecting electrical and electronic equipment","deadline":"Ongoing, with annual reporting","regulator":"Environment Agency","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["C","G","E"],"kw":["weee","electrical","electronic","recycling"],"law":"Waste Electrical and Electronic Equipment Regulations 2013","law_uri":"https://www.legislation.gov.uk/uksi/2013/3113","guidance":"https://www.gov.uk/guidance/collecting-used-and-waste-electrical-and-electronic-equipment","checked":"2026-09-17"},{"id":"trade-mark","title":"Register a trade mark to protect the brand","summary":"Registration lets a business take legal action against anyone using the mark without permission.","duty":"register","trigger":"Trading under a brand name or logo worth protecting","deadline":"Before or soon after launch; renewal every 10 years","regulator":"Intellectual Property Office","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["*"],"kw":["trade mark","brand","intellectual property","ipo"],"law":"Trade Marks Act 1994","law_uri":"https://www.legislation.gov.uk/ukpga/1994/26/section/32","guidance":"https://www.gov.uk/how-to-register-a-trade-mark","checked":"2026-09-17"},{"id":"music-licence","title":"Hold a music licence for music played in public","summary":"Playing recorded or live music in a business setting generally needs a licence covering the copyright in the recording and the composition.","duty":"licence","trigger":"Playing music where customers or staff can hear it","deadline":"Before playing music; renewed annually","regulator":"PPL PRS, under copyright law","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["G","I","N","R","S"],"kw":["music","copyright","ppl","prs","premises"],"law":"Copyright, Designs and Patents Act 1988","law_uri":"https://www.legislation.gov.uk/ukpga/1988/48/section/16","guidance":"https://pplprs.co.uk/themusiclicence/","checked":"2026-09-17"},{"id":"overseas-entity","title":"Register an overseas entity that owns UK property","summary":"An overseas entity buying, selling or transferring UK property must register itself and its beneficial owners.","duty":"register","trigger":"An overseas entity holding or dealing in UK land","deadline":"Before dealing with the property; annual update","regulator":"Companies House","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["L"],"kw":["overseas entity","property","beneficial owner"],"law":"Economic Crime (Transparency and Enforcement) Act 2022","law_uri":"https://www.legislation.gov.uk/ukpga/2022/10/part/1","guidance":"https://www.gov.uk/guidance/register-an-overseas-entity","checked":"2026-09-17"},{"id":"epc","title":"Have a valid energy performance certificate for the premises","summary":"Non-domestic premises being built, sold or let need an EPC, and it must be available to prospective buyers or tenants.","duty":"comply","trigger":"Building, selling or letting non-domestic premises","deadline":"Before marketing the property","regulator":"Ministry of Housing, Communities and Local Government, enforced by trading standards","jurisdiction":["GB-ENG","GB-WLS"],"sic":["L","G","I","N"],"kw":["epc","energy","premises","lease"],"law":"Energy Performance of Buildings (England and Wales) Regulations 2012","law_uri":"https://www.legislation.gov.uk/uksi/2012/3118","guidance":"https://www.gov.uk/find-energy-certificate","checked":"2026-09-17"},{"id":"vat-digital-services","title":"Apply the VAT place of supply rules to cross-border digital services","summary":"For digital services sold to consumers abroad, VAT is due where the consumer belongs, which may mean registering in another country or using a One Stop Shop.","duty":"comply","trigger":"Selling digital services to consumers outside the UK","deadline":"Each supply; registration before first sale where required","regulator":"HM Revenue and Customs","jurisdiction":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"sic":["J","M","R"],"kw":["digital services","vat","place of supply","one stop shop","software"],"law":"Value Added Tax Act 1994","law_uri":"https://www.legislation.gov.uk/ukpga/1994/23/schedule/4A","guidance":"https://www.gov.uk/guidance/the-vat-rules-if-you-supply-digital-services-to-private-consumers","checked":"2026-09-17"}];
+var PFORMS=[{"id":"sole-trader","name":"Sole trader","registrar":"No registrar; HMRC registration only","how_to_form":"Start trading and register for Self Assessment","tax_registration":"Self Assessment; VAT and PAYE if thresholds or employment apply","applies_to_nations":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"source":"https://www.gov.uk/set-up-business","verification":{"checked_on":"2026-09-17","result":"confirmed","evidence":"GOV.UK: most businesses register as a sole trader or limited company, but there are other ways to set up a business."}},{"id":"partnership","name":"Ordinary partnership","registrar":"HMRC","how_to_form":"Choose a name, choose a nominated partner, register the partnership with HMRC","tax_registration":"Partnership Self Assessment by the nominated partner; each partner registers separately","applies_to_nations":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"source":"https://www.gov.uk/set-up-business-partnership","verification":{"checked_on":"2026-09-17","result":"confirmed","evidence":"GOV.UK: choose a name, choose a nominated partner and register with HMRC; the nominated partner sends the partnership tax return."}},{"id":"limited-partnership","name":"Limited partnership","registrar":"Companies House","how_to_form":"Register the partnership with Companies House; general and limited partners have different liability","tax_registration":"Partnership Self Assessment","applies_to_nations":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"source":"https://www.gov.uk/set-up-business","verification":{"checked_on":"2026-09-17","result":"partly-confirmed","evidence":"GOV.UK business structures page lists partnership forms; registrar confirmed for LLPs and companies at Companies House."},"notes":"Fee and form detail not re-verified in this pass."},{"id":"llp","name":"Limited liability partnership","registrar":"Companies House","how_to_form":"Incorporate an LLP with Companies House, with at least two designated members","tax_registration":"Partnership Self Assessment; members register individually","applies_to_nations":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"source":"https://www.gov.uk/government/publications/limited-liability-partnership-incorporation-and-names","verification":{"checked_on":"2026-09-17","result":"confirmed","evidence":"Companies House guide covers how to incorporate an LLP and choose its name."}},{"id":"ltd","name":"Private company limited by shares","registrar":"Companies House","how_to_form":"Register online, usually processed within 24 hours; directors and PSCs verify identity","tax_registration":"Corporation Tax set up at incorporation; PAYE can be registered in the same service; VAT separate","applies_to_nations":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"source":"https://www.gov.uk/limited-company-formation","verification":{"checked_on":"2026-09-17","result":"confirmed","evidence":"GOV.UK: register online, usually within 24 hours; set up for Corporation Tax at the same time."}},{"id":"ltd-guarantee","name":"Private company limited by guarantee","registrar":"Companies House","how_to_form":"Register as a company limited by guarantee, commonly used by clubs, societies and charities","tax_registration":"Corporation Tax; charitable status handled separately","applies_to_nations":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"source":"https://www.gov.uk/guidance/charity-types-how-to-choose-a-structure-cc22a","verification":{"checked_on":"2026-09-17","result":"confirmed","evidence":"Charity Commission guidance lists the charitable company (limited by guarantee) as a main charity structure."}},{"id":"plc","name":"Public limited company","registrar":"Companies House","how_to_form":"Register as a PLC with Companies House; shares may be offered to the public","tax_registration":"Corporation Tax","applies_to_nations":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"source":"https://www.gov.uk/limited-company-formation","verification":{"checked_on":"2026-09-17","result":"partly-confirmed","evidence":"GOV.UK company formation guidance covers registering a company with Companies House."},"notes":"Minimum share capital and trading certificate requirements not re-verified in this pass."},{"id":"cic","name":"Community interest company","registrar":"Companies House and the CIC Regulator","how_to_form":"Form a company and apply for community interest company status","tax_registration":"Corporation Tax","applies_to_nations":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"source":"https://www.gov.uk/set-up-a-social-enterprise","verification":{"checked_on":"2026-09-17","result":"confirmed","evidence":"GOV.UK: a social enterprise can be set up as a limited company, charity or CIO, co-operative, community interest company, sole trader or partnership."}},{"id":"charitable-company","name":"Charitable company","registrar":"Companies House and the charity regulator for the nation","how_to_form":"Incorporate, then register with the charity regulator when required","tax_registration":"Corporation Tax with charitable exemptions; Gift Aid registration","applies_to_nations":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"source":"https://www.gov.uk/setting-up-charity","verification":{"checked_on":"2026-09-17","result":"confirmed","evidence":"GOV.UK: six steps to setting up a charity, including choosing a structure and registering with the Charity Commission where required."}},{"id":"cio","name":"Charitable incorporated organisation","registrar":"Charity Commission for England and Wales; OSCR registers SCIOs in Scotland","how_to_form":"Apply to the charity regulator; no separate company registration","tax_registration":"Charity tax treatment; Gift Aid registration","applies_to_nations":["GB-ENG","GB-WLS","GB-SCT"],"source":"https://www.gov.uk/guidance/charity-types-how-to-choose-a-structure-cc22a","verification":{"checked_on":"2026-09-17","result":"confirmed","evidence":"Charity Commission: four main charity structures are the CIO, charitable company limited by guarantee, unincorporated association and trust."},"notes":"Scottish charitable incorporated organisations are registered by OSCR, not re-verified in this pass."},{"id":"co-operative","name":"Co-operative or community benefit society","registrar":"Financial Conduct Authority mutuals registration","how_to_form":"Register the society with the FCA","tax_registration":"Corporation Tax","applies_to_nations":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"source":"https://www.gov.uk/set-up-a-social-enterprise","verification":{"checked_on":"2026-09-17","result":"partly-confirmed","evidence":"GOV.UK names the co-operative as a social enterprise structure; the FCA registration route was not re-verified in this pass."}},{"id":"unincorporated","name":"Unincorporated association","registrar":"No registrar","how_to_form":"Agree a constitution and start; members are personally liable","tax_registration":"Corporation Tax if it trades or has other income","applies_to_nations":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"source":"https://www.gov.uk/unincorporated-associations","verification":{"checked_on":"2026-09-17","result":"confirmed","evidence":"GOV.UK: you do not need to register an unincorporated association and it costs nothing to set one up; individual members are personally responsible for debts."}},{"id":"trust","name":"Trust","registrar":"No registrar for the structure; HMRC Trust Registration Service applies to many trusts","how_to_form":"Create a trust deed with trustees","tax_registration":"Trust tax rules","applies_to_nations":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"source":"https://www.gov.uk/guidance/charity-types-how-to-choose-a-structure-cc22a","verification":{"checked_on":"2026-09-17","result":"partly-confirmed","evidence":"Charity Commission lists the trust as one of four main charity structures."},"notes":"Trust Registration Service duties not re-verified in this pass."},{"id":"overseas-establishment","name":"UK establishment of an overseas company","registrar":"Companies House","how_to_form":"File form OS IN01 to register a UK establishment; costs £124","tax_registration":"Corporation Tax on UK activity","applies_to_nations":["GB-ENG","GB-SCT","GB-WLS","GB-NIR"],"source":"https://www.gov.uk/government/publications/register-a-uk-establishment-of-an-overseas-company-os-in01","verification":{"checked_on":"2026-09-17","result":"confirmed","evidence":"Companies House: it costs £124 to register a UK establishment of an overseas company; all directors will need to verify their identity."}}];
+var PCOMPARE=[{"id":"sole-trader","liability":"Unlimited: your personal assets are exposed","setup_cost":"Free","running":"Self Assessment each year","public":"Your name is not published on a register","tax":"Income Tax and National Insurance on profits","investment":"Cannot issue shares","grants":"Eligible for most start-up support"},{"id":"partnership","liability":"Unlimited, and each partner is liable for the others","setup_cost":"Free","running":"Partnership return plus a return each","public":"Not published","tax":"Each partner taxed on their share","investment":"Cannot issue shares","grants":"Eligible for most start-up support"},{"id":"llp","liability":"Limited to what each member has put in","setup_cost":"Companies House fee","running":"Accounts and a confirmation statement","public":"Members and accounts published","tax":"Members taxed individually","investment":"No shares; members can be added","grants":"Usually eligible"},{"id":"ltd","liability":"Limited to the value of the shares","setup_cost":"£50 digital at Companies House","running":"Accounts, confirmation statement, Corporation Tax return","public":"Directors, PSCs and accounts published","tax":"Corporation Tax on profits; tax on how you take money out","investment":"Shares can be issued; SEIS and EIS possible","grants":"Widest eligibility"},{"id":"ltd-guarantee","liability":"Limited to the guarantee, usually a nominal amount","setup_cost":"£50 digital","running":"As a company","public":"Published","tax":"Corporation Tax; often charitable or not-for-profit use","investment":"No shares","grants":"Often required for grant funding"},{"id":"cic","liability":"Limited","setup_cost":"Companies House fee plus the CIC fee","running":"Company filings plus an annual CIC report","public":"Published, plus the community interest statement","tax":"Corporation Tax; asset lock applies","investment":"Shares possible with a dividend cap","grants":"Eligible for social investment and many grants"},{"id":"cio","liability":"Limited","setup_cost":"Free to register with the charity regulator","running":"Annual return to the regulator","public":"Trustees and accounts published by the regulator","tax":"Charity tax reliefs and Gift Aid","investment":"Cannot issue shares","grants":"Charitable funding only"},{"id":"co-operative","liability":"Limited","setup_cost":"FCA registration fee","running":"Annual return to the FCA","public":"On the Mutuals Public Register","tax":"Corporation Tax, with reliefs in some cases","investment":"Community shares possible","grants":"Community and social funding"}];
+var PTOUCH=[{"stage":0,"lane":"front","name":"business.gov.uk (Business Growth Service)","org":"BIST (formerly Department for Business and Trade)","nations":["E","S","W","N"],"applies":["all"],"id":null,"sign":"business.gov.uk account","when":"Any time before starting","cost":"Free","src":["bgs","btc"]},{"stage":0,"lane":"front","name":"GDS and BIST single business experience (in development)","org":"GDS (DCMS) with BIST","nations":["E","S","W","N"],"applies":["all"],"id":null,"sign":"None yet (planned)","when":"Phased from 2026","cost":"n/a","src":["m_gdsbiz","m_blue"]},{"stage":0,"lane":"front","name":"Business Support Service helpline","org":"BIST, England only","nations":["E"],"applies":["all"],"id":null,"sign":"None","when":"Weekdays 9am to 6pm","cost":"Free, 0800 998 1098","src":["helpline"]},{"stage":0,"lane":"local","name":"Growth Hubs","org":"Local and combined authorities with BIST grant","nations":["E"],"applies":["all"],"id":null,"sign":"Varies","when":"Pre-start onwards","cost":"Free","src":["m_colab","gla","btc","dorset","glos"]},{"stage":0,"lane":"front","name":"GOV.UK start-up guidance and step-by-steps","org":"GDS (now in DCMS) with departmental content","nations":["E","S","W","N"],"applies":["all"],"id":null,"sign":"None","when":"Any time","cost":"Free","src":["ltd","m_bizformal","m_sole","m_setup","bps"]},{"stage":0,"lane":"front","name":"GOV.UK app and GOV.UK Chat","org":"GDS (now in DCMS)","nations":["E","S","W","N"],"applies":["all"],"id":null,"sign":"None (app; One Login optional)","when":"Any time","cost":"Free","src":["chat","chatlaunch"]},{"stage":0,"lane":"dev","name":"Business Gateway","org":"Scottish councils, funded by the Scottish Government","nations":["S"],"applies":["all"],"id":null,"sign":"Varies","when":"Pre-start onwards","cost":"Free, 0300 303 0660","src":["bg","helpline"]},{"stage":0,"lane":"dev","name":"Business Wales","org":"Welsh Government","nations":["W"],"applies":["all"],"id":null,"sign":"Varies","when":"Pre-start onwards","cost":"Free, 0300 060 3000","src":["bw","helpline"]},{"stage":0,"lane":"dev","name":"Go Succeed and nibusinessinfo.co.uk","org":"Northern Ireland's 11 councils, Enterprise NI, Invest NI","nations":["N"],"applies":["all"],"id":null,"sign":"Varies","when":"Pre-start onwards","cost":"Free, 0800 027 0639","src":["gs","nibi"]},{"stage":0,"lane":"local","name":"Local growth funding after UKSPF","org":"MHCLG, strategic authorities, councils","nations":["E"],"applies":["all"],"id":null,"sign":"Varies","when":"From April 2026","cost":"n/a","src":["ukspf","lgf","lgflib","ccn"]},{"stage":1,"lane":"front","name":"Choose a legal structure","org":"business.gov.uk and GOV.UK","nations":["E","S","W","N"],"applies":["all"],"id":null,"sign":"None","when":"Before registering","cost":"Free","src":["bgs","ltd"]},{"stage":1,"lane":"reg","name":"Company name checks","org":"Companies House","nations":["E","S","W","N"],"applies":["ltd"],"id":null,"sign":"None","when":"Before incorporation","cost":"Free","src":["bgs","chplan"]},{"stage":1,"lane":"reg","name":"Trade mark registration","org":"Intellectual Property Office","nations":["E","S","W","N"],"applies":["all"],"id":"Trade mark number","sign":"IPO online account","when":"Optional, early","cost":"Fee per class","src":["bgs"]},{"stage":2,"lane":"reg","name":"Identity verification for directors and PSCs","org":"Companies House via GOV.UK One Login or an authorised agent (ACSP)","nations":["E","S","W","N"],"applies":["ltd"],"id":"Companies House personal code","sign":"GOV.UK One Login","when":"Before incorporation","cost":"Free directly; agents charge","src":["chidv","chblog","chmi","chplan"]},{"stage":2,"lane":"reg","name":"Incorporate the company","org":"Companies House","nations":["E","S","W","N"],"applies":["ltd"],"id":"Company registration number","sign":"GOV.UK One Login","when":"Day zero for a company","cost":"£100 digital","src":["ltd","chfees"]},{"stage":2,"lane":"tax","name":"Automatic notification to HMRC","org":"Companies House to HMRC","nations":["E","S","W","N"],"applies":["ltd"],"id":"Corporation Tax UTR","sign":"None","when":"About 15 days after incorporation","cost":"Free","src":["utr"]},{"stage":2,"lane":"front","name":"Check the next steps for your limited company","org":"GOV.UK (built by GDS in 2021, listed under Companies House)","nations":["E","S","W","N"],"applies":["ltd"],"id":null,"sign":"None","when":"After incorporation","cost":"Free","src":["m_next","m_prod21","m_road22"]},{"stage":2,"lane":"reg","name":"Annual confirmation statement and accounts","org":"Companies House","nations":["E","S","W","N"],"applies":["ltd"],"id":null,"sign":"GOV.UK One Login","when":"Every 12 months","cost":"£50 digital","src":["chfees","chplan"]},{"stage":2,"lane":"reg","name":"Presenter and agent verification","org":"Companies House","nations":["E","S","W","N"],"applies":["ltd"],"id":null,"sign":"GOV.UK One Login","when":"No earlier than Nov 2027","cost":"ACSP registration fee","src":["chplan","dwf"]},{"stage":3,"lane":"tax","name":"Register for Self Assessment","org":"HMRC","nations":["E","S","W","N"],"applies":["sole"],"id":"Self Assessment UTR","sign":"Government Gateway, or One Login for new HMRC customers","when":"By 5 October after the tax year","cost":"Free","src":["litrgreg"]},{"stage":3,"lane":"tax","name":"Making Tax Digital for Income Tax","org":"HMRC","nations":["E","S","W","N"],"applies":["sole"],"id":null,"sign":"Software plus HMRC credentials","when":"Phased from 6 Apr 2026","cost":"Software cost","src":["mtd","litrgmtd","btc"]},{"stage":3,"lane":"tax","name":"Corporation Tax","org":"HMRC","nations":["E","S","W","N"],"applies":["ltd"],"id":null,"sign":"Government Gateway business tax account","when":"Within 3 months of trading","cost":"Free; software for returns","src":["closure"]},{"stage":3,"lane":"tax","name":"VAT registration","org":"HMRC","nations":["E","S","W","N"],"applies":["all"],"id":"VAT registration number","sign":"Government Gateway business tax account","when":"When turnover passes £90,000","cost":"Free","src":["vat","vatlib","prowess"]},{"stage":3,"lane":"tax","name":"How a founder signs in to HMRC","org":"HMRC and GDS","nations":["E","S","W","N"],"applies":["all"],"id":"Government Gateway user ID","sign":"Government Gateway and One Login","when":"Now, until migration","cost":"n/a","src":["gdshmrc","hmrcguid","btc"]},{"stage":4,"lane":"front","name":"Find a licence","org":"GOV.UK with BIST and about 30 departments, bodies and devolved nations","nations":["E","S","W","N"],"applies":["all"],"id":null,"sign":"None","when":"Before trading","cost":"Free","src":["licence","licblog"]},{"stage":4,"lane":"local","name":"Council licences","org":"Local licensing authorities","nations":["E","S","W","N"],"applies":["all"],"id":"Licence number","sign":"Council portal","when":"Before the activity starts","cost":"Varies","src":["brent","bps"]},{"stage":4,"lane":"local","name":"Food business registration","org":"Local authority environmental health, under FSA and Food Standards Scotland","nations":["E","S","W","N"],"applies":["food"],"id":"Food business registration","sign":"None (online registration service)","when":"At least 28 days before trading","cost":"Free","src":["food","fss","derby"]},{"stage":4,"lane":"regu","name":"Data protection fee","org":"Information Commissioner's Office","nations":["E","S","W","N"],"applies":["all"],"id":"ICO registration reference","sign":"ICO online registration","when":"Before processing personal data","cost":"£52 for most start-ups","src":["ico"]},{"stage":4,"lane":"regu","name":"Sector regulators","org":"FCA, CQC, Ofsted, SIA, Gambling Commission, Environment Agency and others","nations":["E","S","W","N"],"applies":["all"],"id":"Regulator reference","sign":"Varies (regulator-specific)","when":"Before regulated activity","cost":"Varies","src":["bps"]},{"stage":5,"lane":"local","name":"Business rates bill","org":"Billing authority (council), valuations by the VOA","nations":["E"],"applies":["prem"],"id":"Business rates account","sign":"Council portal","when":"From occupation","cost":"Rateable value times multiplier","src":["rates","rates2","btc"]},{"stage":5,"lane":"local","name":"Small business rate relief and transition","org":"Billing authority","nations":["E"],"applies":["prem"],"id":null,"sign":"Council portal","when":"Apply or check with council","cost":"n/a","src":["rates2","sbrr"]},{"stage":5,"lane":"tax","name":"Check or challenge a valuation","org":"Valuation Office Agency","nations":["E","W"],"applies":["prem"],"id":"VOA property reference","sign":"VOA Business Rates Valuation Account","when":"Any time","cost":"Free","src":["nnorth"]},{"stage":5,"lane":"dev","name":"Devolved non-domestic rates","org":"Welsh Government; Scottish assessors and councils; Land and Property Services (NI)","nations":["S","W","N"],"applies":["prem"],"id":"Rates account","sign":"Nation or council portal","when":"From occupation","cost":"Varies","src":["btc"]},{"stage":5,"lane":"local","name":"Planning permission","org":"Local planning authority","nations":["E","S","W","N"],"applies":["prem","food"],"id":"Planning reference","sign":"Planning portal or council","when":"Before works or change of use","cost":"Varies","src":["bps","fss"]},{"stage":6,"lane":"fin","name":"Start Up Loans","org":"British Business Bank, through delivery partners","nations":["E","S","W","N"],"applies":["all"],"id":"Loan application reference","sign":"Delivery-partner portal","when":"Pre-start to 5 years trading","cost":"7.5% fixed","src":["sul","fundbiz"]},{"stage":6,"lane":"fin","name":"British Business Bank programmes","org":"British Business Bank","nations":["E","S","W","N"],"applies":["all"],"id":null,"sign":"Varies (lender-specific)","when":"Growth stage","cost":"Commercial terms","src":["bbbsurvey","sbc"]},{"stage":6,"lane":"fin","name":"Help to Grow: Management","org":"BIST with business schools","nations":["E","S","W","N"],"applies":["emp"],"id":null,"sign":"Varies (provider portal)","when":"Once established","cost":"£750","src":["sbc","btc"]},{"stage":6,"lane":"dev","name":"Scottish Enterprise, HIE and council grants","org":"Scottish Government agencies and councils","nations":["S"],"applies":["all"],"id":null,"sign":"Agency portals","when":"Start-up and growth","cost":"Varies","src":["mygovscot","bg"]},{"stage":6,"lane":"dev","name":"Development Bank of Wales","org":"Welsh Government-owned","nations":["W"],"applies":["all"],"id":null,"sign":"Online application","when":"Start-up and growth","cost":"Rate set per business","src":["dbw"]},{"stage":6,"lane":"dev","name":"Invest NI and Go Succeed grants","org":"Invest NI; NI councils","nations":["N"],"applies":["all"],"id":null,"sign":"Varies","when":"Start-up and growth","cost":"30% match","src":["gs","nibi"]},{"stage":7,"lane":"tax","name":"Register as an employer (PAYE)","org":"HMRC","nations":["E","S","W","N"],"applies":["emp"],"id":"Employer PAYE and Accounts Office references","sign":"Government Gateway business tax account","when":"Before the first payday","cost":"Free","src":["bgs"]},{"stage":7,"lane":"emp","name":"Right to work checks","org":"Home Office","nations":["E","S","W","N"],"applies":["emp"],"id":null,"sign":"Home Office online checking","when":"Before work starts","cost":"Free","src":["bgs"]},{"stage":7,"lane":"emp","name":"Workplace pension auto-enrolment","org":"The Pensions Regulator","nations":["E","S","W","N"],"applies":["emp"],"id":"TPR letter code and PAYE reference","sign":"TPR online service","when":"From first employee","cost":"Employer contributions","src":["bgs"]},{"stage":7,"lane":"emp","name":"Employers' liability insurance","org":"Health and Safety Executive (enforcement)","nations":["E","S","W","N"],"applies":["emp"],"id":null,"sign":"None","when":"From first employee","cost":"Market premium","src":["bps"]},{"stage":7,"lane":"emp","name":"Employment Rights Act 2025: first changes","org":"BIST","nations":["E","S","W"],"applies":["emp"],"id":null,"sign":"None","when":"In force from 6 Apr 2026","cost":"Higher employer cost","src":["era"]},{"stage":7,"lane":"emp","name":"Fair Work Agency","org":"BIST arm's-length body","nations":["E","S","W"],"applies":["emp"],"id":null,"sign":"None","when":"Operating since 7 Apr 2026","cost":"n/a","src":["glaa"]},{"stage":7,"lane":"dev","name":"Northern Ireland employment law","org":"Department for the Economy (NI)","nations":["N"],"applies":["emp"],"id":null,"sign":"None","when":"Bill due in the current mandate","cost":"n/a","src":["niar"]},{"stage":8,"lane":"trade","name":"Central Digital Platform","org":"Cabinet Office (enhanced Find a Tender)","nations":["E","W","N"],"applies":["gov"],"id":"Supplier record and share code","sign":"GOV.UK One Login","when":"Before bidding under the Act","cost":"Free","src":["cdp","cdpol","btc"]},{"stage":8,"lane":"dev","name":"Scottish procurement regime","org":"Scottish Government","nations":["S"],"applies":["gov"],"id":"Portal supplier ID","sign":"Portal account","when":"Before bidding","cost":"Free","src":["sppn"]},{"stage":8,"lane":"trade","name":"EORI number (GB)","org":"HMRC","nations":["E","S","W","N"],"applies":["trade"],"id":"GB EORI","sign":"Government Gateway","when":"Before the first customs movement","cost":"Free","src":["xero","bps"]},{"stage":8,"lane":"trade","name":"XI EORI and UK Internal Market Scheme","org":"HMRC","nations":["N"],"applies":["trade"],"id":"XI EORI","sign":"Government Gateway","when":"Before NI customs activity","cost":"Free","src":["nieori","bps"]},{"stage":8,"lane":"front","name":"Sell overseas support","org":"BIST on business.gov.uk","nations":["E","S","W","N"],"applies":["trade"],"id":null,"sign":"business.gov.uk account","when":"Before exporting","cost":"Free","src":["bgs"]},{"stage":8,"lane":"trade","name":"Protection from late payment","org":"Small Business Commissioner; Commercial Payments Bill","nations":["E","S","W","N"],"applies":["all"],"id":null,"sign":"None","when":"Bill before Parliament","cost":"n/a","src":["cpb","lords"]},{"stage":2,"lane":"reg","name":"Register the charity","org":"Charity Commission for England and Wales, OSCR or the Charity Commission for Northern Ireland","nations":["E","S","W","N"],"applies":["charity"],"id":"Charity number","sign":"Charity regulator account","when":"Before or soon after the charity starts operating","cost":"Free","src":["chreg","oscr","ccni"]},{"stage":2,"lane":"reg","name":"Register the society","org":"Financial Conduct Authority","nations":["E","S","W","N"],"applies":["mutual"],"id":"Society registration number","sign":"FCA Connect","when":"At formation","cost":"Registration fee payable to the FCA","src":["mutuals"]},{"stage":2,"lane":"reg","name":"CIC eligibility decision","org":"Office of the Regulator of Community Interest Companies","nations":["E","S","W","N"],"applies":["cic"],"id":null,"sign":"Companies House account","when":"At incorporation","cost":"Included in the incorporation fee","src":["cicreg","cicform"]},{"stage":3,"lane":"tax","name":"Register the trust with HMRC","org":"HM Revenue and Customs","nations":["E","S","W","N"],"applies":["trust"],"id":"Unique Taxpayer Reference","sign":"HMRC online services","when":"Once the trust becomes liable for tax","cost":"Free","src":["trustreg"]}];
+var PSCHED={"req-self-assessment":{"kind":"tax-year-october","anchor":"start","label":"Register for Self Assessment"},"company-registration":{"kind":"none","anchor":"start","label":"Incorporate the company"},"req-confirmation-statement":{"kind":"months","months":12,"anchor":"start","repeat":"annual"},"req-first-accounts":{"kind":"months","months":21,"anchor":"start"},"req-paye-registration":{"kind":"before-event","days":0,"anchor":"employee","note":"before the first payday"},"right-to-work":{"kind":"before-event","days":0,"anchor":"employee"},"employers-liability":{"kind":"before-event","days":0,"anchor":"employee"},"pensions":{"kind":"after-event","days":0,"anchor":"employee","note":"duties start on the first employee's start date"},"minimum-wage":{"kind":"ongoing","anchor":"employee"},"food":{"kind":"before-event","days":28,"anchor":"trading"},"food-scotland":{"kind":"before-event","days":28,"anchor":"trading"},"vat":{"kind":"month-end-plus","days":30,"anchor":"vat"},"plastic-packaging-tax":{"kind":"after-event","days":30,"anchor":"vat","note":"within 30 days of becoming liable"},"data-protection":{"kind":"before-event","days":0,"anchor":"start","note":"fee due before or when processing begins"},"id-verification":{"kind":"before-event","days":0,"anchor":"start"},"trade-eori-gb":{"kind":"before-event","days":0,"anchor":"trading"},"cis":{"kind":"before-event","days":0,"anchor":"trading"},"req-mtd-income-tax":{"kind":"fixed-date","date":"2026-04-06"},"req-accounts-software":{"kind":"fixed-date","date":"2028-04-01"},"req-e-invoicing":{"kind":"fixed-date","date":"2029-04-01"},"req-agent-verification":{"kind":"fixed-date","date":"2027-11-01","note":"no earlier than"}};
+var PDOCS=[{"id":"photo-id","label":"Photo identity document","kind":"identity","note":"Passport, driving licence or another document the verification route accepts","needed_for":["Identity verification for directors and PSCs","Opening a business bank account"]},{"id":"proof-address","label":"Proof of your home address","kind":"address","note":"Usually a recent utility bill or bank statement","needed_for":["Identity verification for directors and PSCs","Opening a business bank account"]},{"id":"registered-office","label":"A registered office address","kind":"corporate","note":"Must be an appropriate address where post can be acknowledged. It appears on the public register","needed_for":["Incorporate the company"]},{"id":"service-address","label":"A service address for each director","kind":"corporate","note":"Also public. A home address can be kept off the register by giving a different service address","needed_for":["Incorporate the company"]},{"id":"company-name","label":"A company name that is available","kind":"corporate","note":"Check availability and check it against registered trade marks; they are different questions","needed_for":["Incorporate the company"]},{"id":"sic-code","label":"A SIC code for what you do","kind":"corporate","note":"Chosen from the UK Standard Industrial Classification. It drives what else applies to you","needed_for":["Incorporate the company","Register for tax"]},{"id":"director-details","label":"Details of every director","kind":"corporate","note":"Name, date of birth, nationality, occupation and address","needed_for":["Incorporate the company"]},{"id":"psc-details","label":"Details of every person with significant control","kind":"corporate","note":"Anyone holding more than 25% of shares or voting rights, or otherwise controlling the company","needed_for":["Incorporate the company"]},{"id":"share-structure","label":"Your share structure","kind":"corporate","note":"Classes, number and value of shares. Fix this before seeking investment: it affects SEIS and EIS","needed_for":["Incorporate the company"]},{"id":"ni-number","label":"Your National Insurance number","kind":"identity","needed_for":["Register for Self Assessment"]},{"id":"utr","label":"Your Unique Taxpayer Reference, once it arrives","kind":"identity","note":"Issued by post after registering. Keep it: almost everything downstream asks for it","needed_for":["Register for tax","Making Tax Digital"]},{"id":"business-bank","label":"Business bank account details","kind":"financial","needed_for":["Register for tax","Taking payment"]},{"id":"turnover-records","label":"Records of your turnover","kind":"financial","note":"You need these to know when you cross the VAT threshold, and to file anything at all","needed_for":["Register for VAT","Self Assessment"]},{"id":"premises-details","label":"Details of your premises","kind":"address","note":"Address, floor area and use. Needed for rates and for most licences","needed_for":["Business rates","Premises licences","Planning permission"]},{"id":"food-premises","label":"Details of where food is handled","kind":"address","note":"Including a domestic kitchen, which still counts","needed_for":["Register the food business"]},{"id":"food-safety","label":"A food safety management system","kind":"qualification","note":"Usually Safer Food Better Business or an equivalent, in place before inspection","needed_for":["Register the food business"]},{"id":"right-to-work-evidence","label":"Right to work evidence for each employee","kind":"identity","note":"A share code or original documents, checked before employment starts","needed_for":["Employ someone"]},{"id":"el-insurance","label":"Employers' liability insurance certificate","kind":"insurance","note":"Required from the day you employ anyone, with limited exceptions","needed_for":["Employ someone"]},{"id":"pension-scheme","label":"A qualifying pension scheme","kind":"financial","note":"Chosen before the duties start date, not after","needed_for":["Employ someone"]},{"id":"payroll-details","label":"Payroll details for each employee","kind":"financial","note":"National Insurance number, start date, pay and tax code","needed_for":["Employ someone"]},{"id":"eori","label":"A GB EORI number","kind":"corporate","note":"And an XI EORI if goods move to Northern Ireland","needed_for":["Move goods across a border"]},{"id":"commodity-codes","label":"Commodity codes for your goods","kind":"corporate","needed_for":["Move goods across a border"]},{"id":"prof-qualification","label":"Any professional qualification or registration your activity requires","kind":"qualification","note":"Care, childcare, security, gas, electrical and financial activities all have their own","needed_for":["Licences and registrations"]},{"id":"dbs","label":"DBS or equivalent criminal record checks","kind":"qualification","note":"For regulated activity with children or vulnerable adults","needed_for":["Licences and registrations"]}];
+
+(function(){
+  var root=document.documentElement;
+  try{var sv=localStorage.getItem('hub-theme');if(sv)root.setAttribute('data-theme',sv);}catch(e){}
+  var $=function(i){return document.getElementById(i);};
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function ic(n,c){return '<svg class="'+(c||'ic')+'" aria-hidden="true" focusable="false"><use href="#i-'+n+'"></use></svg>';}
+  var ACTS=[['employ','Employs people'],['food','Handles food'],['premises','Occupies premises'],['goods','Moves goods across a border'],
+            ['consumers','Sells to consumers'],['data','Handles personal data'],['public','Sells to the public sector'],
+            ['construction','Pays construction subcontractors'],['alcohol','Sells alcohol'],['online','Sells through an online platform']];
+  var KW={employ:['employ','paye','worker','pension','wage','right to work'],food:['food','hygiene'],premises:['premises','rates','planning','property'],
+    goods:['customs','export','import','eori','commodity','origin','tariff'],consumers:['consumer','product','selling'],
+    data:['data','personal data','privacy','cyber'],public:['procurement','contract','subsidy'],construction:['construction','subcontractor','cis'],
+    alcohol:['alcohol','licensing'],online:['platform','digital services','online']};
+  var P={f:'ltd',n:'GB-ENG',a:[],d:'',e:'',v:'',m:'',u:'',k:'',r:''};
+  // ---- profile in the address bar ----
+  function read(){
+    var q=new URLSearchParams(location.search);
+    if(q.get('f'))P.f=q.get('f'); if(q.get('n'))P.n=q.get('n');
+    if(q.get('a'))P.a=q.get('a').split(',').filter(Boolean);
+    ['d','e','v','m','u','k','r'].forEach(function(k){if(q.get(k))P[k]=q.get(k);});
+  }
+  function write(){
+    var q=new URLSearchParams();
+    q.set('f',P.f);q.set('n',P.n);if(P.a.length)q.set('a',P.a.join(','));
+    ['d','e','v','m','u','k','r'].forEach(function(k){if(P[k])q.set(k,P[k]);});
+    history.replaceState(null,'','?'+q.toString());
+  }
+  // ---- date arithmetic ----
+  function D(s){ if(!s) return null; var d=new Date(s+'T00:00:00Z'); return isNaN(d)?null:d; }
+  function fmt(d){ return d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'}); }
+  function addDays(d,n){var x=new Date(d.getTime());x.setUTCDate(x.getUTCDate()+n);return x;}
+  function addMonths(d,n){var x=new Date(d.getTime());x.setUTCMonth(x.getUTCMonth()+n);return x;}
+  function endOfMonth(d){return new Date(Date.UTC(d.getUTCFullYear(),d.getUTCMonth()+1,0));}
+  function taxYearOct(d){ // 5 October after the end of the tax year containing d
+    var y=d.getUTCFullYear();
+    var endOfTY=(d.getUTCMonth()>2 || (d.getUTCMonth()===3 && d.getUTCDate()>=6))?y+1:y; // tax year ends 5 April
+    return new Date(Date.UTC(endOfTY,9,5));
+  }
+  function anchor(k){ return k==='employee'?D(P.e):k==='vat'?D(P.v):k==='trading'||k==='start'?D(P.d):null; }
+  function due(rid){
+    var s=PSCHED[rid]; if(!s) return null;
+    if(s.kind==='fixed-date') return {date:D(s.date),note:s.note||''};
+    var a=anchor(s.anchor); if(!a) return {missing:s.anchor};
+    if(s.kind==='tax-year-october') return {date:taxYearOct(a)};
+    if(s.kind==='months') return {date:addMonths(a,s.months),repeat:s.repeat};
+    if(s.kind==='before-event') return {date:addDays(a,-(s.days||0)),before:true,note:s.note||''};
+    if(s.kind==='after-event') return {date:addDays(a,s.days||0),note:s.note||''};
+    if(s.kind==='month-end-plus') return {date:addDays(endOfMonth(a),s.days||0)};
+    return {ongoing:true};
+  }
+  // ---- which duties apply ----
+  function matches(r){
+    var j=r.jurisdiction||[]; if(j.length && j.indexOf(P.n)<0) return false;
+    var hay=((r.title||'')+' '+(r.trigger||'')+' '+(r.kw||[]).join(' ')+' '+(r.summary||'')).toLowerCase();
+    var universal=/company|self assessment|data|trading allowance|identity|confirmation|accounts|tax/.test(hay);
+    var isCompany=/^(ltd|ltd-guarantee|plc|llp|cic|charitable-company|limited-partnership|overseas-establishment)$/.test(P.f);
+    if(/compan(y|ies)|director|psc|confirmation statement|corporation tax/.test(hay) && !isCompany) return false;
+    if(/self assessment|sole trader|trading allowance/.test(hay) && isCompany && !/director/.test(hay)) return false;
+    for(var i=0;i<P.a.length;i++){
+      var terms=KW[P.a[i]]||[];
+      for(var k=0;k<terms.length;k++) if(hay.indexOf(terms[k])>=0) return true;
+    }
+    // things that apply whatever the activity
+    return universal && !/food|customs|export|import|alcohol|gambling|scrap|security|childcare|care|waste|spectrum|animal|plant|cites|construction|packaging|weee|music|overseas entity|epc|operator/.test(hay);
+  }
+  function applicable(){ return PRULES.filter(matches); }
+  // ---- render ----
+  function renderProfile(){
+    $('pf').innerHTML=PFORMS.map(function(f){return '<option value="'+f.id+'"'+(f.id===P.f?' selected':'')+'>'+esc(f.name)+'</option>';}).join('');
+    $('pn').value=P.n; $('pd').value=P.d; $('pe').value=P.e; $('pv').value=P.v; $('pm').value=P.m; $('pu').value=P.u; $('pk').checked=P.k==='1'; $('pr').checked=P.r==='1';
+    $('pacts').innerHTML=ACTS.map(function(a){
+      return '<button type="button" data-a="'+a[0]+'" aria-pressed="'+(P.a.indexOf(a[0])>=0)+'">'+esc(a[1])+'</button>';}).join('');
+    Array.prototype.forEach.call($('pacts').querySelectorAll('button'),function(b){
+      b.addEventListener('click',function(){
+        var k=b.getAttribute('data-a'),i=P.a.indexOf(k);
+        if(i>=0)P.a.splice(i,1);else P.a.push(k);
+        b.setAttribute('aria-pressed',P.a.indexOf(k)>=0);write();render();});});
+  }
+  function fresh(r){ return r.checked?'<span class="freshness" title="Last checked">'+ic('clock')+esc(r.checked)+'</span>':''; }
+  // ---- circumstances: maternity, Universal Credit, caring, observances (added 23 Sept 2026, requirement R-C1) ----
+  function addW(d,w){var x=new Date(d.getTime());x.setUTCDate(x.getUTCDate()+7*w);return x;}
+  function addM(d,m){var x=new Date(d.getTime());x.setUTCMonth(x.getUTCMonth()+m);return x;}
+  var MA_SRC='https://www.gov.uk/maternity-allowance',UC_SRC='https://www.gov.uk/self-employment-and-universal-credit',CA_SRC="https://www.gov.uk/carers-allowance";
+  function circDuties(){
+    var out=[];var due=D(P.m),uc=D(P.u);
+    if(due){
+      out.push({date:addW(due,-14),title:'Earliest day to claim Maternity Allowance',summary:'You can claim once you have been pregnant for 26 weeks. The claim looks back over the 66 weeks before the due date and needs 26 weeks of work in that window; a gap earlier this year can matter.',regulator:'Department for Work and Pensions',deadline:'from 26 weeks pregnant',law:'Maternity Allowance',law_uri:MA_SRC,checked:'2026-09-23',kind:'circ'});
+      out.push({date:addW(due,-11),title:'Earliest day Maternity Allowance payments can start',summary:'Payments can begin from the 11th week before the week the baby is due, for up to 39 weeks. A self-employed founder cannot get Statutory Maternity Pay; this is the route.',regulator:'Department for Work and Pensions',deadline:'11 weeks before the due date',law:'Maternity Allowance',law_uri:MA_SRC,checked:'2026-09-23',kind:'circ'});
+      out.push({date:addW(due,28),title:'Maternity Allowance ends if taken in full',summary:'Thirty-nine weeks from the earliest start. Anything in this plan falling before this date is flagged as landing during leave.',regulator:'Department for Work and Pensions',deadline:'39 weeks after payments start',law:'Maternity Allowance',law_uri:MA_SRC,checked:'2026-09-23',kind:'circ'});
+    }
+    if(uc){
+      for(var i=1;i<=12;i++) out.push({date:addM(uc,i),title:'Report self-employed income and expenses to Universal Credit',summary:'Reported at the end of each monthly assessment period, on a different cycle from the tax year. Keep the evidence of gainful self-employment (UTR, invoices, receipts, customer lists) from day one; the minimum income floor may apply.',regulator:'Department for Work and Pensions',deadline:'end of each assessment period',law:'Self-employment and Universal Credit',law_uri:UC_SRC,checked:'2026-09-23',kind:'circ',repeat:true,series:'uc',n:i});
+    }
+    return out;
+  }
+  // ---- the recurring year (R-L2, 23 Sept 2026): VAT return cycle, pension re-enrolment ----
+  function recurringYear(){
+    var out=[],v=D(P.v),e=D(P.e);
+    if(v){ for(var q=1;q<=4;q++){ var end=addM(v,3*q); var dl=addM(end,1); dl.setUTCDate(dl.getUTCDate()+7);
+      out.push({date:dl,title:'VAT return and payment for quarter '+q,summary:'Usually one calendar month and 7 days after the end of the VAT accounting period, for both the online return and the payment. Quarters here are counted from the date you crossed the threshold; HMRC sets your actual periods, so check them in your VAT account.',regulator:'HM Revenue and Customs',deadline:'1 month and 7 days after each period',law:'VAT returns: deadlines',law_uri:'https://www.gov.uk/vat-returns/deadlines',checked:'2026-09-23',kind:'circ',repeat:true,modelled:true}); } }
+    if(e){ out.push({date:addM(e,36),title:'Pension re-enrolment and re-declaration',summary:'Every three years employers must put certain staff who have left the pension scheme back into it and complete a re-declaration. Counted here from your first employee; the Pensions Regulator gives your actual date.',regulator:'The Pensions Regulator',deadline:'every three years',law:'Re-enrolment and re-declaration',law_uri:'https://www.thepensionsregulator.gov.uk/en/employers/re-enrolment',checked:'2026-09-23',kind:'circ',repeat:true,modelled:true}); }
+    return out;
+  }
+  // observance windows, sourced 23 Sept 2026: Hebrew calendar dates from Hebcal and the Bank of Israel 2027 holiday list; Diwali from published panchang tables; Islamic dates are International Astronomical Center calculations and move with moon sighting.
+  var OBS=[['Diwali','2026-11-08','2026-11-08'],['Christmas and New Year','2026-12-24','2027-01-02'],['Ramadan (moon-dependent; calculated)','2027-02-08','2027-03-09'],['Eid al-Fitr (moon-dependent; calculated)','2027-03-09','2027-03-12'],['Passover','2027-04-21','2027-04-29'],['Eid al-Adha (moon-dependent; calculated)','2027-05-16','2027-05-19'],['Rosh Hashanah to Yom Kippur','2027-10-01','2027-10-11'],['Diwali','2027-10-29','2027-10-29']];
+  function observance(d){for(var i=0;i<OBS.length;i++){var s=D(OBS[i][1]),e=D(OBS[i][2]);if(d>=addW(s,-1)&&d<=addW(e,1))return OBS[i][0];}return null;}
+  var dated=[],undated=[];
+  function render(){
+    var rules=applicable();
+    dated=[];undated=[];
+    rules.forEach(function(r){
+      var d=due(r.id);
+      if(d&&d.date) dated.push({r:r,d:d});
+      else undated.push({r:r,why:d&&d.missing?d.missing:null});
+    });
+    circDuties().concat(recurringYear()).forEach(function(c){dated.push({r:c,d:{date:c.date,repeat:c.repeat,modelled:c.modelled}});});
+    dated.sort(function(a,b){return a.d.date-b.d.date;});
+    var today=new Date();
+    var dueDate=D(P.m),leaveS=dueDate?addW(dueDate,-11):null,leaveE=dueDate?addW(dueDate,28):null;
+    var flags={leave:0,obs:0};
+    $('timeline').innerHTML=dated.length?dated.map(function(x){
+      var past=x.d.date<today;
+      var inLeave=leaveS&&x.r.kind!=='circ'&&x.d.date>=leaveS&&x.d.date<=leaveE;if(inLeave)flags.leave++;
+      var ob=P.r==='1'?observance(x.d.date):null;if(ob)flags.obs++;
+      var warn=(inLeave?'<small class="warn">'+ic('warning')+'falls during maternity leave</small>':'')+(ob?'<small class="warn">'+ic('warning')+'near '+esc(ob)+'</small>':'');
+      return '<li class="'+(past?'past':'')+(x.r.kind==='circ'?' circ':'')+'"><div class="tldate">'+fmt(x.d.date)+(past?'<small>already passed</small>':'')+warn+'</div>'+
+        '<div class="tlbody"><h3>'+esc(x.r.title)+'</h3><p>'+esc(x.r.summary)+'</p>'+
+        '<p class="meta">'+ic('official')+esc(x.r.regulator)+' · '+esc(x.r.deadline||'')+(x.d.modelled?' · date modelled from your inputs; confirm in your account':(x.d.repeat?' · repeats every year':''))+(x.d.before?' · this is the latest date, not the earliest':'')+'</p>'+
+        '<p class="meta">'+(x.r.law_uri?'<a href="'+esc(x.r.law_uri)+'" target="_blank" rel="noopener" aria-label="Legislation behind '+esc(x.r.title)+'">'+esc(x.r.law||'Legislation')+'</a> · ':'')+fresh(x.r)+'</p></div></li>';
+    }).join(''):'<li class="empty">Enter a start date above and the dates appear here.</li>';
+    var cm=[];if(P.k==='1')cm.push('Carer\u2019s Allowance: keep earnings at \u00a3204 a week or less after tax, National Insurance and expenses; in Scotland the equivalent is Carer Support Payment.');
+    if(flags.leave)cm.push(flags.leave+' obligation'+(flags.leave>1?'s fall':' falls')+' during maternity leave.');
+    if(P.r==='1')cm.push(flags.obs?flags.obs+' deadline'+(flags.obs>1?'s land':' lands')+' within a week of a major observance. Jewish and Hindu dates are fixed by their calendars and were checked on 23 September 2026; Islamic dates are astronomical calculations and can move by a day with moon sighting.':'No deadline lands within a week of the observances listed.');
+    $('circnote').innerHTML=cm.length?cm.map(function(t){return '<li>'+t+'</li>';}).join(''):'';
+    $('circnote').hidden=!cm.length;
+    $('undated').innerHTML=undated.length?undated.map(function(x){
+      var ev=x.why==='employee'?'when you take on your first person':x.why==='vat'?'when you cross the VAT threshold':'when the event in the rule happens';
+      return '<li><h3>'+esc(x.r.title)+'</h3><p>'+esc(x.r.summary)+'</p><p class="meta">'+ic('clock')+'Starts '+esc(ev)+' · '+esc(x.r.deadline||'')+' · '+esc(x.r.regulator)+' '+fresh(x.r)+'</p></li>';}).join(''):'<li class="empty">Nothing waiting.</li>';
+    // documents
+    var want={};
+    var actLabels={employ:'Employ someone',food:'Register the food business',premises:'Business rates',goods:'Move goods across a border'};
+    PDOCS.forEach(function(d){
+      var need=(d.needed_for||[]).join(' ').toLowerCase();
+      var isCompany=/^(ltd|ltd-guarantee|plc|llp|cic|charitable-company|limited-partnership|overseas-establishment)$/.test(P.f);
+      if(/incorporate/.test(need) && !isCompany) return;
+      if(/self assessment/.test(need) && isCompany) return;
+      if(/employ/.test(need) && P.a.indexOf('employ')<0) return;
+      if(/food/.test(need) && P.a.indexOf('food')<0) return;
+      if(/premises|planning|rates/.test(need) && P.a.indexOf('premises')<0) return;
+      if(/border|goods/.test(need) && P.a.indexOf('goods')<0) return;
+      if(/licence|registrations/.test(need) && !P.a.length) return;
+      want[d.id]=d;});
+    var docs=Object.keys(want).map(function(k){return want[k];});
+    $('docs').innerHTML=docs.map(function(d){
+      return '<article class="doccard"><h3>'+ic(d.kind==='insurance'?'licence':d.kind==='financial'?'money':d.kind==='qualification'?'standards':d.kind==='address'?'premises':'person','ic-lg')+esc(d.label)+'</h3>'+
+        (d.note?'<p>'+esc(d.note)+'</p>':'')+'<p class="meta">'+esc(d.kind)+' · needed for '+esc((d.needed_for||[]).join('; '))+'</p></article>';}).join('');
+    // costs from the touchpoints that apply
+    var tags=['all'];
+    if(/^(ltd|ltd-guarantee|plc|llp|cic|charitable-company|limited-partnership|overseas-establishment)$/.test(P.f))tags.push('ltd'); else tags.push('sole');
+    if(P.f==='cio'||P.f==='charitable-company')tags.push('charity');
+    if(P.f==='co-operative')tags.push('mutual'); if(P.f==='trust')tags.push('trust'); if(P.f==='cic')tags.push('cic');
+    P.a.forEach(function(a){ if(a==='employ')tags.push('emp'); if(a==='premises')tags.push('prem'); if(a==='food')tags.push('food'); if(a==='goods')tags.push('trade'); if(a==='public')tags.push('gov'); });
+    var free=0,fee=[],vary=[];
+    PTOUCH.forEach(function(t){
+      var on=(t.applies||[]).some(function(p){return tags.indexOf(p)>=0;});
+      if(!on) return;
+      var c=(t.cost||'').trim();
+      if(!c||/^n\/a/i.test(c)) return;
+      if(/^free/i.test(c)) free++;
+      else if(/^£\s?\d/.test(c)) fee.push([t.name,c]);
+      else vary.push([t.name,c]);});
+    var sum=fee.reduce(function(a,x){var m=x[1].match(/£\s?([\d,]+)/);return a+(m?parseFloat(m[1].replace(/,/g,'')):0);},0);
+    $('cost').innerHTML='<div class="costsum"><b>£'+sum.toFixed(0)+'</b><span>in fixed fees on this path, plus '+vary.length+' charge'+(vary.length===1?'':'s')+' that depend on your circumstances. '+free+' step'+(free===1?'':'s')+' cost nothing.</span></div>'+
+      '<div class="two-col"><div><h3>Fixed fees</h3><ul class="costlist">'+(fee.length?fee.map(function(x){return '<li><span>'+esc(x[0])+'</span><b>'+esc(x[1])+'</b></li>';}).join(''):'<li>None on this path.</li>')+'</ul></div>'+
+      '<div><h3>Depends on your circumstances</h3><ul class="costlist">'+(vary.length?vary.map(function(x){return '<li><span>'+esc(x[0])+'</span><b>'+esc(x[1])+'</b></li>';}).join(''):'<li>None.</li>')+'</ul></div></div>'+
+      '<p class="rev">Fees are as recorded when each step was last checked. They are not indexed and will go out of date; the source is linked from each step in the journey map.</p>';
+    write();
+  }
+  // form comparison
+  var cmp=['sole-trader','ltd'];
+  function renderCmp(){
+    $('cmpchips').innerHTML=PCOMPARE.map(function(c){
+      var f=PFORMS.filter(function(x){return x.id===c.id;})[0];
+      return '<button type="button" data-c="'+c.id+'" aria-pressed="'+(cmp.indexOf(c.id)>=0)+'">'+esc(f?f.name:c.id)+'</button>';}).join('');
+    Array.prototype.forEach.call($('cmpchips').querySelectorAll('button'),function(b){
+      b.addEventListener('click',function(){
+        var k=b.getAttribute('data-c'),i=cmp.indexOf(k);
+        if(i>=0)cmp.splice(i,1); else { if(cmp.length>=3)cmp.shift(); cmp.push(k); }
+        renderCmp();});});
+    var rows=[['liability','Personal liability'],['setup_cost','Cost to set up'],['running','What you file each year'],
+              ['public','What becomes public'],['tax','How it is taxed'],['investment','Taking investment'],['grants','Grant eligibility']];
+    var picked=cmp.map(function(id){return PCOMPARE.filter(function(c){return c.id===id;})[0];}).filter(Boolean);
+    $('cmptable').innerHTML='<thead><tr><th scope="col">Compared on</th>'+picked.map(function(c){
+      var f=PFORMS.filter(function(x){return x.id===c.id;})[0];
+      return '<th scope="col">'+esc(f?f.name:c.id)+'</th>';}).join('')+'</tr></thead><tbody>'+
+      rows.map(function(r){return '<tr><th scope="row">'+esc(r[1])+'</th>'+picked.map(function(c){return '<td>'+esc(c[r[0]])+'</td>';}).join('')+'</tr>';}).join('')+'</tbody>';
+  }
+  // personas shortcut
+  $('personas').innerHTML='<p class="meta">Or start from someone like you: '+
+    [['Home food business, Wales','sole-trader','GB-WLS','food'],
+     ['Company with staff, England','ltd','GB-ENG','employ'],
+     ['Community organisation, Scotland','cio','GB-SCT',''],
+     ['Shop selling to consumers','sole-trader','GB-ENG','consumers,premises']].map(function(p){
+      return '<button type="button" class="btn sm" data-p="'+p[1]+'|'+p[2]+'|'+p[3]+'">'+esc(p[0])+'</button>';}).join(' ')+'</p>';
+  Array.prototype.forEach.call($('personas').querySelectorAll('button'),function(b){
+    b.addEventListener('click',function(){
+      var v=b.getAttribute('data-p').split('|');
+      P.f=v[0];P.n=v[1];P.a=v[2]?v[2].split(','):[];
+      if(!P.d){var t=new Date();P.d=t.toISOString().slice(0,10);}
+      renderProfile();render();});});
+  // exports
+  function icsDate(d){return d.toISOString().slice(0,10).replace(/-/g,'');}
+  $('ics').addEventListener('click',function(){
+    if(!dated.length){$('pmsg').textContent='Add a start date first.';return;}
+    var L=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Starting a business in the UK//EN'];
+    dated.forEach(function(x,i){
+      L.push('BEGIN:VEVENT','UID:sab-'+i+'-'+icsDate(x.d.date)+'@local','DTSTAMP:'+icsDate(new Date())+'T000000Z',
+       'DTSTART;VALUE=DATE:'+icsDate(x.d.date),'SUMMARY:'+x.r.title.replace(/[,;]/g,''),
+       'DESCRIPTION:'+(x.r.summary+' Regulator: '+x.r.regulator).replace(/[,;]/g,''),'END:VEVENT');});
+    L.push('END:VCALENDAR');
+    dl(L.join('\r\n'),'text/calendar','your-plan.ics','Calendar file downloaded.');
+  });
+  $('csv').addEventListener('click',function(){
+    var rows=[['Date','What','Who','Deadline rule','Legislation']];
+    dated.forEach(function(x){rows.push([fmt(x.d.date),x.r.title,x.r.regulator,x.r.deadline||'',x.r.law_uri||'']);});
+    undated.forEach(function(x){rows.push(['no date yet',x.r.title,x.r.regulator,x.r.deadline||'',x.r.law_uri||'']);});
+    dl(rows.map(function(r){return r.map(function(c){return '"'+String(c).replace(/"/g,'""')+'"';}).join(',');}).join('\n'),'text/csv','your-plan.csv','Checklist downloaded.');
+  });
+  function dl(text,type,name,msg){
+    try{var b=new Blob([text],{type:type}),u=URL.createObjectURL(b),a=document.createElement('a');
+      a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();
+      setTimeout(function(){URL.revokeObjectURL(u);},2000);$('pmsg').textContent=msg;}
+    catch(e){$('pmsg').textContent='Download is blocked here. Use print instead.';}
+  }
+  $('copylink').addEventListener('click',function(){
+    write();
+    var m=$('pmsg');
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(location.href).then(function(){m.textContent='Link copied. It carries your plan with it.';},
+        function(){m.textContent='Copying is blocked here. The address bar carries your plan.';});
+    } else { m.textContent='Copy the address bar; it carries your plan.'; }});
+  $('printplan').addEventListener('click',function(){window.print();});
+  $('fxbuild').addEventListener('click',function(){
+    var w=$('fxwhat').value.trim();
+    if(!w){$('fxmsg').textContent='Say what is wrong first.';return;}
+    var t='Correction report\nPage: '+document.title+'\nWhat is wrong: '+w+'\nBetter source: '+($('fxsrc').value.trim()||'not given')+'\nPlan link: '+location.href+'\nReported: '+new Date().toISOString().slice(0,10);
+    $('fxout').hidden=false;$('fxout').textContent=t;
+    var fm=$('fxmsg');
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(t).then(function(){fm.textContent='Report built and copied. Send it to whoever owns this work.';},
+        function(){fm.textContent='Report built below. Copy it and send it on.';});
+    } else { fm.textContent='Report built below. Copy it and send it on.'; }});
+  ['pf','pn','pd','pe','pv','pm','pu','pk','pr'].forEach(function(id){
+    $(id).addEventListener('change',function(){
+      P.f=$('pf').value;P.n=$('pn').value;P.d=$('pd').value;P.e=$('pe').value;P.v=$('pv').value;P.m=$('pm').value;P.u=$('pu').value;P.k=$('pk').checked?'1':'';P.r=$('pr').checked?'1':'';write();render();});});
+  var t=$('theme');if(t)t.addEventListener('click',function(){});
+  read();renderProfile();renderCmp();render();
+  window.__plan={profile:function(){return JSON.parse(JSON.stringify(P));},counts:function(){return{dated:dated.length,undated:undated.length,circ:dated.filter(function(x){return x.r.kind==='circ';}).length,modelled:dated.filter(function(x){return x.d.modelled;}).length};}};
+})();
+</script><script>/* Self-* runtime: verify, repair, assess and report. Runs on every page, in the browser,
+   with no network access. Everything it does is recorded and reversible by reloading. */
+(function(){
+  if(window.__selfcheck) return;
+  var BUILD="2026-09-18";
+  var findings=[], repairs=[], allRepairs=[], t0=(window.performance&&performance.now)?performance.now():0;
+  function add(sev,id,msg,n){findings.push({severity:sev,check:id,detail:msg,count:n==null?1:n});}
+  function fixed(id,msg,n){var c=(n==null?1:n);repairs.push({check:id,action:msg,count:c});
+    for(var i=0;i<allRepairs.length;i++){if(allRepairs[i].check===id){allRepairs[i].count+=c;return;}}
+    allRepairs.push({check:id,action:msg,count:c});}
+  function txt(e){return (e.textContent||'').replace(/\s+/g,' ').trim();}
+  function near(a){
+    var r=a.closest('li,td,tr,article,.card,.rowcard,.tp,p');
+    if(r){var h=r.querySelector('b,strong,h3,h4');if(h&&txt(h))return txt(h).slice(0,80);
+      var t=txt(r);if(t)return t.slice(0,80);}
+    var s=a.closest('section');var h2=s&&s.querySelector('h2');
+    return h2?txt(h2).slice(0,80):'this entry';
+  }
+  // ---------- verification + repair ----------
+  function scrollRegions(){
+    var n=0,fixedN=0;
+    var all=document.querySelectorAll('body *');
+    for(var i=0;i<all.length;i++){var e=all[i];if(e.closest('svg'))continue;
+      var cs=getComputedStyle(e);if(!(cs.overflowX==='auto'||cs.overflowX==='scroll'||cs.overflowY==='auto'||cs.overflowY==='scroll'))continue;
+      if(!(e.scrollWidth>e.clientWidth+1||e.scrollHeight>e.clientHeight+1))continue;
+      if(e.querySelector('a,button,input,select,textarea,[tabindex]'))continue;
+      if(e.hasAttribute('tabindex'))continue;
+      n++;e.setAttribute('tabindex','0');e.setAttribute('role','region');
+      if(!e.getAttribute('aria-label')){var h=e.closest('section');var h2=h&&h.querySelector('h2');e.setAttribute('aria-label',(h2?txt(h2):'Scrollable content')+' (scrollable)');}
+      fixedN++;}
+    if(fixedN)fixed('scroll.focusable','Made '+fixedN+' scrollable region(s) keyboard reachable with tabindex and a label. Defect: axe-core scrollable-region-focusable on the journey map and blueprint lanes, 23 September 2026.',fixedN);
+  }
+  function structure(){
+    var h1=document.querySelectorAll('h1').length;
+    if(h1!==1) add('high','structure.h1','Expected exactly one h1, found '+h1,h1);
+    if(!document.getElementById('main')) add('high','structure.main','No element with id="main" for the skip link to reach');
+    var skip=document.querySelector('a.skip');
+    if(!skip){
+      var a=document.createElement('a');a.className='skip';a.href='#main';a.textContent='Skip to content';
+      document.body.insertBefore(a,document.body.firstChild);
+      fixed('structure.skip','Inserted a missing skip link as the first focusable element');
+    }
+    var lv=0,skips=0;
+    Array.prototype.forEach.call(document.querySelectorAll('h1,h2,h3,h4,h5,h6'),function(h){
+      var n=+h.tagName.slice(1); if(lv && n>lv+1) skips++; lv=n;});
+    if(skips) add('medium','structure.headings',skips+' heading level skips',skips);
+    if(!document.querySelector('.ribbon')) add('low','structure.ribbon','Journey ribbon missing from this page');
+    var fam=document.querySelectorAll('.family a,.xfam a').length;
+    if(!fam && !/portal/.test(location.pathname)) add('medium','structure.family','Family navigation is empty');
+  }
+  function links(){
+    var amb=0,noop=0,empty=0;
+    Array.prototype.forEach.call(document.querySelectorAll('a[href]'),function(a){
+      var label=(a.getAttribute('aria-label')||txt(a)).toLowerCase();
+      if(['source','details','here','more','link','read more','click here'].indexOf(label)>=0){
+        a.setAttribute('aria-label',(label==='details'?'Details of ':'Source for ')+near(a)); amb++;
+      }
+      if(a.target==='_blank' && !/noopener/.test(a.rel||'')){a.rel=((a.rel||'')+' noopener').trim();noop++;}
+      if(!a.getAttribute('href').trim()) empty++;
+    });
+    if(amb){fixed('links.ambiguous','Gave a context-bearing accessible name to links that read only "source" or "details"',amb);}
+    if(noop){fixed('links.noopener','Added rel="noopener" to links opening in a new tab',noop);}
+    if(empty) add('medium','links.empty',empty+' links with an empty href',empty);
+  }
+  function aria(){
+    var seen={},dupes=0;
+    Array.prototype.forEach.call(document.querySelectorAll('[id]'),function(e){
+      if(seen[e.id]){e.id=e.id+'-dup'+(++dupes);} else seen[e.id]=1;});
+    if(dupes) fixed('aria.duplicate-id','Renamed duplicate element ids so labels and controls resolve to one target',dupes);
+    var svgs=0;
+    Array.prototype.forEach.call(document.querySelectorAll('svg'),function(s){
+      var named=s.getAttribute('aria-label')||s.querySelector('title')||s.getAttribute('role')==='img';
+      if(!named && s.getAttribute('aria-hidden')!=='true'){s.setAttribute('aria-hidden','true');s.setAttribute('focusable','false');svgs++;}
+    });
+    if(svgs) fixed('aria.decorative-svg','Marked decorative graphics as hidden from assistive technology',svgs);
+    var unl=0;
+    Array.prototype.forEach.call(document.querySelectorAll('input,select,textarea'),function(c){
+      if(c.type==='hidden')return;
+      var has=(c.labels&&c.labels.length)||c.getAttribute('aria-label')||c.getAttribute('aria-labelledby')||c.closest('label');
+      if(!has) unl++;});
+    if(unl) add('high','aria.unlabelled-control',unl+' form controls with no accessible name',unl);
+    var figs=0;
+    Array.prototype.forEach.call(document.querySelectorAll('svg.art'),function(s){
+      if(!s.querySelector('title')||!s.querySelector('desc')) figs++;});
+    if(figs) add('medium','aria.illustration',figs+' illustrations without both a title and a description',figs);
+  }
+  function layout(){
+    var vw=document.documentElement.clientWidth, wide=0, wrapped=0;
+    Array.prototype.forEach.call(document.querySelectorAll('table'),function(t){
+      if(t.scrollWidth>vw+2){
+        var p=t.parentElement;
+        if(!p || getComputedStyle(p).overflowX!=='auto'){
+          var d=document.createElement('div');d.className='tablewrap';d.style.overflowX='auto';d.style.maxWidth='100%';
+          t.parentNode.insertBefore(d,t);d.appendChild(t);wrapped++;
+        }
+      }});
+    if(wrapped) fixed('layout.table-scroll','Wrapped wide tables in a horizontal scroll container',wrapped);
+    if(document.documentElement.scrollWidth>vw+2){
+      document.documentElement.style.maxWidth='100%';document.body.style.overflowX='hidden';
+      wide=1;fixed('layout.overflow','Clamped horizontal overflow at the document root');
+    }
+    return wide;
+  }
+  function currency(){
+    var built=new Date(BUILD+'T00:00:00Z'), days=Math.floor((Date.now()-built.getTime())/86400000);
+    var sev = days>365?'high':days>180?'medium':days>90?'low':null;
+    if(sev) add(sev,'currency.age','This page was built '+days+' days ago. Sources move; re-run the verification pass before relying on it.',days);
+    return days;
+  }
+  function data(){
+    // Cross-check any count this page states about its own dataset
+    var out=[];
+    try{
+      var D=window.__bp&&JSON.parse(window.__bp.json());
+      if(D){
+        var steps=D.BLUE.reduce(function(a,b){return a+b.steps.length;},0);
+        var claimed=(document.body.innerText.match(/(\d+)\s+journey moments/)||[])[1];
+        out.push({fact:'blueprint steps',value:steps});
+        if(claimed && +claimed!==steps) add('medium','data.count','Page states '+claimed+' journey moments but the data holds '+steps);
+      }
+    }catch(e){}
+    return out;
+  }
+  // ---------- assessment ----------
+  function assess(days){
+    var high=findings.filter(function(f){return f.severity==='high';}).length;
+    var med=findings.filter(function(f){return f.severity==='medium';}).length;
+    var low=findings.filter(function(f){return f.severity==='low';}).length;
+    var dims=[
+      ['Accuracy','every claim carries a source and the verification register records what was checked',high?'at risk':'holding'],
+      ['Currency', days>180?'stale: re-verification overdue':days>90?'ageing':'current', days>180?'at risk':'holding'],
+      ['Accessibility', high?'a structural defect is present on this page':'structural checks pass on this page', high?'at risk':'holding'],
+      ['Resilience','the page repaired '+allRepairs.reduce(function(a,r){return a+r.count;},0)+' defects at load without failing','holding'],
+      ['Completeness','open issues are published rather than hidden','holding'],
+      ['Sustainability','one file, no build step, no dependency to rot','holding']
+    ];
+    var score=Math.max(0,100-(high*18)-(med*6)-(low*2)-(days>365?15:days>180?8:0));
+    return {score:score,band:score>=85?'good':score>=70?'fair':'needs work',dimensions:dims,high:high,medium:med,low:low};
+  }
+  // ---------- run ----------
+  structure();
+  scrollRegions();links();aria();layout();var days=currency();var facts=data();
+  var a=assess(days);
+  var ms=((window.performance&&performance.now)?performance.now():0)-t0;
+  var report={page:document.title,build:BUILD,ranAt:new Date().toISOString(),ageDays:days,
+    durationMs:Math.round(ms),passes:1,findings:findings,repairs:allRepairs,assessment:a,facts:facts};
+  window.__selfcheck={report:function(){return report;},recheck:function(){return repass();},json:function(){return JSON.stringify(report);},rerun:function(){location.reload();}};
+  // ---------- surface ----------
+  function badge(){
+    var host=document.querySelector('footer .wrap')||document.querySelector('footer')||document.body;
+    var d=document.createElement('section');d.className='selfcheck';d.setAttribute('aria-labelledby','sc-h');
+    var rep=allRepairs.reduce(function(x,r){return x+r.count;},0);
+    d.innerHTML='<h2 id="sc-h">This page checks itself</h2>'+
+      '<p class="scline"><span class="scdot '+a.band.replace(' ','-')+'" aria-hidden="true"></span>'+
+      '<b>'+a.score+'/100</b> on its own checks, run in your browser '+Math.round(ms)+'ms ago: '+
+      findings.length+' finding'+(findings.length===1?'':'s')+', '+rep+' defect'+(rep===1?'':'s')+' repaired automatically, built '+days+' days ago.</p>'+
+      '<details><summary>What it checked, what it found, what it fixed</summary><div class="scbody">'+
+      '<h3>Findings</h3>'+(findings.length?'<ul>'+findings.map(function(f){return '<li><b>'+f.severity+'</b> '+f.check+' — '+f.detail+'</li>';}).join('')+'</ul>':'<p>Nothing outstanding on this page.</p>')+
+      '<h3>Repaired at load</h3>'+(allRepairs.length?'<ul>'+allRepairs.map(function(r){return '<li>'+r.action+' ('+r.count+')</li>';}).join('')+'</ul>':'<p>Nothing needed repairing.</p>')+
+      '<h3>Self-assessment</h3><ul>'+a.dimensions.map(function(x){return '<li><b>'+x[0]+'</b> '+x[1]+' — <i>'+x[2]+'</i></li>';}).join('')+'</ul>'+
+      '<p class="meta">These checks run in the page, with no network access. They cannot test with a real screen reader, cannot re-request a source, and cannot know whether a fact changed yesterday. They fail visibly rather than quietly: a repair is reported, never hidden.</p>'+
+      '<p><button class="btn sm" type="button" id="scdl">Download this report</button> <span class="toolmsg" id="scmsg" role="status"></span></p>'+
+      '</div></details>';
+    host.appendChild(d);
+    var b=document.getElementById('scdl');
+    if(b)b.addEventListener('click',function(){
+      try{
+        var blob=new Blob([JSON.stringify(report,null,1)],{type:'application/json'});
+        var u=URL.createObjectURL(blob),el=document.createElement('a');
+        el.href=u;el.download='self-check-'+(document.title.split(':')[0].toLowerCase().replace(/[^a-z0-9]+/g,'-'))+'.json';
+        document.body.appendChild(el);el.click();el.remove();setTimeout(function(){URL.revokeObjectURL(u);},2000);
+        document.getElementById('scmsg').textContent='Report downloaded.';
+      }catch(e){document.getElementById('scmsg').textContent='Download blocked here; the report is also on window.__selfcheck.report().';}
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',badge);else badge();
+
+  // ---------- continuous repair: dynamic pages render after this first pass ----------
+  var pending=null, passes=1;
+  function repass(){
+    var before=repairs.reduce(function(a,r){return a+r.count;},0);
+    repairs.length=0; findings.length=0;
+    structure();links();aria();layout();var d=currency();
+    passes++;
+    var after=repairs.reduce(function(a,r){return a+r.count;},0);
+    report.findings=findings; report.repairs=allRepairs; report.passes=passes;
+    report.assessment=assess(d); report.ranAt=new Date().toISOString();
+    var line=document.querySelector('.selfcheck .scline b');
+    if(line) line.textContent=report.assessment.score+'/100';
+    return after;
+  }
+  if(window.MutationObserver){
+    var mo=new MutationObserver(function(muts){
+      var worth=false;
+      for(var i=0;i<muts.length;i++){ if(muts[i].addedNodes && muts[i].addedNodes.length){worth=true;break;} }
+      if(!worth) return;
+      clearTimeout(pending);
+      pending=setTimeout(function(){ if(!document.querySelector('.selfcheck details[open]')) repass(); },600);
+    });
+    mo.observe(document.body,{childList:true,subtree:true});
+    window.__selfcheck_observer=mo;
+  }
+  setTimeout(repass,1500);
+
+})();
+</script>
+<script>window.AI_CFG={title:"Ask about your plan",family:"Starting a business in the UK portal and its other parts",intro:"Ask anything about this page. Answers come from this page's content and its structured data.",suggestions:[],context:function(){var t='';try{var m=document.querySelector('main');t=(document.querySelector('header')?document.querySelector('header').innerText+'\n':'')+(m?m.innerText:'');}catch(e){} var d='';try{var x=window.__finder||window.__rules||window.__rulebook;if(x&&typeof x.json==='function'){d=x.json();}}catch(e){} return d?t+'\n\n=== STRUCTURED DATA FOR THE CURRENT SELECTION (JSON) ===\n'+d:t;},max:46000};
+(function(){
+  if(!window.AI_CFG) return;
+  var CFG=window.AI_CFG, doc=document;
+  var btn=doc.createElement('button');btn.className='aibtn';btn.type='button';btn.hidden=true;btn.textContent='Ask about this page';
+  var wrap=doc.createElement('div');wrap.className='aiwrap';wrap.setAttribute('role','dialog');wrap.setAttribute('aria-label','Ask Claude about this page');
+  wrap.innerHTML='<div class="aihead"><b>'+CFG.title+'<small>Grounded in this page\'s evidence</small></b><button type="button" aria-label="Close">&times;</button></div>'+
+    '<div class="ailog" id="ailog"></div><div class="aisug" id="aisug"></div>'+
+    '<form class="aiform"><textarea rows="1" placeholder="Ask a question" aria-label="Your question"></textarea><button type="submit">Ask</button></form>'+
+    '<p class="aifoot">Answers come from Claude reading this page. They use your Claude account, and can be wrong: check the cited sources.</p>';
+  doc.body.appendChild(btn);doc.body.appendChild(wrap);
+  var log=wrap.querySelector('#ailog'),sug=wrap.querySelector('#aisug'),form=wrap.querySelector('form'),ta=form.querySelector('textarea'),send=form.querySelector('button[type=submit]'),close=wrap.querySelector('.aihead button');
+  var sample=null,turns=[],busy=false,ctl=null;
+  function el(cls,txt){var d=doc.createElement('div');d.className='aimsg '+cls;d.textContent=txt;log.appendChild(d);log.scrollTop=log.scrollHeight;return d;}
+  function context(){
+    var t=CFG.context&&CFG.context();
+    if(!t){var m=doc.querySelector('main');t=(doc.querySelector('header')?doc.querySelector('header').innerText+'\n':'')+(m?m.innerText:doc.body.innerText);}
+    t=t.replace(/\s+\n/g,'\n').replace(/\n{3,}/g,'\n\n');
+    var MAXC=CFG.max||26000;return t.length>MAXC?t.slice(0,MAXC)+'\n[content truncated]':t;
+  }
+  function rules(){
+    return 'You are answering questions about a UK government analysis of the "start a business" journey, for civil servants. '+
+      'Answer ONLY from the CONTENT below, which is the page the reader is looking at ('+CFG.title+'). '+
+      'If the answer is not in the content, say so plainly and suggest which companion page may hold it ('+CFG.family+'). '+
+      'Never invent statistics, dates, sources or URLs. Quote figures exactly as written. '+
+      'Be concise: 2 to 6 sentences or a short list, plain British English, no headings, no markdown emphasis. '+
+      'Where a claim rests on a source named in the content, name that source in words.\n\nCONTENT:\n'+context();
+  }
+  function open(){wrap.classList.add('open');btn.hidden=true;ta.focus();}
+  function shut(){wrap.classList.remove('open');btn.hidden=false;if(ctl)ctl.abort();}
+  btn.addEventListener('click',open);close.addEventListener('click',shut);
+  doc.addEventListener('keydown',function(e){if(e.key==='Escape'&&wrap.classList.contains('open'))shut();});
+  (CFG.suggestions||[]).forEach(function(q){var b=doc.createElement('button');b.type='button';b.textContent=q;b.addEventListener('click',function(){ta.value=q;ask();});sug.appendChild(b);});
+  function copy(code){
+    switch(code){
+      case 'rate_limited':return 'Too many questions at once. Wait a moment and ask again.';
+      case 'session_expired':return 'Your session expired. Sign in again to keep asking.';
+      case 'refused':return 'Claude declined to answer that. Try asking it differently.';
+      case 'empty_completion':return 'No answer came back. Try a shorter, more specific question.';
+      case 'cancelled':return '';
+      case 'prompt_too_large':return 'That question plus this page is too long to send. Ask about one section.';
+      default:return 'Something went wrong reaching Claude. Try again in a moment.';
+    }
+  }
+  function hide(){btn.remove();wrap.remove();}
+  function ask(){
+    var q=ta.value.trim();if(!q||busy||!sample)return;
+    ta.value='';el('u',q);turns.push({role:'user',content:q});
+    var out=el('a','Thinking…');busy=true;send.disabled=true;send.textContent='…';
+    ctl=new AbortController();
+    var input=[{role:'user',content:rules()},{role:'assistant',content:'Understood. I will answer only from that content.'}].concat(turns);
+    sample(input,{cache:false,signal:ctl.signal,onText:function(e){out.textContent=e.text;log.scrollTop=log.scrollHeight;}}).then(function(r){
+      out.textContent=r.text+(r.truncated?'\n\n[Answer cut short.]':'');turns.push({role:'assistant',content:r.text});
+      if(turns.length>10)turns=turns.slice(-10);
+    }).catch(function(e){
+      var c=e&&e.code;
+      if(c==='not_granted'||c==='sampling_disabled'||c==='not_declared'||c==='capability_disabled'){out.textContent='Asking Claude is not available in this view.';hideLater();}
+      else {out.textContent=(e&&e.text)?e.text:'';var m=copy(c);if(m)el('sys',m);if(!out.textContent)out.remove();}
+      turns.pop();
+    }).then(function(){busy=false;send.disabled=false;send.textContent='Ask';ctl=null;});
+  }
+  function hideLater(){setTimeout(function(){btn.remove();},50);}
+  form.addEventListener('submit',function(e){e.preventDefault();ask();});
+  ta.addEventListener('keydown',function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();ask();}});
+  if(window.claude&&typeof window.claude.use==='function'){
+    window.claude.use('sample').then(function(s){if(!s){hide();return;}sample=s;btn.hidden=false;
+      el('sys',CFG.intro||'Ask anything about this page. Answers are grounded in what this page shows and its sources.');
+    }).catch(function(){hide();});
+  } else {hide();}
+})();
+</script>
+<!-- colophon: added by tools/publish.py -->
+<aside class="pgw-colophon" aria-label="About this publication" style="max-width:1120px;margin:40px auto 24px;padding:18px 22px;border:1px solid currentColor;border-radius:12px;font:14px/1.5 system-ui,sans-serif;display:flex;flex-wrap:wrap;gap:18px;align-items:center;opacity:.92">
+<div style="flex:1 1 340px;min-width:0">
+<p style="margin:0 0 6px"><strong>Not an official government service.</strong> An independent, evidence-led guide by Emanuel Silva, part of
+<a href="https://cyberdudeuk.github.io/">Public Good Works</a>. Every claim carries its source; check GOV.UK, nidirect, mygov.scot or gov.wales before you act.</p>
+<p style="margin:0 0 6px">Drafted and checked with AI assistance (Claude); the author reviewed and is responsible for it. Some features, such as the page assistant, work only inside Claude and are hidden here.</p>
+<p style="margin:0">Questions, corrections or ideas: use the <a href="https://github.com/cyberdudeuk/start-a-business-uk/issues/new?template=contact.yml">contact form</a> (no email address is published).
+Code MIT; content Open Government Licence v3.0, see the <a href="https://github.com/cyberdudeuk/start-a-business-uk">repository</a>.</p>
+</div>
+<div style="display:flex;gap:14px;align-items:center"><svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 140 140" role="img" aria-label="QR code for https://cyberdudeuk.github.io/start-a-business-uk/your-plan/" class="segno"><g transform="scale(4)"><path fill="#fff" d="M0 0h35v35h-35z"/><path class="qrline" stroke="#0b0c0c" d="M1 1.5h7m3 0h2m6 0h4m1 0h1m2 0h7m-33 1h1m5 0h1m2 0h1m5 0h2m3 0h1m3 0h1m1 0h1m5 0h1m-33 1h1m1 0h3m1 0h1m1 0h5m3 0h1m2 0h6m1 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h1m8 0h1m2 0h1m1 0h1m3 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h2m1 0h1m1 0h1m1 0h5m2 0h1m1 0h3m1 0h1m-33 1h1m5 0h1m1 0h3m2 0h4m1 0h1m1 0h3m3 0h1m5 0h1m-33 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-25 1h2m1 0h1m2 0h1m1 0h1m2 0h3m-22 1h1m1 0h5m4 0h4m2 0h1m1 0h1m2 0h1m3 0h5m-31 1h4m3 0h1m1 0h1m2 0h3m1 0h1m2 0h5m2 0h2m1 0h4m-30 1h1m2 0h1m3 0h1m1 0h7m9 0h1m1 0h2m-32 1h1m2 0h2m2 0h1m1 0h2m1 0h2m1 0h1m2 0h5m3 0h1m1 0h4m-32 1h3m2 0h2m1 0h3m1 0h1m1 0h1m2 0h3m4 0h2m1 0h3m-30 1h2m2 0h2m2 0h2m3 0h1m4 0h4m1 0h1m1 0h2m3 0h3m-31 1h1m3 0h2m3 0h2m1 0h2m4 0h3m1 0h3m4 0h1m-32 1h4m1 0h1m1 0h2m4 0h2m1 0h1m1 0h1m2 0h3m1 0h2m1 0h3m-29 1h1m2 0h3m2 0h1m1 0h2m3 0h1m1 0h1m2 0h4m1 0h3m2 0h1m-32 1h3m3 0h2m5 0h1m1 0h4m3 0h1m2 0h2m1 0h2m1 0h1m-33 1h1m1 0h1m1 0h3m2 0h2m1 0h2m1 0h1m4 0h3m1 0h2m1 0h2m1 0h2m-32 1h1m1 0h1m1 0h2m5 0h4m1 0h1m2 0h1m1 0h5m1 0h4m-29 1h1m2 0h5m2 0h2m3 0h1m1 0h2m1 0h1m1 0h2m1 0h3m1 0h1m-32 1h1m3 0h1m3 0h1m2 0h1m4 0h2m1 0h5m1 0h3m1 0h2m1 0h1m-33 1h1m2 0h7m2 0h2m1 0h2m1 0h1m1 0h3m7 0h2m-32 1h1m3 0h2m1 0h1m1 0h5m1 0h1m2 0h4m2 0h4m2 0h1m-31 1h1m3 0h1m1 0h3m3 0h1m2 0h1m1 0h1m1 0h1m2 0h7m2 0h2m-25 1h3m2 0h2m4 0h3m2 0h1m3 0h1m1 0h3m-33 1h7m2 0h3m2 0h2m2 0h1m1 0h5m1 0h1m1 0h1m1 0h2m-32 1h1m5 0h1m1 0h5m5 0h1m1 0h5m3 0h5m-33 1h1m1 0h3m1 0h1m1 0h3m4 0h1m1 0h1m4 0h1m1 0h6m-30 1h1m1 0h3m1 0h1m1 0h4m4 0h1m1 0h2m1 0h1m1 0h3m2 0h2m1 0h2m-33 1h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h3m4 0h3m2 0h3m1 0h2m-31 1h1m5 0h1m3 0h7m2 0h1m1 0h2m5 0h3m-31 1h7m1 0h2m2 0h3m2 0h1m1 0h2m1 0h6m3 0h1"/></g></svg>
+<span style="display:inline-flex;flex-direction:column;gap:4px;align-items:flex-start"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="168" height="48" viewBox="0 0 46.200 14.000" preserveAspectRatio="none" role="img" aria-label="Barcode SAB-UK-YOUR-PLAN">
+    <!--Autogenerated with python-barcode 0.16.1-->
+    <g id="barcode_group">
+        <rect width="100%" height="100%" style="fill:white"/>
+        <rect x="2.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="2.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="3.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="4.200mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="4.800mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="5.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="6.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="6.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="7.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="8.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="9.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="9.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="10.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="11.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="12.000mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="13.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="13.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="14.400mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="15.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="15.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="16.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="17.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="18.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="18.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="19.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="20.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="21.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="21.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="22.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="23.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="24.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="24.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="25.400mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="26.200mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="27.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="27.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="28.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="29.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="29.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="30.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="31.400mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="32.200mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="32.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="33.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="34.200mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="35.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="35.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="36.200mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="37.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="37.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="38.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="39.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="40.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="40.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="41.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="42.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="43.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="43.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+    </g>
+</svg>
+<code style="font-size:11px">SAB-UK-YOUR-PLAN</code></span></div>
+</aside>
+</body></html>

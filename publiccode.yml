@@ -1,0 +1,28 @@
+publiccodeYmlVersion: "0.4"
+name: Starting a business in the UK
+url: https://github.com/cyberdudeuk/start-a-business-uk
+landingURL: https://cyberdudeuk.github.io/start-a-business-uk/
+softwareVersion: 11.0.0
+releaseDate: "2026-11-22"
+platforms: [web]
+categories: [knowledge-management]
+developmentStatus: beta
+softwareType: standalone/web
+description:
+  en-GB:
+    shortDescription: Starting a business in the UK, the whole journey, each claim traced to its source. Prototype.
+    longDescription: >-
+      Nineteen linked pages covering everything a founder has to do to start a business in the UK, in order: a
+      personal plan, the steps, bodies and identifiers, the rules an activity triggers, tailored circumstances,
+      every way in and out, the four nations and an international comparison, service blueprints, a knowledge layer
+      and a verification register. Independent work; not an official government service.
+    features: [Founder plan, Four nations comparison, Verification register, Knowledge graph, Service blueprints]
+legal:
+  license: MIT AND OGL-UK-3.0
+maintenance:
+  type: internal
+  contacts:
+    - name: Emanuel Silva
+localisation:
+  localisationReady: false
+  availableLanguages: [en]

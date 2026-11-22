@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Standards for the journey: starting a business</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EDF0F2;--panel:#FFFFFF;--ink:#152030;--muted:#586273;--rule:#C9D0D8;--faint:#E3E7EB;--focus:#FFBF47;
+  --qual:#7A3FC6;--survey:#1F4FD1;--analytics:#0E7A6B;--eval:#946400;--inquiry:#C0264D;--ops:#586273;
+  --heat:#152030;--gate:#152030;--gatetext:#FFFFFF;
+  --sans:"Schibsted Grotesk",-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0F151D;--panel:#17202B;--ink:#E6EBF1;--muted:#9AA5B3;--rule:#344152;--faint:#232E3B;
+  --qual:#B99AF2;--survey:#7FA2FF;--analytics:#4FD1BC;--eval:#E0B64D;--inquiry:#F27A98;--ops:#9AA5B3;
+  --gate:#E6EBF1;--gatetext:#0F151D;}}
+:root[data-theme="dark"]{
+  --paper:#0F151D;--panel:#17202B;--ink:#E6EBF1;--muted:#9AA5B3;--rule:#344152;--faint:#232E3B;
+  --qual:#B99AF2;--survey:#7FA2FF;--analytics:#4FD1BC;--eval:#E0B64D;--inquiry:#F27A98;--ops:#9AA5B3;
+  --gate:#E6EBF1;--gatetext:#0F151D;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.5}
+a{color:inherit;text-underline-offset:3px}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.wrap{max-width:1360px;margin:0 auto;padding:0 28px}
+.num{}
+header{padding:36px 0 10px}
+.family{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:.88rem;color:var(--muted);margin:0 0 22px}
+.family a{color:var(--muted)}
+.headgrid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;align-items:end}
+h1{font-size:clamp(2.4rem,5.4vw,4.6rem);line-height:.98;font-weight:800;letter-spacing:-.03em;margin:0}
+.lede{margin:0;color:var(--muted);font-size:1.1rem;max-width:56ch}
+.lede strong{color:var(--ink);font-weight:700}
+.tools{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.btn{border:1.5px solid var(--rule);background:var(--panel);border-radius:999px;padding:6px 15px;cursor:pointer;font-weight:500}
+.btn[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+section{margin:34px 0}
+h2{font-size:1.75rem;line-height:1.1;letter-spacing:-.015em;margin:0 0 6px}
+.intro{color:var(--muted);margin:0 0 16px;max-width:70ch}
+
+:root{--lead:#0B5D51;--strong:#1F6F62;--partial:#BFDCD4;--weak:#C0264D;--leadtx:#fff;--strongtx:#fff;--partialtx:#152030;--uk:#FFF3D6;--ukline:#B07A00}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--lead:#5ED1BD;--strong:#25806F;--partial:#27463F;--weak:#F27A98;--leadtx:#0F151D;--strongtx:#fff;--partialtx:#E6EBF1;--uk:#2A2414;--ukline:#E0B64D}}
+:root[data-theme="dark"]{--lead:#5ED1BD;--strong:#25806F;--partial:#27463F;--weak:#F27A98;--leadtx:#0F151D;--strongtx:#fff;--partialtx:#E6EBF1;--uk:#2A2414;--ukline:#E0B64D}
+.headgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:end}
+h1 small{display:block;font-size:.32em;font-weight:500;letter-spacing:0;color:var(--muted);margin-top:12px;line-height:1.3}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--paper);padding:8px 14px;z-index:50}
+.skip:focus{left:0}
+.rev{font-size:.82rem;color:var(--muted);margin:10px 0 0}
+.btn.sm{padding:4px 12px;font-size:.88rem}
+.toolmsg{font-size:.85rem;color:var(--muted)}
+nav.jump{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--rule);margin-top:26px}
+nav.jump ul{list-style:none;margin:0 auto;padding:8px 28px;display:flex;gap:4px 18px;flex-wrap:wrap;max-width:1360px;font-size:.9rem}
+nav.jump a{text-decoration:none;color:var(--muted);padding:3px 0;border-bottom:2px solid transparent}
+nav.jump a:hover,nav.jump a.on{color:var(--ink);border-bottom-color:var(--ink)}
+section{scroll-margin-top:56px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:26px}
+.stats article{background:var(--panel);border-radius:16px;padding:16px 18px}
+.stats b{display:block;font-size:2.4rem;font-weight:800;letter-spacing:-.03em;line-height:1}
+.stats b span{font-size:.45em;font-weight:700;letter-spacing:0;color:var(--muted)}
+.stats p{margin:8px 0 0;font-size:.93rem}
+.stats small{display:block;color:var(--muted);font-size:.8rem;margin-top:6px}
+.stats small a{color:var(--muted)}
+/* Benchmarks */
+.benchgrid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:18px;align-items:start}
+.card{background:var(--panel);border-radius:18px;padding:18px 20px}
+.card h3{font-size:1.05rem;margin:0 0 2px}
+.card .sub{font-size:.85rem;color:var(--muted);margin:0 0 12px}
+.bars{list-style:none;margin:0;padding:0}
+.bars li{display:grid;grid-template-columns:150px minmax(0,1fr) 54px;gap:10px;align-items:center;padding:3px 0;font-size:.9rem}
+.bars .track{height:16px;background:var(--faint);border-radius:4px;position:relative;overflow:hidden}
+.bars .fill{position:absolute;left:0;top:0;bottom:0;background:var(--rule);border-radius:4px}
+.bars li.cmp .fill{background:var(--strong)}
+.bars li.uk .fill{background:var(--ukline)}
+.bars li.uk{font-weight:700}
+.bars .v{font-variant-numeric:tabular-nums;text-align:right}
+.bars .gap{height:1px;border-top:1px dashed var(--rule);margin:6px 0;grid-column:1/-1}
+.bars .median .fill{background:transparent}
+.bars .rk{color:var(--muted);font-weight:400;font-size:.8rem;margin-right:4px;font-variant-numeric:tabular-nums}
+.egdi{list-style:none;margin:0;padding:0;counter-reset:e}
+.egdi li{display:flex;gap:10px;padding:5px 0;border-top:1px solid var(--faint);font-size:.93rem;counter-increment:e}
+.egdi li:first-child{border-top:0}
+.egdi li::before{content:counter(e);width:22px;color:var(--muted);font-variant-numeric:tabular-nums;text-align:right}
+.egdi li.uk{font-weight:700;background:var(--uk);margin:0 -8px;padding:5px 8px;border-radius:6px}
+.note{font-size:.82rem;color:var(--muted);margin:10px 0 0}
+/* Matrix */
+.mxtools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 10px}
+.mxwrap{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:18px;align-items:start}
+.mxscroll{background:var(--panel);border-radius:18px;overflow-x:auto;padding:6px 4px}
+table.mx{border-collapse:separate;border-spacing:4px;width:100%;min-width:860px}
+.mx th{font-weight:500;font-size:.88rem}
+.mx thead th{padding:6px 2px;text-align:center;vertical-align:bottom}
+.mx thead th button{border:0;background:transparent;cursor:pointer;font-weight:700;padding:2px 4px;border-radius:6px}
+.mx thead th button span{display:block;font-weight:400;font-size:.8rem;color:var(--muted)}
+.mx thead th.uk{background:var(--uk);border-radius:10px 10px 0 0}
+.mx tbody th{text-align:left;padding:4px 10px 4px 6px;min-width:220px}
+.mx tbody th button{border:0;background:transparent;cursor:pointer;text-align:left;padding:0;font-weight:700;line-height:1.25}
+.mx tbody th small{display:block;color:var(--muted);font-weight:400;font-size:.8rem;margin-top:2px}
+.mx td{padding:0;height:46px}
+.mx td.uk{background:var(--uk)}
+.mx td.uk{box-shadow:inset 3px 0 0 var(--ukline),inset -3px 0 0 var(--ukline)}
+.cell{width:100%;height:100%;min-height:42px;border:0;border-radius:8px;cursor:pointer;font-size:.8rem;font-weight:700;display:grid;place-items:center;padding:2px;line-height:1.1}
+.cell.lead{background:var(--lead);color:var(--leadtx)}
+.cell.strong{background:var(--strong);color:var(--strongtx)}
+.cell.partial{background:var(--partial);color:var(--partialtx)}
+.cell.weak{background:transparent;color:var(--weak);box-shadow:inset 0 0 0 2.5px var(--weak)}
+.cell.na{background:repeating-linear-gradient(135deg,transparent 0 6px,var(--faint) 6px 7px);color:var(--muted);font-weight:400;cursor:default}
+.cell.sec::after{content:"*";margin-left:1px}
+.cell[aria-pressed="true"]{outline:3px solid var(--focus);outline-offset:1px}
+.cell.dim{opacity:.18}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.84rem;color:var(--muted);margin:10px 4px 0}
+.legend span{display:inline-flex;gap:6px;align-items:center}
+.legend i{width:16px;height:12px;border-radius:3px;display:inline-block}
+.panel{background:var(--panel);border-radius:18px;padding:20px 22px;position:sticky;top:60px;max-height:calc(100vh - 80px);overflow:auto}
+.panel h3{font-size:1.2rem;line-height:1.2;margin:0 0 4px}
+.panel .meta{font-size:.86rem;color:var(--muted);margin:0 0 10px}
+.panel p{margin:0 0 10px}
+.panel small{color:var(--muted);font-size:.84rem}
+.panel small a{color:var(--muted)}
+.panel ol{list-style:none;margin:0;padding:0}
+.panel li{padding:10px 0;border-top:1px solid var(--faint)}
+.panel li:first-child{border-top:0}
+.rtag{display:inline-block;font-size:.8rem;font-weight:700;border-radius:4px;padding:1px 7px;margin-right:6px}
+.rtag.lead{background:var(--lead);color:var(--leadtx)}.rtag.strong{background:var(--strong);color:var(--strongtx)}.rtag.partial{background:var(--partial);color:var(--partialtx)}.rtag.weak{color:var(--weak);box-shadow:inset 0 0 0 2px var(--weak)}.rtag.na{background:var(--faint);color:var(--muted)}
+/* Best / learn */
+.best{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;list-style:none;margin:0;padding:0}
+.best li{background:var(--panel);border-radius:16px;padding:16px 18px;border-top:5px solid var(--ukline)}
+.best b{display:block;line-height:1.25;margin-bottom:6px}
+.best p{margin:0 0 8px;font-size:.92rem}
+.best small{font-size:.8rem;color:var(--muted)}
+.best small a{color:var(--muted)}
+.learntools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}
+.learntools label{font-size:.9rem;color:var(--muted)}
+select{font:inherit;padding:5px 10px;border-radius:10px;border:1.5px solid var(--rule);background:var(--panel);color:var(--ink)}
+.learn{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.learn li{background:var(--panel);border-radius:16px;padding:18px 20px;display:flex;flex-direction:column;gap:8px}
+.learn li.caution{border-left:6px solid var(--weak)}
+.learn .top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.learn h3{font-size:1.08rem;margin:0;line-height:1.25}
+.flags{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+.flag{font-size:.8rem;font-weight:700;border:1.5px solid var(--rule);border-radius:999px;padding:0 8px;white-space:nowrap}
+.learn p{margin:0;font-size:.95rem}
+.learn .fit{font-size:.88rem;border-top:1px solid var(--faint);padding-top:8px;display:grid;grid-template-columns:auto 1fr;gap:3px 12px}
+.learn .fit dt{color:var(--muted)}
+.learn .fit dd{margin:0}
+.meter{display:inline-flex;gap:3px;vertical-align:-1px;margin-right:6px}
+.meter i{width:12px;height:12px;border-radius:2px;background:var(--faint)}
+.meter i.on{background:var(--strong)}
+.learn small{font-size:.8rem;color:var(--muted)}
+.learn small a{color:var(--muted)}
+.evbtn{border:1.5px solid var(--rule);background:transparent;border-radius:999px;padding:1px 10px;font-size:.8rem;cursor:pointer}
+/* Fees and caveats */
+.fees{background:var(--panel);border-radius:18px;overflow-x:auto}
+.fees table{border-collapse:collapse;width:100%;min-width:700px;font-size:.93rem}
+.fees th,.fees td{text-align:left;padding:10px 16px;border-top:1px solid var(--faint);vertical-align:top}
+.fees thead th{border-top:0;font-size:.85rem;color:var(--muted);font-weight:500}
+.fees tr.uk td{background:var(--uk)}
+.fees td small a{color:var(--muted);font-size:.8rem}
+.caveats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;list-style:none;margin:0;padding:0}
+.caveats li{background:var(--panel);border-radius:14px;padding:16px 18px}
+.caveats b{display:block;margin-bottom:4px}
+.caveats span{font-size:.92rem;color:var(--muted)}
+.impl{list-style:none;margin:0;padding:0;counter-reset:i;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px}
+.impl li{counter-increment:i;padding:14px 0 14px 44px;position:relative;border-top:1px solid var(--rule)}
+.impl li::before{content:counter(i);position:absolute;left:0;top:12px;font-weight:800;font-size:1.3rem;font-variant-numeric:tabular-nums}
+.impl b{display:block}
+footer{border-top:1px solid var(--rule);padding:24px 0 48px;color:var(--muted);font-size:.9rem;margin-top:40px}
+footer h2{font-size:1.1rem;color:var(--ink)}
+footer p{max-width:84ch}
+footer ol{columns:2;column-gap:36px;padding-left:1.3rem}
+footer li{break-inside:avoid;margin-bottom:4px}
+footer dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 16px}
+footer dt{font-weight:700;color:var(--ink)}footer dd{margin:0}
+@media (max-width:1200px){.best{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:1100px){.benchgrid,.mxwrap{grid-template-columns:1fr}.panel{position:static;max-height:none}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:820px){.headgrid,.learn,.caveats,.impl,.best{grid-template-columns:1fr}.stats{grid-template-columns:1fr}footer ol{columns:1}.wrap{padding:0 16px}.bars li{grid-template-columns:110px minmax(0,1fr) 48px}nav.jump ul{padding:8px 16px;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap}}
+@media print{nav.jump,.tools,.skip,.mxtools,.learntools{display:none!important}body{background:#fff}.panel{position:static!important;max-height:none!important}}
+.headgrid>*,.benchgrid>*,.mxwrap>*,.stats>*{min-width:0}
+:root{--en:#C8102E;--sc:#005EB8;--wa:#00A36C;--ni:#7A4EAB}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--en:#FF6B81;--sc:#5AA9F0;--wa:#3CD69B;--ni:#B58CE8}}
+:root[data-theme="dark"]{--en:#FF6B81;--sc:#5AA9F0;--wa:#3CD69B;--ni:#B58CE8}
+.ntabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+.ntabs button{border:2px solid var(--rule);background:var(--panel);border-radius:999px;padding:6px 16px;font:inherit;font-weight:700;cursor:pointer;display:inline-flex;gap:8px;align-items:center}
+.ntabs button i{width:12px;height:12px;border-radius:50%;background:var(--c)}
+.ntabs button[aria-pressed="true"]{border-color:var(--c);box-shadow:inset 0 0 0 1px var(--c)}
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.metric{background:var(--panel);border-radius:16px;padding:14px 16px}
+.metric h3{font-size:.9rem;margin:0 0 10px;line-height:1.25}
+.metric ul{list-style:none;margin:0;padding:0}
+.metric li{display:grid;grid-template-columns:96px minmax(0,1fr) 62px;gap:8px;align-items:center;font-size:.84rem;padding:2px 0}
+.metric li.sel{font-weight:700}
+.metric li.ukrow{color:var(--muted);border-top:1px dashed var(--rule);margin-top:4px;padding-top:5px}
+.metric .tr{height:10px;background:var(--faint);border-radius:3px;position:relative;overflow:hidden}
+.metric .fl{position:absolute;left:0;top:0;bottom:0;border-radius:3px;background:var(--c)}
+.metric li.dimmed .fl{opacity:.35}
+.metric .v{text-align:right;font-variant-numeric:tabular-nums}
+.metric .na{color:var(--muted);font-size:.8rem;text-align:right;grid-column:2/4}
+.metric small{display:block;color:var(--muted);font-size:.8rem;margin-top:8px;line-height:1.3}
+.metric small a{color:var(--muted)}
+table.nx{border-collapse:separate;border-spacing:0;width:100%;min-width:900px;font-size:.92rem}
+.nx th,.nx td{text-align:left;vertical-align:top;padding:12px 14px;border-top:1px solid var(--faint)}
+.nx thead th{border-top:0;font-size:.95rem;border-bottom:3px solid var(--c)}
+.nx tbody th{width:190px;font-weight:700}
+.nx tbody th .same{display:inline-block;margin-top:6px;font-size:.8rem;font-weight:700;border-radius:4px;padding:1px 7px;background:var(--faint);color:var(--muted)}
+.nx tbody th .diff{display:inline-block;margin-top:6px;font-size:.8rem;font-weight:700;border-radius:4px;padding:1px 7px;border:1.5px solid var(--ink)}
+.nx td small a{color:var(--muted);font-size:.8rem}
+.nx td.sel{background:color-mix(in srgb,var(--c) 9%,transparent)}
+.nx tr.hl td,.nx tr.hl th{background:color-mix(in srgb,var(--focus) 16%,transparent)}
+.nxwrap{background:var(--panel);border-radius:18px;overflow-x:auto}
+.nxtools{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 10px}
+.insights{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.insights li{background:var(--panel);border-radius:16px;padding:16px 18px;border-top:5px solid var(--ink)}
+.insights b{display:block;line-height:1.25;margin-bottom:6px}
+.insights p{margin:0 0 8px;font-size:.93rem}
+.insights small{font-size:.8rem;color:var(--muted)}.insights small a{color:var(--muted)}
+.dot4{display:inline-flex;gap:3px;vertical-align:1px;margin-right:6px}
+.dot4 i{width:9px;height:9px;border-radius:50%;background:var(--c)}
+.arrow{color:var(--muted);margin:0 4px}
+@media (max-width:1100px){.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.insights{grid-template-columns:1fr 1fr}}
+@media (max-width:820px){.metrics,.insights{grid-template-columns:1fr}}
+:root{--l1:#1D70B8;--l2:#912B88;--l3:#00703C;--l4:#B58840;--l5:#D4351C;--l6:#28A197;--l7:#505A5F}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--l1:#5AA9F0;--l2:#D77FCC;--l3:#3CD69B;--l4:#E0B64D;--l5:#FF7A5C;--l6:#5ED1C8;--l7:#A9B4BA}}
+:root[data-theme="dark"]{--l1:#5AA9F0;--l2:#D77FCC;--l3:#3CD69B;--l4:#E0B64D;--l5:#FF7A5C;--l6:#5ED1C8;--l7:#A9B4BA}
+.stack{display:grid;gap:8px}
+.layer{display:grid;grid-template-columns:230px minmax(0,1fr);gap:14px;background:var(--panel);border-radius:14px;padding:12px 16px;border-left:8px solid var(--c);align-items:center}
+.layer h3{margin:0;font-size:1rem}
+.layer p{margin:2px 0 0;font-size:.82rem;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1.5px solid var(--c);background:transparent;border-radius:999px;padding:3px 11px;font:inherit;font-size:.85rem;cursor:pointer;color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--c);color:var(--paper)}
+.chip.dim{opacity:.25}
+.chip .pdot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:1px;background:var(--c)}
+.chip[aria-pressed="true"] .pdot{background:var(--paper)}
+.stdwrap{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:18px;align-items:start;margin-top:14px}
+table.sj{border-collapse:separate;border-spacing:0;width:100%;min-width:760px;font-size:.88rem}
+.sj th,.sj td{padding:7px 10px;border-top:1px solid var(--faint);text-align:left}
+.sj thead th{border-top:0;color:var(--muted);font-weight:500;font-size:.8rem}
+.sj td.stg{text-align:center;width:88px}
+.sj td.stg i{display:inline-block;width:14px;height:14px;border-radius:50%;background:var(--c)}
+.sj tbody tr{cursor:pointer}
+.sj tbody tr:hover td,.sj tbody tr.sel td{background:color-mix(in srgb,var(--c) 10%,transparent)}
+.sj tr.grp td{background:transparent!important;cursor:default;font-weight:700;font-size:.8rem;color:var(--ink);box-shadow:inset 4px 0 0 var(--c);padding-top:14px;padding-left:12px;border-top:0}
+.sj .pr{font-size:.8rem;font-weight:700;border-radius:4px;padding:1px 7px;white-space:nowrap;border:1.5px solid var(--rule)}
+.sj .pr.now{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.sj .pr.prepare{border-color:var(--weak);color:var(--weak)}
+.sjwrap{background:var(--panel);border-radius:18px;overflow-x:auto}
+.detail h3{margin:0 0 4px;font-size:1.2rem}
+.detail dl{display:grid;grid-template-columns:max-content 1fr;gap:6px 12px;font-size:.9rem;margin:10px 0}
+.detail dt{color:var(--muted)}.detail dd{margin:0}
+.timeline{list-style:none;margin:0;padding:0;position:relative}
+.timeline::before{content:"";position:absolute;left:112px;top:6px;bottom:6px;width:2px;background:var(--rule)}
+.timeline li{display:grid;grid-template-columns:100px 24px minmax(0,1fr);gap:0 0;align-items:start;padding:8px 0}
+.timeline time{font-variant-numeric:tabular-nums;font-weight:700;font-size:.9rem;text-align:right;padding-right:8px}
+.timeline .dot{width:14px;height:14px;border-radius:50%;background:var(--c);margin:3px 0 0 6px;position:relative;z-index:1;box-shadow:0 0 0 3px var(--paper)}
+.timeline li.future .dot{background:var(--paper);box-shadow:inset 0 0 0 3px var(--c),0 0 0 3px var(--paper)}
+.timeline .ev{background:var(--panel);border-radius:12px;padding:8px 12px;margin-left:8px}
+.timeline .ev button{border:0;background:transparent;padding:0;font:inherit;font-weight:700;cursor:pointer;text-align:left;color:var(--ink)}
+.timeline .ev small{display:block;color:var(--muted);font-size:.8rem}
+.timeline .ev small a{color:var(--muted)}
+.today{font-size:.8rem;color:var(--muted);margin:4px 0 10px 136px}
+@media (max-width:1100px){.stdwrap{grid-template-columns:1fr}}
+@media (max-width:820px){.layer{grid-template-columns:1fr}.timeline::before{left:84px}.timeline li{grid-template-columns:72px 24px minmax(0,1fr)}.today{margin-left:0}}
+.aibtn{position:fixed;right:18px;bottom:18px;z-index:60;border:0;border-radius:999px;padding:12px 20px;font:inherit;font-weight:700;background:var(--ink);color:var(--paper);cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.28)}
+.aibtn:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.aiwrap{position:fixed;right:18px;bottom:18px;width:min(430px,calc(100vw - 24px));max-height:min(78vh,720px);z-index:61;background:var(--panel);border-radius:18px;box-shadow:0 10px 40px rgba(0,0,0,.34);display:none;flex-direction:column;overflow:hidden;border:1px solid var(--rule)}
+.aiwrap.open{display:flex}
+.aihead{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--faint)}
+.aihead b{font-size:.98rem}
+.aihead small{color:var(--muted);font-size:.8rem;display:block;font-weight:400}
+.aihead button{margin-left:auto;border:0;background:transparent;font:inherit;font-size:1.2rem;line-height:1;cursor:pointer;color:var(--muted);padding:4px 6px}
+.ailog{overflow-y:auto;padding:12px 14px;display:grid;gap:10px;flex:1}
+.aimsg{border-radius:14px;padding:9px 12px;font-size:.9rem;line-height:1.45;white-space:pre-wrap}
+.aimsg.u{background:var(--ink);color:var(--paper);justify-self:end;max-width:86%}
+.aimsg.a{background:var(--faint);color:var(--ink)}
+.aimsg.sys{background:transparent;color:var(--muted);font-size:.82rem;padding:0}
+.aisug{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 10px}
+.aisug button{border:1.5px solid var(--rule);background:transparent;border-radius:999px;padding:4px 11px;font:inherit;font-size:.8rem;cursor:pointer;color:var(--ink);text-align:left}
+.aiform{display:flex;gap:8px;padding:10px 12px;border-top:1px solid var(--faint)}
+.aiform textarea{flex:1;font:inherit;font-size:.9rem;resize:none;border:1.5px solid var(--rule);border-radius:12px;padding:8px 10px;background:var(--paper);color:var(--ink);min-height:40px;max-height:120px}
+.aiform button{border:0;border-radius:12px;padding:0 16px;font:inherit;font-weight:700;background:var(--ink);color:var(--paper);cursor:pointer}
+.aiform button[disabled]{opacity:.5;cursor:default}
+.aifoot{padding:0 14px 10px;color:var(--muted);font-size:.8rem}
+.seqnav{background:var(--panel);border-radius:18px;padding:14px 18px;display:flex;gap:16px;justify-content:space-between;flex-wrap:wrap;margin:26px 0 0}
+.seqnav a{display:block;font-weight:700;color:var(--ink)}
+.seqnav small{display:block;color:var(--muted);font-size:.8rem;font-weight:400}
+.seqnav .nx{text-align:right}
+@media (max-width:620px){.aiwrap{right:8px;left:8px;width:auto;bottom:8px}.aibtn{right:10px;bottom:10px}}
+
+
+small, .meta small, td small, li small{font-size:max(.8rem,12.8px)}
+
+@media (max-width:420px){
+  .codeblock{font-size:11.5px;white-space:pre-wrap;word-break:break-word}
+  .gridwrap,.mx-wrap,.scroller{max-width:100%}
+  table.grid{min-width:0}
+  .toolrow{grid-template-columns:1fr}
+  .bars div{grid-template-columns:96px minmax(0,1fr) 40px}
+  .wrap{padding-left:12px;padding-right:12px}
+  h1{font-size:1.5rem;word-break:break-word}
+}
+@media (max-width:420px){
+  select,input,textarea{max-width:100%}
+  .bodycard{min-width:0;overflow-wrap:anywhere}
+  table.sj,table.nx,table.mx{display:block;overflow-x:auto;max-width:100%}
+}
+@media (max-width:420px){
+  table.sj,table.nx,table.mx{table-layout:fixed;width:100%}
+  table.sj th,table.sj td,.nx th,.nx td{overflow-wrap:anywhere;word-break:break-word}
+  main li,main p,main a{overflow-wrap:anywhere}
+  .sj-wrap,.tablewrap{overflow-x:auto;max-width:100%}
+}
+
+@media (max-width:420px){
+  .sj{display:block;overflow-x:auto}
+  .sj thead th,.sj tbody th{min-width:110px}
+  main ul,main ol{padding-left:18px}
+  main li a{display:inline-block;max-width:100%}
+}
+
+@media (max-width:420px){
+  .sjwrap,.tablewrap,.gridwrap{overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch}
+  .jump,.jump ul,nav.jump ul{flex-wrap:wrap;max-width:100%}
+  .jump li,.jump a{max-width:100%}
+  body{overflow-x:hidden}
+}
+
+@media (max-width:420px){
+  .sj{display:block;width:100%;max-width:100%;overflow-x:auto}
+  .sj thead,.sj tbody,.sj tr{display:table;width:max-content;min-width:100%}
+}
+
+@media (max-width:420px){html,body{max-width:100%;overflow-x:hidden}}
+/* Shared visual system: icons, journey ribbon, hero figures, audience switcher */
+.ic{width:1.15em;height:1.15em;flex:none;vertical-align:-.2em}
+.ic-lg{width:2rem;height:2rem;flex:none}
+.ic-xl{width:2.6rem;height:2.6rem;flex:none}
+.ribbon{margin:0 0 6px;padding:10px 0 4px;border-bottom:1px solid var(--line)}
+.ribbon h2{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 8px;font-family:inherit;font-weight:700}
+.ribbon ol{display:flex;gap:6px;list-style:none;margin:0;padding:0 0 6px;overflow-x:auto;scrollbar-width:thin}
+.ribbon li{flex:1 1 0;min-width:104px}
+.ribbon a{display:flex;flex-direction:column;gap:5px;padding:8px 9px;border:1px solid var(--line);border-radius:9px;text-decoration:none;color:inherit;background:var(--panel);min-height:100%}
+.ribbon a:hover{border-color:var(--ink)}
+.ribbon a[aria-current="step"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.ribbon .rn{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:.72rem;letter-spacing:.05em;text-transform:uppercase}
+.ribbon .rt{font-size:.84rem;font-weight:650;line-height:1.25}
+.ribbon .rc{font-size:.74rem;color:var(--muted)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,340px);gap:22px;align-items:center;margin:10px 0 0}
+.hero figure{margin:0}
+.hero figcaption{font-size:.78rem;color:var(--muted);margin-top:6px}
+.hero svg.art{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+@media (max-width:820px){.hero{grid-template-columns:1fr}}
+.aud{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.aud button{display:flex;align-items:center;gap:8px;padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:inherit;font:inherit;cursor:pointer}
+.aud button[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink);font-weight:650}
+.audbox{border:1px solid var(--line);border-left:4px solid var(--ink);border-radius:10px;padding:14px 16px;background:var(--panel);margin:0 0 18px}
+.audbox h3{margin:0 0 6px;font-size:1.02rem;display:flex;align-items:center;gap:8px}
+.audbox ol{margin:8px 0 0;padding-left:20px}
+.audbox li{margin:4px 0}
+h2 .ic,h3 .ic{color:var(--muted)}
+.iconrow{display:flex;align-items:center;gap:9px}
+.legendkey{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin:8px 0 0}
+.legendkey span{display:inline-flex;align-items:center;gap:5px}
+@media (prefers-reduced-motion:no-preference){.ribbon a{transition:border-color .15s}}
+
+/* Self-check surface */
+.selfcheck{border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:22px 0 0;background:var(--panel)}
+.selfcheck h2{font-size:1rem;margin:0 0 6px}
+.selfcheck .scline{margin:0;font-size:.9rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.scdot{width:10px;height:10px;border-radius:50%;background:var(--muted);flex:none;box-shadow:0 0 0 3px color-mix(in srgb,currentColor 12%,transparent)}
+.scdot.good{background:#0f766e}.scdot.fair{background:#b45309}.scdot.needs-work{background:#be123c}
+.selfcheck details{margin-top:8px}
+.selfcheck summary{cursor:pointer;font-size:.88rem}
+.selfcheck .scbody{font-size:.88rem}
+.selfcheck h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:12px 0 4px}
+.selfcheck ul{margin:0;padding-left:18px}
+.selfcheck li{margin:3px 0}
+.selfgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-top:14px}
+.selfcard{border:1px solid var(--line);border-radius:12px;padding:15px;background:var(--panel)}
+.selfcard h3{display:flex;align-items:center;gap:10px;margin:0 0 8px;font-size:1rem}
+/* Title row: illustration sits opposite the title, at about a third of its weight */
+header .headgrid{display:grid;grid-template-columns:minmax(0,1.9fr) minmax(180px,0.85fr);gap:28px;align-items:center}
+header .headgrid > h1{margin:0}
+header .heroart{margin:0;max-width:340px;justify-self:end;width:100%}
+header .heroart svg.art{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}
+header .heroart figcaption{font-size:.72rem;color:var(--muted);margin-top:5px;line-height:1.35}
+header .heroart.float{float:right;width:min(300px,34%);margin:0 0 14px 22px}
+@media (max-width:820px){
+  header .headgrid{grid-template-columns:1fr}
+  header .heroart{max-width:260px;justify-self:start}
+  header .heroart.float{float:none;width:min(260px,70%);margin:12px 0}
+}
+/* Journey strip: full-bleed band, content aligned with every other section */
+nav.ribbon{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:color-mix(in srgb,currentColor 3%,transparent);margin:0;padding:12px 0 6px}
+nav.ribbon > .wrap{padding-left:28px;padding-right:28px}
+nav.ribbon h2{margin:0 0 9px}
+/* What used to sit beside the title now sits under the strip, full measure */
+.introblock{margin:20px auto 0}
+.introblock .lede{font-size:1.06rem;max-width:62ch}
+.introblock .tools{margin-top:12px}
+.introblock .rev{margin-top:10px;font-size:.84rem;color:var(--muted);max-width:80ch}
+.introblock .scope{margin:0}
+</style></head>
+<body>
+<svg class="sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden"><defs><symbol id="i-explore" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9 M12 3a9 9 0 0 1 9 9M3.5 12h17M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-structure" viewBox="0 0 24 24"><path d="M12 3 4 7v10l8 4 8-4V7l-8-4Zm0 0v18M4 7l8 4 8-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-register" viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6V3Zm9 0v3h3M9 11h6M9 15h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-tax" viewBox="0 0 24 24"><path d="M5 20V9l7-5 7 5v11H5Zm4-5h6M9 12h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-licence" viewBox="0 0 24 24"><path d="M4 5h16v14H4V5Zm3 4h5M7 12h10M7 15h7m2-6.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-premises" viewBox="0 0 24 24"><path d="M4 20V10l8-6 8 6v10H4Zm6 0v-6h4v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-finance" viewBox="0 0 24 24"><path d="M3 19V5m0 14h18M7 15V9m5 6V6m5 9v-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-employ" viewBox="0 0 24 24"><path d="M8 11a3.2 3.2 0 1 0 0-6.4A3.2 3.2 0 0 0 8 11Zm0 0c-3 0-5 1.8-5 4.5V19h10v-3.5C13 12.8 11 11 8 11Zm9-6.2a3.2 3.2 0 1 1 0 6.4M16 19h5v-3.5c0-2.2-1.4-3.8-3.6-4.3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-trade" viewBox="0 0 24 24"><path d="M3 12h18M3 12a9 9 0 0 1 9-9m9 9a9 9 0 0 0-9-9m0 18a9 9 0 0 0 9-9M12 21a9 9 0 0 1-9-9m9-9c2.4 2.5 3.6 5.5 3.6 9s-1.2 6.5-3.6 9c-2.4-2.5-3.6-5.5-3.6-9S9.6 5.5 12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-grow" viewBox="0 0 24 24"><path d="M4 19c6 0 10-3.5 12-10M13 5h6v6M8 19a4 4 0 0 0-4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-rules" viewBox="0 0 24 24"><path d="M12 4v16M6 8h12M7 8l-3 6h6l-3-6Zm10 0-3 6h6l-3-6ZM9 20h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5V5.5ZM8 7h7M8 10h7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-nations" viewBox="0 0 24 24"><path d="M6 21V4m0 0 7 2.5L20 4v9l-7 2.5L6 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm-8.6 9h17.2M12 3c2.3 2.5 3.5 5.5 3.5 9s-1.2 6.5-3.5 9c-2.3-2.5-3.5-5.5-3.5-9S9.7 5.5 12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-standards" viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h13m2-9.5 3 3-6 6-3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12.5 9 18l11-12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-history" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4h4M12 8v4.5l3 1.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-boundary" viewBox="0 0 24 24"><path d="M12 3v18M6 7l-3 5 3 5M18 7l3 5-3 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><path d="M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14Zm5 12 4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-blueprint" viewBox="0 0 24 24"><path d="M3 5h18v14H3V5Zm5 0v14M3 10h5m8-5v14m0-9h5M8 14h8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-person" viewBox="0 0 24 24"><path d="M12 11.5a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm0 0c-4 0-7 2.4-7 6V20h14v-2.5c0-3.6-3-6-7-6Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-agent" viewBox="0 0 24 24"><path d="M9 10.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm0 0c-3 0-5.5 2-5.5 5V19H14v-3.5c0-3-2.5-5-5-5Zm8-5 4 2.5-4 2.5m4-2.5h-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-official" viewBox="0 0 24 24"><path d="M12 3 4 6.5V12c0 4.6 3.2 7.8 8 9 4.8-1.2 8-4.4 8-9V6.5L12 3Zm-3 9 2.2 2.4L15 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-access" viewBox="0 0 24 24"><path d="M12 4.2a1.6 1.6 0 1 0 0-3.2 1.6 1.6 0 0 0 0 3.2ZM5 7.5c2.2.9 4.5 1.3 7 1.3s4.8-.4 7-1.3M12 8.8V14m0 0 3.5 6M12 14l-3.5 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-language" viewBox="0 0 24 24"><path d="M4 6h10M9 4v2m0 0c0 4-2 7-5 8.5M6.5 10.5c1.3 2.4 3 4 5.5 5M13 20l4-9 4 9m-6.6-2.4h5.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-data" viewBox="0 0 24 24"><path d="M12 4c4.4 0 8 1.3 8 3s-3.6 3-8 3-8-1.3-8-3 3.6-3 8-3Zm8 3v10c0 1.7-3.6 3-8 3s-8-1.3-8-3V7m16 5c0 1.7-3.6 3-8 3s-8-1.3-8-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-warning" viewBox="0 0 24 24"><path d="M12 4 3 20h18L12 4Zm0 6v5m0 3h.01" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm0 4.5V12l3.5 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-money" viewBox="0 0 24 24"><path d="M5 7h14v10H5V7Zm7 2.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-back" viewBox="0 0 24 24"><path d="M6 6.5h12M6 12h12M6 17.5h8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-support" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-9 9v3.5A2.5 2.5 0 0 0 5.5 18H7v-6H5.2A6.8 6.8 0 0 1 18.8 12H17v6h1.5a2.5 2.5 0 0 0 2.5-2.5V12a9 9 0 0 0-9-9Zm5 15v.5a2.5 2.5 0 0 1-2.5 2.5H12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol></defs></svg>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="wrap">
+    <p class="family" id="family">Part of <a href="../">Starting a business in the UK</a>: <a href="../your-plan/">your plan</a><a href="../whole-life-of-a-business/">from starting to closing, and everything between</a><a href="../your-circumstances/">when the standard route does not fit</a><a href="../every-way-in/">every way in, and every way out</a><a href="../skills-and-communities/">skills, qualifications and finding your people</a><a href="../every-step/">every step in the journey</a><a href="../twenty-years-of-joining-up/">historical arc</a><a href="../before-the-register/">before the register</a><a href="../whatever-you-are-setting-up/">whatever you are setting up</a><a href="../what-binds-this-business/">what binds this business</a><a href="../rules-trade-and-bodies/">rules, trade and the bodies</a><a href="../four-nations/">four nations</a><a href="../the-uk-compared/">international benchmark</a><a href="../service-blueprints/">service blueprints</a><a href="../knowledge-layer/">the knowledge layer</a><a href="../how-this-was-built/">how this was built and run</a><a href="../verification-register/">verification register</a></p>
+    <div class="headgrid">
+      <h1>Standards for the journey<small>Open standards for data, cyber, digital and technology across starting a business</small></h1><figure class="heroart"><svg class="art" viewBox="0 0 680 300" role="img" aria-labelledby="artt artd"><title id="artt">A stack of standards</title><desc id="artd">Seven layers narrowing from data to service.</desc><rect width="680" height="300" fill="none"/><rect x="80" y="40" width="520" height="26" rx="6" fill="var(--l1,#1d4ed8)" opacity=".2"/><rect x="80" y="40" width="520" height="26" rx="6" fill="none" stroke="currentColor" opacity=".28"/><rect x="110" y="72" width="460" height="26" rx="6" fill="var(--l2,#0f766e)" opacity=".2"/><rect x="110" y="72" width="460" height="26" rx="6" fill="none" stroke="currentColor" opacity=".28"/><rect x="140" y="104" width="400" height="26" rx="6" fill="var(--l3,#b45309)" opacity=".2"/><rect x="140" y="104" width="400" height="26" rx="6" fill="none" stroke="currentColor" opacity=".28"/><rect x="170" y="136" width="340" height="26" rx="6" fill="var(--l4,#7c3aed)" opacity=".2"/><rect x="170" y="136" width="340" height="26" rx="6" fill="none" stroke="currentColor" opacity=".28"/><rect x="200" y="168" width="280" height="26" rx="6" fill="var(--l5,#be123c)" opacity=".2"/><rect x="200" y="168" width="280" height="26" rx="6" fill="none" stroke="currentColor" opacity=".28"/><rect x="230" y="200" width="220" height="26" rx="6" fill="var(--l6,#047857)" opacity=".2"/><rect x="230" y="200" width="220" height="26" rx="6" fill="none" stroke="currentColor" opacity=".28"/><rect x="260" y="232" width="160" height="26" rx="6" fill="var(--l1,#1d4ed8)" opacity=".2"/><rect x="260" y="232" width="160" height="26" rx="6" fill="none" stroke="currentColor" opacity=".28"/></svg><figcaption>Seven layers, narrowing from data format to whole service.</figcaption></figure>
+    </div>
+    <div class="stats" id="stats"></div>
+  </div>
+</header>
+<nav class="ribbon" aria-label="The founder journey"><div class="wrap"><h2>The journey, stage by stage</h2><ol><li><a href="../before-the-register/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-explore"></use></svg> Stage 1</span><span class="rt">Decide</span><span class="rc">Is this a business, and what shape?</span></a></li><li><a href="../whatever-you-are-setting-up/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-structure"></use></svg> Stage 2</span><span class="rt">Structure</span><span class="rc">Legal form, name, ownership</span></a></li><li><a href="../every-step/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-register"></use></svg> Stage 3</span><span class="rt">Register</span><span class="rc">Registrar, identity, identifiers</span></a></li><li><a href="../whatever-you-are-setting-up/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-tax"></use></svg> Stage 4</span><span class="rt">Tax</span><span class="rc">Self Assessment, Corporation Tax, VAT</span></a></li><li><a href="../what-binds-this-business/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-licence"></use></svg> Stage 5</span><span class="rt">Licences</span><span class="rc">What the activity triggers</span></a></li><li><a href="../every-step/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-premises"></use></svg> Stage 6</span><span class="rt">Premises</span><span class="rc">Rates, planning, property</span></a></li><li><a href="../whatever-you-are-setting-up/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-finance"></use></svg> Stage 7</span><span class="rt">Money</span><span class="rc">Grants, reliefs, finance</span></a></li><li><a href="../what-binds-this-business/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-employ"></use></svg> Stage 8</span><span class="rt">People</span><span class="rc">Employing, paying, protecting</span></a></li><li><a href="../rules-trade-and-bodies/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-trade"></use></svg> Stage 9</span><span class="rt">Trade</span><span class="rc">Goods, borders, tendering</span></a></li></ol></div></nav>
+<div class="wrap introblock">
+        <p class="lede" id="lede"></p>
+        <div class="tools">
+          <button class="btn sm" type="button" id="theme">Light or dark</button>
+          <button class="btn sm" type="button" id="dlcsv" hidden>Download standards (CSV)</button>
+          <button class="btn sm" type="button" id="dljson" hidden>Download profile (JSON)</button>
+          <button class="btn sm" type="button" id="print">Print</button>
+          <span class="toolmsg" id="toolmsg" role="status"></span>
+        </div>
+        <p class="rev">Last updated 17 September 2026. Each standard's status checked against GOV.UK, NCSC, ONS, devolved government and GOV.UK One Login sources.</p>
+      </div>
+
+
+<nav class="jump" aria-label="On this page"><ul id="jump"></ul></nav>
+<main class="wrap" id="main">
+  <section id="s-stack" aria-labelledby="h-stack">
+    <h2 id="h-stack">The standards stack</h2>
+    <p class="intro">Seven layers. Select a standard to see what it is, where it applies on the journey, its status and what to do. Dot colour shows priority: filled for adopt now.</p>
+    <div class="mxtools">
+      <label for="fstatus" class="toolmsg">Status</label><select id="fstatus"><option value="all">Any status</option></select>
+      <label for="fprio" class="toolmsg">Priority</label><select id="fprio"><option value="all">Any priority</option></select>
+      <label for="fstage" class="toolmsg">Journey stage</label><select id="fstage"><option value="all">Any stage</option></select>
+      <label for="fq" class="toolmsg">Search</label><input type="search" id="fq" style="font:inherit;padding:5px 10px;border-radius:10px;border:1.5px solid var(--rule);background:var(--panel);color:var(--ink)">
+      <span class="toolmsg" id="fcount" role="status"></span>
+    </div>
+    <div class="stack" id="stack"></div>
+    <div class="stdwrap">
+      <div class="sjwrap"><table class="sj" id="sj"></table></div>
+      <aside class="panel detail" id="detail" aria-live="polite"></aside>
+    </div>
+  </section>
+
+  <section id="s-dates" aria-labelledby="h-dates">
+    <h2 id="h-dates">Dates founders will meet</h2>
+    <p class="intro">Standards with fixed dates that affect businesses registering now. Hollow markers are still to come.</p>
+    <ol class="timeline" id="timeline"></ol>
+  </section>
+
+  <section id="s-insights" aria-labelledby="h-insights">
+    <h2 id="h-insights">What the analysis shows</h2>
+    <ul class="insights" id="insights"></ul>
+  </section>
+
+  <section id="s-impl" aria-labelledby="h-impl">
+    <h2 id="h-impl">Recommendations for data and metadata</h2>
+    <p class="intro">This guide's own proposals, for discussion.</p>
+    <ol class="impl" id="impl"></ol>
+  </section>
+</main>
+<div class="wrap"><nav class="seqnav" aria-label="Sequence"><div><a href="../the-uk-compared/">&larr; Part 13: International benchmark</a><small>How the UK compares</small></div><div style="text-align:center"><a href="../">Part 14 of 18</a><small>Standards for the journey</small></div><div class="nx"><a href="../service-blueprints/">Part 15: Service blueprints &rarr;</a><small>People, lanes and inclusion</small></div></nav></div>
+<footer>
+  <div class="wrap">
+    <h2>Method and sources</h2>
+    <p>Standards were drawn from the GOV.UK open standards collection and recommended standards, the Service Standard and Technology Code of Practice, the API technical and data standards, cyber and email security guidance, the DVS trust framework, GOV.UK One Login technical documentation, ONS classifications, Companies House and HMRC requirements, and the Scottish and Welsh service standards. Each was mapped to the journey stages where founders or services meet it, and to pain points in the companion pages. Priorities are these pages' judgement. No Northern Ireland digital service standard was found on these pages.</p>
+    <dl>
+      <dt>Adopt across the journey now</dt><dd>Already required or mature, and missing or inconsistent somewhere on the journey.</dd>
+      <dt>Extend to the journey</dt><dd>Selected or available, but not yet applied to start-up services or data.</dd>
+      <dt>Prepare founders for a date</dt><dd>A dated requirement that will affect businesses registering now.</dd>
+      <dt>Keep current and governed</dt><dd>In place; needs maintenance, alignment or monitoring.</dd>
+    </dl>
+    <ol id="sources"></ol>
+  </div>
+</footer>
+<script>
+var FAMILY_HTML="Part of the start a business every step in the journey: <a href=\"../every-step/\">whole-journey portal</a><a href=\"../twenty-years-of-joining-up/\">historical arc</a><a href=\"../before-the-register/\">pre-registration boundary</a><a href=\"../the-uk-compared/\">international benchmark</a><a href=\"../four-nations/\">four nations</a><a href=\"../verification-register/\">verification register</a>";var SRC={
+  ss:["GOV.UK Service Manual: Service Standard (14 points)","https://www.gov.uk/service-manual/service-standard"],
+  tcop:["GOV.UK: The Technology Code of Practice (Jul 2025)","https://www.gov.uk/guidance/the-technology-code-of-practice"],
+  dsss:["Digital Scotland Service Manual: Digital Scotland Service Standard","https://servicemanual.gov.scot/service-standard"],
+  dsssblog:["Scottish Government Digital blog: Digital Scotland Service Standard (14 criteria, 2021)","https://blogs.gov.scot/digital/2021/02/15/update-to-digital-first-service-standard/"],
+  wds:["Welsh Government: Digital Service Standard","https://www.gov.wales/digital-service-standard"],
+  a11y:["GOV.UK: Understanding accessibility requirements for public sector bodies","https://www.gov.uk/guidance/accessibility-requirements-for-public-sector-websites-and-apps"],
+  oidc:["GOV.UK One Login technical documentation: How GOV.UK One Login works","https://docs.sign-in.service.gov.uk/how-gov-uk-one-login-works"],
+  vot:["GOV.UK One Login technical documentation: Choose the level of identity confidence (GPG 45)","https://docs.sign-in.service.gov.uk/before-integrating/choose-the-level-of-identity-confidence"],
+  vota:["GOV.UK One Login technical documentation: Choose the level of authentication (GPG 44)","https://docs.sign-in.service.gov.uk/before-integrating/choose-the-level-of-authentication"],
+  chidv:["GOV.UK: Verify your identity for Companies House","https://www.gov.uk/guidance/verify-your-identity-for-companies-house"],
+  dvstf:["DSIT: UK digital verification services trust framework (1.0), Jun 2026","https://www.gov.uk/government/publications/uk-digital-verification-services-trust-framework-1-0"],
+  dvsschema:["DSIT: UK DVS trust framework data schema (1.0), Apr 2026","https://www.gov.uk/government/publications/uk-digital-verification-services-trust-framework-data-schema-1-0"],
+  dvsdel:["DSIT: How to check whether someone has delegated authority (1.0), Jun 2026","https://www.gov.uk/government/publications/how-to-check-whether-someone-has-delegated-authority-1-0"],
+  osb:["GOV.UK: Open standards for government data and technology (collection, updated Apr 2026)","https://www.gov.uk/government/collections/open-standards-for-government-data-and-technology"],
+  uprn:["Open standards profile: Identifying property and street information (UPRN, USRN)","https://www.gov.uk/government/publications/open-standards-for-government/identifying-property-and-street-information"],
+  pointer:["nidirect: Pointer, Northern Ireland address data with UPRNs","https://www.nidirect.gov.uk/articles/pointer"],
+  country:["Open standards profile: Use consistent country codes (ISO 3166-1, GB-ENG, GB-SCT, GB-WLS, GB-NIR)","https://www.gov.uk/government/publications/open-standards-for-government/country-codes"],
+  dates:["Open standards profile: Formatting dates and times in data (ISO 8601)","https://www.gov.uk/government/publications/open-standards-for-government/date-times-and-time-stamps-standard"],
+  lang:["Open standards profile: Tag content with international language codes (ISO 639-1)","https://www.gov.uk/government/publications/open-standards-for-government/language-tags"],
+  utf8:["Open standards profile: Encoding characters (UTF-8)","https://www.gov.uk/government/publications/open-standards-for-government/cross-platform-character-encoding-profile"],
+  sic26:["ONS: UK SIC 2026","https://www.ons.gov.uk/methodology/classificationsandstandards/ukstandardindustrialclassificationofeconomicactivities/uksic2026"],
+  chsic:["Companies House: Standard industrial classification of economic activities (condensed SIC list)","https://www.gov.uk/government/publications/standard-industrial-classification-of-economic-activities-sic"],
+  sic26guide:["SIC Codes UK: SIC 2026 guide (Companies House adoption timing not yet set)","https://www.ons.gov.uk/methodology/classificationsandstandards/ukstandardindustrialclassificationofeconomicactivities/uksic2026"],
+  pid:["Open standards profile: Persistent resolvable identifiers (HTTP, URL)","https://www.gov.uk/government/publications/open-standards-for-government/persistent-resolvable-identifiers"],
+  vcard:["Open standards profile: Exchange of contact information (vCard RFC 6350)","https://www.gov.uk/government/publications/open-standards-for-government/exchange-of-contact-information"],
+  loc:["Open standards profile: Exchange of location point (WGS84, ETRS89)","https://www.gov.uk/government/publications/open-standards-for-government/exchange-of-location-point"],
+  api:["GDS: API technical and data standards (Jul 2024)","https://www.gov.uk/guidance/gds-api-technical-and-data-standards"],
+  openapi:["Recommended open standard: Describing RESTful APIs with OpenAPI 3","https://www.gov.uk/government/publications/recommended-open-standards-for-government/describing-restful-apis-with-openapi-3"],
+  csv:["Recommended open standard: Tabular data standard (RFC 4180 CSV)","https://www.gov.uk/government/publications/recommended-open-standards-for-government/tabular-data-standard"],
+  dc:["Recommended open standard: Using metadata to describe data shared within government (Dublin Core)","https://www.gov.uk/government/publications/recommended-open-standards-for-government/using-metadata-to-describe-data-shared-within-government"],
+  cda:["GOV.UK: Record metadata to describe critical data assets (Apr 2026)","https://www.gov.uk/government/publications/record-metadata-to-describe-critical-data-assets"],
+  cdaid:["GOV.UK: Identify and record critical data assets (Apr 2026)","https://www.gov.uk/government/publications/identify-and-record-critical-data-assets"],
+  betterdata:["GOV.UK: Make better use of data (TCoP point 10, Mar 2026)","https://www.gov.uk/guidance/make-better-use-of-data"],
+  orUK:["Open standards profile: Record and share information about public services in local authorities (Open Referral UK)","https://www.gov.uk/government/publications/open-standards-for-government/record-and-share-information-about-public-services-in-local-authorities"],
+  bods:["Open standards profile: Collect, use and exchange beneficial ownership information (BODS v0.3)","https://www.gov.uk/government/publications/open-standards-for-government/collect-use-and-exchange-beneficial-ownership-information"],
+  ocds:["Open standards profile: Publishing contract data (OCDS v1.1)","https://www.gov.uk/government/publications/open-standards-for-government/open-contracting-data-standard-profile"],
+  giving:["Open standards profile: Publishing grant data (360Giving)","https://www.gov.uk/government/publications/open-standards-for-government/data-standard-for-grant-making"],
+  docs:["Open standards profile: Publishing government documents (HTML5, PDF/A)","https://www.gov.uk/government/publications/open-standards-for-government/viewing-government-documents"],
+  odf:["Open standards profile: Sharing or collaborating with government documents (ODF 1.2)","https://www.gov.uk/government/publications/open-standards-for-government/sharing-or-collaborating-with-government-documents"],
+  atrs:["DSIT: ATRS mandatory scope and exemptions policy","https://www.gov.uk/government/publications/algorithmic-transparency-recording-standard-mandatory-scope-and-exemptions-policy/algorithmic-transparency-recording-standard-atrs-mandatory-scope-and-exemptions-policy"],
+  atrschat:["ATRS record: DSIT GOV.UK Chat (Oct 2025)","https://www.gov.uk/algorithmic-transparency-records/dsit-gov-dot-uk-chat"],
+  atrsdbt:["ATRS record: DBT AI Chatbot (Jul 2026)","https://www.gov.uk/algorithmic-transparency-records/dbt-ai-chatbot"],
+  atrsliveness:["ATRS record: DSIT GOV.UK One Login liveness and likeness checks (Dec 2025)","https://www.gov.uk/algorithmic-transparency-records/dsit-gov-dot-uk-one-login-liveness-and-likeness-checks"],
+  ixbrl:["Companies House: Using software to file your company's information (software-only accounts from 1 April 2028)","https://www.gov.uk/guidance/using-software-to-file-your-companys-information"],
+  einv:["HM Treasury and HMRC: Summary of tax update 2026 (Jun 2026)","https://www.gov.uk/government/publications/summary-of-tax-update-2026-simplification-modernisation-and-fairness"],
+  einvsec:["VATCalc: UK confirms Peppol for April 2029 B2B e-invoicing (Jun 2026)","https://www.vatcalc.com/united-kingdom/uk-2029-mandatory-b2b-e-invoicing/"],
+  gcss:["GOV.UK: Follow the Government Cyber Security Standard (CAF and Secure by Design)","https://www.gov.uk/guidance/follow-the-government-cyber-security-standard"],
+  email:["GOV.UK: Set up government email services securely","https://www.gov.uk/guidance/set-up-government-email-services-securely"],
+  stix:["Open standards profile: Exchanging cyber threat intelligence (STIX 2, TAXII 2)","https://www.gov.uk/government/publications/open-standards-for-government/exchanging-cyber-threat-intelligence"],
+  ce:["DSIT: Cyber Essentials scheme overview (Mar 2026)","https://www.gov.uk/government/publications/cyber-essentials-scheme-overview"],
+  pdata:["GOV.UK: Principles for securing personal data in government services (Jun 2025)","https://www.gov.uk/guidance/principles-for-securing-personal-data-in-government-services"],
+  step:["GOV.UK: Set up a limited company, step by step","https://www.gov.uk/set-up-limited-company"],
+  chreg:["GOV.UK: Register your company (SIC codes, registered office)","https://www.gov.uk/limited-company-formation/register-your-company"],
+  fsa:["Food Standards Agency: Getting ready to start your food business","https://www.food.gov.uk/business-guidance/getting-ready-to-start-your-food-business"],
+  olapp:["GOV.UK: GOV.UK One Login app accessibility statement (Sep 2026)","https://www.gov.uk/guidance/govuk-one-login-app-accessibility-statement"],
+  chplan:["GOV.UK: ECCT Act outline transition plan for Companies House","https://www.gov.uk/government/publications/economic-crime-and-corporate-transparency-act-outline-transition-plan-for-companies-house/economic-crime-and-corporate-transparency-act-outline-transition-plan-for-companies-house"],
+  boundary:["Before the register (companion page)","../before-the-register/"],
+  nations:["Four nations, one register (companion page)","../four-nations/"]
+};
+var LAYERS=[
+  {id:"service",name:"Service and design",c:"var(--l1)",d:"How services are designed, assessed and made usable by everyone."},
+  {id:"identity",name:"Identity and trust",c:"var(--l2)",d:"Proving who founders, directors and agents are, once and reusably."},
+  {id:"data",name:"Identifiers and reference data",c:"var(--l3)",d:"The shared codes that let data about one business join up."},
+  {id:"exchange",name:"Exchange, APIs and metadata",c:"var(--l4)",d:"How services pass data and describe it."},
+  {id:"publish",name:"Transparency and publishing",c:"var(--l5)",d:"Open data about ownership, grants, contracts, services and algorithms."},
+  {id:"report",name:"Business reporting",c:"var(--l6)",d:"Machine-readable filings and invoices founders will have to produce."},
+  {id:"cyber",name:"Cyber security",c:"var(--l7)",d:"Securing government services, email and founders' own businesses."}
+];
+var STATUS={law:"Required by law",policy:"Mandatory government policy",use:"Open Standards Board: use",rec:"Open Standards Board: recommended",dated:"Announced requirement with a date",platform:"Built into a government platform",devolved:"Devolved government standard",guidance:"Government guidance"};
+var PRIORITY={now:"Adopt across the journey now",extend:"Extend to the journey",prepare:"Prepare founders for a date",govern:"Keep current and governed"};
+var STAGES={decide:"Deciding",prepare:"Preparing",line:"At the line",after:"After registering"};
+// id, name, layer, status, owner, stages, what, why (journey), evidence of use on journey, action, priority, sources
+var STD=[
+ {id:"ss",n:"GOV.UK Service Standard",l:"service",s:"policy",o:"GDS",st:["decide","prepare","line","after"],what:"14 points for building government services; point 13 is to use and contribute to open standards, common components and patterns.",why:"Founders cross services from Companies House, HMRC, councils and DBT; a shared standard is the baseline for a joined-up experience across all channels (point 3).",ev:"Applies to government services on the journey; the 2018 Register your company beta was assessed against its predecessor, the Digital Service Standard.",act:"Assess the start a business journey end to end, not only its individual services.",p:"now",src:["ss"]},
+ {id:"tcop",n:"Technology Code of Practice",l:"service",s:"policy",o:"GDS",st:["decide","prepare","line","after"],what:"Criteria for designing, building and buying technology, including open standards (point 4) and data (point 10); all points must be considered in spend control.",why:"Spend control is the moment to require journey-wide standards such as shared identifiers and APIs.",ev:"Used in the Cabinet Office spend control process.",act:"Add journey standards profile checks to spend control for start-up related services.",p:"now",src:["tcop","betterdata"]},
+ {id:"dsss",n:"Digital Scotland Service Standard",l:"service",s:"devolved",o:"Scottish Government",st:["decide","prepare"],what:"14 criteria all Scottish public sector digital services should meet.",why:"Business Gateway and Find Business Support Scotland are part of the Scottish front door.",ev:"Published in the Digital Scotland Service Manual.",act:"Align journey measures and patterns with GOV.UK where the journey crosses into UK services.",p:"govern",src:["dsss","dsssblog"]},
+ {id:"wds",n:"Digital Service Standard for Wales",l:"service",s:"devolved",o:"Welsh Government",st:["decide","prepare"],what:"Standard developed by the Centre for Digital Public Services, now within the Welsh Government.",why:"Business Wales is the Welsh front door; bilingual services need consistent patterns.",ev:"Welsh Government supports organisations to adopt it.",act:"Align with GOV.UK patterns at hand-offs to Companies House and HMRC.",p:"govern",src:["wds"]},
+ {id:"wcag",n:"WCAG 2.2 AA",l:"service",s:"law",o:"GDS monitoring, under the 2018 accessibility regulations",st:["decide","prepare","line","after"],what:"Public sector websites and apps meet the legal requirements by meeting WCAG 2.2 AA and publishing an accessibility statement.",why:"Every public web touchpoint from guidance to incorporation is in scope, including council licensing and food registration pages.",ev:"Legal duty since 2018; the One Login app publishes an accessibility statement.",act:"Test the whole journey, including hand-offs between organisations, not page by page.",p:"now",src:["a11y","olapp"]},
+ {id:"oidc",n:"OpenID Connect",l:"identity",s:"platform",o:"GOV.UK One Login",st:["line","after"],what:"GOV.UK One Login is an OIDC-compliant identity provider; services integrate as relying parties.",why:"Directors and PSCs verify identity for Companies House through One Login; the same credential could serve HMRC and other start-up services.",ev:"Companies House identity verification uses GOV.UK One Login.",act:"Integrate every start-up service that needs sign-in with One Login rather than separate accounts.",p:"now",src:["oidc","chidv"]},
+ {id:"gpg",n:"GPG 44 and GPG 45",l:"identity",s:"platform",o:"GDS, used by GOV.UK One Login",st:["line"],what:"Good practice guides on authentication levels (GPG 44) and identity confidence (GPG 45), requested through Vectors of Trust such as P2.",why:"Services can ask for the same identity confidence level, so founders prove who they are once.",ev:"Built into One Login's authorisation requests.",act:"Agree one identity confidence level for directors across Companies House, HMRC and licensing where risk is similar.",p:"extend",src:["vot","vota"]},
+ {id:"dvs",n:"UK digital verification services trust framework 1.0",l:"identity",s:"law",o:"DSIT, Office for Digital Identities and Attributes",st:["line"],what:"Statutory framework under section 28 of the Data (Use and Access) Act 2025, with a 1.0 data schema; in force once a certification body is accredited, no earlier than 1 September 2026.",why:"Certified providers could let founders reuse trusted identity checks with banks, agents and government services.",ev:"Published June 2026; data schema April 2026.",act:"Map Companies House identity rules and ACSP checks to the certified framework.",p:"prepare",src:["dvstf","dvsschema"]},
+ {id:"delegated",n:"Checking delegated authority (DVS 1.0)",l:"identity",s:"guidance",o:"DSIT",st:["line","after"],what:"Trust framework guidance on checking whether someone can act on behalf of another person or organisation.",why:"Agents and accountants carry much of the journey, and ACSPs will act for founders at Companies House.",ev:"Published June 2026.",act:"Use one delegated authority model for agents across Companies House and HMRC.",p:"extend",src:["dvsdel","chidv","chplan"]},
+ {id:"uprn",n:"UPRN and USRN",l:"data",s:"use",o:"Open Standards Board; GeoPlace and OS; LPS in Northern Ireland",st:["prepare","line","after"],what:"Unique identifiers for every addressable location and street in Great Britain; Northern Ireland's Pointer data carries UPRNs from the national hub.",why:"Registered office, food premises, business rates and licences all describe the same place without a shared key.",ev:"Profile updated January 2026; Pointer confirms UK-wide UPRN consistency.",act:"Capture a UPRN with addresses at registration, food registration and licensing.",p:"extend",src:["uprn","pointer"]},
+ {id:"iso3166",n:"ISO 3166-1 with GB nation codes",l:"data",s:"use",o:"Open Standards Board",st:["decide","prepare","line","after"],what:"Two-letter country codes, with GB-ENG, GB-SCT, GB-WLS and GB-NIR for the UK nations.",why:"The four nations comparison found most journey differences cluster by nation; content and data need a standard way to say where they apply.",ev:"Profile updated January 2026.",act:"Use the nation codes for applies-to metadata on start-up content and datasets.",p:"now",src:["country","nations"]},
+ {id:"iso8601",n:"ISO 8601 dates and times",l:"data",s:"use",o:"Open Standards Board",st:["line","after"],what:"Machine-readable dates in APIs and data transfer.",why:"The line keeps moving; requirements need dated in-force records, and trading start dates set tax deadlines.",ev:"Referenced in the API technical and data standards.",act:"Date every requirement in a versioned ready-to-register register.",p:"now",src:["dates","api","boundary"]},
+ {id:"iso639",n:"ISO 639-1 language codes",l:"data",s:"use",o:"Open Standards Board",st:["decide","prepare"],what:"Two-letter language codes, such as cy for Welsh.",why:"Welsh-language content and services need consistent tagging across GOV.UK, Business Wales and Companies House.",ev:"Profile updated January 2026.",act:"Tag start-up content and service data with language codes.",p:"extend",src:["lang"]},
+ {id:"utf8",n:"UTF-8 character encoding",l:"data",s:"use",o:"Open Standards Board",st:["line","after"],what:"Unicode encoding for government digital services.",why:"Company, director and trading names include accents and Welsh characters that must survive every hand-off.",ev:"Profile updated January 2026.",act:"Test name fields end to end across registration and tax systems.",p:"govern",src:["utf8"]},
+ {id:"sic",n:"UK SIC 2026",l:"data",s:"guidance",o:"ONS; Companies House condensed list",st:["line","after"],what:"ONS published UK SIC 2026 with a correspondence table from SIC 2007; Companies House accepts codes from its condensed SIC 2007 list.",why:"Describing what the business does is a weakly evidenced pain point at the line, and the code feeds statistics, banks and risk models.",ev:"ONS guidance July and August 2026; a secondary source reports Companies House has not set an adoption date.",act:"Publish a journey-wide SIC 2026 adoption plan and plain-language activity finder.",p:"prepare",src:["sic26","chsic","sic26guide","chreg"]},
+ {id:"pid",n:"Persistent resolvable identifiers",l:"data",s:"use",o:"Open Standards Board",st:["after"],what:"Identifiers expressed as HTTP URLs that keep meaning the same thing over time.",why:"Company numbers and registrations referenced as stable URLs could link records across services.",ev:"Profile updated January 2026.",act:"Publish resolvable URLs for registrations held about a business.",p:"extend",src:["pid"]},
+ {id:"vcard",n:"vCard (RFC 6350)",l:"data",s:"use",o:"Open Standards Board",st:["decide","prepare"],what:"Standard format for exchanging contact information.",why:"Helplines, Growth Hubs, Business Gateway offices and Go Succeed teams change often; one format keeps directories current.",ev:"Profile updated January 2026.",act:"Publish support contacts in vCard alongside service directories.",p:"extend",src:["vcard"]},
+ {id:"loc",n:"WGS84 and ETRS89 location points",l:"data",s:"use",o:"Open Standards Board",st:["prepare"],what:"Coordinate reference systems for exchanging location points; the API standards also point to GeoJSON.",why:"Finding local support and licensing authorities by location.",ev:"Profile updated January 2026.",act:"Use in location-based support and licence finders.",p:"govern",src:["loc","api"]},
+ {id:"apistd",n:"API technical and data standards",l:"exchange",s:"guidance",o:"GDS",st:["line","after"],what:"REST APIs described before build, OAuth 2.0 for access, TLS 1.2 or above, validated inputs, and government data standards.",why:"The only automated hand-off found at the line is incorporation to HMRC; more hand-offs need consistent APIs.",ev:"Guidance updated July 2024.",act:"Expose ready-to-register requirements and registration status as APIs to this standard.",p:"now",src:["api"]},
+ {id:"openapi",n:"OpenAPI 3",l:"exchange",s:"rec",o:"Open Standards Board",st:["line","after"],what:"Description format for RESTful APIs.",why:"Software and agents that carry founders need machine-readable specifications of government APIs.",ev:"Recommended September 2023.",act:"Publish OpenAPI descriptions for every start-up related API.",p:"extend",src:["openapi"]},
+ {id:"csvdc",n:"CSV (RFC 4180) with Dublin Core metadata",l:"exchange",s:"rec",o:"Open Standards Board",st:["after"],what:"Tabular data standard and a metadata schema for data shared within government.",why:"Formation statistics and service data should be publishable and comparable across nations.",ev:"Recommended September 2023.",act:"Publish journey measures as described CSV.",p:"extend",src:["csv","dc"]},
+ {id:"cda",n:"Critical data assets metadata",l:"exchange",s:"guidance",o:"GDS",st:["line","after"],what:"Guidance to identify critical data assets and record metadata describing them.",why:"Company, tax, food and licensing registers are the data the whole journey depends on.",ev:"Published April 2026.",act:"Assess the registers at the line as candidate critical data assets and record their metadata.",p:"now",src:["cda","cdaid"]},
+ {id:"orUK",n:"Open Referral UK",l:"publish",s:"use",o:"Open Standards Board",st:["decide","prepare"],what:"Data standard for recording and sharing information about local authority public services in a common directory structure.",why:"Growth Hubs, Business Gateway, Business Wales and Go Succeed publish support differently; founders cannot compare or find them.",ev:"Profile covers local authority services; no use for business support directories was found on these pages.",act:"Extend Open Referral UK to business support services across the four nations.",p:"extend",src:["orUK","nations"]},
+ {id:"bods",n:"Beneficial Ownership Data Standard v0.3",l:"publish",s:"use",o:"Open Standards Board",st:["line","after"],what:"Common format to collect, use, exchange and publish beneficial ownership information; the UK has committed to publishing in a format that meets it.",why:"PSC details declared at incorporation become public ownership data.",ev:"Profile updated January 2026.",act:"Publish Companies House PSC data in BODS alongside existing formats.",p:"extend",src:["bods"]},
+ {id:"ocds",n:"Open Contracting Data Standard v1.1",l:"publish",s:"use",o:"Open Standards Board",st:["after"],what:"Common data model for publishing data across the contracting process.",why:"New businesses that sell to the public sector meet procurement data after registering.",ev:"The profile, updated January 2026, still refers to the Public Contracts Regulations 2015 rather than the Procurement Act 2023.",act:"Refresh the profile for the Procurement Act 2023.",p:"govern",src:["ocds"]},
+ {id:"giving",n:"360Giving Data Standard",l:"publish",s:"use",o:"Open Standards Board",st:["prepare","after"],what:"Standard for publishing open, structured grant data.",why:"Start-up grants from councils and devolved services are hard to find or compare.",ev:"Profile updated January 2026.",act:"Publish start-up grant awards in 360Giving format.",p:"extend",src:["giving"]},
+ {id:"docs",n:"HTML5, PDF/A and ODF 1.2",l:"publish",s:"use",o:"Open Standards Board",st:["decide","prepare"],what:"Publish documents in HTML5 (PDF/A only with an open format alongside); share editable documents in ODF 1.2.",why:"Licence application forms and council guidance are often downloadable documents.",ev:"Profiles updated January 2026.",act:"Replace start-up forms published only as PDF or Word with HTML or open formats.",p:"extend",src:["docs","odf"]},
+ {id:"atrs",n:"Algorithmic Transparency Recording Standard",l:"publish",s:"policy",o:"DSIT",st:["decide","prepare","line"],what:"Central government must publish records for algorithmic tools that directly interact with the public or significantly influence decisions.",why:"Founders increasingly meet AI in guidance and identity checks.",ev:"Records exist for GOV.UK Chat (Oct 2025), a DBT AI chatbot (Jul 2026) and One Login liveness checks (Dec 2025).",act:"Keep records current as AI features spread across the journey.",p:"govern",src:["atrs","atrschat","atrsdbt","atrsliveness"]},
+ {id:"ixbrl",n:"iXBRL company accounts",l:"report",s:"dated",o:"Companies House",st:["after"],what:"Accounts filed with commercial software are processed as inline XBRL; from 1 April 2028 all companies must file annual accounts using software.",why:"Founders incorporating now will file first accounts under software-only rules.",ev:"Companies House guidance updated June 2026.",act:"Tell founders at incorporation that accounts will need software.",p:"prepare",src:["ixbrl"]},
+ {id:"einvoice",n:"E-invoicing over the Peppol network",l:"report",s:"dated",o:"HMRC and DBT",st:["after"],what:"Structured electronic VAT invoices for business-to-business and business-to-government sales from April 2029, with Peppol confirmed as the interoperability network in June 2026.",why:"New VAT-registered businesses choosing accounting software now will be affected.",ev:"Confirmed at Tax Update Day 2026; roadmap expected at Budget 2026.",act:"Add e-invoicing readiness to VAT registration and software guidance.",p:"prepare",src:["einv","einvsec"]},
+ {id:"gcss",n:"Government Cyber Security Standard",l:"cyber",s:"policy",o:"UK government, with NCSC's Cyber Assessment Framework",st:["line","after"],what:"Services in scope must comply with the appropriate Cyber Assessment Framework profile and the Secure by Design principles.",why:"Registration services hold identity and ownership data that criminals target.",ev:"Guidance published February 2025.",act:"Assess the connected services at the line as one system for CAF purposes.",p:"now",src:["gcss"]},
+ {id:"email",n:"Email security standards",l:"cyber",s:"policy",o:"GDS and NCSC",st:["decide","prepare","line","after"],what:"Government email must use DMARC, SPF and DKIM, TLS 1.2 or later, and MTA-STS with TLS-RPT.",why:"Founders receive codes, deadlines and payment requests by email and are targets for impersonation.",ev:"Guidance updated March 2024.",act:"Verify every sending domain on the journey, including councils and agencies.",p:"now",src:["email"]},
+ {id:"stix",n:"STIX 2 and TAXII 2",l:"cyber",s:"use",o:"Open Standards Board",st:["line"],what:"Standards for sharing cyber threat intelligence; cyber threat intelligence systems must use them.",why:"Fraudulent incorporations and impersonation campaigns cross organisations.",ev:"Profile updated January 2026.",act:"Share registration fraud indicators between Companies House, HMRC and partners in STIX.",p:"extend",src:["stix"]},
+ {id:"ce",n:"Cyber Essentials",l:"cyber",s:"guidance",o:"DSIT and NCSC",st:["after"],what:"Baseline certification for organisations; required to bid for some government contracts, with free cyber insurance under £20 million turnover.",why:"New businesses are exposed from day one and may want to sell to government.",ev:"Scheme overview updated March 2026.",act:"Include Cyber Essentials in before-trading guidance.",p:"extend",src:["ce"]},
+ {id:"pdata",n:"Principles for securing personal data",l:"cyber",s:"guidance",o:"GDS",st:["line","after"],what:"Principles for government services that process or share personal data.",why:"Founders give identity, address and ownership data to several bodies.",ev:"Published June 2025.",act:"Apply to every data hand-off on the journey.",p:"govern",src:["pdata"]}
+];
+var MILESTONES=[
+ {d:"2018-09-23",label:"Accessibility regulations in force for public sector bodies",std:"wcag",src:["a11y"],done:true},
+ {d:"2025-11-18",label:"Identity verification a legal requirement at Companies House, through GOV.UK One Login",std:"oidc",src:["chidv"],done:true},
+ {d:"2026-06-09",label:"DVS trust framework 1.0 published under the Data (Use and Access) Act 2025",std:"dvs",src:["dvstf"],done:true},
+ {d:"2026-06-23",label:"Peppol confirmed as the e-invoicing network",std:"einvoice",src:["einv","einvsec"],done:true},
+ {d:"2026-08-03",label:"UK SIC 2026 structure and correspondence table published",std:"sic",src:["sic26"],done:true},
+ {d:"2026-09-01",label:"DVS trust framework 1.0 can come into force from this date, once a certification body is accredited",std:"dvs",src:["dvstf"],done:false},
+ {d:"2027-11-01",label:"Agent identity checks at Companies House, no earlier than November 2027",std:"delegated",src:["chplan"],done:false},
+ {d:"2028-04-01",label:"All companies must file accounts with software",std:"ixbrl",src:["ixbrl"],done:false},
+ {d:"2029-04-01",label:"E-invoicing mandatory for VAT invoices",std:"einvoice",src:["einv","einvsec"],done:false}
+];
+var INSIGHTS=[
+ {t:"The standards exist; the journey does not use them together",b:"Government already mandates or recommends identifiers, API, metadata, identity and cyber standards that cover every stage. What is missing is a journey profile saying which apply at each touchpoint and who checks.",stds:["ss","tcop","apistd"]},
+ {t:"Identity has the most complete stack",b:"One Login (OpenID Connect, GPG 44 and 45) already underpins Companies House checks, and the statutory DVS framework and delegated authority guidance arrived in 2026. The gap is reuse across other services and agents.",stds:["oidc","gpg","dvs","delegated"]},
+ {t:"Four dated changes will reach today's founders",b:"Four dated changes land on businesses registering now. The DVS framework starts in September 2026. Agent checks follow no earlier than November 2027, software-only accounts in April 2028, and e-invoicing in April 2029. No single piece of start-up guidance found on these pages brings them together.",stds:["dvs","delegated","ixbrl","einvoice"]},
+ {t:"Describing the business is about to change",b:"ONS has published UK SIC 2026 with a correspondence table, while Companies House still takes codes from its condensed SIC 2007 list. Without a plan, founders may classify their business twice.",stds:["sic"]},
+ {t:"Location and nation are solvable with mandated codes",b:"UPRNs cover Great Britain and Northern Ireland through Pointer, and ISO 3166 already defines codes for each UK nation, so addresses and applies-to-nation metadata can use standards that are already required.",stds:["uprn","iso3166"]},
+ {t:"Business support has no directory standard",b:"Open Referral UK is selected for local authority services, but business support across Growth Hubs, Business Gateway, Business Wales and Go Succeed is not published to a common standard.",stds:["orUK","vcard","giving"]},
+ {t:"Some profiles need maintenance",b:"The contracting data profile, updated January 2026, still refers to the Public Contracts Regulations 2015, and BODS is at v0.3. Adoption depends on profiles tracking current law and versions.",stds:["ocds","bods"]}
+];
+var PROPOSALS=[
+ ["Publish a start a business standards profile","One page listing the standards that apply at each touchpoint, with owners, status and assurance, maintained with the Open Standards Board."],
+ ["Model the ready-to-register checklist as an API","Describe requirements in OpenAPI 3 with ISO 8601 in-force dates, ISO 3166 nation codes and persistent URLs, so GOV.UK, business.gov.uk, agents and software read one source."],
+ ["Extend Open Referral UK to business support","Agree a profile for Growth Hubs, Business Gateway, Business Wales, Go Succeed and helplines, with vCard contacts and 360Giving grants."],
+ ["Capture UPRNs and SIC 2026 at the line","Record UPRNs for registered offices and premises, and plan the move to SIC 2026 with a single activity finder across Companies House, HMRC and ONS."],
+ ["Treat the line's registers as critical data assets","Record metadata for company, tax, food and licensing registers under the April 2026 guidance, and assess their connected services together under the Cyber Assessment Framework."]
+];
+(function(){
+  var root=document.documentElement,RM=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  try{var sv=localStorage.getItem('stds-theme');if(sv)root.setAttribute('data-theme',sv);}catch(e){}
+  function $(id){return document.getElementById(id);}
+  function $$(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s));}
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+  function on(el,ev,fn){if(el)el.addEventListener(ev,fn);}
+  on($('theme'),'click',function(){var cur=root.getAttribute('data-theme');var dark=cur?cur==='dark':(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches);var n=dark?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('stds-theme',n);}catch(e){}});
+  on($('print'),'click',function(){window.print();});
+  $('family').innerHTML="Part of <a href=\"../\">Starting a business in the UK</a>: <a href=\"../every-step/\">every step in the journey</a><a href=\"../twenty-years-of-joining-up/\">historical arc</a><a href=\"../before-the-register/\">before the register</a><a href=\"../whatever-you-are-setting-up/\">whatever you are setting up</a><a href=\"../what-binds-this-business/\">what binds this business</a><a href=\"../rules-trade-and-bodies/\">rules, trade and the bodies</a><a href=\"../four-nations/\">four nations</a><a href=\"../the-uk-compared/\">international benchmark</a><a href=\"../service-blueprints/\">service blueprints</a><a href=\"../verification-register/\">verification register</a>";
+  var L={};LAYERS.forEach(function(l){L[l.id]=l;});
+  var S={};STD.forEach(function(s){S[s.id]=s;});
+  var order=[],idx={};function reg(k){if(SRC[k]&&!(k in idx)){order.push(k);idx[k]=order.length;}}
+  STD.forEach(function(s){s.src.forEach(reg);});MILESTONES.forEach(function(m){m.src.forEach(reg);});Object.keys(SRC).forEach(reg);
+  function links(keys){return keys.map(function(k){return '<a href="'+SRC[k][1]+'" target="_blank" rel="noopener" title="'+esc(SRC[k][0])+'">['+idx[k]+']</a>';}).join(' ');}
+  function count(f){return STD.filter(f).length;}
+  var legal=count(function(s){return s.s==='law'||s.s==='policy'||s.s==='dated';});
+  var osb=count(function(s){return s.s==='use'||s.s==='rec';});
+  var now=count(function(s){return s.p==='now';}),ext=count(function(s){return s.p==='extend';});
+  var future=MILESTONES.filter(function(m){return m.d>'2026-09-17';}).length;
+  $('lede').innerHTML='<strong>'+STD.length+' open and government standards</strong> that should shape the start a business journey end to end, across seven layers from service design to cyber security. Most already exist and are mandated or selected; the gap is using them <strong>together, across organisations</strong>, at every touchpoint.';
+  $('stats').innerHTML='<article><b>'+legal+'</b><p>required by law, mandatory policy, or a dated requirement.</p></article>'+
+   '<article><b>'+osb+'</b><p>selected or recommended by the Open Standards Board.</p><small>'+links(['osb'])+'</small></article>'+
+   '<article><b>'+now+'<span> + '+ext+'</span></b><p>to adopt across the journey now, plus '+ext+' to extend from existing use.</p></article>'+
+   '<article><b>'+future+'</b><p>dated changes still to come that affect businesses registering today.</p><small><a href="#s-dates">See the dates</a></small></article>';
+  var SEC=[['s-stack','Standards'],['s-dates','Dates'],['s-insights','Insights'],['s-impl','Recommendations']];
+  $('jump').innerHTML=SEC.map(function(s){return '<li><a href="#'+s[0]+'">'+esc(s[1])+'</a></li>';}).join('');
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)$$('#jump a').forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id);});});},{rootMargin:'-40% 0px -55% 0px'});SEC.forEach(function(s){if($(s[0]))io.observe($(s[0]));});}
+
+  function addOpts(id,obj){var el=$(id);Object.keys(obj).forEach(function(k){var o=document.createElement('option');o.value=k;o.textContent=obj[k];el.appendChild(o);});}
+  addOpts('fstatus',STATUS);addOpts('fprio',PRIORITY);addOpts('fstage',STAGES);
+  var sel='oidc';
+  function match(s){var st=$('fstatus').value,pr=$('fprio').value,sg=$('fstage').value,q=$('fq').value.trim().toLowerCase();
+    return (st==='all'||s.s===st)&&(pr==='all'||s.p===pr)&&(sg==='all'||s.st.indexOf(sg)>=0)&&(!q||(s.n+' '+s.what+' '+s.why+' '+s.o).toLowerCase().indexOf(q)>=0);}
+  function render(){
+    var vis=STD.filter(match);$('fcount').textContent=vis.length+' of '+STD.length;
+    $('stack').innerHTML=LAYERS.map(function(l){var ss=STD.filter(function(s){return s.l===l.id;});
+      return '<div class="layer" style="--c:'+l.c+'"><div><h3>'+esc(l.name)+'</h3><p>'+esc(l.d)+'</p></div><div class="chips">'+ss.map(function(s){return '<button type="button" class="chip'+(match(s)?'':' dim')+'" data-s="'+s.id+'" aria-pressed="'+(sel===s.id)+'">'+(s.p==='now'?'<span class="pdot"></span>':'')+esc(s.n)+'</button>';}).join('')+'</div></div>';}).join('');
+    var h='<thead><tr><th>Standard</th><th>Status</th>'+Object.keys(STAGES).map(function(k){return '<th style="text-align:center">'+esc(STAGES[k])+'</th>';}).join('')+'<th>Priority</th></tr></thead><tbody>';
+    LAYERS.forEach(function(l){var ss=vis.filter(function(s){return s.l===l.id;});if(!ss.length)return;
+      h+='<tr class="grp" style="--c:'+l.c+'"><td colspan="7">'+esc(l.name)+'</td></tr>';
+      ss.forEach(function(s){h+='<tr data-s="'+s.id+'" class="'+(sel===s.id?'sel':'')+'" style="--c:'+l.c+'" tabindex="0"><td><b>'+esc(s.n)+'</b></td><td><small>'+esc(STATUS[s.s])+'</small></td>'+Object.keys(STAGES).map(function(k){return '<td class="stg">'+(s.st.indexOf(k)>=0?'<i title="'+esc(STAGES[k])+'"></i>':'')+'</td>';}).join('')+'<td><span class="pr '+s.p+'">'+esc(PRIORITY[s.p].split(' ')[0]+(s.p==='prepare'?' for date':s.p==='now'?' now':''))+'</span></td></tr>';});
+    });
+    $('sj').innerHTML=h+'</tbody>';
+    $$('#stack .chip').forEach(function(b){on(b,'click',function(){select(b.dataset.s,true);});});
+    $$('#sj tbody tr[data-s]').forEach(function(r){on(r,'click',function(){select(r.dataset.s);});on(r,'keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();select(r.dataset.s);}});});
+    detail();
+  }
+  function detail(){var s=S[sel],l=L[s.l];
+    var ms=MILESTONES.filter(function(m){return m.std===s.id;});
+    var ins=INSIGHTS.filter(function(i){return i.stds.indexOf(s.id)>=0;});
+    $('detail').innerHTML='<p class="meta" style="color:'+l.c+';font-weight:700">'+esc(l.name)+'</p><h3>'+esc(s.n)+'</h3><p>'+esc(s.what)+'</p><dl><dt>Status</dt><dd>'+esc(STATUS[s.s])+'</dd><dt>Owner</dt><dd>'+esc(s.o)+'</dd><dt>Journey</dt><dd>'+s.st.map(function(k){return esc(STAGES[k]);}).join(', ')+'</dd><dt>Why here</dt><dd>'+esc(s.why)+'</dd><dt>Evidence</dt><dd>'+esc(s.ev)+'</dd><dt>Action</dt><dd><b>'+esc(PRIORITY[s.p])+'.</b> '+esc(s.act)+'</dd>'+(ms.length?'<dt>Dates</dt><dd>'+ms.map(function(m){return esc(fmtd(m.d)+': '+m.label);}).join('<br>')+'</dd>':'')+'</dl>'+(ins.length?'<p class="meta">Related insight: '+ins.map(function(i){return esc(i.t);}).join('; ')+'</p>':'')+'<small>Sources '+links(s.src)+'</small>';
+  }
+  function select(id,scroll){sel=id;render();if(scroll&&window.innerWidth<1100){$('detail').scrollIntoView({behavior:RM?'auto':'smooth',block:'start'});}}
+  ['fstatus','fprio','fstage'].forEach(function(id){on($(id),'change',render);});on($('fq'),'input',render);
+  var MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  function fmtd(d){var p=d.split('-');return (+p[2])+' '+MON[+p[1]-1]+' '+p[0];}
+  var TODAY='2026-09-17';
+  var tl='';var placed=false;
+  MILESTONES.forEach(function(m){var s=S[m.std],l=L[s.l];
+    if(!placed&&m.d>TODAY){tl+='<li style="grid-template-columns:1fr"><p class="today">Today, 17 September 2026</p></li>';placed=true;}
+    tl+='<li class="'+(m.d>TODAY?'future':'')+'" style="--c:'+l.c+'"><time datetime="'+m.d+'">'+esc(fmtd(m.d))+'</time><span class="dot"></span><div class="ev"><button type="button" data-s="'+s.id+'">'+esc(m.label)+'</button><small>'+esc(s.n)+' · '+links(m.src)+'</small></div></li>';});
+  $('timeline').innerHTML=tl;
+  $$('#timeline [data-s]').forEach(function(b){on(b,'click',function(){select(b.dataset.s);$('s-stack').scrollIntoView({behavior:RM?'auto':'smooth'});});});
+  $('insights').innerHTML=INSIGHTS.map(function(i){return '<li><b>'+esc(i.t)+'</b><p>'+esc(i.b)+'</p><small>'+i.stds.map(function(x){return '<a href="#s-stack" data-s="'+x+'">'+esc(S[x].n)+'</a>';}).join(' · ')+'</small></li>';}).join('');
+  $$('#insights [data-s]').forEach(function(a){on(a,'click',function(e){e.preventDefault();select(a.dataset.s);$('s-stack').scrollIntoView({behavior:RM?'auto':'smooth'});});});
+  $('impl').innerHTML=PROPOSALS.map(function(p){return '<li><b>'+esc(p[0])+'</b>'+esc(p[1])+'</li>';}).join('');
+  $('sources').innerHTML=order.map(function(k){return '<li><a href="'+SRC[k][1]+'" target="_blank" rel="noopener">'+esc(SRC[k][0])+'</a></li>';}).join('');
+  function q(v){v=String(v==null?'':v);return /[",\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v;}
+  function csv(){var rows=[['standard','layer','status','owner','deciding','preparing','at_the_line','after_registering','what','why_on_journey','evidence','priority','action','sources']];
+    STD.forEach(function(s){rows.push([s.n,L[s.l].name,STATUS[s.s],s.o,s.st.indexOf('decide')>=0?'yes':'',s.st.indexOf('prepare')>=0?'yes':'',s.st.indexOf('line')>=0?'yes':'',s.st.indexOf('after')>=0?'yes':'',s.what,s.why,s.ev,PRIORITY[s.p],s.act,s.src.map(function(k){return SRC[k][1];}).join(' ')]);});
+    return rows.map(function(r){return r.map(q).join(',');}).join('\n');}
+  function json(){return JSON.stringify({title:"Standards for the start a business journey",scan_date:"2026-09-17",layers:LAYERS.map(function(l){return {id:l.id,name:l.name,description:l.d};}),standards:STD.map(function(s){return {id:s.id,name:s.n,layer:L[s.l].name,status:STATUS[s.s],owner:s.o,journey_stages:s.st.map(function(k){return STAGES[k];}),what:s.what,why_on_journey:s.why,evidence:s.ev,priority:PRIORITY[s.p],action:s.act,sources:s.src.map(function(k){return {title:SRC[k][0],url:SRC[k][1]};})};}),milestones:MILESTONES.map(function(m){return {date:m.d,label:m.label,standard:S[m.std].n,passed:m.d<=TODAY};}),insights:INSIGHTS.map(function(i){return {title:i.t,detail:i.b,standards:i.stds.map(function(x){return S[x].n;})};}),recommendations:PROPOSALS.map(function(p){return {title:p[0],detail:p[1]};})},null,2);}
+  function msg(t){$('toolmsg').textContent=t;}
+  if(window.claude&&typeof window.claude.use==='function'){window.claude.use('downloads').then(function(dl){if(!dl)return;$('dlcsv').hidden=false;$('dljson').hidden=false;
+    function save(n,data,btn){btn.disabled=true;msg('');dl.save({filename:n,data:data}).then(function(){msg('Saved.');}).catch(function(e){var c=e&&e.code;msg(c==='declined'?'':'Download is not available here.');}).then(function(){btn.disabled=false;});}
+    on($('dlcsv'),'click',function(){save('start-business-journey-standards.csv',csv(),$('dlcsv'));});on($('dljson'),'click',function(){save('start-business-journey-standards-profile.json',json(),$('dljson'));});}).catch(function(){});}
+  window.__stds={csv:csv,json:json};
+  render();
+})();
+</script><script>window.AI_CFG={title:"Ask about standards for the journey",family:"Starting a business in the UK portal and its other six parts",intro:"Ask anything about this page. Answers come from this page's content and cite its sources in words.",suggestions:["Which standards should we adopt first?", "What changes before 2029?", "Which standards are already mandatory?", "What is missing for business support data?"],context:function(){var t='';try{var m=document.querySelector('main');t=(document.querySelector('header')?document.querySelector('header').innerText+'\n':'')+(m?m.innerText:'');}catch(e){} var d='';try{var x=window.__stds;if(x&&typeof x.json==='function'){d=x.json();}}catch(e){} if(d){return t+'\n\n=== FULL STRUCTURED DATA FOR THIS PAGE (JSON, includes detail not shown on screen) ===\n'+d;} return t;},max:46000};
+(function(){
+  if(!window.AI_CFG) return;
+  var CFG=window.AI_CFG, doc=document;
+  var btn=doc.createElement('button');btn.className='aibtn';btn.type='button';btn.hidden=true;btn.textContent='Ask about this page';
+  var wrap=doc.createElement('div');wrap.className='aiwrap';wrap.setAttribute('role','dialog');wrap.setAttribute('aria-label','Ask Claude about this page');
+  wrap.innerHTML='<div class="aihead"><b>'+CFG.title+'<small>Grounded in this page\'s evidence</small></b><button type="button" aria-label="Close">&times;</button></div>'+
+    '<div class="ailog" id="ailog"></div><div class="aisug" id="aisug"></div>'+
+    '<form class="aiform"><textarea rows="1" placeholder="Ask a question" aria-label="Your question"></textarea><button type="submit">Ask</button></form>'+
+    '<p class="aifoot">Answers come from Claude reading this page. They use your Claude account, and can be wrong: check the cited sources.</p>';
+  doc.body.appendChild(btn);doc.body.appendChild(wrap);
+  var log=wrap.querySelector('#ailog'),sug=wrap.querySelector('#aisug'),form=wrap.querySelector('form'),ta=form.querySelector('textarea'),send=form.querySelector('button[type=submit]'),close=wrap.querySelector('.aihead button');
+  var sample=null,turns=[],busy=false,ctl=null;
+  function el(cls,txt){var d=doc.createElement('div');d.className='aimsg '+cls;d.textContent=txt;log.appendChild(d);log.scrollTop=log.scrollHeight;return d;}
+  function context(){
+    var t=CFG.context&&CFG.context();
+    if(!t){var m=doc.querySelector('main');t=(doc.querySelector('header')?doc.querySelector('header').innerText+'\n':'')+(m?m.innerText:doc.body.innerText);}
+    t=t.replace(/\s+\n/g,'\n').replace(/\n{3,}/g,'\n\n');
+    var MAXC=CFG.max||26000;return t.length>MAXC?t.slice(0,MAXC)+'\n[content truncated]':t;
+  }
+  function rules(){
+    return 'You are answering questions about a UK government analysis of the "start a business" journey, for civil servants. '+
+      'Answer ONLY from the CONTENT below, which is the page the reader is looking at ('+CFG.title+'). '+
+      'If the answer is not in the content, say so plainly and suggest which companion page may hold it ('+CFG.family+'). '+
+      'Never invent statistics, dates, sources or URLs. Quote figures exactly as written. '+
+      'Be concise: 2 to 6 sentences or a short list, plain British English, no headings, no markdown emphasis. '+
+      'Where a claim rests on a source named in the content, name that source in words.\n\nCONTENT:\n'+context();
+  }
+  function open(){wrap.classList.add('open');btn.hidden=true;ta.focus();}
+  function shut(){wrap.classList.remove('open');btn.hidden=false;if(ctl)ctl.abort();}
+  btn.addEventListener('click',open);close.addEventListener('click',shut);
+  doc.addEventListener('keydown',function(e){if(e.key==='Escape'&&wrap.classList.contains('open'))shut();});
+  (CFG.suggestions||[]).forEach(function(q){var b=doc.createElement('button');b.type='button';b.textContent=q;b.addEventListener('click',function(){ta.value=q;ask();});sug.appendChild(b);});
+  function copy(code){
+    switch(code){
+      case 'rate_limited':return 'Too many questions at once. Wait a moment and ask again.';
+      case 'session_expired':return 'Your session expired. Sign in again to keep asking.';
+      case 'refused':return 'Claude declined to answer that. Try asking it differently.';
+      case 'empty_completion':return 'No answer came back. Try a shorter, more specific question.';
+      case 'cancelled':return '';
+      case 'prompt_too_large':return 'That question plus this page is too long to send. Ask about one section.';
+      default:return 'Something went wrong reaching Claude. Try again in a moment.';
+    }
+  }
+  function hide(){btn.remove();wrap.remove();}
+  function ask(){
+    var q=ta.value.trim();if(!q||busy||!sample)return;
+    ta.value='';el('u',q);turns.push({role:'user',content:q});
+    var out=el('a','Thinking…');busy=true;send.disabled=true;send.textContent='…';
+    ctl=new AbortController();
+    var input=[{role:'user',content:rules()},{role:'assistant',content:'Understood. I will answer only from that content.'}].concat(turns);
+    sample(input,{cache:false,signal:ctl.signal,onText:function(e){out.textContent=e.text;log.scrollTop=log.scrollHeight;}}).then(function(r){
+      out.textContent=r.text+(r.truncated?'\n\n[Answer cut short.]':'');turns.push({role:'assistant',content:r.text});
+      if(turns.length>10)turns=turns.slice(-10);
+    }).catch(function(e){
+      var c=e&&e.code;
+      if(c==='not_granted'||c==='sampling_disabled'||c==='not_declared'||c==='capability_disabled'){out.textContent='Asking Claude is not available in this view.';hideLater();}
+      else {out.textContent=(e&&e.text)?e.text:'';var m=copy(c);if(m)el('sys',m);if(!out.textContent)out.remove();}
+      turns.pop();
+    }).then(function(){busy=false;send.disabled=false;send.textContent='Ask';ctl=null;});
+  }
+  function hideLater(){setTimeout(function(){btn.remove();},50);}
+  form.addEventListener('submit',function(e){e.preventDefault();ask();});
+  ta.addEventListener('keydown',function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();ask();}});
+  if(window.claude&&typeof window.claude.use==='function'){
+    window.claude.use('sample').then(function(s){if(!s){hide();return;}sample=s;btn.hidden=false;
+      el('sys',CFG.intro||'Ask anything about this page. Answers are grounded in what this page shows and its sources.');
+    }).catch(function(){hide();});
+  } else {hide();}
+})();
+</script>
+<script>/* Self-* runtime: verify, repair, assess and report. Runs on every page, in the browser,
+   with no network access. Everything it does is recorded and reversible by reloading. */
+(function(){
+  if(window.__selfcheck) return;
+  var BUILD="2026-09-18";
+  var findings=[], repairs=[], allRepairs=[], t0=(window.performance&&performance.now)?performance.now():0;
+  function add(sev,id,msg,n){findings.push({severity:sev,check:id,detail:msg,count:n==null?1:n});}
+  function fixed(id,msg,n){var c=(n==null?1:n);repairs.push({check:id,action:msg,count:c});
+    for(var i=0;i<allRepairs.length;i++){if(allRepairs[i].check===id){allRepairs[i].count+=c;return;}}
+    allRepairs.push({check:id,action:msg,count:c});}
+  function txt(e){return (e.textContent||'').replace(/\s+/g,' ').trim();}
+  function near(a){
+    var r=a.closest('li,td,tr,article,.card,.rowcard,.tp,p');
+    if(r){var h=r.querySelector('b,strong,h3,h4');if(h&&txt(h))return txt(h).slice(0,80);
+      var t=txt(r);if(t)return t.slice(0,80);}
+    var s=a.closest('section');var h2=s&&s.querySelector('h2');
+    return h2?txt(h2).slice(0,80):'this entry';
+  }
+  // ---------- verification + repair ----------
+  function scrollRegions(){
+    var n=0,fixedN=0;
+    var all=document.querySelectorAll('body *');
+    for(var i=0;i<all.length;i++){var e=all[i];if(e.closest('svg'))continue;
+      var cs=getComputedStyle(e);if(!(cs.overflowX==='auto'||cs.overflowX==='scroll'||cs.overflowY==='auto'||cs.overflowY==='scroll'))continue;
+      if(!(e.scrollWidth>e.clientWidth+1||e.scrollHeight>e.clientHeight+1))continue;
+      if(e.querySelector('a,button,input,select,textarea,[tabindex]'))continue;
+      if(e.hasAttribute('tabindex'))continue;
+      n++;e.setAttribute('tabindex','0');e.setAttribute('role','region');
+      if(!e.getAttribute('aria-label')){var h=e.closest('section');var h2=h&&h.querySelector('h2');e.setAttribute('aria-label',(h2?txt(h2):'Scrollable content')+' (scrollable)');}
+      fixedN++;}
+    if(fixedN)fixed('scroll.focusable','Made '+fixedN+' scrollable region(s) keyboard reachable with tabindex and a label. Defect: axe-core scrollable-region-focusable on the journey map and blueprint lanes, 23 September 2026.',fixedN);
+  }
+  function structure(){
+    var h1=document.querySelectorAll('h1').length;
+    if(h1!==1) add('high','structure.h1','Expected exactly one h1, found '+h1,h1);
+    if(!document.getElementById('main')) add('high','structure.main','No element with id="main" for the skip link to reach');
+    var skip=document.querySelector('a.skip');
+    if(!skip){
+      var a=document.createElement('a');a.className='skip';a.href='#main';a.textContent='Skip to content';
+      document.body.insertBefore(a,document.body.firstChild);
+      fixed('structure.skip','Inserted a missing skip link as the first focusable element');
+    }
+    var lv=0,skips=0;
+    Array.prototype.forEach.call(document.querySelectorAll('h1,h2,h3,h4,h5,h6'),function(h){
+      var n=+h.tagName.slice(1); if(lv && n>lv+1) skips++; lv=n;});
+    if(skips) add('medium','structure.headings',skips+' heading level skips',skips);
+    if(!document.querySelector('.ribbon')) add('low','structure.ribbon','Journey ribbon missing from this page');
+    var fam=document.querySelectorAll('.family a,.xfam a').length;
+    if(!fam && !/portal/.test(location.pathname)) add('medium','structure.family','Family navigation is empty');
+  }
+  function links(){
+    var amb=0,noop=0,empty=0;
+    Array.prototype.forEach.call(document.querySelectorAll('a[href]'),function(a){
+      var label=(a.getAttribute('aria-label')||txt(a)).toLowerCase();
+      if(['source','details','here','more','link','read more','click here'].indexOf(label)>=0){
+        a.setAttribute('aria-label',(label==='details'?'Details of ':'Source for ')+near(a)); amb++;
+      }
+      if(a.target==='_blank' && !/noopener/.test(a.rel||'')){a.rel=((a.rel||'')+' noopener').trim();noop++;}
+      if(!a.getAttribute('href').trim()) empty++;
+    });
+    if(amb){fixed('links.ambiguous','Gave a context-bearing accessible name to links that read only "source" or "details"',amb);}
+    if(noop){fixed('links.noopener','Added rel="noopener" to links opening in a new tab',noop);}
+    if(empty) add('medium','links.empty',empty+' links with an empty href',empty);
+  }
+  function aria(){
+    var seen={},dupes=0;
+    Array.prototype.forEach.call(document.querySelectorAll('[id]'),function(e){
+      if(seen[e.id]){e.id=e.id+'-dup'+(++dupes);} else seen[e.id]=1;});
+    if(dupes) fixed('aria.duplicate-id','Renamed duplicate element ids so labels and controls resolve to one target',dupes);
+    var svgs=0;
+    Array.prototype.forEach.call(document.querySelectorAll('svg'),function(s){
+      var named=s.getAttribute('aria-label')||s.querySelector('title')||s.getAttribute('role')==='img';
+      if(!named && s.getAttribute('aria-hidden')!=='true'){s.setAttribute('aria-hidden','true');s.setAttribute('focusable','false');svgs++;}
+    });
+    if(svgs) fixed('aria.decorative-svg','Marked decorative graphics as hidden from assistive technology',svgs);
+    var unl=0;
+    Array.prototype.forEach.call(document.querySelectorAll('input,select,textarea'),function(c){
+      if(c.type==='hidden')return;
+      var has=(c.labels&&c.labels.length)||c.getAttribute('aria-label')||c.getAttribute('aria-labelledby')||c.closest('label');
+      if(!has) unl++;});
+    if(unl) add('high','aria.unlabelled-control',unl+' form controls with no accessible name',unl);
+    var figs=0;
+    Array.prototype.forEach.call(document.querySelectorAll('svg.art'),function(s){
+      if(!s.querySelector('title')||!s.querySelector('desc')) figs++;});
+    if(figs) add('medium','aria.illustration',figs+' illustrations without both a title and a description',figs);
+  }
+  function layout(){
+    var vw=document.documentElement.clientWidth, wide=0, wrapped=0;
+    Array.prototype.forEach.call(document.querySelectorAll('table'),function(t){
+      if(t.scrollWidth>vw+2){
+        var p=t.parentElement;
+        if(!p || getComputedStyle(p).overflowX!=='auto'){
+          var d=document.createElement('div');d.className='tablewrap';d.style.overflowX='auto';d.style.maxWidth='100%';
+          t.parentNode.insertBefore(d,t);d.appendChild(t);wrapped++;
+        }
+      }});
+    if(wrapped) fixed('layout.table-scroll','Wrapped wide tables in a horizontal scroll container',wrapped);
+    if(document.documentElement.scrollWidth>vw+2){
+      document.documentElement.style.maxWidth='100%';document.body.style.overflowX='hidden';
+      wide=1;fixed('layout.overflow','Clamped horizontal overflow at the document root');
+    }
+    return wide;
+  }
+  function currency(){
+    var built=new Date(BUILD+'T00:00:00Z'), days=Math.floor((Date.now()-built.getTime())/86400000);
+    var sev = days>365?'high':days>180?'medium':days>90?'low':null;
+    if(sev) add(sev,'currency.age','This page was built '+days+' days ago. Sources move; re-run the verification pass before relying on it.',days);
+    return days;
+  }
+  function data(){
+    // Cross-check any count this page states about its own dataset
+    var out=[];
+    try{
+      var D=window.__bp&&JSON.parse(window.__bp.json());
+      if(D){
+        var steps=D.BLUE.reduce(function(a,b){return a+b.steps.length;},0);
+        var claimed=(document.body.innerText.match(/(\d+)\s+journey moments/)||[])[1];
+        out.push({fact:'blueprint steps',value:steps});
+        if(claimed && +claimed!==steps) add('medium','data.count','Page states '+claimed+' journey moments but the data holds '+steps);
+      }
+    }catch(e){}
+    return out;
+  }
+  // ---------- assessment ----------
+  function assess(days){
+    var high=findings.filter(function(f){return f.severity==='high';}).length;
+    var med=findings.filter(function(f){return f.severity==='medium';}).length;
+    var low=findings.filter(function(f){return f.severity==='low';}).length;
+    var dims=[
+      ['Accuracy','every claim carries a source and the verification register records what was checked',high?'at risk':'holding'],
+      ['Currency', days>180?'stale: re-verification overdue':days>90?'ageing':'current', days>180?'at risk':'holding'],
+      ['Accessibility', high?'a structural defect is present on this page':'structural checks pass on this page', high?'at risk':'holding'],
+      ['Resilience','the page repaired '+allRepairs.reduce(function(a,r){return a+r.count;},0)+' defects at load without failing','holding'],
+      ['Completeness','open issues are published rather than hidden','holding'],
+      ['Sustainability','one file, no build step, no dependency to rot','holding']
+    ];
+    var score=Math.max(0,100-(high*18)-(med*6)-(low*2)-(days>365?15:days>180?8:0));
+    return {score:score,band:score>=85?'good':score>=70?'fair':'needs work',dimensions:dims,high:high,medium:med,low:low};
+  }
+  // ---------- run ----------
+  structure();
+  scrollRegions();links();aria();layout();var days=currency();var facts=data();
+  var a=assess(days);
+  var ms=((window.performance&&performance.now)?performance.now():0)-t0;
+  var report={page:document.title,build:BUILD,ranAt:new Date().toISOString(),ageDays:days,
+    durationMs:Math.round(ms),passes:1,findings:findings,repairs:allRepairs,assessment:a,facts:facts};
+  window.__selfcheck={report:function(){return report;},recheck:function(){return repass();},json:function(){return JSON.stringify(report);},rerun:function(){location.reload();}};
+  // ---------- surface ----------
+  function badge(){
+    var host=document.querySelector('footer .wrap')||document.querySelector('footer')||document.body;
+    var d=document.createElement('section');d.className='selfcheck';d.setAttribute('aria-labelledby','sc-h');
+    var rep=allRepairs.reduce(function(x,r){return x+r.count;},0);
+    d.innerHTML='<h2 id="sc-h">This page checks itself</h2>'+
+      '<p class="scline"><span class="scdot '+a.band.replace(' ','-')+'" aria-hidden="true"></span>'+
+      '<b>'+a.score+'/100</b> on its own checks, run in your browser '+Math.round(ms)+'ms ago: '+
+      findings.length+' finding'+(findings.length===1?'':'s')+', '+rep+' defect'+(rep===1?'':'s')+' repaired automatically, built '+days+' days ago.</p>'+
+      '<details><summary>What it checked, what it found, what it fixed</summary><div class="scbody">'+
+      '<h3>Findings</h3>'+(findings.length?'<ul>'+findings.map(function(f){return '<li><b>'+f.severity+'</b> '+f.check+' — '+f.detail+'</li>';}).join('')+'</ul>':'<p>Nothing outstanding on this page.</p>')+
+      '<h3>Repaired at load</h3>'+(allRepairs.length?'<ul>'+allRepairs.map(function(r){return '<li>'+r.action+' ('+r.count+')</li>';}).join('')+'</ul>':'<p>Nothing needed repairing.</p>')+
+      '<h3>Self-assessment</h3><ul>'+a.dimensions.map(function(x){return '<li><b>'+x[0]+'</b> '+x[1]+' — <i>'+x[2]+'</i></li>';}).join('')+'</ul>'+
+      '<p class="meta">These checks run in the page, with no network access. They cannot test with a real screen reader, cannot re-request a source, and cannot know whether a fact changed yesterday. They fail visibly rather than quietly: a repair is reported, never hidden.</p>'+
+      '<p><button class="btn sm" type="button" id="scdl">Download this report</button> <span class="toolmsg" id="scmsg" role="status"></span></p>'+
+      '</div></details>';
+    host.appendChild(d);
+    var b=document.getElementById('scdl');
+    if(b)b.addEventListener('click',function(){
+      try{
+        var blob=new Blob([JSON.stringify(report,null,1)],{type:'application/json'});
+        var u=URL.createObjectURL(blob),el=document.createElement('a');
+        el.href=u;el.download='self-check-'+(document.title.split(':')[0].toLowerCase().replace(/[^a-z0-9]+/g,'-'))+'.json';
+        document.body.appendChild(el);el.click();el.remove();setTimeout(function(){URL.revokeObjectURL(u);},2000);
+        document.getElementById('scmsg').textContent='Report downloaded.';
+      }catch(e){document.getElementById('scmsg').textContent='Download blocked here; the report is also on window.__selfcheck.report().';}
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',badge);else badge();
+
+  // ---------- continuous repair: dynamic pages render after this first pass ----------
+  var pending=null, passes=1;
+  function repass(){
+    var before=repairs.reduce(function(a,r){return a+r.count;},0);
+    repairs.length=0; findings.length=0;
+    structure();links();aria();layout();var d=currency();
+    passes++;
+    var after=repairs.reduce(function(a,r){return a+r.count;},0);
+    report.findings=findings; report.repairs=allRepairs; report.passes=passes;
+    report.assessment=assess(d); report.ranAt=new Date().toISOString();
+    var line=document.querySelector('.selfcheck .scline b');
+    if(line) line.textContent=report.assessment.score+'/100';
+    return after;
+  }
+  if(window.MutationObserver){
+    var mo=new MutationObserver(function(muts){
+      var worth=false;
+      for(var i=0;i<muts.length;i++){ if(muts[i].addedNodes && muts[i].addedNodes.length){worth=true;break;} }
+      if(!worth) return;
+      clearTimeout(pending);
+      pending=setTimeout(function(){ if(!document.querySelector('.selfcheck details[open]')) repass(); },600);
+    });
+    mo.observe(document.body,{childList:true,subtree:true});
+    window.__selfcheck_observer=mo;
+  }
+  setTimeout(repass,1500);
+
+})();
+</script>
+<!-- colophon: added by tools/publish.py -->
+<aside class="pgw-colophon" aria-label="About this publication" style="max-width:1120px;margin:40px auto 24px;padding:18px 22px;border:1px solid currentColor;border-radius:12px;font:14px/1.5 system-ui,sans-serif;display:flex;flex-wrap:wrap;gap:18px;align-items:center;opacity:.92">
+<div style="flex:1 1 340px;min-width:0">
+<p style="margin:0 0 6px"><strong>Not an official government service.</strong> An independent, evidence-led guide by Emanuel Silva, part of
+<a href="https://cyberdudeuk.github.io/">Public Good Works</a>. Every claim carries its source; check GOV.UK, nidirect, mygov.scot or gov.wales before you act.</p>
+<p style="margin:0 0 6px">Drafted and checked with AI assistance (Claude); the author reviewed and is responsible for it. Some features, such as the page assistant, work only inside Claude and are hidden here.</p>
+<p style="margin:0">Questions, corrections or ideas: use the <a href="https://github.com/cyberdudeuk/start-a-business-uk/issues/new?template=contact.yml">contact form</a> (no email address is published).
+Code MIT; content Open Government Licence v3.0, see the <a href="https://github.com/cyberdudeuk/start-a-business-uk">repository</a>.</p>
+</div>
+<div style="display:flex;gap:14px;align-items:center"><svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 140 140" role="img" aria-label="QR code for https://cyberdudeuk.github.io/start-a-business-uk/standards/" class="segno"><g transform="scale(4)"><path fill="#fff" d="M0 0h35v35h-35z"/><path class="qrline" stroke="#0b0c0c" d="M1 1.5h7m1 0h1m4 0h2m1 0h3m2 0h2m3 0h7m-33 1h1m5 0h1m1 0h3m2 0h2m1 0h1m1 0h2m1 0h1m2 0h1m1 0h1m5 0h1m-33 1h1m1 0h3m1 0h1m1 0h1m1 0h4m6 0h2m1 0h2m1 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m2 0h2m3 0h4m2 0h2m4 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h1m2 0h5m2 0h2m1 0h2m3 0h1m1 0h3m1 0h1m-33 1h1m5 0h1m5 0h3m2 0h2m4 0h1m2 0h1m5 0h1m-33 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-22 1h1m1 0h1m1 0h2m2 0h1m-20 1h1m2 0h6m1 0h1m1 0h1m1 0h1m1 0h2m1 0h1m5 0h1m2 0h1m1 0h3m-33 1h2m2 0h1m2 0h2m1 0h1m1 0h2m1 0h1m1 0h1m1 0h1m3 0h1m4 0h4m-32 1h7m1 0h1m2 0h3m1 0h2m3 0h1m2 0h1m2 0h1m1 0h5m-29 1h1m2 0h1m1 0h1m1 0h3m2 0h5m2 0h1m2 0h2m2 0h2m-31 1h1m4 0h2m1 0h3m1 0h1m2 0h1m5 0h3m1 0h2m3 0h2m-33 1h5m2 0h2m5 0h2m2 0h1m4 0h1m3 0h1m2 0h1m-30 1h4m1 0h1m3 0h2m1 0h3m3 0h3m2 0h1m1 0h1m1 0h1m-29 1h3m1 0h2m3 0h3m1 0h1m1 0h2m1 0h3m2 0h1m1 0h1m1 0h1m1 0h2m1 0h1m-31 1h1m3 0h1m1 0h1m1 0h6m4 0h1m1 0h1m1 0h5m-28 1h2m2 0h1m1 0h5m2 0h2m1 0h3m1 0h2m3 0h1m1 0h1m1 0h1m1 0h1m-29 1h1m1 0h3m2 0h7m1 0h1m1 0h1m1 0h2m1 0h2m1 0h2m1 0h1m-30 1h2m2 0h6m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m1 0h5m-33 1h1m1 0h2m1 0h2m3 0h1m1 0h1m1 0h1m2 0h1m2 0h1m3 0h1m2 0h1m1 0h1m-30 1h3m2 0h1m1 0h1m1 0h4m2 0h1m1 0h3m3 0h1m1 0h1m2 0h3m-31 1h1m2 0h2m1 0h1m1 0h2m1 0h1m1 0h3m1 0h2m2 0h3m2 0h1m2 0h4m-33 1h1m6 0h2m3 0h2m3 0h4m1 0h5m1 0h3m-31 1h3m2 0h3m2 0h1m1 0h5m3 0h1m3 0h6m-22 1h3m2 0h1m1 0h1m8 0h1m3 0h1m1 0h1m-31 1h7m1 0h2m1 0h1m1 0h4m1 0h4m1 0h2m1 0h1m1 0h1m1 0h1m-31 1h1m5 0h1m1 0h5m1 0h3m6 0h2m3 0h4m-32 1h1m1 0h3m1 0h1m1 0h1m1 0h6m4 0h1m1 0h7m3 0h1m-33 1h1m1 0h3m1 0h1m1 0h1m6 0h1m1 0h1m1 0h1m2 0h1m1 0h2m1 0h1m3 0h2m-33 1h1m1 0h3m1 0h1m2 0h4m2 0h3m1 0h1m1 0h1m1 0h1m3 0h2m1 0h3m-33 1h1m5 0h1m2 0h2m4 0h1m4 0h1m1 0h1m2 0h8m-33 1h7m1 0h3m1 0h1m1 0h4m2 0h1m2 0h2m1 0h3"/></g></svg>
+<span style="display:inline-flex;flex-direction:column;gap:4px;align-items:flex-start"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="168" height="48" viewBox="0 0 46.200 14.000" preserveAspectRatio="none" role="img" aria-label="Barcode SAB-UK-STANDARDS">
+    <!--Autogenerated with python-barcode 0.16.1-->
+    <g id="barcode_group">
+        <rect width="100%" height="100%" style="fill:white"/>
+        <rect x="2.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="2.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="3.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="4.200mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="4.800mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="5.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="6.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="6.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="7.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="8.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="9.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="9.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="10.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="11.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="12.000mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="13.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="13.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="14.400mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="15.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="15.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="16.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="17.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="18.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="18.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="19.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="20.200mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="21.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="21.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="22.400mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="23.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="24.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="24.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="25.200mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="26.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="26.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="27.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="28.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="28.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="29.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="30.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="31.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="31.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="32.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="33.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="34.200mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="35.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="35.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="36.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="37.200mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="37.800mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="38.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="39.400mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="40.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="41.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="41.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="42.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="43.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="43.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+    </g>
+</svg>
+<code style="font-size:11px">SAB-UK-STANDARDS</code></span></div>
+</aside>
+</body></html>

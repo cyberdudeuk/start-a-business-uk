@@ -1,0 +1,19 @@
+# Runs the site checks on every push and pull request: every page published, no link back to a private
+# artifact, every link between pages resolving, no email address, no retired names, the colophon on every page.
+# Then proves each check fails on a deliberate break. Free; no secrets; read-only.
+name: Checks
+on:
+  push: {branches: [main]}
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - run: pip install ruff==0.17.5 && ruff check tools
+      - run: python tools/check.py
+      - run: python tools/check.py --negative

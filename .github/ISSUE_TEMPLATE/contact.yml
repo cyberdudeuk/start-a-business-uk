@@ -1,0 +1,28 @@
+name: Contact the maintainer
+description: A question, a correction, or an idea about Starting a business in the UK
+title: "[Contact] "
+labels: ["contact"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This form is public. Do not include personal data, details of your own business, or anything above OFFICIAL.
+        There is no email route: this form is the way to contact the maintainer.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What is it?
+      options: [A correction (something is wrong or out of date), A question, An idea, Something else]
+    validations:
+      required: true
+  - type: input
+    id: page
+    attributes:
+      label: Which page? (paste its address)
+  - type: textarea
+    id: detail
+    attributes:
+      label: Your message
+      description: For a correction, give the source that shows what is right.
+    validations:
+      required: true

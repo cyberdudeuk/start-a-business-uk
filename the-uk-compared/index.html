@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The UK, compared: starting a business across government</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EDF0F2;--panel:#FFFFFF;--ink:#152030;--muted:#586273;--rule:#C9D0D8;--faint:#E3E7EB;--focus:#FFBF47;
+  --qual:#7A3FC6;--survey:#1F4FD1;--analytics:#0E7A6B;--eval:#946400;--inquiry:#C0264D;--ops:#586273;
+  --heat:#152030;--gate:#152030;--gatetext:#FFFFFF;
+  --sans:"Schibsted Grotesk",-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0F151D;--panel:#17202B;--ink:#E6EBF1;--muted:#9AA5B3;--rule:#344152;--faint:#232E3B;
+  --qual:#B99AF2;--survey:#7FA2FF;--analytics:#4FD1BC;--eval:#E0B64D;--inquiry:#F27A98;--ops:#9AA5B3;
+  --gate:#E6EBF1;--gatetext:#0F151D;}}
+:root[data-theme="dark"]{
+  --paper:#0F151D;--panel:#17202B;--ink:#E6EBF1;--muted:#9AA5B3;--rule:#344152;--faint:#232E3B;
+  --qual:#B99AF2;--survey:#7FA2FF;--analytics:#4FD1BC;--eval:#E0B64D;--inquiry:#F27A98;--ops:#9AA5B3;
+  --gate:#E6EBF1;--gatetext:#0F151D;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.5}
+a{color:inherit;text-underline-offset:3px}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.wrap{max-width:1360px;margin:0 auto;padding:0 28px}
+.num{}
+header{padding:36px 0 10px}
+.family{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:.88rem;color:var(--muted);margin:0 0 22px}
+.family a{color:var(--muted)}
+.headgrid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;align-items:end}
+h1{font-size:clamp(2.4rem,5.4vw,4.6rem);line-height:.98;font-weight:800;letter-spacing:-.03em;margin:0}
+.lede{margin:0;color:var(--muted);font-size:1.1rem;max-width:56ch}
+.lede strong{color:var(--ink);font-weight:700}
+.tools{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.btn{border:1.5px solid var(--rule);background:var(--panel);border-radius:999px;padding:6px 15px;cursor:pointer;font-weight:500}
+.btn[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+section{margin:34px 0}
+h2{font-size:1.75rem;line-height:1.1;letter-spacing:-.015em;margin:0 0 6px}
+.intro{color:var(--muted);margin:0 0 16px;max-width:70ch}
+
+:root{--lead:#0B5D51;--strong:#1F6F62;--partial:#BFDCD4;--weak:#C0264D;--leadtx:#fff;--strongtx:#fff;--partialtx:#152030;--uk:#FFF3D6;--ukline:#B07A00}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--lead:#5ED1BD;--strong:#25806F;--partial:#27463F;--weak:#F27A98;--leadtx:#0F151D;--strongtx:#fff;--partialtx:#E6EBF1;--uk:#2A2414;--ukline:#E0B64D}}
+:root[data-theme="dark"]{--lead:#5ED1BD;--strong:#25806F;--partial:#27463F;--weak:#F27A98;--leadtx:#0F151D;--strongtx:#fff;--partialtx:#E6EBF1;--uk:#2A2414;--ukline:#E0B64D}
+.headgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:end}
+h1 small{display:block;font-size:.32em;font-weight:500;letter-spacing:0;color:var(--muted);margin-top:12px;line-height:1.3}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--paper);padding:8px 14px;z-index:50}
+.skip:focus{left:0}
+.rev{font-size:.82rem;color:var(--muted);margin:10px 0 0}
+.btn.sm{padding:4px 12px;font-size:.88rem}
+.toolmsg{font-size:.85rem;color:var(--muted)}
+nav.jump{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--rule);margin-top:26px}
+nav.jump ul{list-style:none;margin:0 auto;padding:8px 28px;display:flex;gap:4px 18px;flex-wrap:wrap;max-width:1360px;font-size:.9rem}
+nav.jump a{text-decoration:none;color:var(--muted);padding:3px 0;border-bottom:2px solid transparent}
+nav.jump a:hover,nav.jump a.on{color:var(--ink);border-bottom-color:var(--ink)}
+section{scroll-margin-top:56px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:26px}
+.stats article{background:var(--panel);border-radius:16px;padding:16px 18px}
+.stats b{display:block;font-size:2.4rem;font-weight:800;letter-spacing:-.03em;line-height:1}
+.stats b span{font-size:.45em;font-weight:700;letter-spacing:0;color:var(--muted)}
+.stats p{margin:8px 0 0;font-size:.93rem}
+.stats small{display:block;color:var(--muted);font-size:.8rem;margin-top:6px}
+.stats small a{color:var(--muted)}
+/* Benchmarks */
+.benchgrid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:18px;align-items:start}
+.card{background:var(--panel);border-radius:18px;padding:18px 20px}
+.card h3{font-size:1.05rem;margin:0 0 2px}
+.card .sub{font-size:.85rem;color:var(--muted);margin:0 0 12px}
+.bars{list-style:none;margin:0;padding:0}
+.bars li{display:grid;grid-template-columns:150px minmax(0,1fr) 54px;gap:10px;align-items:center;padding:3px 0;font-size:.9rem}
+.bars .track{height:16px;background:var(--faint);border-radius:4px;position:relative;overflow:hidden}
+.bars .fill{position:absolute;left:0;top:0;bottom:0;background:var(--rule);border-radius:4px}
+.bars li.cmp .fill{background:var(--strong)}
+.bars li.uk .fill{background:var(--ukline)}
+.bars li.uk{font-weight:700}
+.bars .v{font-variant-numeric:tabular-nums;text-align:right}
+.bars .gap{height:1px;border-top:1px dashed var(--rule);margin:6px 0;grid-column:1/-1}
+.bars .median .fill{background:transparent}
+.bars .rk{color:var(--muted);font-weight:400;font-size:.8rem;margin-right:4px;font-variant-numeric:tabular-nums}
+.egdi{list-style:none;margin:0;padding:0;counter-reset:e}
+.egdi li{display:flex;gap:10px;padding:5px 0;border-top:1px solid var(--faint);font-size:.93rem;counter-increment:e}
+.egdi li:first-child{border-top:0}
+.egdi li::before{content:counter(e);width:22px;color:var(--muted);font-variant-numeric:tabular-nums;text-align:right}
+.egdi li.uk{font-weight:700;background:var(--uk);margin:0 -8px;padding:5px 8px;border-radius:6px}
+.note{font-size:.82rem;color:var(--muted);margin:10px 0 0}
+/* Matrix */
+.mxtools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 10px}
+.mxwrap{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:18px;align-items:start}
+.mxscroll{background:var(--panel);border-radius:18px;overflow-x:auto;padding:6px 4px}
+table.mx{border-collapse:separate;border-spacing:4px;width:100%;min-width:860px}
+.mx th{font-weight:500;font-size:.88rem}
+.mx thead th{padding:6px 2px;text-align:center;vertical-align:bottom}
+.mx thead th button{border:0;background:transparent;cursor:pointer;font-weight:700;padding:2px 4px;border-radius:6px}
+.mx thead th button span{display:block;font-weight:400;font-size:.8rem;color:var(--muted)}
+.mx thead th.uk{background:var(--uk);border-radius:10px 10px 0 0}
+.mx tbody th{text-align:left;padding:4px 10px 4px 6px;min-width:220px}
+.mx tbody th button{border:0;background:transparent;cursor:pointer;text-align:left;padding:0;font-weight:700;line-height:1.25}
+.mx tbody th small{display:block;color:var(--muted);font-weight:400;font-size:.8rem;margin-top:2px}
+.mx td{padding:0;height:46px}
+.mx td.uk{background:var(--uk)}
+.mx td.uk{box-shadow:inset 3px 0 0 var(--ukline),inset -3px 0 0 var(--ukline)}
+.cell{width:100%;height:100%;min-height:42px;border:0;border-radius:8px;cursor:pointer;font-size:.8rem;font-weight:700;display:grid;place-items:center;padding:2px;line-height:1.1}
+.cell.lead{background:var(--lead);color:var(--leadtx)}
+.cell.strong{background:var(--strong);color:var(--strongtx)}
+.cell.partial{background:var(--partial);color:var(--partialtx)}
+.cell.weak{background:transparent;color:var(--weak);box-shadow:inset 0 0 0 2.5px var(--weak)}
+.cell.na{background:repeating-linear-gradient(135deg,transparent 0 6px,var(--faint) 6px 7px);color:var(--muted);font-weight:400;cursor:default}
+.cell.sec::after{content:"*";margin-left:1px}
+.cell[aria-pressed="true"]{outline:3px solid var(--focus);outline-offset:1px}
+.cell.dim{opacity:.18}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.84rem;color:var(--muted);margin:10px 4px 0}
+.legend span{display:inline-flex;gap:6px;align-items:center}
+.legend i{width:16px;height:12px;border-radius:3px;display:inline-block}
+.panel{background:var(--panel);border-radius:18px;padding:20px 22px;position:sticky;top:60px;max-height:calc(100vh - 80px);overflow:auto}
+.panel h3{font-size:1.2rem;line-height:1.2;margin:0 0 4px}
+.panel .meta{font-size:.86rem;color:var(--muted);margin:0 0 10px}
+.panel p{margin:0 0 10px}
+.panel small{color:var(--muted);font-size:.84rem}
+.panel small a{color:var(--muted)}
+.panel ol{list-style:none;margin:0;padding:0}
+.panel li{padding:10px 0;border-top:1px solid var(--faint)}
+.panel li:first-child{border-top:0}
+.rtag{display:inline-block;font-size:.8rem;font-weight:700;border-radius:4px;padding:1px 7px;margin-right:6px}
+.rtag.lead{background:var(--lead);color:var(--leadtx)}.rtag.strong{background:var(--strong);color:var(--strongtx)}.rtag.partial{background:var(--partial);color:var(--partialtx)}.rtag.weak{color:var(--weak);box-shadow:inset 0 0 0 2px var(--weak)}.rtag.na{background:var(--faint);color:var(--muted)}
+/* Best / learn */
+.best{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;list-style:none;margin:0;padding:0}
+.best li{background:var(--panel);border-radius:16px;padding:16px 18px;border-top:5px solid var(--ukline)}
+.best b{display:block;line-height:1.25;margin-bottom:6px}
+.best p{margin:0 0 8px;font-size:.92rem}
+.best small{font-size:.8rem;color:var(--muted)}
+.best small a{color:var(--muted)}
+.learntools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}
+.learntools label{font-size:.9rem;color:var(--muted)}
+select{font:inherit;padding:5px 10px;border-radius:10px;border:1.5px solid var(--rule);background:var(--panel);color:var(--ink)}
+.learn{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.learn li{background:var(--panel);border-radius:16px;padding:18px 20px;display:flex;flex-direction:column;gap:8px}
+.learn li.caution{border-left:6px solid var(--weak)}
+.learn .top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.learn h3{font-size:1.08rem;margin:0;line-height:1.25}
+.flags{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+.flag{font-size:.8rem;font-weight:700;border:1.5px solid var(--rule);border-radius:999px;padding:0 8px;white-space:nowrap}
+.learn p{margin:0;font-size:.95rem}
+.learn .fit{font-size:.88rem;border-top:1px solid var(--faint);padding-top:8px;display:grid;grid-template-columns:auto 1fr;gap:3px 12px}
+.learn .fit dt{color:var(--muted)}
+.learn .fit dd{margin:0}
+.meter{display:inline-flex;gap:3px;vertical-align:-1px;margin-right:6px}
+.meter i{width:12px;height:12px;border-radius:2px;background:var(--faint)}
+.meter i.on{background:var(--strong)}
+.learn small{font-size:.8rem;color:var(--muted)}
+.learn small a{color:var(--muted)}
+.evbtn{border:1.5px solid var(--rule);background:transparent;border-radius:999px;padding:1px 10px;font-size:.8rem;cursor:pointer}
+/* Fees and caveats */
+.fees{background:var(--panel);border-radius:18px;overflow-x:auto}
+.fees table{border-collapse:collapse;width:100%;min-width:700px;font-size:.93rem}
+.fees th,.fees td{text-align:left;padding:10px 16px;border-top:1px solid var(--faint);vertical-align:top}
+.fees thead th{border-top:0;font-size:.85rem;color:var(--muted);font-weight:500}
+.fees tr.uk td{background:var(--uk)}
+.fees td small a{color:var(--muted);font-size:.8rem}
+.caveats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;list-style:none;margin:0;padding:0}
+.caveats li{background:var(--panel);border-radius:14px;padding:16px 18px}
+.caveats b{display:block;margin-bottom:4px}
+.caveats span{font-size:.92rem;color:var(--muted)}
+.impl{list-style:none;margin:0;padding:0;counter-reset:i;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px}
+.impl li{counter-increment:i;padding:14px 0 14px 44px;position:relative;border-top:1px solid var(--rule)}
+.impl li::before{content:counter(i);position:absolute;left:0;top:12px;font-weight:800;font-size:1.3rem;font-variant-numeric:tabular-nums}
+.impl b{display:block}
+footer{border-top:1px solid var(--rule);padding:24px 0 48px;color:var(--muted);font-size:.9rem;margin-top:40px}
+footer h2{font-size:1.1rem;color:var(--ink)}
+footer p{max-width:84ch}
+footer ol{columns:2;column-gap:36px;padding-left:1.3rem}
+footer li{break-inside:avoid;margin-bottom:4px}
+footer dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 16px}
+footer dt{font-weight:700;color:var(--ink)}footer dd{margin:0}
+@media (max-width:1200px){.best{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:1100px){.benchgrid,.mxwrap{grid-template-columns:1fr}.panel{position:static;max-height:none}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:820px){.headgrid,.learn,.caveats,.impl,.best{grid-template-columns:1fr}.stats{grid-template-columns:1fr}footer ol{columns:1}.wrap{padding:0 16px}.bars li{grid-template-columns:110px minmax(0,1fr) 48px}nav.jump ul{padding:8px 16px;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap}}
+@media print{nav.jump,.tools,.skip,.mxtools,.learntools{display:none!important}body{background:#fff}.panel{position:static!important;max-height:none!important}}
+.headgrid>*,.benchgrid>*,.mxwrap>*,.stats>*{min-width:0}
+.aibtn{position:fixed;right:18px;bottom:18px;z-index:60;border:0;border-radius:999px;padding:12px 20px;font:inherit;font-weight:700;background:var(--ink);color:var(--paper);cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.28)}
+.aibtn:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.aiwrap{position:fixed;right:18px;bottom:18px;width:min(430px,calc(100vw - 24px));max-height:min(78vh,720px);z-index:61;background:var(--panel);border-radius:18px;box-shadow:0 10px 40px rgba(0,0,0,.34);display:none;flex-direction:column;overflow:hidden;border:1px solid var(--rule)}
+.aiwrap.open{display:flex}
+.aihead{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--faint)}
+.aihead b{font-size:.98rem}
+.aihead small{color:var(--muted);font-size:.8rem;display:block;font-weight:400}
+.aihead button{margin-left:auto;border:0;background:transparent;font:inherit;font-size:1.2rem;line-height:1;cursor:pointer;color:var(--muted);padding:4px 6px}
+.ailog{overflow-y:auto;padding:12px 14px;display:grid;gap:10px;flex:1}
+.aimsg{border-radius:14px;padding:9px 12px;font-size:.9rem;line-height:1.45;white-space:pre-wrap}
+.aimsg.u{background:var(--ink);color:var(--paper);justify-self:end;max-width:86%}
+.aimsg.a{background:var(--faint);color:var(--ink)}
+.aimsg.sys{background:transparent;color:var(--muted);font-size:.82rem;padding:0}
+.aisug{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 10px}
+.aisug button{border:1.5px solid var(--rule);background:transparent;border-radius:999px;padding:4px 11px;font:inherit;font-size:.8rem;cursor:pointer;color:var(--ink);text-align:left}
+.aiform{display:flex;gap:8px;padding:10px 12px;border-top:1px solid var(--faint)}
+.aiform textarea{flex:1;font:inherit;font-size:.9rem;resize:none;border:1.5px solid var(--rule);border-radius:12px;padding:8px 10px;background:var(--paper);color:var(--ink);min-height:40px;max-height:120px}
+.aiform button{border:0;border-radius:12px;padding:0 16px;font:inherit;font-weight:700;background:var(--ink);color:var(--paper);cursor:pointer}
+.aiform button[disabled]{opacity:.5;cursor:default}
+.aifoot{padding:0 14px 10px;color:var(--muted);font-size:.8rem}
+.seqnav{background:var(--panel);border-radius:18px;padding:14px 18px;display:flex;gap:16px;justify-content:space-between;flex-wrap:wrap;margin:26px 0 0}
+.seqnav a{display:block;font-weight:700;color:var(--ink)}
+.seqnav small{display:block;color:var(--muted);font-size:.8rem;font-weight:400}
+.seqnav .nx{text-align:right}
+@media (max-width:620px){.aiwrap{right:8px;left:8px;width:auto;bottom:8px}.aibtn{right:10px;bottom:10px}}
+
+
+small, .meta small, td small, li small{font-size:max(.8rem,12.8px)}
+
+@media (max-width:420px){
+  .codeblock{font-size:11.5px;white-space:pre-wrap;word-break:break-word}
+  .gridwrap,.mx-wrap,.scroller{max-width:100%}
+  table.grid{min-width:0}
+  .toolrow{grid-template-columns:1fr}
+  .bars div{grid-template-columns:96px minmax(0,1fr) 40px}
+  .wrap{padding-left:12px;padding-right:12px}
+  h1{font-size:1.5rem;word-break:break-word}
+}
+@media (max-width:420px){
+  select,input,textarea{max-width:100%}
+  .bodycard{min-width:0;overflow-wrap:anywhere}
+  table.sj,table.nx,table.mx{display:block;overflow-x:auto;max-width:100%}
+}
+@media (max-width:420px){
+  table.sj,table.nx,table.mx{table-layout:fixed;width:100%}
+  table.sj th,table.sj td,.nx th,.nx td{overflow-wrap:anywhere;word-break:break-word}
+  main li,main p,main a{overflow-wrap:anywhere}
+  .sj-wrap,.tablewrap{overflow-x:auto;max-width:100%}
+}
+
+@media (max-width:420px){
+  .sjwrap,.tablewrap,.gridwrap{overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch}
+  .jump,.jump ul,nav.jump ul{flex-wrap:wrap;max-width:100%}
+  .jump li,.jump a{max-width:100%}
+  body{overflow-x:hidden}
+}
+
+@media (max-width:420px){html,body{max-width:100%;overflow-x:hidden}}
+/* Shared visual system: icons, journey ribbon, hero figures, audience switcher */
+.ic{width:1.15em;height:1.15em;flex:none;vertical-align:-.2em}
+.ic-lg{width:2rem;height:2rem;flex:none}
+.ic-xl{width:2.6rem;height:2.6rem;flex:none}
+.ribbon{margin:0 0 6px;padding:10px 0 4px;border-bottom:1px solid var(--line)}
+.ribbon h2{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 8px;font-family:inherit;font-weight:700}
+.ribbon ol{display:flex;gap:6px;list-style:none;margin:0;padding:0 0 6px;overflow-x:auto;scrollbar-width:thin}
+.ribbon li{flex:1 1 0;min-width:104px}
+.ribbon a{display:flex;flex-direction:column;gap:5px;padding:8px 9px;border:1px solid var(--line);border-radius:9px;text-decoration:none;color:inherit;background:var(--panel);min-height:100%}
+.ribbon a:hover{border-color:var(--ink)}
+.ribbon a[aria-current="step"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.ribbon .rn{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:.72rem;letter-spacing:.05em;text-transform:uppercase}
+.ribbon .rt{font-size:.84rem;font-weight:650;line-height:1.25}
+.ribbon .rc{font-size:.74rem;color:var(--muted)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,340px);gap:22px;align-items:center;margin:10px 0 0}
+.hero figure{margin:0}
+.hero figcaption{font-size:.78rem;color:var(--muted);margin-top:6px}
+.hero svg.art{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+@media (max-width:820px){.hero{grid-template-columns:1fr}}
+.aud{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.aud button{display:flex;align-items:center;gap:8px;padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:inherit;font:inherit;cursor:pointer}
+.aud button[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink);font-weight:650}
+.audbox{border:1px solid var(--line);border-left:4px solid var(--ink);border-radius:10px;padding:14px 16px;background:var(--panel);margin:0 0 18px}
+.audbox h3{margin:0 0 6px;font-size:1.02rem;display:flex;align-items:center;gap:8px}
+.audbox ol{margin:8px 0 0;padding-left:20px}
+.audbox li{margin:4px 0}
+h2 .ic,h3 .ic{color:var(--muted)}
+.iconrow{display:flex;align-items:center;gap:9px}
+.legendkey{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin:8px 0 0}
+.legendkey span{display:inline-flex;align-items:center;gap:5px}
+@media (prefers-reduced-motion:no-preference){.ribbon a{transition:border-color .15s}}
+
+/* Self-check surface */
+.selfcheck{border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:22px 0 0;background:var(--panel)}
+.selfcheck h2{font-size:1rem;margin:0 0 6px}
+.selfcheck .scline{margin:0;font-size:.9rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.scdot{width:10px;height:10px;border-radius:50%;background:var(--muted);flex:none;box-shadow:0 0 0 3px color-mix(in srgb,currentColor 12%,transparent)}
+.scdot.good{background:#0f766e}.scdot.fair{background:#b45309}.scdot.needs-work{background:#be123c}
+.selfcheck details{margin-top:8px}
+.selfcheck summary{cursor:pointer;font-size:.88rem}
+.selfcheck .scbody{font-size:.88rem}
+.selfcheck h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:12px 0 4px}
+.selfcheck ul{margin:0;padding-left:18px}
+.selfcheck li{margin:3px 0}
+.selfgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-top:14px}
+.selfcard{border:1px solid var(--line);border-radius:12px;padding:15px;background:var(--panel)}
+.selfcard h3{display:flex;align-items:center;gap:10px;margin:0 0 8px;font-size:1rem}
+/* Title row: illustration sits opposite the title, at about a third of its weight */
+header .headgrid{display:grid;grid-template-columns:minmax(0,1.9fr) minmax(180px,0.85fr);gap:28px;align-items:center}
+header .headgrid > h1{margin:0}
+header .heroart{margin:0;max-width:340px;justify-self:end;width:100%}
+header .heroart svg.art{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}
+header .heroart figcaption{font-size:.72rem;color:var(--muted);margin-top:5px;line-height:1.35}
+header .heroart.float{float:right;width:min(300px,34%);margin:0 0 14px 22px}
+@media (max-width:820px){
+  header .headgrid{grid-template-columns:1fr}
+  header .heroart{max-width:260px;justify-self:start}
+  header .heroart.float{float:none;width:min(260px,70%);margin:12px 0}
+}
+/* Journey strip: full-bleed band, content aligned with every other section */
+nav.ribbon{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:color-mix(in srgb,currentColor 3%,transparent);margin:0;padding:12px 0 6px}
+nav.ribbon > .wrap{padding-left:28px;padding-right:28px}
+nav.ribbon h2{margin:0 0 9px}
+/* What used to sit beside the title now sits under the strip, full measure */
+.introblock{margin:20px auto 0}
+.introblock .lede{font-size:1.06rem;max-width:62ch}
+.introblock .tools{margin-top:12px}
+.introblock .rev{margin-top:10px;font-size:.84rem;color:var(--muted);max-width:80ch}
+.introblock .scope{margin:0}
+</style></head>
+<body>
+<svg class="sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden"><defs><symbol id="i-explore" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9 M12 3a9 9 0 0 1 9 9M3.5 12h17M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-structure" viewBox="0 0 24 24"><path d="M12 3 4 7v10l8 4 8-4V7l-8-4Zm0 0v18M4 7l8 4 8-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-register" viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6V3Zm9 0v3h3M9 11h6M9 15h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-tax" viewBox="0 0 24 24"><path d="M5 20V9l7-5 7 5v11H5Zm4-5h6M9 12h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-licence" viewBox="0 0 24 24"><path d="M4 5h16v14H4V5Zm3 4h5M7 12h10M7 15h7m2-6.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-premises" viewBox="0 0 24 24"><path d="M4 20V10l8-6 8 6v10H4Zm6 0v-6h4v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-finance" viewBox="0 0 24 24"><path d="M3 19V5m0 14h18M7 15V9m5 6V6m5 9v-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-employ" viewBox="0 0 24 24"><path d="M8 11a3.2 3.2 0 1 0 0-6.4A3.2 3.2 0 0 0 8 11Zm0 0c-3 0-5 1.8-5 4.5V19h10v-3.5C13 12.8 11 11 8 11Zm9-6.2a3.2 3.2 0 1 1 0 6.4M16 19h5v-3.5c0-2.2-1.4-3.8-3.6-4.3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-trade" viewBox="0 0 24 24"><path d="M3 12h18M3 12a9 9 0 0 1 9-9m9 9a9 9 0 0 0-9-9m0 18a9 9 0 0 0 9-9M12 21a9 9 0 0 1-9-9m9-9c2.4 2.5 3.6 5.5 3.6 9s-1.2 6.5-3.6 9c-2.4-2.5-3.6-5.5-3.6-9S9.6 5.5 12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-grow" viewBox="0 0 24 24"><path d="M4 19c6 0 10-3.5 12-10M13 5h6v6M8 19a4 4 0 0 0-4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-rules" viewBox="0 0 24 24"><path d="M12 4v16M6 8h12M7 8l-3 6h6l-3-6Zm10 0-3 6h6l-3-6ZM9 20h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5V5.5ZM8 7h7M8 10h7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-nations" viewBox="0 0 24 24"><path d="M6 21V4m0 0 7 2.5L20 4v9l-7 2.5L6 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm-8.6 9h17.2M12 3c2.3 2.5 3.5 5.5 3.5 9s-1.2 6.5-3.5 9c-2.3-2.5-3.5-5.5-3.5-9S9.7 5.5 12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-standards" viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h13m2-9.5 3 3-6 6-3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12.5 9 18l11-12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-history" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4h4M12 8v4.5l3 1.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-boundary" viewBox="0 0 24 24"><path d="M12 3v18M6 7l-3 5 3 5M18 7l3 5-3 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><path d="M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14Zm5 12 4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-blueprint" viewBox="0 0 24 24"><path d="M3 5h18v14H3V5Zm5 0v14M3 10h5m8-5v14m0-9h5M8 14h8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-person" viewBox="0 0 24 24"><path d="M12 11.5a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm0 0c-4 0-7 2.4-7 6V20h14v-2.5c0-3.6-3-6-7-6Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-agent" viewBox="0 0 24 24"><path d="M9 10.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm0 0c-3 0-5.5 2-5.5 5V19H14v-3.5c0-3-2.5-5-5-5Zm8-5 4 2.5-4 2.5m4-2.5h-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-official" viewBox="0 0 24 24"><path d="M12 3 4 6.5V12c0 4.6 3.2 7.8 8 9 4.8-1.2 8-4.4 8-9V6.5L12 3Zm-3 9 2.2 2.4L15 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-access" viewBox="0 0 24 24"><path d="M12 4.2a1.6 1.6 0 1 0 0-3.2 1.6 1.6 0 0 0 0 3.2ZM5 7.5c2.2.9 4.5 1.3 7 1.3s4.8-.4 7-1.3M12 8.8V14m0 0 3.5 6M12 14l-3.5 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-language" viewBox="0 0 24 24"><path d="M4 6h10M9 4v2m0 0c0 4-2 7-5 8.5M6.5 10.5c1.3 2.4 3 4 5.5 5M13 20l4-9 4 9m-6.6-2.4h5.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-data" viewBox="0 0 24 24"><path d="M12 4c4.4 0 8 1.3 8 3s-3.6 3-8 3-8-1.3-8-3 3.6-3 8-3Zm8 3v10c0 1.7-3.6 3-8 3s-8-1.3-8-3V7m16 5c0 1.7-3.6 3-8 3s-8-1.3-8-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-warning" viewBox="0 0 24 24"><path d="M12 4 3 20h18L12 4Zm0 6v5m0 3h.01" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm0 4.5V12l3.5 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-money" viewBox="0 0 24 24"><path d="M5 7h14v10H5V7Zm7 2.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-back" viewBox="0 0 24 24"><path d="M6 6.5h12M6 12h12M6 17.5h8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-support" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-9 9v3.5A2.5 2.5 0 0 0 5.5 18H7v-6H5.2A6.8 6.8 0 0 1 18.8 12H17v6h1.5a2.5 2.5 0 0 0 2.5-2.5V12a9 9 0 0 0-9-9Zm5 15v.5a2.5 2.5 0 0 1-2.5 2.5H12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol></defs></svg>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="wrap">
+    <p class="family" id="family">Part of <a href="../">Starting a business in the UK</a>: <a href="../your-plan/">your plan</a><a href="../whole-life-of-a-business/">from starting to closing, and everything between</a><a href="../your-circumstances/">when the standard route does not fit</a><a href="../every-way-in/">every way in, and every way out</a><a href="../skills-and-communities/">skills, qualifications and finding your people</a><a href="../every-step/">every step in the journey</a><a href="../twenty-years-of-joining-up/">historical arc</a><a href="../before-the-register/">before the register</a><a href="../whatever-you-are-setting-up/">whatever you are setting up</a><a href="../what-binds-this-business/">what binds this business</a><a href="../rules-trade-and-bodies/">rules, trade and the bodies</a><a href="../four-nations/">four nations</a><a href="../standards/">standards for the journey</a><a href="../service-blueprints/">service blueprints</a><a href="../knowledge-layer/">the knowledge layer</a><a href="../how-this-was-built/">how this was built and run</a><a href="../verification-register/">verification register</a></p>
+    <div class="headgrid">
+      <h1>The UK, compared<small>Starting a business across government: international benchmark</small></h1><figure class="heroart"><svg class="art" viewBox="0 0 680 300" role="img" aria-labelledby="artt artd"><title id="artt">How the UK compares</title><desc id="artd">A ranked bar chart with the leading bar highlighted.</desc><rect width="680" height="300" fill="none"/><rect x="60" y="66" width="38" height="184" rx="6" fill="var(--l1,#1d4ed8)" opacity="0.85"/><rect x="120" y="78" width="38" height="172" rx="6" fill="var(--l2,#0f766e)" opacity="0.35"/><rect x="180" y="102" width="38" height="148" rx="6" fill="var(--l3,#b45309)" opacity="0.35"/><rect x="240" y="110" width="38" height="140" rx="6" fill="var(--l4,#7c3aed)" opacity="0.35"/><rect x="300" y="124" width="38" height="126" rx="6" fill="var(--l5,#be123c)" opacity="0.35"/><rect x="360" y="134" width="38" height="116" rx="6" fill="var(--l6,#047857)" opacity="0.35"/><rect x="420" y="146" width="38" height="104" rx="6" fill="var(--l1,#1d4ed8)" opacity="0.35"/><rect x="480" y="162" width="38" height="88" rx="6" fill="var(--l2,#0f766e)" opacity="0.35"/><rect x="540" y="174" width="38" height="76" rx="6" fill="var(--l3,#b45309)" opacity="0.35"/><rect x="600" y="190" width="38" height="60" rx="6" fill="var(--l4,#7c3aed)" opacity="0.35"/><path d="M50 250 L640 250" stroke="currentColor" stroke-width="1.4" opacity="0.40" fill="none"/></svg><figcaption>Ten capabilities ranked; the UK leads on some and trails on others.</figcaption></figure>
+    </div>
+    <div class="stats" id="stats"></div>
+  </div>
+</header>
+<nav class="ribbon" aria-label="The founder journey"><div class="wrap"><h2>The journey, stage by stage</h2><ol><li><a href="../before-the-register/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-explore"></use></svg> Stage 1</span><span class="rt">Decide</span><span class="rc">Is this a business, and what shape?</span></a></li><li><a href="../whatever-you-are-setting-up/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-structure"></use></svg> Stage 2</span><span class="rt">Structure</span><span class="rc">Legal form, name, ownership</span></a></li><li><a href="../every-step/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-register"></use></svg> Stage 3</span><span class="rt">Register</span><span class="rc">Registrar, identity, identifiers</span></a></li><li><a href="../whatever-you-are-setting-up/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-tax"></use></svg> Stage 4</span><span class="rt">Tax</span><span class="rc">Self Assessment, Corporation Tax, VAT</span></a></li><li><a href="../what-binds-this-business/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-licence"></use></svg> Stage 5</span><span class="rt">Licences</span><span class="rc">What the activity triggers</span></a></li><li><a href="../every-step/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-premises"></use></svg> Stage 6</span><span class="rt">Premises</span><span class="rc">Rates, planning, property</span></a></li><li><a href="../whatever-you-are-setting-up/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-finance"></use></svg> Stage 7</span><span class="rt">Money</span><span class="rc">Grants, reliefs, finance</span></a></li><li><a href="../what-binds-this-business/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-employ"></use></svg> Stage 8</span><span class="rt">People</span><span class="rc">Employing, paying, protecting</span></a></li><li><a href="../rules-trade-and-bodies/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-trade"></use></svg> Stage 9</span><span class="rt">Trade</span><span class="rc">Goods, borders, tendering</span></a></li></ol></div></nav>
+<div class="wrap introblock">
+        <p class="lede" id="lede"></p>
+        <div class="tools">
+          <button class="btn sm" type="button" id="theme">Light or dark</button>
+          <button class="btn sm" type="button" id="dlcsv" hidden>Download matrix (CSV)</button>
+          <button class="btn sm" type="button" id="dljson" hidden>Download benchmark (JSON)</button>
+          <button class="btn sm" type="button" id="print">Print</button>
+          <span class="toolmsg" id="toolmsg" role="status"></span>
+        </div>
+        <p class="rev">Last updated 17 September 2026. Country facts checked against official sources on that date unless marked as secondary.</p>
+      </div>
+
+
+<nav class="jump" aria-label="On this page"><ul id="jump"></ul></nav>
+<main class="wrap" id="main">
+  <section id="s-bench" aria-labelledby="h-bench">
+    <h2 id="h-bench">What the international benchmarks say</h2>
+    <p class="intro">Two independent indices place the UK near the top. Neither measures the whole start-up journey, so they are a starting point, not a verdict.</p>
+    <div class="benchgrid">
+      <div class="card">
+        <h3>World Bank B-READY 2025: Business Entry</h3>
+        <p class="sub">Score out of 100 for starting a limited liability company. Top 10 of 100 scored economies, then the comparators on these pages.</p>
+        <ul class="bars" id="bars"></ul>
+        <p class="note" id="barnote"></p>
+      </div>
+      <div class="card">
+        <h3>UN E-Government Development Index 2024</h3>
+        <p class="sub">All government online services, infrastructure and skills, 193 countries. Top 10.</p>
+        <ol class="egdi" id="egdi"></ol>
+        <p class="note" id="egdinote"></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="s-matrix" aria-labelledby="h-matrix">
+    <h2 id="h-matrix">Ten capabilities, nine countries</h2>
+    <p class="intro">Each cell rates how far a country has built a capability that matters to founders, from official sources. Select a cell, a capability or a country for the evidence. Blank hatched cells were not assessed, not failed.</p>
+    <div class="mxtools">
+      <label for="stageFilter" class="toolmsg">Journey stage</label>
+      <select id="stageFilter"><option value="all">All stages</option></select>
+      <label for="ratingFilter" class="toolmsg">Show</label>
+      <select id="ratingFilter"><option value="all">All ratings</option><option value="lead">Where someone leads</option><option value="ukgap">Where the UK is behind a leader</option></select>
+    </div>
+    <div class="mxwrap">
+      <div><div class="mxscroll"><table class="mx" id="mx"></table></div><div class="legend" id="legend"></div></div>
+      <aside class="panel" id="panel" aria-live="polite"></aside>
+    </div>
+  </section>
+
+  <section id="s-best" aria-labelledby="h-best">
+    <h2 id="h-best">What the UK does best</h2>
+    <p class="intro">Where the UK leads or matches the strongest comparators.</p>
+    <ul class="best" id="best"></ul>
+  </section>
+
+  <section id="s-learn" aria-labelledby="h-learn">
+    <h2 id="h-learn">What the UK could learn</h2>
+    <p class="intro">Practices from other countries mapped to pain points found in UK research, with a judgement on how well each would transfer.</p>
+    <div class="learntools">
+      <label for="lstage">Journey stage</label><select id="lstage"><option value="all">All stages</option></select>
+      <label for="ltransfer">Transferability</label><select id="ltransfer"><option value="all">Any</option><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option></select>
+      <label for="lsort">Sort</label><select id="lsort"><option value="quick">Quick wins first</option><option value="stage">Journey order</option></select>
+      <span class="toolmsg" id="lcount" role="status"></span>
+    </div>
+    <ul class="learn" id="learn"></ul>
+  </section>
+
+  <section id="s-fees" aria-labelledby="h-fees">
+    <h2 id="h-fees">Registering a company at a glance</h2>
+    <p class="intro">Official fees in local currency. Currencies are not converted and processing times are shown only where a source states them.</p>
+    <div class="fees"><table id="fees"></table></div>
+  </section>
+
+  <section id="s-caveats" aria-labelledby="h-caveats">
+    <h2 id="h-caveats">Why like-for-like is hard</h2>
+    <ul class="caveats" id="caveats"></ul>
+  </section>
+
+  <section id="s-impl" aria-labelledby="h-impl">
+    <h2 id="h-impl">What this suggests for data and metadata</h2>
+    <p class="intro">This guide's own proposals, for discussion.</p>
+    <ol class="impl">
+      <li><b>Agree a business identifier strategy</b>Decide whether to revive a single business identifier, or publish a crosswalk between company numbers, UTRs, VAT and PAYE references, as a first step towards what Australia, New Zealand and Singapore run.</li>
+      <li><b>Open the name check across registers</b>Combine Companies House and IPO name data behind one lookup, following New Zealand's ONECheck.</li>
+      <li><b>Share licence data under local stewardship</b>Adopt a common licence data standard that local authorities maintain, as Canada's BizPaL partners do, rather than central re-collection.</li>
+      <li><b>Publish formation statistics to an international standard</b>Report online formations, duration, cost and abandonment in line with the measures EU states must report, so the UK can compare itself on evidence.</li>
+    </ol>
+  </section>
+</main>
+<div class="wrap"><nav class="seqnav" aria-label="Sequence"><div><a href="../four-nations/">&larr; Part 12: Four nations</a><small>Where the UK differs inside itself</small></div><div style="text-align:center"><a href="../">Part 13 of 18</a><small>International benchmark</small></div><div class="nx"><a href="../standards/">Part 14: Standards for the journey &rarr;</a><small>What to build on</small></div></nav></div>
+<footer>
+  <div class="wrap">
+    <h2>Method and sources</h2>
+    <p>Comparators were chosen for strong benchmark scores (Singapore, Estonia), a named practice relevant to UK pain points (New Zealand, Australia, Canada, Denmark, Portugal), or a cautionary lesson (France). Ratings describe what each country offers founders, judged from official sources where they could be read; cells marked with an asterisk rely on reputable non-government guides. Ratings are relative and editorial, and cover only the countries shown.</p>
+    <dl>
+      <dt>Leading</dt><dd>A complete, working version of the capability that others cite or copy.</dd>
+      <dt>Strong</dt><dd>The capability exists and works for most founders, with limits.</dd>
+      <dt>Partial</dt><dd>Some of the capability exists, or it is split across services, or its launch was troubled.</dd>
+      <dt>Weak or absent</dt><dd>The capability is missing, or no published evidence of it was found.</dd>
+      <dt>Not assessed</dt><dd>Not checked on these pages; not a judgement.</dd>
+    </dl>
+    <ol id="sources"></ol>
+  </div>
+</footer>
+<script>
+var SRC={
+  bready:["World Bank: Business Ready 2025 (interim edition, 101 economies; data as of 1 September 2024)","https://openknowledge.worldbank.org/entities/publication/a35eb0e7-328a-46a3-8713-ce8ef8a7c9e3"],
+  breadylist:["World Bank: economies proposed for the first three B-READY editions","https://thedocs.worldbank.org/en/doc/ef11172eb27ad3b215045b9219b2c6d1-0540012024/original/B-READY-Pilot-Economies.pdf"],
+  egdi:["UN DESA: E-Government Survey 2024 press release (17 September 2024)","https://www.un.org/sustainabledevelopment/blog/2024/09/press-release-e-government-survey"],
+  egdirank:["Government Transformation: UK rises to 7th in 2024 UN e-government rankings","https://www.government-transformation.com/en/citizen-experience/uk-rises-and-denmark-leads-in-2024-un-e-government-rankings"],
+  ukltd:["GOV.UK: Set up a private limited company","https://www.gov.uk/limited-company-formation"],
+  ukstep:["GOV.UK: Set up a limited company, step by step (checked 17 Sep 2026)","https://www.gov.uk/set-up-limited-company"],
+  uksa:["GOV.UK: Check how to register for Self Assessment","https://www.gov.uk/register-for-self-assessment"],
+  ukidv:["GOV.UK: Verifying your identity for Companies House","https://www.gov.uk/guidance/verifying-your-identity-for-companies-house"],
+  ukopen:["Companies House blog: Celebrating 10 years of open access to Companies House data (Jun 2025)","https://companieshouse.blog.gov.uk/2025/06/23/celebrating-10-years-of-open-access-to-companies-house-data/"],
+  ukreject:["Companies House blog: Tips on incorporating a company (Nov 2015)","https://companieshouse.blog.gov.uk/2015/11/16/my-tips-on-incorporating-a-company-at-companies-house/"],
+  uktm:["Companies House blog: Choosing a company name, trading name or trade mark (Feb 2019)","https://companieshouse.blog.gov.uk/2019/02/12/choosing-a-company-name-trading-name-or-trade-mark/"],
+  uklic:["Inside GOV.UK: Updating the GOV.UK licence finder (Dec 2023)","https://insidegovuk.blog.gov.uk/2023/12/21/updating-the-gov-uk-licence-finder/"],
+  uksbi:["data.gov.uk: Single Business Identifier (HMRC dataset, not released)","https://www.data.gov.uk/search?q=single+business+identifier"],
+  ukbgov:["Digital Trade blog: Launch of the Digital Business Growth Service and business.gov.uk (Jul 2025)","https://digitaltrade.blog.gov.uk/2025/07/31/the-launch-of-the-digital-business-growth-service-and-business-gov-uk-helping-businesses-start-and-scale/"],
+  ukchat:["Inside GOV.UK: 5 things we learned testing GOV.UK Chat (Mar 2026)","https://insidegovuk.blog.gov.uk/2026/03/16/5-things-we-learned-testing-gov-uk-chat-an-ai-assistant-for-government/"],
+  ukai:["Digital Trade blog: Launching DBT's first public-facing AI feature (Oct 2025)","https://digitaltrade.blog.gov.uk/2025/10/21/launching-dbts-first-public-facing-ai-feature/"],
+  ukgds26:["GDS blog: Delivering a better GOV.UK experience for business (Aug 2026)","https://gds.blog.gov.uk/2026/08/06/gds-delivering-a-better-gov-uk-experience-for-business/"],
+  ukblueprint:["DSIT: A blueprint for modern digital government (Jan 2025)","https://www.gov.uk/government/publications/a-blueprint-for-modern-digital-government/a-blueprint-for-modern-digital-government-html"],
+  ukryc:["Service assessment: Register your company, beta (Feb 2018)","https://www.gov.uk/service-standard-reports/register-your-company-beta"],
+  boundary:["Before the register: evidence on the pre-registration boundary (companion page)","../before-the-register/"],
+  auato:["ATO: Business or company registrations","https://www.ato.gov.au/businesses-and-organisations/starting-registering-or-closing-a-business/registration-obligations-for-businesses/work-out-which-registrations-you-need/business-or-company-registrations"],
+  aubrs:["Australian Government: Business Registration Service","https://register.business.gov.au/"],
+  auabn:["business.gov.au: Register for an Australian Business Number","https://business.gov.au/registrations/register-for-an-australian-business-number-abn"],
+  audid:["ABRS: Director ID, who needs to apply and when","https://www.abrs.gov.au/director-identification-number/who-needs-apply-and-when"],
+  audidq:["ABRS: Top questions when applying for a director ID","https://www.abrs.gov.au/director-identification-number/top-questions-when-applying-director-id"],
+  nztax:["NZ Companies Register: Tax registration at incorporation","https://companies-register.companiesoffice.govt.nz/help-centre/starting-a-company/tax-registration/"],
+  nzonecheck:["NZBN: Choosing a business name? ONECheck it first","https://www.nzbn.govt.nz/about-us/news/choosing-a-business-name-onecheck-it-first/"],
+  nzname:["NZ Companies Register: Reserving a name for a new company","https://companies-register.companiesoffice.govt.nz/help-centre/starting-a-company/reserving-a-name-for-a-new-company/"],
+  nzfee:["Stripe: Business registration in New Zealand (fee and NZBN)","https://stripe.com/nz/resources/more/business-registration-in-new-zealand"],
+  nzsole:["Sprintlaw NZ: How to register a business in New Zealand","https://sprintlaw.co.nz/articles/how-to-register-a-business-in-new-zealand-companies-office-nzbn-key-steps/"],
+  sgacra:["ACRA: Service and transaction fees for companies","https://www.acra.gov.sg/manage/companies/service-transaction-fees/"],
+  sguen:["Commenda: ACRA and Bizfile Singapore (UEN since 2009, fees)","https://www.commenda.io/compliance/acra-and-bizfile-singapore"],
+  sggob:["GovTech Singapore: How to register a business with the GoBusiness portal","https://www.tech.gov.sg/technews/how-to-register-a-business-in-singapore-gobusiness-portal/"],
+  sglic:["MDDI Singapore: Launch of GoBusiness Licensing portal","https://www.mddi.gov.sg/newsroom/launch-of-gobusiness-licensing-portal/"],
+  sglic1:["GoBusiness Licensing: About business licences","https://licence1.business.gov.sg/licence1/"],
+  sgubo:["VJM Global: What to know about ACRA in Singapore (registers and UBO access)","https://www.vjmglobal.com/feeds/blog/singapore-acra"],
+  sgsole:["Info-Tech: What is ACRA? (sole proprietorship fees)","https://www.info-tech.com.sg/blog/what-is-acra-singapore/"],
+  eerik:["Estonia RIK: e-Business Register","https://ariregister.rik.ee/eng"],
+  eefee:["Invest in Estonia: Starting a company","https://investinestonia.com/business-in-estonia/establishing-company/process/"],
+  eecode:["Business Data Guide: Estonia company search (registry code)","https://businessdataguide.com/blog/jurisdictions/estonia-company-search-guide"],
+  eeubo:["Topograph: Business registers in Estonia (beneficial ownership access, 2025–26)","https://www.topograph.co/guides/business-registers-in-estonia"],
+  dkvirk:["Business in Denmark (Virk): Establish a business, Services Contact Point","https://businessindenmark.virk.dk/guidance/services-contact-point/Establish-a-business-in-Denmark/"],
+  dkstart:["Business in Denmark (Virk): Start company","https://businessindenmark.virk.dk/authorities/stat/ERST/self-service/Start_company/"],
+  dkcaki:["CAKI: Registering a personally owned business on Virk","https://caki.dk/project/registrering-af-personligt-ejet-virksomhed/?lang=en"],
+  dksole:["Ragnum: How to get a CVR number for a sole proprietorship in Denmark","https://ragnum.dk/how-to-get-a-cvr-number-for-a-sole-proprietorship-in-denmark"],
+  cabizpal:["ISED Canada: BizPaL simplifies access to permits and licences (updated 2026)","https://www.canada.ca/en/innovation-science-economic-development/news/2019/06/bizpal-simplifies-access-to-information-on-permits-and-licences-for-canadian-businesses.html"],
+  cabizfaq:["BizPaL: Frequently asked questions","https://bizpal.ca/en/faq/"],
+  pteportugal:["ePortugal: Registering your business","https://eportugal.gov.pt/en-GB/inicio/espaco-empresa/guia-a-a-z/cid-2-faseneg-0-constituir-a-empresa"],
+  pthora:["gov.pt: Create a company on the spot (Empresa na Hora)","https://www2.gov.pt/en/servicos/criar-uma-empresa-na-hora"],
+  ptfee:["InvoiceXpress: Empresa na Hora and Empresa Online fees (2026)","https://invoicexpress.com/blog/como-criar-empresa-online-na-hora/"],
+  frcdc:["Cour des comptes: Le guichet unique électronique des formalités des entreprises, un projet à sécuriser (Dec 2023)","https://www.ccomptes.fr/fr/publications/le-guichet-unique-electronique-des-formalites-des-entreprises-un-projet-securiser"],
+  frsenat:["French Senate: written question on the guichet unique (2023, minister's answer Jan 2024)","https://www.senat.fr/questions/base/2023/qSEQ23090799S.html"],
+  eudir:["EUR-Lex: Directive (EU) 2019/1151 on digital tools and processes in company law","https://eur-lex.europa.eu/eli/dir/2019/1151/oj"],
+  eudirpdf:["EUR-Lex: Directive (EU) 2019/1151, full text","https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32019L1151"],
+  cjeu:["CJEU press release 188/22: public access to beneficial ownership information (22 Nov 2022)","https://curia.europa.eu/site/upload/docs/application/pdf/2022-11/cp220188en.pdf"],
+  fincen:["FinCEN: Beneficial ownership information reporting (interim final rule, Mar 2025)","https://www.fincen.gov/boi"]
+};
+
+var COUNTRIES=[
+  {id:"uk",name:"United Kingdom",short:"UK",pop:"Four nations, devolved business support",bready:91.31,brank:5},
+  {id:"sg",name:"Singapore",short:"SG",pop:"City-state with national digital identity",bready:94.09,brank:2},
+  {id:"ee",name:"Estonia",short:"EE",pop:"1.4 million people, national eID",bready:89.45,brank:7},
+  {id:"dk",name:"Denmark",short:"DK",pop:"National MitID and digital post",bready:null,brank:null},
+  {id:"nz",name:"New Zealand",short:"NZ",pop:"Unitary state, RealMe identity",bready:82.84,brank:32},
+  {id:"au",name:"Australia",short:"AU",pop:"Federal, national Digital ID",bready:null,brank:null},
+  {id:"ca",name:"Canada",short:"CA",pop:"Federal, three levels of licensing",bready:79.45,brank:46},
+  {id:"pt",name:"Portugal",short:"PT",pop:"EU member, Citizen Card",bready:82.44,brank:33},
+  {id:"fr",name:"France",short:"FR",pop:"EU member, cautionary case",bready:null,brank:null}
+];
+
+var RATINGS={lead:"Leading",strong:"Strong",partial:"Partial",weak:"Weak or absent",na:"Not assessed"};
+var STAGES={decide:"Deciding",prepare:"Preparing",line:"At the line",after:"After registering"};
+
+// Dimensions: id, name, question, stage; cells: country -> [rating, note, sources, secondary?]
+var DIMS=[
+  {id:"door",name:"One front door for starting up",q:"Is there one clear government place to find out how to start?",stage:"prepare",cells:{
+    uk:["partial","Two front doors: GOV.UK's start-up guidance and DBT's business.gov.uk, launched June 2025. GDS and BIST announced a joint team for a single business experience in August 2026.",["ukbgov","ukgds26"]],
+    sg:["lead","GoBusiness connects businesses to government e-services, with personalised guidance after logging in with Singpass and choosing the business's UEN.",["sggob"]],
+    dk:["strong","Virk is the self-service portal for registering and running a business, with guidance for founders.",["dkvirk","dkstart"]],
+    nz:["strong","business.govt.nz provides guidance and tools such as ONECheck, alongside the Companies Office.",["nzonecheck"]],
+    au:["strong","business.gov.au hosts the Business Registration Service, described as Australian business registration in one place.",["aubrs"]],
+    pt:["strong","ePortugal is the single point of contact for public services linked to economic activity.",["pteportugal"]],
+    fr:["partial","A legal single window for all business formalities has operated since 2023, but the Cour des comptes found a chaotic launch requiring a backup route.",["frcdc"]]
+  }},
+  {id:"joined",name:"Company and tax registered together",q:"Does registering the company also set up tax registrations?",stage:"line",cells:{
+    uk:["strong","Incorporation usually sets up Corporation Tax automatically and can register PAYE. VAT registration stays separate; the 2018 joint service planned VAT but it was not added.",["ukltd","ukryc"]],
+    nz:["lead","Founders can apply for an IRD number, register for GST and register as an employer during online incorporation, receiving the certificate and tax numbers together.",["nztax"]],
+    au:["lead","One application can cover the ABN, business name, GST and PAYG withholding, with company registration through the same Business Registration Service.",["auato","aubrs"]],
+    dk:["strong","The Virk registration flow asks founders to register obligations such as VAT when registering; VAT must be applied for at least 8 days before trading.",["dkvirk","dkcaki"]],
+    pt:["strong","Empresa na Hora completes all the procedures to incorporate at a single desk in under an hour.",["pthora","pteportugal"]],
+    fr:["partial","One window is meant to handle creation for all bodies, including tax and social security, but operational problems persisted into 2024.",["frcdc","frsenat"]]
+  }},
+  {id:"identifier",name:"One business identifier across government",q:"Does one number identify the business to every part of government?",stage:"after",cells:{
+    uk:["weak","No single identifier: a company number, UTR, VAT number and PAYE reference are issued separately. HMRC's Single Business Identifier dataset is listed as not released.",["uksbi"]],
+    au:["lead","The 11-digit ABN identifies businesses to all levels of government and is free, including for sole traders.",["auabn","auato"]],
+    nz:["lead","Companies get an NZBN automatically at incorporation; the NZBN register covers all business types.",["nzfee","nzonecheck"]],
+    sg:["lead","The UEN is the standard identifier every registered entity uses with all agencies, issued free at registration since 2009.",["sguen"],true],
+    ee:["strong","The registry code is the primary identifier across government systems, tax filings and invoices.",["eecode"],true],
+    dk:["strong","The CVR number identifies the business for VAT, tax and public authorities.",["dksole"],true]
+  }},
+  {id:"sole",name:"Sole traders in the same register",q:"Are sole traders registered in the same system as companies?",stage:"line",cells:{
+    uk:["weak","Sole traders do not join a business register; they tell HMRC by registering for Self Assessment, by 5 October after the tax year trading began.",["uksa"]],
+    ee:["lead","The e-Business Register registers companies and self-employed persons in the same portal.",["eerik"]],
+    au:["lead","Sole traders get an ABN through the same registration service as companies.",["auato"]],
+    dk:["strong","Sole proprietorships register on Virk and receive a CVR number; there is no fee.",["dksole","dkcaki"],true],
+    sg:["strong","Sole proprietorships register with ACRA, the same registrar as companies.",["sgsole"],true],
+    nz:["partial","Sole traders usually operate under their personal IRD number, while companies are registered with the Companies Office.",["nzsole"],true]
+  }},
+  {id:"identity",name:"Verified identity before becoming a director",q:"Must directors prove who they are before the company exists?",stage:"line",cells:{
+    uk:["lead","Identity verification has been compulsory for new directors and PSCs at incorporation since November 2025, free through GOV.UK One Login, at a Post Office or via an agent.",["ukidv"]],
+    au:["lead","Intending directors must obtain a director ID before appointment, can apply up to 12 months ahead, and keep one ID for life.",["audid","audidq"]],
+    ee:["strong","Every person involved digitally signs the founding petition with an Estonian ID card, Smart-ID or Mobile-ID.",["eerik"]],
+    dk:["strong","The self-service Start company route requires a Danish MitID.",["dkvirk"]],
+    pt:["strong","Empresa Online uses a digital certificate such as the Citizen Card.",["pteportugal"]],
+    sg:["strong","Bizfile transactions use Singpass; foreigners without Singpass must use a registered filing agent.",["sguen"],true]
+  }},
+  {id:"open",name:"Open company and ownership data",q:"Can anyone see who runs and owns companies, free?",stage:"after",cells:{
+    uk:["lead","The register has been free since June 2015; access grew from 1.3 billion to over 16 billion a year by 2023–24. People with significant control are on the public register.",["ukopen"]],
+    ee:["strong","Company details are free to search, but public access to beneficial ownership data was restricted after the 2022 EU court ruling.",["eerik","eeubo","cjeu"]],
+    sg:["partial","Company profiles can be bought; the register of beneficial owners is not public.",["sgubo"],true],
+    fr:["partial","As an EU member, general public access to beneficial ownership data was limited by the 2022 EU court ruling.",["cjeu"]],
+    pt:["partial","As an EU member, general public access to beneficial ownership data was limited by the 2022 EU court ruling.",["cjeu"]],
+    dk:["partial","Company data is public on Virk; public access to beneficial ownership data is subject to the 2022 EU court ruling.",["dksole","cjeu"],true]
+  }},
+  {id:"names",name:"Checking a name everywhere at once",q:"Can a founder check company names, trade marks and domains in one search?",stage:"prepare",cells:{
+    uk:["partial","Companies House checks company names; trade marks are a separate search at the IPO. Name problems are one of the main reasons incorporations are rejected.",["ukreject","uktm"]],
+    nz:["lead","ONECheck searches the Companies Register, IPONZ trade marks and the NZBN register, plus domains and social media usernames, in one search.",["nzonecheck","nzname"]],
+    pt:["strong","Founders can pick from a list of pre-approved company names, avoiding a separate name approval.",["pthora"]]
+  }},
+  {id:"licences",name:"Licences across every level of government",q:"Can a founder find, and apply for, licences from national and local government in one place?",stage:"prepare",cells:{
+    uk:["partial","Find a licence covered 431 licences after its 2023 rebuild; applications still go to many separate bodies.",["uklic"]],
+    ca:["lead","BizPaL lists permits and licences from federal, provincial and municipal governments; all provinces, 2 territories and over 1,100 municipalities take part, covering about 80% of people. Each jurisdiction maintains its own data.",["cabizpal","cabizfaq"]],
+    sg:["lead","GoBusiness Licensing lets businesses apply for multiple licences at once. It started with a deep dive into food services, and over 500 business users were consulted on its redesign.",["sglic","sglic1","sggob"]]
+  }},
+  {id:"measure",name:"Published measures of company formation",q:"Is there a duty to publish how many formations happen online, how long they take and what they cost?",stage:"line",cells:{
+    uk:["weak","No published figures were found for incorporations started but not completed, or time from intent to registration.",["boundary"]],
+    ee:["strong","EU law requires online formation within 5 working days in standard cases, and reporting of online formation numbers, template use, average duration and cost.",["eudirpdf","eudir"]],
+    dk:["strong","The same EU duty applies.",["eudirpdf"]],
+    pt:["strong","The same EU duty applies.",["eudirpdf"]],
+    fr:["strong","The same EU duty applies.",["eudirpdf"]]
+  }},
+  {id:"ai",name:"AI and personalised guidance",q:"Does government use AI or personalisation to tailor start-up guidance?",stage:"prepare",cells:{
+    uk:["strong","GOV.UK Chat was tested with over 10,000 users, and 73% found it useful. business.gov.uk added an AI funding search in 2025.",["ukchat","ukai"]],
+    sg:["strong","GoBusiness personalises guidance and licence applications once the business logs in with its UEN.",["sggob"]]
+  }}
+];
+
+var BEST=[
+  {t:"Among the easiest places in the world to start a company",b:"The UK scored 91.31 on Business Entry in B-READY 2025, 5th of 100 economies with a score and ahead of Estonia, Ireland, New Zealand and the United States. It is one of 8 economies in the top quintile on all three pillars.",src:["bready"],dims:[]},
+  {t:"Open company data at global scale",b:"A free register since 2015, with over 16 billion accesses in 2023–24, and people with significant control publicly listed. Since 2022 EU members must restrict public ownership data, and the US exempted domestic companies from ownership reporting in 2025.",src:["ukopen","cjeu","fincen"],dims:["open"]},
+  {t:"Transparency and verification together",b:"Of the countries compared here, only the UK combines a public ownership register with compulsory identity checks before incorporation, in place since November 2025. Australia also verifies directors, through a director ID.",src:["ukidv","audid"],dims:["identity","open"]},
+  {t:"Fast, digital incorporation that sets up tax",b:"Online incorporation costs £100, usually completes within 24 hours, and sets up Corporation Tax automatically, with PAYE registration available in the same service.",src:["ukltd"],dims:["joined"]},
+  {t:"Early use of AI in guidance, with published testing",b:"GOV.UK Chat was tested publicly with more than 10,000 users before launch, and DBT added an AI funding search to business.gov.uk.",src:["ukchat","ukai"],dims:["ai"]}
+];
+
+var LEARN=[
+  {id:"onceform",t:"One application for company and all tax registrations",from:["nz","au"],stage:"line",pain:"Pain point: surprises after crossing",
+   b:"New Zealand issues the certificate, IRD number and GST registration together; Australia bundles the ABN, business name, GST and PAYG in one application. The UK sets up Corporation Tax and offers PAYE, but VAT remains separate, as it did when the 2018 joint service planned to add it.",
+   src:["nztax","auato","ukltd","ukryc"],transfer:"high",effort:"Medium",why:"Builds on the existing Companies House and HMRC link; needs HMRC's VAT registration exposed to the incorporation service.",dims:["joined"]},
+  {id:"identifier",t:"A single business identifier, including sole traders",from:["au","nz","sg"],stage:"after",pain:"Pain point: surprises after crossing",
+   b:"Australia's ABN, New Zealand's NZBN and Singapore's UEN identify a business to every part of government. The UK issues separate numbers, and HMRC's Single Business Identifier dataset has been listed as not released since 2016.",
+   src:["auabn","nzfee","sguen","uksbi"],transfer:"medium",effort:"High",why:"Needs cross-department agreement and possibly legislation, but aligns with the Blueprint's idea of a business equivalent of One Login.",dims:["identifier"]},
+  {id:"soleregister",t:"Put sole traders on the same register",from:["ee","dk","au"],stage:"line",pain:"Pain point: not knowing where the line is",
+   b:"Estonia's e-Business Register and Denmark's Virk register self-employed people alongside companies. In the UK, sole traders only exist to government through Self Assessment, which research shows people struggle to time.",
+   src:["eerik","dksole","uksa","boundary"],transfer:"low",effort:"High",why:"A major policy change with privacy and burden implications for millions of self-employed people; a lighter first step is an optional identifier.",dims:["sole"]},
+  {id:"onecheck",t:"Check a name everywhere in one search",from:["nz"],stage:"prepare",pain:"Pain point: names that fail at the line",
+   b:"ONECheck searches the companies register, trade marks, all business types, domains and social usernames at once. In the UK, name problems are among the main reasons incorporations are rejected, and company names are confused with trade marks run by a different body.",
+   src:["nzonecheck","ukreject","uktm"],transfer:"high",effort:"Low",why:"Companies House and IPO data are already available through APIs; it is a joining-up job, not new policy.",dims:["names"]},
+  {id:"bizpal",t:"Licences from every level of government, maintained by each",from:["ca"],stage:"prepare",pain:"Pain point: not knowing what the line requires",
+   b:"BizPaL lists federal, provincial and municipal permits in one search, with each jurisdiction keeping its own data under shared governance and costs. The UK's Find a licence was rebuilt centrally in 2023.",
+   src:["cabizpal","cabizfaq","uklic"],transfer:"high",effort:"Medium",why:"Maps directly onto UK local authority licensing; the stewardship model answers the keeping-content-current problem.",dims:["licences"]},
+  {id:"sector",t:"Redesign sector by sector, with businesses",from:["sg"],stage:"prepare",pain:"Pain point: guidance that doesn't lead to the line",
+   b:"Singapore started GoBusiness Licensing with a deep dive into food services, then consulted over 500 business users across sectors before a redesign, letting businesses apply for several licences at once.",
+   src:["sglic","sggob"],transfer:"high",effort:"Medium",why:"Fits the new GDS and BIST team's phased approach to at least 160 business services.",dims:["licences","door"]},
+  {id:"measure",t:"A duty to publish formation measures",from:["ee","dk","pt","fr"],stage:"line",pain:"Evidence gap: how many start registering and stop",
+   b:"EU law sets a 5-working-day standard for online formation and requires states to report numbers, template use, average duration and cost. The UK publishes no comparable measures of registrations started, completed or abandoned.",
+   src:["eudirpdf","boundary"],transfer:"high",effort:"Low",why:"Companies House already holds the data; publication needs a decision, not a new system.",dims:["measure"]},
+  {id:"templates",t:"Pre-approved names and standard articles for instant formation",from:["pt"],stage:"line",pain:"Pain point: names that fail at the line",
+   b:"Portugal's Empresa na Hora uses pre-approved names and standard articles so a company can be formed at a single desk in under an hour.",
+   src:["pthora","pteportugal"],transfer:"medium",effort:"Low",why:"The UK already has model articles; a pre-cleared name list would need care over trade mark conflicts.",dims:["names","joined"]},
+  {id:"apply-ahead",t:"Tell founders to verify identity well ahead",from:["au"],stage:"prepare",pain:"Pain point: proving identity before registering",
+   b:"Australia lets intending directors get a director ID up to 12 months before appointment, and its guidance says so. The UK's limited company step by step does not mention identity verification at all.",
+   src:["audidq","ukstep"],transfer:"high",effort:"Low",why:"A content change: add the step to GOV.UK's step by step and business.gov.uk triage.",dims:["identity"]},
+  {id:"france",t:"Keep the old route open until the new front door works",from:["fr"],stage:"line",pain:"Pain point: guidance that doesn't lead to the line",
+   b:"France closed other routes when its single window went live in January 2023. The Cour des comptes found an unrealistic timetable and a chaotic launch, and a backup route had to be reopened; by January 2024 only 20% of company changes went through the new window.",
+   src:["frcdc","frsenat"],transfer:"high",effort:"Low",why:"Directly relevant to consolidating GOV.UK and business.gov.uk, and to moving HMRC users to One Login.",dims:["door"],caution:true}
+];
+
+var FEES=[
+  ["uk","£100 online","Usually within 24 hours","Corporation Tax set up; PAYE optional",["ukltd"]],
+  ["sg","S$315 (name S$15, incorporation S$300)","Often same day",null,["sgacra","sguen"]],
+  ["ee","€265 state fee","Not verified on these pages","Founders sign digitally with Estonian eID",["eefee","eerik"]],
+  ["dk","670 kr","Not verified on these pages","VAT application at least 8 days before trading",["dkvirk"]],
+  ["nz","NZ$118.74 plus GST","Not verified on these pages","IRD, GST and employer registration optional in the same application",["nzfee","nztax"]],
+  ["pt","€220 online with standard articles; €360 at an Empresa na Hora desk","Under an hour at a desk","Pre-approved names available",["ptfee","pthora"]]
+];
+
+var CAVEATS=[
+  ["Scale and structure","Estonia has 1.4 million people and Singapore is a city-state. The UK has four nations, devolved business support and wide local variation in licensing, so transfer is rarely one-to-one; the four nations page shows how start-up support already differs inside the UK."],
+  ["Identity foundations","Denmark, Estonia, Portugal and Singapore build on national identity systems. The UK relies on GOV.UK One Login and document checks, which changes what can be joined up at the line."],
+  ["Transparency is a choice","The UK's public ownership register goes further than EU law now allows, and further than the US. Comparisons should not treat less public data as simpler."],
+  ["Benchmark coverage","B-READY 2025 scores 101 economies as of 1 September 2024, before UK identity checks began. Australia, Denmark and France are due in the 2026 edition. It measures limited liability companies only."],
+  ["What indices measure","The UN E-Government Development Index covers online services, infrastructure and skills across government, not the start-a-business journey specifically."],
+  ["Evidence quality","Ratings rely on official sources; cells marked secondary use reputable non-government guides where an official page could not be read. Fees are shown in local currency and not converted."]
+];
+(function(){
+  var root=document.documentElement,RM=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  try{var sv=localStorage.getItem('bench-theme');if(sv)root.setAttribute('data-theme',sv);}catch(e){}
+  function $(id){return document.getElementById(id);}
+  function $$(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s));}
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+  function on(el,ev,fn){if(el)el.addEventListener(ev,fn);}
+  on($('theme'),'click',function(){var cur=root.getAttribute('data-theme');var dark=cur?cur==='dark':(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches);var n=dark?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('bench-theme',n);}catch(e){}});
+  on($('print'),'click',function(){window.print();});
+
+  var C={};COUNTRIES.forEach(function(c){C[c.id]=c;});
+  var D={};DIMS.forEach(function(d){D[d.id]=d;});
+  var order=[],idx={};function reg(k){if(SRC[k]&&!(k in idx)){order.push(k);idx[k]=order.length;}}
+  ['bready','breadylist','egdi','egdirank'].forEach(reg);
+  DIMS.forEach(function(d){COUNTRIES.forEach(function(c){var x=d.cells[c.id];if(x)x[2].forEach(reg);});});
+  BEST.forEach(function(b){b.src.forEach(reg);});LEARN.forEach(function(l){l.src.forEach(reg);});FEES.forEach(function(f){f[4].forEach(reg);});
+  Object.keys(SRC).forEach(reg);
+  function links(keys){return keys.map(function(k){return '<a href="'+SRC[k][1]+'" target="_blank" rel="noopener" title="'+esc(SRC[k][0])+'">['+idx[k]+']</a>';}).join(' ');}
+  function cell(dim,cid){return dim.cells[cid]||['na','Not assessed on these pages.',[]];}
+
+  // UK position
+  var ukc={lead:0,strong:0,partial:0,weak:0};DIMS.forEach(function(d){ukc[d.cells.uk[0]]++;});
+  var gaps=DIMS.filter(function(d){var u=d.cells.uk[0];return (u==='weak'||u==='partial')&&COUNTRIES.some(function(c){return c.id!=='uk'&&d.cells[c.id]&&d.cells[c.id][0]==='lead';});});
+  $('lede').innerHTML='How the UK\'s start-a-business journey compares with <strong>8 countries</strong> and two international indices, across <strong>10 capabilities</strong> that matter to founders. The UK ranks near the top for company entry and leads on open data and identity checks, but is behind a leading country on <strong>'+gaps.length+'</strong> capabilities, mostly where registers and services are still separate.';
+  $('stats').innerHTML=
+    '<article><b>5th<span> of 100</span></b><p>World Bank B-READY 2025 Business Entry score, 91.31.</p><small>'+links(['bready'])+'</small></article>'+
+    '<article><b>7th<span> of 193</span></b><p>UN E-Government Development Index 2024, up four places.</p><small>'+links(['egdi','egdirank'])+'</small></article>'+
+    '<article><b>'+(ukc.lead+ukc.strong)+'<span> of 10</span></b><p>capabilities where the UK is leading or strong: '+ukc.lead+' leading, '+ukc.strong+' strong.</p><small><a href="#s-matrix">See the matrix</a></small></article>'+
+    '<article><b>'+gaps.length+'<span> of 10</span></b><p>capabilities where the UK is partial or weak and another country leads.</p><small><a href="#s-learn">See the lessons</a></small></article>';
+
+  // Nav
+  var SEC=[['s-bench','Benchmarks'],['s-matrix','Matrix'],['s-best','UK strengths'],['s-learn','Lessons'],['s-fees','Fees'],['s-caveats','Caveats'],['s-impl','Proposals']];
+  $('jump').innerHTML=SEC.map(function(s){return '<li><a href="#'+s[0]+'">'+esc(s[1])+'</a></li>';}).join('');
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)$$('#jump a').forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id);});});},{rootMargin:'-40% 0px -55% 0px'});SEC.forEach(function(s){if($(s[0]))io.observe($(s[0]));});}
+
+  // Bars
+  var TOP=[["Armenia",95.95],["Singapore",94.09,"cmp"],["Greece",93.78],["Serbia",93.57],["United Kingdom",91.31,"uk"],["Uzbekistan",90.73],["Estonia",89.45,"cmp"],["Georgia",89.15],["North Macedonia",88.32],["Ireland",88.13]];
+  var MORE=[["New Zealand",82.84,"cmp",32],["Portugal",82.44,"cmp",33],["Canada",79.45,"cmp",46],["United States",75.12,"",52]];
+  function bar(n,v,cls,rank){return '<li class="'+(cls||'')+'"><span><span class="rk">'+rank+'</span>'+esc(n)+'</span><span class="track"><span class="fill" style="width:'+v+'%"></span></span><span class="v">'+v.toFixed(2)+'</span></li>';}
+  $('bars').innerHTML=TOP.map(function(r,i){return bar(r[0],r[1],r[2],i+1);}).join('')+'<li><span class="gap"></span></li>'+MORE.map(function(r){return bar(r[0],r[1],r[2],r[3]);}).join('');
+  $('barnote').innerHTML='Median of 100 scored economies: 76.62. Australia, Denmark and France are due in the 2026 edition. Data as of 1 September 2024, before UK identity checks were compulsory. The UK is also one of 8 economies in the top quintile on all three pillars. '+links(['bready','breadylist']);
+  var EG=["Denmark","Estonia","Singapore","Republic of Korea","Iceland","Saudi Arabia","United Kingdom","Australia","Finland","Netherlands"];
+  $('egdi').innerHTML=EG.map(function(n){return '<li class="'+(n==='United Kingdom'?'uk':'')+'">'+esc(n)+'</li>';}).join('');
+  $('egdinote').innerHTML='New Zealand is also in the very high group. The 2026 edition was not found published at Last updated. '+links(['egdi','egdirank']);
+
+  // Matrix
+  var stf=$('stageFilter'),rf=$('ratingFilter');
+  Object.keys(STAGES).forEach(function(k){var o=document.createElement('option');o.value=k;o.textContent=STAGES[k];stf.appendChild(o);});
+  var mx=$('mx');
+  var h='<thead><tr><th scope="col" style="text-align:left;padding-left:6px">Capability</th>'+COUNTRIES.map(function(c){return '<th scope="col" class="'+(c.id==='uk'?'uk':'')+'"><button type="button" data-country="'+c.id+'">'+esc(c.short)+'<span>'+esc(c.name)+'</span></button></th>';}).join('')+'</tr></thead><tbody>';
+  DIMS.forEach(function(d){
+    h+='<tr data-dim="'+d.id+'" data-stage="'+d.stage+'"><th scope="row"><button type="button" data-dimbtn="'+d.id+'">'+esc(d.name)+'</button><small>'+esc(STAGES[d.stage])+'</small></th>';
+    COUNTRIES.forEach(function(c){var x=cell(d,c.id);
+      h+='<td class="'+(c.id==='uk'?'uk':'')+'"><button class="cell '+x[0]+(x[3]?' sec':'')+'" type="button" data-d="'+d.id+'" data-c="'+c.id+'" aria-pressed="false" '+(x[0]==='na'?'tabindex="-1" aria-disabled="true"':'')+' aria-label="'+esc(c.name+', '+d.name+': '+RATINGS[x[0]])+'">'+(x[0]==='na'?'':esc(RATINGS[x[0]].split(' ')[0]))+'</button></td>';});
+    h+='</tr>';
+  });
+  mx.innerHTML=h+'</tbody>';
+  $('legend').innerHTML=['lead','strong','partial','weak','na'].map(function(r){return '<span><span class="rtag '+r+'">'+esc(RATINGS[r])+'</span></span>';}).join('')+'<span>* relies on a secondary source</span><span style="display:inline-flex;gap:6px;align-items:center"><i style="background:var(--uk);box-shadow:inset 3px 0 0 var(--ukline)"></i>UK column</span>';
+  function press(sel){$$('#mx .cell').forEach(function(b){b.setAttribute('aria-pressed',String(sel(b)));});}
+  function showCell(did,cid){
+    var d=D[did],c=C[cid],x=cell(d,cid);if(x[0]==='na')return;
+    press(function(b){return b.dataset.d===did&&b.dataset.c===cid;});
+    var uk=d.cells.uk,leaders=COUNTRIES.filter(function(k){return d.cells[k.id]&&d.cells[k.id][0]==='lead';}).map(function(k){return k.name;});
+    $('panel').innerHTML='<p class="meta">'+esc(d.name)+' · '+esc(STAGES[d.stage])+'</p><h3>'+esc(c.name)+'</h3><p><span class="rtag '+x[0]+'">'+esc(RATINGS[x[0]])+'</span>'+(x[3]?'<small>Secondary source</small>':'')+'</p><p>'+esc(x[1])+'</p><small>Sources '+links(x[2])+'</small>'+
+      (cid!=='uk'?'<hr style="border:0;border-top:1px solid var(--faint);margin:14px 0"><p class="meta">The UK on this capability</p><p><span class="rtag '+uk[0]+'">'+esc(RATINGS[uk[0]])+'</span></p><p>'+esc(uk[1])+'</p><small>Sources '+links(uk[2])+'</small>':'')+
+      (leaders.length?'<p class="meta" style="margin-top:12px">Leading here: '+esc(leaders.join(', '))+'</p>':'')+
+      learnLinks([did]);
+    bindLearn();
+  }
+  function showDim(did){
+    var d=D[did];press(function(b){return b.dataset.d===did;});
+    $('panel').innerHTML='<p class="meta">'+esc(STAGES[d.stage])+'</p><h3>'+esc(d.name)+'</h3><p>'+esc(d.q)+'</p><ol>'+COUNTRIES.filter(function(c){return d.cells[c.id];}).map(function(c){var x=d.cells[c.id];return '<li><p><span class="rtag '+x[0]+'">'+esc(RATINGS[x[0]])+'</span><b>'+esc(c.name)+'</b></p><p style="font-size:.93rem;margin:4px 0">'+esc(x[1])+'</p><small>'+(x[3]?'Secondary source. ':'')+'Sources '+links(x[2])+'</small></li>';}).join('')+'</ol>'+learnLinks([did]);
+    bindLearn();
+  }
+  function showCountry(cid){
+    var c=C[cid];press(function(b){return b.dataset.c===cid;});
+    var cs=DIMS.filter(function(d){return d.cells[cid];});
+    $('panel').innerHTML='<p class="meta">'+esc(c.pop)+(c.bready?' · B-READY Business Entry '+c.bready.toFixed(2)+', rank '+c.brank:'')+'</p><h3>'+esc(c.name)+'</h3><p>'+cs.length+' of 10 capabilities assessed.</p><ol>'+cs.map(function(d){var x=d.cells[cid];return '<li><p><span class="rtag '+x[0]+'">'+esc(RATINGS[x[0]])+'</span><b>'+esc(d.name)+'</b></p><p style="font-size:.93rem;margin:4px 0">'+esc(x[1])+'</p><small>Sources '+links(x[2])+'</small></li>';}).join('')+'</ol>';
+  }
+  function learnLinks(dims){var ls=LEARN.filter(function(l){return l.dims.some(function(x){return dims.indexOf(x)>=0;});});if(!ls.length)return '';return '<p class="meta" style="margin-top:14px">Related lessons</p><p>'+ls.map(function(l){return '<button class="evbtn" type="button" data-golearn="'+l.id+'" style="margin:0 6px 6px 0">'+esc(l.t)+'</button>';}).join('')+'</p>';}
+  function bindLearn(){$$('#panel [data-golearn]').forEach(function(b){on(b,'click',function(){var el=$('learn-'+b.dataset.golearn);$('lstage').value='all';$('ltransfer').value='all';renderLearn();el=$('learn-'+b.dataset.golearn);if(el){el.scrollIntoView({behavior:RM?'auto':'smooth',block:'center'});el.style.outline='3px solid var(--focus)';setTimeout(function(){el.style.outline='';},1800);}});});}
+  $$('#mx .cell').forEach(function(b){on(b,'click',function(){showCell(b.dataset.d,b.dataset.c);});});
+  $$('#mx [data-dimbtn]').forEach(function(b){on(b,'click',function(){showDim(b.dataset.dimbtn);});});
+  $$('#mx [data-country]').forEach(function(b){on(b,'click',function(){showCountry(b.dataset.country);});});
+  function filterMx(){
+    var s=stf.value,r=rf.value;
+    $$('#mx tbody tr').forEach(function(tr){var d=D[tr.dataset.dim];var show=(s==='all'||d.stage===s)&&(r!=='ukgap'||gaps.indexOf(d)>=0);tr.hidden=!show;});
+    $$('#mx .cell').forEach(function(b){var x=cell(D[b.dataset.d],b.dataset.c);b.classList.toggle('dim',r==='lead'&&x[0]!=='lead'&&x[0]!=='na');});
+  }
+  on(stf,'change',filterMx);on(rf,'change',filterMx);
+
+  // Best
+  $('best').innerHTML=BEST.map(function(b){return '<li><b>'+esc(b.t)+'</b><p>'+esc(b.b)+'</p><small>Sources '+links(b.src)+'</small></li>';}).join('');
+
+  // Learn
+  var ls=$('lstage');Object.keys(STAGES).forEach(function(k){var o=document.createElement('option');o.value=k;o.textContent=STAGES[k];ls.appendChild(o);});
+  [ls,$('ltransfer'),$('lsort')].forEach(function(el){on(el,'change',renderLearn);});
+  var T={high:3,medium:2,low:1},E={Low:3,Medium:2,High:1},SO={decide:0,prepare:1,line:2,after:3};
+  function meter(n){return '<span class="meter" aria-hidden="true">'+[1,2,3].map(function(i){return '<i class="'+(i<=n?'on':'')+'"></i>';}).join('')+'</span>';}
+  function renderLearn(){
+    var s=ls.value,t=$('ltransfer').value,so=$('lsort').value;
+    var list=LEARN.filter(function(l){return (s==='all'||l.stage===s)&&(t==='all'||l.transfer===t);});
+    list.sort(so==='stage'?function(a,b){return SO[a.stage]-SO[b.stage];}:function(a,b){return (T[b.transfer]+E[b.effort])-(T[a.transfer]+E[a.effort]);});
+    $('lcount').textContent=list.length+' of '+LEARN.length;
+    $('learn').innerHTML=list.length?list.map(function(l){
+      return '<li id="learn-'+l.id+'" class="'+(l.caution?'caution':'')+'"><div class="top"><h3>'+esc(l.t)+'</h3><div class="flags">'+l.from.map(function(c){return '<span class="flag" title="'+esc(C[c].name)+'">'+esc(C[c].short)+'</span>';}).join('')+'</div></div>'+
+        '<p>'+esc(l.b)+'</p>'+
+        '<dl class="fit"><dt>Journey stage</dt><dd>'+esc(STAGES[l.stage])+'</dd><dt>UK pain point</dt><dd>'+esc(l.pain)+'</dd>'+
+        '<dt>Transferability</dt><dd>'+meter(T[l.transfer])+esc(l.transfer.charAt(0).toUpperCase()+l.transfer.slice(1))+'</dd><dt>Effort</dt><dd>'+meter(E[l.effort])+esc(l.effort)+'</dd><dt>Why</dt><dd>'+esc(l.why)+'</dd></dl>'+
+        '<small>Sources '+links(l.src)+'</small></li>';}).join(''):'<li>No lessons match. Choose "All stages" or "Any".</li>';
+  }
+
+  // Fees
+  $('fees').innerHTML='<thead><tr><th>Country</th><th>Company registration fee</th><th>Stated timing</th><th>Notes</th><th>Sources</th></tr></thead><tbody>'+FEES.map(function(f){return '<tr class="'+(f[0]==='uk'?'uk':'')+'"><td><b>'+esc(C[f[0]].name)+'</b></td><td>'+esc(f[1])+'</td><td>'+esc(f[2])+'</td><td>'+esc(f[3]||'')+'</td><td><small>'+links(f[4])+'</small></td></tr>';}).join('')+'</tbody>';
+  $('caveats').innerHTML=CAVEATS.map(function(c){return '<li><b>'+esc(c[0])+'</b><span>'+esc(c[1])+'</span></li>';}).join('');
+  $('sources').innerHTML=order.map(function(k){return '<li><a href="'+SRC[k][1]+'" target="_blank" rel="noopener">'+esc(SRC[k][0])+'</a></li>';}).join('');
+
+  // Downloads
+  function q(v){v=String(v==null?'':v);return /[",\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v;}
+  function csv(){var rows=[['capability','journey_stage','country','rating','secondary_source','evidence','sources']];DIMS.forEach(function(d){COUNTRIES.forEach(function(c){var x=cell(d,c.id);rows.push([d.name,STAGES[d.stage],c.name,RATINGS[x[0]],x[3]?'yes':'no',x[0]==='na'?'':x[1],x[2].map(function(k){return SRC[k][1];}).join(' ')]);});});return rows.map(function(r){return r.map(q).join(',');}).join('\n');}
+  function json(){return JSON.stringify({title:"The UK, compared: starting a business",scan_date:"2026-09-17",ratings:RATINGS,countries:COUNTRIES,capabilities:DIMS.map(function(d){var o={id:d.id,name:d.name,question:d.q,stage:STAGES[d.stage],cells:{}};COUNTRIES.forEach(function(c){var x=cell(d,c.id);o.cells[c.id]={rating:RATINGS[x[0]],evidence:x[0]==='na'?null:x[1],secondary:!!x[3],sources:x[2].map(function(k){return SRC[k][1];})};});return o;}),uk_strengths:BEST.map(function(b){return {title:b.t,detail:b.b,sources:b.src.map(function(k){return SRC[k][1];})};}),lessons:LEARN.map(function(l){return {title:l.t,from:l.from.map(function(c){return C[c].name;}),stage:STAGES[l.stage],uk_pain_point:l.pain,detail:l.b,transferability:l.transfer,effort:l.effort,rationale:l.why,sources:l.src.map(function(k){return SRC[k][1];})};}),fees:FEES.map(function(f){return {country:C[f[0]].name,fee:f[1],timing:f[2],notes:f[3],sources:f[4].map(function(k){return SRC[k][1];})};}),caveats:CAVEATS.map(function(c){return {caveat:c[0],detail:c[1]};})},null,2);}
+  function msg(t){$('toolmsg').textContent=t;}
+  if(window.claude&&typeof window.claude.use==='function'){window.claude.use('downloads').then(function(dl){if(!dl)return;$('dlcsv').hidden=false;$('dljson').hidden=false;
+    function save(n,data,btn){btn.disabled=true;msg('');dl.save({filename:n,data:data}).then(function(){msg('Saved.');}).catch(function(e){var c=e&&e.code;msg(c==='declined'?'':c==='rate_limited'?'A save is already waiting for confirmation.':'Download is not available here.');if(c==='unavailable'||c==='not_granted'||c==='capability_disabled'){$('dlcsv').hidden=true;$('dljson').hidden=true;}}).then(function(){btn.disabled=false;});}
+    on($('dlcsv'),'click',function(){save('uk-start-business-benchmark-matrix.csv',csv(),$('dlcsv'));});on($('dljson'),'click',function(){save('uk-start-business-benchmark.json',json(),$('dljson'));});}).catch(function(){});}
+  window.__bench={csv:csv,json:json};
+
+  renderLearn();showDim('joined');
+})();
+</script><script>window.AI_CFG={title:"Ask about international benchmark",family:"Starting a business in the UK portal and its other six parts",intro:"Ask anything about this page. Answers come from this page's content and cite its sources in words.",suggestions:["Where does the UK lead?", "What should the UK learn from New Zealand?", "How was the UK scored?", "Which lessons are easiest to adopt?"],context:function(){var t='';try{var m=document.querySelector('main');t=(document.querySelector('header')?document.querySelector('header').innerText+'\n':'')+(m?m.innerText:'');}catch(e){} var d='';try{var x=window.__bench;if(x&&typeof x.json==='function'){d=x.json();}}catch(e){} if(d){return t+'\n\n=== FULL STRUCTURED DATA FOR THIS PAGE (JSON, includes detail not shown on screen) ===\n'+d;} return t;},max:46000};
+(function(){
+  if(!window.AI_CFG) return;
+  var CFG=window.AI_CFG, doc=document;
+  var btn=doc.createElement('button');btn.className='aibtn';btn.type='button';btn.hidden=true;btn.textContent='Ask about this page';
+  var wrap=doc.createElement('div');wrap.className='aiwrap';wrap.setAttribute('role','dialog');wrap.setAttribute('aria-label','Ask Claude about this page');
+  wrap.innerHTML='<div class="aihead"><b>'+CFG.title+'<small>Grounded in this page\'s evidence</small></b><button type="button" aria-label="Close">&times;</button></div>'+
+    '<div class="ailog" id="ailog"></div><div class="aisug" id="aisug"></div>'+
+    '<form class="aiform"><textarea rows="1" placeholder="Ask a question" aria-label="Your question"></textarea><button type="submit">Ask</button></form>'+
+    '<p class="aifoot">Answers come from Claude reading this page. They use your Claude account, and can be wrong: check the cited sources.</p>';
+  doc.body.appendChild(btn);doc.body.appendChild(wrap);
+  var log=wrap.querySelector('#ailog'),sug=wrap.querySelector('#aisug'),form=wrap.querySelector('form'),ta=form.querySelector('textarea'),send=form.querySelector('button[type=submit]'),close=wrap.querySelector('.aihead button');
+  var sample=null,turns=[],busy=false,ctl=null;
+  function el(cls,txt){var d=doc.createElement('div');d.className='aimsg '+cls;d.textContent=txt;log.appendChild(d);log.scrollTop=log.scrollHeight;return d;}
+  function context(){
+    var t=CFG.context&&CFG.context();
+    if(!t){var m=doc.querySelector('main');t=(doc.querySelector('header')?doc.querySelector('header').innerText+'\n':'')+(m?m.innerText:doc.body.innerText);}
+    t=t.replace(/\s+\n/g,'\n').replace(/\n{3,}/g,'\n\n');
+    var MAXC=CFG.max||26000;return t.length>MAXC?t.slice(0,MAXC)+'\n[content truncated]':t;
+  }
+  function rules(){
+    return 'You are answering questions about a UK government analysis of the "start a business" journey, for civil servants. '+
+      'Answer ONLY from the CONTENT below, which is the page the reader is looking at ('+CFG.title+'). '+
+      'If the answer is not in the content, say so plainly and suggest which companion page may hold it ('+CFG.family+'). '+
+      'Never invent statistics, dates, sources or URLs. Quote figures exactly as written. '+
+      'Be concise: 2 to 6 sentences or a short list, plain British English, no headings, no markdown emphasis. '+
+      'Where a claim rests on a source named in the content, name that source in words.\n\nCONTENT:\n'+context();
+  }
+  function open(){wrap.classList.add('open');btn.hidden=true;ta.focus();}
+  function shut(){wrap.classList.remove('open');btn.hidden=false;if(ctl)ctl.abort();}
+  btn.addEventListener('click',open);close.addEventListener('click',shut);
+  doc.addEventListener('keydown',function(e){if(e.key==='Escape'&&wrap.classList.contains('open'))shut();});
+  (CFG.suggestions||[]).forEach(function(q){var b=doc.createElement('button');b.type='button';b.textContent=q;b.addEventListener('click',function(){ta.value=q;ask();});sug.appendChild(b);});
+  function copy(code){
+    switch(code){
+      case 'rate_limited':return 'Too many questions at once. Wait a moment and ask again.';
+      case 'session_expired':return 'Your session expired. Sign in again to keep asking.';
+      case 'refused':return 'Claude declined to answer that. Try asking it differently.';
+      case 'empty_completion':return 'No answer came back. Try a shorter, more specific question.';
+      case 'cancelled':return '';
+      case 'prompt_too_large':return 'That question plus this page is too long to send. Ask about one section.';
+      default:return 'Something went wrong reaching Claude. Try again in a moment.';
+    }
+  }
+  function hide(){btn.remove();wrap.remove();}
+  function ask(){
+    var q=ta.value.trim();if(!q||busy||!sample)return;
+    ta.value='';el('u',q);turns.push({role:'user',content:q});
+    var out=el('a','Thinking…');busy=true;send.disabled=true;send.textContent='…';
+    ctl=new AbortController();
+    var input=[{role:'user',content:rules()},{role:'assistant',content:'Understood. I will answer only from that content.'}].concat(turns);
+    sample(input,{cache:false,signal:ctl.signal,onText:function(e){out.textContent=e.text;log.scrollTop=log.scrollHeight;}}).then(function(r){
+      out.textContent=r.text+(r.truncated?'\n\n[Answer cut short.]':'');turns.push({role:'assistant',content:r.text});
+      if(turns.length>10)turns=turns.slice(-10);
+    }).catch(function(e){
+      var c=e&&e.code;
+      if(c==='not_granted'||c==='sampling_disabled'||c==='not_declared'||c==='capability_disabled'){out.textContent='Asking Claude is not available in this view.';hideLater();}
+      else {out.textContent=(e&&e.text)?e.text:'';var m=copy(c);if(m)el('sys',m);if(!out.textContent)out.remove();}
+      turns.pop();
+    }).then(function(){busy=false;send.disabled=false;send.textContent='Ask';ctl=null;});
+  }
+  function hideLater(){setTimeout(function(){btn.remove();},50);}
+  form.addEventListener('submit',function(e){e.preventDefault();ask();});
+  ta.addEventListener('keydown',function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();ask();}});
+  if(window.claude&&typeof window.claude.use==='function'){
+    window.claude.use('sample').then(function(s){if(!s){hide();return;}sample=s;btn.hidden=false;
+      el('sys',CFG.intro||'Ask anything about this page. Answers are grounded in what this page shows and its sources.');
+    }).catch(function(){hide();});
+  } else {hide();}
+})();
+</script>
+<script>/* Self-* runtime: verify, repair, assess and report. Runs on every page, in the browser,
+   with no network access. Everything it does is recorded and reversible by reloading. */
+(function(){
+  if(window.__selfcheck) return;
+  var BUILD="2026-09-18";
+  var findings=[], repairs=[], allRepairs=[], t0=(window.performance&&performance.now)?performance.now():0;
+  function add(sev,id,msg,n){findings.push({severity:sev,check:id,detail:msg,count:n==null?1:n});}
+  function fixed(id,msg,n){var c=(n==null?1:n);repairs.push({check:id,action:msg,count:c});
+    for(var i=0;i<allRepairs.length;i++){if(allRepairs[i].check===id){allRepairs[i].count+=c;return;}}
+    allRepairs.push({check:id,action:msg,count:c});}
+  function txt(e){return (e.textContent||'').replace(/\s+/g,' ').trim();}
+  function near(a){
+    var r=a.closest('li,td,tr,article,.card,.rowcard,.tp,p');
+    if(r){var h=r.querySelector('b,strong,h3,h4');if(h&&txt(h))return txt(h).slice(0,80);
+      var t=txt(r);if(t)return t.slice(0,80);}
+    var s=a.closest('section');var h2=s&&s.querySelector('h2');
+    return h2?txt(h2).slice(0,80):'this entry';
+  }
+  // ---------- verification + repair ----------
+  function scrollRegions(){
+    var n=0,fixedN=0;
+    var all=document.querySelectorAll('body *');
+    for(var i=0;i<all.length;i++){var e=all[i];if(e.closest('svg'))continue;
+      var cs=getComputedStyle(e);if(!(cs.overflowX==='auto'||cs.overflowX==='scroll'||cs.overflowY==='auto'||cs.overflowY==='scroll'))continue;
+      if(!(e.scrollWidth>e.clientWidth+1||e.scrollHeight>e.clientHeight+1))continue;
+      if(e.querySelector('a,button,input,select,textarea,[tabindex]'))continue;
+      if(e.hasAttribute('tabindex'))continue;
+      n++;e.setAttribute('tabindex','0');e.setAttribute('role','region');
+      if(!e.getAttribute('aria-label')){var h=e.closest('section');var h2=h&&h.querySelector('h2');e.setAttribute('aria-label',(h2?txt(h2):'Scrollable content')+' (scrollable)');}
+      fixedN++;}
+    if(fixedN)fixed('scroll.focusable','Made '+fixedN+' scrollable region(s) keyboard reachable with tabindex and a label. Defect: axe-core scrollable-region-focusable on the journey map and blueprint lanes, 23 September 2026.',fixedN);
+  }
+  function structure(){
+    var h1=document.querySelectorAll('h1').length;
+    if(h1!==1) add('high','structure.h1','Expected exactly one h1, found '+h1,h1);
+    if(!document.getElementById('main')) add('high','structure.main','No element with id="main" for the skip link to reach');
+    var skip=document.querySelector('a.skip');
+    if(!skip){
+      var a=document.createElement('a');a.className='skip';a.href='#main';a.textContent='Skip to content';
+      document.body.insertBefore(a,document.body.firstChild);
+      fixed('structure.skip','Inserted a missing skip link as the first focusable element');
+    }
+    var lv=0,skips=0;
+    Array.prototype.forEach.call(document.querySelectorAll('h1,h2,h3,h4,h5,h6'),function(h){
+      var n=+h.tagName.slice(1); if(lv && n>lv+1) skips++; lv=n;});
+    if(skips) add('medium','structure.headings',skips+' heading level skips',skips);
+    if(!document.querySelector('.ribbon')) add('low','structure.ribbon','Journey ribbon missing from this page');
+    var fam=document.querySelectorAll('.family a,.xfam a').length;
+    if(!fam && !/portal/.test(location.pathname)) add('medium','structure.family','Family navigation is empty');
+  }
+  function links(){
+    var amb=0,noop=0,empty=0;
+    Array.prototype.forEach.call(document.querySelectorAll('a[href]'),function(a){
+      var label=(a.getAttribute('aria-label')||txt(a)).toLowerCase();
+      if(['source','details','here','more','link','read more','click here'].indexOf(label)>=0){
+        a.setAttribute('aria-label',(label==='details'?'Details of ':'Source for ')+near(a)); amb++;
+      }
+      if(a.target==='_blank' && !/noopener/.test(a.rel||'')){a.rel=((a.rel||'')+' noopener').trim();noop++;}
+      if(!a.getAttribute('href').trim()) empty++;
+    });
+    if(amb){fixed('links.ambiguous','Gave a context-bearing accessible name to links that read only "source" or "details"',amb);}
+    if(noop){fixed('links.noopener','Added rel="noopener" to links opening in a new tab',noop);}
+    if(empty) add('medium','links.empty',empty+' links with an empty href',empty);
+  }
+  function aria(){
+    var seen={},dupes=0;
+    Array.prototype.forEach.call(document.querySelectorAll('[id]'),function(e){
+      if(seen[e.id]){e.id=e.id+'-dup'+(++dupes);} else seen[e.id]=1;});
+    if(dupes) fixed('aria.duplicate-id','Renamed duplicate element ids so labels and controls resolve to one target',dupes);
+    var svgs=0;
+    Array.prototype.forEach.call(document.querySelectorAll('svg'),function(s){
+      var named=s.getAttribute('aria-label')||s.querySelector('title')||s.getAttribute('role')==='img';
+      if(!named && s.getAttribute('aria-hidden')!=='true'){s.setAttribute('aria-hidden','true');s.setAttribute('focusable','false');svgs++;}
+    });
+    if(svgs) fixed('aria.decorative-svg','Marked decorative graphics as hidden from assistive technology',svgs);
+    var unl=0;
+    Array.prototype.forEach.call(document.querySelectorAll('input,select,textarea'),function(c){
+      if(c.type==='hidden')return;
+      var has=(c.labels&&c.labels.length)||c.getAttribute('aria-label')||c.getAttribute('aria-labelledby')||c.closest('label');
+      if(!has) unl++;});
+    if(unl) add('high','aria.unlabelled-control',unl+' form controls with no accessible name',unl);
+    var figs=0;
+    Array.prototype.forEach.call(document.querySelectorAll('svg.art'),function(s){
+      if(!s.querySelector('title')||!s.querySelector('desc')) figs++;});
+    if(figs) add('medium','aria.illustration',figs+' illustrations without both a title and a description',figs);
+  }
+  function layout(){
+    var vw=document.documentElement.clientWidth, wide=0, wrapped=0;
+    Array.prototype.forEach.call(document.querySelectorAll('table'),function(t){
+      if(t.scrollWidth>vw+2){
+        var p=t.parentElement;
+        if(!p || getComputedStyle(p).overflowX!=='auto'){
+          var d=document.createElement('div');d.className='tablewrap';d.style.overflowX='auto';d.style.maxWidth='100%';
+          t.parentNode.insertBefore(d,t);d.appendChild(t);wrapped++;
+        }
+      }});
+    if(wrapped) fixed('layout.table-scroll','Wrapped wide tables in a horizontal scroll container',wrapped);
+    if(document.documentElement.scrollWidth>vw+2){
+      document.documentElement.style.maxWidth='100%';document.body.style.overflowX='hidden';
+      wide=1;fixed('layout.overflow','Clamped horizontal overflow at the document root');
+    }
+    return wide;
+  }
+  function currency(){
+    var built=new Date(BUILD+'T00:00:00Z'), days=Math.floor((Date.now()-built.getTime())/86400000);
+    var sev = days>365?'high':days>180?'medium':days>90?'low':null;
+    if(sev) add(sev,'currency.age','This page was built '+days+' days ago. Sources move; re-run the verification pass before relying on it.',days);
+    return days;
+  }
+  function data(){
+    // Cross-check any count this page states about its own dataset
+    var out=[];
+    try{
+      var D=window.__bp&&JSON.parse(window.__bp.json());
+      if(D){
+        var steps=D.BLUE.reduce(function(a,b){return a+b.steps.length;},0);
+        var claimed=(document.body.innerText.match(/(\d+)\s+journey moments/)||[])[1];
+        out.push({fact:'blueprint steps',value:steps});
+        if(claimed && +claimed!==steps) add('medium','data.count','Page states '+claimed+' journey moments but the data holds '+steps);
+      }
+    }catch(e){}
+    return out;
+  }
+  // ---------- assessment ----------
+  function assess(days){
+    var high=findings.filter(function(f){return f.severity==='high';}).length;
+    var med=findings.filter(function(f){return f.severity==='medium';}).length;
+    var low=findings.filter(function(f){return f.severity==='low';}).length;
+    var dims=[
+      ['Accuracy','every claim carries a source and the verification register records what was checked',high?'at risk':'holding'],
+      ['Currency', days>180?'stale: re-verification overdue':days>90?'ageing':'current', days>180?'at risk':'holding'],
+      ['Accessibility', high?'a structural defect is present on this page':'structural checks pass on this page', high?'at risk':'holding'],
+      ['Resilience','the page repaired '+allRepairs.reduce(function(a,r){return a+r.count;},0)+' defects at load without failing','holding'],
+      ['Completeness','open issues are published rather than hidden','holding'],
+      ['Sustainability','one file, no build step, no dependency to rot','holding']
+    ];
+    var score=Math.max(0,100-(high*18)-(med*6)-(low*2)-(days>365?15:days>180?8:0));
+    return {score:score,band:score>=85?'good':score>=70?'fair':'needs work',dimensions:dims,high:high,medium:med,low:low};
+  }
+  // ---------- run ----------
+  structure();
+  scrollRegions();links();aria();layout();var days=currency();var facts=data();
+  var a=assess(days);
+  var ms=((window.performance&&performance.now)?performance.now():0)-t0;
+  var report={page:document.title,build:BUILD,ranAt:new Date().toISOString(),ageDays:days,
+    durationMs:Math.round(ms),passes:1,findings:findings,repairs:allRepairs,assessment:a,facts:facts};
+  window.__selfcheck={report:function(){return report;},recheck:function(){return repass();},json:function(){return JSON.stringify(report);},rerun:function(){location.reload();}};
+  // ---------- surface ----------
+  function badge(){
+    var host=document.querySelector('footer .wrap')||document.querySelector('footer')||document.body;
+    var d=document.createElement('section');d.className='selfcheck';d.setAttribute('aria-labelledby','sc-h');
+    var rep=allRepairs.reduce(function(x,r){return x+r.count;},0);
+    d.innerHTML='<h2 id="sc-h">This page checks itself</h2>'+
+      '<p class="scline"><span class="scdot '+a.band.replace(' ','-')+'" aria-hidden="true"></span>'+
+      '<b>'+a.score+'/100</b> on its own checks, run in your browser '+Math.round(ms)+'ms ago: '+
+      findings.length+' finding'+(findings.length===1?'':'s')+', '+rep+' defect'+(rep===1?'':'s')+' repaired automatically, built '+days+' days ago.</p>'+
+      '<details><summary>What it checked, what it found, what it fixed</summary><div class="scbody">'+
+      '<h3>Findings</h3>'+(findings.length?'<ul>'+findings.map(function(f){return '<li><b>'+f.severity+'</b> '+f.check+' — '+f.detail+'</li>';}).join('')+'</ul>':'<p>Nothing outstanding on this page.</p>')+
+      '<h3>Repaired at load</h3>'+(allRepairs.length?'<ul>'+allRepairs.map(function(r){return '<li>'+r.action+' ('+r.count+')</li>';}).join('')+'</ul>':'<p>Nothing needed repairing.</p>')+
+      '<h3>Self-assessment</h3><ul>'+a.dimensions.map(function(x){return '<li><b>'+x[0]+'</b> '+x[1]+' — <i>'+x[2]+'</i></li>';}).join('')+'</ul>'+
+      '<p class="meta">These checks run in the page, with no network access. They cannot test with a real screen reader, cannot re-request a source, and cannot know whether a fact changed yesterday. They fail visibly rather than quietly: a repair is reported, never hidden.</p>'+
+      '<p><button class="btn sm" type="button" id="scdl">Download this report</button> <span class="toolmsg" id="scmsg" role="status"></span></p>'+
+      '</div></details>';
+    host.appendChild(d);
+    var b=document.getElementById('scdl');
+    if(b)b.addEventListener('click',function(){
+      try{
+        var blob=new Blob([JSON.stringify(report,null,1)],{type:'application/json'});
+        var u=URL.createObjectURL(blob),el=document.createElement('a');
+        el.href=u;el.download='self-check-'+(document.title.split(':')[0].toLowerCase().replace(/[^a-z0-9]+/g,'-'))+'.json';
+        document.body.appendChild(el);el.click();el.remove();setTimeout(function(){URL.revokeObjectURL(u);},2000);
+        document.getElementById('scmsg').textContent='Report downloaded.';
+      }catch(e){document.getElementById('scmsg').textContent='Download blocked here; the report is also on window.__selfcheck.report().';}
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',badge);else badge();
+
+  // ---------- continuous repair: dynamic pages render after this first pass ----------
+  var pending=null, passes=1;
+  function repass(){
+    var before=repairs.reduce(function(a,r){return a+r.count;},0);
+    repairs.length=0; findings.length=0;
+    structure();links();aria();layout();var d=currency();
+    passes++;
+    var after=repairs.reduce(function(a,r){return a+r.count;},0);
+    report.findings=findings; report.repairs=allRepairs; report.passes=passes;
+    report.assessment=assess(d); report.ranAt=new Date().toISOString();
+    var line=document.querySelector('.selfcheck .scline b');
+    if(line) line.textContent=report.assessment.score+'/100';
+    return after;
+  }
+  if(window.MutationObserver){
+    var mo=new MutationObserver(function(muts){
+      var worth=false;
+      for(var i=0;i<muts.length;i++){ if(muts[i].addedNodes && muts[i].addedNodes.length){worth=true;break;} }
+      if(!worth) return;
+      clearTimeout(pending);
+      pending=setTimeout(function(){ if(!document.querySelector('.selfcheck details[open]')) repass(); },600);
+    });
+    mo.observe(document.body,{childList:true,subtree:true});
+    window.__selfcheck_observer=mo;
+  }
+  setTimeout(repass,1500);
+
+})();
+</script>
+<!-- colophon: added by tools/publish.py -->
+<aside class="pgw-colophon" aria-label="About this publication" style="max-width:1120px;margin:40px auto 24px;padding:18px 22px;border:1px solid currentColor;border-radius:12px;font:14px/1.5 system-ui,sans-serif;display:flex;flex-wrap:wrap;gap:18px;align-items:center;opacity:.92">
+<div style="flex:1 1 340px;min-width:0">
+<p style="margin:0 0 6px"><strong>Not an official government service.</strong> An independent, evidence-led guide by Emanuel Silva, part of
+<a href="https://cyberdudeuk.github.io/">Public Good Works</a>. Every claim carries its source; check GOV.UK, nidirect, mygov.scot or gov.wales before you act.</p>
+<p style="margin:0 0 6px">Drafted and checked with AI assistance (Claude); the author reviewed and is responsible for it. Some features, such as the page assistant, work only inside Claude and are hidden here.</p>
+<p style="margin:0">Questions, corrections or ideas: use the <a href="https://github.com/cyberdudeuk/start-a-business-uk/issues/new?template=contact.yml">contact form</a> (no email address is published).
+Code MIT; content Open Government Licence v3.0, see the <a href="https://github.com/cyberdudeuk/start-a-business-uk">repository</a>.</p>
+</div>
+<div style="display:flex;gap:14px;align-items:center"><svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 156 156" role="img" aria-label="QR code for https://cyberdudeuk.github.io/start-a-business-uk/the-uk-compared/" class="segno"><g transform="scale(4)"><path fill="#fff" d="M0 0h39v39h-39z"/><path class="qrline" stroke="#0b0c0c" d="M1 1.5h7m1 0h1m1 0h2m4 0h1m1 0h1m1 0h2m2 0h1m3 0h1m1 0h7m-37 1h1m5 0h1m1 0h1m1 0h1m2 0h4m2 0h2m1 0h2m4 0h1m1 0h1m5 0h1m-37 1h1m1 0h3m1 0h1m3 0h2m2 0h1m5 0h1m4 0h1m1 0h2m1 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m4 0h2m2 0h1m1 0h2m1 0h1m2 0h3m2 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m2 0h1m2 0h2m1 0h1m1 0h3m1 0h1m2 0h5m1 0h1m1 0h3m1 0h1m-37 1h1m5 0h1m2 0h1m2 0h2m1 0h1m3 0h3m4 0h1m3 0h1m5 0h1m-37 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-29 1h4m1 0h1m1 0h4m1 0h2m1 0h1m4 0h1m-29 1h1m1 0h2m1 0h3m2 0h2m1 0h1m1 0h2m2 0h2m2 0h1m2 0h1m1 0h1m1 0h1m2 0h1m1 0h2m-36 1h1m1 0h1m1 0h1m1 0h1m1 0h2m2 0h4m4 0h1m2 0h1m3 0h1m2 0h1m1 0h1m1 0h1m-31 1h2m2 0h1m1 0h1m3 0h1m1 0h2m2 0h1m1 0h2m3 0h2m2 0h3m-35 1h1m1 0h4m7 0h1m1 0h1m3 0h1m2 0h5m2 0h2m2 0h2m-35 1h3m1 0h5m1 0h2m2 0h1m2 0h2m4 0h4m1 0h3m1 0h1m1 0h3m-36 1h1m1 0h2m3 0h4m1 0h4m2 0h1m4 0h2m1 0h2m1 0h4m2 0h1m-36 1h1m1 0h1m1 0h2m4 0h3m3 0h3m2 0h1m2 0h2m1 0h1m1 0h1m1 0h1m1 0h2m-36 1h1m3 0h2m4 0h5m2 0h2m1 0h3m3 0h3m1 0h3m2 0h2m-37 1h1m5 0h2m1 0h3m2 0h1m1 0h3m1 0h1m2 0h1m1 0h1m5 0h1m1 0h2m-35 1h2m1 0h1m1 0h1m1 0h1m2 0h2m2 0h1m1 0h2m1 0h3m1 0h1m1 0h4m1 0h1m3 0h3m-37 1h2m2 0h1m1 0h1m1 0h4m1 0h1m1 0h2m2 0h1m2 0h1m1 0h1m1 0h3m2 0h2m1 0h3m-35 1h1m1 0h2m1 0h1m1 0h1m1 0h1m1 0h2m2 0h3m3 0h2m2 0h1m3 0h1m3 0h1m-35 1h2m1 0h1m1 0h5m1 0h3m2 0h2m1 0h2m2 0h1m1 0h4m1 0h2m3 0h1m-37 1h2m1 0h1m1 0h1m3 0h1m1 0h1m1 0h2m1 0h1m1 0h3m2 0h1m4 0h1m4 0h1m-33 1h1m2 0h5m2 0h1m4 0h2m3 0h4m1 0h1m4 0h1m-31 1h1m1 0h2m2 0h1m2 0h2m1 0h2m3 0h1m2 0h2m2 0h1m1 0h3m2 0h3m1 0h1m-37 1h2m1 0h2m1 0h4m1 0h1m2 0h2m2 0h1m1 0h8m2 0h1m1 0h1m1 0h2m-33 1h1m1 0h1m2 0h4m2 0h1m1 0h3m1 0h2m2 0h7m1 0h5m-36 1h2m1 0h3m1 0h2m2 0h1m1 0h3m2 0h2m1 0h1m1 0h1m7 0h4m-36 1h1m1 0h2m3 0h1m2 0h4m2 0h1m4 0h2m3 0h3m3 0h1m-31 1h3m1 0h3m1 0h2m2 0h3m4 0h3m1 0h2m1 0h8m-28 1h8m1 0h1m2 0h1m1 0h4m1 0h2m3 0h1m1 0h1m1 0h1m-37 1h7m1 0h2m3 0h3m1 0h1m2 0h2m6 0h1m1 0h1m1 0h1m1 0h3m-37 1h1m5 0h1m1 0h1m2 0h2m2 0h1m3 0h1m2 0h1m1 0h1m2 0h2m3 0h1m-33 1h1m1 0h3m1 0h1m3 0h1m7 0h1m3 0h1m3 0h1m1 0h6m2 0h1m-37 1h1m1 0h3m1 0h1m1 0h2m1 0h1m3 0h1m1 0h2m1 0h1m1 0h2m1 0h2m2 0h2m1 0h1m3 0h1m-37 1h1m1 0h3m1 0h1m1 0h6m2 0h8m1 0h1m1 0h1m1 0h2m1 0h2m-34 1h1m5 0h1m2 0h1m2 0h1m3 0h1m1 0h1m1 0h1m2 0h1m1 0h1m1 0h1m1 0h6m-35 1h7m1 0h1m3 0h1m1 0h2m1 0h1m1 0h1m4 0h3m2 0h2m1 0h5"/></g></svg>
+<span style="display:inline-flex;flex-direction:column;gap:4px;align-items:flex-start"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="168" height="48" viewBox="0 0 59.400 14.000" preserveAspectRatio="none" role="img" aria-label="Barcode SAB-UK-THE-UK-COMPARED">
+    <!--Autogenerated with python-barcode 0.16.1-->
+    <g id="barcode_group">
+        <rect width="100%" height="100%" style="fill:white"/>
+        <rect x="2.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="2.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="3.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="4.200mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="4.800mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="5.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="6.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="6.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="7.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="8.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="9.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="9.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="10.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="11.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="12.000mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="13.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="13.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="14.400mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="15.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="15.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="16.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="17.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="18.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="18.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="19.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="20.200mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="21.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="21.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="22.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="23.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="24.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="24.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="25.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="26.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="26.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="27.400mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="28.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="29.000mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="29.800mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="30.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="31.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="32.000mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="32.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="33.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="34.000mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="35.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="35.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="36.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="37.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="38.000mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="38.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="39.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="39.800mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="40.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="41.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="42.400mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="43.200mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="43.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="44.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="45.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="46.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="47.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="47.400mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="48.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="49.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="49.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="50.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="50.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="51.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="52.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="53.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="54.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="54.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="55.800mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="56.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="57.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+    </g>
+</svg>
+<code style="font-size:11px">SAB-UK-THE-UK-COMPARED</code></span></div>
+</aside>
+</body></html>

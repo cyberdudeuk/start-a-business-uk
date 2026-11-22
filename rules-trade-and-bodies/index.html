@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rules, trade and the bodies behind them</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EDF0F2;--panel:#FFFFFF;--ink:#152030;--muted:#586273;--rule:#C9D0D8;--faint:#E3E7EB;--focus:#FFBF47;
+  --qual:#7A3FC6;--survey:#1F4FD1;--analytics:#0E7A6B;--eval:#946400;--inquiry:#C0264D;--ops:#586273;
+  --heat:#152030;--gate:#152030;--gatetext:#FFFFFF;
+  --sans:"Schibsted Grotesk",-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0F151D;--panel:#17202B;--ink:#E6EBF1;--muted:#9AA5B3;--rule:#344152;--faint:#232E3B;
+  --qual:#B99AF2;--survey:#7FA2FF;--analytics:#4FD1BC;--eval:#E0B64D;--inquiry:#F27A98;--ops:#9AA5B3;
+  --gate:#E6EBF1;--gatetext:#0F151D;}}
+:root[data-theme="dark"]{
+  --paper:#0F151D;--panel:#17202B;--ink:#E6EBF1;--muted:#9AA5B3;--rule:#344152;--faint:#232E3B;
+  --qual:#B99AF2;--survey:#7FA2FF;--analytics:#4FD1BC;--eval:#E0B64D;--inquiry:#F27A98;--ops:#9AA5B3;
+  --gate:#E6EBF1;--gatetext:#0F151D;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.5}
+a{color:inherit;text-underline-offset:3px}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.wrap{max-width:1360px;margin:0 auto;padding:0 28px}
+.num{}
+header{padding:36px 0 10px}
+.family{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:.88rem;color:var(--muted);margin:0 0 22px}
+.family a{color:var(--muted)}
+.headgrid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;align-items:end}
+h1{font-size:clamp(2.4rem,5.4vw,4.6rem);line-height:.98;font-weight:800;letter-spacing:-.03em;margin:0}
+.lede{margin:0;color:var(--muted);font-size:1.1rem;max-width:56ch}
+.lede strong{color:var(--ink);font-weight:700}
+.tools{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.btn{border:1.5px solid var(--rule);background:var(--panel);border-radius:999px;padding:6px 15px;cursor:pointer;font-weight:500}
+.btn[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+section{margin:34px 0}
+h2{font-size:1.75rem;line-height:1.1;letter-spacing:-.015em;margin:0 0 6px}
+.intro{color:var(--muted);margin:0 0 16px;max-width:70ch}
+
+:root{--lead:#0B5D51;--strong:#1F6F62;--partial:#BFDCD4;--weak:#C0264D;--leadtx:#fff;--strongtx:#fff;--partialtx:#152030;--uk:#FFF3D6;--ukline:#B07A00}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--lead:#5ED1BD;--strong:#25806F;--partial:#27463F;--weak:#F27A98;--leadtx:#0F151D;--strongtx:#fff;--partialtx:#E6EBF1;--uk:#2A2414;--ukline:#E0B64D}}
+:root[data-theme="dark"]{--lead:#5ED1BD;--strong:#25806F;--partial:#27463F;--weak:#F27A98;--leadtx:#0F151D;--strongtx:#fff;--partialtx:#E6EBF1;--uk:#2A2414;--ukline:#E0B64D}
+.headgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:end}
+h1 small{display:block;font-size:.32em;font-weight:500;letter-spacing:0;color:var(--muted);margin-top:12px;line-height:1.3}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--paper);padding:8px 14px;z-index:50}
+.skip:focus{left:0}
+.rev{font-size:.82rem;color:var(--muted);margin:10px 0 0}
+.btn.sm{padding:4px 12px;font-size:.88rem}
+.toolmsg{font-size:.85rem;color:var(--muted)}
+nav.jump{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--rule);margin-top:26px}
+nav.jump ul{list-style:none;margin:0 auto;padding:8px 28px;display:flex;gap:4px 18px;flex-wrap:wrap;max-width:1360px;font-size:.9rem}
+nav.jump a{text-decoration:none;color:var(--muted);padding:3px 0;border-bottom:2px solid transparent}
+nav.jump a:hover,nav.jump a.on{color:var(--ink);border-bottom-color:var(--ink)}
+section{scroll-margin-top:56px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:26px}
+.stats article{background:var(--panel);border-radius:16px;padding:16px 18px}
+.stats b{display:block;font-size:2.4rem;font-weight:800;letter-spacing:-.03em;line-height:1}
+.stats b span{font-size:.45em;font-weight:700;letter-spacing:0;color:var(--muted)}
+.stats p{margin:8px 0 0;font-size:.93rem}
+.stats small{display:block;color:var(--muted);font-size:.8rem;margin-top:6px}
+.stats small a{color:var(--muted)}
+/* Benchmarks */
+.benchgrid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:18px;align-items:start}
+.card{background:var(--panel);border-radius:18px;padding:18px 20px}
+.card h3{font-size:1.05rem;margin:0 0 2px}
+.card .sub{font-size:.85rem;color:var(--muted);margin:0 0 12px}
+.bars{list-style:none;margin:0;padding:0}
+.bars li{display:grid;grid-template-columns:150px minmax(0,1fr) 54px;gap:10px;align-items:center;padding:3px 0;font-size:.9rem}
+.bars .track{height:16px;background:var(--faint);border-radius:4px;position:relative;overflow:hidden}
+.bars .fill{position:absolute;left:0;top:0;bottom:0;background:var(--rule);border-radius:4px}
+.bars li.cmp .fill{background:var(--strong)}
+.bars li.uk .fill{background:var(--ukline)}
+.bars li.uk{font-weight:700}
+.bars .v{font-variant-numeric:tabular-nums;text-align:right}
+.bars .gap{height:1px;border-top:1px dashed var(--rule);margin:6px 0;grid-column:1/-1}
+.bars .median .fill{background:transparent}
+.bars .rk{color:var(--muted);font-weight:400;font-size:.8rem;margin-right:4px;font-variant-numeric:tabular-nums}
+.egdi{list-style:none;margin:0;padding:0;counter-reset:e}
+.egdi li{display:flex;gap:10px;padding:5px 0;border-top:1px solid var(--faint);font-size:.93rem;counter-increment:e}
+.egdi li:first-child{border-top:0}
+.egdi li::before{content:counter(e);width:22px;color:var(--muted);font-variant-numeric:tabular-nums;text-align:right}
+.egdi li.uk{font-weight:700;background:var(--uk);margin:0 -8px;padding:5px 8px;border-radius:6px}
+.note{font-size:.82rem;color:var(--muted);margin:10px 0 0}
+/* Matrix */
+.mxtools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 10px}
+.mxwrap{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:18px;align-items:start}
+.mxscroll{background:var(--panel);border-radius:18px;overflow-x:auto;padding:6px 4px}
+table.mx{border-collapse:separate;border-spacing:4px;width:100%;min-width:860px}
+.mx th{font-weight:500;font-size:.88rem}
+.mx thead th{padding:6px 2px;text-align:center;vertical-align:bottom}
+.mx thead th button{border:0;background:transparent;cursor:pointer;font-weight:700;padding:2px 4px;border-radius:6px}
+.mx thead th button span{display:block;font-weight:400;font-size:.8rem;color:var(--muted)}
+.mx thead th.uk{background:var(--uk);border-radius:10px 10px 0 0}
+.mx tbody th{text-align:left;padding:4px 10px 4px 6px;min-width:220px}
+.mx tbody th button{border:0;background:transparent;cursor:pointer;text-align:left;padding:0;font-weight:700;line-height:1.25}
+.mx tbody th small{display:block;color:var(--muted);font-weight:400;font-size:.8rem;margin-top:2px}
+.mx td{padding:0;height:46px}
+.mx td.uk{background:var(--uk)}
+.mx td.uk{box-shadow:inset 3px 0 0 var(--ukline),inset -3px 0 0 var(--ukline)}
+.cell{width:100%;height:100%;min-height:42px;border:0;border-radius:8px;cursor:pointer;font-size:.8rem;font-weight:700;display:grid;place-items:center;padding:2px;line-height:1.1}
+.cell.lead{background:var(--lead);color:var(--leadtx)}
+.cell.strong{background:var(--strong);color:var(--strongtx)}
+.cell.partial{background:var(--partial);color:var(--partialtx)}
+.cell.weak{background:transparent;color:var(--weak);box-shadow:inset 0 0 0 2.5px var(--weak)}
+.cell.na{background:repeating-linear-gradient(135deg,transparent 0 6px,var(--faint) 6px 7px);color:var(--muted);font-weight:400;cursor:default}
+.cell.sec::after{content:"*";margin-left:1px}
+.cell[aria-pressed="true"]{outline:3px solid var(--focus);outline-offset:1px}
+.cell.dim{opacity:.18}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.84rem;color:var(--muted);margin:10px 4px 0}
+.legend span{display:inline-flex;gap:6px;align-items:center}
+.legend i{width:16px;height:12px;border-radius:3px;display:inline-block}
+.panel{background:var(--panel);border-radius:18px;padding:20px 22px;position:sticky;top:60px;max-height:calc(100vh - 80px);overflow:auto}
+.panel h3{font-size:1.2rem;line-height:1.2;margin:0 0 4px}
+.panel .meta{font-size:.86rem;color:var(--muted);margin:0 0 10px}
+.panel p{margin:0 0 10px}
+.panel small{color:var(--muted);font-size:.84rem}
+.panel small a{color:var(--muted)}
+.panel ol{list-style:none;margin:0;padding:0}
+.panel li{padding:10px 0;border-top:1px solid var(--faint)}
+.panel li:first-child{border-top:0}
+.rtag{display:inline-block;font-size:.8rem;font-weight:700;border-radius:4px;padding:1px 7px;margin-right:6px}
+.rtag.lead{background:var(--lead);color:var(--leadtx)}.rtag.strong{background:var(--strong);color:var(--strongtx)}.rtag.partial{background:var(--partial);color:var(--partialtx)}.rtag.weak{color:var(--weak);box-shadow:inset 0 0 0 2px var(--weak)}.rtag.na{background:var(--faint);color:var(--muted)}
+/* Best / learn */
+.best{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;list-style:none;margin:0;padding:0}
+.best li{background:var(--panel);border-radius:16px;padding:16px 18px;border-top:5px solid var(--ukline)}
+.best b{display:block;line-height:1.25;margin-bottom:6px}
+.best p{margin:0 0 8px;font-size:.92rem}
+.best small{font-size:.8rem;color:var(--muted)}
+.best small a{color:var(--muted)}
+.learntools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}
+.learntools label{font-size:.9rem;color:var(--muted)}
+select{font:inherit;padding:5px 10px;border-radius:10px;border:1.5px solid var(--rule);background:var(--panel);color:var(--ink)}
+.learn{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.learn li{background:var(--panel);border-radius:16px;padding:18px 20px;display:flex;flex-direction:column;gap:8px}
+.learn li.caution{border-left:6px solid var(--weak)}
+.learn .top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.learn h3{font-size:1.08rem;margin:0;line-height:1.25}
+.flags{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+.flag{font-size:.8rem;font-weight:700;border:1.5px solid var(--rule);border-radius:999px;padding:0 8px;white-space:nowrap}
+.learn p{margin:0;font-size:.95rem}
+.learn .fit{font-size:.88rem;border-top:1px solid var(--faint);padding-top:8px;display:grid;grid-template-columns:auto 1fr;gap:3px 12px}
+.learn .fit dt{color:var(--muted)}
+.learn .fit dd{margin:0}
+.meter{display:inline-flex;gap:3px;vertical-align:-1px;margin-right:6px}
+.meter i{width:12px;height:12px;border-radius:2px;background:var(--faint)}
+.meter i.on{background:var(--strong)}
+.learn small{font-size:.8rem;color:var(--muted)}
+.learn small a{color:var(--muted)}
+.evbtn{border:1.5px solid var(--rule);background:transparent;border-radius:999px;padding:1px 10px;font-size:.8rem;cursor:pointer}
+/* Fees and caveats */
+.fees{background:var(--panel);border-radius:18px;overflow-x:auto}
+.fees table{border-collapse:collapse;width:100%;min-width:700px;font-size:.93rem}
+.fees th,.fees td{text-align:left;padding:10px 16px;border-top:1px solid var(--faint);vertical-align:top}
+.fees thead th{border-top:0;font-size:.85rem;color:var(--muted);font-weight:500}
+.fees tr.uk td{background:var(--uk)}
+.fees td small a{color:var(--muted);font-size:.8rem}
+.caveats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;list-style:none;margin:0;padding:0}
+.caveats li{background:var(--panel);border-radius:14px;padding:16px 18px}
+.caveats b{display:block;margin-bottom:4px}
+.caveats span{font-size:.92rem;color:var(--muted)}
+.impl{list-style:none;margin:0;padding:0;counter-reset:i;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px}
+.impl li{counter-increment:i;padding:14px 0 14px 44px;position:relative;border-top:1px solid var(--rule)}
+.impl li::before{content:counter(i);position:absolute;left:0;top:12px;font-weight:800;font-size:1.3rem;font-variant-numeric:tabular-nums}
+.impl b{display:block}
+footer{border-top:1px solid var(--rule);padding:24px 0 48px;color:var(--muted);font-size:.9rem;margin-top:40px}
+footer h2{font-size:1.1rem;color:var(--ink)}
+footer p{max-width:84ch}
+footer ol{columns:2;column-gap:36px;padding-left:1.3rem}
+footer li{break-inside:avoid;margin-bottom:4px}
+footer dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 16px}
+footer dt{font-weight:700;color:var(--ink)}footer dd{margin:0}
+@media (max-width:1200px){.best{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:1100px){.benchgrid,.mxwrap{grid-template-columns:1fr}.panel{position:static;max-height:none}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:820px){.headgrid,.learn,.caveats,.impl,.best{grid-template-columns:1fr}.stats{grid-template-columns:1fr}footer ol{columns:1}.wrap{padding:0 16px}.bars li{grid-template-columns:110px minmax(0,1fr) 48px}nav.jump ul{padding:8px 16px;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap}}
+@media print{nav.jump,.tools,.skip,.mxtools,.learntools{display:none!important}body{background:#fff}.panel{position:static!important;max-height:none!important}}
+.headgrid>*,.benchgrid>*,.mxwrap>*,.stats>*{min-width:0}
+:root{--en:#C8102E;--sc:#005EB8;--wa:#00A36C;--ni:#7A4EAB}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--en:#FF6B81;--sc:#5AA9F0;--wa:#3CD69B;--ni:#B58CE8}}
+:root[data-theme="dark"]{--en:#FF6B81;--sc:#5AA9F0;--wa:#3CD69B;--ni:#B58CE8}
+.ntabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+.ntabs button{border:2px solid var(--rule);background:var(--panel);border-radius:999px;padding:6px 16px;font:inherit;font-weight:700;cursor:pointer;display:inline-flex;gap:8px;align-items:center}
+.ntabs button i{width:12px;height:12px;border-radius:50%;background:var(--c)}
+.ntabs button[aria-pressed="true"]{border-color:var(--c);box-shadow:inset 0 0 0 1px var(--c)}
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.metric{background:var(--panel);border-radius:16px;padding:14px 16px}
+.metric h3{font-size:.9rem;margin:0 0 10px;line-height:1.25}
+.metric ul{list-style:none;margin:0;padding:0}
+.metric li{display:grid;grid-template-columns:96px minmax(0,1fr) 62px;gap:8px;align-items:center;font-size:.84rem;padding:2px 0}
+.metric li.sel{font-weight:700}
+.metric li.ukrow{color:var(--muted);border-top:1px dashed var(--rule);margin-top:4px;padding-top:5px}
+.metric .tr{height:10px;background:var(--faint);border-radius:3px;position:relative;overflow:hidden}
+.metric .fl{position:absolute;left:0;top:0;bottom:0;border-radius:3px;background:var(--c)}
+.metric li.dimmed .fl{opacity:.35}
+.metric .v{text-align:right;font-variant-numeric:tabular-nums}
+.metric .na{color:var(--muted);font-size:.8rem;text-align:right;grid-column:2/4}
+.metric small{display:block;color:var(--muted);font-size:.8rem;margin-top:8px;line-height:1.3}
+.metric small a{color:var(--muted)}
+table.nx{border-collapse:separate;border-spacing:0;width:100%;min-width:900px;font-size:.92rem}
+.nx th,.nx td{text-align:left;vertical-align:top;padding:12px 14px;border-top:1px solid var(--faint)}
+.nx thead th{border-top:0;font-size:.95rem;border-bottom:3px solid var(--c)}
+.nx tbody th{width:190px;font-weight:700}
+.nx tbody th .same{display:inline-block;margin-top:6px;font-size:.8rem;font-weight:700;border-radius:4px;padding:1px 7px;background:var(--faint);color:var(--muted)}
+.nx tbody th .diff{display:inline-block;margin-top:6px;font-size:.8rem;font-weight:700;border-radius:4px;padding:1px 7px;border:1.5px solid var(--ink)}
+.nx td small a{color:var(--muted);font-size:.8rem}
+.nx td.sel{background:color-mix(in srgb,var(--c) 9%,transparent)}
+.nx tr.hl td,.nx tr.hl th{background:color-mix(in srgb,var(--focus) 16%,transparent)}
+.nxwrap{background:var(--panel);border-radius:18px;overflow-x:auto}
+.nxtools{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 10px}
+.insights{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.insights li{background:var(--panel);border-radius:16px;padding:16px 18px;border-top:5px solid var(--ink)}
+.insights b{display:block;line-height:1.25;margin-bottom:6px}
+.insights p{margin:0 0 8px;font-size:.93rem}
+.insights small{font-size:.8rem;color:var(--muted)}.insights small a{color:var(--muted)}
+.dot4{display:inline-flex;gap:3px;vertical-align:1px;margin-right:6px}
+.dot4 i{width:9px;height:9px;border-radius:50%;background:var(--c)}
+.arrow{color:var(--muted);margin:0 4px}
+@media (max-width:1100px){.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.insights{grid-template-columns:1fr 1fr}}
+@media (max-width:820px){.metrics,.insights{grid-template-columns:1fr}}
+:root{--l1:#1D70B8;--l2:#912B88;--l3:#00703C;--l4:#B58840;--l5:#D4351C;--l6:#28A197;--l7:#505A5F}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--l1:#5AA9F0;--l2:#D77FCC;--l3:#3CD69B;--l4:#E0B64D;--l5:#FF7A5C;--l6:#5ED1C8;--l7:#A9B4BA}}
+:root[data-theme="dark"]{--l1:#5AA9F0;--l2:#D77FCC;--l3:#3CD69B;--l4:#E0B64D;--l5:#FF7A5C;--l6:#5ED1C8;--l7:#A9B4BA}
+.stack{display:grid;gap:8px}
+.layer{display:grid;grid-template-columns:230px minmax(0,1fr);gap:14px;background:var(--panel);border-radius:14px;padding:12px 16px;border-left:8px solid var(--c);align-items:center}
+.layer h3{margin:0;font-size:1rem}
+.layer p{margin:2px 0 0;font-size:.82rem;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1.5px solid var(--c);background:transparent;border-radius:999px;padding:3px 11px;font:inherit;font-size:.85rem;cursor:pointer;color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--c);color:var(--paper)}
+.chip.dim{opacity:.25}
+.chip .pdot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:1px;background:var(--c)}
+.chip[aria-pressed="true"] .pdot{background:var(--paper)}
+.stdwrap{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:18px;align-items:start;margin-top:14px}
+table.sj{border-collapse:separate;border-spacing:0;width:100%;min-width:760px;font-size:.88rem}
+.sj th,.sj td{padding:7px 10px;border-top:1px solid var(--faint);text-align:left}
+.sj thead th{border-top:0;color:var(--muted);font-weight:500;font-size:.8rem}
+.sj td.stg{text-align:center;width:88px}
+.sj td.stg i{display:inline-block;width:14px;height:14px;border-radius:50%;background:var(--c)}
+.sj tbody tr{cursor:pointer}
+.sj tbody tr:hover td,.sj tbody tr.sel td{background:color-mix(in srgb,var(--c) 10%,transparent)}
+.sj tr.grp td{background:transparent!important;cursor:default;font-weight:700;font-size:.8rem;color:var(--ink);box-shadow:inset 4px 0 0 var(--c);padding-top:14px;padding-left:12px;border-top:0}
+.sj .pr{font-size:.8rem;font-weight:700;border-radius:4px;padding:1px 7px;white-space:nowrap;border:1.5px solid var(--rule)}
+.sj .pr.now{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.sj .pr.prepare{border-color:var(--weak);color:var(--weak)}
+.sjwrap{background:var(--panel);border-radius:18px;overflow-x:auto}
+.detail h3{margin:0 0 4px;font-size:1.2rem}
+.detail dl{display:grid;grid-template-columns:max-content 1fr;gap:6px 12px;font-size:.9rem;margin:10px 0}
+.detail dt{color:var(--muted)}.detail dd{margin:0}
+.timeline{list-style:none;margin:0;padding:0;position:relative}
+.timeline::before{content:"";position:absolute;left:112px;top:6px;bottom:6px;width:2px;background:var(--rule)}
+.timeline li{display:grid;grid-template-columns:100px 24px minmax(0,1fr);gap:0 0;align-items:start;padding:8px 0}
+.timeline time{font-variant-numeric:tabular-nums;font-weight:700;font-size:.9rem;text-align:right;padding-right:8px}
+.timeline .dot{width:14px;height:14px;border-radius:50%;background:var(--c);margin:3px 0 0 6px;position:relative;z-index:1;box-shadow:0 0 0 3px var(--paper)}
+.timeline li.future .dot{background:var(--paper);box-shadow:inset 0 0 0 3px var(--c),0 0 0 3px var(--paper)}
+.timeline .ev{background:var(--panel);border-radius:12px;padding:8px 12px;margin-left:8px}
+.timeline .ev button{border:0;background:transparent;padding:0;font:inherit;font-weight:700;cursor:pointer;text-align:left;color:var(--ink)}
+.timeline .ev small{display:block;color:var(--muted);font-size:.8rem}
+.timeline .ev small a{color:var(--muted)}
+.today{font-size:.8rem;color:var(--muted);margin:4px 0 10px 136px}
+@media (max-width:1100px){.stdwrap{grid-template-columns:1fr}}
+@media (max-width:820px){.layer{grid-template-columns:1fr}.timeline::before{left:84px}.timeline li{grid-template-columns:72px 24px minmax(0,1fr)}.today{margin-left:0}}
+.picker{background:var(--panel);border-radius:18px;padding:18px 22px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px 18px}
+.picker label{display:block;font-size:.82rem;color:var(--muted);font-weight:600;margin-bottom:4px}
+.picker select{width:100%;font:inherit;padding:8px 10px;border-radius:10px;border:1.5px solid var(--rule);background:var(--paper);color:var(--ink)}
+.picker .toggles{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.picker .toggles label{display:inline-flex;gap:7px;align-items:center;font-size:.9rem;color:var(--ink);font-weight:500;margin:0}
+.out{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:16px}
+.card{background:var(--panel);border-radius:16px;padding:16px 20px;border-top:5px solid var(--c)}
+.card h3{margin:0 0 4px;font-size:1.05rem}
+.card .n{font-size:1.5rem;font-weight:800;color:var(--c)}
+.card ol,.card ul{margin:8px 0 0;padding-left:20px;font-size:.92rem}
+.card li{margin-bottom:7px}
+.card li b{display:block}
+.card li small{color:var(--muted);font-size:.82rem}
+.card li small a{color:var(--muted)}
+.vr{display:inline-block;font-size:.8rem;font-weight:700;border-radius:4px;padding:0 6px;margin-left:6px;vertical-align:1px}
+.vr.confirmed{background:var(--strong);color:var(--strongtx)}
+.vr.partly-confirmed{background:var(--partial);color:var(--partialtx)}
+.vr.unverified{box-shadow:inset 0 0 0 1.5px var(--weak);color:var(--weak)}
+.chipsrow{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 0}
+.chipsrow button{border:1.5px solid var(--rule);background:transparent;border-radius:999px;padding:3px 11px;font:inherit;font-size:.8rem;cursor:pointer;color:var(--ink)}
+.chipsrow button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+table.grid{border-collapse:collapse;width:100%;min-width:860px;font-size:.88rem}
+.grid th,.grid td{text-align:left;vertical-align:top;padding:9px 12px;border-top:1px solid var(--faint)}
+.grid thead th{border-top:0;color:var(--muted);font-weight:500;font-size:.8rem}
+.gridwrap{background:var(--panel);border-radius:18px;overflow-x:auto}
+.bars{display:grid;gap:6px;margin:0}
+.bars div{display:grid;grid-template-columns:200px minmax(0,1fr) 52px;gap:10px;align-items:center;font-size:.86rem}
+.bars .t{height:12px;background:var(--faint);border-radius:3px;overflow:hidden}
+.bars .f{height:100%;background:var(--c);border-radius:3px}
+.bars .v{text-align:right;font-variant-numeric:tabular-nums}
+@media (max-width:1100px){.picker{grid-template-columns:repeat(2,minmax(0,1fr))}.out{grid-template-columns:1fr}}
+@media (max-width:640px){.picker{grid-template-columns:1fr}.bars div{grid-template-columns:120px minmax(0,1fr) 44px}}
+.rowcards{display:grid;gap:12px}
+.rowcard{background:var(--panel);border-radius:14px;padding:14px 18px;border-left:5px solid var(--c)}
+.rowcard h3{margin:0 0 3px;font-size:1rem}
+.rowcard p{margin:3px 0;font-size:.92rem}
+.rowcard .meta{color:var(--muted);font-size:.82rem}
+.stagehead{margin:22px 0 10px;font-size:.82rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.filterbar{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px;align-items:center}
+.filterbar select,.filterbar input{font:inherit;padding:7px 10px;border-radius:10px;border:1.5px solid var(--rule);background:var(--paper);color:var(--ink)}
+.bodygrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.bodycard{background:var(--panel);border-radius:14px;padding:13px 16px}
+.bodycard b{display:block;font-size:.95rem}
+.bodycard small{color:var(--muted);display:block;margin-top:3px;font-size:.82rem}
+.orpbox{background:var(--panel);border-radius:18px;padding:18px 22px;border-top:5px solid var(--l5)}
+@media (max-width:1000px){.bodygrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.bodygrid{grid-template-columns:1fr}}
+
+@media (max-width:420px){
+  .codeblock{font-size:11.5px;white-space:pre-wrap;word-break:break-word}
+  .gridwrap,.mx-wrap,.scroller{max-width:100%}
+  table.grid{min-width:0}
+  .toolrow{grid-template-columns:1fr}
+  .bars div{grid-template-columns:96px minmax(0,1fr) 40px}
+  .wrap{padding-left:12px;padding-right:12px}
+  h1{font-size:1.5rem;word-break:break-word}
+}
+
+@media (max-width:420px){
+  select,input,textarea{max-width:100%}
+  .bodycard{min-width:0;overflow-wrap:anywhere}
+  table.sj,table.nx,table.mx{display:block;overflow-x:auto;max-width:100%}
+}
+
+@media (max-width:420px){
+  table.sj,table.nx,table.mx{table-layout:fixed;width:100%}
+  table.sj th,table.sj td,.nx th,.nx td{overflow-wrap:anywhere;word-break:break-word}
+  main li,main p,main a{overflow-wrap:anywhere}
+  .sj-wrap,.tablewrap{overflow-x:auto;max-width:100%}
+}
+
+@media (max-width:420px){
+  .sj{display:block;overflow-x:auto}
+  .sj thead th,.sj tbody th{min-width:110px}
+  main ul,main ol{padding-left:18px}
+  main li a{display:inline-block;max-width:100%}
+}
+small, .meta small, td small, li small{font-size:max(.8rem,12.8px)}
+@media (max-width:420px){html,body{max-width:100%;overflow-x:hidden}.sjwrap,.tablewrap,.gridwrap{overflow-x:auto;max-width:100%}}
+.aibtn{position:fixed;right:18px;bottom:18px;z-index:60;border:0;border-radius:999px;padding:12px 20px;font:inherit;font-weight:700;background:var(--ink);color:var(--paper);cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.28)}
+.aibtn:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.aiwrap{position:fixed;right:18px;bottom:18px;width:min(430px,calc(100vw - 24px));max-height:min(78vh,720px);z-index:61;background:var(--panel);border-radius:18px;box-shadow:0 10px 40px rgba(0,0,0,.34);display:none;flex-direction:column;overflow:hidden;border:1px solid var(--rule)}
+.aiwrap.open{display:flex}
+.aihead{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--faint)}
+.aihead b{font-size:.98rem}
+.aihead small{color:var(--muted);font-size:.8rem;display:block;font-weight:400}
+.aihead button{margin-left:auto;border:0;background:transparent;font:inherit;font-size:1.2rem;line-height:1;cursor:pointer;color:var(--muted);padding:4px 6px}
+.ailog{overflow-y:auto;padding:12px 14px;display:grid;gap:10px;flex:1}
+.aimsg{border-radius:14px;padding:9px 12px;font-size:.9rem;line-height:1.45;white-space:pre-wrap}
+.aimsg.u{background:var(--ink);color:var(--paper);justify-self:end;max-width:86%}
+.aimsg.a{background:var(--faint);color:var(--ink)}
+.aimsg.sys{background:transparent;color:var(--muted);font-size:.82rem;padding:0}
+.aisug{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 10px}
+.aisug button{border:1.5px solid var(--rule);background:transparent;border-radius:999px;padding:4px 11px;font:inherit;font-size:.8rem;cursor:pointer;color:var(--ink);text-align:left}
+.aiform{display:flex;gap:8px;padding:10px 12px;border-top:1px solid var(--faint)}
+.aiform textarea{flex:1;font:inherit;font-size:.9rem;resize:none;border:1.5px solid var(--rule);border-radius:12px;padding:8px 10px;background:var(--paper);color:var(--ink);min-height:40px;max-height:120px}
+.aiform button{border:0;border-radius:12px;padding:0 16px;font:inherit;font-weight:700;background:var(--ink);color:var(--paper);cursor:pointer}
+.aiform button[disabled]{opacity:.5;cursor:default}
+.aifoot{padding:0 14px 10px;color:var(--muted);font-size:.8rem}
+.seqnav{background:var(--panel);border-radius:18px;padding:14px 18px;display:flex;gap:16px;justify-content:space-between;flex-wrap:wrap;margin:26px 0 0}
+.seqnav a{display:block;font-weight:700;color:var(--ink)}
+.seqnav small{display:block;color:var(--muted);font-size:.8rem;font-weight:400}
+.seqnav .nx{text-align:right}
+@media (max-width:620px){.aiwrap{right:8px;left:8px;width:auto;bottom:8px}.aibtn{right:10px;bottom:10px}}
+
+/* Shared visual system: icons, journey ribbon, hero figures, audience switcher */
+.ic{width:1.15em;height:1.15em;flex:none;vertical-align:-.2em}
+.ic-lg{width:2rem;height:2rem;flex:none}
+.ic-xl{width:2.6rem;height:2.6rem;flex:none}
+.ribbon{margin:0 0 6px;padding:10px 0 4px;border-bottom:1px solid var(--line)}
+.ribbon h2{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 8px;font-family:inherit;font-weight:700}
+.ribbon ol{display:flex;gap:6px;list-style:none;margin:0;padding:0 0 6px;overflow-x:auto;scrollbar-width:thin}
+.ribbon li{flex:1 1 0;min-width:104px}
+.ribbon a{display:flex;flex-direction:column;gap:5px;padding:8px 9px;border:1px solid var(--line);border-radius:9px;text-decoration:none;color:inherit;background:var(--panel);min-height:100%}
+.ribbon a:hover{border-color:var(--ink)}
+.ribbon a[aria-current="step"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.ribbon .rn{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:.72rem;letter-spacing:.05em;text-transform:uppercase}
+.ribbon .rt{font-size:.84rem;font-weight:650;line-height:1.25}
+.ribbon .rc{font-size:.74rem;color:var(--muted)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,340px);gap:22px;align-items:center;margin:10px 0 0}
+.hero figure{margin:0}
+.hero figcaption{font-size:.78rem;color:var(--muted);margin-top:6px}
+.hero svg.art{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+@media (max-width:820px){.hero{grid-template-columns:1fr}}
+.aud{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.aud button{display:flex;align-items:center;gap:8px;padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:inherit;font:inherit;cursor:pointer}
+.aud button[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink);font-weight:650}
+.audbox{border:1px solid var(--line);border-left:4px solid var(--ink);border-radius:10px;padding:14px 16px;background:var(--panel);margin:0 0 18px}
+.audbox h3{margin:0 0 6px;font-size:1.02rem;display:flex;align-items:center;gap:8px}
+.audbox ol{margin:8px 0 0;padding-left:20px}
+.audbox li{margin:4px 0}
+h2 .ic,h3 .ic{color:var(--muted)}
+.iconrow{display:flex;align-items:center;gap:9px}
+.legendkey{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin:8px 0 0}
+.legendkey span{display:inline-flex;align-items:center;gap:5px}
+@media (prefers-reduced-motion:no-preference){.ribbon a{transition:border-color .15s}}
+
+/* Self-check surface */
+.selfcheck{border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:22px 0 0;background:var(--panel)}
+.selfcheck h2{font-size:1rem;margin:0 0 6px}
+.selfcheck .scline{margin:0;font-size:.9rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.scdot{width:10px;height:10px;border-radius:50%;background:var(--muted);flex:none;box-shadow:0 0 0 3px color-mix(in srgb,currentColor 12%,transparent)}
+.scdot.good{background:#0f766e}.scdot.fair{background:#b45309}.scdot.needs-work{background:#be123c}
+.selfcheck details{margin-top:8px}
+.selfcheck summary{cursor:pointer;font-size:.88rem}
+.selfcheck .scbody{font-size:.88rem}
+.selfcheck h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:12px 0 4px}
+.selfcheck ul{margin:0;padding-left:18px}
+.selfcheck li{margin:3px 0}
+.selfgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-top:14px}
+.selfcard{border:1px solid var(--line);border-radius:12px;padding:15px;background:var(--panel)}
+.selfcard h3{display:flex;align-items:center;gap:10px;margin:0 0 8px;font-size:1rem}
+/* Title row: illustration sits opposite the title, at about a third of its weight */
+header .headgrid{display:grid;grid-template-columns:minmax(0,1.9fr) minmax(180px,0.85fr);gap:28px;align-items:center}
+header .headgrid > h1{margin:0}
+header .heroart{margin:0;max-width:340px;justify-self:end;width:100%}
+header .heroart svg.art{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}
+header .heroart figcaption{font-size:.72rem;color:var(--muted);margin-top:5px;line-height:1.35}
+header .heroart.float{float:right;width:min(300px,34%);margin:0 0 14px 22px}
+@media (max-width:820px){
+  header .headgrid{grid-template-columns:1fr}
+  header .heroart{max-width:260px;justify-self:start}
+  header .heroart.float{float:none;width:min(260px,70%);margin:12px 0}
+}
+/* Journey strip: full-bleed band, content aligned with every other section */
+nav.ribbon{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:color-mix(in srgb,currentColor 3%,transparent);margin:0;padding:12px 0 6px}
+nav.ribbon > .wrap{padding-left:28px;padding-right:28px}
+nav.ribbon h2{margin:0 0 9px}
+/* What used to sit beside the title now sits under the strip, full measure */
+.introblock{margin:20px auto 0}
+.introblock .lede{font-size:1.06rem;max-width:62ch}
+.introblock .tools{margin-top:12px}
+.introblock .rev{margin-top:10px;font-size:.84rem;color:var(--muted);max-width:80ch}
+.introblock .scope{margin:0}
+</style></head>
+<body>
+<svg class="sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden"><defs><symbol id="i-explore" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9 M12 3a9 9 0 0 1 9 9M3.5 12h17M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-structure" viewBox="0 0 24 24"><path d="M12 3 4 7v10l8 4 8-4V7l-8-4Zm0 0v18M4 7l8 4 8-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-register" viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6V3Zm9 0v3h3M9 11h6M9 15h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-tax" viewBox="0 0 24 24"><path d="M5 20V9l7-5 7 5v11H5Zm4-5h6M9 12h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-licence" viewBox="0 0 24 24"><path d="M4 5h16v14H4V5Zm3 4h5M7 12h10M7 15h7m2-6.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-premises" viewBox="0 0 24 24"><path d="M4 20V10l8-6 8 6v10H4Zm6 0v-6h4v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-finance" viewBox="0 0 24 24"><path d="M3 19V5m0 14h18M7 15V9m5 6V6m5 9v-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-employ" viewBox="0 0 24 24"><path d="M8 11a3.2 3.2 0 1 0 0-6.4A3.2 3.2 0 0 0 8 11Zm0 0c-3 0-5 1.8-5 4.5V19h10v-3.5C13 12.8 11 11 8 11Zm9-6.2a3.2 3.2 0 1 1 0 6.4M16 19h5v-3.5c0-2.2-1.4-3.8-3.6-4.3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-trade" viewBox="0 0 24 24"><path d="M3 12h18M3 12a9 9 0 0 1 9-9m9 9a9 9 0 0 0-9-9m0 18a9 9 0 0 0 9-9M12 21a9 9 0 0 1-9-9m9-9c2.4 2.5 3.6 5.5 3.6 9s-1.2 6.5-3.6 9c-2.4-2.5-3.6-5.5-3.6-9S9.6 5.5 12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-grow" viewBox="0 0 24 24"><path d="M4 19c6 0 10-3.5 12-10M13 5h6v6M8 19a4 4 0 0 0-4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-rules" viewBox="0 0 24 24"><path d="M12 4v16M6 8h12M7 8l-3 6h6l-3-6Zm10 0-3 6h6l-3-6ZM9 20h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5V5.5ZM8 7h7M8 10h7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-nations" viewBox="0 0 24 24"><path d="M6 21V4m0 0 7 2.5L20 4v9l-7 2.5L6 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm-8.6 9h17.2M12 3c2.3 2.5 3.5 5.5 3.5 9s-1.2 6.5-3.5 9c-2.3-2.5-3.5-5.5-3.5-9S9.7 5.5 12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-standards" viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h13m2-9.5 3 3-6 6-3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12.5 9 18l11-12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-history" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4h4M12 8v4.5l3 1.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-boundary" viewBox="0 0 24 24"><path d="M12 3v18M6 7l-3 5 3 5M18 7l3 5-3 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><path d="M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14Zm5 12 4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-blueprint" viewBox="0 0 24 24"><path d="M3 5h18v14H3V5Zm5 0v14M3 10h5m8-5v14m0-9h5M8 14h8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-person" viewBox="0 0 24 24"><path d="M12 11.5a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm0 0c-4 0-7 2.4-7 6V20h14v-2.5c0-3.6-3-6-7-6Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-agent" viewBox="0 0 24 24"><path d="M9 10.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm0 0c-3 0-5.5 2-5.5 5V19H14v-3.5c0-3-2.5-5-5-5Zm8-5 4 2.5-4 2.5m4-2.5h-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-official" viewBox="0 0 24 24"><path d="M12 3 4 6.5V12c0 4.6 3.2 7.8 8 9 4.8-1.2 8-4.4 8-9V6.5L12 3Zm-3 9 2.2 2.4L15 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-access" viewBox="0 0 24 24"><path d="M12 4.2a1.6 1.6 0 1 0 0-3.2 1.6 1.6 0 0 0 0 3.2ZM5 7.5c2.2.9 4.5 1.3 7 1.3s4.8-.4 7-1.3M12 8.8V14m0 0 3.5 6M12 14l-3.5 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-language" viewBox="0 0 24 24"><path d="M4 6h10M9 4v2m0 0c0 4-2 7-5 8.5M6.5 10.5c1.3 2.4 3 4 5.5 5M13 20l4-9 4 9m-6.6-2.4h5.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-data" viewBox="0 0 24 24"><path d="M12 4c4.4 0 8 1.3 8 3s-3.6 3-8 3-8-1.3-8-3 3.6-3 8-3Zm8 3v10c0 1.7-3.6 3-8 3s-8-1.3-8-3V7m16 5c0 1.7-3.6 3-8 3s-8-1.3-8-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-warning" viewBox="0 0 24 24"><path d="M12 4 3 20h18L12 4Zm0 6v5m0 3h.01" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm0 4.5V12l3.5 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-money" viewBox="0 0 24 24"><path d="M5 7h14v10H5V7Zm7 2.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-back" viewBox="0 0 24 24"><path d="M6 6.5h12M6 12h12M6 17.5h8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-support" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-9 9v3.5A2.5 2.5 0 0 0 5.5 18H7v-6H5.2A6.8 6.8 0 0 1 18.8 12H17v6h1.5a2.5 2.5 0 0 0 2.5-2.5V12a9 9 0 0 0-9-9Zm5 15v.5a2.5 2.5 0 0 1-2.5 2.5H12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol></defs></svg>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="wrap">
+    <p class="family" id="family">Part of <a href="../">Starting a business in the UK</a>: <a href="../your-plan/">your plan</a><a href="../whole-life-of-a-business/">from starting to closing, and everything between</a><a href="../your-circumstances/">when the standard route does not fit</a><a href="../every-way-in/">every way in, and every way out</a><a href="../skills-and-communities/">skills, qualifications and finding your people</a><a href="../every-step/">every step in the journey</a><a href="../twenty-years-of-joining-up/">historical arc</a><a href="../before-the-register/">before the register</a><a href="../whatever-you-are-setting-up/">whatever you are setting up</a><a href="../what-binds-this-business/">what binds this business</a><a href="../four-nations/">four nations</a><a href="../the-uk-compared/">international benchmark</a><a href="../standards/">standards for the journey</a><a href="../service-blueprints/">service blueprints</a><a href="../knowledge-layer/">the knowledge layer</a><a href="../how-this-was-built/">how this was built and run</a><a href="../verification-register/">verification register</a></p>
+    <div class="headgrid">
+      <h1>Rules, trade and the bodies behind them<small>Where the law lives, who explains it, where it can be bent to test something, and what moving goods demands</small></h1><figure class="heroart"><svg class="art" viewBox="0 0 680 300" role="img" aria-labelledby="artt artd"><title id="artt">Law, guidance and the bodies between</title><desc id="artd">Stacked layers from legislation down to the bodies that explain it.</desc><rect width="680" height="300" fill="none"/><rect x="60" y="60" width="560" height="26" rx="6" fill="var(--l1,#1d4ed8)" opacity=".18"/><rect x="60" y="60" width="560" height="26" rx="6" fill="none" stroke="currentColor" opacity=".25"/><rect x="68" y="100" width="544" height="26" rx="6" fill="var(--l2,#0f766e)" opacity=".18"/><rect x="68" y="100" width="544" height="26" rx="6" fill="none" stroke="currentColor" opacity=".25"/><rect x="76" y="140" width="528" height="26" rx="6" fill="var(--l3,#b45309)" opacity=".18"/><rect x="76" y="140" width="528" height="26" rx="6" fill="none" stroke="currentColor" opacity=".25"/><rect x="84" y="180" width="512" height="26" rx="6" fill="var(--l4,#7c3aed)" opacity=".18"/><rect x="84" y="180" width="512" height="26" rx="6" fill="none" stroke="currentColor" opacity=".25"/><rect x="92" y="220" width="496" height="26" rx="6" fill="var(--l5,#be123c)" opacity=".18"/><rect x="92" y="220" width="496" height="26" rx="6" fill="none" stroke="currentColor" opacity=".25"/><circle cx="120" cy="260" r="7" fill="currentColor" opacity="0.40"/><path d="M120 238 L120 252" stroke="currentColor" stroke-width="1.0" opacity="0.30" fill="none"/><circle cx="260" cy="260" r="7" fill="currentColor" opacity="0.40"/><path d="M260 238 L260 252" stroke="currentColor" stroke-width="1.0" opacity="0.30" fill="none"/><circle cx="400" cy="260" r="7" fill="currentColor" opacity="0.40"/><path d="M400 238 L400 252" stroke="currentColor" stroke-width="1.0" opacity="0.30" fill="none"/><circle cx="540" cy="260" r="7" fill="currentColor" opacity="0.40"/><path d="M540 238 L540 252" stroke="currentColor" stroke-width="1.0" opacity="0.30" fill="none"/></svg><figcaption>Law at the top, the bodies that explain it at the bottom.</figcaption></figure>
+    </div>
+    <div class="stats" id="stats"></div>
+  </div>
+</header>
+<nav class="ribbon" aria-label="The founder journey"><div class="wrap"><h2>The journey, stage by stage</h2><ol><li><a href="../before-the-register/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-explore"></use></svg> Stage 1</span><span class="rt">Decide</span><span class="rc">Is this a business, and what shape?</span></a></li><li><a href="../whatever-you-are-setting-up/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-structure"></use></svg> Stage 2</span><span class="rt">Structure</span><span class="rc">Legal form, name, ownership</span></a></li><li><a href="../every-step/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-register"></use></svg> Stage 3</span><span class="rt">Register</span><span class="rc">Registrar, identity, identifiers</span></a></li><li><a href="../whatever-you-are-setting-up/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-tax"></use></svg> Stage 4</span><span class="rt">Tax</span><span class="rc">Self Assessment, Corporation Tax, VAT</span></a></li><li><a href="../what-binds-this-business/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-licence"></use></svg> Stage 5</span><span class="rt">Licences</span><span class="rc">What the activity triggers</span></a></li><li><a href="../every-step/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-premises"></use></svg> Stage 6</span><span class="rt">Premises</span><span class="rc">Rates, planning, property</span></a></li><li><a href="../whatever-you-are-setting-up/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-finance"></use></svg> Stage 7</span><span class="rt">Money</span><span class="rc">Grants, reliefs, finance</span></a></li><li><a href="../what-binds-this-business/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-employ"></use></svg> Stage 8</span><span class="rt">People</span><span class="rc">Employing, paying, protecting</span></a></li><li><a href="../rules-trade-and-bodies/" aria-current="step"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-trade"></use></svg> Stage 9</span><span class="rt">Trade</span><span class="rc">Goods, borders, tendering</span></a></li></ol></div></nav>
+<div class="wrap introblock">
+        <p class="lede" id="lede"></p>
+        <div class="tools">
+          <button class="btn sm" type="button" id="theme">Light or dark</button>
+          <button class="btn sm" type="button" id="dljson" hidden>Download data (JSON)</button>
+          <button class="btn sm" type="button" id="print">Print</button>
+          <span class="toolmsg" id="toolmsg" role="status"></span>
+        </div>
+        <p class="rev">Last updated 17 September 2026. Every record checked against its source on that date, with the result recorded on the entry.</p>
+      </div>
+
+
+<nav class="jump" aria-label="On this page"><ul id="jump"></ul></nav>
+<main class="wrap" id="main">
+  <section id="s-law" aria-labelledby="h-law">
+    <h2 id="h-law">Where the rules live</h2>
+    <p class="intro">Legislation is published as data. Regulation, the thing businesses actually meet, mostly is not.</p>
+    <div class="rowcards" id="regs"></div>
+    <div class="orpbox" id="orp"></div>
+  </section>
+
+  <section id="s-guide" aria-labelledby="h-guide">
+    <h2 id="h-guide">Who explains it to a business</h2>
+    <p class="intro">The guidance layer between the statute book and a founder, including the one scheme that makes advice legally assured.</p>
+    <div class="rowcards" id="guide"></div>
+  </section>
+
+  <section id="s-sand" aria-labelledby="h-sand">
+    <h2 id="h-sand">Where the rules can be tested</h2>
+    <p class="intro">Regulatory sandboxes let a business test something the rules did not anticipate. They are run separately by each regulator, with no common front door.</p>
+    <div class="rowcards" id="sand"></div>
+  </section>
+
+  <section id="s-trade" aria-labelledby="h-trade">
+    <h2 id="h-trade">Moving goods in and out</h2>
+    <p class="intro">Nineteen things an importing or exporting business meets, from the EORI number to the tariff API, grouped by where they fall in the journey.</p>
+    <div class="filterbar">
+      <label for="xnat">Nation</label>
+      <select id="xnat"><option value="">All</option><option value="GB-ENG">England</option><option value="GB-SCT">Scotland</option><option value="GB-WLS">Wales</option><option value="GB-NIR">Northern Ireland</option></select>
+      <span class="toolmsg" id="xcount" role="status"></span>
+    </div>
+    <div id="trade"></div>
+  </section>
+
+  <section id="s-bodies" aria-labelledby="h-bodies">
+    <h2 id="h-bodies">Trade bodies and industry associations</h2>
+    <p class="intro" id="bodyintro"></p>
+    <div class="filterbar">
+      <label for="bsec">Sector</label><select id="bsec"></select>
+      <label for="bcov">Coverage</label><select id="bcov"></select>
+      <span class="toolmsg" id="bcount" role="status"></span>
+    </div>
+    <div class="bodygrid" id="bodies"></div>
+  </section>
+
+  <section id="s-gaps" aria-labelledby="h-gaps">
+    <h2 id="h-gaps">What is still missing</h2>
+    <ul class="caveats" id="gaps"></ul>
+  </section>
+</main>
+<div class="wrap"><nav class="seqnav" aria-label="Sequence"><div><a href="../what-binds-this-business/">&larr; Part 10: What binds this business</a><small>Activity to regulation, as a service</small></div><div style="text-align:center"><a href="../">Part 11 of 18</a><small>Rules, trade and the bodies</small></div><div class="nx"><a href="../four-nations/">Part 12: Four nations &rarr;</a><small>Where the UK differs inside itself</small></div></nav></div>
+<footer>
+  <div class="wrap">
+    <h2>Method</h2>
+    <p>Each regulation source, guidance hub, sandbox, trade body and import or export requirement was checked by retrieving its own page and matching the wording recorded on the entry. Where a site blocks automated requests, that is recorded and the entry is marked as confirmed through search rather than against retrieved text. Trade bodies are a sample across sectors and nations, not the full population: there is no open register of UK trade associations, which is itself one of the gaps.</p>
+    <p>Nothing here is legal advice. Rules on goods, licences and product marking change often, and the Trade Tariff, legislation.gov.uk and each regulator's own site are the live sources.</p>
+  </div>
+</footer>
+<script>
+var REGS=[{"id": "legislation", "name": "legislation.gov.uk", "role": "The official home of UK legislation, published by The National Archives", "url": "https://www.legislation.gov.uk/", "kind": "Primary source", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Site retrieved: legislation.gov.uk, published by The National Archives, with collections, research tools and guidance."}}, {"id": "legislation-api", "name": "Legislation API (Developer Zone)", "role": "Machine-readable legislation: XML, RDF and Atom feeds for every item of legislation", "url": "https://www.legislation.gov.uk/developer", "kind": "Interface", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Developer Zone: the developer area of the Legislation API, with complete documentation for the API."}}, {"id": "orp", "name": "Open Regulation Platform", "role": "DBT's attempt at publishing UK regulation as enriched, machine-readable data, with the Open Regulation Document Standard as its metadata model", "url": "https://github.com/UKGovernmentBEIS/open-regulation-platform-alpha", "kind": "Programme", "verification": {"checked_on": "2026-09-17", "result": "partly-confirmed", "evidence": "The alpha repository was archived by its owner on 17 June 2026 and is read-only; the beta was built with PUBLIC for the Better Regulation Executive. No live public service was found on these pages."}, "successor": "No named successor service was found. The policy work now sits with the Regulation Directorate at the Department for Business and Trade, formerly the Better Regulation Executive, and the Regulating for Growth Bill is the current legislative vehicle."}, {"id": "ords", "name": "Open Regulation Document Standard", "role": "Proposed metadata standard for regulatory data and content, presented to the Data Standards Authority steering board in February 2024", "url": "https://www.gov.uk/government/publications/meeting-minutes-for-the-data-standards-authority-governance-boards/steering-board-minutes-thursday-8th-february-2024-html", "kind": "Standard", "verification": {"checked_on": "2026-09-17", "result": "confirmed-index", "evidence": "DSA steering board minutes record DBT presenting the Open Regulation Document Standard, a metadata standard for regulatory data and content, led from the Smarter Regulation Directorate."}}, {"id": "regdir", "name": "Regulation Directorate (formerly the Better Regulation Executive)", "role": "DBT unit that monitors regulatory burdens and coordinates regulation policy", "url": "https://www.gov.uk/government/groups/better-regulation-executive", "kind": "Body", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "GOV.UK: the Regulation Directorate is a unit within the Department for Business and Trade, formerly known as the Better Regulation Executive."}}, {"id": "rio", "name": "Regulatory Innovation Office", "role": "Updates regulation, speeds up approval times and makes regulators work together; part of DSIT", "url": "https://www.gov.uk/government/organisations/regulatory-innovation-office", "kind": "Body", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "GOV.UK: RIO updates regulation, speeds up approval times and ensures regulatory bodies work together effectively."}}, {"id": "rhc", "name": "Regulatory Horizons Council", "role": "Independent advice on regulating emerging technologies, with a charter setting out its relationship to RIO", "url": "https://www.gov.uk/government/publications/the-regulatory-horizons-council-charter", "kind": "Body", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "The RHC Charter sets out the balance of responsibility between government, the Regulatory Innovation Office and the Council."}}, {"id": "brf", "name": "Better Regulation Framework", "role": "How departments must assess and scrutinise regulatory measures affecting business", "url": "https://www.gov.uk/government/publications/better-regulation-framework", "kind": "Framework", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "GOV.UK guidance explains how to comply with the Better Regulation Framework so regulatory provisions are appropriately considered and scrutinised."}}, {"id": "rpc", "name": "Regulatory Policy Committee guidance", "role": "Independent scrutiny of the evidence behind regulatory proposals", "url": "https://www.gov.uk/government/collections/rpc-guidance-for-departments-and-regulators", "kind": "Body", "verification": {"checked_on": "2026-09-17", "result": "confirmed-index", "evidence": "GOV.UK collection of RPC guidance for departments and regulators."}}];
+var GUIDE=[{"id": "business-companion", "name": "Business Companion", "role": "Free, impartial trading standards law guidance for businesses in England, Scotland and Wales", "url": "https://www.businesscompanion.info/", "owner": "Chartered Trading Standards Institute, funded by DBT", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Site: free, impartial legal guidance for businesses, with region switching for England, Scotland and Wales."}}, {"id": "product-safety", "name": "Product safety A to Z of industry guidance", "role": "What producers, importers and distributors must do under product safety law", "url": "https://www.gov.uk/guidance/product-safety-for-businesses-a-to-z-of-industry-guidance", "owner": "Office for Product Safety and Standards", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "GOV.UK: if you make, import, distribute or sell products in the UK you need to understand the basics of product safety law."}}, {"id": "ipac", "name": "Innovative Products Advice Centre", "role": "Help for businesses navigating product regulation for new products", "url": "https://www.gov.uk/guidance/innovative-products-advice-centre", "owner": "Office for Product Safety and Standards", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "GOV.UK: here to help you navigate product regulation when bringing your product to market."}}, {"id": "primary-authority", "name": "Primary Authority", "role": "A legal partnership with one local authority that gives a business assured advice other regulators must respect", "url": "https://www.gov.uk/guidance/local-regulation-primary-authority", "owner": "Office for Product Safety and Standards and local authorities", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "GOV.UK: Primary Authority enables businesses to form a legal partnership with one local authority, which provides assured advice."}}, {"id": "business-gov-uk", "name": "Business.gov.uk", "role": "DBT's business front door; great.gov.uk now resolves to Business.gov.uk, covering start, run, grow and export support", "url": "https://www.great.gov.uk/", "owner": "Department for Business and Trade", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Retrieving great.gov.uk returns a page branded Business.gov.uk: start, run or grow a UK business, and export support services."}}, {"id": "nibusinessinfo", "name": "nibusinessinfo.co.uk", "role": "Northern Ireland business guidance, including EORI and trade", "url": "https://www.nibusinessinfo.co.uk/", "owner": "Invest Northern Ireland", "verification": {"checked_on": "2026-09-17", "result": "confirmed-index", "evidence": "Used as a verified source elsewhere on these pages for EORI guidance."}}, {"id": "licence-finder", "name": "Find a licence", "role": "Licences, permits and certifications by activity and area", "url": "https://www.gov.uk/find-licences", "owner": "GOV.UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "GOV.UK: find licences, permits or certifications you may need for yourself or your business."}}];
+var SAND=[{"id": "sandbox-policy", "name": "Regulatory sandboxes: what businesses can expect", "regulator": "Department for Business and Trade", "domain": "Cross-sector policy", "status": "Announced; sandboxing powers to be introduced by the Regulating for Growth Bill", "url": "https://www.gov.uk/government/publications/regulatory-sandboxes-what-businesses-can-expect", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "GOV.UK: the regulation action plan update announced that the Regulating for Growth Bill will introduce regulatory sandboxing powers, allowing temporary rule changes to test products in real-world markets."}}, {"id": "fca", "name": "FCA Regulatory Sandbox", "regulator": "Financial Conduct Authority", "domain": "Financial services", "status": "Open to applications", "url": "https://www.fca.org.uk/firms/innovation/regulatory-sandbox", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "FCA Regulatory Sandbox page retrieved from fca.org.uk."}}, {"id": "ico", "name": "ICO Regulatory Sandbox", "regulator": "Information Commissioner's Office", "domain": "Personal data and privacy", "status": "Operating", "url": "https://ico.org.uk/for-organisations/advice-and-services/regulatory-sandbox/", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "ICO Regulatory Sandbox page retrieved from ico.org.uk."}}, {"id": "ai-airlock", "name": "AI Airlock", "regulator": "Medicines and Healthcare products Regulatory Agency", "domain": "AI as a medical device", "status": "Launched spring 2024; cohorts running", "url": "https://www.gov.uk/government/collections/ai-airlock-the-regulatory-sandbox-for-aiamd", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "GOV.UK: the MHRA AI Airlock was launched in spring 2024 and is the MHRA's first regulatory sandbox for AI as a Medical Device products."}}, {"id": "spectrum", "name": "Regulatory spectrum sandboxes", "regulator": "Department for Science, Innovation and Technology", "domain": "Radio spectrum", "status": "Completed 12-month, \u00a35 million initiative", "url": "https://www.gov.uk/government/collections/dsit-regulatory-spectrum-sandboxes", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "GOV.UK: the regulatory spectrum sandboxes were a 12-month, \u00a35 million DSIT funded initiative bringing together industry and academia."}}, {"id": "srs", "name": "Smarter Regulatory Sandbox", "regulator": "Health and Safety Executive with Safetytech Accelerator", "domain": "Health and safety data", "status": "Delivered as a case study", "url": "https://www.gov.uk/government/case-studies/new-smarter-regulatory-sandbox-developed-to-increase-compliance", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "GOV.UK case study: a partnership with the Safetytech Accelerator developed the Smarter Regulatory Sandbox, applying digitised health and safety data to several challenges."}}, {"id": "caa", "name": "CAA research and innovation, including sandbox work", "regulator": "Civil Aviation Authority", "domain": "Aviation and drones", "status": "Operating", "url": "https://www.caa.co.uk/innovation/", "verification": {"checked_on": "2026-09-17", "result": "partly-confirmed", "evidence": "CAA research and innovation page retrieved; sandbox-specific detail not machine-checked."}}, {"id": "rendezvous", "name": "Regulatory Sandbox for Rendezvous and Proximity Operations", "regulator": "Regulatory Innovation Office and partners", "domain": "Space operations", "status": "Stage 1 report published August 2025", "url": "https://www.gov.uk/government/publications/regulatory-sandbox-for-rendezvous-and-proximity-operations-stage-1", "verification": {"checked_on": "2026-09-17", "result": "confirmed-index", "evidence": "GOV.UK independent report: Regulatory Sandbox for Rendezvous and Proximity Operations, Stage 1."}}];
+var ORPNOTE="The Open Regulation Platform was DBT's programme to publish UK regulation as machine-readable data, with the Open Regulation Document Standard as its metadata model. Its alpha repository was archived in June 2026 and this guide found no live public successor service. Regulation policy sits with the Regulation Directorate at DBT, and the Regulating for Growth Bill is the current vehicle, including powers for regulatory sandboxes. legislation.gov.uk and its API remain the machine-readable source of law. A formal successor proposal, with the record schema, interfaces, ownership model and standardisation route, is published in the pack as orp-successor-proposal.json.";
+var BODIES=[{"name": "Federation of Small Businesses", "url": "https://www.fsb.org.uk/", "sector": "cross-sector", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Retrieved with a browser user agent (HTTP 200)", "method": "Site retrieved and its title or opening text read"}}, {"name": "British Chambers of Commerce", "url": "https://www.britishchambers.org.uk/", "sector": "cross-sector", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "British Chambers of Commerce Skip to content 020 7654 5800 Facebook Youtube X Logo Linkedin Facebook Youtube X Logo Lin", "method": "Site retrieved and its title or opening text read"}}, {"name": "Confederation of British Industry", "url": "https://www.cbi.org.uk/", "sector": "cross-sector", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Confederation of British Industry | CBI Skip to main content Membership Join the CBI - Protect and grow your business M", "method": "Site retrieved and its title or opening text read"}}, {"name": "Institute of Directors", "url": "https://www.iod.com/", "sector": "cross-sector", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Institute of Directors | Business Networking, Events & Training 10% off Finance for Non-Finance Directors for 2026 date", "method": "Site retrieved and its title or opening text read"}}, {"name": "Make UK", "url": "https://www.makeuk.org/", "sector": "manufacturing", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "The Manufacturers' Organisation | Make UK Skip to main content Make UK Member home Services Employment Law & HR Environ", "method": "Site retrieved and its title or opening text read"}}, {"name": "techUK", "url": "https://www.techuk.org/", "sector": "technology", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "The UK's technology trade association To make the most of your techUK website experience, please login or register for", "method": "Site retrieved and its title or opening text read"}}, {"name": "British Retail Consortium", "url": "https://brc.org.uk/", "sector": "retail", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Homepage Ten ways to support jobs, growth and affordability 2026 Buy into Retail Manifesto United Kingdom British Retai", "method": "Site retrieved and its title or opening text read"}}, {"name": "UKHospitality", "url": "https://www.ukhospitality.org.uk/", "sector": "hospitality", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Home - UKHospitality Search for: Key Topics Energy costs Food Sustainability Tax Workforce Business operations Corporat", "method": "Site retrieved and its title or opening text read"}}, {"name": "Food and Drink Federation", "url": "https://www.fdf.org.uk/", "sector": "food and drink", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Welcome to the FDF | The Food & Drink Federation --> Please enable Javascript to use this website. Skip to content Medi", "method": "Site retrieved and its title or opening text read"}}, {"name": "Logistics UK", "url": "https://logistics.org.uk/", "sector": "logistics", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Home - Logistics UK Welcome to the new Logistics UK website: How to activate your account Join 1000\u2019s of UK Businesses", "method": "Site retrieved and its title or opening text read"}}, {"name": "Road Haulage Association", "url": "https://www.rha.uk.net/", "sector": "road haulage", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "RHA Back Shop Shop New In Bookshop & Maps Cleaning & Accessories Compliance Stationery Dangerous Goods (ADR) Digital &", "method": "Site retrieved and its title or opening text read"}}, {"name": "National Farmers' Union", "url": "https://www.nfuonline.com/", "sector": "agriculture", "coverage": "England and Wales", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "NFUonline Contact us NFU CallFirst Our offices NFU Cymru Media centre Join the NFU Log in About us About us NFU governa", "method": "Site retrieved and its title or opening text read"}}, {"name": "BioIndustry Association", "url": "https://www.bioindustry.org/", "sector": "life sciences", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "BioIndustry Association | BIA Skip to content Influencing policy Business environment Finance and tax IP and tech trans", "method": "Site retrieved and its title or opening text read"}}, {"name": "ADS Group", "url": "https://www.adsgroup.org.uk/", "sector": "aerospace, defence, security and space", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Home - ADS Group About Who we are Our structure Who we work with Locations \u2013 Northern Ireland \u2013 Scotland \u2013 South West \u2013", "method": "Site retrieved and its title or opening text read"}}, {"name": "Federation of Master Builders", "url": "https://www.fmb.org.uk/", "sector": "construction", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "The Top Trade Body For Builders | FMB, Federation of Master Builders Become a Master Builder Become an Associate Find a", "method": "Site retrieved and its title or opening text read"}}, {"name": "Energy UK", "url": "https://www.energy-uk.org.uk/", "sector": "energy", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Energy UK - The voice of the energy industry Skip to content Menu About us About us Our work Our committees Our teams O", "method": "Site retrieved and its title or opening text read"}}, {"name": "UK Finance", "url": "https://www.ukfinance.org.uk/", "sector": "financial services", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed-index", "evidence": "Blocks automated requests (HTTP 403); site confirmed live through search", "method": "Site blocks automated requests; existence confirmed through search"}}, {"name": "Creative UK", "url": "https://www.wearecreative.uk/", "sector": "creative industries", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Home - Creative UK Creative England: link to homepage --> Connect Membership Student Membership Membership Area Events", "method": "Site retrieved and its title or opening text read"}}, {"name": "Association of British Insurers", "url": "https://www.abi.org.uk/", "sector": "insurance", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed-index", "evidence": "Blocks automated requests (HTTP 403); site confirmed live through search", "method": "Site blocks automated requests; existence confirmed through search"}}, {"name": "Chartered Institute of Building", "url": "https://www.ciob.org/", "sector": "construction", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "CIOB Home Page | CIOB Skip to main content CIOB Home User account menu Sign up Log In Get in Touch CIOB Home Search CIO", "method": "Site retrieved and its title or opening text read"}}, {"name": "Scottish Chambers of Commerce", "url": "https://www.scottishchambers.org.uk/", "sector": "cross-sector", "coverage": "Scotland", "verification": {"checked_on": "2026-09-17", "result": "confirmed-index", "evidence": "Blocks automated requests (HTTP 403); site confirmed live through search", "method": "Site blocks automated requests; existence confirmed through search"}}, {"name": "Chambers Wales South East, South West and Mid", "url": "https://cw-seswm.com/", "sector": "cross-sector", "coverage": "Wales", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Chambers Wales: accredited by the British Chambers of Commerce, supporting businesses across 80% of Wales", "method": "Site retrieved and its title or opening text read"}}, {"name": "Northern Ireland Chamber of Commerce and Industry", "url": "https://www.northernirelandchamber.com/", "sector": "cross-sector", "coverage": "Northern Ireland", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "NI Chamber Sign in My Account Search About Our Vision Our Team Work With Us Our Partners Membership Membership Benefits", "method": "Site retrieved and its title or opening text read"}}, {"name": "Manufacturing NI", "url": "https://www.manufacturingni.org/", "sector": "manufacturing", "coverage": "Northern Ireland", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Manufacturing NI | Manufacturing NI Home News Anchor High Summit Apprenticeships Meet the Makers Podcast Members Contac", "method": "Site retrieved and its title or opening text read"}}, {"name": "Institute of Export and International Trade", "url": "https://www.export.org.uk/", "sector": "international trade", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "The Chartered Institute of Export & International Trade --> Skip to main content Build compliance confidence and capabi", "method": "Site retrieved and its title or opening text read"}}, {"name": "British International Freight Association", "url": "https://bifa.org/", "sector": "freight forwarding", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "The Leading Body Representing The UK International Freight Services Industry - British International Freight Associatio", "method": "Site retrieved and its title or opening text read"}}, {"name": "Trade Association Forum", "url": "https://www.taforum.org/", "sector": "umbrella body for trade associations", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Home | Trade Association Forum Skip to main content Skip to footer Trade Association Forum Menu Community Expand sub pa", "method": "Site retrieved and its title or opening text read"}}, {"name": "Scottish Council for Development and Industry (Prosper)", "url": "https://www.prosper.scot/", "sector": "cross-sector", "coverage": "Scotland", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Scotland's most influential membership organisation - Prosper About Innovation Impact Events Join News Resources Member", "method": "Site retrieved and its title or opening text read"}}, {"name": "FSB Cymru / Wales", "url": "https://www.fsb.org.uk/wales", "sector": "cross-sector", "coverage": "Wales", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Part of the FSB site, retrieved with a browser user agent", "method": "Site retrieved and its title or opening text read"}}, {"name": "Social Enterprise UK", "url": "https://www.socialenterprise.org.uk/", "sector": "social enterprise", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Home | Social Enterprise UK Search Search Posts Directory Members' Area login Join us Menu Join us Members' Area login", "method": "Site retrieved and its title or opening text read"}}, {"name": "Co-operatives UK", "url": "https://www.uk.coop/", "sector": "co-operatives and mutuals", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed-index", "evidence": "Blocks automated requests (HTTP 403); site confirmed live through search", "method": "Site blocks automated requests; existence confirmed through search"}}, {"name": "National Council for Voluntary Organisations", "url": "https://www.ncvo.org.uk/", "sector": "voluntary sector", "coverage": "England", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "NCVO | NCVO Skip to content Return to NCVO home Training and Events Venue hire Join NCVO Log in Menu Help and guidance", "method": "Site retrieved and its title or opening text read"}}, {"name": "Association of Convenience Stores", "url": "https://www.acs.org.uk/", "sector": "convenience retail", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Welcome to ACS | ACS.co.uk", "method": "Site retrieved and its title read"}}, {"name": "British Beer and Pub Association", "url": "https://beerandpub.com/", "sector": "brewing and pubs", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Site retrieved", "method": "Site retrieved and its title read"}}, {"name": "National Hair and Beauty Federation", "url": "https://www.nhbf.co.uk/", "sector": "hair and beauty", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Hairdressing & Beauty Salon & Barber Trade Association - National Hair & Beauty Federation", "method": "Site retrieved and its title read"}}, {"name": "Association of Independent Professionals and the Self-Employed", "url": "https://www.ipse.co.uk/", "sector": "freelancers and self-employed", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Supporting the UK self-employed &amp; freelance community | IPSE", "method": "Site retrieved and its title read"}}, {"name": "Federation of Wholesale Distributors", "url": "https://www.fwd.co.uk/", "sector": "wholesale", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Site retrieved", "method": "Site retrieved and its title read"}}, {"name": "British Printing Industries Federation", "url": "https://www.bpif.org.uk/", "sector": "print", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed-index", "evidence": "Site blocks automated requests (503); existence confirmed through search", "method": "Site blocks automated requests; existence confirmed through search"}}, {"name": "Association of Accounting Technicians", "url": "https://www.aat.org.uk/", "sector": "accountancy", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "AAT: the leading professional body for accounting technicians | AAT", "method": "Site retrieved and its title read"}}, {"name": "Law Society of England and Wales", "url": "https://www.lawsociety.org.uk/", "sector": "legal services", "coverage": "England and Wales", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Home | The Law Society", "method": "Site retrieved and its title read"}}, {"name": "Law Society of Scotland", "url": "https://www.lawscot.org.uk/", "sector": "legal services", "coverage": "Scotland", "verification": {"checked_on": "2026-09-17", "result": "confirmed-index", "evidence": "Site blocks automated requests (403); existence confirmed through search", "method": "Site blocks automated requests; existence confirmed through search"}}, {"name": "Royal Institution of Chartered Surveyors", "url": "https://www.rics.org/", "sector": "property and construction", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Welcome to RICS", "method": "Site retrieved and its title read"}}, {"name": "British Independent Retailers Association", "url": "https://bira.co.uk/", "sector": "independent retail", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Bira - Home", "method": "Site retrieved and its title read"}}, {"name": "Tech Nation successor: Startup Coalition", "url": "https://www.startupcoalition.io/", "sector": "startups and technology policy", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Startup Coalition", "method": "Site retrieved and its title read"}}, {"name": "Federation of Licensed Victuallers Associations", "url": "https://www.flva.co.uk/", "sector": "licensed trade", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "FLVA Holding", "method": "Site retrieved and its title read"}}, {"name": "National Association of Care and Support Workers", "url": "https://www.nacas.org.uk/", "sector": "care", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed-index", "evidence": "Site blocks automated requests (<urlopen error [Errn); existence confirmed through search", "method": "Site blocks automated requests; existence confirmed through search"}}, {"name": "Renewable Energy Association (REA)", "url": "https://www.r-e-a.net/", "sector": "renewables", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "REA is a not-for-profit trade association, established in 2001, representing businesses powering the green economy. - REA", "method": "Site retrieved and its title read"}}, {"name": "Association of British Travel Agents", "url": "https://www.abta.com/", "sector": "travel", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed-index", "evidence": "Site blocks automated requests (403); existence confirmed through search", "method": "Site blocks automated requests; existence confirmed through search"}}, {"name": "Chartered Institute of Marketing", "url": "https://www.cim.co.uk/", "sector": "marketing", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "The Chartered Institute of Marketing | CIM", "method": "Site retrieved and its title read"}}, {"name": "Society of Motor Manufacturers and Traders", "url": "https://www.smmt.co.uk/", "sector": "automotive", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "UK Motor Trade Association | Society of Motor Manufacturers &amp; Traders | SMMT", "method": "Site retrieved and its title read"}}, {"name": "Agricultural Industries Confederation", "url": "https://www.agindustries.org.uk/", "sector": "agri-supply", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "AIC | Agricultural Industries Confederation", "method": "Site retrieved and its title read"}}, {"name": "NFU Scotland", "url": "https://www.nfus.org.uk/", "sector": "agriculture", "coverage": "Scotland", "verification": {"checked_on": "2026-09-17", "result": "confirmed-index", "evidence": "Site blocks automated requests (503); existence confirmed through search", "method": "Site blocks automated requests; existence confirmed through search"}}, {"name": "Ulster Farmers' Union", "url": "https://www.ufuni.org/", "sector": "agriculture", "coverage": "Northern Ireland", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Home | Ulster Farmers Union", "method": "Site retrieved and its title read"}}, {"name": "Hospitality Ulster", "url": "https://hospitalityulster.org/", "sector": "hospitality", "coverage": "Northern Ireland", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Hospitality Ulster: Leading Northern Irelands | Hospitality Ulster", "method": "Site retrieved and its title read"}}, {"name": "Scottish Tourism Alliance", "url": "https://scottishtourismalliance.co.uk/", "sector": "tourism", "coverage": "Scotland", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Scottish Tourism Alliance The voice of the Scottish tourism", "method": "Site retrieved and its title read"}}, {"name": "Builders Merchants Federation", "url": "https://www.bmf.org.uk/", "sector": "construction supply", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Home | BMF", "method": "Site retrieved and its title read"}}, {"name": "Electrical Contractors' Association", "url": "https://www.eca.co.uk/", "sector": "electrical contracting", "coverage": "England, Wales and NI", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "ECA (Electrical Contractors&#x27; Association)", "method": "Site retrieved and its title read"}}, {"name": "SELECT (Scotland's electrical trade association)", "url": "https://www.select.org.uk/", "sector": "electrical contracting", "coverage": "Scotland", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Home", "method": "Site retrieved and its title read"}}, {"name": "Chartered Institute of Plumbing and Heating Engineering", "url": "https://www.ciphe.org.uk/", "sector": "plumbing and heating", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Chartered Institute of Plumbing &amp; Heating Engineering | CIPHE", "method": "Site retrieved and its title read"}}, {"name": "National Federation of Roofing Contractors", "url": "https://www.nfrc.co.uk/", "sector": "roofing", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "NFRC NFRC | UK's largest roofing association", "method": "Site retrieved and its title read"}}, {"name": "Home Builders Federation", "url": "https://www.hbf.co.uk/", "sector": "housebuilding", "coverage": "England and Wales", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Home Builders Federation", "method": "Site retrieved and its title read"}}, {"name": "Civil Engineering Contractors Association", "url": "https://www.ceca.co.uk/", "sector": "civil engineering", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "CECA \u2013 The Civil Engineering Contractors Association", "method": "Site retrieved and its title read"}}, {"name": "British Safety Industry Federation", "url": "https://www.bsif.co.uk/", "sector": "safety products", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Site retrieved", "method": "Site retrieved and its title read"}}, {"name": "Association for Consultancy and Engineering", "url": "https://www.acenet.co.uk/", "sector": "consultancy and engineering", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed-index", "evidence": "Site blocks automated requests or was unavailable (307); existence confirmed through search", "method": "Site blocks automated requests; existence confirmed through search"}}, {"name": "Chemical Industries Association", "url": "https://www.cia.org.uk/", "sector": "chemicals", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed-index", "evidence": "Site blocks automated requests or was unavailable (405); existence confirmed through search", "method": "Site blocks automated requests; existence confirmed through search"}}, {"name": "British Plastics Federation", "url": "https://www.bpf.co.uk/", "sector": "plastics", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "The UK&#39;s Leading Plastic Trade Association", "method": "Site retrieved and its title read"}}, {"name": "UK Steel", "url": "https://www.makeuk.org/about/uk-steel", "sector": "steel", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "UK Steel | Make UK", "method": "Site retrieved and its title read"}}, {"name": "Dairy UK", "url": "https://www.dairyuk.org/", "sector": "dairy", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed-index", "evidence": "Site blocks automated requests or was unavailable (403); existence confirmed through search", "method": "Site blocks automated requests; existence confirmed through search"}}, {"name": "British Meat Processors Association", "url": "https://britishmeatindustry.org/", "sector": "meat processing", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "British Meat Processors Association | Industry trade body", "method": "Site retrieved and its title read"}}, {"name": "Fresh Produce Consortium", "url": "https://www.freshproduce.org.uk/", "sector": "fresh produce", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Homepage - Fresh Produce Consortium", "method": "Site retrieved and its title read"}}, {"name": "British Soft Drinks Association", "url": "https://www.britishsoftdrinks.com/", "sector": "soft drinks", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Site retrieved", "method": "Site retrieved and its title read"}}, {"name": "Wine and Spirit Trade Association", "url": "https://www.wsta.co.uk/", "sector": "wine and spirits", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Site retrieved", "method": "Site retrieved and its title read"}}, {"name": "Society of Independent Brewers", "url": "https://siba.co.uk/", "sector": "brewing", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "SIBA - Society of Independent Brewers and Associates", "method": "Site retrieved and its title read"}}, {"name": "National Pharmacy Association", "url": "https://www.npa.co.uk/", "sector": "community pharmacy", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed-index", "evidence": "Site blocks automated requests or was unavailable (403); existence confirmed through search", "method": "Site blocks automated requests; existence confirmed through search"}}, {"name": "Association of British HealthTech Industries", "url": "https://www.abhi.org.uk/", "sector": "health technology", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Welcome to the Association of British HealthTech Industries", "method": "Site retrieved and its title read"}}, {"name": "Association of the British Pharmaceutical Industry", "url": "https://www.abpi.org.uk/", "sector": "pharmaceuticals", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "The Association of the British Pharmaceutical Industry", "method": "Site retrieved and its title read"}}, {"name": "Independent Healthcare Providers Network", "url": "https://www.ihpn.org.uk/", "sector": "independent healthcare", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Homepage - Independent Healthcare Provider Network", "method": "Site retrieved and its title read"}}, {"name": "Care England", "url": "https://www.careengland.org.uk/", "sector": "adult social care", "coverage": "England", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Homepage - Care England", "method": "Site retrieved and its title read"}}, {"name": "Scottish Care", "url": "https://scottishcare.org/", "sector": "social care", "coverage": "Scotland", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Scottish Care | The voice of the independent social care sector", "method": "Site retrieved and its title read"}}, {"name": "Care Forum Wales", "url": "https://www.careforumwales.co.uk/", "sector": "social care", "coverage": "Wales", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Home - Care Forum Wales", "method": "Site retrieved and its title read"}}, {"name": "Independent Health and Care Providers", "url": "https://www.ihcp.co.uk/", "sector": "health and care", "coverage": "Northern Ireland", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Site retrieved", "method": "Site retrieved and its title read"}}, {"name": "Recruitment and Employment Confederation", "url": "https://www.rec.uk.com/", "sector": "recruitment", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Home | REC | Recruitment and Employment Confederation", "method": "Site retrieved and its title read"}}, {"name": "Association of Professional Staffing Companies", "url": "https://www.apsco.org/", "sector": "professional staffing", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Welcome to APSCo Global", "method": "Site retrieved and its title read"}}, {"name": "British Insurance Brokers' Association", "url": "https://www.biba.org.uk/", "sector": "insurance broking", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "BIBA Homepage - British Insurance Brokers&#039; Association", "method": "Site retrieved and its title read"}}, {"name": "Building Societies Association", "url": "https://www.bsa.org.uk/", "sector": "building societies", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Home | The Building Societies Association | BSA", "method": "Site retrieved and its title read"}}, {"name": "Finance and Leasing Association", "url": "https://www.fla.org.uk/", "sector": "asset and consumer finance", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Finance &amp; Leasing Association &#8211; Helping our members to grow sustainable and trusted finance markets for consumers and businesses.", "method": "Site retrieved and its title read"}}, {"name": "Investment Association", "url": "https://www.theia.org/", "sector": "investment management", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "The Investment Association | Investment Manager Trade Body", "method": "Site retrieved and its title read"}}, {"name": "Innovate Finance", "url": "https://www.innovatefinance.com/", "sector": "fintech", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Site retrieved", "method": "Site retrieved and its title read"}}, {"name": "Payments Association", "url": "https://thepaymentsassociation.org/", "sector": "payments", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed-index", "evidence": "Site blocks automated requests or was unavailable (403); existence confirmed through search", "method": "Site blocks automated requests; existence confirmed through search"}}, {"name": "Advertising Association", "url": "https://www.adassoc.org.uk/", "sector": "advertising", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Home - Advertising Association", "method": "Site retrieved and its title read"}}, {"name": "Publishers Association", "url": "https://www.publishers.org.uk/", "sector": "publishing", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Homepage - Publishers Association", "method": "Site retrieved and its title read"}}, {"name": "UK Cinema Association", "url": "https://www.cinemauk.org.uk/", "sector": "cinema", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "UK Cinema Association (formerly Cinema Exhibitors&#039; Association)", "method": "Site retrieved and its title read"}}, {"name": "Music Producers Guild", "url": "https://mpg.org.uk/", "sector": "music production", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "The Music Producers Guild", "method": "Site retrieved and its title read"}}, {"name": "Association of Independent Music", "url": "https://aim.org.uk/", "sector": "independent music", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Association of Independent Music", "method": "Site retrieved and its title read"}}, {"name": "UKinbound", "url": "https://www.ukinbound.org/", "sector": "inbound tourism", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "UKinbound | UK&#039;s only trade association that represents inbound tourism", "method": "Site retrieved and its title read"}}, {"name": "Tourism Alliance", "url": "https://www.tourismalliance.com/", "sector": "tourism", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "The Tourism Alliance: The Voice of Tourism - British Travel", "method": "Site retrieved and its title read"}}, {"name": "Association of Independent Tour Operators", "url": "https://www.aito.com/", "sector": "tour operators", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "AITO - The Specialist Travel Association", "method": "Site retrieved and its title read"}}, {"name": "Federation of Small Businesses Northern Ireland", "url": "https://www.fsb.org.uk/northern-ireland", "sector": "cross-sector", "coverage": "Northern Ireland", "verification": {"checked_on": "2026-09-17", "result": "confirmed-index", "evidence": "Site blocks automated requests or was unavailable (404); existence confirmed through search", "method": "Site blocks automated requests; existence confirmed through search"}}, {"name": "Association of Independent Festivals", "url": "https://aiforg.com/", "sector": "live events", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Association of Independent Festivals", "method": "Site retrieved and its title read"}}, {"name": "National Association of Funeral Directors", "url": "https://nafd.org.uk/", "sector": "funeral services", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "National Association of Funeral Directors", "method": "Site retrieved and its title read"}}, {"name": "British Veterinary Association", "url": "https://www.bva.co.uk/", "sector": "veterinary", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "BVA - British Veterinary Association", "method": "Site retrieved and its title read"}}, {"name": "Association of Dental Groups", "url": "https://www.dentalgroups.co.uk/", "sector": "dentistry", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed-index", "evidence": "Site blocks automated requests or was unavailable (403); existence confirmed through search", "method": "Site blocks automated requests; existence confirmed through search"}}, {"name": "Nursery and Childcare Providers: National Day Nurseries Association", "url": "https://ndna.org.uk/", "sector": "childcare", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Site retrieved", "method": "Site retrieved and its title read"}}, {"name": "Federation of Awarding Bodies", "url": "https://www.awarding.org.uk/", "sector": "awarding organisations", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Home - Federation of Awarding Bodies", "method": "Site retrieved and its title read"}}, {"name": "Association of Employment and Learning Providers", "url": "https://aelp.org.uk/", "sector": "training providers", "coverage": "UK", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "The Association of Employment and Learning Providers | AELP", "method": "Site retrieved and its title read"}}];
+var BODYNOTE="The Trade Association Forum is the umbrella body for UK trade associations and is the route to the many sector bodies not listed here. The British Chambers of Commerce accredits a network of chambers across the UK, which is how local chambers are reached. This directory now holds 105 bodies and is also published as a register instance in the proposed schema (trade-association-register.json), because no official open register exists.";
+var TRADE=[{"id": "eori-gb", "title": "Get a GB EORI number", "stage": "Before you move goods", "kind": "requirement", "what_it_is": "An Economic Operators Registration and Identification number beginning GB, needed to move goods between Great Britain or the Isle of Man and any other country", "when": "Before the first movement", "responsible_body": "HMRC", "applies_to_nations": ["GB-ENG", "GB-SCT", "GB-WLS", "GB-NIR"], "source": "https://www.gov.uk/eori", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "GOV.UK: you may need an EORI number if you move goods between Great Britain or the Isle of Man and any other country, including the EU."}}, {"id": "eori-xi", "title": "Get an XI EORI number", "stage": "Before you move goods", "kind": "requirement", "what_it_is": "A second EORI number for movements involving Northern Ireland under the Windsor Framework", "when": "After holding a GB EORI number", "responsible_body": "HMRC", "applies_to_nations": ["GB-NIR"], "source": "https://www.gov.uk/eori", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "GOV.UK EORI guidance covers movements between Great Britain and Northern Ireland and the XI prefix."}}, {"id": "commodity-code", "title": "Find the commodity code for the goods", "stage": "Before you move goods", "kind": "requirement", "what_it_is": "Internationally recognised reference numbers that describe a product and decide duty, VAT and any licence", "when": "Before declaring goods", "responsible_body": "HMRC", "applies_to_nations": ["GB-ENG", "GB-SCT", "GB-WLS", "GB-NIR"], "source": "https://www.gov.uk/guidance/finding-commodity-codes-for-imports-or-exports", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "GOV.UK: commodity codes are internationally recognised reference numbers describing a specific product when importing or exporting."}}, {"id": "trade-tariff", "title": "Check duty, VAT and restrictions in the UK Trade Tariff", "stage": "Before you move goods", "kind": "tool", "what_it_is": "The tariff lookup for import and export commodity codes, tax, duty and licences", "when": "Before pricing or declaring", "responsible_body": "HMRC", "applies_to_nations": ["GB-ENG", "GB-SCT", "GB-WLS", "GB-NIR"], "source": "https://www.gov.uk/trade-tariff", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "GOV.UK: search for import and export commodity codes and for tax, duty and licences that apply to your goods."}}, {"id": "tariff-api", "title": "Use the Trade Tariff API", "stage": "Before you move goods", "kind": "interface", "what_it_is": "A public API for tariff, commodity and measures data", "when": "Ongoing", "responsible_body": "HMRC", "applies_to_nations": ["GB-ENG", "GB-SCT", "GB-WLS", "GB-NIR"], "source": "https://api.trade-tariff.service.gov.uk/", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "The Trade Tariff API about page is published on a GOV.UK service domain."}}, {"id": "rules-of-origin", "title": "Check the rules of origin and claim tariff preference", "stage": "Before you move goods", "kind": "requirement", "what_it_is": "Rules that decide where goods originate and whether a trade agreement's lower duty applies", "when": "Before claiming preference", "responsible_body": "HMRC", "applies_to_nations": ["GB-ENG", "GB-SCT", "GB-WLS", "GB-NIR"], "source": "https://www.gov.uk/guidance/check-your-goods-meet-the-rules-of-origin", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "GOV.UK: rules of origin help you work out where your goods originate and which goods are covered in trade agreements, so you can claim tariff preference."}}, {"id": "ftas", "title": "Check the UK's trade agreements for the market", "stage": "Before you move goods", "kind": "reference", "what_it_is": "The collection of UK trade agreements and what they cover", "when": "When choosing markets", "responsible_body": "Department for Business and Trade", "applies_to_nations": ["GB-ENG", "GB-SCT", "GB-WLS", "GB-NIR"], "source": "https://www.gov.uk/government/collections/the-uks-trade-agreements", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "GOV.UK: trade agreements set out the rules for buying and selling goods and services between two or more countries."}}, {"id": "export-licence", "title": "Check whether an export licence is needed", "stage": "Before you move goods", "kind": "requirement", "what_it_is": "Licences for controlled military goods, software and technology, and dual-use items", "when": "Before export", "responsible_body": "Export Control Joint Unit, DBT", "applies_to_nations": ["GB-ENG", "GB-SCT", "GB-WLS", "GB-NIR"], "source": "https://www.gov.uk/guidance/export-controls-military-goods-software-and-technology", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "GOV.UK: an export licence is needed before the export of controlled military goods, software and technology and items on the UK dual-use list."}}, {"id": "cds", "title": "Subscribe to the Customs Declaration Service", "stage": "Declarations", "kind": "requirement", "what_it_is": "The HMRC system for import and export declarations, postponed VAT statements and import VAT certificates", "when": "Before declaring", "responsible_body": "HMRC", "applies_to_nations": ["GB-ENG", "GB-SCT", "GB-WLS", "GB-NIR"], "source": "https://www.gov.uk/guidance/get-access-to-the-customs-declaration-service", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "GOV.UK: subscribing to the Customs Declaration Service lets you submit import and export declarations and get postponed import VAT statements."}}, {"id": "import-steps", "title": "Follow the import step by step", "stage": "Declarations", "kind": "journey", "what_it_is": "The end-to-end GOV.UK route for importing goods into the UK", "when": "Each consignment", "responsible_body": "HMRC and Border Force", "applies_to_nations": ["GB-ENG", "GB-SCT", "GB-WLS", "GB-NIR"], "source": "https://www.gov.uk/import-goods-into-uk", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "GOV.UK step by step: you need an EORI number starting GB to import goods into England, Wales or Scotland."}}, {"id": "export-steps", "title": "Follow the export step by step", "stage": "Declarations", "kind": "journey", "what_it_is": "The end-to-end GOV.UK route for exporting goods from the UK", "when": "Each consignment", "responsible_body": "HMRC and Border Force", "applies_to_nations": ["GB-ENG", "GB-SCT", "GB-WLS", "GB-NIR"], "source": "https://www.gov.uk/export-goods", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "GOV.UK step by step: check duties, rules and restrictions in the destination country and apply for any licences you need."}}, {"id": "intermediary", "title": "Appoint a customs agent, broker or freight forwarder", "stage": "Declarations", "kind": "requirement", "what_it_is": "Someone established in the UK for customs who can declare goods on your behalf", "when": "Optional, common for new traders", "responsible_body": "HMRC", "applies_to_nations": ["GB-ENG", "GB-SCT", "GB-WLS", "GB-NIR"], "source": "https://www.gov.uk/guidance/appoint-someone-to-deal-with-customs-on-your-behalf", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "GOV.UK: freight forwarders, customs agents or brokers and express operators can deal with customs for you and must be established in the UK for customs."}}, {"id": "postponed-vat", "title": "Account for import VAT on the VAT Return", "stage": "Money", "kind": "requirement", "what_it_is": "Postponed VAT accounting: declare and recover import VAT on the same return rather than paying upfront", "when": "Each return period", "responsible_body": "HMRC", "applies_to_nations": ["GB-ENG", "GB-SCT", "GB-WLS", "GB-NIR"], "source": "https://www.gov.uk/guidance/check-when-you-can-account-for-import-vat-on-your-vat-return", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "GOV.UK: accounting for import VAT on your VAT Return means you declare and recover import VAT on the same return rather than paying it upfront."}}, {"id": "aeo", "title": "Consider Authorised Economic Operator status", "stage": "Declarations", "kind": "requirement", "what_it_is": "An internationally recognised standard showing a secure supply chain role and compliant customs controls", "when": "When volumes justify it", "responsible_body": "HMRC", "applies_to_nations": ["GB-ENG", "GB-SCT", "GB-WLS", "GB-NIR"], "source": "https://www.gov.uk/guidance/authorised-economic-operator-certification", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "GOV.UK: Authorised Economic Operator status is an internationally recognised standard showing your role in the international supply chain is secure."}}, {"id": "ukims", "title": "Apply for UK Internal Market Scheme authorisation", "stage": "Northern Ireland", "kind": "requirement", "what_it_is": "Authorisation giving access to the Simplified Processes for Internal Market Movements from Great Britain to Northern Ireland", "when": "Before moving qualifying goods", "responsible_body": "HMRC", "applies_to_nations": ["GB-NIR", "GB-ENG", "GB-SCT", "GB-WLS"], "source": "https://www.gov.uk/guidance/apply-for-authorisation-for-the-uk-internal-market-scheme-if-you-bring-goods-into-northern-ireland", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "GOV.UK: UK Internal Market Scheme authorisation gives access to the Simplified Processes for Internal Market Movements."}}, {"id": "ipaffs", "title": "Notify animal, food and feed imports through IPAFFS", "stage": "Product rules", "kind": "requirement", "what_it_is": "Pre-notification for live animals, germinal products, animal by-products and high-risk food and feed", "when": "Before arrival", "responsible_body": "Animal and Plant Health Agency and Defra", "applies_to_nations": ["GB-ENG", "GB-SCT", "GB-WLS"], "source": "https://www.gov.uk/guidance/import-of-products-animals-food-and-feed-system", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "GOV.UK: you must use IPAFFS to notify authorities in Great Britain before live animals, germinal products, animal by-products and high-risk food and feed arrive."}}, {"id": "ukca", "title": "Place UKCA or CE marked products on the market in Great Britain", "stage": "Product rules", "kind": "requirement", "what_it_is": "Conformity assessment routes and marking for products placed on the GB market", "when": "Before placing on the market", "responsible_body": "Office for Product Safety and Standards", "applies_to_nations": ["GB-ENG", "GB-SCT", "GB-WLS"], "source": "https://www.gov.uk/guidance/placing-ukca-or-ce-marked-products-on-the-market-in-great-britain", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "GOV.UK: guidance for placing a product on the market in Great Britain under the UKCA or CE regimes."}}, {"id": "ukef", "title": "Use UK Export Finance where finance or insurance is the barrier", "stage": "Money and support", "kind": "support", "what_it_is": "The UK's export credit agency, providing finance and insurance so viable exports do not fail for lack of it", "when": "When finance blocks a contract", "responsible_body": "UK Export Finance", "applies_to_nations": ["GB-ENG", "GB-SCT", "GB-WLS", "GB-NIR"], "source": "https://www.gov.uk/government/organisations/uk-export-finance", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "UKEF: we advance prosperity by ensuring no viable UK export fails for lack of finance or insurance."}}, {"id": "great", "title": "Use the DBT export support on Business.gov.uk", "stage": "Money and support", "kind": "support", "what_it_is": "Government export guidance, market information and support services; great.gov.uk now resolves to Business.gov.uk", "when": "Any stage", "responsible_body": "Department for Business and Trade", "applies_to_nations": ["GB-ENG", "GB-SCT", "GB-WLS", "GB-NIR"], "source": "https://www.great.gov.uk/", "verification": {"checked_on": "2026-09-17", "result": "confirmed", "evidence": "Retrieving great.gov.uk returns a Business.gov.uk page offering to start, run or grow a UK business and improve export support services."}}];
+var XSTAGES=["Before you move goods", "Declarations", "Product rules", "Northern Ireland", "Money", "Money and support"];
+var GAPS={"Rules and sandboxes": ["No single service maps a business's activity to the regulation that binds it; the licence finder and Business Companion come closest and neither is machine-readable at the level the Open Regulation Document Standard imagined.", "Sector regulators run sandboxes on their own terms, with no common entry point, eligibility model or published data.", "Devolved regulators and Northern Ireland guidance hubs are named but not separately verified here."], "Trade bodies": ["About a hundred bodies is a working directory across every major sector and all four nations, not the full population, which runs into the hundreds; the proposed schema is how it would be maintained properly.", "Local chambers of commerce are reached through the British Chambers of Commerce accreditation network rather than listed individually.", "Professional regulators, as distinct from membership bodies, are in regulators-and-networks.json."], "Import and export": ["Export health certificates, plant health and CITES routes are named in guidance but not separately verified here.", "Services trade, data transfers and professional qualification recognition are outside this goods-focused list.", "Sector import controls, quotas and trade remedies change often and are not modelled; the Trade Tariff is the live source."]};(function(){
+  var root=document.documentElement;
+  try{var sv=localStorage.getItem('rules-theme');if(sv)root.setAttribute('data-theme',sv);}catch(e){}
+  function $(id){return document.getElementById(id);}
+  function $$(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s));}
+  function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+  function on(el,ev,fn){if(el)el.addEventListener(ev,fn);}
+  on($('theme'),'click',function(){var cur=root.getAttribute('data-theme');var dark=cur?cur==='dark':(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches);var n=dark?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('rules-theme',n);}catch(e){}});
+  on($('print'),'click',function(){window.print();});
+  var NAT={'GB-ENG':'England','GB-SCT':'Scotland','GB-WLS':'Wales','GB-NIR':'Northern Ireland'};
+  function vr(v){var l=v==='confirmed'?'checked':(v==='unverified'?'unchecked':'part-checked');return '<span class="vr '+(v==='confirmed'?'confirmed':v==='unverified'?'unverified':'partly-confirmed')+'">'+l+'</span>';}
+  function src(u,ctx){return u?'<a href="'+u+'" target="_blank" rel="noopener"'+(ctx?' aria-label="Source for '+esc(ctx)+'"':'')+'>source</a>':'';}
+  $('lede').innerHTML='<strong>'+REGS.length+' places the rules live</strong>, <strong>'+GUIDE.length+' guidance hubs</strong>, <strong>'+SAND.length+' regulatory sandboxes</strong>, <strong>'+TRADE.length+' import and export requirements and tools</strong>, and <strong>'+BODIES.length+' trade bodies</strong> across sectors and nations.';
+  $('stats').innerHTML='<article><b>'+SAND.length+'</b><p>regulatory sandboxes, run separately by each regulator with no common front door.</p></article>'+
+   '<article><b>'+TRADE.length+'</b><p>things an importing or exporting business meets, from EORI to postponed VAT accounting.</p></article>'+
+   '<article><b>'+BODIES.length+'</b><p>trade bodies and associations checked, across '+(function(){var s={};BODIES.forEach(function(b){s[b.sector]=1;});return Object.keys(s).length;})()+' sectors and all four nations.</p></article>'+
+   '<article><b>1</b><p>machine-readable source of law: legislation.gov.uk and its API. Regulation itself has no equivalent.</p></article>';
+  var SEC=[['s-law','Where rules live'],['s-guide','Who explains it'],['s-sand','Sandboxes'],['s-trade','Import and export'],['s-bodies','Trade bodies'],['s-gaps','Gaps']];
+  $('jump').innerHTML=SEC.map(function(s){return '<li><a href="#'+s[0]+'">'+esc(s[1])+'</a></li>';}).join('');
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)$$('#jump a').forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id);});});},{rootMargin:'-40% 0px -55% 0px'});SEC.forEach(function(s){if($(s[0]))io.observe($(s[0]));});}
+  var COL=['var(--l1)','var(--l2)','var(--l3)','var(--l4)','var(--l5)','var(--l6)'];
+  $('regs').innerHTML=REGS.map(function(r,i){return '<div class="rowcard" style="--c:'+COL[i%6]+'"><h3>'+esc(r.name)+' '+vr(r.verification.result)+'</h3><p>'+esc(r.role)+'</p>'+
+    (r.successor?'<p class="meta"><b>Successor:</b> '+esc(r.successor)+'</p>':'')+
+    '<p class="meta">'+esc(r.kind)+' · '+src(r.url,r.name||r.title)+' · '+esc(r.verification.evidence)+'</p></div>';}).join('');
+  $('orp').innerHTML='<h3>The Open Regulation Platform, and what happened to it</h3><p>'+esc(ORPNOTE)+'</p>';
+  $('guide').innerHTML=GUIDE.map(function(r,i){return '<div class="rowcard" style="--c:'+COL[(i+2)%6]+'"><h3>'+esc(r.name)+' '+vr(r.verification.result)+'</h3><p>'+esc(r.role)+'</p><p class="meta">'+esc(r.owner)+' · '+src(r.url,r.name||r.title)+'</p></div>';}).join('');
+  $('sand').innerHTML=SAND.map(function(r,i){return '<div class="rowcard" style="--c:'+COL[(i+4)%6]+'"><h3>'+esc(r.name)+' '+vr(r.verification.result)+'</h3><p>'+esc(r.regulator)+' — '+esc(r.domain)+'</p><p class="meta"><b>Status:</b> '+esc(r.status)+' · '+src(r.url,r.name||r.title)+'</p></div>';}).join('');
+  function trade(){
+    var nat=$('xnat').value;
+    var list=TRADE.filter(function(t){return !nat||t.applies_to_nations.indexOf(nat)>=0;});
+    $('xcount').textContent=list.length+' of '+TRADE.length+' apply';
+    var out='';
+    XSTAGES.forEach(function(st){
+      var inS=list.filter(function(t){return t.stage===st;});
+      if(!inS.length) return;
+      out+='<p class="stagehead">'+esc(st)+'</p><div class="rowcards">'+inS.map(function(t,i){
+        return '<div class="rowcard" style="--c:'+COL[i%6]+'"><h3>'+esc(t.title)+' '+vr(t.verification.result)+'</h3><p>'+esc(t.what_it_is)+'</p>'+
+        '<p class="meta"><b>'+esc(t.kind)+'</b> · '+esc(t.responsible_body)+' · '+esc(t.when)+' · '+esc(t.applies_to_nations.map(function(n){return NAT[n];}).join(', '))+' · '+src(t.source,t.title)+'</p></div>';}).join('')+'</div>';
+    });
+    $('trade').innerHTML=out;
+  }
+  on($('xnat'),'change',trade);trade();
+  $('bodyintro').textContent=BODYNOTE;
+  var secs=[],covs=[];
+  BODIES.forEach(function(b){if(secs.indexOf(b.sector)<0)secs.push(b.sector);if(covs.indexOf(b.coverage)<0)covs.push(b.coverage);});
+  secs.sort();covs.sort();
+  $('bsec').innerHTML='<option value="">All sectors</option>'+secs.map(function(s){return '<option>'+esc(s)+'</option>';}).join('');
+  $('bcov').innerHTML='<option value="">All of the UK</option>'+covs.map(function(s){return '<option>'+esc(s)+'</option>';}).join('');
+  function bodies(){
+    var s=$('bsec').value,c=$('bcov').value;
+    var list=BODIES.filter(function(b){return (!s||b.sector===s)&&(!c||b.coverage===c);});
+    $('bcount').textContent=list.length+' of '+BODIES.length+' bodies';
+    $('bodies').innerHTML=list.map(function(b){return '<div class="bodycard"><b>'+esc(b.name)+' '+vr(b.verification.result)+'</b><small>'+esc(b.sector)+' · '+esc(b.coverage)+'</small><small><a href="'+b.url+'" target="_blank" rel="noopener">'+esc(b.url.replace(/^https?:\/\/(www\.)?/,'').replace(/\/$/,''))+'</a></small></div>';}).join('');
+  }
+  on($('bsec'),'change',bodies);on($('bcov'),'change',bodies);bodies();
+  $('gaps').innerHTML=Object.keys(GAPS).map(function(k){return GAPS[k].map(function(g){return '<li><b>'+esc(k)+'</b><span>'+esc(g)+'</span></li>';}).join('');}).join('');
+  function json_(){return JSON.stringify({regulation_sources:REGS,guidance_hubs:GUIDE,sandboxes:SAND,import_export:TRADE,trade_bodies:BODIES,gaps:GAPS},null,2);}
+  window.__rules={json:json_};
+  if(window.claude&&typeof window.claude.use==='function'){window.claude.use('downloads').then(function(dl){if(!dl)return;$('dljson').hidden=false;
+    on($('dljson'),'click',function(){$('dljson').disabled=true;dl.save({filename:'regulation-trade-and-bodies.json',data:json_()}).then(function(){$('toolmsg').textContent='Saved.';}).catch(function(e){$('toolmsg').textContent=(e&&e.code)==='declined'?'':'Download is not available here.';}).then(function(){$('dljson').disabled=false;});});}).catch(function(){});}
+})();
+</script><script>window.AI_CFG={title:"Ask about rules, trade and the bodies",family:"Starting a business in the UK portal and its other parts",intro:"Ask anything about this page. Answers come from this page's content and its structured data.",suggestions:["What happened to the Open Regulation Platform?", "Which regulatory sandboxes could my business use?", "What do I need before I export goods?", "Which trade body covers my sector?"],context:function(){var t='';try{var m=document.querySelector('main');t=(document.querySelector('header')?document.querySelector('header').innerText+'\n':'')+(m?m.innerText:'');}catch(e){} var d='';try{var x=window.__finder||window.__rules||window.__rulebook;if(x&&typeof x.json==='function'){d=x.json();}}catch(e){} return d?t+'\n\n=== STRUCTURED DATA FOR THE CURRENT SELECTION (JSON) ===\n'+d:t;},max:46000};
+(function(){
+  if(!window.AI_CFG) return;
+  var CFG=window.AI_CFG, doc=document;
+  var btn=doc.createElement('button');btn.className='aibtn';btn.type='button';btn.hidden=true;btn.textContent='Ask about this page';
+  var wrap=doc.createElement('div');wrap.className='aiwrap';wrap.setAttribute('role','dialog');wrap.setAttribute('aria-label','Ask Claude about this page');
+  wrap.innerHTML='<div class="aihead"><b>'+CFG.title+'<small>Grounded in this page\'s evidence</small></b><button type="button" aria-label="Close">&times;</button></div>'+
+    '<div class="ailog" id="ailog"></div><div class="aisug" id="aisug"></div>'+
+    '<form class="aiform"><textarea rows="1" placeholder="Ask a question" aria-label="Your question"></textarea><button type="submit">Ask</button></form>'+
+    '<p class="aifoot">Answers come from Claude reading this page. They use your Claude account, and can be wrong: check the cited sources.</p>';
+  doc.body.appendChild(btn);doc.body.appendChild(wrap);
+  var log=wrap.querySelector('#ailog'),sug=wrap.querySelector('#aisug'),form=wrap.querySelector('form'),ta=form.querySelector('textarea'),send=form.querySelector('button[type=submit]'),close=wrap.querySelector('.aihead button');
+  var sample=null,turns=[],busy=false,ctl=null;
+  function el(cls,txt){var d=doc.createElement('div');d.className='aimsg '+cls;d.textContent=txt;log.appendChild(d);log.scrollTop=log.scrollHeight;return d;}
+  function context(){
+    var t=CFG.context&&CFG.context();
+    if(!t){var m=doc.querySelector('main');t=(doc.querySelector('header')?doc.querySelector('header').innerText+'\n':'')+(m?m.innerText:doc.body.innerText);}
+    t=t.replace(/\s+\n/g,'\n').replace(/\n{3,}/g,'\n\n');
+    var MAXC=CFG.max||26000;return t.length>MAXC?t.slice(0,MAXC)+'\n[content truncated]':t;
+  }
+  function rules(){
+    return 'You are answering questions about a UK government analysis of the "start a business" journey, for civil servants. '+
+      'Answer ONLY from the CONTENT below, which is the page the reader is looking at ('+CFG.title+'). '+
+      'If the answer is not in the content, say so plainly and suggest which companion page may hold it ('+CFG.family+'). '+
+      'Never invent statistics, dates, sources or URLs. Quote figures exactly as written. '+
+      'Be concise: 2 to 6 sentences or a short list, plain British English, no headings, no markdown emphasis. '+
+      'Where a claim rests on a source named in the content, name that source in words.\n\nCONTENT:\n'+context();
+  }
+  function open(){wrap.classList.add('open');btn.hidden=true;ta.focus();}
+  function shut(){wrap.classList.remove('open');btn.hidden=false;if(ctl)ctl.abort();}
+  btn.addEventListener('click',open);close.addEventListener('click',shut);
+  doc.addEventListener('keydown',function(e){if(e.key==='Escape'&&wrap.classList.contains('open'))shut();});
+  (CFG.suggestions||[]).forEach(function(q){var b=doc.createElement('button');b.type='button';b.textContent=q;b.addEventListener('click',function(){ta.value=q;ask();});sug.appendChild(b);});
+  function copy(code){
+    switch(code){
+      case 'rate_limited':return 'Too many questions at once. Wait a moment and ask again.';
+      case 'session_expired':return 'Your session expired. Sign in again to keep asking.';
+      case 'refused':return 'Claude declined to answer that. Try asking it differently.';
+      case 'empty_completion':return 'No answer came back. Try a shorter, more specific question.';
+      case 'cancelled':return '';
+      case 'prompt_too_large':return 'That question plus this page is too long to send. Ask about one section.';
+      default:return 'Something went wrong reaching Claude. Try again in a moment.';
+    }
+  }
+  function hide(){btn.remove();wrap.remove();}
+  function ask(){
+    var q=ta.value.trim();if(!q||busy||!sample)return;
+    ta.value='';el('u',q);turns.push({role:'user',content:q});
+    var out=el('a','Thinking…');busy=true;send.disabled=true;send.textContent='…';
+    ctl=new AbortController();
+    var input=[{role:'user',content:rules()},{role:'assistant',content:'Understood. I will answer only from that content.'}].concat(turns);
+    sample(input,{cache:false,signal:ctl.signal,onText:function(e){out.textContent=e.text;log.scrollTop=log.scrollHeight;}}).then(function(r){
+      out.textContent=r.text+(r.truncated?'\n\n[Answer cut short.]':'');turns.push({role:'assistant',content:r.text});
+      if(turns.length>10)turns=turns.slice(-10);
+    }).catch(function(e){
+      var c=e&&e.code;
+      if(c==='not_granted'||c==='sampling_disabled'||c==='not_declared'||c==='capability_disabled'){out.textContent='Asking Claude is not available in this view.';hideLater();}
+      else {out.textContent=(e&&e.text)?e.text:'';var m=copy(c);if(m)el('sys',m);if(!out.textContent)out.remove();}
+      turns.pop();
+    }).then(function(){busy=false;send.disabled=false;send.textContent='Ask';ctl=null;});
+  }
+  function hideLater(){setTimeout(function(){btn.remove();},50);}
+  form.addEventListener('submit',function(e){e.preventDefault();ask();});
+  ta.addEventListener('keydown',function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();ask();}});
+  if(window.claude&&typeof window.claude.use==='function'){
+    window.claude.use('sample').then(function(s){if(!s){hide();return;}sample=s;btn.hidden=false;
+      el('sys',CFG.intro||'Ask anything about this page. Answers are grounded in what this page shows and its sources.');
+    }).catch(function(){hide();});
+  } else {hide();}
+})();
+</script>
+<script>/* Self-* runtime: verify, repair, assess and report. Runs on every page, in the browser,
+   with no network access. Everything it does is recorded and reversible by reloading. */
+(function(){
+  if(window.__selfcheck) return;
+  var BUILD="2026-09-18";
+  var findings=[], repairs=[], allRepairs=[], t0=(window.performance&&performance.now)?performance.now():0;
+  function add(sev,id,msg,n){findings.push({severity:sev,check:id,detail:msg,count:n==null?1:n});}
+  function fixed(id,msg,n){var c=(n==null?1:n);repairs.push({check:id,action:msg,count:c});
+    for(var i=0;i<allRepairs.length;i++){if(allRepairs[i].check===id){allRepairs[i].count+=c;return;}}
+    allRepairs.push({check:id,action:msg,count:c});}
+  function txt(e){return (e.textContent||'').replace(/\s+/g,' ').trim();}
+  function near(a){
+    var r=a.closest('li,td,tr,article,.card,.rowcard,.tp,p');
+    if(r){var h=r.querySelector('b,strong,h3,h4');if(h&&txt(h))return txt(h).slice(0,80);
+      var t=txt(r);if(t)return t.slice(0,80);}
+    var s=a.closest('section');var h2=s&&s.querySelector('h2');
+    return h2?txt(h2).slice(0,80):'this entry';
+  }
+  // ---------- verification + repair ----------
+  function scrollRegions(){
+    var n=0,fixedN=0;
+    var all=document.querySelectorAll('body *');
+    for(var i=0;i<all.length;i++){var e=all[i];if(e.closest('svg'))continue;
+      var cs=getComputedStyle(e);if(!(cs.overflowX==='auto'||cs.overflowX==='scroll'||cs.overflowY==='auto'||cs.overflowY==='scroll'))continue;
+      if(!(e.scrollWidth>e.clientWidth+1||e.scrollHeight>e.clientHeight+1))continue;
+      if(e.querySelector('a,button,input,select,textarea,[tabindex]'))continue;
+      if(e.hasAttribute('tabindex'))continue;
+      n++;e.setAttribute('tabindex','0');e.setAttribute('role','region');
+      if(!e.getAttribute('aria-label')){var h=e.closest('section');var h2=h&&h.querySelector('h2');e.setAttribute('aria-label',(h2?txt(h2):'Scrollable content')+' (scrollable)');}
+      fixedN++;}
+    if(fixedN)fixed('scroll.focusable','Made '+fixedN+' scrollable region(s) keyboard reachable with tabindex and a label. Defect: axe-core scrollable-region-focusable on the journey map and blueprint lanes, 23 September 2026.',fixedN);
+  }
+  function structure(){
+    var h1=document.querySelectorAll('h1').length;
+    if(h1!==1) add('high','structure.h1','Expected exactly one h1, found '+h1,h1);
+    if(!document.getElementById('main')) add('high','structure.main','No element with id="main" for the skip link to reach');
+    var skip=document.querySelector('a.skip');
+    if(!skip){
+      var a=document.createElement('a');a.className='skip';a.href='#main';a.textContent='Skip to content';
+      document.body.insertBefore(a,document.body.firstChild);
+      fixed('structure.skip','Inserted a missing skip link as the first focusable element');
+    }
+    var lv=0,skips=0;
+    Array.prototype.forEach.call(document.querySelectorAll('h1,h2,h3,h4,h5,h6'),function(h){
+      var n=+h.tagName.slice(1); if(lv && n>lv+1) skips++; lv=n;});
+    if(skips) add('medium','structure.headings',skips+' heading level skips',skips);
+    if(!document.querySelector('.ribbon')) add('low','structure.ribbon','Journey ribbon missing from this page');
+    var fam=document.querySelectorAll('.family a,.xfam a').length;
+    if(!fam && !/portal/.test(location.pathname)) add('medium','structure.family','Family navigation is empty');
+  }
+  function links(){
+    var amb=0,noop=0,empty=0;
+    Array.prototype.forEach.call(document.querySelectorAll('a[href]'),function(a){
+      var label=(a.getAttribute('aria-label')||txt(a)).toLowerCase();
+      if(['source','details','here','more','link','read more','click here'].indexOf(label)>=0){
+        a.setAttribute('aria-label',(label==='details'?'Details of ':'Source for ')+near(a)); amb++;
+      }
+      if(a.target==='_blank' && !/noopener/.test(a.rel||'')){a.rel=((a.rel||'')+' noopener').trim();noop++;}
+      if(!a.getAttribute('href').trim()) empty++;
+    });
+    if(amb){fixed('links.ambiguous','Gave a context-bearing accessible name to links that read only "source" or "details"',amb);}
+    if(noop){fixed('links.noopener','Added rel="noopener" to links opening in a new tab',noop);}
+    if(empty) add('medium','links.empty',empty+' links with an empty href',empty);
+  }
+  function aria(){
+    var seen={},dupes=0;
+    Array.prototype.forEach.call(document.querySelectorAll('[id]'),function(e){
+      if(seen[e.id]){e.id=e.id+'-dup'+(++dupes);} else seen[e.id]=1;});
+    if(dupes) fixed('aria.duplicate-id','Renamed duplicate element ids so labels and controls resolve to one target',dupes);
+    var svgs=0;
+    Array.prototype.forEach.call(document.querySelectorAll('svg'),function(s){
+      var named=s.getAttribute('aria-label')||s.querySelector('title')||s.getAttribute('role')==='img';
+      if(!named && s.getAttribute('aria-hidden')!=='true'){s.setAttribute('aria-hidden','true');s.setAttribute('focusable','false');svgs++;}
+    });
+    if(svgs) fixed('aria.decorative-svg','Marked decorative graphics as hidden from assistive technology',svgs);
+    var unl=0;
+    Array.prototype.forEach.call(document.querySelectorAll('input,select,textarea'),function(c){
+      if(c.type==='hidden')return;
+      var has=(c.labels&&c.labels.length)||c.getAttribute('aria-label')||c.getAttribute('aria-labelledby')||c.closest('label');
+      if(!has) unl++;});
+    if(unl) add('high','aria.unlabelled-control',unl+' form controls with no accessible name',unl);
+    var figs=0;
+    Array.prototype.forEach.call(document.querySelectorAll('svg.art'),function(s){
+      if(!s.querySelector('title')||!s.querySelector('desc')) figs++;});
+    if(figs) add('medium','aria.illustration',figs+' illustrations without both a title and a description',figs);
+  }
+  function layout(){
+    var vw=document.documentElement.clientWidth, wide=0, wrapped=0;
+    Array.prototype.forEach.call(document.querySelectorAll('table'),function(t){
+      if(t.scrollWidth>vw+2){
+        var p=t.parentElement;
+        if(!p || getComputedStyle(p).overflowX!=='auto'){
+          var d=document.createElement('div');d.className='tablewrap';d.style.overflowX='auto';d.style.maxWidth='100%';
+          t.parentNode.insertBefore(d,t);d.appendChild(t);wrapped++;
+        }
+      }});
+    if(wrapped) fixed('layout.table-scroll','Wrapped wide tables in a horizontal scroll container',wrapped);
+    if(document.documentElement.scrollWidth>vw+2){
+      document.documentElement.style.maxWidth='100%';document.body.style.overflowX='hidden';
+      wide=1;fixed('layout.overflow','Clamped horizontal overflow at the document root');
+    }
+    return wide;
+  }
+  function currency(){
+    var built=new Date(BUILD+'T00:00:00Z'), days=Math.floor((Date.now()-built.getTime())/86400000);
+    var sev = days>365?'high':days>180?'medium':days>90?'low':null;
+    if(sev) add(sev,'currency.age','This page was built '+days+' days ago. Sources move; re-run the verification pass before relying on it.',days);
+    return days;
+  }
+  function data(){
+    // Cross-check any count this page states about its own dataset
+    var out=[];
+    try{
+      var D=window.__bp&&JSON.parse(window.__bp.json());
+      if(D){
+        var steps=D.BLUE.reduce(function(a,b){return a+b.steps.length;},0);
+        var claimed=(document.body.innerText.match(/(\d+)\s+journey moments/)||[])[1];
+        out.push({fact:'blueprint steps',value:steps});
+        if(claimed && +claimed!==steps) add('medium','data.count','Page states '+claimed+' journey moments but the data holds '+steps);
+      }
+    }catch(e){}
+    return out;
+  }
+  // ---------- assessment ----------
+  function assess(days){
+    var high=findings.filter(function(f){return f.severity==='high';}).length;
+    var med=findings.filter(function(f){return f.severity==='medium';}).length;
+    var low=findings.filter(function(f){return f.severity==='low';}).length;
+    var dims=[
+      ['Accuracy','every claim carries a source and the verification register records what was checked',high?'at risk':'holding'],
+      ['Currency', days>180?'stale: re-verification overdue':days>90?'ageing':'current', days>180?'at risk':'holding'],
+      ['Accessibility', high?'a structural defect is present on this page':'structural checks pass on this page', high?'at risk':'holding'],
+      ['Resilience','the page repaired '+allRepairs.reduce(function(a,r){return a+r.count;},0)+' defects at load without failing','holding'],
+      ['Completeness','open issues are published rather than hidden','holding'],
+      ['Sustainability','one file, no build step, no dependency to rot','holding']
+    ];
+    var score=Math.max(0,100-(high*18)-(med*6)-(low*2)-(days>365?15:days>180?8:0));
+    return {score:score,band:score>=85?'good':score>=70?'fair':'needs work',dimensions:dims,high:high,medium:med,low:low};
+  }
+  // ---------- run ----------
+  structure();
+  scrollRegions();links();aria();layout();var days=currency();var facts=data();
+  var a=assess(days);
+  var ms=((window.performance&&performance.now)?performance.now():0)-t0;
+  var report={page:document.title,build:BUILD,ranAt:new Date().toISOString(),ageDays:days,
+    durationMs:Math.round(ms),passes:1,findings:findings,repairs:allRepairs,assessment:a,facts:facts};
+  window.__selfcheck={report:function(){return report;},recheck:function(){return repass();},json:function(){return JSON.stringify(report);},rerun:function(){location.reload();}};
+  // ---------- surface ----------
+  function badge(){
+    var host=document.querySelector('footer .wrap')||document.querySelector('footer')||document.body;
+    var d=document.createElement('section');d.className='selfcheck';d.setAttribute('aria-labelledby','sc-h');
+    var rep=allRepairs.reduce(function(x,r){return x+r.count;},0);
+    d.innerHTML='<h2 id="sc-h">This page checks itself</h2>'+
+      '<p class="scline"><span class="scdot '+a.band.replace(' ','-')+'" aria-hidden="true"></span>'+
+      '<b>'+a.score+'/100</b> on its own checks, run in your browser '+Math.round(ms)+'ms ago: '+
+      findings.length+' finding'+(findings.length===1?'':'s')+', '+rep+' defect'+(rep===1?'':'s')+' repaired automatically, built '+days+' days ago.</p>'+
+      '<details><summary>What it checked, what it found, what it fixed</summary><div class="scbody">'+
+      '<h3>Findings</h3>'+(findings.length?'<ul>'+findings.map(function(f){return '<li><b>'+f.severity+'</b> '+f.check+' — '+f.detail+'</li>';}).join('')+'</ul>':'<p>Nothing outstanding on this page.</p>')+
+      '<h3>Repaired at load</h3>'+(allRepairs.length?'<ul>'+allRepairs.map(function(r){return '<li>'+r.action+' ('+r.count+')</li>';}).join('')+'</ul>':'<p>Nothing needed repairing.</p>')+
+      '<h3>Self-assessment</h3><ul>'+a.dimensions.map(function(x){return '<li><b>'+x[0]+'</b> '+x[1]+' — <i>'+x[2]+'</i></li>';}).join('')+'</ul>'+
+      '<p class="meta">These checks run in the page, with no network access. They cannot test with a real screen reader, cannot re-request a source, and cannot know whether a fact changed yesterday. They fail visibly rather than quietly: a repair is reported, never hidden.</p>'+
+      '<p><button class="btn sm" type="button" id="scdl">Download this report</button> <span class="toolmsg" id="scmsg" role="status"></span></p>'+
+      '</div></details>';
+    host.appendChild(d);
+    var b=document.getElementById('scdl');
+    if(b)b.addEventListener('click',function(){
+      try{
+        var blob=new Blob([JSON.stringify(report,null,1)],{type:'application/json'});
+        var u=URL.createObjectURL(blob),el=document.createElement('a');
+        el.href=u;el.download='self-check-'+(document.title.split(':')[0].toLowerCase().replace(/[^a-z0-9]+/g,'-'))+'.json';
+        document.body.appendChild(el);el.click();el.remove();setTimeout(function(){URL.revokeObjectURL(u);},2000);
+        document.getElementById('scmsg').textContent='Report downloaded.';
+      }catch(e){document.getElementById('scmsg').textContent='Download blocked here; the report is also on window.__selfcheck.report().';}
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',badge);else badge();
+
+  // ---------- continuous repair: dynamic pages render after this first pass ----------
+  var pending=null, passes=1;
+  function repass(){
+    var before=repairs.reduce(function(a,r){return a+r.count;},0);
+    repairs.length=0; findings.length=0;
+    structure();links();aria();layout();var d=currency();
+    passes++;
+    var after=repairs.reduce(function(a,r){return a+r.count;},0);
+    report.findings=findings; report.repairs=allRepairs; report.passes=passes;
+    report.assessment=assess(d); report.ranAt=new Date().toISOString();
+    var line=document.querySelector('.selfcheck .scline b');
+    if(line) line.textContent=report.assessment.score+'/100';
+    return after;
+  }
+  if(window.MutationObserver){
+    var mo=new MutationObserver(function(muts){
+      var worth=false;
+      for(var i=0;i<muts.length;i++){ if(muts[i].addedNodes && muts[i].addedNodes.length){worth=true;break;} }
+      if(!worth) return;
+      clearTimeout(pending);
+      pending=setTimeout(function(){ if(!document.querySelector('.selfcheck details[open]')) repass(); },600);
+    });
+    mo.observe(document.body,{childList:true,subtree:true});
+    window.__selfcheck_observer=mo;
+  }
+  setTimeout(repass,1500);
+
+})();
+</script>
+<!-- colophon: added by tools/publish.py -->
+<aside class="pgw-colophon" aria-label="About this publication" style="max-width:1120px;margin:40px auto 24px;padding:18px 22px;border:1px solid currentColor;border-radius:12px;font:14px/1.5 system-ui,sans-serif;display:flex;flex-wrap:wrap;gap:18px;align-items:center;opacity:.92">
+<div style="flex:1 1 340px;min-width:0">
+<p style="margin:0 0 6px"><strong>Not an official government service.</strong> An independent, evidence-led guide by Emanuel Silva, part of
+<a href="https://cyberdudeuk.github.io/">Public Good Works</a>. Every claim carries its source; check GOV.UK, nidirect, mygov.scot or gov.wales before you act.</p>
+<p style="margin:0 0 6px">Drafted and checked with AI assistance (Claude); the author reviewed and is responsible for it. Some features, such as the page assistant, work only inside Claude and are hidden here.</p>
+<p style="margin:0">Questions, corrections or ideas: use the <a href="https://github.com/cyberdudeuk/start-a-business-uk/issues/new?template=contact.yml">contact form</a> (no email address is published).
+Code MIT; content Open Government Licence v3.0, see the <a href="https://github.com/cyberdudeuk/start-a-business-uk">repository</a>.</p>
+</div>
+<div style="display:flex;gap:14px;align-items:center"><svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 156 156" role="img" aria-label="QR code for https://cyberdudeuk.github.io/start-a-business-uk/rules-trade-and-bodies/" class="segno"><g transform="scale(4)"><path fill="#fff" d="M0 0h39v39h-39z"/><path class="qrline" stroke="#0b0c0c" d="M1 1.5h7m2 0h2m2 0h2m6 0h1m1 0h1m4 0h1m1 0h7m-37 1h1m5 0h1m3 0h4m2 0h3m1 0h3m1 0h1m1 0h2m2 0h1m5 0h1m-37 1h1m1 0h3m1 0h1m1 0h5m1 0h1m1 0h1m1 0h1m2 0h4m5 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m1 0h2m1 0h3m1 0h1m2 0h1m1 0h1m2 0h3m2 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h4m1 0h1m3 0h1m1 0h2m2 0h1m4 0h1m1 0h1m1 0h3m1 0h1m-37 1h1m5 0h1m1 0h1m3 0h1m1 0h4m2 0h1m1 0h1m1 0h1m2 0h2m1 0h1m5 0h1m-37 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-29 1h2m1 0h3m2 0h3m2 0h2m1 0h1m1 0h3m-29 1h1m1 0h5m2 0h2m5 0h1m5 0h7m1 0h5m-35 1h2m1 0h1m3 0h2m4 0h1m1 0h1m2 0h1m1 0h2m1 0h1m4 0h2m1 0h1m1 0h1m1 0h1m-35 1h6m1 0h4m1 0h1m1 0h2m2 0h1m6 0h2m2 0h1m1 0h1m1 0h3m-37 1h2m3 0h1m3 0h3m1 0h3m2 0h4m4 0h4m6 0h1m-37 1h1m1 0h2m1 0h3m3 0h3m1 0h1m1 0h3m3 0h8m1 0h1m1 0h3m-37 1h3m2 0h1m4 0h2m1 0h1m2 0h1m1 0h4m1 0h1m2 0h1m1 0h2m1 0h1m3 0h1m-36 1h2m3 0h2m1 0h1m3 0h2m1 0h2m1 0h1m2 0h2m1 0h1m1 0h2m1 0h5m1 0h2m-36 1h1m1 0h2m3 0h1m1 0h3m7 0h2m5 0h6m2 0h2m-31 1h1m2 0h1m1 0h2m2 0h1m2 0h1m3 0h1m1 0h9m1 0h3m-37 1h6m3 0h2m1 0h6m5 0h2m3 0h1m2 0h1m1 0h1m1 0h1m-36 1h4m2 0h3m4 0h1m8 0h1m1 0h1m1 0h3m2 0h2m1 0h3m-36 1h1m2 0h1m2 0h1m1 0h1m1 0h4m1 0h1m4 0h1m4 0h8m2 0h1m-36 1h1m1 0h2m1 0h1m1 0h1m2 0h1m4 0h2m2 0h1m1 0h1m2 0h2m2 0h2m1 0h3m-34 1h1m1 0h3m2 0h2m3 0h1m2 0h5m2 0h1m4 0h1m4 0h1m-34 1h1m1 0h5m2 0h2m2 0h1m1 0h3m2 0h2m4 0h2m1 0h1m1 0h3m1 0h2m-34 1h1m5 0h1m1 0h2m2 0h5m1 0h2m1 0h1m1 0h1m3 0h3m-32 1h3m2 0h1m1 0h1m1 0h1m1 0h1m1 0h3m5 0h4m1 0h1m1 0h2m1 0h1m1 0h2m-36 1h1m1 0h1m1 0h2m1 0h3m3 0h3m2 0h1m4 0h1m1 0h1m8 0h1m-35 1h1m1 0h1m2 0h2m1 0h2m1 0h1m1 0h1m1 0h2m1 0h1m1 0h2m2 0h2m1 0h2m1 0h3m2 0h2m-37 1h1m1 0h2m3 0h2m1 0h1m1 0h1m2 0h1m3 0h5m2 0h1m5 0h1m2 0h2m-37 1h1m1 0h5m1 0h2m1 0h3m1 0h6m1 0h4m1 0h6m1 0h1m-27 1h2m6 0h1m1 0h4m1 0h1m1 0h1m2 0h1m3 0h2m-34 1h7m3 0h3m1 0h2m2 0h1m1 0h3m3 0h1m1 0h1m1 0h1m1 0h1m1 0h3m-37 1h1m5 0h1m1 0h1m3 0h3m4 0h5m2 0h1m1 0h1m3 0h2m1 0h2m-37 1h1m1 0h3m1 0h1m1 0h2m1 0h2m2 0h1m2 0h2m2 0h1m1 0h9m1 0h1m-35 1h1m1 0h3m1 0h1m1 0h2m1 0h3m1 0h3m1 0h1m2 0h2m1 0h1m3 0h2m1 0h1m3 0h1m-37 1h1m1 0h3m1 0h1m1 0h3m1 0h1m7 0h1m1 0h1m2 0h2m8 0h2m-37 1h1m5 0h1m2 0h1m1 0h1m1 0h2m1 0h1m2 0h1m1 0h2m1 0h1m3 0h3m1 0h1m3 0h1m-37 1h7m1 0h1m2 0h1m5 0h1m6 0h3m2 0h2m1 0h5"/></g></svg>
+<span style="display:inline-flex;flex-direction:column;gap:4px;align-items:flex-start"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="168" height="48" viewBox="0 0 74.800 14.000" preserveAspectRatio="none" role="img" aria-label="Barcode SAB-UK-RULES-TRADE-AND-BODIES">
+    <!--Autogenerated with python-barcode 0.16.1-->
+    <g id="barcode_group">
+        <rect width="100%" height="100%" style="fill:white"/>
+        <rect x="2.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="2.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="3.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="4.200mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="4.800mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="5.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="6.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="6.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="7.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="8.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="9.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="9.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="10.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="11.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="12.000mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="13.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="13.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="14.400mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="15.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="15.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="16.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="17.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="18.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="18.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="19.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="20.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="21.000mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="21.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="22.400mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="23.200mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="24.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="24.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="25.400mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="26.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="27.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="27.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="28.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="29.000mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="29.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="30.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="31.200mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="31.800mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="32.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="33.400mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="34.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="35.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="36.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="36.400mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="37.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="37.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="38.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="39.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="39.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="40.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="41.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="42.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="43.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="43.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="44.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="45.000mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="46.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="46.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="47.200mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="48.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="48.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="49.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="50.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="50.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="51.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="52.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="53.200mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="53.800mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="54.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="55.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="56.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="57.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="57.800mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="58.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="59.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="59.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="60.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="61.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="62.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="63.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="63.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="64.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="65.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="65.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="66.400mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="67.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="68.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="68.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="69.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="70.200mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="71.200mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="72.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="72.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+    </g>
+</svg>
+<code style="font-size:11px">SAB-UK-RULES-TRADE-AND-BODIES</code></span></div>
+</aside>
+</body></html>

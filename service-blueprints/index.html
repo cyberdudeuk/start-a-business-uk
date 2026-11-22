@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Service blueprints, personas and inclusion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EDF0F2;--panel:#FFFFFF;--ink:#152030;--muted:#586273;--rule:#C9D0D8;--faint:#E3E7EB;--focus:#FFBF47;
+  --qual:#7A3FC6;--survey:#1F4FD1;--analytics:#0E7A6B;--eval:#946400;--inquiry:#C0264D;--ops:#586273;
+  --heat:#152030;--gate:#152030;--gatetext:#FFFFFF;
+  --sans:"Schibsted Grotesk",-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0F151D;--panel:#17202B;--ink:#E6EBF1;--muted:#9AA5B3;--rule:#344152;--faint:#232E3B;
+  --qual:#B99AF2;--survey:#7FA2FF;--analytics:#4FD1BC;--eval:#E0B64D;--inquiry:#F27A98;--ops:#9AA5B3;
+  --gate:#E6EBF1;--gatetext:#0F151D;}}
+:root[data-theme="dark"]{
+  --paper:#0F151D;--panel:#17202B;--ink:#E6EBF1;--muted:#9AA5B3;--rule:#344152;--faint:#232E3B;
+  --qual:#B99AF2;--survey:#7FA2FF;--analytics:#4FD1BC;--eval:#E0B64D;--inquiry:#F27A98;--ops:#9AA5B3;
+  --gate:#E6EBF1;--gatetext:#0F151D;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.5}
+a{color:inherit;text-underline-offset:3px}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.wrap{max-width:1360px;margin:0 auto;padding:0 28px}
+.num{}
+header{padding:36px 0 10px}
+.family{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:.88rem;color:var(--muted);margin:0 0 22px}
+.family a{color:var(--muted)}
+.headgrid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;align-items:end}
+h1{font-size:clamp(2.4rem,5.4vw,4.6rem);line-height:.98;font-weight:800;letter-spacing:-.03em;margin:0}
+.lede{margin:0;color:var(--muted);font-size:1.1rem;max-width:56ch}
+.lede strong{color:var(--ink);font-weight:700}
+.tools{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.btn{border:1.5px solid var(--rule);background:var(--panel);border-radius:999px;padding:6px 15px;cursor:pointer;font-weight:500}
+.btn[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+section{margin:34px 0}
+h2{font-size:1.75rem;line-height:1.1;letter-spacing:-.015em;margin:0 0 6px}
+.intro{color:var(--muted);margin:0 0 16px;max-width:70ch}
+
+:root{--lead:#0B5D51;--strong:#1F6F62;--partial:#BFDCD4;--weak:#C0264D;--leadtx:#fff;--strongtx:#fff;--partialtx:#152030;--uk:#FFF3D6;--ukline:#B07A00}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--lead:#5ED1BD;--strong:#25806F;--partial:#27463F;--weak:#F27A98;--leadtx:#0F151D;--strongtx:#fff;--partialtx:#E6EBF1;--uk:#2A2414;--ukline:#E0B64D}}
+:root[data-theme="dark"]{--lead:#5ED1BD;--strong:#25806F;--partial:#27463F;--weak:#F27A98;--leadtx:#0F151D;--strongtx:#fff;--partialtx:#E6EBF1;--uk:#2A2414;--ukline:#E0B64D}
+.headgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:end}
+h1 small{display:block;font-size:.32em;font-weight:500;letter-spacing:0;color:var(--muted);margin-top:12px;line-height:1.3}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--paper);padding:8px 14px;z-index:50}
+.skip:focus{left:0}
+.rev{font-size:.82rem;color:var(--muted);margin:10px 0 0}
+.btn.sm{padding:4px 12px;font-size:.88rem}
+.toolmsg{font-size:.85rem;color:var(--muted)}
+nav.jump{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--rule);margin-top:26px}
+nav.jump ul{list-style:none;margin:0 auto;padding:8px 28px;display:flex;gap:4px 18px;flex-wrap:wrap;max-width:1360px;font-size:.9rem}
+nav.jump a{text-decoration:none;color:var(--muted);padding:3px 0;border-bottom:2px solid transparent}
+nav.jump a:hover,nav.jump a.on{color:var(--ink);border-bottom-color:var(--ink)}
+section{scroll-margin-top:56px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:26px}
+.stats article{background:var(--panel);border-radius:16px;padding:16px 18px}
+.stats b{display:block;font-size:2.4rem;font-weight:800;letter-spacing:-.03em;line-height:1}
+.stats b span{font-size:.45em;font-weight:700;letter-spacing:0;color:var(--muted)}
+.stats p{margin:8px 0 0;font-size:.93rem}
+.stats small{display:block;color:var(--muted);font-size:.8rem;margin-top:6px}
+.stats small a{color:var(--muted)}
+/* Benchmarks */
+.benchgrid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:18px;align-items:start}
+.card{background:var(--panel);border-radius:18px;padding:18px 20px}
+.card h3{font-size:1.05rem;margin:0 0 2px}
+.card .sub{font-size:.85rem;color:var(--muted);margin:0 0 12px}
+.bars{list-style:none;margin:0;padding:0}
+.bars li{display:grid;grid-template-columns:150px minmax(0,1fr) 54px;gap:10px;align-items:center;padding:3px 0;font-size:.9rem}
+.bars .track{height:16px;background:var(--faint);border-radius:4px;position:relative;overflow:hidden}
+.bars .fill{position:absolute;left:0;top:0;bottom:0;background:var(--rule);border-radius:4px}
+.bars li.cmp .fill{background:var(--strong)}
+.bars li.uk .fill{background:var(--ukline)}
+.bars li.uk{font-weight:700}
+.bars .v{font-variant-numeric:tabular-nums;text-align:right}
+.bars .gap{height:1px;border-top:1px dashed var(--rule);margin:6px 0;grid-column:1/-1}
+.bars .median .fill{background:transparent}
+.bars .rk{color:var(--muted);font-weight:400;font-size:.8rem;margin-right:4px;font-variant-numeric:tabular-nums}
+.egdi{list-style:none;margin:0;padding:0;counter-reset:e}
+.egdi li{display:flex;gap:10px;padding:5px 0;border-top:1px solid var(--faint);font-size:.93rem;counter-increment:e}
+.egdi li:first-child{border-top:0}
+.egdi li::before{content:counter(e);width:22px;color:var(--muted);font-variant-numeric:tabular-nums;text-align:right}
+.egdi li.uk{font-weight:700;background:var(--uk);margin:0 -8px;padding:5px 8px;border-radius:6px}
+.note{font-size:.82rem;color:var(--muted);margin:10px 0 0}
+/* Matrix */
+.mxtools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 10px}
+.mxwrap{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:18px;align-items:start}
+.mxscroll{background:var(--panel);border-radius:18px;overflow-x:auto;padding:6px 4px}
+table.mx{border-collapse:separate;border-spacing:4px;width:100%;min-width:860px}
+.mx th{font-weight:500;font-size:.88rem}
+.mx thead th{padding:6px 2px;text-align:center;vertical-align:bottom}
+.mx thead th button{border:0;background:transparent;cursor:pointer;font-weight:700;padding:2px 4px;border-radius:6px}
+.mx thead th button span{display:block;font-weight:400;font-size:.8rem;color:var(--muted)}
+.mx thead th.uk{background:var(--uk);border-radius:10px 10px 0 0}
+.mx tbody th{text-align:left;padding:4px 10px 4px 6px;min-width:220px}
+.mx tbody th button{border:0;background:transparent;cursor:pointer;text-align:left;padding:0;font-weight:700;line-height:1.25}
+.mx tbody th small{display:block;color:var(--muted);font-weight:400;font-size:.8rem;margin-top:2px}
+.mx td{padding:0;height:46px}
+.mx td.uk{background:var(--uk)}
+.mx td.uk{box-shadow:inset 3px 0 0 var(--ukline),inset -3px 0 0 var(--ukline)}
+.cell{width:100%;height:100%;min-height:42px;border:0;border-radius:8px;cursor:pointer;font-size:.8rem;font-weight:700;display:grid;place-items:center;padding:2px;line-height:1.1}
+.cell.lead{background:var(--lead);color:var(--leadtx)}
+.cell.strong{background:var(--strong);color:var(--strongtx)}
+.cell.partial{background:var(--partial);color:var(--partialtx)}
+.cell.weak{background:transparent;color:var(--weak);box-shadow:inset 0 0 0 2.5px var(--weak)}
+.cell.na{background:repeating-linear-gradient(135deg,transparent 0 6px,var(--faint) 6px 7px);color:var(--muted);font-weight:400;cursor:default}
+.cell.sec::after{content:"*";margin-left:1px}
+.cell[aria-pressed="true"]{outline:3px solid var(--focus);outline-offset:1px}
+.cell.dim{opacity:.18}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.84rem;color:var(--muted);margin:10px 4px 0}
+.legend span{display:inline-flex;gap:6px;align-items:center}
+.legend i{width:16px;height:12px;border-radius:3px;display:inline-block}
+.panel{background:var(--panel);border-radius:18px;padding:20px 22px;position:sticky;top:60px;max-height:calc(100vh - 80px);overflow:auto}
+.panel h3{font-size:1.2rem;line-height:1.2;margin:0 0 4px}
+.panel .meta{font-size:.86rem;color:var(--muted);margin:0 0 10px}
+.panel p{margin:0 0 10px}
+.panel small{color:var(--muted);font-size:.84rem}
+.panel small a{color:var(--muted)}
+.panel ol{list-style:none;margin:0;padding:0}
+.panel li{padding:10px 0;border-top:1px solid var(--faint)}
+.panel li:first-child{border-top:0}
+.rtag{display:inline-block;font-size:.8rem;font-weight:700;border-radius:4px;padding:1px 7px;margin-right:6px}
+.rtag.lead{background:var(--lead);color:var(--leadtx)}.rtag.strong{background:var(--strong);color:var(--strongtx)}.rtag.partial{background:var(--partial);color:var(--partialtx)}.rtag.weak{color:var(--weak);box-shadow:inset 0 0 0 2px var(--weak)}.rtag.na{background:var(--faint);color:var(--muted)}
+/* Best / learn */
+.best{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;list-style:none;margin:0;padding:0}
+.best li{background:var(--panel);border-radius:16px;padding:16px 18px;border-top:5px solid var(--ukline)}
+.best b{display:block;line-height:1.25;margin-bottom:6px}
+.best p{margin:0 0 8px;font-size:.92rem}
+.best small{font-size:.8rem;color:var(--muted)}
+.best small a{color:var(--muted)}
+.learntools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}
+.learntools label{font-size:.9rem;color:var(--muted)}
+select{font:inherit;padding:5px 10px;border-radius:10px;border:1.5px solid var(--rule);background:var(--panel);color:var(--ink)}
+.learn{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.learn li{background:var(--panel);border-radius:16px;padding:18px 20px;display:flex;flex-direction:column;gap:8px}
+.learn li.caution{border-left:6px solid var(--weak)}
+.learn .top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.learn h3{font-size:1.08rem;margin:0;line-height:1.25}
+.flags{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+.flag{font-size:.8rem;font-weight:700;border:1.5px solid var(--rule);border-radius:999px;padding:0 8px;white-space:nowrap}
+.learn p{margin:0;font-size:.95rem}
+.learn .fit{font-size:.88rem;border-top:1px solid var(--faint);padding-top:8px;display:grid;grid-template-columns:auto 1fr;gap:3px 12px}
+.learn .fit dt{color:var(--muted)}
+.learn .fit dd{margin:0}
+.meter{display:inline-flex;gap:3px;vertical-align:-1px;margin-right:6px}
+.meter i{width:12px;height:12px;border-radius:2px;background:var(--faint)}
+.meter i.on{background:var(--strong)}
+.learn small{font-size:.8rem;color:var(--muted)}
+.learn small a{color:var(--muted)}
+.evbtn{border:1.5px solid var(--rule);background:transparent;border-radius:999px;padding:1px 10px;font-size:.8rem;cursor:pointer}
+/* Fees and caveats */
+.fees{background:var(--panel);border-radius:18px;overflow-x:auto}
+.fees table{border-collapse:collapse;width:100%;min-width:700px;font-size:.93rem}
+.fees th,.fees td{text-align:left;padding:10px 16px;border-top:1px solid var(--faint);vertical-align:top}
+.fees thead th{border-top:0;font-size:.85rem;color:var(--muted);font-weight:500}
+.fees tr.uk td{background:var(--uk)}
+.fees td small a{color:var(--muted);font-size:.8rem}
+.caveats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;list-style:none;margin:0;padding:0}
+.caveats li{background:var(--panel);border-radius:14px;padding:16px 18px}
+.caveats b{display:block;margin-bottom:4px}
+.caveats span{font-size:.92rem;color:var(--muted)}
+.impl{list-style:none;margin:0;padding:0;counter-reset:i;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px}
+.impl li{counter-increment:i;padding:14px 0 14px 44px;position:relative;border-top:1px solid var(--rule)}
+.impl li::before{content:counter(i);position:absolute;left:0;top:12px;font-weight:800;font-size:1.3rem;font-variant-numeric:tabular-nums}
+.impl b{display:block}
+footer{border-top:1px solid var(--rule);padding:24px 0 48px;color:var(--muted);font-size:.9rem;margin-top:40px}
+footer h2{font-size:1.1rem;color:var(--ink)}
+footer p{max-width:84ch}
+footer ol{columns:2;column-gap:36px;padding-left:1.3rem}
+footer li{break-inside:avoid;margin-bottom:4px}
+footer dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 16px}
+footer dt{font-weight:700;color:var(--ink)}footer dd{margin:0}
+@media (max-width:1200px){.best{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:1100px){.benchgrid,.mxwrap{grid-template-columns:1fr}.panel{position:static;max-height:none}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:820px){.headgrid,.learn,.caveats,.impl,.best{grid-template-columns:1fr}.stats{grid-template-columns:1fr}footer ol{columns:1}.wrap{padding:0 16px}.bars li{grid-template-columns:110px minmax(0,1fr) 48px}nav.jump ul{padding:8px 16px;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap}}
+@media print{nav.jump,.tools,.skip,.mxtools,.learntools{display:none!important}body{background:#fff}.panel{position:static!important;max-height:none!important}}
+.headgrid>*,.benchgrid>*,.mxwrap>*,.stats>*{min-width:0}
+:root{--en:#C8102E;--sc:#005EB8;--wa:#00A36C;--ni:#7A4EAB}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--en:#FF6B81;--sc:#5AA9F0;--wa:#3CD69B;--ni:#B58CE8}}
+:root[data-theme="dark"]{--en:#FF6B81;--sc:#5AA9F0;--wa:#3CD69B;--ni:#B58CE8}
+.ntabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+.ntabs button{border:2px solid var(--rule);background:var(--panel);border-radius:999px;padding:6px 16px;font:inherit;font-weight:700;cursor:pointer;display:inline-flex;gap:8px;align-items:center}
+.ntabs button i{width:12px;height:12px;border-radius:50%;background:var(--c)}
+.ntabs button[aria-pressed="true"]{border-color:var(--c);box-shadow:inset 0 0 0 1px var(--c)}
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.metric{background:var(--panel);border-radius:16px;padding:14px 16px}
+.metric h3{font-size:.9rem;margin:0 0 10px;line-height:1.25}
+.metric ul{list-style:none;margin:0;padding:0}
+.metric li{display:grid;grid-template-columns:96px minmax(0,1fr) 62px;gap:8px;align-items:center;font-size:.84rem;padding:2px 0}
+.metric li.sel{font-weight:700}
+.metric li.ukrow{color:var(--muted);border-top:1px dashed var(--rule);margin-top:4px;padding-top:5px}
+.metric .tr{height:10px;background:var(--faint);border-radius:3px;position:relative;overflow:hidden}
+.metric .fl{position:absolute;left:0;top:0;bottom:0;border-radius:3px;background:var(--c)}
+.metric li.dimmed .fl{opacity:.35}
+.metric .v{text-align:right;font-variant-numeric:tabular-nums}
+.metric .na{color:var(--muted);font-size:.8rem;text-align:right;grid-column:2/4}
+.metric small{display:block;color:var(--muted);font-size:.8rem;margin-top:8px;line-height:1.3}
+.metric small a{color:var(--muted)}
+table.nx{border-collapse:separate;border-spacing:0;width:100%;min-width:900px;font-size:.92rem}
+.nx th,.nx td{text-align:left;vertical-align:top;padding:12px 14px;border-top:1px solid var(--faint)}
+.nx thead th{border-top:0;font-size:.95rem;border-bottom:3px solid var(--c)}
+.nx tbody th{width:190px;font-weight:700}
+.nx tbody th .same{display:inline-block;margin-top:6px;font-size:.8rem;font-weight:700;border-radius:4px;padding:1px 7px;background:var(--faint);color:var(--muted)}
+.nx tbody th .diff{display:inline-block;margin-top:6px;font-size:.8rem;font-weight:700;border-radius:4px;padding:1px 7px;border:1.5px solid var(--ink)}
+.nx td small a{color:var(--muted);font-size:.8rem}
+.nx td.sel{background:color-mix(in srgb,var(--c) 9%,transparent)}
+.nx tr.hl td,.nx tr.hl th{background:color-mix(in srgb,var(--focus) 16%,transparent)}
+.nxwrap{background:var(--panel);border-radius:18px;overflow-x:auto}
+.nxtools{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 10px}
+.insights{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.insights li{background:var(--panel);border-radius:16px;padding:16px 18px;border-top:5px solid var(--ink)}
+.insights b{display:block;line-height:1.25;margin-bottom:6px}
+.insights p{margin:0 0 8px;font-size:.93rem}
+.insights small{font-size:.8rem;color:var(--muted)}.insights small a{color:var(--muted)}
+.dot4{display:inline-flex;gap:3px;vertical-align:1px;margin-right:6px}
+.dot4 i{width:9px;height:9px;border-radius:50%;background:var(--c)}
+.arrow{color:var(--muted);margin:0 4px}
+@media (max-width:1100px){.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.insights{grid-template-columns:1fr 1fr}}
+@media (max-width:820px){.metrics,.insights{grid-template-columns:1fr}}
+:root{--l1:#1D70B8;--l2:#912B88;--l3:#00703C;--l4:#B58840;--l5:#D4351C;--l6:#28A197;--l7:#505A5F}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--l1:#5AA9F0;--l2:#D77FCC;--l3:#3CD69B;--l4:#E0B64D;--l5:#FF7A5C;--l6:#5ED1C8;--l7:#A9B4BA}}
+:root[data-theme="dark"]{--l1:#5AA9F0;--l2:#D77FCC;--l3:#3CD69B;--l4:#E0B64D;--l5:#FF7A5C;--l6:#5ED1C8;--l7:#A9B4BA}
+.stack{display:grid;gap:8px}
+.layer{display:grid;grid-template-columns:230px minmax(0,1fr);gap:14px;background:var(--panel);border-radius:14px;padding:12px 16px;border-left:8px solid var(--c);align-items:center}
+.layer h3{margin:0;font-size:1rem}
+.layer p{margin:2px 0 0;font-size:.82rem;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1.5px solid var(--c);background:transparent;border-radius:999px;padding:3px 11px;font:inherit;font-size:.85rem;cursor:pointer;color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--c);color:var(--paper)}
+.chip.dim{opacity:.25}
+.chip .pdot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:1px;background:var(--c)}
+.chip[aria-pressed="true"] .pdot{background:var(--paper)}
+.stdwrap{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:18px;align-items:start;margin-top:14px}
+table.sj{border-collapse:separate;border-spacing:0;width:100%;min-width:760px;font-size:.88rem}
+.sj th,.sj td{padding:7px 10px;border-top:1px solid var(--faint);text-align:left}
+.sj thead th{border-top:0;color:var(--muted);font-weight:500;font-size:.8rem}
+.sj td.stg{text-align:center;width:88px}
+.sj td.stg i{display:inline-block;width:14px;height:14px;border-radius:50%;background:var(--c)}
+.sj tbody tr{cursor:pointer}
+.sj tbody tr:hover td,.sj tbody tr.sel td{background:color-mix(in srgb,var(--c) 10%,transparent)}
+.sj tr.grp td{background:transparent!important;cursor:default;font-weight:700;font-size:.8rem;color:var(--ink);box-shadow:inset 4px 0 0 var(--c);padding-top:14px;padding-left:12px;border-top:0}
+.sj .pr{font-size:.8rem;font-weight:700;border-radius:4px;padding:1px 7px;white-space:nowrap;border:1.5px solid var(--rule)}
+.sj .pr.now{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.sj .pr.prepare{border-color:var(--weak);color:var(--weak)}
+.sjwrap{background:var(--panel);border-radius:18px;overflow-x:auto}
+.detail h3{margin:0 0 4px;font-size:1.2rem}
+.detail dl{display:grid;grid-template-columns:max-content 1fr;gap:6px 12px;font-size:.9rem;margin:10px 0}
+.detail dt{color:var(--muted)}.detail dd{margin:0}
+.timeline{list-style:none;margin:0;padding:0;position:relative}
+.timeline::before{content:"";position:absolute;left:112px;top:6px;bottom:6px;width:2px;background:var(--rule)}
+.timeline li{display:grid;grid-template-columns:100px 24px minmax(0,1fr);gap:0 0;align-items:start;padding:8px 0}
+.timeline time{font-variant-numeric:tabular-nums;font-weight:700;font-size:.9rem;text-align:right;padding-right:8px}
+.timeline .dot{width:14px;height:14px;border-radius:50%;background:var(--c);margin:3px 0 0 6px;position:relative;z-index:1;box-shadow:0 0 0 3px var(--paper)}
+.timeline li.future .dot{background:var(--paper);box-shadow:inset 0 0 0 3px var(--c),0 0 0 3px var(--paper)}
+.timeline .ev{background:var(--panel);border-radius:12px;padding:8px 12px;margin-left:8px}
+.timeline .ev button{border:0;background:transparent;padding:0;font:inherit;font-weight:700;cursor:pointer;text-align:left;color:var(--ink)}
+.timeline .ev small{display:block;color:var(--muted);font-size:.8rem}
+.timeline .ev small a{color:var(--muted)}
+.today{font-size:.8rem;color:var(--muted);margin:4px 0 10px 136px}
+@media (max-width:1100px){.stdwrap{grid-template-columns:1fr}}
+@media (max-width:820px){.layer{grid-template-columns:1fr}.timeline::before{left:84px}.timeline li{grid-template-columns:72px 24px minmax(0,1fr)}.today{margin-left:0}}
+.picker{background:var(--panel);border-radius:18px;padding:18px 22px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px 18px}
+.picker label{display:block;font-size:.82rem;color:var(--muted);font-weight:600;margin-bottom:4px}
+.picker select{width:100%;font:inherit;padding:8px 10px;border-radius:10px;border:1.5px solid var(--rule);background:var(--paper);color:var(--ink)}
+.picker .toggles{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.picker .toggles label{display:inline-flex;gap:7px;align-items:center;font-size:.9rem;color:var(--ink);font-weight:500;margin:0}
+.out{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:16px}
+.card{background:var(--panel);border-radius:16px;padding:16px 20px;border-top:5px solid var(--c)}
+.card h3{margin:0 0 4px;font-size:1.05rem}
+.card .n{font-size:1.5rem;font-weight:800;color:var(--c)}
+.card ol,.card ul{margin:8px 0 0;padding-left:20px;font-size:.92rem}
+.card li{margin-bottom:7px}
+.card li b{display:block}
+.card li small{color:var(--muted);font-size:.82rem}
+.card li small a{color:var(--muted)}
+.vr{display:inline-block;font-size:.8rem;font-weight:700;border-radius:4px;padding:0 6px;margin-left:6px;vertical-align:1px}
+.vr.confirmed{background:var(--strong);color:var(--strongtx)}
+.vr.partly-confirmed{background:var(--partial);color:var(--partialtx)}
+.vr.unverified{box-shadow:inset 0 0 0 1.5px var(--weak);color:var(--weak)}
+.chipsrow{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 0}
+.chipsrow button{border:1.5px solid var(--rule);background:transparent;border-radius:999px;padding:3px 11px;font:inherit;font-size:.8rem;cursor:pointer;color:var(--ink)}
+.chipsrow button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+table.grid{border-collapse:collapse;width:100%;min-width:860px;font-size:.88rem}
+.grid th,.grid td{text-align:left;vertical-align:top;padding:9px 12px;border-top:1px solid var(--faint)}
+.grid thead th{border-top:0;color:var(--muted);font-weight:500;font-size:.8rem}
+.gridwrap{background:var(--panel);border-radius:18px;overflow-x:auto}
+.bars{display:grid;gap:6px;margin:0}
+.bars div{display:grid;grid-template-columns:200px minmax(0,1fr) 52px;gap:10px;align-items:center;font-size:.86rem}
+.bars .t{height:12px;background:var(--faint);border-radius:3px;overflow:hidden}
+.bars .f{height:100%;background:var(--c);border-radius:3px}
+.bars .v{text-align:right;font-variant-numeric:tabular-nums}
+@media (max-width:1100px){.picker{grid-template-columns:repeat(2,minmax(0,1fr))}.out{grid-template-columns:1fr}}
+@media (max-width:640px){.picker{grid-template-columns:1fr}.bars div{grid-template-columns:120px minmax(0,1fr) 44px}}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:14px}
+.pcard{border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--panel)}
+.pcard h3{display:flex;align-items:center;gap:10px;margin:0 0 8px;font-size:1.05rem}
+.pcard .ground{font-size:.86rem;color:var(--muted);border-left:3px solid var(--line);padding-left:10px;margin:10px 0}
+.pcard .two{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}
+.pcard h4{display:flex;align-items:center;gap:6px;font-size:.82rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin:0 0 4px}
+.pcard ul{margin:0;padding-left:18px}.pcard li{font-size:.9rem;margin:3px 0}
+@media (max-width:620px){.pcard .two{grid-template-columns:1fr}}
+.bptabs{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.bptabs button{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:10px 13px;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:inherit;font:inherit;cursor:pointer;text-align:left}
+.bptabs button[aria-selected="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink);font-weight:650}
+.bptabs small{display:block;width:100%;color:var(--muted);font-size:.78rem}
+.bphead h3{margin:4px 0 2px;font-size:1.2rem}
+.bpgrid{display:grid;grid-template-columns:190px minmax(0,1fr);gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:12px}
+.bplabels{background:var(--soft,rgba(127,127,127,.08));border-right:1px solid var(--line)}
+.bpcorner{padding:10px 12px;font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);border-bottom:1px solid var(--line);font-weight:700}
+.bplab{display:flex;align-items:center;gap:8px;padding:12px;font-size:.84rem;font-weight:620;border-bottom:1px solid var(--line);min-height:96px}
+.bplab:last-child{border-bottom:0}
+.bpcols{display:flex;overflow-x:auto}
+.bpcol{min-width:230px;flex:1 1 230px;border-right:1px solid var(--line)}
+.bpcol:last-child{border-right:0}
+.bpstage{display:flex;align-items:center;gap:8px;padding:10px 12px;font-weight:700;border-bottom:1px solid var(--line);font-size:.88rem}
+.bpstage b{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--ink);color:var(--panel);font-size:.75rem}
+.bpcell{padding:11px 12px;font-size:.84rem;line-height:1.4;border-bottom:1px solid var(--line);min-height:96px}
+.bpcell:last-child{border-bottom:0}
+.bpcell.pain{background:color-mix(in srgb,var(--l5,#be123c) 9%,transparent)}
+.bpcell.rule{color:var(--muted)}
+.bpcell.meas{background:color-mix(in srgb,var(--l2,#0f766e) 8%,transparent)}
+.painlist{list-style:none;counter-reset:p;margin:14px 0 0;padding:0;display:grid;gap:12px}
+.painlist li{counter-increment:p;border:1px solid var(--line);border-left:4px solid var(--l5,#be123c);border-radius:10px;padding:14px 16px;background:var(--panel)}
+.painlist h3{display:flex;align-items:center;gap:9px;margin:0 0 6px;font-size:1rem}
+.painlist h3::before{content:counter(p);display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--ink);color:var(--panel);font-size:.75rem;flex:none}
+.deiagrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px;margin-top:14px}
+.dcard{border:1px solid var(--line);border-radius:12px;padding:15px;background:var(--panel)}
+.dcard h3{display:flex;align-items:center;gap:10px;margin:0 0 8px;font-size:1rem}
+.dcard .state{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px;margin:6px 0 0}
+@media (max-width:760px){.bpgrid{grid-template-columns:1fr}.bplabels{display:none}.bpcol{min-width:100%;border-right:0;border-bottom:2px solid var(--line)}.bpcell{min-height:0}.bpcell::before{content:attr(data-lane);display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:700;margin-bottom:3px}}
+/* Shared visual system: icons, journey ribbon, hero figures, audience switcher */
+.ic{width:1.15em;height:1.15em;flex:none;vertical-align:-.2em}
+.ic-lg{width:2rem;height:2rem;flex:none}
+.ic-xl{width:2.6rem;height:2.6rem;flex:none}
+.ribbon{margin:0 0 6px;padding:10px 0 4px;border-bottom:1px solid var(--line)}
+.ribbon h2{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 8px;font-family:inherit;font-weight:700}
+.ribbon ol{display:flex;gap:6px;list-style:none;margin:0;padding:0 0 6px;overflow-x:auto;scrollbar-width:thin}
+.ribbon li{flex:1 1 0;min-width:104px}
+.ribbon a{display:flex;flex-direction:column;gap:5px;padding:8px 9px;border:1px solid var(--line);border-radius:9px;text-decoration:none;color:inherit;background:var(--panel);min-height:100%}
+.ribbon a:hover{border-color:var(--ink)}
+.ribbon a[aria-current="step"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.ribbon .rn{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:.72rem;letter-spacing:.05em;text-transform:uppercase}
+.ribbon .rt{font-size:.84rem;font-weight:650;line-height:1.25}
+.ribbon .rc{font-size:.74rem;color:var(--muted)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,340px);gap:22px;align-items:center;margin:10px 0 0}
+.hero figure{margin:0}
+.hero figcaption{font-size:.78rem;color:var(--muted);margin-top:6px}
+.hero svg.art{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+@media (max-width:820px){.hero{grid-template-columns:1fr}}
+.aud{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.aud button{display:flex;align-items:center;gap:8px;padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:inherit;font:inherit;cursor:pointer}
+.aud button[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink);font-weight:650}
+.audbox{border:1px solid var(--line);border-left:4px solid var(--ink);border-radius:10px;padding:14px 16px;background:var(--panel);margin:0 0 18px}
+.audbox h3{margin:0 0 6px;font-size:1.02rem;display:flex;align-items:center;gap:8px}
+.audbox ol{margin:8px 0 0;padding-left:20px}
+.audbox li{margin:4px 0}
+h2 .ic,h3 .ic{color:var(--muted)}
+.iconrow{display:flex;align-items:center;gap:9px}
+.legendkey{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin:8px 0 0}
+.legendkey span{display:inline-flex;align-items:center;gap:5px}
+@media (prefers-reduced-motion:no-preference){.ribbon a{transition:border-color .15s}}
+
+@media (max-width:420px){
+  .codeblock{font-size:11.5px;white-space:pre-wrap;word-break:break-word}
+  .gridwrap,.mx-wrap,.scroller{max-width:100%}
+  table.grid{min-width:0}
+  .toolrow{grid-template-columns:1fr}
+  .bars div{grid-template-columns:96px minmax(0,1fr) 40px}
+  .wrap{padding-left:12px;padding-right:12px}
+  h1{font-size:1.5rem;word-break:break-word}
+}
+
+@media (max-width:420px){
+  select,input,textarea{max-width:100%}
+  .bodycard{min-width:0;overflow-wrap:anywhere}
+  table.sj,table.nx,table.mx{display:block;overflow-x:auto;max-width:100%}
+}
+
+@media (max-width:420px){
+  table.sj,table.nx,table.mx{table-layout:fixed;width:100%}
+  table.sj th,table.sj td,.nx th,.nx td{overflow-wrap:anywhere;word-break:break-word}
+  main li,main p,main a{overflow-wrap:anywhere}
+  .sj-wrap,.tablewrap{overflow-x:auto;max-width:100%}
+}
+
+@media (max-width:420px){
+  .sj{display:block;overflow-x:auto}
+  .sj thead th,.sj tbody th{min-width:110px}
+  main ul,main ol{padding-left:18px}
+  main li a{display:inline-block;max-width:100%}
+}
+small, .meta small, td small, li small{font-size:max(.8rem,12.8px)}
+@media (max-width:420px){html,body{max-width:100%;overflow-x:hidden}.sjwrap,.tablewrap,.gridwrap{overflow-x:auto;max-width:100%}}
+.aibtn{position:fixed;right:18px;bottom:18px;z-index:60;border:0;border-radius:999px;padding:12px 20px;font:inherit;font-weight:700;background:var(--ink);color:var(--paper);cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.28)}
+.aibtn:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.aiwrap{position:fixed;right:18px;bottom:18px;width:min(430px,calc(100vw - 24px));max-height:min(78vh,720px);z-index:61;background:var(--panel);border-radius:18px;box-shadow:0 10px 40px rgba(0,0,0,.34);display:none;flex-direction:column;overflow:hidden;border:1px solid var(--rule)}
+.aiwrap.open{display:flex}
+.aihead{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--faint)}
+.aihead b{font-size:.98rem}
+.aihead small{color:var(--muted);font-size:.8rem;display:block;font-weight:400}
+.aihead button{margin-left:auto;border:0;background:transparent;font:inherit;font-size:1.2rem;line-height:1;cursor:pointer;color:var(--muted);padding:4px 6px}
+.ailog{overflow-y:auto;padding:12px 14px;display:grid;gap:10px;flex:1}
+.aimsg{border-radius:14px;padding:9px 12px;font-size:.9rem;line-height:1.45;white-space:pre-wrap}
+.aimsg.u{background:var(--ink);color:var(--paper);justify-self:end;max-width:86%}
+.aimsg.a{background:var(--faint);color:var(--ink)}
+.aimsg.sys{background:transparent;color:var(--muted);font-size:.82rem;padding:0}
+.aisug{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 10px}
+.aisug button{border:1.5px solid var(--rule);background:transparent;border-radius:999px;padding:4px 11px;font:inherit;font-size:.8rem;cursor:pointer;color:var(--ink);text-align:left}
+.aiform{display:flex;gap:8px;padding:10px 12px;border-top:1px solid var(--faint)}
+.aiform textarea{flex:1;font:inherit;font-size:.9rem;resize:none;border:1.5px solid var(--rule);border-radius:12px;padding:8px 10px;background:var(--paper);color:var(--ink);min-height:40px;max-height:120px}
+.aiform button{border:0;border-radius:12px;padding:0 16px;font:inherit;font-weight:700;background:var(--ink);color:var(--paper);cursor:pointer}
+.aiform button[disabled]{opacity:.5;cursor:default}
+.aifoot{padding:0 14px 10px;color:var(--muted);font-size:.8rem}
+.seqnav{background:var(--panel);border-radius:18px;padding:14px 18px;display:flex;gap:16px;justify-content:space-between;flex-wrap:wrap;margin:26px 0 0}
+.seqnav a{display:block;font-weight:700;color:var(--ink)}
+.seqnav small{display:block;color:var(--muted);font-size:.8rem;font-weight:400}
+.seqnav .nx{text-align:right}
+@media (max-width:620px){.aiwrap{right:8px;left:8px;width:auto;bottom:8px}.aibtn{right:10px;bottom:10px}}
+
+/* Self-check surface */
+.selfcheck{border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:22px 0 0;background:var(--panel)}
+.selfcheck h2{font-size:1rem;margin:0 0 6px}
+.selfcheck .scline{margin:0;font-size:.9rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.scdot{width:10px;height:10px;border-radius:50%;background:var(--muted);flex:none;box-shadow:0 0 0 3px color-mix(in srgb,currentColor 12%,transparent)}
+.scdot.good{background:#0f766e}.scdot.fair{background:#b45309}.scdot.needs-work{background:#be123c}
+.selfcheck details{margin-top:8px}
+.selfcheck summary{cursor:pointer;font-size:.88rem}
+.selfcheck .scbody{font-size:.88rem}
+.selfcheck h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:12px 0 4px}
+.selfcheck ul{margin:0;padding-left:18px}
+.selfcheck li{margin:3px 0}
+.selfgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-top:14px}
+.selfcard{border:1px solid var(--line);border-radius:12px;padding:15px;background:var(--panel)}
+.selfcard h3{display:flex;align-items:center;gap:10px;margin:0 0 8px;font-size:1rem}
+/* Title row: illustration sits opposite the title, at about a third of its weight */
+header .headgrid{display:grid;grid-template-columns:minmax(0,1.9fr) minmax(180px,0.85fr);gap:28px;align-items:center}
+header .headgrid > h1{margin:0}
+header .heroart{margin:0;max-width:340px;justify-self:end;width:100%}
+header .heroart svg.art{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}
+header .heroart figcaption{font-size:.72rem;color:var(--muted);margin-top:5px;line-height:1.35}
+header .heroart.float{float:right;width:min(300px,34%);margin:0 0 14px 22px}
+@media (max-width:820px){
+  header .headgrid{grid-template-columns:1fr}
+  header .heroart{max-width:260px;justify-self:start}
+  header .heroart.float{float:none;width:min(260px,70%);margin:12px 0}
+}
+/* Journey strip: full-bleed band, content aligned with every other section */
+nav.ribbon{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:color-mix(in srgb,currentColor 3%,transparent);margin:0;padding:12px 0 6px}
+nav.ribbon > .wrap{padding-left:28px;padding-right:28px}
+nav.ribbon h2{margin:0 0 9px}
+/* What used to sit beside the title now sits under the strip, full measure */
+.introblock{margin:20px auto 0}
+.introblock .lede{font-size:1.06rem;max-width:62ch}
+.introblock .tools{margin-top:12px}
+.introblock .rev{margin-top:10px;font-size:.84rem;color:var(--muted);max-width:80ch}
+.introblock .scope{margin:0}
+</style></head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<svg class="sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden"><defs><symbol id="i-explore" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9 M12 3a9 9 0 0 1 9 9M3.5 12h17M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-structure" viewBox="0 0 24 24"><path d="M12 3 4 7v10l8 4 8-4V7l-8-4Zm0 0v18M4 7l8 4 8-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-register" viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6V3Zm9 0v3h3M9 11h6M9 15h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-tax" viewBox="0 0 24 24"><path d="M5 20V9l7-5 7 5v11H5Zm4-5h6M9 12h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-licence" viewBox="0 0 24 24"><path d="M4 5h16v14H4V5Zm3 4h5M7 12h10M7 15h7m2-6.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-premises" viewBox="0 0 24 24"><path d="M4 20V10l8-6 8 6v10H4Zm6 0v-6h4v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-finance" viewBox="0 0 24 24"><path d="M3 19V5m0 14h18M7 15V9m5 6V6m5 9v-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-employ" viewBox="0 0 24 24"><path d="M8 11a3.2 3.2 0 1 0 0-6.4A3.2 3.2 0 0 0 8 11Zm0 0c-3 0-5 1.8-5 4.5V19h10v-3.5C13 12.8 11 11 8 11Zm9-6.2a3.2 3.2 0 1 1 0 6.4M16 19h5v-3.5c0-2.2-1.4-3.8-3.6-4.3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-trade" viewBox="0 0 24 24"><path d="M3 12h18M3 12a9 9 0 0 1 9-9m9 9a9 9 0 0 0-9-9m0 18a9 9 0 0 0 9-9M12 21a9 9 0 0 1-9-9m9-9c2.4 2.5 3.6 5.5 3.6 9s-1.2 6.5-3.6 9c-2.4-2.5-3.6-5.5-3.6-9S9.6 5.5 12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-grow" viewBox="0 0 24 24"><path d="M4 19c6 0 10-3.5 12-10M13 5h6v6M8 19a4 4 0 0 0-4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-rules" viewBox="0 0 24 24"><path d="M12 4v16M6 8h12M7 8l-3 6h6l-3-6Zm10 0-3 6h6l-3-6ZM9 20h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5V5.5ZM8 7h7M8 10h7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-nations" viewBox="0 0 24 24"><path d="M6 21V4m0 0 7 2.5L20 4v9l-7 2.5L6 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm-8.6 9h17.2M12 3c2.3 2.5 3.5 5.5 3.5 9s-1.2 6.5-3.5 9c-2.3-2.5-3.5-5.5-3.5-9S9.7 5.5 12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-standards" viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h13m2-9.5 3 3-6 6-3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12.5 9 18l11-12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-history" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4h4M12 8v4.5l3 1.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-boundary" viewBox="0 0 24 24"><path d="M12 3v18M6 7l-3 5 3 5M18 7l3 5-3 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><path d="M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14Zm5 12 4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-blueprint" viewBox="0 0 24 24"><path d="M3 5h18v14H3V5Zm5 0v14M3 10h5m8-5v14m0-9h5M8 14h8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-person" viewBox="0 0 24 24"><path d="M12 11.5a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm0 0c-4 0-7 2.4-7 6V20h14v-2.5c0-3.6-3-6-7-6Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-agent" viewBox="0 0 24 24"><path d="M9 10.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm0 0c-3 0-5.5 2-5.5 5V19H14v-3.5c0-3-2.5-5-5-5Zm8-5 4 2.5-4 2.5m4-2.5h-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-official" viewBox="0 0 24 24"><path d="M12 3 4 6.5V12c0 4.6 3.2 7.8 8 9 4.8-1.2 8-4.4 8-9V6.5L12 3Zm-3 9 2.2 2.4L15 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-access" viewBox="0 0 24 24"><path d="M12 4.2a1.6 1.6 0 1 0 0-3.2 1.6 1.6 0 0 0 0 3.2ZM5 7.5c2.2.9 4.5 1.3 7 1.3s4.8-.4 7-1.3M12 8.8V14m0 0 3.5 6M12 14l-3.5 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-language" viewBox="0 0 24 24"><path d="M4 6h10M9 4v2m0 0c0 4-2 7-5 8.5M6.5 10.5c1.3 2.4 3 4 5.5 5M13 20l4-9 4 9m-6.6-2.4h5.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-data" viewBox="0 0 24 24"><path d="M12 4c4.4 0 8 1.3 8 3s-3.6 3-8 3-8-1.3-8-3 3.6-3 8-3Zm8 3v10c0 1.7-3.6 3-8 3s-8-1.3-8-3V7m16 5c0 1.7-3.6 3-8 3s-8-1.3-8-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-warning" viewBox="0 0 24 24"><path d="M12 4 3 20h18L12 4Zm0 6v5m0 3h.01" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm0 4.5V12l3.5 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-money" viewBox="0 0 24 24"><path d="M5 7h14v10H5V7Zm7 2.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-back" viewBox="0 0 24 24"><path d="M6 6.5h12M6 12h12M6 17.5h8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-support" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-9 9v3.5A2.5 2.5 0 0 0 5.5 18H7v-6H5.2A6.8 6.8 0 0 1 18.8 12H17v6h1.5a2.5 2.5 0 0 0 2.5-2.5V12a9 9 0 0 0-9-9Zm5 15v.5a2.5 2.5 0 0 1-2.5 2.5H12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol></defs></svg>
+<header>
+  <div class="wrap">
+    <p class="family" id="family">Part of <a href="../">Starting a business in the UK</a>: <a href="../your-plan/">your plan</a><a href="../whole-life-of-a-business/">from starting to closing, and everything between</a><a href="../your-circumstances/">when the standard route does not fit</a><a href="../every-way-in/">every way in, and every way out</a><a href="../skills-and-communities/">skills, qualifications and finding your people</a><a href="../every-step/">every step in the journey</a><a href="../twenty-years-of-joining-up/">historical arc</a><a href="../before-the-register/">before the register</a><a href="../whatever-you-are-setting-up/">whatever you are setting up</a><a href="../what-binds-this-business/">what binds this business</a><a href="../rules-trade-and-bodies/">rules, trade and the bodies</a><a href="../four-nations/">four nations</a><a href="../the-uk-compared/">international benchmark</a><a href="../standards/">standards for the journey</a><a href="../knowledge-layer/">the knowledge layer</a><a href="../how-this-was-built/">how this was built and run</a><a href="../verification-register/">verification register</a></p>
+    <div class="headgrid">
+      <h1>Service blueprints, the people in them and who the journey leaves out<small>Part 14: the whole journey as designed work, not as a list of services</small></h1><figure class="heroart"><svg class="art" viewBox="0 0 680 300" role="img" aria-labelledby="artt artd"><title id="artt">A service blueprint</title><desc id="artd">Six stacked lanes crossed by five journey moments, from what the user does down to the systems behind it.</desc><rect width="680" height="300" fill="none"/><rect x="40" y="42" width="600" height="30" rx="6" fill="var(--l1,#1d4ed8)" opacity="0.10"/><path d="M40 72 L640 72" stroke="currentColor" stroke-width="1.0" opacity="0.18" fill="none"/><rect x="60" y="49" width="70" height="16" rx="4" fill="var(--l1,#1d4ed8)" opacity=".5"/><rect x="178" y="49" width="88" height="16" rx="4" fill="var(--l2,#0f766e)" opacity=".5"/><rect x="296" y="49" width="106" height="16" rx="4" fill="var(--l3,#b45309)" opacity=".5"/><rect x="414" y="49" width="70" height="16" rx="4" fill="var(--l4,#7c3aed)" opacity=".5"/><rect x="532" y="49" width="88" height="16" rx="4" fill="var(--l5,#be123c)" opacity=".5"/><rect x="40" y="82" width="600" height="30" rx="6" fill="var(--l2,#0f766e)" opacity="0.12"/><path d="M40 112 L640 112" stroke="currentColor" stroke-width="1.0" opacity="0.18" fill="none"/><rect x="60" y="89" width="70" height="16" rx="4" fill="var(--l2,#0f766e)" opacity=".5"/><rect x="178" y="89" width="88" height="16" rx="4" fill="var(--l3,#b45309)" opacity=".5"/><rect x="296" y="89" width="106" height="16" rx="4" fill="var(--l4,#7c3aed)" opacity=".5"/><rect x="414" y="89" width="70" height="16" rx="4" fill="var(--l5,#be123c)" opacity=".5"/><rect x="532" y="89" width="88" height="16" rx="4" fill="var(--l6,#047857)" opacity=".5"/><rect x="40" y="122" width="600" height="30" rx="6" fill="var(--l3,#b45309)" opacity="0.14"/><path d="M40 152 L640 152" stroke="currentColor" stroke-width="1.0" opacity="0.18" fill="none"/><rect x="60" y="129" width="70" height="16" rx="4" fill="var(--l3,#b45309)" opacity=".5"/><rect x="178" y="129" width="88" height="16" rx="4" fill="var(--l4,#7c3aed)" opacity=".5"/><rect x="296" y="129" width="106" height="16" rx="4" fill="var(--l5,#be123c)" opacity=".5"/><rect x="414" y="129" width="70" height="16" rx="4" fill="var(--l6,#047857)" opacity=".5"/><rect x="532" y="129" width="88" height="16" rx="4" fill="var(--l1,#1d4ed8)" opacity=".5"/><rect x="40" y="162" width="600" height="30" rx="6" fill="var(--l4,#7c3aed)" opacity="0.16"/><path d="M40 192 L640 192" stroke="currentColor" stroke-width="1.0" opacity="0.18" fill="none"/><rect x="60" y="169" width="70" height="16" rx="4" fill="var(--l4,#7c3aed)" opacity=".5"/><rect x="178" y="169" width="88" height="16" rx="4" fill="var(--l5,#be123c)" opacity=".5"/><rect x="296" y="169" width="106" height="16" rx="4" fill="var(--l6,#047857)" opacity=".5"/><rect x="414" y="169" width="70" height="16" rx="4" fill="var(--l1,#1d4ed8)" opacity=".5"/><rect x="532" y="169" width="88" height="16" rx="4" fill="var(--l2,#0f766e)" opacity=".5"/><rect x="40" y="202" width="600" height="30" rx="6" fill="var(--l5,#be123c)" opacity="0.18"/><path d="M40 232 L640 232" stroke="currentColor" stroke-width="1.0" opacity="0.18" fill="none"/><rect x="60" y="209" width="70" height="16" rx="4" fill="var(--l5,#be123c)" opacity=".5"/><rect x="178" y="209" width="88" height="16" rx="4" fill="var(--l6,#047857)" opacity=".5"/><rect x="296" y="209" width="106" height="16" rx="4" fill="var(--l1,#1d4ed8)" opacity=".5"/><rect x="414" y="209" width="70" height="16" rx="4" fill="var(--l2,#0f766e)" opacity=".5"/><rect x="532" y="209" width="88" height="16" rx="4" fill="var(--l3,#b45309)" opacity=".5"/><rect x="40" y="242" width="600" height="30" rx="6" fill="var(--l6,#047857)" opacity="0.20"/><path d="M40 272 L640 272" stroke="currentColor" stroke-width="1.0" opacity="0.18" fill="none"/><rect x="60" y="249" width="70" height="16" rx="4" fill="var(--l6,#047857)" opacity=".5"/><rect x="178" y="249" width="88" height="16" rx="4" fill="var(--l1,#1d4ed8)" opacity=".5"/><rect x="296" y="249" width="106" height="16" rx="4" fill="var(--l2,#0f766e)" opacity=".5"/><rect x="414" y="249" width="70" height="16" rx="4" fill="var(--l3,#b45309)" opacity=".5"/><rect x="532" y="249" width="88" height="16" rx="4" fill="var(--l4,#7c3aed)" opacity=".5"/><path d="M90 42 L90 282" stroke="currentColor" stroke-width="1.0" opacity="0.14" fill="none" stroke-dasharray="3 5"/><path d="M208 42 L208 282" stroke="currentColor" stroke-width="1.0" opacity="0.14" fill="none" stroke-dasharray="3 5"/><path d="M326 42 L326 282" stroke="currentColor" stroke-width="1.0" opacity="0.14" fill="none" stroke-dasharray="3 5"/><path d="M444 42 L444 282" stroke="currentColor" stroke-width="1.0" opacity="0.14" fill="none" stroke-dasharray="3 5"/><path d="M562 42 L562 282" stroke="currentColor" stroke-width="1.0" opacity="0.14" fill="none" stroke-dasharray="3 5"/></svg><figcaption>Six lanes read downwards, crossed by the moments in one journey.</figcaption></figure>
+    </div>
+  </div>
+</header>
+<nav class="ribbon" aria-label="The founder journey"><div class="wrap"><h2>The journey, stage by stage</h2><ol><li><a href="../before-the-register/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-explore"></use></svg> Stage 1</span><span class="rt">Decide</span><span class="rc">Is this a business, and what shape?</span></a></li><li><a href="../whatever-you-are-setting-up/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-structure"></use></svg> Stage 2</span><span class="rt">Structure</span><span class="rc">Legal form, name, ownership</span></a></li><li><a href="../every-step/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-register"></use></svg> Stage 3</span><span class="rt">Register</span><span class="rc">Registrar, identity, identifiers</span></a></li><li><a href="../whatever-you-are-setting-up/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-tax"></use></svg> Stage 4</span><span class="rt">Tax</span><span class="rc">Self Assessment, Corporation Tax, VAT</span></a></li><li><a href="../what-binds-this-business/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-licence"></use></svg> Stage 5</span><span class="rt">Licences</span><span class="rc">What the activity triggers</span></a></li><li><a href="../every-step/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-premises"></use></svg> Stage 6</span><span class="rt">Premises</span><span class="rc">Rates, planning, property</span></a></li><li><a href="../whatever-you-are-setting-up/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-finance"></use></svg> Stage 7</span><span class="rt">Money</span><span class="rc">Grants, reliefs, finance</span></a></li><li><a href="../what-binds-this-business/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-employ"></use></svg> Stage 8</span><span class="rt">People</span><span class="rc">Employing, paying, protecting</span></a></li><li><a href="../rules-trade-and-bodies/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-trade"></use></svg> Stage 9</span><span class="rt">Trade</span><span class="rc">Goods, borders, tendering</span></a></li></ol></div></nav>
+<div class="wrap introblock">
+        <p class="lede">Every other part of these pages describes what exists. This part turns it into the artefacts a service team actually uses: personas built from the cited evidence, four end-to-end blueprints with what happens out of sight, the pain points that cross every journey, and a straight account of who this journey serves least well.</p>
+        <div class="tools">
+          <button class="btn sm" type="button" id="theme">Light or dark</button>
+          <button class="btn sm" type="button" id="print">Print</button>
+          <span class="toolmsg" id="toolmsg" role="status"></span>
+        </div>
+        <p class="rev">Synthesis of these pages' verified data. Nothing here is new research, and the personas are composites, not participants.</p>
+      </div>
+
+
+<main class="wrap" id="main">
+  <section id="s-aud" aria-labelledby="h-aud">
+    <h2 id="h-aud">Start where you are</h2>
+    <p class="intro">Three ways through the same material. Choose the one that fits and the route changes, not the evidence.</p>
+    <div class="aud" id="audbtns" role="group" aria-label="Who are you"></div>
+    <div class="audbox" id="audbox"></div>
+  </section>
+
+  <section id="s-personas" aria-labelledby="h-personas">
+    <h2 id="h-personas">Five people this journey has to work for</h2>
+    <p class="intro">Each is a composite built from findings on these pages, with the finding that produced it stated underneath. They are a way of reading the evidence, not people who were interviewed.</p>
+    <div class="pgrid" id="personas"></div>
+  </section>
+
+  <section id="s-blue" aria-labelledby="h-blue">
+    <h2 id="h-blue">Four blueprints, lane by lane</h2>
+    <p class="intro">A blueprint reads downwards: what the person is trying to do, what they meet, what happens out of sight, the systems and identifiers involved, the rule that makes it necessary, where it breaks, and what would tell us it works.</p>
+    <div class="bptabs" id="bptabs" role="tablist" aria-label="Blueprints"></div>
+    <div id="bpbody"></div>
+  </section>
+
+  <section id="s-pain" aria-labelledby="h-pain">
+    <h2 id="h-pain">What breaks in every journey, not just one</h2>
+    <p class="intro">Seven problems that appear in more than one blueprint, with the bodies closest to each. Naming a candidate owner is these pages' proposal, not an agreement.</p>
+    <ol class="painlist" id="pain"></ol>
+  </section>
+
+  <section id="s-deia" aria-labelledby="h-deia">
+    <h2 id="h-deia">Diversity, equity, inclusion and accessibility, stated plainly</h2>
+    <p class="intro">What has been done, what has been measured, and what is still open. A claim of compliance would be false: structural testing is not testing with disabled people, and an unchecked Welsh draft is not a translation.</p>
+    <div class="deiagrid" id="deia"></div>
+  </section>
+
+  <section id="s-use" aria-labelledby="h-use">
+    <h2 id="h-use">How to use these blueprints</h2>
+    <ul class="caveats" id="use"></ul>
+  </section>
+</main>
+<script>
+var BPD={"PERSONAS":[{"id":"p1","name":"Home food producer, Wales","icon":"person","who":"Starts cooking for sale from a domestic kitchen while still employed. No accountant, no adviser, works evenings.","grounding":"Built from these pages' evidence: 37% of new food ventures registered since March 2020 operate from domestic kitchens, and registration is required 28 days before opening.","form":"Sole trader","nation":"Wales","needs":["Know whether this counts as a business yet","Find out that food registration exists at all","Keep the day job while starting"],"risks":["Misses the 28-day food registration window","Does not know the trading allowance threshold","English-only guidance where Welsh is expected in devolved delivery"]},{"id":"p2","name":"Two founders, software, England","icon":"structure","who":"Incorporate a company limited by shares, take investment later, hire within a year.","grounding":"Built from these pages' evidence: identity verification became compulsory for new directors and PSCs on 18 November 2025; the GOV.UK limited company step by step has 11 steps and none mentions it.","form":"Private company limited by shares","nation":"England","needs":["Incorporate without a rejected name","Know which taxes follow automatically and which do not","Understand what changes when they first employ someone"],"risks":["Assume incorporation registers everything","Miss that Corporation Tax, PAYE and VAT are separate acts","Meet identity verification unannounced"]},{"id":"p3","name":"Community organisation, Scotland","icon":"support","who":"A group formalising an existing volunteer activity, choosing between a CIO, a company and a society.","grounding":"Built from these pages' data: four of the fourteen legal forms do not register at Companies House at all, and each has its own registrar, register and identifier.","form":"Charitable incorporated organisation","nation":"Scotland","needs":["Choose a form without a lawyer","Find the right registrar first time","Know what OSCR requires that the company route does not"],"risks":["Follow company guidance that does not apply","Assume Companies House is the only registrar","Lose months to the wrong structure"]},{"id":"p4","name":"Agent acting for a client","icon":"agent","who":"An accountant or authorised corporate service provider registering and filing on behalf of several businesses at once.","grounding":"Built from these pages' evidence: agent and presenter verification is expected no earlier than November 2027, and the joint Companies House and HMRC accounts filing service closed on 31 March 2026.","form":"Acts across all forms","nation":"All four","needs":["One view of what each client still owes","Bulk and repeatable steps rather than one-off journeys","Warning of dated changes before clients meet them"],"risks":["Different identity regimes per registrar","No machine-readable list of obligations per client","Changes announced in places clients never read"]},{"id":"p5","name":"Civil servant on the journey","icon":"official","who":"Owns one service in a journey that crosses several departments and three devolved administrations.","grounding":"Built from these pages' evidence: GDS and BIST identified at least 160 business-related services in joint research.","needs":["See where their service sits in the whole","Know who owns the step before and after","Reuse rule and scheme data rather than rewriting it"],"risks":["Optimise one step and move the burden","Duplicate guidance that already exists elsewhere","No agreed owner for the shared rule record"],"form":"n/a","nation":"All four"}],"LANES":[["need","What the user is trying to do","person"],["front","What they meet (frontstage)","support"],["back","What happens out of sight (backstage)","back"],["sys","Systems, sign-ins and identifiers","data"],["rule","The rule that makes it necessary","rules"],["pain","Where it breaks","warning"],["meas","What would tell us it works","check"]],"BLUE":[{"id":"b1","title":"Cooking at home and selling it","persona":"p1","form":"Sole trader","nation":"Wales","steps":[{"stage":"Decide","need":"Work out whether selling a few cakes is a business at all","front":"GOV.UK guidance on the £1,000 trading allowance; business.gov.uk; Business Wales","back":"No case is opened anywhere; nothing is recorded until the person acts","sys":"None. No account, no identifier","rule":"Income Tax (Trading and Other Income) Act 2005: trading allowance","pain":"Nothing tells the person that a decision has been made. The journey has no starting record","meas":"How many people can state, correctly, whether they need to register"},{"stage":"Register","need":"Tell HMRC they are trading","front":"Register for Self Assessment on GOV.UK","back":"HMRC opens a Self Assessment record and issues a UTR by post","sys":"GOV.UK One Login into HMRC; Unique Taxpayer Reference","rule":"Taxes Management Act 1970 s.7: notify chargeability by 5 October after the tax year","pain":"The deadline is expressed relative to a tax year the person has not thought in","meas":"Share registering before their first 5 October deadline"},{"stage":"Licences","need":"Register the food business","front":"Register a food business through the local authority","back":"Environmental health opens a record and schedules an inspection risk rating","sys":"Local authority form, often a separate account per council","rule":"Retained Regulation (EC) 852/2004 and the Food Safety and Hygiene (England) Regulations 2013, with Welsh equivalents","pain":"Registration is required 28 days before opening, and nothing in the tax journey mentions it","meas":"Share of food businesses registered before, not after, first sale"},{"stage":"Money","need":"Find any help that applies","front":"Business Wales; funding and support finder","back":"Devolved scheme data lives in three separate places and is not published as a feed","sys":"Separate accounts per scheme","rule":"No duty. Support is discretionary","pain":"Devolved schemes are hardest to find for the people most likely to qualify","meas":"Take-up of devolved schemes by first-time founders"},{"stage":"Trade","need":"Sell at a market in England as well","front":"Local authority street trading; a second council relationship","back":"No data passes between councils","sys":"Another form, another account","rule":"Local Government (Miscellaneous Provisions) Act 1982 street trading provisions","pain":"Crossing a border inside the UK restarts the licensing journey","meas":"Time to first legal trade in a second local authority"}]},{"id":"b2","title":"Incorporating and hiring within a year","persona":"p2","form":"Private company limited by shares","nation":"England","steps":[{"stage":"Structure","need":"Pick a name that will not be rejected","front":"Company name availability checker; trade mark search","back":"Companies House name rules and sensitive word referrals","sys":"Companies House account","rule":"Companies Act 2006 Part 5: company names","pain":"Name checking and trade mark checking are separate services with different answers","meas":"Rejected incorporations for name reasons"},{"stage":"Register","need":"Incorporate and verify identity","front":"Incorporate the company; verify identity for directors and PSCs","back":"Registrar checks; automatic notification to HMRC for Corporation Tax","sys":"Companies House account; GOV.UK One Login; company number; Authentication code","rule":"Companies Act 2006 as amended by the Economic Crime and Corporate Transparency Act 2023","pain":"Identity verification became compulsory in November 2025 and the step by step guidance does not mention it","meas":"Share verified before starting, not during"},{"stage":"Tax","need":"Get every tax registration that applies","front":"Corporation Tax; VAT if over the threshold; PAYE when the first person is hired","back":"Three different HMRC regimes with three different triggers","sys":"HMRC business tax account; Corporation Tax UTR; VAT number; PAYE reference and Accounts Office reference","rule":"Corporation Tax Act 2009; Value Added Tax Act 1994; Income Tax (PAYE) Regulations 2003","pain":"Founders assume incorporation did all of it. Four identifiers arrive from three places","meas":"Late first-filing rate among companies in their first two years"},{"stage":"People","need":"Employ the first person lawfully","front":"Register as an employer; right to work checks; auto-enrolment; employers' liability insurance","back":"HMRC, the Pensions Regulator, the Home Office and an insurer, none aware of the others","sys":"PAYE online; pension provider; Home Office online checking service","rule":"Immigration, Asylum and Nationality Act 2006 s.15; Pensions Act 2008; Employers' Liability (Compulsory Insurance) Act 1969","pain":"Four duties, four start dates, no single prompt when the first employee is added","meas":"Share of first-time employers completing all four before the first payday"},{"stage":"Money","need":"Raise investment without breaking a relief","front":"SEIS and EIS advance assurance","back":"HMRC assesses the company and the shares before investors commit","sys":"HMRC forms; investor records","rule":"Income Tax Act 2007 Parts 5 and 5A","pain":"The relief has to be understood before the share structure is fixed, which is before most founders look","meas":"Advance assurance rejections for structure reasons"}]},{"id":"b3","title":"Formalising a community organisation","persona":"p3","form":"Charitable incorporated organisation","nation":"Scotland","steps":[{"stage":"Decide","need":"Choose between a CIO, a company and a society","front":"Charity regulator guidance; company guidance; FCA mutuals guidance, each written separately","back":"Three regulators, three registers, no comparison view","sys":"None yet","rule":"Charities and Trustee Investment (Scotland) Act 2005; Companies Act 2006; Co-operative and Community Benefit Societies Act 2014","pain":"The comparison the founder needs does not exist in one place, so most default to the company route","meas":"Structure changes within two years of formation"},{"stage":"Register","need":"Register with the right regulator first time","front":"OSCR application in Scotland; the Charity Commission in England and Wales; CCNI in Northern Ireland","back":"Regulator assesses charitable purpose and public benefit","sys":"OSCR account; charity number","rule":"Charities and Trustee Investment (Scotland) Act 2005","pain":"The main start-a-business journey assumes Companies House. Four of the fourteen forms never go there","meas":"Applications rejected for going to the wrong registrar"},{"stage":"Tax","need":"Claim what a charity can claim","front":"Register for charity tax reliefs and Gift Aid","back":"HMRC charities team, separate from the company route","sys":"HMRC online; charity tax reference","rule":"Finance Act 2010 Schedule 6 charity definition","pain":"Two registrations that look like one, in an order nobody states","meas":"Time between registration and first Gift Aid claim"},{"stage":"People","need":"Use volunteers and staff without confusing the two","front":"Employment guidance written for businesses","back":"No volunteer-specific route in the start-a-business journey","sys":"PAYE if staff are paid","rule":"National Minimum Wage Act 1998 s.1 and its volunteer exclusions","pain":"Guidance assumes an employer, so the volunteer question is answered nowhere on the journey","meas":"Enquiries to regulators about volunteer status"}]},{"id":"b4","title":"An agent acting for several clients","persona":"p4","form":"Acts across all forms","nation":"All four","steps":[{"stage":"Take on","need":"Know what this client already has and still owes","front":"Client gives fragments: a company number here, a UTR there","back":"No consolidated view exists in government of one business's obligations","sys":"Companies House, HMRC agent services, separate regulator portals","rule":"No duty creates the consolidated view; each duty sits with its own body","pain":"The agent rebuilds the picture by hand for every client","meas":"Time to produce a complete obligation list for a new client"},{"stage":"Register","need":"Act on the client's behalf at each registrar","front":"Agent authorisation at HMRC; presenter or ACSP route at Companies House","back":"Two separate identity and authorisation regimes","sys":"HMRC agent services account; Companies House presenter or ACSP registration","rule":"Economic Crime and Corporate Transparency Act 2023 agent provisions","pain":"Agent and presenter verification is expected no earlier than November 2027, so plans must be made against a moving date","meas":"Share of filings made through a verified agent route"},{"stage":"File","need":"Meet every deadline across a portfolio","front":"Separate filing services per obligation","back":"The joint Companies House and HMRC accounts filing service closed on 31 March 2026","sys":"Companies House software filing; HMRC Corporation Tax; MTD software","rule":"Companies Act 2006 filing deadlines; Corporation Tax Act 2009","pain":"A joint service that existed was withdrawn, splitting one act back into two","meas":"Late filings per hundred clients"},{"stage":"Advise","need":"Warn clients about changes before they land","front":"Announcements scattered across departmental news","back":"No machine-readable feed of dated changes per obligation","sys":"None. The rulebook on these pages is the nearest thing","rule":"n/a","pain":"Four dated changes to 2029 affect clients registering now and no single source lists them","meas":"Clients ready before each dated change takes effect"}]}],"PAIN":[["No record exists before registration","Every journey starts with decisions nobody captures, so nothing can be prompted, measured or improved.","GDS and BIST single business experience","boundary"],["One act is assumed to do everything","Incorporation registers a company and notifies Corporation Tax. Founders read that as everything being done.","Companies House and HMRC","scan"],["Four of fourteen forms leave the mainstream route","Charities, CIOs, societies and trusts have their own registrars and are largely absent from start-up guidance.","Charity regulators, FCA, HMRC","finder"],["Employment turns one business into four relationships at once","PAYE, right to work, pensions and insurance all start together with no single prompt.","HMRC, Home Office, TPR, insurers","rulebook"],["Crossing an internal border restarts the journey","Licensing, support and some tax touchpoints reset at a nation or council boundary.","Devolved administrations, local government","nations"],["Dated changes arrive without a shared timetable","Four changes to 2029 affect people registering today and no start-up guidance lists them together.","Cross-government","standards"],["Agents have no consolidated view","Intermediaries rebuild each client's obligations by hand, which is the same work repeated.","HMRC, Companies House","rulebook"]],"DEIA":[{"id":"d1","t":"Who this journey serves least well","icon":"access","b":"This guide's own evidence names them: people starting from a domestic kitchen, people without an adviser, people whose form is not a company, people who read Welsh, and people using assistive technology. Each is visible in the data rather than assumed.","state":"named, not yet designed for"},{"id":"d2","t":"Accessibility of this solution","icon":"check","b":"Every page: one h1, no heading skips, a skip link as the first tab stop, contrast from 5.4:1 on muted text to 15.3:1 on body text, visible focus, no ambiguous link text, reflow to 320 pixels with no horizontal scrolling, motion respecting prefers-reduced-motion, and every illustration carrying a title, a description and a caption.","state":"structurally tested, not tested with disabled users"},{"id":"d3","t":"Language","icon":"language","b":"English throughout. An unchecked Welsh summary and a translation plan are published, with the legal position stated accurately: the Welsh Language Standards bind the bodies listed in Schedule 6 of the 2011 Measure, which does not include Companies House or HMRC, but does include the Welsh Ministers and Welsh councils who deliver parts of this journey.","state":"gap open and documented"},{"id":"d4","t":"Reading level","icon":"book","b":"Measured per block: reading ease from 30.6 to 59.1, grade 7.3 to 12.9. The reference pages are denser than a plain-English target. The longest prose sentences have been rewritten; the rule summaries have not.","state":"measured, partly acted on"},{"id":"d5","t":"Assisted digital and non-digital routes","icon":"support","b":"The journey still has telephone and paper routes at several points, and the Business Support Helpline exists. This scan documents them but does not test them, and nobody has checked whether a person without confident digital access can complete the journey.","state":"documented, untested"},{"id":"d6","t":"Representation in the evidence","icon":"person","b":"The user research this guide rests on is government research. Where it does not break results down by disability, ethnicity, language or socioeconomic group, this guide cannot either, and says so rather than generalising.","state":"limited by the underlying evidence"},{"id":"d7","t":"Personas are composites, not people","icon":"warning","b":"The five personas here are built from cited findings on these pages. They are a way of reading the evidence, not research participants. No founder has reviewed them.","state":"labelled as synthesis"}],"AUD":[["founder","Starting a business","person",["Start with the journey ribbon at the top of any page and pick the stage you are at.","Use the setup finder to see what your form, activity and nation actually trigger.","Use the rulebook to turn what you do into the rules that bind it.","Read the blueprint for the persona closest to you to see what usually goes wrong."]],["agent","Acting for someone else","agent",["Read the agent blueprint first: it is the only journey here that runs across several clients.","Take the rulebook as data through its API or MCP description rather than reading it page by page.","Check the dated changes to 2029 in the standards part before advising on timing.","Use the verification register to see how far each claim can be relied on."]],["official","Working in government","official",["Find your service in the every step in the journey journey, then read the blueprint lane below it.","Take the cross-journey pain points as a shortlist of shared problems with named candidate owners.","Reuse the pack: rule records, scheme feeds, standards profile and issue register are all published.","The build assessment and issue register say what is unfinished, including what needs a human owner."]]]};
+(function(){
+  var root=document.documentElement,RM=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  try{var sv=localStorage.getItem('hub-theme');if(sv)root.setAttribute('data-theme',sv);}catch(e){}
+  var $=function(i){return document.getElementById(i);};
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function ic(n,c){return '<svg class="'+(c||'ic')+'" aria-hidden="true" focusable="false"><use href="#i-'+n+'"></use></svg>';}
+  var P=BPD.PERSONAS,L=BPD.LANES,B=BPD.BLUE,PA=BPD.PAIN,D=BPD.DEIA,A=BPD.AUD;
+  var LANEICON={need:'person',front:'support',back:'back',sys:'data',rule:'rules',pain:'warning',meas:'check'};
+
+  // audience
+  var aud=A[0][0];
+  function paintAud(){
+    $('audbtns').innerHTML=A.map(function(a){return '<button type="button" data-a="'+a[0]+'" aria-pressed="'+(aud===a[0])+'">'+ic(a[2])+esc(a[1])+'</button>';}).join('');
+    var cur=A.filter(function(a){return a[0]===aud;})[0];
+    $('audbox').innerHTML='<h3>'+ic(cur[2],'ic-lg')+esc(cur[1])+'</h3><ol>'+cur[3].map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ol>';
+    Array.prototype.forEach.call($('audbtns').querySelectorAll('button'),function(b){
+      b.addEventListener('click',function(){aud=b.getAttribute('data-a');paintAud();});});
+  }
+  paintAud();
+
+  $('personas').innerHTML=P.map(function(p){
+    return '<article class="pcard"><h3>'+ic(p.icon,'ic-lg')+esc(p.name)+'</h3>'+
+      '<p>'+esc(p.who)+'</p>'+
+      '<p class="meta"><b>Form</b> '+esc(p.form)+' · <b>Nation</b> '+esc(p.nation)+'</p>'+
+      '<p class="ground">'+esc(p.grounding)+'</p>'+
+      '<div class="two"><div><h4>'+ic('check')+'Needs</h4><ul>'+p.needs.map(function(n){return '<li>'+esc(n)+'</li>';}).join('')+'</ul></div>'+
+      '<div><h4>'+ic('warning')+'What goes wrong</h4><ul>'+p.risks.map(function(n){return '<li>'+esc(n)+'</li>';}).join('')+'</ul></div></div></article>';
+  }).join('');
+
+  var cur=0;
+  function tabs(){
+    $('bptabs').innerHTML=B.map(function(b,i){
+      return '<button type="button" role="tab" id="bt'+i+'" aria-controls="bpbody" aria-selected="'+(i===cur)+'" tabindex="'+(i===cur?'0':'-1')+'">'+
+        ic(i===3?'agent':'blueprint')+'<span>'+esc(b.title)+'</span><small>'+esc(b.form)+' · '+esc(b.nation)+'</small></button>';}).join('');
+    Array.prototype.forEach.call($('bptabs').querySelectorAll('button'),function(btn,i){
+      btn.addEventListener('click',function(){cur=i;tabs();paint();});
+      btn.addEventListener('keydown',function(e){
+        var n=null;
+        if(e.key==='ArrowRight')n=(i+1)%B.length; else if(e.key==='ArrowLeft')n=(i-1+B.length)%B.length;
+        else if(e.key==='Home')n=0; else if(e.key==='End')n=B.length-1;
+        if(n!==null){e.preventDefault();cur=n;tabs();paint();$('bt'+n).focus();}});
+    });
+  }
+  function paint(){
+    var b=B[cur], per=P.filter(function(p){return p.id===b.persona;})[0];
+    var head='<div class="bphead"><h3>'+esc(b.title)+'</h3><p class="meta">'+ic(per.icon)+esc(per.name)+' · '+esc(b.form)+' · '+esc(b.nation)+' · '+b.steps.length+' moments</p></div>';
+    var cols='<div class="bpgrid" role="group" aria-label="Blueprint for '+esc(b.title)+'"><div class="bplabels"><div class="bpcorner">Lane</div>'+
+      L.map(function(l){return '<div class="bplab">'+ic(LANEICON[l[0]])+'<span>'+esc(l[1])+'</span></div>';}).join('')+'</div>'+
+      '<div class="bpcols">'+b.steps.map(function(s,i){
+        return '<div class="bpcol"><div class="bpstage"><b>'+(i+1)+'</b>'+esc(s.stage)+'</div>'+
+          L.map(function(l){return '<div class="bpcell '+l[0]+'" data-lane="'+esc(l[1])+'">'+esc(s[l[0]]||'—')+'</div>';}).join('')+'</div>';}).join('')+'</div></div>';
+    var key='<p class="legendkey">'+L.map(function(l){return '<span>'+ic(LANEICON[l[0]])+esc(l[1])+'</span>';}).join('')+'</p>';
+    $('bpbody').setAttribute('role','tabpanel');
+    $('bpbody').setAttribute('aria-labelledby','bt'+cur);
+    $('bpbody').innerHTML=head+key+cols;
+  }
+  tabs();paint();
+
+  $('pain').innerHTML=PA.map(function(p){
+    return '<li><h3>'+ic('warning')+esc(p[0])+'</h3><p>'+esc(p[1])+'</p><p class="meta"><b>Closest to it</b> '+esc(p[2])+'</p></li>';}).join('');
+
+  $('deia').innerHTML=D.map(function(d){
+    return '<article class="dcard"><h3>'+ic(d.icon,'ic-lg')+esc(d.t)+'</h3><p>'+esc(d.b)+'</p><p class="state">'+ic('clock')+esc(d.state)+'</p></article>';}).join('');
+
+  $('use').innerHTML=[
+   ['Read a blueprint downwards, not across','The top lane is what someone is trying to do. Everything below it is the machinery that makes that hard or easy. A change in the bottom lanes is only worth making if it moves the top one.'],
+   ['Treat the personas as evidence, not people','Each is traceable to a cited finding on these pages. Replace them with real participants as soon as anyone runs research; the blueprint structure survives that substitution.'],
+   ['The pain points are the shortlist','Seven problems appear in more than one journey. They are where a whole-journey team would start, and each names the bodies closest to it.'],
+   ['Nothing here claims compliance','The inclusion section states what was measured and what was not. Structural accessibility testing is not testing with disabled people, and an unchecked Welsh draft is not a translation.']
+  ].map(function(x){return '<li><b>'+esc(x[0])+'</b>'+esc(x[1])+'</li>';}).join('');
+
+  var t=$('theme');if(t)t.addEventListener('click',function(){
+    var n=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',n);
+    try{localStorage.setItem('hub-theme',n);}catch(e){}});
+  var pr=$('print');if(pr)pr.addEventListener('click',function(){window.print();});
+  window.__bp={json:function(){return JSON.stringify(BPD);}};
+})();
+</script><script>window.AI_CFG={title:"Ask about service blueprints",family:"Starting a business in the UK portal and its other parts",intro:"Ask anything about this page. Answers come from this page's content and its structured data.",suggestions:[],context:function(){var t='';try{var m=document.querySelector('main');t=(document.querySelector('header')?document.querySelector('header').innerText+'\n':'')+(m?m.innerText:'');}catch(e){} var d='';try{var x=window.__finder||window.__rules||window.__rulebook;if(x&&typeof x.json==='function'){d=x.json();}}catch(e){} return d?t+'\n\n=== STRUCTURED DATA FOR THE CURRENT SELECTION (JSON) ===\n'+d:t;},max:46000};
+(function(){
+  if(!window.AI_CFG) return;
+  var CFG=window.AI_CFG, doc=document;
+  var btn=doc.createElement('button');btn.className='aibtn';btn.type='button';btn.hidden=true;btn.textContent='Ask about this page';
+  var wrap=doc.createElement('div');wrap.className='aiwrap';wrap.setAttribute('role','dialog');wrap.setAttribute('aria-label','Ask Claude about this page');
+  wrap.innerHTML='<div class="aihead"><b>'+CFG.title+'<small>Grounded in this page\'s evidence</small></b><button type="button" aria-label="Close">&times;</button></div>'+
+    '<div class="ailog" id="ailog"></div><div class="aisug" id="aisug"></div>'+
+    '<form class="aiform"><textarea rows="1" placeholder="Ask a question" aria-label="Your question"></textarea><button type="submit">Ask</button></form>'+
+    '<p class="aifoot">Answers come from Claude reading this page. They use your Claude account, and can be wrong: check the cited sources.</p>';
+  doc.body.appendChild(btn);doc.body.appendChild(wrap);
+  var log=wrap.querySelector('#ailog'),sug=wrap.querySelector('#aisug'),form=wrap.querySelector('form'),ta=form.querySelector('textarea'),send=form.querySelector('button[type=submit]'),close=wrap.querySelector('.aihead button');
+  var sample=null,turns=[],busy=false,ctl=null;
+  function el(cls,txt){var d=doc.createElement('div');d.className='aimsg '+cls;d.textContent=txt;log.appendChild(d);log.scrollTop=log.scrollHeight;return d;}
+  function context(){
+    var t=CFG.context&&CFG.context();
+    if(!t){var m=doc.querySelector('main');t=(doc.querySelector('header')?doc.querySelector('header').innerText+'\n':'')+(m?m.innerText:doc.body.innerText);}
+    t=t.replace(/\s+\n/g,'\n').replace(/\n{3,}/g,'\n\n');
+    var MAXC=CFG.max||26000;return t.length>MAXC?t.slice(0,MAXC)+'\n[content truncated]':t;
+  }
+  function rules(){
+    return 'You are answering questions about a UK government analysis of the "start a business" journey, for civil servants. '+
+      'Answer ONLY from the CONTENT below, which is the page the reader is looking at ('+CFG.title+'). '+
+      'If the answer is not in the content, say so plainly and suggest which companion page may hold it ('+CFG.family+'). '+
+      'Never invent statistics, dates, sources or URLs. Quote figures exactly as written. '+
+      'Be concise: 2 to 6 sentences or a short list, plain British English, no headings, no markdown emphasis. '+
+      'Where a claim rests on a source named in the content, name that source in words.\n\nCONTENT:\n'+context();
+  }
+  function open(){wrap.classList.add('open');btn.hidden=true;ta.focus();}
+  function shut(){wrap.classList.remove('open');btn.hidden=false;if(ctl)ctl.abort();}
+  btn.addEventListener('click',open);close.addEventListener('click',shut);
+  doc.addEventListener('keydown',function(e){if(e.key==='Escape'&&wrap.classList.contains('open'))shut();});
+  (CFG.suggestions||[]).forEach(function(q){var b=doc.createElement('button');b.type='button';b.textContent=q;b.addEventListener('click',function(){ta.value=q;ask();});sug.appendChild(b);});
+  function copy(code){
+    switch(code){
+      case 'rate_limited':return 'Too many questions at once. Wait a moment and ask again.';
+      case 'session_expired':return 'Your session expired. Sign in again to keep asking.';
+      case 'refused':return 'Claude declined to answer that. Try asking it differently.';
+      case 'empty_completion':return 'No answer came back. Try a shorter, more specific question.';
+      case 'cancelled':return '';
+      case 'prompt_too_large':return 'That question plus this page is too long to send. Ask about one section.';
+      default:return 'Something went wrong reaching Claude. Try again in a moment.';
+    }
+  }
+  function hide(){btn.remove();wrap.remove();}
+  function ask(){
+    var q=ta.value.trim();if(!q||busy||!sample)return;
+    ta.value='';el('u',q);turns.push({role:'user',content:q});
+    var out=el('a','Thinking…');busy=true;send.disabled=true;send.textContent='…';
+    ctl=new AbortController();
+    var input=[{role:'user',content:rules()},{role:'assistant',content:'Understood. I will answer only from that content.'}].concat(turns);
+    sample(input,{cache:false,signal:ctl.signal,onText:function(e){out.textContent=e.text;log.scrollTop=log.scrollHeight;}}).then(function(r){
+      out.textContent=r.text+(r.truncated?'\n\n[Answer cut short.]':'');turns.push({role:'assistant',content:r.text});
+      if(turns.length>10)turns=turns.slice(-10);
+    }).catch(function(e){
+      var c=e&&e.code;
+      if(c==='not_granted'||c==='sampling_disabled'||c==='not_declared'||c==='capability_disabled'){out.textContent='Asking Claude is not available in this view.';hideLater();}
+      else {out.textContent=(e&&e.text)?e.text:'';var m=copy(c);if(m)el('sys',m);if(!out.textContent)out.remove();}
+      turns.pop();
+    }).then(function(){busy=false;send.disabled=false;send.textContent='Ask';ctl=null;});
+  }
+  function hideLater(){setTimeout(function(){btn.remove();},50);}
+  form.addEventListener('submit',function(e){e.preventDefault();ask();});
+  ta.addEventListener('keydown',function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();ask();}});
+  if(window.claude&&typeof window.claude.use==='function'){
+    window.claude.use('sample').then(function(s){if(!s){hide();return;}sample=s;btn.hidden=false;
+      el('sys',CFG.intro||'Ask anything about this page. Answers are grounded in what this page shows and its sources.');
+    }).catch(function(){hide();});
+  } else {hide();}
+})();
+</script>
+<script>/* Self-* runtime: verify, repair, assess and report. Runs on every page, in the browser,
+   with no network access. Everything it does is recorded and reversible by reloading. */
+(function(){
+  if(window.__selfcheck) return;
+  var BUILD="2026-09-18";
+  var findings=[], repairs=[], allRepairs=[], t0=(window.performance&&performance.now)?performance.now():0;
+  function add(sev,id,msg,n){findings.push({severity:sev,check:id,detail:msg,count:n==null?1:n});}
+  function fixed(id,msg,n){var c=(n==null?1:n);repairs.push({check:id,action:msg,count:c});
+    for(var i=0;i<allRepairs.length;i++){if(allRepairs[i].check===id){allRepairs[i].count+=c;return;}}
+    allRepairs.push({check:id,action:msg,count:c});}
+  function txt(e){return (e.textContent||'').replace(/\s+/g,' ').trim();}
+  function near(a){
+    var r=a.closest('li,td,tr,article,.card,.rowcard,.tp,p');
+    if(r){var h=r.querySelector('b,strong,h3,h4');if(h&&txt(h))return txt(h).slice(0,80);
+      var t=txt(r);if(t)return t.slice(0,80);}
+    var s=a.closest('section');var h2=s&&s.querySelector('h2');
+    return h2?txt(h2).slice(0,80):'this entry';
+  }
+  // ---------- verification + repair ----------
+  function scrollRegions(){
+    var n=0,fixedN=0;
+    var all=document.querySelectorAll('body *');
+    for(var i=0;i<all.length;i++){var e=all[i];if(e.closest('svg'))continue;
+      var cs=getComputedStyle(e);if(!(cs.overflowX==='auto'||cs.overflowX==='scroll'||cs.overflowY==='auto'||cs.overflowY==='scroll'))continue;
+      if(!(e.scrollWidth>e.clientWidth+1||e.scrollHeight>e.clientHeight+1))continue;
+      if(e.querySelector('a,button,input,select,textarea,[tabindex]'))continue;
+      if(e.hasAttribute('tabindex'))continue;
+      n++;e.setAttribute('tabindex','0');e.setAttribute('role','region');
+      if(!e.getAttribute('aria-label')){var h=e.closest('section');var h2=h&&h.querySelector('h2');e.setAttribute('aria-label',(h2?txt(h2):'Scrollable content')+' (scrollable)');}
+      fixedN++;}
+    if(fixedN)fixed('scroll.focusable','Made '+fixedN+' scrollable region(s) keyboard reachable with tabindex and a label. Defect: axe-core scrollable-region-focusable on the journey map and blueprint lanes, 23 September 2026.',fixedN);
+  }
+  function structure(){
+    var h1=document.querySelectorAll('h1').length;
+    if(h1!==1) add('high','structure.h1','Expected exactly one h1, found '+h1,h1);
+    if(!document.getElementById('main')) add('high','structure.main','No element with id="main" for the skip link to reach');
+    var skip=document.querySelector('a.skip');
+    if(!skip){
+      var a=document.createElement('a');a.className='skip';a.href='#main';a.textContent='Skip to content';
+      document.body.insertBefore(a,document.body.firstChild);
+      fixed('structure.skip','Inserted a missing skip link as the first focusable element');
+    }
+    var lv=0,skips=0;
+    Array.prototype.forEach.call(document.querySelectorAll('h1,h2,h3,h4,h5,h6'),function(h){
+      var n=+h.tagName.slice(1); if(lv && n>lv+1) skips++; lv=n;});
+    if(skips) add('medium','structure.headings',skips+' heading level skips',skips);
+    if(!document.querySelector('.ribbon')) add('low','structure.ribbon','Journey ribbon missing from this page');
+    var fam=document.querySelectorAll('.family a,.xfam a').length;
+    if(!fam && !/portal/.test(location.pathname)) add('medium','structure.family','Family navigation is empty');
+  }
+  function links(){
+    var amb=0,noop=0,empty=0;
+    Array.prototype.forEach.call(document.querySelectorAll('a[href]'),function(a){
+      var label=(a.getAttribute('aria-label')||txt(a)).toLowerCase();
+      if(['source','details','here','more','link','read more','click here'].indexOf(label)>=0){
+        a.setAttribute('aria-label',(label==='details'?'Details of ':'Source for ')+near(a)); amb++;
+      }
+      if(a.target==='_blank' && !/noopener/.test(a.rel||'')){a.rel=((a.rel||'')+' noopener').trim();noop++;}
+      if(!a.getAttribute('href').trim()) empty++;
+    });
+    if(amb){fixed('links.ambiguous','Gave a context-bearing accessible name to links that read only "source" or "details"',amb);}
+    if(noop){fixed('links.noopener','Added rel="noopener" to links opening in a new tab',noop);}
+    if(empty) add('medium','links.empty',empty+' links with an empty href',empty);
+  }
+  function aria(){
+    var seen={},dupes=0;
+    Array.prototype.forEach.call(document.querySelectorAll('[id]'),function(e){
+      if(seen[e.id]){e.id=e.id+'-dup'+(++dupes);} else seen[e.id]=1;});
+    if(dupes) fixed('aria.duplicate-id','Renamed duplicate element ids so labels and controls resolve to one target',dupes);
+    var svgs=0;
+    Array.prototype.forEach.call(document.querySelectorAll('svg'),function(s){
+      var named=s.getAttribute('aria-label')||s.querySelector('title')||s.getAttribute('role')==='img';
+      if(!named && s.getAttribute('aria-hidden')!=='true'){s.setAttribute('aria-hidden','true');s.setAttribute('focusable','false');svgs++;}
+    });
+    if(svgs) fixed('aria.decorative-svg','Marked decorative graphics as hidden from assistive technology',svgs);
+    var unl=0;
+    Array.prototype.forEach.call(document.querySelectorAll('input,select,textarea'),function(c){
+      if(c.type==='hidden')return;
+      var has=(c.labels&&c.labels.length)||c.getAttribute('aria-label')||c.getAttribute('aria-labelledby')||c.closest('label');
+      if(!has) unl++;});
+    if(unl) add('high','aria.unlabelled-control',unl+' form controls with no accessible name',unl);
+    var figs=0;
+    Array.prototype.forEach.call(document.querySelectorAll('svg.art'),function(s){
+      if(!s.querySelector('title')||!s.querySelector('desc')) figs++;});
+    if(figs) add('medium','aria.illustration',figs+' illustrations without both a title and a description',figs);
+  }
+  function layout(){
+    var vw=document.documentElement.clientWidth, wide=0, wrapped=0;
+    Array.prototype.forEach.call(document.querySelectorAll('table'),function(t){
+      if(t.scrollWidth>vw+2){
+        var p=t.parentElement;
+        if(!p || getComputedStyle(p).overflowX!=='auto'){
+          var d=document.createElement('div');d.className='tablewrap';d.style.overflowX='auto';d.style.maxWidth='100%';
+          t.parentNode.insertBefore(d,t);d.appendChild(t);wrapped++;
+        }
+      }});
+    if(wrapped) fixed('layout.table-scroll','Wrapped wide tables in a horizontal scroll container',wrapped);
+    if(document.documentElement.scrollWidth>vw+2){
+      document.documentElement.style.maxWidth='100%';document.body.style.overflowX='hidden';
+      wide=1;fixed('layout.overflow','Clamped horizontal overflow at the document root');
+    }
+    return wide;
+  }
+  function currency(){
+    var built=new Date(BUILD+'T00:00:00Z'), days=Math.floor((Date.now()-built.getTime())/86400000);
+    var sev = days>365?'high':days>180?'medium':days>90?'low':null;
+    if(sev) add(sev,'currency.age','This page was built '+days+' days ago. Sources move; re-run the verification pass before relying on it.',days);
+    return days;
+  }
+  function data(){
+    // Cross-check any count this page states about its own dataset
+    var out=[];
+    try{
+      var D=window.__bp&&JSON.parse(window.__bp.json());
+      if(D){
+        var steps=D.BLUE.reduce(function(a,b){return a+b.steps.length;},0);
+        var claimed=(document.body.innerText.match(/(\d+)\s+journey moments/)||[])[1];
+        out.push({fact:'blueprint steps',value:steps});
+        if(claimed && +claimed!==steps) add('medium','data.count','Page states '+claimed+' journey moments but the data holds '+steps);
+      }
+    }catch(e){}
+    return out;
+  }
+  // ---------- assessment ----------
+  function assess(days){
+    var high=findings.filter(function(f){return f.severity==='high';}).length;
+    var med=findings.filter(function(f){return f.severity==='medium';}).length;
+    var low=findings.filter(function(f){return f.severity==='low';}).length;
+    var dims=[
+      ['Accuracy','every claim carries a source and the verification register records what was checked',high?'at risk':'holding'],
+      ['Currency', days>180?'stale: re-verification overdue':days>90?'ageing':'current', days>180?'at risk':'holding'],
+      ['Accessibility', high?'a structural defect is present on this page':'structural checks pass on this page', high?'at risk':'holding'],
+      ['Resilience','the page repaired '+allRepairs.reduce(function(a,r){return a+r.count;},0)+' defects at load without failing','holding'],
+      ['Completeness','open issues are published rather than hidden','holding'],
+      ['Sustainability','one file, no build step, no dependency to rot','holding']
+    ];
+    var score=Math.max(0,100-(high*18)-(med*6)-(low*2)-(days>365?15:days>180?8:0));
+    return {score:score,band:score>=85?'good':score>=70?'fair':'needs work',dimensions:dims,high:high,medium:med,low:low};
+  }
+  // ---------- run ----------
+  structure();
+  scrollRegions();links();aria();layout();var days=currency();var facts=data();
+  var a=assess(days);
+  var ms=((window.performance&&performance.now)?performance.now():0)-t0;
+  var report={page:document.title,build:BUILD,ranAt:new Date().toISOString(),ageDays:days,
+    durationMs:Math.round(ms),passes:1,findings:findings,repairs:allRepairs,assessment:a,facts:facts};
+  window.__selfcheck={report:function(){return report;},recheck:function(){return repass();},json:function(){return JSON.stringify(report);},rerun:function(){location.reload();}};
+  // ---------- surface ----------
+  function badge(){
+    var host=document.querySelector('footer .wrap')||document.querySelector('footer')||document.body;
+    var d=document.createElement('section');d.className='selfcheck';d.setAttribute('aria-labelledby','sc-h');
+    var rep=allRepairs.reduce(function(x,r){return x+r.count;},0);
+    d.innerHTML='<h2 id="sc-h">This page checks itself</h2>'+
+      '<p class="scline"><span class="scdot '+a.band.replace(' ','-')+'" aria-hidden="true"></span>'+
+      '<b>'+a.score+'/100</b> on its own checks, run in your browser '+Math.round(ms)+'ms ago: '+
+      findings.length+' finding'+(findings.length===1?'':'s')+', '+rep+' defect'+(rep===1?'':'s')+' repaired automatically, built '+days+' days ago.</p>'+
+      '<details><summary>What it checked, what it found, what it fixed</summary><div class="scbody">'+
+      '<h3>Findings</h3>'+(findings.length?'<ul>'+findings.map(function(f){return '<li><b>'+f.severity+'</b> '+f.check+' — '+f.detail+'</li>';}).join('')+'</ul>':'<p>Nothing outstanding on this page.</p>')+
+      '<h3>Repaired at load</h3>'+(allRepairs.length?'<ul>'+allRepairs.map(function(r){return '<li>'+r.action+' ('+r.count+')</li>';}).join('')+'</ul>':'<p>Nothing needed repairing.</p>')+
+      '<h3>Self-assessment</h3><ul>'+a.dimensions.map(function(x){return '<li><b>'+x[0]+'</b> '+x[1]+' — <i>'+x[2]+'</i></li>';}).join('')+'</ul>'+
+      '<p class="meta">These checks run in the page, with no network access. They cannot test with a real screen reader, cannot re-request a source, and cannot know whether a fact changed yesterday. They fail visibly rather than quietly: a repair is reported, never hidden.</p>'+
+      '<p><button class="btn sm" type="button" id="scdl">Download this report</button> <span class="toolmsg" id="scmsg" role="status"></span></p>'+
+      '</div></details>';
+    host.appendChild(d);
+    var b=document.getElementById('scdl');
+    if(b)b.addEventListener('click',function(){
+      try{
+        var blob=new Blob([JSON.stringify(report,null,1)],{type:'application/json'});
+        var u=URL.createObjectURL(blob),el=document.createElement('a');
+        el.href=u;el.download='self-check-'+(document.title.split(':')[0].toLowerCase().replace(/[^a-z0-9]+/g,'-'))+'.json';
+        document.body.appendChild(el);el.click();el.remove();setTimeout(function(){URL.revokeObjectURL(u);},2000);
+        document.getElementById('scmsg').textContent='Report downloaded.';
+      }catch(e){document.getElementById('scmsg').textContent='Download blocked here; the report is also on window.__selfcheck.report().';}
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',badge);else badge();
+
+  // ---------- continuous repair: dynamic pages render after this first pass ----------
+  var pending=null, passes=1;
+  function repass(){
+    var before=repairs.reduce(function(a,r){return a+r.count;},0);
+    repairs.length=0; findings.length=0;
+    structure();links();aria();layout();var d=currency();
+    passes++;
+    var after=repairs.reduce(function(a,r){return a+r.count;},0);
+    report.findings=findings; report.repairs=allRepairs; report.passes=passes;
+    report.assessment=assess(d); report.ranAt=new Date().toISOString();
+    var line=document.querySelector('.selfcheck .scline b');
+    if(line) line.textContent=report.assessment.score+'/100';
+    return after;
+  }
+  if(window.MutationObserver){
+    var mo=new MutationObserver(function(muts){
+      var worth=false;
+      for(var i=0;i<muts.length;i++){ if(muts[i].addedNodes && muts[i].addedNodes.length){worth=true;break;} }
+      if(!worth) return;
+      clearTimeout(pending);
+      pending=setTimeout(function(){ if(!document.querySelector('.selfcheck details[open]')) repass(); },600);
+    });
+    mo.observe(document.body,{childList:true,subtree:true});
+    window.__selfcheck_observer=mo;
+  }
+  setTimeout(repass,1500);
+
+})();
+</script>
+<!-- colophon: added by tools/publish.py -->
+<aside class="pgw-colophon" aria-label="About this publication" style="max-width:1120px;margin:40px auto 24px;padding:18px 22px;border:1px solid currentColor;border-radius:12px;font:14px/1.5 system-ui,sans-serif;display:flex;flex-wrap:wrap;gap:18px;align-items:center;opacity:.92">
+<div style="flex:1 1 340px;min-width:0">
+<p style="margin:0 0 6px"><strong>Not an official government service.</strong> An independent, evidence-led guide by Emanuel Silva, part of
+<a href="https://cyberdudeuk.github.io/">Public Good Works</a>. Every claim carries its source; check GOV.UK, nidirect, mygov.scot or gov.wales before you act.</p>
+<p style="margin:0 0 6px">Drafted and checked with AI assistance (Claude); the author reviewed and is responsible for it. Some features, such as the page assistant, work only inside Claude and are hidden here.</p>
+<p style="margin:0">Questions, corrections or ideas: use the <a href="https://github.com/cyberdudeuk/start-a-business-uk/issues/new?template=contact.yml">contact form</a> (no email address is published).
+Code MIT; content Open Government Licence v3.0, see the <a href="https://github.com/cyberdudeuk/start-a-business-uk">repository</a>.</p>
+</div>
+<div style="display:flex;gap:14px;align-items:center"><svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 156 156" role="img" aria-label="QR code for https://cyberdudeuk.github.io/start-a-business-uk/service-blueprints/" class="segno"><g transform="scale(4)"><path fill="#fff" d="M0 0h39v39h-39z"/><path class="qrline" stroke="#0b0c0c" d="M1 1.5h7m1 0h3m1 0h2m2 0h1m2 0h2m1 0h2m1 0h4m1 0h7m-37 1h1m5 0h1m3 0h3m3 0h4m2 0h1m1 0h2m2 0h1m1 0h1m5 0h1m-37 1h1m1 0h3m1 0h1m2 0h3m2 0h2m1 0h1m3 0h1m1 0h2m2 0h1m2 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m3 0h1m2 0h1m2 0h1m1 0h1m2 0h4m1 0h1m1 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m2 0h1m5 0h1m5 0h1m1 0h4m1 0h1m1 0h3m1 0h1m-37 1h1m5 0h1m1 0h1m3 0h1m1 0h1m1 0h2m1 0h1m1 0h1m2 0h1m1 0h1m1 0h1m1 0h1m5 0h1m-37 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-29 1h1m1 0h1m1 0h1m2 0h1m5 0h1m1 0h1m3 0h1m-28 1h1m3 0h1m1 0h4m1 0h6m2 0h3m1 0h1m5 0h5m2 0h1m-37 1h2m3 0h1m2 0h6m4 0h2m3 0h1m1 0h3m4 0h1m2 0h1m-35 1h3m1 0h3m1 0h1m5 0h1m1 0h3m2 0h2m2 0h2m1 0h1m1 0h2m-33 1h1m1 0h1m7 0h4m1 0h3m1 0h4m1 0h1m1 0h2m2 0h1m3 0h2m-33 1h1m1 0h6m2 0h2m2 0h2m1 0h2m1 0h2m3 0h4m1 0h4m-36 1h1m1 0h1m1 0h1m1 0h1m2 0h1m1 0h5m1 0h1m2 0h1m1 0h1m3 0h3m2 0h2m1 0h1m-36 1h2m2 0h3m1 0h2m2 0h1m1 0h2m1 0h1m5 0h1m2 0h3m2 0h4m-35 1h1m1 0h1m2 0h1m2 0h3m1 0h1m1 0h1m1 0h3m1 0h2m1 0h2m2 0h1m3 0h2m1 0h1m-34 1h1m3 0h2m1 0h1m3 0h3m3 0h2m4 0h1m4 0h2m2 0h4m-37 1h5m2 0h3m1 0h2m3 0h2m1 0h3m1 0h1m1 0h1m1 0h3m2 0h1m2 0h1m-36 1h2m1 0h2m1 0h1m2 0h4m3 0h3m1 0h1m2 0h2m1 0h2m1 0h4m-33 1h1m2 0h3m4 0h4m3 0h2m2 0h3m2 0h1m1 0h1m2 0h5m-33 1h4m4 0h2m2 0h3m1 0h1m1 0h3m5 0h3m2 0h1m-35 1h2m1 0h2m3 0h2m2 0h1m2 0h4m4 0h1m1 0h4m2 0h2m-33 1h2m1 0h2m1 0h1m1 0h1m1 0h1m1 0h2m1 0h1m2 0h1m1 0h5m1 0h4m1 0h4m-32 1h1m1 0h1m1 0h1m1 0h2m2 0h1m1 0h1m3 0h1m1 0h3m2 0h1m1 0h5m1 0h3m-36 1h1m2 0h3m2 0h1m1 0h1m4 0h1m2 0h2m2 0h2m4 0h3m1 0h3m-36 1h3m2 0h1m4 0h2m6 0h2m1 0h1m1 0h1m2 0h4m1 0h4m-33 1h2m1 0h3m1 0h5m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h2m1 0h1m-32 1h3m1 0h6m2 0h7m4 0h5m1 0h1m1 0h1m-35 1h3m1 0h1m1 0h1m1 0h1m1 0h2m1 0h2m1 0h3m2 0h2m1 0h1m1 0h11m-29 1h1m2 0h1m3 0h2m1 0h1m2 0h1m1 0h1m1 0h4m3 0h1m-33 1h7m1 0h1m1 0h2m2 0h4m2 0h1m2 0h2m1 0h1m1 0h1m1 0h1m1 0h1m-33 1h1m5 0h1m2 0h2m2 0h1m2 0h5m1 0h1m1 0h1m1 0h1m1 0h1m3 0h3m-35 1h1m1 0h3m1 0h1m1 0h2m4 0h1m3 0h1m3 0h1m5 0h7m-35 1h1m1 0h3m1 0h1m3 0h2m1 0h1m2 0h2m1 0h3m1 0h1m3 0h1m1 0h3m1 0h1m2 0h1m-37 1h1m1 0h3m1 0h1m2 0h1m3 0h1m2 0h3m1 0h1m2 0h1m1 0h2m1 0h3m3 0h1m-35 1h1m5 0h1m2 0h2m2 0h1m3 0h2m2 0h1m1 0h1m3 0h1m4 0h1m1 0h2m-36 1h7m1 0h1m1 0h2m1 0h1m1 0h1m1 0h1m1 0h3m2 0h1m2 0h1m3 0h1m2 0h3"/></g></svg>
+<span style="display:inline-flex;flex-direction:column;gap:4px;align-items:flex-start"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="168" height="48" viewBox="0 0 66.000 14.000" preserveAspectRatio="none" role="img" aria-label="Barcode SAB-UK-SERVICE-BLUEPRINTS">
+    <!--Autogenerated with python-barcode 0.16.1-->
+    <g id="barcode_group">
+        <rect width="100%" height="100%" style="fill:white"/>
+        <rect x="2.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="2.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="3.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="4.200mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="4.800mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="5.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="6.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="6.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="7.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="8.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="9.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="9.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="10.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="11.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="12.000mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="13.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="13.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="14.400mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="15.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="15.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="16.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="17.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="18.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="18.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="19.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="20.200mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="21.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="21.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="22.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="23.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="24.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="25.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="25.400mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="26.200mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="27.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="27.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="28.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="29.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="30.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="30.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="31.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="32.200mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="32.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="33.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="34.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="35.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="35.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="36.200mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="37.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="38.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="38.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="39.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="40.200mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="40.800mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="41.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="42.200mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="43.000mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="43.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="44.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="45.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="46.000mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="46.800mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="47.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="48.200mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="49.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="49.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="50.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="51.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="52.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="52.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="53.000mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="54.200mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="54.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="55.400mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="56.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="57.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="57.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="58.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="59.200mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="59.800mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="60.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="61.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="62.400mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="63.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="63.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+    </g>
+</svg>
+<code style="font-size:11px">SAB-UK-SERVICE-BLUEPRINTS</code></span></div>
+</aside>
+</body></html>

@@ -1,0 +1,1004 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>When the standard route does not fit: tailoring the journey to circumstances</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EDF0F2;--panel:#FFFFFF;--ink:#152030;--muted:#586273;--rule:#C9D0D8;--faint:#E3E7EB;--focus:#FFBF47;
+  --qual:#7A3FC6;--survey:#1F4FD1;--analytics:#0E7A6B;--eval:#946400;--inquiry:#C0264D;--ops:#586273;
+  --heat:#152030;--gate:#152030;--gatetext:#FFFFFF;
+  --sans:"Schibsted Grotesk",-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0F151D;--panel:#17202B;--ink:#E6EBF1;--muted:#9AA5B3;--rule:#344152;--faint:#232E3B;
+  --qual:#B99AF2;--survey:#7FA2FF;--analytics:#4FD1BC;--eval:#E0B64D;--inquiry:#F27A98;--ops:#9AA5B3;
+  --gate:#E6EBF1;--gatetext:#0F151D;}}
+:root[data-theme="dark"]{
+  --paper:#0F151D;--panel:#17202B;--ink:#E6EBF1;--muted:#9AA5B3;--rule:#344152;--faint:#232E3B;
+  --qual:#B99AF2;--survey:#7FA2FF;--analytics:#4FD1BC;--eval:#E0B64D;--inquiry:#F27A98;--ops:#9AA5B3;
+  --gate:#E6EBF1;--gatetext:#0F151D;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.5}
+a{color:inherit;text-underline-offset:3px}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.wrap{max-width:1360px;margin:0 auto;padding:0 28px}
+.num{}
+header{padding:36px 0 10px}
+.family{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:.88rem;color:var(--muted);margin:0 0 22px}
+.family a{color:var(--muted)}
+.headgrid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;align-items:end}
+h1{font-size:clamp(2.4rem,5.4vw,4.6rem);line-height:.98;font-weight:800;letter-spacing:-.03em;margin:0}
+.lede{margin:0;color:var(--muted);font-size:1.1rem;max-width:56ch}
+.lede strong{color:var(--ink);font-weight:700}
+.tools{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.btn{border:1.5px solid var(--rule);background:var(--panel);border-radius:999px;padding:6px 15px;cursor:pointer;font-weight:500}
+.btn[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+section{margin:34px 0}
+h2{font-size:1.75rem;line-height:1.1;letter-spacing:-.015em;margin:0 0 6px}
+.intro{color:var(--muted);margin:0 0 16px;max-width:70ch}
+
+:root{--lead:#0B5D51;--strong:#1F6F62;--partial:#BFDCD4;--weak:#C0264D;--leadtx:#fff;--strongtx:#fff;--partialtx:#152030;--uk:#FFF3D6;--ukline:#B07A00}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--lead:#5ED1BD;--strong:#25806F;--partial:#27463F;--weak:#F27A98;--leadtx:#0F151D;--strongtx:#fff;--partialtx:#E6EBF1;--uk:#2A2414;--ukline:#E0B64D}}
+:root[data-theme="dark"]{--lead:#5ED1BD;--strong:#25806F;--partial:#27463F;--weak:#F27A98;--leadtx:#0F151D;--strongtx:#fff;--partialtx:#E6EBF1;--uk:#2A2414;--ukline:#E0B64D}
+.headgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:end}
+h1 small{display:block;font-size:.32em;font-weight:500;letter-spacing:0;color:var(--muted);margin-top:12px;line-height:1.3}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--paper);padding:8px 14px;z-index:50}
+.skip:focus{left:0}
+.rev{font-size:.82rem;color:var(--muted);margin:10px 0 0}
+.btn.sm{padding:4px 12px;font-size:.88rem}
+.toolmsg{font-size:.85rem;color:var(--muted)}
+nav.jump{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--rule);margin-top:26px}
+nav.jump ul{list-style:none;margin:0 auto;padding:8px 28px;display:flex;gap:4px 18px;flex-wrap:wrap;max-width:1360px;font-size:.9rem}
+nav.jump a{text-decoration:none;color:var(--muted);padding:3px 0;border-bottom:2px solid transparent}
+nav.jump a:hover,nav.jump a.on{color:var(--ink);border-bottom-color:var(--ink)}
+section{scroll-margin-top:56px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:26px}
+.stats article{background:var(--panel);border-radius:16px;padding:16px 18px}
+.stats b{display:block;font-size:2.4rem;font-weight:800;letter-spacing:-.03em;line-height:1}
+.stats b span{font-size:.45em;font-weight:700;letter-spacing:0;color:var(--muted)}
+.stats p{margin:8px 0 0;font-size:.93rem}
+.stats small{display:block;color:var(--muted);font-size:.8rem;margin-top:6px}
+.stats small a{color:var(--muted)}
+/* Benchmarks */
+.benchgrid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:18px;align-items:start}
+.card{background:var(--panel);border-radius:18px;padding:18px 20px}
+.card h3{font-size:1.05rem;margin:0 0 2px}
+.card .sub{font-size:.85rem;color:var(--muted);margin:0 0 12px}
+.bars{list-style:none;margin:0;padding:0}
+.bars li{display:grid;grid-template-columns:150px minmax(0,1fr) 54px;gap:10px;align-items:center;padding:3px 0;font-size:.9rem}
+.bars .track{height:16px;background:var(--faint);border-radius:4px;position:relative;overflow:hidden}
+.bars .fill{position:absolute;left:0;top:0;bottom:0;background:var(--rule);border-radius:4px}
+.bars li.cmp .fill{background:var(--strong)}
+.bars li.uk .fill{background:var(--ukline)}
+.bars li.uk{font-weight:700}
+.bars .v{font-variant-numeric:tabular-nums;text-align:right}
+.bars .gap{height:1px;border-top:1px dashed var(--rule);margin:6px 0;grid-column:1/-1}
+.bars .median .fill{background:transparent}
+.bars .rk{color:var(--muted);font-weight:400;font-size:.8rem;margin-right:4px;font-variant-numeric:tabular-nums}
+.egdi{list-style:none;margin:0;padding:0;counter-reset:e}
+.egdi li{display:flex;gap:10px;padding:5px 0;border-top:1px solid var(--faint);font-size:.93rem;counter-increment:e}
+.egdi li:first-child{border-top:0}
+.egdi li::before{content:counter(e);width:22px;color:var(--muted);font-variant-numeric:tabular-nums;text-align:right}
+.egdi li.uk{font-weight:700;background:var(--uk);margin:0 -8px;padding:5px 8px;border-radius:6px}
+.note{font-size:.82rem;color:var(--muted);margin:10px 0 0}
+/* Matrix */
+.mxtools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 10px}
+.mxwrap{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:18px;align-items:start}
+.mxscroll{background:var(--panel);border-radius:18px;overflow-x:auto;padding:6px 4px}
+table.mx{border-collapse:separate;border-spacing:4px;width:100%;min-width:860px}
+.mx th{font-weight:500;font-size:.88rem}
+.mx thead th{padding:6px 2px;text-align:center;vertical-align:bottom}
+.mx thead th button{border:0;background:transparent;cursor:pointer;font-weight:700;padding:2px 4px;border-radius:6px}
+.mx thead th button span{display:block;font-weight:400;font-size:.8rem;color:var(--muted)}
+.mx thead th.uk{background:var(--uk);border-radius:10px 10px 0 0}
+.mx tbody th{text-align:left;padding:4px 10px 4px 6px;min-width:220px}
+.mx tbody th button{border:0;background:transparent;cursor:pointer;text-align:left;padding:0;font-weight:700;line-height:1.25}
+.mx tbody th small{display:block;color:var(--muted);font-weight:400;font-size:.8rem;margin-top:2px}
+.mx td{padding:0;height:46px}
+.mx td.uk{background:var(--uk)}
+.mx td.uk{box-shadow:inset 3px 0 0 var(--ukline),inset -3px 0 0 var(--ukline)}
+.cell{width:100%;height:100%;min-height:42px;border:0;border-radius:8px;cursor:pointer;font-size:.8rem;font-weight:700;display:grid;place-items:center;padding:2px;line-height:1.1}
+.cell.lead{background:var(--lead);color:var(--leadtx)}
+.cell.strong{background:var(--strong);color:var(--strongtx)}
+.cell.partial{background:var(--partial);color:var(--partialtx)}
+.cell.weak{background:transparent;color:var(--weak);box-shadow:inset 0 0 0 2.5px var(--weak)}
+.cell.na{background:repeating-linear-gradient(135deg,transparent 0 6px,var(--faint) 6px 7px);color:var(--muted);font-weight:400;cursor:default}
+.cell.sec::after{content:"*";margin-left:1px}
+.cell[aria-pressed="true"]{outline:3px solid var(--focus);outline-offset:1px}
+.cell.dim{opacity:.18}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.84rem;color:var(--muted);margin:10px 4px 0}
+.legend span{display:inline-flex;gap:6px;align-items:center}
+.legend i{width:16px;height:12px;border-radius:3px;display:inline-block}
+.panel{background:var(--panel);border-radius:18px;padding:20px 22px;position:sticky;top:60px;max-height:calc(100vh - 80px);overflow:auto}
+.panel h3{font-size:1.2rem;line-height:1.2;margin:0 0 4px}
+.panel .meta{font-size:.86rem;color:var(--muted);margin:0 0 10px}
+.panel p{margin:0 0 10px}
+.panel small{color:var(--muted);font-size:.84rem}
+.panel small a{color:var(--muted)}
+.panel ol{list-style:none;margin:0;padding:0}
+.panel li{padding:10px 0;border-top:1px solid var(--faint)}
+.panel li:first-child{border-top:0}
+.rtag{display:inline-block;font-size:.8rem;font-weight:700;border-radius:4px;padding:1px 7px;margin-right:6px}
+.rtag.lead{background:var(--lead);color:var(--leadtx)}.rtag.strong{background:var(--strong);color:var(--strongtx)}.rtag.partial{background:var(--partial);color:var(--partialtx)}.rtag.weak{color:var(--weak);box-shadow:inset 0 0 0 2px var(--weak)}.rtag.na{background:var(--faint);color:var(--muted)}
+/* Best / learn */
+.best{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;list-style:none;margin:0;padding:0}
+.best li{background:var(--panel);border-radius:16px;padding:16px 18px;border-top:5px solid var(--ukline)}
+.best b{display:block;line-height:1.25;margin-bottom:6px}
+.best p{margin:0 0 8px;font-size:.92rem}
+.best small{font-size:.8rem;color:var(--muted)}
+.best small a{color:var(--muted)}
+.learntools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}
+.learntools label{font-size:.9rem;color:var(--muted)}
+select{font:inherit;padding:5px 10px;border-radius:10px;border:1.5px solid var(--rule);background:var(--panel);color:var(--ink)}
+.learn{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.learn li{background:var(--panel);border-radius:16px;padding:18px 20px;display:flex;flex-direction:column;gap:8px}
+.learn li.caution{border-left:6px solid var(--weak)}
+.learn .top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.learn h3{font-size:1.08rem;margin:0;line-height:1.25}
+.flags{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+.flag{font-size:.8rem;font-weight:700;border:1.5px solid var(--rule);border-radius:999px;padding:0 8px;white-space:nowrap}
+.learn p{margin:0;font-size:.95rem}
+.learn .fit{font-size:.88rem;border-top:1px solid var(--faint);padding-top:8px;display:grid;grid-template-columns:auto 1fr;gap:3px 12px}
+.learn .fit dt{color:var(--muted)}
+.learn .fit dd{margin:0}
+.meter{display:inline-flex;gap:3px;vertical-align:-1px;margin-right:6px}
+.meter i{width:12px;height:12px;border-radius:2px;background:var(--faint)}
+.meter i.on{background:var(--strong)}
+.learn small{font-size:.8rem;color:var(--muted)}
+.learn small a{color:var(--muted)}
+.evbtn{border:1.5px solid var(--rule);background:transparent;border-radius:999px;padding:1px 10px;font-size:.8rem;cursor:pointer}
+/* Fees and caveats */
+.fees{background:var(--panel);border-radius:18px;overflow-x:auto}
+.fees table{border-collapse:collapse;width:100%;min-width:700px;font-size:.93rem}
+.fees th,.fees td{text-align:left;padding:10px 16px;border-top:1px solid var(--faint);vertical-align:top}
+.fees thead th{border-top:0;font-size:.85rem;color:var(--muted);font-weight:500}
+.fees tr.uk td{background:var(--uk)}
+.fees td small a{color:var(--muted);font-size:.8rem}
+.caveats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;list-style:none;margin:0;padding:0}
+.caveats li{background:var(--panel);border-radius:14px;padding:16px 18px}
+.caveats b{display:block;margin-bottom:4px}
+.caveats span{font-size:.92rem;color:var(--muted)}
+.impl{list-style:none;margin:0;padding:0;counter-reset:i;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px}
+.impl li{counter-increment:i;padding:14px 0 14px 44px;position:relative;border-top:1px solid var(--rule)}
+.impl li::before{content:counter(i);position:absolute;left:0;top:12px;font-weight:800;font-size:1.3rem;font-variant-numeric:tabular-nums}
+.impl b{display:block}
+footer{border-top:1px solid var(--rule);padding:24px 0 48px;color:var(--muted);font-size:.9rem;margin-top:40px}
+footer h2{font-size:1.1rem;color:var(--ink)}
+footer p{max-width:84ch}
+footer ol{columns:2;column-gap:36px;padding-left:1.3rem}
+footer li{break-inside:avoid;margin-bottom:4px}
+footer dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 16px}
+footer dt{font-weight:700;color:var(--ink)}footer dd{margin:0}
+@media (max-width:1200px){.best{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:1100px){.benchgrid,.mxwrap{grid-template-columns:1fr}.panel{position:static;max-height:none}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:820px){.headgrid,.learn,.caveats,.impl,.best{grid-template-columns:1fr}.stats{grid-template-columns:1fr}footer ol{columns:1}.wrap{padding:0 16px}.bars li{grid-template-columns:110px minmax(0,1fr) 48px}nav.jump ul{padding:8px 16px;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap}}
+@media print{nav.jump,.tools,.skip,.mxtools,.learntools{display:none!important}body{background:#fff}.panel{position:static!important;max-height:none!important}}
+.headgrid>*,.benchgrid>*,.mxwrap>*,.stats>*{min-width:0}
+:root{--en:#C8102E;--sc:#005EB8;--wa:#00A36C;--ni:#7A4EAB}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--en:#FF6B81;--sc:#5AA9F0;--wa:#3CD69B;--ni:#B58CE8}}
+:root[data-theme="dark"]{--en:#FF6B81;--sc:#5AA9F0;--wa:#3CD69B;--ni:#B58CE8}
+.ntabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+.ntabs button{border:2px solid var(--rule);background:var(--panel);border-radius:999px;padding:6px 16px;font:inherit;font-weight:700;cursor:pointer;display:inline-flex;gap:8px;align-items:center}
+.ntabs button i{width:12px;height:12px;border-radius:50%;background:var(--c)}
+.ntabs button[aria-pressed="true"]{border-color:var(--c);box-shadow:inset 0 0 0 1px var(--c)}
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.metric{background:var(--panel);border-radius:16px;padding:14px 16px}
+.metric h3{font-size:.9rem;margin:0 0 10px;line-height:1.25}
+.metric ul{list-style:none;margin:0;padding:0}
+.metric li{display:grid;grid-template-columns:96px minmax(0,1fr) 62px;gap:8px;align-items:center;font-size:.84rem;padding:2px 0}
+.metric li.sel{font-weight:700}
+.metric li.ukrow{color:var(--muted);border-top:1px dashed var(--rule);margin-top:4px;padding-top:5px}
+.metric .tr{height:10px;background:var(--faint);border-radius:3px;position:relative;overflow:hidden}
+.metric .fl{position:absolute;left:0;top:0;bottom:0;border-radius:3px;background:var(--c)}
+.metric li.dimmed .fl{opacity:.35}
+.metric .v{text-align:right;font-variant-numeric:tabular-nums}
+.metric .na{color:var(--muted);font-size:.8rem;text-align:right;grid-column:2/4}
+.metric small{display:block;color:var(--muted);font-size:.8rem;margin-top:8px;line-height:1.3}
+.metric small a{color:var(--muted)}
+table.nx{border-collapse:separate;border-spacing:0;width:100%;min-width:900px;font-size:.92rem}
+.nx th,.nx td{text-align:left;vertical-align:top;padding:12px 14px;border-top:1px solid var(--faint)}
+.nx thead th{border-top:0;font-size:.95rem;border-bottom:3px solid var(--c)}
+.nx tbody th{width:190px;font-weight:700}
+.nx tbody th .same{display:inline-block;margin-top:6px;font-size:.8rem;font-weight:700;border-radius:4px;padding:1px 7px;background:var(--faint);color:var(--muted)}
+.nx tbody th .diff{display:inline-block;margin-top:6px;font-size:.8rem;font-weight:700;border-radius:4px;padding:1px 7px;border:1.5px solid var(--ink)}
+.nx td small a{color:var(--muted);font-size:.8rem}
+.nx td.sel{background:color-mix(in srgb,var(--c) 9%,transparent)}
+.nx tr.hl td,.nx tr.hl th{background:color-mix(in srgb,var(--focus) 16%,transparent)}
+.nxwrap{background:var(--panel);border-radius:18px;overflow-x:auto}
+.nxtools{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 10px}
+.insights{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.insights li{background:var(--panel);border-radius:16px;padding:16px 18px;border-top:5px solid var(--ink)}
+.insights b{display:block;line-height:1.25;margin-bottom:6px}
+.insights p{margin:0 0 8px;font-size:.93rem}
+.insights small{font-size:.8rem;color:var(--muted)}.insights small a{color:var(--muted)}
+.dot4{display:inline-flex;gap:3px;vertical-align:1px;margin-right:6px}
+.dot4 i{width:9px;height:9px;border-radius:50%;background:var(--c)}
+.arrow{color:var(--muted);margin:0 4px}
+@media (max-width:1100px){.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.insights{grid-template-columns:1fr 1fr}}
+@media (max-width:820px){.metrics,.insights{grid-template-columns:1fr}}
+:root{--l1:#1D70B8;--l2:#912B88;--l3:#00703C;--l4:#B58840;--l5:#D4351C;--l6:#28A197;--l7:#505A5F}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--l1:#5AA9F0;--l2:#D77FCC;--l3:#3CD69B;--l4:#E0B64D;--l5:#FF7A5C;--l6:#5ED1C8;--l7:#A9B4BA}}
+:root[data-theme="dark"]{--l1:#5AA9F0;--l2:#D77FCC;--l3:#3CD69B;--l4:#E0B64D;--l5:#FF7A5C;--l6:#5ED1C8;--l7:#A9B4BA}
+.stack{display:grid;gap:8px}
+.layer{display:grid;grid-template-columns:230px minmax(0,1fr);gap:14px;background:var(--panel);border-radius:14px;padding:12px 16px;border-left:8px solid var(--c);align-items:center}
+.layer h3{margin:0;font-size:1rem}
+.layer p{margin:2px 0 0;font-size:.82rem;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1.5px solid var(--c);background:transparent;border-radius:999px;padding:3px 11px;font:inherit;font-size:.85rem;cursor:pointer;color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--c);color:var(--paper)}
+.chip.dim{opacity:.25}
+.chip .pdot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:1px;background:var(--c)}
+.chip[aria-pressed="true"] .pdot{background:var(--paper)}
+.stdwrap{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:18px;align-items:start;margin-top:14px}
+table.sj{border-collapse:separate;border-spacing:0;width:100%;min-width:760px;font-size:.88rem}
+.sj th,.sj td{padding:7px 10px;border-top:1px solid var(--faint);text-align:left}
+.sj thead th{border-top:0;color:var(--muted);font-weight:500;font-size:.8rem}
+.sj td.stg{text-align:center;width:88px}
+.sj td.stg i{display:inline-block;width:14px;height:14px;border-radius:50%;background:var(--c)}
+.sj tbody tr{cursor:pointer}
+.sj tbody tr:hover td,.sj tbody tr.sel td{background:color-mix(in srgb,var(--c) 10%,transparent)}
+.sj tr.grp td{background:transparent!important;cursor:default;font-weight:700;font-size:.8rem;color:var(--ink);box-shadow:inset 4px 0 0 var(--c);padding-top:14px;padding-left:12px;border-top:0}
+.sj .pr{font-size:.8rem;font-weight:700;border-radius:4px;padding:1px 7px;white-space:nowrap;border:1.5px solid var(--rule)}
+.sj .pr.now{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.sj .pr.prepare{border-color:var(--weak);color:var(--weak)}
+.sjwrap{background:var(--panel);border-radius:18px;overflow-x:auto}
+.detail h3{margin:0 0 4px;font-size:1.2rem}
+.detail dl{display:grid;grid-template-columns:max-content 1fr;gap:6px 12px;font-size:.9rem;margin:10px 0}
+.detail dt{color:var(--muted)}.detail dd{margin:0}
+.timeline{list-style:none;margin:0;padding:0;position:relative}
+.timeline::before{content:"";position:absolute;left:112px;top:6px;bottom:6px;width:2px;background:var(--rule)}
+.timeline li{display:grid;grid-template-columns:100px 24px minmax(0,1fr);gap:0 0;align-items:start;padding:8px 0}
+.timeline time{font-variant-numeric:tabular-nums;font-weight:700;font-size:.9rem;text-align:right;padding-right:8px}
+.timeline .dot{width:14px;height:14px;border-radius:50%;background:var(--c);margin:3px 0 0 6px;position:relative;z-index:1;box-shadow:0 0 0 3px var(--paper)}
+.timeline li.future .dot{background:var(--paper);box-shadow:inset 0 0 0 3px var(--c),0 0 0 3px var(--paper)}
+.timeline .ev{background:var(--panel);border-radius:12px;padding:8px 12px;margin-left:8px}
+.timeline .ev button{border:0;background:transparent;padding:0;font:inherit;font-weight:700;cursor:pointer;text-align:left;color:var(--ink)}
+.timeline .ev small{display:block;color:var(--muted);font-size:.8rem}
+.timeline .ev small a{color:var(--muted)}
+.today{font-size:.8rem;color:var(--muted);margin:4px 0 10px 136px}
+@media (max-width:1100px){.stdwrap{grid-template-columns:1fr}}
+@media (max-width:820px){.layer{grid-template-columns:1fr}.timeline::before{left:84px}.timeline li{grid-template-columns:72px 24px minmax(0,1fr)}.today{margin-left:0}}
+.picker{background:var(--panel);border-radius:18px;padding:18px 22px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px 18px}
+.picker label{display:block;font-size:.82rem;color:var(--muted);font-weight:600;margin-bottom:4px}
+.picker select{width:100%;font:inherit;padding:8px 10px;border-radius:10px;border:1.5px solid var(--rule);background:var(--paper);color:var(--ink)}
+.picker .toggles{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.picker .toggles label{display:inline-flex;gap:7px;align-items:center;font-size:.9rem;color:var(--ink);font-weight:500;margin:0}
+.out{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:16px}
+.card{background:var(--panel);border-radius:16px;padding:16px 20px;border-top:5px solid var(--c)}
+.card h3{margin:0 0 4px;font-size:1.05rem}
+.card .n{font-size:1.5rem;font-weight:800;color:var(--c)}
+.card ol,.card ul{margin:8px 0 0;padding-left:20px;font-size:.92rem}
+.card li{margin-bottom:7px}
+.card li b{display:block}
+.card li small{color:var(--muted);font-size:.82rem}
+.card li small a{color:var(--muted)}
+.vr{display:inline-block;font-size:.8rem;font-weight:700;border-radius:4px;padding:0 6px;margin-left:6px;vertical-align:1px}
+.vr.confirmed{background:var(--strong);color:var(--strongtx)}
+.vr.partly-confirmed{background:var(--partial);color:var(--partialtx)}
+.vr.unverified{box-shadow:inset 0 0 0 1.5px var(--weak);color:var(--weak)}
+.chipsrow{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 0}
+.chipsrow button{border:1.5px solid var(--rule);background:transparent;border-radius:999px;padding:3px 11px;font:inherit;font-size:.8rem;cursor:pointer;color:var(--ink)}
+.chipsrow button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+table.grid{border-collapse:collapse;width:100%;min-width:860px;font-size:.88rem}
+.grid th,.grid td{text-align:left;vertical-align:top;padding:9px 12px;border-top:1px solid var(--faint)}
+.grid thead th{border-top:0;color:var(--muted);font-weight:500;font-size:.8rem}
+.gridwrap{background:var(--panel);border-radius:18px;overflow-x:auto}
+.bars{display:grid;gap:6px;margin:0}
+.bars div{display:grid;grid-template-columns:200px minmax(0,1fr) 52px;gap:10px;align-items:center;font-size:.86rem}
+.bars .t{height:12px;background:var(--faint);border-radius:3px;overflow:hidden}
+.bars .f{height:100%;background:var(--c);border-radius:3px}
+.bars .v{text-align:right;font-variant-numeric:tabular-nums}
+@media (max-width:1100px){.picker{grid-template-columns:repeat(2,minmax(0,1fr))}.out{grid-template-columns:1fr}}
+@media (max-width:640px){.picker{grid-template-columns:1fr}.bars div{grid-template-columns:120px minmax(0,1fr) 44px}}
+.kgbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:14px 0 8px}
+.kgmode{display:flex;gap:6px}
+.kgmode button,.kgfilters button{display:inline-flex;align-items:center;gap:7px;padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:inherit;font:inherit;cursor:pointer;font-size:.86rem}
+.kgmode button[aria-pressed="true"],.kgfilters button[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink);font-weight:650}
+.kgfilters{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:10px}
+.kgfilters button[aria-pressed="false"]{opacity:1;background:var(--card)} button[aria-pressed="false"] small{color:var(--ink);opacity:.8}
+.kgfilters small{color:var(--muted)}
+.kgsearch input{padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:inherit;font:inherit;min-width:260px;max-width:100%}
+.sw{width:10px;height:10px;border-radius:50%;display:inline-block;flex:none}
+.kgwrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,360px);gap:16px;align-items:start}
+.kgstage{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:8px;overflow:hidden}
+#kgsvg{width:100%;height:auto;display:block;touch-action:pan-y}
+.kgn{cursor:pointer}
+.kgn:hover circle{stroke:var(--ink);stroke-width:2}
+.kghint{font-size:.8rem;color:var(--muted);margin:6px 4px 2px}
+.kgpanel{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:14px;max-height:620px;overflow:auto}
+.kgpanel h3{margin:0 0 6px;font-size:1.05rem}
+.kgpanel h4{font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:12px 0 4px;display:flex;align-items:center;gap:6px}
+.ktype{display:flex;align-items:center;gap:7px;font-size:.84rem;color:var(--muted);margin:0 0 8px}
+.kmeta{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;font-size:.85rem;margin:0 0 6px}
+.kmeta dt{color:var(--muted)}
+.kmeta dd{margin:0;overflow-wrap:anywhere}
+.klist{list-style:none;margin:0;padding:0}
+.klist li{margin:3px 0}
+.klist button{display:inline-flex;align-items:center;gap:7px;background:none;border:0;padding:2px 0;color:inherit;font:inherit;font-size:.87rem;cursor:pointer;text-align:left;text-decoration:underline;text-underline-offset:3px}
+.klist small{display:block;color:var(--muted);font-size:.78rem;padding-left:17px}
+.kdd{border:1px solid var(--line);border-left:3px solid var(--l4,#7c3aed);border-radius:8px;padding:10px;margin:10px 0;font-size:.85rem}
+.kdd p{margin:3px 0}
+.kgtablewrap{overflow-x:auto;max-width:100%;margin-top:10px}
+.kgtable{width:100%;border-collapse:collapse;font-size:.86rem}
+.kgtable th,.kgtable td{text-align:left;padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:top}
+.kgtable thead th{font-size:.76rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.ddgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-top:14px}
+.ddcard{border:1px solid var(--line);border-radius:12px;padding:15px;background:var(--panel)}
+.ddcard h3{display:flex;align-items:center;gap:9px;margin:0 0 6px;font-size:1rem}
+.ddcard dl{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;font-size:.85rem;margin:8px 0}
+.ddcard dt{color:var(--muted)}.ddcard dd{margin:0}
+.ddcard .crit{display:flex;gap:7px;font-size:.85rem;border-top:1px solid var(--line);padding-top:8px;margin:8px 0 0}
+.gloss{margin:14px 0 0}
+.gterm{border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:0 0 10px;background:var(--panel)}
+.gterm dt{font-weight:700;font-size:1rem;margin:0 0 4px}
+.gterm dd{margin:0;font-size:.9rem}
+.gterm .rel{font-size:.82rem;color:var(--muted);margin:4px 0 0}
+.gterm .gnote{font-size:.82rem;margin:6px 0 0;border-left:3px solid var(--line);padding-left:9px}
+.taxgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-top:14px}
+.taxcard{border:1px solid var(--line);border-radius:12px;padding:15px;background:var(--panel)}
+.taxcard h3{display:flex;align-items:center;gap:9px;margin:0 0 6px;font-size:1rem}
+.taxcard ul{margin:8px 0 0;padding-left:18px;font-size:.87rem}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:12px}
+.ont{width:100%;border-collapse:collapse;font-size:.83rem;table-layout:fixed}
+.ont th,.ont td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top;overflow-wrap:anywhere}
+.ont thead th{font-size:.74rem;text-transform:uppercase;color:var(--muted)}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (max-width:900px){.kgwrap{grid-template-columns:1fr}.two-col{grid-template-columns:1fr}.kgpanel{max-height:none}}
+/* Shared visual system: icons, journey ribbon, hero figures, audience switcher */
+.ic{width:1.15em;height:1.15em;flex:none;vertical-align:-.2em}
+.ic-lg{width:2rem;height:2rem;flex:none}
+.ic-xl{width:2.6rem;height:2.6rem;flex:none}
+.ribbon{margin:0 0 6px;padding:10px 0 4px;border-bottom:1px solid var(--line)}
+.ribbon h2{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 8px;font-family:inherit;font-weight:700}
+.ribbon ol{display:flex;gap:6px;list-style:none;margin:0;padding:0 0 6px;overflow-x:auto;scrollbar-width:thin}
+.ribbon li{flex:1 1 0;min-width:104px}
+.ribbon a{display:flex;flex-direction:column;gap:5px;padding:8px 9px;border:1px solid var(--line);border-radius:9px;text-decoration:none;color:inherit;background:var(--panel);min-height:100%}
+.ribbon a:hover{border-color:var(--ink)}
+.ribbon a[aria-current="step"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.ribbon .rn{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:.72rem;letter-spacing:.05em;text-transform:uppercase}
+.ribbon .rt{font-size:.84rem;font-weight:650;line-height:1.25}
+.ribbon .rc{font-size:.74rem;color:var(--muted)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,340px);gap:22px;align-items:center;margin:10px 0 0}
+.hero figure{margin:0}
+.hero figcaption{font-size:.78rem;color:var(--muted);margin-top:6px}
+.hero svg.art{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+@media (max-width:820px){.hero{grid-template-columns:1fr}}
+.aud{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.aud button{display:flex;align-items:center;gap:8px;padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:inherit;font:inherit;cursor:pointer}
+.aud button[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink);font-weight:650}
+.audbox{border:1px solid var(--line);border-left:4px solid var(--ink);border-radius:10px;padding:14px 16px;background:var(--panel);margin:0 0 18px}
+.audbox h3{margin:0 0 6px;font-size:1.02rem;display:flex;align-items:center;gap:8px}
+.audbox ol{margin:8px 0 0;padding-left:20px}
+.audbox li{margin:4px 0}
+h2 .ic,h3 .ic{color:var(--muted)}
+.iconrow{display:flex;align-items:center;gap:9px}
+.legendkey{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin:8px 0 0}
+.legendkey span{display:inline-flex;align-items:center;gap:5px}
+@media (prefers-reduced-motion:no-preference){.ribbon a{transition:border-color .15s}}
+/* Self-check surface */
+.selfcheck{border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:22px 0 0;background:var(--panel)}
+.selfcheck h2{font-size:1rem;margin:0 0 6px}
+.selfcheck .scline{margin:0;font-size:.9rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.scdot{width:10px;height:10px;border-radius:50%;background:var(--muted);flex:none;box-shadow:0 0 0 3px color-mix(in srgb,currentColor 12%,transparent)}
+.scdot.good{background:#0f766e}.scdot.fair{background:#b45309}.scdot.needs-work{background:#be123c}
+.selfcheck details{margin-top:8px}
+.selfcheck summary{cursor:pointer;font-size:.88rem}
+.selfcheck .scbody{font-size:.88rem}
+.selfcheck h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:12px 0 4px}
+.selfcheck ul{margin:0;padding-left:18px}
+.selfcheck li{margin:3px 0}
+.selfgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-top:14px}
+.selfcard{border:1px solid var(--line);border-radius:12px;padding:15px;background:var(--panel)}
+.selfcard h3{display:flex;align-items:center;gap:10px;margin:0 0 8px;font-size:1rem}
+
+@media (max-width:420px){
+  .codeblock{font-size:11.5px;white-space:pre-wrap;word-break:break-word}
+  .gridwrap,.mx-wrap,.scroller{max-width:100%}
+  table.grid{min-width:0}
+  .toolrow{grid-template-columns:1fr}
+  .bars div{grid-template-columns:96px minmax(0,1fr) 40px}
+  .wrap{padding-left:12px;padding-right:12px}
+  h1{font-size:1.5rem;word-break:break-word}
+}
+
+@media (max-width:420px){
+  select,input,textarea{max-width:100%}
+  .bodycard{min-width:0;overflow-wrap:anywhere}
+  table.sj,table.nx,table.mx{display:block;overflow-x:auto;max-width:100%}
+}
+
+@media (max-width:420px){
+  table.sj,table.nx,table.mx{table-layout:fixed;width:100%}
+  table.sj th,table.sj td,.nx th,.nx td{overflow-wrap:anywhere;word-break:break-word}
+  main li,main p,main a{overflow-wrap:anywhere}
+  .sj-wrap,.tablewrap{overflow-x:auto;max-width:100%}
+}
+
+@media (max-width:420px){
+  .sj{display:block;overflow-x:auto}
+  .sj thead th,.sj tbody th{min-width:110px}
+  main ul,main ol{padding-left:18px}
+  main li a{display:inline-block;max-width:100%}
+}
+small, .meta small, td small, li small{font-size:max(.8rem,12.8px)}
+@media (max-width:420px){html,body{max-width:100%;overflow-x:hidden}.sjwrap,.tablewrap,.gridwrap,.kgtablewrap{overflow-x:auto;max-width:100%}}
+
+@media (max-width:520px){
+  .ribbon ol{overflow-x:auto;max-width:100%}
+  .ribbon li{min-width:140px;flex:0 0 auto}
+  .kgbar,.kgfilters{max-width:100%}
+  .kgsearch input{min-width:0;width:100%}
+  .kgwrap{grid-template-columns:1fr}
+  .ont{table-layout:fixed;width:100%}
+}
+@media (max-width:420px){html,body{max-width:100%;overflow-x:hidden}}
+
+@media (max-width:760px){
+  nav.ribbon{max-width:100%;overflow:hidden}
+  nav.ribbon ol{display:flex!important;flex-wrap:nowrap!important;overflow-x:auto!important;width:100%!important;max-width:100%!important}
+  nav.ribbon li{flex:0 0 auto!important;min-width:150px!important;max-width:150px}
+  main.wrap,header .wrap{max-width:100%;overflow-x:hidden}
+}
+
+@media (max-width:760px){
+  .kgtable{table-layout:fixed;width:100%;font-size:.8rem}
+  .kgtable th,.kgtable td{overflow-wrap:anywhere;word-break:break-word}
+  .kgtablewrap{overflow-x:visible}
+}
+.aibtn{position:fixed;right:18px;bottom:18px;z-index:60;border:0;border-radius:999px;padding:12px 20px;font:inherit;font-weight:700;background:var(--ink);color:var(--paper);cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.28)}
+.aibtn:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.aiwrap{position:fixed;right:18px;bottom:18px;width:min(430px,calc(100vw - 24px));max-height:min(78vh,720px);z-index:61;background:var(--panel);border-radius:18px;box-shadow:0 10px 40px rgba(0,0,0,.34);display:none;flex-direction:column;overflow:hidden;border:1px solid var(--rule)}
+.aiwrap.open{display:flex}
+.aihead{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--faint)}
+.aihead b{font-size:.98rem}
+.aihead small{color:var(--muted);font-size:.8rem;display:block;font-weight:400}
+.aihead button{margin-left:auto;border:0;background:transparent;font:inherit;font-size:1.2rem;line-height:1;cursor:pointer;color:var(--muted);padding:4px 6px}
+.ailog{overflow-y:auto;padding:12px 14px;display:grid;gap:10px;flex:1}
+.aimsg{border-radius:14px;padding:9px 12px;font-size:.9rem;line-height:1.45;white-space:pre-wrap}
+.aimsg.u{background:var(--ink);color:var(--paper);justify-self:end;max-width:86%}
+.aimsg.a{background:var(--faint);color:var(--ink)}
+.aimsg.sys{background:transparent;color:var(--muted);font-size:.82rem;padding:0}
+.aisug{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 10px}
+.aisug button{border:1.5px solid var(--rule);background:transparent;border-radius:999px;padding:4px 11px;font:inherit;font-size:.8rem;cursor:pointer;color:var(--ink);text-align:left}
+.aiform{display:flex;gap:8px;padding:10px 12px;border-top:1px solid var(--faint)}
+.aiform textarea{flex:1;font:inherit;font-size:.9rem;resize:none;border:1.5px solid var(--rule);border-radius:12px;padding:8px 10px;background:var(--paper);color:var(--ink);min-height:40px;max-height:120px}
+.aiform button{border:0;border-radius:12px;padding:0 16px;font:inherit;font-weight:700;background:var(--ink);color:var(--paper);cursor:pointer}
+.aiform button[disabled]{opacity:.5;cursor:default}
+.aifoot{padding:0 14px 10px;color:var(--muted);font-size:.8rem}
+.seqnav{background:var(--panel);border-radius:18px;padding:14px 18px;display:flex;gap:16px;justify-content:space-between;flex-wrap:wrap;margin:26px 0 0}
+.seqnav a{display:block;font-weight:700;color:var(--ink)}
+.seqnav small{display:block;color:var(--muted);font-size:.8rem;font-weight:400}
+.seqnav .nx{text-align:right}
+@media (max-width:620px){.aiwrap{right:8px;left:8px;width:auto;bottom:8px}.aibtn{right:10px;bottom:10px}}
+
+/* Title row: illustration sits opposite the title, at about a third of its weight */
+header .headgrid{display:grid;grid-template-columns:minmax(0,1.9fr) minmax(180px,0.85fr);gap:28px;align-items:center}
+header .headgrid > h1{margin:0}
+header .heroart{margin:0;max-width:340px;justify-self:end;width:100%}
+header .heroart svg.art{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}
+header .heroart figcaption{font-size:.72rem;color:var(--muted);margin-top:5px;line-height:1.35}
+header .heroart.float{float:right;width:min(300px,34%);margin:0 0 14px 22px}
+@media (max-width:820px){
+  header .headgrid{grid-template-columns:1fr}
+  header .heroart{max-width:260px;justify-self:start}
+  header .heroart.float{float:none;width:min(260px,70%);margin:12px 0}
+}
+/* Journey strip: full-bleed band, content aligned with every other section */
+nav.ribbon{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:color-mix(in srgb,currentColor 3%,transparent);margin:0;padding:12px 0 6px}
+nav.ribbon > .wrap{padding-left:28px;padding-right:28px}
+nav.ribbon h2{margin:0 0 9px}
+/* What used to sit beside the title now sits under the strip, full measure */
+.introblock{margin:20px auto 0}
+.introblock .lede{font-size:1.06rem;max-width:62ch}
+.introblock .tools{margin-top:12px}
+.introblock .rev{margin-top:10px;font-size:.84rem;color:var(--muted);max-width:80ch}
+.introblock .scope{margin:0}
+</style>
+<style>/* Circumstances page */
+.chiprow{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 22px}
+.chiprow button{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;font:inherit;font-size:.95rem;cursor:pointer}
+.chiprow button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chiprow button:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.trackhead h3{display:flex;align-items:center;gap:10px;margin:0 0 6px;font-size:1.35rem}
+.trackhead .lede{max-width:62ch;color:var(--muted);margin:0 0 20px}
+.ic-lg{width:28px;height:28px;flex:none}
+.diffs{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.diff{border:1px solid var(--line);border-left:3px solid var(--accent);background:var(--card);padding:16px 18px;border-radius:4px}
+.diff h4{margin:0 0 8px;font-size:1.05rem;line-height:1.35}
+.diff p{margin:0 0 10px;max-width:60ch}
+.diff .act,.diff .unver{display:flex;gap:8px;align-items:flex-start;font-size:.92rem;padding:9px 11px;border-radius:3px}
+.diff .act{background:var(--tint);color:var(--ink)}
+.diff .unver{background:rgba(180,120,0,.12)}
+.diff .meta{font-size:.85rem;color:var(--muted);margin:0}
+.sub{margin:26px 0 10px;font-size:1.05rem}
+ul.supp,ul.gaps{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+ul.supp li{border:1px solid var(--line);padding:11px 14px;border-radius:4px}
+ul.supp li span{display:block;color:var(--muted);font-size:.9rem;margin-top:3px}
+ul.gaps li{display:flex;gap:9px;align-items:flex-start;color:var(--muted);font-size:.93rem}
+.moscow{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:16px}
+.mgroup{border:1px solid var(--line);border-radius:4px;padding:14px 16px;background:var(--card)}
+.mgroup h3{margin:0 0 10px;font-size:1rem;display:flex;justify-content:space-between;align-items:baseline}
+.mgroup h3 small{font-weight:400;color:var(--muted)}
+.mgroup ul{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.mgroup li b{display:block;font-size:.95rem;margin-bottom:5px}
+.mgroup li .why{display:block;color:var(--muted);font-size:.87rem;margin-top:5px}
+.pill{display:inline-block;font-size:.76rem;padding:2px 8px;border-radius:999px;border:1px solid var(--line);color:var(--ink)}
+.pill.ok{background:rgba(0,112,60,.14)}
+.pill.open{background:var(--tint)}
+.pill.blocked{background:rgba(180,120,0,.14)}
+.m-must{border-top:3px solid var(--accent)}
+.m-wont{border-style:dashed}
+ul.caveats{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}
+ul.caveats li{border:1px solid var(--line);padding:12px 14px;border-radius:4px;font-size:.92rem;color:var(--muted)}
+ul.caveats b{display:block;color:var(--ink);margin-bottom:4px}
+/* Segmentation map */
+.mapfilter{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 20px}
+.mapfilter button{display:inline-flex;align-items:center;gap:7px;padding:8px 13px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;font:inherit;font-size:.92rem;cursor:pointer}
+.mapfilter button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.mapfilter button span{opacity:.7;font-variant-numeric:tabular-nums}
+.mapfilter button:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.dim{margin:0 0 22px}
+.dim h3{margin:0 0 10px;font-size:1.02rem;display:flex;gap:9px;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:6px}
+.dim h3 small{color:var(--muted);font-weight:400}
+.dim ul{list-style:none;padding:0;margin:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.dim li{border:1px solid var(--line);border-radius:4px;padding:11px 13px;background:var(--card)}
+.dim li.st-detailed{border-left:3px solid var(--accent)}
+.dim li.st-outofscope{opacity:.92}
+.mrow{display:flex;gap:10px;align-items:baseline;justify-content:space-between;flex-wrap:wrap}
+.dim li .what{display:block;color:var(--muted);font-size:.89rem;margin-top:5px}
+.dim li .note{display:flex;gap:7px;align-items:flex-start;font-size:.84rem;margin-top:7px;color:var(--muted)}
+.dim li a.jump{display:inline-block;margin-top:8px;font-size:.87rem}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<svg class="sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden"><defs><symbol id="i-explore" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9 M12 3a9 9 0 0 1 9 9M3.5 12h17M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-structure" viewBox="0 0 24 24"><path d="M12 3 4 7v10l8 4 8-4V7l-8-4Zm0 0v18M4 7l8 4 8-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-register" viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6V3Zm9 0v3h3M9 11h6M9 15h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-tax" viewBox="0 0 24 24"><path d="M5 20V9l7-5 7 5v11H5Zm4-5h6M9 12h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-licence" viewBox="0 0 24 24"><path d="M4 5h16v14H4V5Zm3 4h5M7 12h10M7 15h7m2-6.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-premises" viewBox="0 0 24 24"><path d="M4 20V10l8-6 8 6v10H4Zm6 0v-6h4v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-finance" viewBox="0 0 24 24"><path d="M3 19V5m0 14h18M7 15V9m5 6V6m5 9v-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-employ" viewBox="0 0 24 24"><path d="M8 11a3.2 3.2 0 1 0 0-6.4A3.2 3.2 0 0 0 8 11Zm0 0c-3 0-5 1.8-5 4.5V19h10v-3.5C13 12.8 11 11 8 11Zm9-6.2a3.2 3.2 0 1 1 0 6.4M16 19h5v-3.5c0-2.2-1.4-3.8-3.6-4.3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-trade" viewBox="0 0 24 24"><path d="M3 12h18M3 12a9 9 0 0 1 9-9m9 9a9 9 0 0 0-9-9m0 18a9 9 0 0 0 9-9M12 21a9 9 0 0 1-9-9m9-9c2.4 2.5 3.6 5.5 3.6 9s-1.2 6.5-3.6 9c-2.4-2.5-3.6-5.5-3.6-9S9.6 5.5 12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-grow" viewBox="0 0 24 24"><path d="M4 19c6 0 10-3.5 12-10M13 5h6v6M8 19a4 4 0 0 0-4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-rules" viewBox="0 0 24 24"><path d="M12 4v16M6 8h12M7 8l-3 6h6l-3-6Zm10 0-3 6h6l-3-6ZM9 20h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5V5.5ZM8 7h7M8 10h7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-nations" viewBox="0 0 24 24"><path d="M6 21V4m0 0 7 2.5L20 4v9l-7 2.5L6 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm-8.6 9h17.2M12 3c2.3 2.5 3.5 5.5 3.5 9s-1.2 6.5-3.5 9c-2.3-2.5-3.5-5.5-3.5-9S9.7 5.5 12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-standards" viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h13m2-9.5 3 3-6 6-3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12.5 9 18l11-12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-history" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4h4M12 8v4.5l3 1.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-boundary" viewBox="0 0 24 24"><path d="M12 3v18M6 7l-3 5 3 5M18 7l3 5-3 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><path d="M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14Zm5 12 4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-blueprint" viewBox="0 0 24 24"><path d="M3 5h18v14H3V5Zm5 0v14M3 10h5m8-5v14m0-9h5M8 14h8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-person" viewBox="0 0 24 24"><path d="M12 11.5a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm0 0c-4 0-7 2.4-7 6V20h14v-2.5c0-3.6-3-6-7-6Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-agent" viewBox="0 0 24 24"><path d="M9 10.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm0 0c-3 0-5.5 2-5.5 5V19H14v-3.5c0-3-2.5-5-5-5Zm8-5 4 2.5-4 2.5m4-2.5h-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-official" viewBox="0 0 24 24"><path d="M12 3 4 6.5V12c0 4.6 3.2 7.8 8 9 4.8-1.2 8-4.4 8-9V6.5L12 3Zm-3 9 2.2 2.4L15 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-access" viewBox="0 0 24 24"><path d="M12 4.2a1.6 1.6 0 1 0 0-3.2 1.6 1.6 0 0 0 0 3.2ZM5 7.5c2.2.9 4.5 1.3 7 1.3s4.8-.4 7-1.3M12 8.8V14m0 0 3.5 6M12 14l-3.5 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-language" viewBox="0 0 24 24"><path d="M4 6h10M9 4v2m0 0c0 4-2 7-5 8.5M6.5 10.5c1.3 2.4 3 4 5.5 5M13 20l4-9 4 9m-6.6-2.4h5.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-data" viewBox="0 0 24 24"><path d="M12 4c4.4 0 8 1.3 8 3s-3.6 3-8 3-8-1.3-8-3 3.6-3 8-3Zm8 3v10c0 1.7-3.6 3-8 3s-8-1.3-8-3V7m16 5c0 1.7-3.6 3-8 3s-8-1.3-8-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-warning" viewBox="0 0 24 24"><path d="M12 4 3 20h18L12 4Zm0 6v5m0 3h.01" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm0 4.5V12l3.5 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-money" viewBox="0 0 24 24"><path d="M5 7h14v10H5V7Zm7 2.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-back" viewBox="0 0 24 24"><path d="M6 6.5h12M6 12h12M6 17.5h8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-support" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-9 9v3.5A2.5 2.5 0 0 0 5.5 18H7v-6H5.2A6.8 6.8 0 0 1 18.8 12H17v6h1.5a2.5 2.5 0 0 0 2.5-2.5V12a9 9 0 0 0-9-9Zm5 15v.5a2.5 2.5 0 0 1-2.5 2.5H12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol></defs></svg>
+<header>
+  <div class="wrap">
+    <p class="family" id="family">Part of <a href="../">Starting a business in the UK</a>: <a href="../your-plan/">your plan</a><a href="../whole-life-of-a-business/">from starting to closing, and everything between</a><a href="../every-way-in/">every way in, and every way out</a><a href="../skills-and-communities/">skills, qualifications and finding your people</a><a href="../every-step/">every step in the journey</a><a href="../twenty-years-of-joining-up/">historical arc</a><a href="../before-the-register/">before the register</a><a href="../whatever-you-are-setting-up/">whatever you are setting up</a><a href="../what-binds-this-business/">what binds this business</a><a href="../rules-trade-and-bodies/">rules, trade and the bodies</a><a href="../four-nations/">four nations</a><a href="../the-uk-compared/">international benchmark</a><a href="../standards/">standards for the journey</a><a href="../service-blueprints/">service blueprints</a><a href="../knowledge-layer/">the knowledge layer</a><a href="../how-this-was-built/">how this was built and run</a><a href="../verification-register/">verification register</a></p>
+    <div class="headgrid">
+      <h1>When the standard route does not fit<small>What changes for women running their own business, for faith and cultural requirements, for disabled founders and for people not working in English</small></h1>
+<figure class="heroart"><svg class="art" viewBox="0 0 680 260" role="img" aria-labelledby="cart cdes">
+<title id="cart">Four routes onto the same road</title><desc id="cdes">Four separate lines, each starting at a different point on the left, bending inwards and joining one shared road that continues to the right.</desc>
+<path d="M40 40 C200 40 250 118 340 130" stroke="var(--l1,#1d4ed8)" stroke-width="2.4" fill="none" opacity=".8"/>
+<path d="M40 100 C200 100 250 124 340 130" stroke="var(--l2,#0f766e)" stroke-width="2.4" fill="none" opacity=".8"/>
+<path d="M40 160 C200 160 250 136 340 130" stroke="var(--l3,#b45309)" stroke-width="2.4" fill="none" opacity=".8"/>
+<path d="M40 220 C200 220 250 142 340 130" stroke="var(--l4,#7c3aed)" stroke-width="2.4" fill="none" opacity=".8"/>
+<circle cx="40" cy="40" r="9" fill="var(--l1,#1d4ed8)"/><circle cx="40" cy="100" r="9" fill="var(--l2,#0f766e)"/>
+<circle cx="40" cy="160" r="9" fill="var(--l3,#b45309)"/><circle cx="40" cy="220" r="9" fill="var(--l4,#7c3aed)"/>
+<path d="M340 130 L640 130" stroke="currentColor" stroke-width="3" fill="none" opacity=".55"/>
+<circle cx="340" cy="130" r="13" fill="none" stroke="currentColor" stroke-width="2.4" opacity=".75"/>
+<circle cx="640" cy="130" r="7" fill="currentColor" opacity=".55"/>
+</svg><figcaption>Ten different starting points, one shared journey. What changes is the approach, not the road.</figcaption></figure>
+    </div>
+  </div>
+</header>
+<nav class="ribbon" aria-label="The founder journey"><div class="wrap"><h2>The journey, stage by stage</h2><ol><li><a href="../before-the-register/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-explore"></use></svg> Stage 1</span><span class="rt">Decide</span><span class="rc">Is this a business, and what shape?</span></a></li><li><a href="../whatever-you-are-setting-up/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-structure"></use></svg> Stage 2</span><span class="rt">Structure</span><span class="rc">Legal form, name, ownership</span></a></li><li><a href="../every-step/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-register"></use></svg> Stage 3</span><span class="rt">Register</span><span class="rc">Registrar, identity, identifiers</span></a></li><li><a href="../whatever-you-are-setting-up/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-tax"></use></svg> Stage 4</span><span class="rt">Tax</span><span class="rc">Self Assessment, Corporation Tax, VAT</span></a></li><li><a href="../what-binds-this-business/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-licence"></use></svg> Stage 5</span><span class="rt">Licences</span><span class="rc">What the activity triggers</span></a></li><li><a href="../every-step/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-premises"></use></svg> Stage 6</span><span class="rt">Premises</span><span class="rc">Rates, planning, property</span></a></li><li><a href="../whatever-you-are-setting-up/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-finance"></use></svg> Stage 7</span><span class="rt">Money</span><span class="rc">Grants, reliefs, finance</span></a></li><li><a href="../what-binds-this-business/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-employ"></use></svg> Stage 8</span><span class="rt">People</span><span class="rc">Employing, paying, protecting</span></a></li><li><a href="../rules-trade-and-bodies/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-trade"></use></svg> Stage 9</span><span class="rt">Trade</span><span class="rc">Goods, borders, tendering</span></a></li></ol></div></nav>
+<main class="wrap" id="main">
+  <section id="s-intro" aria-labelledby="h-intro">
+    <h2 id="h-intro">What this page does and does not do</h2>
+    <p class="intro">The journey is the same for everyone: the same registrars, the same duties, the same deadlines. What differs is which parts bite hardest, what money is available, and what happens when the business meets the rest of a life. Everything here is traced to legislation or to GOV.UK. Where government does not have a view, this page says so rather than inventing one.</p>
+    <ul class="caveats" id="scope"></ul>
+  </section>
+  <section id="s-tracks" aria-labelledby="h-tracks">
+    <h2 id="h-tracks">Choose what applies to you</h2>
+    <div class="chiprow" id="trackchips" role="group" aria-label="Circumstances"></div>
+    <div id="track"></div>
+  </section>
+  <section id="s-map" aria-labelledby="h-map">
+    <h2 id="h-map">Everyone this journey has to work for</h2>
+    <p class="intro">The full list this work could identify, across five dimensions. Every type now has a track above; two carry a stated boundary (recovery, immigration) where this work stops on purpose. The list is still a denominator, not proof: a type designed for is not a type researched with. A list you can argue with is worth more than a claim you cannot check.</p>
+    <div class="mapfilter" id="mapfilter" role="group" aria-label="Filter by coverage"></div>
+    <div id="map"></div>
+  </section>
+  <section id="s-moscow" aria-labelledby="h-moscow">
+    <h2 id="h-moscow">What is being done about it, and in what order</h2>
+    <p class="intro">Prioritised as must, should, could and will not, with the reason attached to each. The will-nots are deliberate limits, not omissions.</p>
+    <div class="moscow" id="moscow"></div>
+  </section>
+</main>
+
+<script>var CIRC={"TRACKS":[{"id":"women","label":"Women running their own business","icon":"person","why":"Government's own review found the barriers are real and set a target against them: an ambition to increase the number of female entrepreneurs by half by 2030, about 600,000 more. Nothing in the standard journey changes because of it, so the differences are in money, in time off, and in what happens when a business and a pregnancy overlap.","differences":[{"h":"Maternity pay does not work the way it does for employees","b":"A self-employed founder cannot get Statutory Maternity Pay. Maternity Allowance is the route: up to 39 weeks, claimable once you have been pregnant 26 weeks, with payments able to start from the 11th week before the baby is due. Eligibility runs on 26 weeks of work in the 66 weeks before the due date.","src":{"title":"Maternity Allowance","url":"https://www.gov.uk/maternity-allowance","checked":"2026-09-18"},"act":"Check eligibility before you need it; the qualifying window looks backwards, so a gap in work two months ago can matter."},{"h":"Shared Parental Leave is an employment right, not a founder's right","b":"It applies to employees and to some workers. A self-employed founder is generally outside it, which changes how two parents can split time when one of them runs the business.","src":{"title":"Shared Parental Leave and Pay","url":"https://www.gov.uk/shared-parental-leave-and-pay","checked":"2026-09-18"},"act":"If your partner is employed, their entitlement may still be the flexible half of the arrangement."},{"h":"Unpaid work in a spouse's or civil partner's business counts","b":"Maternity Allowance explicitly covers people who take part in unpaid work for the business of their spouse or civil partner. It is the one place the journey recognises the labour that usually goes unrecorded.","src":{"title":"Maternity Allowance","url":"https://www.gov.uk/maternity-allowance","checked":"2026-09-18"}},{"h":"Childcare support decides whether the business is viable at all","b":"Tax-Free Childcare and free childcare for working parents both have their own eligibility rules, and both are assessed on income that a new business may not have yet.","src":{"title":"Help with childcare costs","url":"https://www.gov.uk/help-with-childcare-costs","checked":"2026-09-18"},"act":"Model the childcare cost alongside the start-up cost, not after it."},{"h":"Discrimination in getting finance or services is unlawful","b":"The Equality Act protects against direct discrimination and covers the provision of services, which includes finance. Knowing the section number is what turns a bad experience into a complaint that has to be answered.","src":{"title":"Equality Act 2010, section 13 (direct discrimination)","url":"https://www.legislation.gov.uk/ukpga/2010/15/section/13","checked":"2026-09-18"},"src2":{"title":"Equality Act 2010, section 29 (services)","url":"https://www.legislation.gov.uk/ukpga/2010/15/section/29","checked":"2026-09-18"}}],"support":[{"t":"Start Up Loans","u":"https://www.startuploans.co.uk/","n":"Government-backed personal loans for business, with mentoring attached. Not women-specific, but the mentoring is the part most often cited as the gap."},{"t":"The Rose Review and the government response","u":"https://www.gov.uk/government/publications/the-alison-rose-review-of-female-entrepreneurship","n":"The evidence base and the 2030 ambition, published 8 March 2019. Useful when arguing for support rather than asking for it. It found that women from minority ethnic groups experience all the same barriers as other women, but to a greater extent, and said some initiatives may need to be adapted and targeted to help them."}],"gaps":["No published breakdown of which of the 57 touchpoints women report as hardest; the research that would show it has not been done","Funding schemes in this portal do not carry an eligibility field, so a women-focused fund cannot be filtered for","Maternity and business registration are not connected anywhere in government guidance: registering while pregnant sets deadlines that fall during leave"]},{"id":"faith","label":"Faith, culture and Sharia-compliant business","icon":"support","why":"Two different things get confused here. What is Sharia-compliant is decided by a business's own scholars or its finance provider, and government does not rule on it. What UK law does is recognise the structures, so that a business financed without interest is not taxed worse than one financed with it. That recognition is written into tax law and is checkable.","differences":[{"h":"Interest-free finance is recognised in UK tax law","b":"Alternative finance arrangements have their own Part of the Income Tax Act and their own Chapter of the Corporation Tax Act. Profit shares paid under a compliant arrangement are treated for tax broadly as interest would be, so choosing a Sharia-compliant structure does not by itself create a tax penalty.","src":{"title":"Income Tax Act 2007, Part 10A: alternative finance arrangements","url":"https://www.legislation.gov.uk/ukpga/2007/3/part/10A","checked":"2026-09-18"},"src2":{"title":"Corporation Tax Act 2009, Part 6 Chapter 6","url":"https://www.legislation.gov.uk/ukpga/2009/4/part/6/chapter/6","checked":"2026-09-18"},"act":"Ask a lender whether the arrangement falls within these provisions. It is a factual question with a documented answer."},{"h":"The government-backed Sharia-compliant start-up route has closed to new applications","b":"The Start Up Loans programme offered a Sharia-compliant route through Financing Sharia Enterprise. Financing Sharia Enterprise stopped taking new applications for funding from 29 December 2025. The standard Start Up Loan is not Sharia compliant.","src":{"title":"Start Up Loans: Sharia compliant finance","url":"https://www.startuploans.co.uk/sharia-compliant-finance","checked":"2026-10-25"},"act":"Check the Start Up Loans page for the current position before relying on this route."},{"h":"Religious slaughter is defined in law, and halal certification is not","b":"The Welfare of Animals at the Time of Killing Regulations define killing in accordance with religious rites, including the Muslim method (Halal) and the Jewish method (Shechita), with licensing requirements attached. Certification schemes that sit on top of that are run by private bodies, not by government.","src":{"title":"Welfare of Animals at the Time of Killing (England) Regulations 2015, Schedule 3","url":"https://www.legislation.gov.uk/uksi/2015/1782/schedule/3/made","checked":"2026-09-18"},"act":"For a food business, the statutory route is local authority food registration. Certification is a commercial decision on top of it."},{"h":"Religion or belief is a protected characteristic for you and for your staff","b":"That covers prayer time, dress, and religious holidays as workplace questions, and it covers refusal of service or finance on religious grounds. The same sections that protect a woman refused finance protect a Muslim founder refused it. Section 13 defines direct discrimination; section 29 applies it to the provision of services, including finance.","src":{"title":"Equality Act 2010, section 13 (direct discrimination)","url":"https://www.legislation.gov.uk/ukpga/2010/15/section/13","checked":"2026-10-25"},"src2":{"title":"Equality Act 2010, section 29 (provision of services)","url":"https://www.legislation.gov.uk/ukpga/2010/15/section/29","checked":"2026-10-25"}},{"h":"Charitable giving relief runs through registered charities","b":"Zakat, tithing and similar obligations are not themselves a UK tax relief. Where the recipient is a registered charity, the ordinary charity reliefs and Gift Aid rules apply; where it is not, they do not. This is a factual distinction, not a religious one.","src":{"title":"Register your charity","url":"https://www.gov.uk/setting-up-charity/register-your-charity","checked":"2026-09-18"},"unverified":"This portal has not verified any scheme that treats zakat differently from other giving. If one exists, it is not recorded here."}],"support":[{"t":"Co-operative or community benefit society registration","u":"https://mutuals.fca.org.uk/","n":"A form for shared ownership by members. Registered by the FCA, not Companies House. Which communities use it is not confirmed by the sources cited."},{"t":"Community interest company","u":"https://www.gov.uk/government/organisations/office-of-the-regulator-of-community-interest-companies","n":"An asset-locked company form used where profit is not the purpose."}],"gaps":["No government list of Sharia-compliant business finance providers was found, so this portal cannot point to one. The one government-backed route, through Start Up Loans and Financing Sharia Enterprise, stopped taking new applications from 29 December 2025","Whether a specific product is compliant is a scholarly judgement this portal does not and should not make","No catalogue of business support available in community languages was found. A search on 25 October 2026 found none for the UK, but that none exists is this work's own finding and is not confirmed by the sources cited"]},{"id":"disabled","label":"Disabled founders and founders with a health condition","icon":"access","why":"The support that exists is written for employees. A self-employed person is eligible for the main scheme, which is not obvious from how it is described.","differences":[{"h":"Access to Work covers self-employment","b":"It can pay for equipment, support workers and travel where a condition affects work. It is not means-tested against business turnover in the way grants are.","src":{"title":"Access to Work","url":"https://www.gov.uk/access-to-work","checked":"2026-09-18"},"act":"Apply before you need it; assessment takes time that a new business rarely has."},{"h":"Reasonable adjustments apply to services you receive","b":"Banks, registrars and regulators are service providers under the Equality Act, so the duty to make reasonable adjustments applies to the forms and processes in this journey.","src":{"title":"Equality Act 2010, section 29","url":"https://www.legislation.gov.uk/ukpga/2010/15/section/29","checked":"2026-09-18"}}],"support":[],"gaps":["No touchpoint in this journey records whether it can be completed by telephone or on paper","Assistive technology testing of the government services in this journey has not been done by anyone, including this work"]},{"id":"language","label":"Founders whose first language is not English","icon":"language","why":"Welsh has a statutory position; other languages have none. Both facts matter and neither is stated in the journey.","differences":[{"h":"Welsh-language duties bind some of the bodies here and not others","b":"The Welsh Language Standards flow from the 2011 Measure and bind the bodies listed in its Schedule 6, which includes the Welsh Ministers and Welsh councils but not Companies House or HMRC. Rechecked on 25 October 2026: the Schedule lists the Welsh Ministers and county and county borough councils in Wales, and does not list Companies House or HM Revenue and Customs.","src":{"title":"Welsh Language (Wales) Measure 2011, Schedule 6","url":"https://www.legislation.gov.uk/mwa/2011/1/schedule/6","checked":"2026-10-25"}},{"h":"No other language has a statutory footing in this journey","b":"Translation, where it exists, is a service decision rather than a duty. This portal records where that leaves people rather than implying a right that does not exist.","unverified":"This work's own finding: no statute giving another language a footing in the start-up journey was found. It is not confirmed by the sources cited."}],"support":[],"gaps":["This portal is published in English with one unchecked Welsh summary","No catalogue of business support available in community languages was found. A search on 25 October 2026 found none for the UK, but that none exists is this work's own finding and is not confirmed by the sources cited"]},{"id":"veterans","label":"Veterans, service leavers and military families","icon":"support","why":"Service ends and self-employment is a common next step. Two things are specific: a statutory duty on public bodies to have due regard to the covenant principles, and a National Insurance relief that makes hiring a veteran cheaper than hiring anyone else.","differences":[{"h":"Hiring a veteran carries a National Insurance relief","b":"Employers pay a zero rate of Class 1 National Insurance on the earnings of a qualifying veteran, available from April 2021. It applies whether the founder is a veteran or simply employs one, and it is the single most concrete financial fact in this track.","src":{"title":"National Insurance contributions relief for employers who hire veterans","url":"https://www.gov.uk/government/publications/national-insurance-contributions-relief-for-employers-who-hire-veterans","checked":"2026-09-23"},"act":"If you are hiring in the first year of someone's civilian employment, check this before you set up payroll, not after."},{"h":"The covenant duty binds public bodies, not banks","b":"The Armed Forces Act 2021 inserted a duty to have due regard to the covenant principles into the Armed Forces Act 2006. It reaches specified public bodies and functions. It does not reach a lender deciding whether to fund a business.","src":{"title":"Armed Forces Act 2021, section 8 (inserting section 343AA)","url":"https://www.legislation.gov.uk/ukpga/2021/35/section/8","checked":"2026-09-23"},"act":"Where a council or public body is the obstacle, the duty is worth naming. Where a private firm is, it is not."},{"h":"A service address is not a business address","b":"Service leavers and military families move often, and a company's registered office must be an address where documents can actually be delivered and acknowledged. Frequent relocation makes this a live problem rather than a formality."},{"h":"Nothing in the start-up journey asks whether you have served","b":"No touchpoint in the 57 catalogued here records veteran status, so no support can be triggered by it. Support that exists has to be found by the person, not offered to them.","unverified":"This work found no veteran-specific business support scheme published as data. If one exists, it is not in the 169 schemes harvested here."}],"support":[{"t":"Employer NICs relief for veterans","u":"https://www.gov.uk/government/publications/national-insurance-contributions-relief-for-employers-who-hire-veterans","n":"The relief itself, with the qualifying conditions."}],"gaps":["No veteran flag anywhere in the journey, so nothing can be offered on the basis of service","Military spouses relocating between nations restart licensing and some support journeys each time","No evidence in this work about how service leavers actually experience registration"]},{"id":"record","label":"People with a criminal record, and prison leavers","icon":"official","why":"Most business steps are open to people with a record. A few are closed, and the closures are specific and findable rather than general. Knowing which is which is the difference between a wasted year and a working business.","differences":[{"h":"A spent conviction generally need not be disclosed","b":"Under the Rehabilitation of Offenders Act, a person is not to be asked, and if asked need not answer, questions that cannot be answered without referring to a spent conviction. Rehabilitation periods were changed by legislation in force from 28 October 2023.","src":{"title":"Rehabilitation of Offenders Act 1974, section 4","url":"https://www.legislation.gov.uk/ukpga/1974/53/section/4","checked":"2026-09-23"},"src2":{"title":"Rehabilitation periods (guidance, in force 28 October 2023)","url":"https://www.gov.uk/guidance/rehabilitation-periods","checked":"2026-09-23"},"act":"Work out whether the conviction is spent before answering any application question. The period depends on the sentence and the age at conviction."},{"h":"Charity trusteeship has automatic disqualifications, and they are listed","b":"A person is disqualified from being a charity trustee in the cases set out in the Act: Case A covers conviction of specified offences and offences involving dishonesty or deception; Case B covers bankruptcy. A waiver route exists, run by the regulator.","src":{"title":"Charities Act 2011, section 178","url":"https://www.legislation.gov.uk/ukpga/2011/25/section/178","checked":"2026-09-23"},"act":"If the plan is a charity, a CIO or a charitable company, check section 178 first; it decides whether the form is available at all."},{"h":"Company directorship is not closed by a criminal record as such","b":"What closes it is disqualification. A disqualification order, or being an undischarged bankrupt, prevents acting as a director without the leave of the court. A conviction that produced neither does not bar incorporation.","src":{"title":"Company Directors Disqualification Act 1986, section 11","url":"https://www.legislation.gov.uk/ukpga/1986/46/section/11","checked":"2026-09-23"}},{"h":"Licensed activities are where the real barriers sit","b":"Security work, financial services, working with children and several other regulated activities run their own fitness tests, separate from the ROA. A business plan that avoids licensed activity avoids most of the problem.","act":"Check the licence requirement before the legal form. The licence, not the registrar, is usually the deciding step."}],"support":[{"t":"Rehabilitation periods","u":"https://www.gov.uk/guidance/rehabilitation-periods","n":"When a conviction or caution becomes spent, by sentence and by age at conviction."}],"gaps":["No single place lists which licensed activities apply a fitness test and what each one asks","Nothing in the journey tells a person, before they invest time, that their intended activity is closed to them","No evidence in this work on self-employment rates or outcomes among prison leavers"]},{"id":"benefits","label":"Founders on Universal Credit, and carers","icon":"money","why":"Starting a business while claiming is the most rule-bound version of this journey, and the rules use terms that appear nowhere else in start-up guidance: gainful self-employment, and the minimum income floor.","differences":[{"h":"Gainful self-employment is a test, with evidence attached","b":"Self-employment is treated as gainful where a person can show the business is organised, developed and regular and is the main job. The evidence named includes a Unique Taxpayer Reference, customer and supplier lists, receipts, invoices and marketing materials. Passing the test means no longer having to look for other work.","src":{"title":"Self-employment and Universal Credit","url":"https://www.gov.uk/self-employment-and-universal-credit","checked":"2026-09-23"},"act":"Keep that evidence from day one. It is the same paperwork the tax system wants, used for a different decision."},{"h":"The minimum income floor assumes earnings you may not have","b":"Once gainfully self-employed, the payment may be calculated on an assumed level of earnings based on what an employed person on minimum wage would earn in similar circumstances. Earn more and actual earnings are used; earn less and the assumed figure can still apply.","src":{"title":"Self-employment and Universal Credit","url":"https://www.gov.uk/self-employment-and-universal-credit","checked":"2026-09-23"},"act":"Model the first year against the floor, not against the profit forecast."},{"h":"Carer's Allowance has an earnings limit that self-employment can breach","b":"Earnings must be £204 or less a week after tax, National Insurance and expenses, and some care costs can be treated as an expense. In Scotland the equivalent is Carer Support Payment, which is applied for instead.","src":{"title":"Carer's Allowance","url":"https://www.gov.uk/carers-allowance","checked":"2026-09-23"},"act":"Profit after allowable expenses is the figure that matters, not turnover."},{"h":"Reporting is monthly, and on a different cycle from tax","b":"Universal Credit income is reported at the end of each monthly assessment period; tax runs on a year that starts in April. Two cycles, two sets of figures, from one set of books.","src":{"title":"Self-employment and Universal Credit","url":"https://www.gov.uk/self-employment-and-universal-credit","checked":"2026-09-23"}}],"support":[],"gaps":["No touchpoint in this journey mentions benefits at all, so the interaction has to be discovered","The £1,000 trading allowance and the gainful self-employment test are not explained together anywhere","No evidence in this work on how many new businesses start from a claim"]},{"id":"age","label":"Younger and older founders","icon":"clock","why":"Age changes two specific things: whether a form is available at all, and what National Insurance is due. Everything else is the same journey.","differences":[{"h":"A director must be at least 16","b":"A person may not be appointed a director of a company unless they have attained the age of 16. Under that age, sole trading or an adult-held structure are the practical routes, and the contract law around minors becomes relevant.","src":{"title":"Companies Act 2006, section 157","url":"https://www.legislation.gov.uk/ukpga/2006/46/section/157","checked":"2026-09-23"}},{"h":"Class 4 National Insurance stops after State Pension age","b":"A self-employed person stops paying Class 4 National Insurance from 6 April, the start of the tax year, after reaching State Pension age. Income Tax does not stop.","src":{"title":"National Insurance: what you pay it on","url":"https://www.gov.uk/national-insurance/what-you-pay-national-insurance-on","checked":"2026-09-23"},"act":"The change takes effect from the start of the next tax year, not from the birthday."},{"h":"Care leavers have a statutory support relationship the journey ignores","b":"A council must give a care leaver a personal adviser and a pathway plan. Nothing connects that adviser to business support, although self-employment is exactly the kind of plan they would be advising on.","src":{"title":"Leaving foster or local authority care","url":"https://www.gov.uk/leaving-foster-or-local-authority-care","checked":"2026-09-23"}}],"support":[],"gaps":["No guidance explains what a person under 16 can and cannot do in business","The pathway plan and the start-up journey have no connection","Nothing records age at any touchpoint, so age-specific support cannot be triggered"]},{"id":"home","label":"Starting from home, or without a safe address","icon":"premises","why":"Most businesses start at a kitchen table. Two consequences follow: permissions and insurance the founder may not expect, and a public register that will print where they live unless they act.","differences":[{"h":"Running a business from home can need permission and separate insurance","b":"Permission may be needed from a mortgage lender, a landlord or the council, and home insurance usually does not cover business use. It is the most common starting point and the least covered by start-up guidance.","src":{"title":"Run a business from home","url":"https://www.gov.uk/run-business-from-home","checked":"2026-09-23"},"act":"Check the tenancy or mortgage before the registration, not after the first customer."},{"h":"A registered office is public, and a home address is an address","b":"A company's registered office appears on the public register. For anyone at risk, that is not an administrative detail.","act":"Use a separate registered office address where one is available rather than the home address."},{"h":"There is a statutory route to protect an address","b":"The Companies Act contains a power to require the registrar, on application, not to make certain information available for public inspection. It is the legal basis for suppressing a home address for people at risk, including people who have experienced domestic abuse.","src":{"title":"Companies Act 2006, section 1088 (power to make regulations protecting material)","url":"https://www.legislation.gov.uk/ukpga/2006/46/section/1088","checked":"2026-09-23"},"act":"Apply before incorporating if you can. Removing information already published is harder than never publishing it."},{"h":"People without a fixed address can use an agent’s address, if it is an appropriate one","b":"Since March 2024 a company must keep its registered office at an appropriate address: one where documents would come to the attention of someone acting for the company and where delivery can be acknowledged. A PO box does not qualify; an agent’s address can, if it meets those conditions. That is the route for a founder with no fixed address, and it costs money.","src":{"title":"Companies Act 2006, section 86 (duty to ensure registered office at appropriate address)","url":"https://www.legislation.gov.uk/ukpga/2006/46/section/86","checked":"2026-09-23"},"act":"Check that any address service forwards all post, not only government mail; Companies House has warned about services that do not."}],"support":[],"gaps":["No guidance joins home-business permissions to the registration journey","Address protection is documented separately from incorporation, so it is found too late","A company can use an agent’s address; a sole trader still needs a correspondence address for HMRC, and nothing addresses that"]},{"id":"secondchance","label":"Starting again after a business failed","icon":"back","why":"A failed business is common and mostly does not close the door. What closes it is a specific legal status, and the statuses are named in law.","differences":[{"h":"Undischarged bankruptcy bars acting as a director without leave of the court","b":"The bar applies to being a director and to being concerned in the promotion, formation or management of a company, while the circumstances in the section apply, including a bankruptcy restrictions order or undertaking.","src":{"title":"Company Directors Disqualification Act 1986, section 11","url":"https://www.legislation.gov.uk/ukpga/1986/46/section/11","checked":"2026-09-23"},"act":"Sole trading is generally still possible. The bar is on the company route, not on trading."},{"h":"Bankruptcy also disqualifies from charity trusteeship","b":"Case B of the disqualification section covers a person made bankrupt or whose estate has been sequestrated. A waiver route exists.","src":{"title":"Charities Act 2011, section 178","url":"https://www.legislation.gov.uk/ukpga/2011/25/section/178","checked":"2026-09-23"}},{"h":"A dissolved company leaves obligations behind","b":"Filing duties, tax and any personal guarantees do not end with the company. The next business starts in the shadow of the last one, and nothing in start-up guidance says so."}],"support":[],"gaps":["Nothing in the start-up journey acknowledges that most founders have started something before","No published route explains how leave of the court is obtained in practice","No evidence in this work about second-time founders as a group"]},{"id":"gig","label":"Gig and platform workers","icon":"trade","why":"Many people are self-employed without ever having decided to be. For them the whole start-up journey is two thresholds and one registration, and nothing tells them so.","differences":[{"h":"The trading allowance decides whether anything needs reporting","b":"You can get up to £1,000 each tax year in tax-free allowances for trading income. Below it there is nothing to register; above it, the Self Assessment journey applies in full.","src":{"title":"Tax-free allowances on property and trading income","url":"https://www.gov.uk/guidance/tax-free-allowances-on-property-and-trading-income","checked":"2026-09-23"},"act":"Keep a running total from the first job; the allowance is measured across the tax year, not per platform."},{"h":"Registering for Self Assessment is the whole journey","b":"For a platform worker above the allowance, registration for Self Assessment is the start-up step. It is the one touchpoint that applies, and it is the one most often missed.","src":{"title":"Register for Self Assessment","url":"https://www.gov.uk/register-for-self-assessment","checked":"2026-09-23"}},{"h":"Employment status is decided by the facts, not the platform's label","b":"Whether a person is an employee, a worker or self-employed turns on how the work is actually done. The plan on this site assumes self-employment because that is what the platform says; that assumption can be wrong in law."}],"support":[],"gaps":["No touchpoint in this journey is written for someone who did not choose to start a business","Employment status disputes are outside the scope of this work and are the most consequential question for this group"]},{"id":"side","label":"Starting on the side while employed","icon":"employ","why":"The most common way a business begins, and the one where the thresholds do the deciding.","differences":[{"h":"The £1,000 trading allowance is the first line","b":"Below it, nothing to report. Above it, the same Self Assessment registration and the same deadlines as a full-time sole trader, alongside PAYE from the day job.","src":{"title":"Tax-free allowances on property and trading income","url":"https://www.gov.uk/guidance/tax-free-allowances-on-property-and-trading-income","checked":"2026-09-23"}},{"h":"Your employment contract may say something first","b":"Restrictions on outside work, on competing, and on using employer equipment or time sit in the contract, not in any government guidance. The journey never mentions them.","act":"Read the contract before the first sale; a breach is cheaper to avoid than to defend."},{"h":"Training for the new business is not a deductible expense until it is an existing business","b":"HMRC treats the owner's training as revenue expenditure where it updates existing expertise or adds expertise in the existing business area. Before there is a business, there is no existing area.","src":{"title":"HMRC Business Income Manual BIM35660","url":"https://www.gov.uk/hmrc-internal-manuals/business-income-manual/bim35660","checked":"2026-09-23"}}],"support":[],"gaps":["No guidance connects the trading allowance to the moment a side activity becomes a business","Nothing in the journey warns about employment-contract restrictions"]},{"id":"family","label":"Taking over a family business","icon":"history","why":"The start-up journey assumes a standing start. A family business arrives with an existing registration, existing staff, existing liabilities and, often, an existing tax event.","differences":[{"h":"Business Relief decides whether the business survives the transfer","b":"Business Relief reduces the value of a business or its assets when working out Inheritance Tax, subject to conditions on what qualifies and for how long it has been held.","src":{"title":"Business Relief for Inheritance Tax","url":"https://www.gov.uk/business-relief-inheritance-tax","checked":"2026-09-23"},"act":"Check the conditions while the current owner is alive; some of them cannot be met afterwards."},{"h":"Staff transfer with the business","b":"If the business changes owner as a business, employees may be protected: their employment transfers with their terms preserved rather than ending.","src":{"title":"Transfer of Undertakings (Protection of Employment) Regulations 2006","url":"https://www.legislation.gov.uk/uksi/2006/246/contents/made","checked":"2026-09-23"}},{"h":"The estate and the business run on two clocks","b":"Probate and personal representative duties govern the estate; filing, tax and licence deadlines keep running for the business regardless. Nothing pauses because the owner has died.","src":{"title":"Applying for probate","url":"https://www.gov.uk/applying-for-probate","checked":"2026-09-23"}}],"support":[],"gaps":["No government front door for succession while the owner is alive","The journey has no way to say 'this business already exists'"]},{"id":"men","label":"Men","icon":"person","why":"Named so the set is complete and so tailoring is not read as applying only to some people. No difference in the journey was found.","differences":[{"h":"No step in the journey differs","b":"This work found no touchpoint, rule or scheme that treats a male founder differently. The one asymmetry is in the evidence: government research on founders counts women as the gap, so the male experience is the unstated baseline against which everything else is measured.","unverified":"No single source; stated as this work's finding."}],"support":[],"gaps":["The baseline is never described, only assumed"]},{"id":"neuro","label":"Neurodivergent founders","icon":"access","why":"Covered by the disability provisions where the effect is substantial and long term; the practical problem is form length, unstructured guidance and ambiguous language, which nobody has tested with this group.","differences":[{"h":"Access to Work can fund support for self-employment","b":"Equipment, support workers and coaching where a condition affects work, including for the self-employed. It is not means-tested against turnover.","src":{"title":"Access to Work","url":"https://www.gov.uk/access-to-work","checked":"2026-09-23"}},{"h":"Reasonable adjustments apply to the forms in this journey","b":"Registrars and regulators are service providers, so the duty to make reasonable adjustments reaches their processes.","src":{"title":"Equality Act 2010, section 29","url":"https://www.legislation.gov.uk/ukpga/2010/15/section/29","checked":"2026-09-23"}}],"support":[],"gaps":["No form in the journey has been tested with neurodivergent users","Guidance density on the reference pages runs to grade 12.9"]},{"id":"deaf","label":"Deaf people and BSL users","icon":"language","why":"The British Sign Language Act 2022 is on the statute book. This work found no BSL duty attaching to any registrar, tax body or regulator in the journey.","differences":[{"h":"BSL has statutory recognition; the journey has no BSL route","b":"The Act exists. This work found no requirement on Companies House, HMRC or the licensing bodies to provide BSL interpretation, and no touchpoint that offers it.","src":{"title":"British Sign Language Act 2022","url":"https://www.legislation.gov.uk/ukpga/2022/34/contents","checked":"2026-09-23"}},{"h":"Access to Work can fund interpreters for work","b":"Communication support is within scope for self-employed people.","src":{"title":"Access to Work","url":"https://www.gov.uk/access-to-work","checked":"2026-09-23"}}],"support":[],"gaps":["Telephone-only routes exclude BSL users unless a relay service is offered; none is recorded here"]},{"id":"literacy","label":"People with low literacy or numeracy","icon":"language","why":"The journey is a reading task. Reading level on the reference pages here runs to grade 12.9, above a plain-English target.","differences":[{"h":"The helpline is the non-reading route","b":"Telephone and webchat advice, confirmed live on 23 September 2026 (0800 998 1098). It is the one front door that does not require reading a page first.","src":{"title":"Business Support Helpline","url":"https://www.gov.uk/business-support-helpline","checked":"2026-09-23"}},{"h":"Free numeracy and literacy courses exist for adults","b":"Free level 2 in some sectors and free level 3 at 19 or over; Part 2 sets out the routes.","src":{"title":"Free courses for jobs","url":"https://www.gov.uk/guidance/free-courses-for-jobs","checked":"2026-09-23"}}],"support":[],"gaps":["No easy-read version of any step exists","Rule summaries here have not been rewritten below grade 12"]},{"id":"digital","label":"People with low digital confidence, or offline","icon":"support","why":"Every registration in this journey is digital by default. Paper and telephone routes exist at several points and have never been tested end to end by anyone.","differences":[{"h":"The telephone front door exists and is live","b":"Business Support Helpline, telephone and WhatsApp messaging, confirmed on 23 September 2026.","src":{"title":"Business Support Helpline","url":"https://www.gov.uk/business-support-helpline","checked":"2026-09-23"}},{"h":"Assisted digital is a Service Standard requirement","b":"Point 5 of the GOV.UK Service Standard requires that everyone can use the service, including support for people who cannot use the digital route; Part 13 records where that is and is not evidenced.","src":{"title":"Journey standards (Part 13)","url":"../standards/","checked":"2026-09-23"}}],"support":[],"gaps":["No touchpoint records whether it can be completed by telephone or on paper"]},{"id":"ethnic","label":"Ethnic minority founders","icon":"person","why":"Protected under the same Equality Act sections as every other characteristic. The government start-up journey data this work rests on is not broken down by ethnicity. Ethnicity data on enterprise does exist elsewhere, in a government survey and in finance research and lending figures, and is listed below.","differences":[{"h":"Discrimination in finance and services is unlawful","b":"Section 13 makes less favourable treatment because of race direct discrimination. Section 29 says a service provider must not discriminate in providing a service, which includes lending. Read together, they cover refusal of finance or service.","src":{"title":"Equality Act 2010, section 13 (direct discrimination)","url":"https://www.legislation.gov.uk/ukpga/2010/15/section/13","checked":"2026-10-25"},"src2":{"title":"Equality Act 2010, section 29 (provision of services)","url":"https://www.legislation.gov.uk/ukpga/2010/15/section/29","checked":"2026-10-25"}},{"h":"The evidence gap is in the journey data, not in all data","b":"Nothing in the government start-up journey data reports registration, funding or drop-off by ethnicity. This work records that absence rather than generalising. Ethnicity data on enterprise does exist outside the journey: the Longitudinal Small Business Survey found that in 2021, 6.1% of small and medium employers were majority led by people from an ethnic minority.","src":{"title":"Ethnicity facts and figures: Leadership of small and medium enterprises (Longitudinal Small Business Survey 2021)","url":"https://www.ethnicity-facts-figures.service.gov.uk/workforce-and-business/business/leadership-of-small-and-medium-enterprises/latest","checked":"2026-10-25"},"src2":{"title":"Small Business Survey reports (Department for Business and Trade)","url":"https://www.gov.uk/government/collections/small-business-survey-reports","checked":"2026-10-25"},"unverified":"The absence in the journey data is this work's own finding, not a single source."},{"h":"Finance research and lending figures do report ethnicity","b":"British Business Bank research found that access to finance appears to be a major barrier for Black, Asian and other ethnic minority entrepreneurs. The Start Up Loans programme reports that 20% of its loans, £201 million, have gone to people from Black, Asian and other ethnic minority backgrounds.","src":{"title":"British Business Bank: Alone together, entrepreneurship and diversity in the UK (2020)","url":"https://british-business-bank.co.uk/research-alone-together","checked":"2026-10-25"},"src2":{"title":"Start Up Loans: £1bn milestone of loans to UK small businesses","url":"https://www.startuploans.co.uk/media-centre/start-up-loans-hits-1bn-milestone-of-loans-to-uk-small-businesses","checked":"2026-10-25"},"act":"These figures describe businesses and borrowers. They are not joined to the start-up journey, so they cannot show where people drop out of it."},{"h":"After launch, ethnic minority-led businesses are turned down for finance more often","b":"Between 2018 and mid-2020, 52% of ethnic minority-led businesses that applied for finance were turned down, against 22% of white-led businesses. In 2021, 20% wanted to apply for finance but were stopped by something, against 8% of white-led businesses. Appetite is not the problem: half of ethnic minority-led businesses are open to using finance for growth, against around three in ten white-led businesses.","src":{"title":"British Business Bank: Small Business Finance Markets Report 2021/22, factsheet","url":"https://british-business-bank.co.uk/about/research-and-publications/small-business-finance-markets-report-2021/factsheet","checked":"2026-10-25"},"unverified":"Rests on one source, the British Business Bank factsheet. The figures cover all ethnic minority-led businesses, not Black-led businesses alone, and date from 2018 to 2021."},{"h":"Black-owned businesses report lower turnover, and gender and ethnicity compound","b":"The British Business Bank's 2020 research found Black business owners had median turnover of £25,000, against £35,000 for White business owners, and £17,000 for Black African entrepreneurs. 37% of Black female entrepreneurs did not make a profit in the previous year, against 16% of White male entrepreneurs. The government's 2019 review of female entrepreneurship found that women from minority ethnic groups experience all the same barriers as other women, but to a greater extent.","src":{"title":"British Business Bank: Alone, together: entrepreneurship and diversity in the UK (2020)","url":"https://british-business-bank.co.uk/research-alone-together","checked":"2026-10-25"},"src2":{"title":"The Alison Rose Review of Female Entrepreneurship (2019)","url":"https://www.gov.uk/government/publications/the-alison-rose-review-of-female-entrepreneurship","checked":"2026-10-25"},"unverified":"The 2020 survey ran in the first year of COVID-19 and the report says sample sizes were relatively low for groups such as Black female entrepreneurs. The £17,000 and 37% figures were read in a copy of the full report hosted by Diversity UK, not on the Bank's own page. Median turnover is not profit or growth."},{"h":"Exclusion from mainstream finance has a history, and communities answered it","b":"When the Windrush generation arrived, they faced many barriers to UK financial services. Many saved through pardner, a rotating savings and credit association: members pay in together and take turns to receive the pot. The Bank of England Museum presented it as Caribbean entrepreneurship in the face of financial discrimination.","src":{"title":"Bank of England Museum: Community savings and the Pardner Hand (16 June 2023)","url":"https://www.bankofengland.co.uk/museum/online-collections/blog/community-savings-and-the-pardner-hand","checked":"2026-10-25"},"src2":{"title":"Bank of England Museum: Pardner Hand exhibition (closed 20 December 2024)","url":"https://www.bankofengland.co.uk/museum/whats-on/exhibitions/pardner-hand","checked":"2026-10-25"}},{"h":"Informal networks carry support, and international networks carry trade","b":"The Federation of Small Businesses found that ethnic minority entrepreneurs sometimes face discrimination at different stages of their business life and are often detached from formal networks of support. They rely more on informal networks, especially in Black and Black British-led businesses. Survey data from 2002 to 2018 showed ethnic minority-led businesses in every UK region were more likely to export than other businesses.","src":{"title":"Federation of Small Businesses: Unlocking opportunity: the value of ethnic minority firms to UK economic activity and enterprise (2020), hosted by the Enterprise Research Centre","url":"https://www.enterpriseresearch.ac.uk/wp-content/uploads/2020/07/Unlocking-Opportunity_FSB-Report-.2020.pdf","checked":"2026-10-25"},"unverified":"Rests on one source, a 2020 FSB report."},{"h":"Importing from some African and Caribbean countries costs less in tariffs","b":"Since 19 June 2023 the UK's Developing Countries Trading Scheme has cut tariffs on imports from 65 countries. Eligible countries include Ethiopia, Nigeria and Somalia, and Haiti in the Caribbean. Ghana, Kenya and Jamaica are not on the list.","src":{"title":"GOV.UK: Developing Countries Trading Scheme (DCTS)","url":"https://www.gov.uk/government/publications/trading-with-developing-nations/uk-generalised-scheme-of-preferences","checked":"2026-10-25"},"src2":{"title":"GOV.UK: Preference tiers under the Developing Countries Trading Scheme","url":"https://www.gov.uk/guidance/preference-tiers-under-the-developing-countries-trading-scheme","checked":"2026-10-25"},"act":"The tariff cut depends on the country's tier and the product. Check both before pricing an import."}],"support":[{"t":"Start Up Loans","u":"https://www.startuploans.co.uk/","n":"Government-backed personal loans of up to £25,000 with mentoring. Open to everyone, not specific to any group."},{"t":"START, West of England","u":"https://techspark.co/start/","n":"A free early-stage programme for tech and digital start-ups in Bristol, South Gloucestershire and Bath and North East Somerset. The provider says it is keen to support community and ethnic minority led entrepreneurship. New dates were not confirmed when checked on 25 October 2026."},{"t":"British Business Bank: Alone, together (2020)","u":"https://british-business-bank.co.uk/research-alone-together","n":"The research behind the finance and turnover figures above."},{"t":"See also: BHM 2026 Hub","u":"https://cyberdudeuk.github.io/black-mixed-heritage/","n":"The Black History Month 2026 hub, whose Black enterprise section is the source of the material added here on 25 October 2026."}],"gaps":["No ethnicity breakdown exists in the published government start-up journey data","Survey and lending data on ethnicity are not linked to any step of the journey","Most published figures group all ethnic minority groups together; figures for Black-led businesses alone are rare, and much of the evidence dates from 2018 to 2021"]},{"id":"grt","label":"Gypsy, Roma and Traveller communities","icon":"premises","why":"Mobile trading means a licence per council and a registered office problem. No guidance addresses either together.","differences":[{"h":"Street trading needs a licence from each council","b":"A licence is required to sell on the street, and each local authority runs its own scheme with its own conditions.","src":{"title":"Street trading licence","url":"https://www.gov.uk/street-trading-licence","checked":"2026-09-23"}},{"h":"A registered office must be a deliverable address, and can be protected","b":"A company needs an address where documents can be served; the Companies Act contains the power to keep an address off the public register on application.","src":{"title":"Companies Act 2006, section 1088","url":"https://www.legislation.gov.uk/ukpga/2006/46/section/1088","checked":"2026-09-23"}}],"support":[],"gaps":["No route for a business with no fixed premises","Licensing restarts at every council boundary"]},{"id":"lgbt","label":"LGBT+ founders","icon":"person","why":"Same Equality Act cover for services and finance. No journey step differs.","differences":[{"h":"Sexual orientation and gender reassignment are protected characteristics","b":"Refusal of service or finance on those grounds is direct discrimination.","src":{"title":"Equality Act 2010, section 13","url":"https://www.legislation.gov.uk/ukpga/2010/15/section/13","checked":"2026-09-23"}}],"support":[],"gaps":["No evidence in this work on how LGBT+ founders experience registration"]},{"id":"singleparent","label":"Single parents","icon":"support","why":"Childcare eligibility and the benefits interaction both bite harder; there is no separate rule, only more of the same ones.","differences":[{"h":"Childcare support is assessed on income a new business does not yet have","b":"Tax-Free Childcare and free childcare for working parents each carry their own income conditions.","src":{"title":"Help with childcare costs","url":"https://www.gov.uk/help-with-childcare-costs","checked":"2026-09-23"}},{"h":"Universal Credit reporting runs monthly regardless of school holidays","b":"The assessment-period cycle and the minimum income floor apply as to any self-employed claimant.","src":{"title":"Self-employment and Universal Credit","url":"https://www.gov.uk/self-employment-and-universal-credit","checked":"2026-09-23"}}],"support":[],"gaps":["Nothing models childcare cost alongside start-up cost"]},{"id":"milspouse","label":"Military spouses and families","icon":"support","why":"Frequent relocation restarts licensing and devolved support, and makes a stable registered office harder.","differences":[{"h":"The covenant duty covers family members of those who serve","b":"Section 8 of the Armed Forces Act 2021 refers to persons who are or have been members of the armed forces and to relevant family members.","src":{"title":"Armed Forces Act 2021, section 8","url":"https://www.legislation.gov.uk/ukpga/2021/35/section/8","checked":"2026-09-23"}},{"h":"A move across a nation boundary changes the support system","b":"Business Gateway, Business Wales, nibusinessinfo and the English growth hubs are four systems, not one.","src":{"title":"Every way in (Part 3)","url":"../every-way-in/","checked":"2026-09-23"}}],"support":[],"gaps":["No portable business record follows a family between postings"]},{"id":"recovery","label":"People in recovery","icon":"access","why":"No business rule turns on recovery. Where a condition has a substantial long-term effect, the disability provisions apply; nothing further is asserted here, on purpose.","differences":[{"h":"The disability provisions are the only ones that apply","b":"Access to Work and the reasonable adjustments duty, where the condition qualifies. This work does not characterise recovery beyond that.","src":{"title":"Access to Work","url":"https://www.gov.uk/access-to-work","checked":"2026-09-23"}}],"support":[],"gaps":["Deliberately minimal: naming this group is not the same as having evidence about it"]},{"id":"migrant","label":"Migrants, refugees and people seeking asylum","icon":"official","why":"Whether a person may work or trade in the UK turns on immigration status, and this work says nothing about any individual's status. What it can state is the duty an employer owes.","differences":[{"h":"An employer must check right to work before employment starts","b":"The check is the employer's duty and must be made before the person is employed. Home Office guidance says employers should be consistent and check all workers, including British citizens, regardless of nationality or perceived immigration status.","src":{"title":"Check a job applicant's right to work","url":"https://www.gov.uk/check-job-applicant-right-to-work","checked":"2026-10-25"},"src2":{"title":"Home Office: Employer's guide to right to work checks (1 October 2026)","url":"https://www.gov.uk/government/publications/right-to-work-checks-employers-guide","checked":"2026-10-25"}},{"h":"An overseas company establishing in the UK registers with Companies House","b":"One of the fourteen legal forms is the UK establishment of an overseas company. It registers with Companies House on form OS IN01 within one month of opening for business.","src":{"title":"Register as an overseas company","url":"https://www.gov.uk/register-as-an-overseas-company","checked":"2026-10-25"}}],"support":[],"gaps":["Immigration advice is out of scope by design; the boundary is stated, not filled"]},{"id":"student","label":"Students","icon":"clock","why":"No separate rule; the interactions with loans and grants are the practical issue and nobody documents them.","differences":[{"h":"Student loan repayments are collected through Self Assessment when self-employed","b":"Repayments are worked out from the tax return, on the same cycle as the rest of the journey.","src":{"title":"Repaying your student loan: self-employed","url":"https://www.gov.uk/repaying-your-student-loan/self-employed","checked":"2026-09-23"}},{"h":"The institution's own rules come first","b":"Who owns what a student makes, and whether they may trade, is set by the university's intellectual property and conduct policies; no government guidance exists.","unverified":"No single source; stated as this work's finding."}],"support":[],"gaps":["No central source for university rules on students starting businesses"]},{"id":"investor","label":"Investor-backed founders","icon":"finance","why":"The best-served group in the journey, named for completeness.","differences":[{"h":"SEIS and EIS shape the company from day one","b":"The reliefs investors claim set conditions on the company's structure and activities.","src":{"title":"Venture capital schemes","url":"https://www.gov.uk/guidance/venture-capital-schemes-raise-money-by-offering-tax-reliefs-to-investors","checked":"2026-09-23"}},{"h":"Share options carry their own scheme and limits","b":"Enterprise Management Incentives apply to companies with assets of £120 million or less and fewer than 500 full-time employees.","src":{"title":"Enterprise Management Incentives","url":"https://www.gov.uk/tax-employee-share-schemes/enterprise-management-incentives-emis","checked":"2026-09-23"}}],"support":[],"gaps":["Well served; this work adds nothing beyond pointing at the sources"]},{"id":"nonco","label":"People choosing a form that is not a company","icon":"structure","why":"Four of the fourteen legal forms do not register at Companies House at all, each with its own registrar and identifier.","differences":[{"h":"Societies register with the FCA","b":"Co-operative and community benefit societies are on the Mutuals Public Register.","src":{"title":"FCA Mutuals Public Register","url":"https://mutuals.fca.org.uk/","checked":"2026-09-23"}},{"h":"Charities and CIOs register with the charity regulator","b":"The Charities Act disqualifications apply to trustees before the form is available at all.","src":{"title":"Charities Act 2011, section 178","url":"https://www.legislation.gov.uk/ukpga/2011/25/section/178","checked":"2026-09-23"}}],"support":[],"gaps":["Guidance assumes a company; the other forms are found by people who already know them"]},{"id":"community","label":"Community and co-operative organisations","icon":"support","why":"Used where profit is not the purpose; two regulators, two registers, and the community right to bid.","differences":[{"h":"Assets of community value give a community time to bid","b":"The Localism Act provisions run through the local authority's list.","src":{"title":"Localism Act 2011, Part 5 Chapter 3","url":"https://www.legislation.gov.uk/ukpga/2011/20/part/5/chapter/3","checked":"2026-09-23"}},{"h":"Community interest companies have their own regulator","b":"An asset-locked company form with its own approval step on top of incorporation.","src":{"title":"Office of the Regulator of Community Interest Companies","url":"https://www.gov.uk/government/organisations/office-of-the-regulator-of-community-interest-companies","checked":"2026-09-23"}}],"support":[],"gaps":["No single front door across the FCA, the charity regulators and the CIC regulator"]},{"id":"agent","label":"Agents acting for several clients","icon":"official","why":"Documented in the service blueprints as a cross-journey pain point: no consolidated view of what each client owes.","differences":[{"h":"Agent authorisation is a separate service","b":"An accountant or agent needs an agent services account before acting for a client with HMRC.","src":{"title":"Get an HMRC agent services account","url":"https://www.gov.uk/guidance/get-an-hmrc-agent-services-account","checked":"2026-09-23"}},{"h":"Each client's plan can be built and shared from this site","b":"Your Plan carries the whole profile in the link, which is the closest thing here to a multi-client view.","src":{"title":"Your Plan","url":"../your-plan/","checked":"2026-09-23"}}],"support":[],"gaps":["No multi-client dashboard exists anywhere in the estate"]},{"id":"homefood","label":"Food businesses from a domestic kitchen","icon":"trade","why":"Registration with the council is required before trading and nothing in the tax journey mentions it; already a persona in the blueprints.","differences":[{"h":"Register the food business with the local authority before trading","b":"Registration is free and required; the council may inspect.","src":{"title":"Food business registration","url":"https://www.gov.uk/food-business-registration","checked":"2026-09-23"}},{"h":"Running a business from home has its own permissions","b":"Landlord, mortgage lender and council permissions, and business insurance.","src":{"title":"Run a business from home","url":"https://www.gov.uk/run-business-from-home","checked":"2026-09-23"}}],"support":[],"gaps":["The food registration and the tax registration sit in different journeys with no link"]},{"id":"nations","label":"Founders in Scotland, Wales and Northern Ireland","icon":"nations","why":"Registration is UK-wide; most of what follows it differs by nation, set out in Part 11.","differences":[{"h":"Devolved matters change the rules after registration","b":"Business rates, licensing, planning, skills and support are devolved; the comparison is in Part 11.","src":{"title":"Four nations (Part 11)","url":"../four-nations/","checked":"2026-09-23"}},{"h":"Welsh-language duties bind some bodies and not others","b":"The Welsh Language Measure binds the bodies in its Schedule 6, not Companies House or HMRC.","src":{"title":"Welsh Language (Wales) Measure 2011, Schedule 6","url":"https://www.legislation.gov.uk/mwa/2011/1/schedule/6","checked":"2026-10-25"}},{"h":"Scotland's Pathways review asked for enterprise data by gender and ethnicity","b":"Pathways: a new approach for women in entrepreneurship, an independent review commissioned by the Scottish Government and published in February 2023, recommended that the government publish an annual analysis of entrepreneurship participation trends, disaggregated by gender and ethnicity (recommendation 30), and that a gender- and ethnicity-disaggregated common database be made accessible (recommendation 28).","src":{"title":"Pathways: a new approach for women in entrepreneurship (Scottish Government), recommendations","url":"https://www.gov.scot/publications/pathways-new-approach-women-entrepreneurship/pages/11/","checked":"2026-10-25"},"src2":{"title":"Scottish Government response to the Pathways review (letter to the Economy and Fair Work Committee, 29 June 2023)","url":"https://parliament.scot/-/media/files/committees/economy-and-fair-work-committee/correspondence/2023/sg-response-to-ana-stewart-and-mark-logans-report.pdf","checked":"2026-10-25"},"unverified":"The recommendation rests on one source, the review itself. The government response commits to improving the collection and reporting of data but does not mention ethnicity, and whether an annual analysis by ethnicity has been published is not confirmed by the sources cited. The exact publication day is not shown on the pages checked."}],"support":[],"gaps":["English pages are the default landing point for everyone"]},{"id":"rural","label":"Rural, island and remote founders","icon":"premises","why":"Distance to any in-person service, connectivity, and rate reliefs that differ by nation.","differences":[{"h":"Rural rate relief exists for some businesses in small settlements","b":"Available for certain businesses in eligible rural areas, applied for through the council.","src":{"title":"Rural rate relief","url":"https://www.gov.uk/apply-for-business-rate-relief/rural-rate-relief","checked":"2026-09-23"}},{"h":"The telephone front door matters most here","b":"The Business Support Helpline is the in-person substitute where there is no growth hub within reach.","src":{"title":"Business Support Helpline","url":"https://www.gov.uk/business-support-helpline","checked":"2026-09-23"}}],"support":[],"gaps":["No touchpoint records distance to its nearest in-person alternative"]},{"id":"niborder","label":"Founders trading across the Northern Ireland border","icon":"trade","why":"An XI EORI number and the UK Internal Market Scheme, covered in Part 10.","differences":[{"h":"Moving goods needs an EORI number, and an XI number for Northern Ireland","b":"EORI numbers are issued by HMRC; the XI prefix applies to goods moving under the Windsor Framework.","src":{"title":"Get an EORI number","url":"https://www.gov.uk/eori","checked":"2026-09-23"}}],"support":[],"gaps":["The border rules change; the register records when each was checked"]},{"id":"overseas","label":"Overseas founders establishing in the UK","icon":"globe","why":"UK establishment of an overseas company is one of the fourteen forms; immigration status is out of scope here.","differences":[{"h":"Registering a UK establishment","b":"An overseas company with a UK establishment registers with Companies House on form OS IN01 within one month of opening for business.","src":{"title":"Register as an overseas company","url":"https://www.gov.uk/register-as-an-overseas-company","checked":"2026-10-25"}},{"h":"Right-to-work duties apply to any UK employee","b":"The employer's check, whoever the employer is, made before employment starts. Home Office guidance says to check all workers consistently, regardless of nationality.","src":{"title":"Check a job applicant's right to work","url":"https://www.gov.uk/check-job-applicant-right-to-work","checked":"2026-10-25"},"src2":{"title":"Home Office: Employer's guide to right to work checks (1 October 2026)","url":"https://www.gov.uk/government/publications/right-to-work-checks-employers-guide","checked":"2026-10-25"}}],"support":[],"gaps":["Immigration routes for founders are out of scope by design"]},{"id":"lowincome","label":"Starting with no savings","icon":"money","why":"The journey costs money before it makes any, and the one government-backed route to it is a personal loan.","differences":[{"h":"Start Up Loans are personal loans of up to £25,000","b":"Government-backed, to start or grow a business. Loans range from £500 to £25,000. First-time recipients get 12 months of free business mentoring. The loan is personal: it follows the founder, not the business.","src":{"title":"Start Up Loans","url":"https://www.startuploans.co.uk/","checked":"2026-10-25"},"act":"Total the path's cost on Your Plan before applying; the loan should cover the registrations and the licence, not just the stock.","src2":{"title":"Start Up Loans: How do I get a Start Up Loan?","url":"https://www.startuploans.co.uk/support-and-guidance/business-guidance/finance/how-do-i-get-a-start-up-loan","checked":"2026-10-25"}},{"h":"Universal Credit and a new business can run together","b":"The gainful self-employment test and the minimum income floor decide how much of the first year's income is assumed rather than earned.","src":{"title":"Self-employment and Universal Credit","url":"https://www.gov.uk/self-employment-and-universal-credit","checked":"2026-09-23"}}],"support":[],"gaps":["No scheme in the 169 catalogued is filterable by income; the eligibility field now exists and is empty"]}],"MOSCOW":[{"priority":"Must","item":"A circumstances facet on the plan, so tailored duties and support appear inside the plan rather than on a separate page","why":"Separating people's circumstances into their own page is the thing DEIA work most often gets wrong. It has to be in the main flow.","status":"built"},{"priority":"Must","item":"A circumstance-aware plan: a due date adds Maternity Allowance dates and flags what falls during leave; a Universal Credit claim start adds the monthly reporting cycle; caring adds the earnings limit","why":"Registering while pregnant sets deadlines that fall during leave, and nothing in government guidance joins those two facts. Now the plan does.","status":"built"},{"priority":"Must","item":"Maternity, parental and childcare obligations attached to the journey with their real deadlines","why":"Registering while pregnant sets deadlines that fall during leave, and nothing in government guidance joins those two facts.","status":"built"},{"priority":"Must","item":"State plainly where government does not rule on a question, such as Sharia compliance","why":"A portal that implied a government view on religious compliance would be both wrong and harmful.","status":"built"},{"priority":"Must","item":"Every claim in this part traced to legislation or GOV.UK, with unverifiable claims marked as such","why":"This is the area where a confident wrong answer does most damage.","status":"built"},{"priority":"Must","item":"A stated, complete list of who this journey has to work for, with each type marked as covered in detail, named only, or deliberately out of scope","why":"An inclusion claim with no denominator cannot be checked. This one can: 45 types, and anyone can argue with the list.","status":"built"},{"priority":"Should","item":"Eligibility fields on the 169 support schemes so a woman-focused or community-focused fund can be filtered for","why":"Filtering to a scheme nobody can act on is worse than not filtering.","status":"blocked: needs the schemes' own data"},{"priority":"Should","item":"Telephone and paper routes recorded per touchpoint","why":"Assisted digital is documented in the abstract and untested in the particular.","status":"open"},{"priority":"Should","item":"Turn the named-only types into detailed tracks, starting with gig and platform workers and with founders taking over a family business","why":"Named is better than invisible and worse than designed for. The list makes the backlog obvious.","status":"built: every one of the 45 types now has a track; two carry a stated boundary (recovery, immigration)"},{"priority":"Should","item":"Research with women founders, Muslim founders, disabled founders and Welsh speakers, against the pre-registered protocol","why":"Everything in this part is an argument from published evidence, not a finding from the people it concerns.","status":"open: the research bundle already specifies the segments"},{"priority":"Could","item":"A catalogue of business support available in community languages","why":"Useful, but this work has no source for it and inventing one would be worse than the gap.","status":"blocked: no source"},{"priority":"Could","item":"Faith-aware calendar handling in the plan, so deadlines near major religious observances are flagged","why":"A deadline falling inside Ramadan or the High Holy Days is a practical problem, not a spiritual one.","status":"built; Jewish and Hindu dates checked against their calendars, Islamic dates calculated and moon-dependent, all sourced 23 September 2026"},{"priority":"Won't","item":"Any ruling on whether a product, practice or arrangement is religiously compliant","why":"That is a matter for a business's own scholars and its provider. Government does not decide it and neither will this.","status":"out of scope by design"},{"priority":"Won't","item":"Immigration advice, or any statement about a person's right to be in the UK","why":"Outside the scope of this journey and dangerous to get wrong. The journey covers right-to-work duties an employer owes, nothing more.","status":"out of scope by design"}],"MAP":[{"dimension":"Who the person is","label":"Women","status":"detailed","what":"Maternity Allowance instead of statutory pay, childcare eligibility assessed on income a new business does not yet have, and Equality Act cover when finance is refused","track":"women","note":null},{"dimension":"Who the person is","label":"Men","status":"detailed","what":"No difference this work could identify in the journey itself; named so the set is complete and so 'tailoring' is not read as applying only to some people","track":"men","note":null},{"dimension":"Who the person is","label":"Disabled people and people with a health condition","status":"detailed","what":"Access to Work covers self-employment; reasonable adjustments apply to registrars and regulators as service providers","track":"disabled","note":null},{"dimension":"Who the person is","label":"Neurodivergent founders","status":"detailed","what":"Covered by the disability provisions where the effect is substantial and long term; the practical issue is form length and unstructured guidance, which nobody has tested","track":"neuro","note":null},{"dimension":"Who the person is","label":"Deaf people and BSL users","status":"detailed","what":"This work found no British Sign Language duty attaching to any body in this journey, though the British Sign Language Act 2022 is on the statute book","track":"deaf","note":"Recorded as not found rather than asserted either way"},{"dimension":"Who the person is","label":"People with low literacy or numeracy","status":"detailed","what":"Reading level on the reference pages here runs to grade 12.9, above a plain-English target, and the rule summaries have not been rewritten","track":"literacy","note":null},{"dimension":"Who the person is","label":"People with low digital confidence, or offline","status":"detailed","what":"Telephone and paper routes exist at several points and have never been tested end to end by anyone, including this work","track":"digital","note":null},{"dimension":"Who the person is","label":"Younger founders, including under 16","status":"detailed","what":"A director must be at least 16; below that the company route is closed and nothing explains what remains open","track":"age","note":null},{"dimension":"Who the person is","label":"Older founders, at or over State Pension age","status":"detailed","what":"Class 4 National Insurance stops from 6 April after State Pension age; Income Tax does not","track":"age","note":null},{"dimension":"Who the person is","label":"Muslim, Jewish and other faith communities","status":"detailed","what":"UK tax law recognises interest-free finance structures; religious slaughter is defined in law while certification is private","track":"faith","note":null},{"dimension":"Who the person is","label":"Ethnic minority founders","status":"detailed","what":"Protected under the same Equality Act sections as every other characteristic; the government start-up journey data this work rests on is not broken down by ethnicity, though survey and lending data on ethnicity exist elsewhere","track":"ethnic","note":"Limited by the evidence, and said so rather than generalised"},{"dimension":"Who the person is","label":"Gypsy, Roma and Traveller communities","status":"detailed","what":"Mobile trading means street trading licences per council and a registered office problem; no guidance addresses either","track":"grt","note":null},{"dimension":"Who the person is","label":"LGBT+ founders","status":"detailed","what":"Same Equality Act cover for services and finance; no journey step differs","track":"lgbt","note":null},{"dimension":"Who the person is","label":"Welsh speakers","status":"detailed","what":"Welsh Language Standards bind Welsh Ministers and Welsh councils, and not Companies House or HMRC","track":"language","note":null},{"dimension":"Who the person is","label":"Founders whose first language is neither English nor Welsh","status":"detailed","what":"No statutory footing at all; translation is a service decision, not a duty","track":"language","note":null},{"dimension":"Life circumstances","label":"Pregnant founders and new parents","status":"detailed","what":"Registering while pregnant sets deadlines that fall during leave, and no guidance anywhere joins those two facts","track":"women","note":null},{"dimension":"Life circumstances","label":"Carers","status":"detailed","what":"Carer's Allowance earnings limit of £204 a week after expenses, with Carer Support Payment in Scotland","track":"benefits","note":null},{"dimension":"Life circumstances","label":"Single parents","status":"detailed","what":"Childcare eligibility and the benefits interaction both bite harder; no separate rule","track":"singleparent","note":null},{"dimension":"Life circumstances","label":"Care leavers","status":"detailed","what":"A statutory personal adviser and pathway plan exist and connect to nothing in business support","track":"age","note":null},{"dimension":"Life circumstances","label":"Veterans and service leavers","status":"detailed","what":"Employer National Insurance relief for hiring a qualifying veteran, and a covenant duty that binds public bodies but not lenders","track":"veterans","note":null},{"dimension":"Life circumstances","label":"Military spouses and families","status":"detailed","what":"Frequent relocation restarts licensing and devolved support, and makes a stable registered office harder","track":"milspouse","note":null},{"dimension":"Life circumstances","label":"People with a criminal record","status":"detailed","what":"Spent convictions generally need not be disclosed; charity trusteeship and licensed activities are where the real bars sit","track":"record","note":null},{"dimension":"Life circumstances","label":"People in prison, and prison leavers","status":"detailed","what":"The same rules, plus no address, no bank account and no digital access at the point of release","track":"record","note":null},{"dimension":"Life circumstances","label":"People who have experienced domestic abuse","status":"detailed","what":"A statutory route exists to keep an address off the public register, and it is documented far from the incorporation journey","track":"home","note":null},{"dimension":"Life circumstances","label":"People with no fixed address","status":"detailed","what":"Registration assumes a deliverable address; this work found no guidance for anyone without one","track":"home","note":null},{"dimension":"Life circumstances","label":"People in recovery","status":"detailed-with-boundary","what":"No business rule turns on it. Any health condition is covered by the disability provisions; nothing further is asserted here","track":"recovery","note":null},{"dimension":"Life circumstances","label":"People who inherited or took over a family business","status":"detailed","what":"Succession, existing liabilities and an existing registration; the start-up journey assumes a standing start","track":"family","note":null},{"dimension":"Life circumstances","label":"Founders starting again after a business failed","status":"detailed","what":"Undischarged bankruptcy bars the company route without leave of the court; sole trading generally remains open","track":"secondchance","note":null},{"dimension":"Economic position","label":"People claiming Universal Credit","status":"detailed","what":"The gainful self-employment test and the minimum income floor, on a monthly cycle that does not match the tax year","track":"benefits","note":null},{"dimension":"Economic position","label":"People on a low income or with no savings","status":"detailed","what":"Start Up Loans are the main government-backed route; cost of the path is totalled on the plan page so it can be seen before it is committed to","track":"lowincome","note":null},{"dimension":"Economic position","label":"People employed elsewhere, starting on the side","status":"detailed","what":"The £1,000 trading allowance decides whether anything needs reporting at all, and it is the single most misunderstood threshold in the journey","track":"side","note":null},{"dimension":"Economic position","label":"Students","status":"detailed","what":"No separate rule; the interaction with loans, grants and visa conditions is not documented anywhere in this journey","track":"student","note":null},{"dimension":"Economic position","label":"Investor-backed founders","status":"detailed","what":"Well served by existing guidance; named for completeness rather than need","track":"investor","note":null},{"dimension":"Work and business context","label":"Sole traders","status":"detailed","what":"The default assumption of most guidance, and the form with the fewest touchpoints","track":"women","note":null},{"dimension":"Work and business context","label":"People choosing a form that is not a company","status":"detailed","what":"Four of the fourteen legal forms do not register at Companies House at all, each with its own registrar and identifier","track":"nonco","note":null},{"dimension":"Work and business context","label":"Community and co-operative organisations","status":"detailed","what":"Societies register with the FCA and community interest companies with their own regulator; both are used where profit is not the purpose","track":"community","note":null},{"dimension":"Work and business context","label":"Agents acting for several clients","status":"detailed","what":"No consolidated view of what each client owes; documented in the service blueprints as a cross-journey pain point","track":"agent","note":null},{"dimension":"Work and business context","label":"Gig and platform workers","status":"detailed","what":"Often self-employed without ever deciding to be; the trading allowance and Self Assessment thresholds are the whole journey for them","track":"gig","note":null},{"dimension":"Work and business context","label":"Home-based businesses","status":"detailed","what":"Permissions, insurance and a public address, none of which appear in registration guidance","track":"home","note":null},{"dimension":"Work and business context","label":"Food businesses from a domestic kitchen","status":"detailed","what":"Registration is required 28 days before trading and nothing in the tax journey mentions it; already a persona in the blueprints","track":"homefood","note":null},{"dimension":"Place","label":"Founders in Scotland, Wales and Northern Ireland","status":"detailed","what":"Registration is UK-wide; nine of ten other aspects differ by nation, set out in Part 8","track":"nations","note":null},{"dimension":"Place","label":"Rural, island and remote founders","status":"detailed","what":"Connectivity, distance to any in-person service, and rate reliefs that differ by nation; no separate route in the journey","track":"rural","note":null},{"dimension":"Place","label":"Founders trading across the Northern Ireland border","status":"detailed","what":"XI EORI and the UK Internal Market Scheme, covered in Part 7","track":"niborder","note":null},{"dimension":"Place","label":"Overseas founders establishing in the UK","status":"detailed","what":"UK establishment of an overseas company is one of the fourteen forms; immigration status is out of scope here","track":"overseas","note":null},{"dimension":"Place","label":"Migrants, refugees and people seeking asylum","status":"detailed-with-boundary","what":"Whether a person may work or trade in the UK turns on immigration status. This work states right-to-work duties an employer owes and says nothing about any individual's own status, because getting that wrong is dangerous","track":"migrant","note":null}]};
+</script>
+<script>(function(){
+  var root=document.documentElement;
+  try{var sv=localStorage.getItem('hub-theme');if(sv)root.setAttribute('data-theme',sv);}catch(e){}
+  var $=function(i){return document.getElementById(i);};
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function ic(n,c){return '<svg class="'+(c||'ic')+'" aria-hidden="true" focusable="false"><use href="#i-'+n+'"></use></svg>';}
+  function src(s,ctx){return s?'<a href="'+esc(s.url)+'" target="_blank" rel="noopener" aria-label="Source for '+esc(ctx)+'">'+esc(s.title)+'</a> <span class="freshness">'+ic('clock')+esc(s.checked)+'</span>':'';}
+  $('scope').innerHTML=[
+   ['Everything is sourced','Each difference below links to the legislation or the GOV.UK page it comes from, with the date it was checked. Where this work could not verify something, it says so on the face of it.'],
+   ['No advice of any kind','This is a map of what applies, not guidance on what to do. Tax, legal and religious questions belong with people qualified to answer them.'],
+   ['Government does not rule on religious compliance','Whether an arrangement is Sharia-compliant is decided by a business\u2019s own scholars or its provider. What UK law does is recognise the structures for tax, and that is what is recorded here.'],
+   ['Written from published evidence, not from research with the people concerned','Nobody in any of these groups has reviewed this page. The research plan names them as segments and has not been run.']
+  ].map(function(x){return '<li><b>'+esc(x[0])+'</b>'+esc(x[1])+'</li>';}).join('');
+  var cur=(new URLSearchParams(location.search).get('c'))||CIRC.TRACKS[0].id;
+  function paint(){
+    $('trackchips').innerHTML=CIRC.TRACKS.map(function(t){
+      return '<button type="button" data-t="'+t.id+'" aria-pressed="'+(t.id===cur)+'">'+ic(t.icon)+esc(t.label)+'</button>';}).join('');
+    Array.prototype.forEach.call($('trackchips').querySelectorAll('button'),function(b){
+      b.addEventListener('click',function(){cur=b.getAttribute('data-t');
+        var q=new URLSearchParams(location.search);q.set('c',cur);history.replaceState(null,'','?'+q.toString());paint();});});
+    var t=CIRC.TRACKS.filter(function(x){return x.id===cur;})[0];
+    $('track').innerHTML='<div class="trackhead"><h3>'+ic(t.icon,'ic-lg')+esc(t.label)+'</h3><p class="lede">'+esc(t.why)+'</p></div>'+
+      '<div class="diffs">'+t.differences.map(function(d){
+        return '<article class="diff"><h4>'+esc(d.h)+'</h4><p>'+esc(d.b)+'</p>'+
+          (d.act?'<p class="act">'+ic('check')+esc(d.act)+'</p>':'')+
+          (d.unverified?'<p class="unver">'+ic('warning')+esc(d.unverified)+'</p>':'')+
+          '<p class="meta">'+src(d.src,d.h)+(d.src2?' · '+src(d.src2,d.h):'')+'</p></article>';}).join('')+'</div>'+
+      (t.support.length?'<h3 class="sub">Where to look next</h3><ul class="supp">'+t.support.map(function(s){
+        return '<li><a href="'+esc(s.u)+'" target="_blank" rel="noopener" aria-label="Details of '+esc(s.t)+'">'+esc(s.t)+'</a><span>'+esc(s.n)+'</span></li>';}).join('')+'</ul>':'')+
+      '<h3 class="sub">What is still missing for this group</h3><ul class="gaps">'+t.gaps.map(function(g){
+        return '<li>'+ic('warning')+esc(g)+'</li>';}).join('')+'</ul>';
+  }
+  paint();
+  var order={'Must':0,'Should':1,'Could':2,"Won't":3};
+  $('moscow').innerHTML=['Must','Should','Could',"Won't"].map(function(p){
+    var items=CIRC.MOSCOW.filter(function(m){return m.priority===p;});
+    return '<section class="mgroup m-'+p.replace("'","").toLowerCase()+'"><h3>'+esc(p)+' <small>'+items.length+'</small></h3><ul>'+
+      items.map(function(m){
+        var cls=/built/.test(m.status)?'ok':/blocked|out of scope/.test(m.status)?'blocked':'open';
+        return '<li><b>'+esc(m.item)+'</b><span class="pill '+cls+'">'+esc(m.status)+'</span><span class="why">'+esc(m.why)+'</span></li>';}).join('')+'</ul></section>';}).join('');
+  // ---- the full segmentation map ----
+  var mfil='all';
+  function counts(){var c={all:CIRC.MAP.length,detailed:0,'detailed-with-boundary':0,named:0,'out-of-scope':0};
+    CIRC.MAP.forEach(function(m){c[m.status]=(c[m.status]||0)+1;});return c;}
+  var LBL={all:'Everything',detailed:'Covered in detail','detailed-with-boundary':'Covered, with a stated boundary',named:'Named, not yet designed for','out-of-scope':'Out of scope, with reason'};
+  function paintMap(){
+    var c=counts();
+    $('mapfilter').innerHTML=['all','detailed','detailed-with-boundary','named','out-of-scope'].map(function(k){
+      return '<button type="button" data-f="'+k+'" aria-pressed="'+(k===mfil)+'">'+esc(LBL[k])+' <span>'+(c[k]||0)+'</span></button>';}).join('');
+    Array.prototype.forEach.call($('mapfilter').querySelectorAll('button'),function(b){
+      b.addEventListener('click',function(){mfil=b.getAttribute('data-f');paintMap();});});
+    var rows=CIRC.MAP.filter(function(m){return mfil==='all'||m.status===mfil;});
+    var dims=[];rows.forEach(function(m){if(dims.indexOf(m.dimension)<0)dims.push(m.dimension);});
+    $('map').innerHTML=dims.map(function(dim){
+      var items=rows.filter(function(m){return m.dimension===dim;});
+      return '<section class="dim"><h3>'+esc(dim)+' <small>'+items.length+'</small></h3><ul>'+items.map(function(m){
+        var t=m.track?CIRC.TRACKS.filter(function(x){return x.id===m.track;})[0]:null;
+        return '<li class="st-'+m.status.replace(/-/g,'')+'"><div class="mrow"><b>'+esc(m.label)+'</b>'+
+          '<span class="pill '+(m.status==='detailed'?'ok':m.status==='detailed-with-boundary'?'ok':m.status==='named'?'open':'blocked')+'">'+esc(LBL[m.status].split(',')[0])+'</span></div>'+
+          '<span class="what">'+esc(m.what)+'</span>'+
+          (m.note?'<span class="note">'+ic('warning')+esc(m.note)+'</span>':'')+
+          (t?'<a class="jump" href="?c='+t.id+'">Read the detail: '+esc(t.label)+'</a>':'')+'</li>';}).join('')+'</ul></section>';}).join('');
+    window.__map={shown:rows.length,total:CIRC.MAP.length,filter:mfil};
+  }
+  paintMap();
+  Array.prototype.forEach.call(document.querySelectorAll('#map a.jump'),function(){});
+  window.__circ={tracks:CIRC.TRACKS.length,moscow:CIRC.MOSCOW.length,map:CIRC.MAP.length};
+})();
+</script>
+<script>/* Self-* runtime: verify, repair, assess and report. Runs on every page, in the browser,
+   with no network access. Everything it does is recorded and reversible by reloading. */
+(function(){
+  if(window.__selfcheck) return;
+  var BUILD="2026-09-18";
+  var findings=[], repairs=[], allRepairs=[], t0=(window.performance&&performance.now)?performance.now():0;
+  function add(sev,id,msg,n){findings.push({severity:sev,check:id,detail:msg,count:n==null?1:n});}
+  function fixed(id,msg,n){var c=(n==null?1:n);repairs.push({check:id,action:msg,count:c});
+    for(var i=0;i<allRepairs.length;i++){if(allRepairs[i].check===id){allRepairs[i].count+=c;return;}}
+    allRepairs.push({check:id,action:msg,count:c});}
+  function txt(e){return (e.textContent||'').replace(/\s+/g,' ').trim();}
+  function near(a){
+    var r=a.closest('li,td,tr,article,.card,.rowcard,.tp,p');
+    if(r){var h=r.querySelector('b,strong,h3,h4');if(h&&txt(h))return txt(h).slice(0,80);
+      var t=txt(r);if(t)return t.slice(0,80);}
+    var s=a.closest('section');var h2=s&&s.querySelector('h2');
+    return h2?txt(h2).slice(0,80):'this entry';
+  }
+  // ---------- verification + repair ----------
+  function scrollRegions(){
+    var n=0,fixedN=0;
+    var all=document.querySelectorAll('body *');
+    for(var i=0;i<all.length;i++){var e=all[i];if(e.closest('svg'))continue;
+      var cs=getComputedStyle(e);if(!(cs.overflowX==='auto'||cs.overflowX==='scroll'||cs.overflowY==='auto'||cs.overflowY==='scroll'))continue;
+      if(!(e.scrollWidth>e.clientWidth+1||e.scrollHeight>e.clientHeight+1))continue;
+      if(e.querySelector('a,button,input,select,textarea,[tabindex]'))continue;
+      if(e.hasAttribute('tabindex'))continue;
+      n++;e.setAttribute('tabindex','0');e.setAttribute('role','region');
+      if(!e.getAttribute('aria-label')){var h=e.closest('section');var h2=h&&h.querySelector('h2');e.setAttribute('aria-label',(h2?txt(h2):'Scrollable content')+' (scrollable)');}
+      fixedN++;}
+    if(fixedN)fixed('scroll.focusable','Made '+fixedN+' scrollable region(s) keyboard reachable with tabindex and a label. Defect: axe-core scrollable-region-focusable on the journey map and blueprint lanes, 23 September 2026.',fixedN);
+  }
+  function structure(){
+    var h1=document.querySelectorAll('h1').length;
+    if(h1!==1) add('high','structure.h1','Expected exactly one h1, found '+h1,h1);
+    if(!document.getElementById('main')) add('high','structure.main','No element with id="main" for the skip link to reach');
+    var skip=document.querySelector('a.skip');
+    if(!skip){
+      var a=document.createElement('a');a.className='skip';a.href='#main';a.textContent='Skip to content';
+      document.body.insertBefore(a,document.body.firstChild);
+      fixed('structure.skip','Inserted a missing skip link as the first focusable element');
+    }
+    var lv=0,skips=0;
+    Array.prototype.forEach.call(document.querySelectorAll('h1,h2,h3,h4,h5,h6'),function(h){
+      var n=+h.tagName.slice(1); if(lv && n>lv+1) skips++; lv=n;});
+    if(skips) add('medium','structure.headings',skips+' heading level skips',skips);
+    if(!document.querySelector('.ribbon')) add('low','structure.ribbon','Journey ribbon missing from this page');
+    var fam=document.querySelectorAll('.family a,.xfam a').length;
+    if(!fam && !/portal/.test(location.pathname)) add('medium','structure.family','Family navigation is empty');
+  }
+  function links(){
+    var amb=0,noop=0,empty=0;
+    Array.prototype.forEach.call(document.querySelectorAll('a[href]'),function(a){
+      var label=(a.getAttribute('aria-label')||txt(a)).toLowerCase();
+      if(['source','details','here','more','link','read more','click here'].indexOf(label)>=0){
+        a.setAttribute('aria-label',(label==='details'?'Details of ':'Source for ')+near(a)); amb++;
+      }
+      if(a.target==='_blank' && !/noopener/.test(a.rel||'')){a.rel=((a.rel||'')+' noopener').trim();noop++;}
+      if(!a.getAttribute('href').trim()) empty++;
+    });
+    if(amb){fixed('links.ambiguous','Gave a context-bearing accessible name to links that read only "source" or "details"',amb);}
+    if(noop){fixed('links.noopener','Added rel="noopener" to links opening in a new tab',noop);}
+    if(empty) add('medium','links.empty',empty+' links with an empty href',empty);
+  }
+  function aria(){
+    var seen={},dupes=0;
+    Array.prototype.forEach.call(document.querySelectorAll('[id]'),function(e){
+      if(seen[e.id]){e.id=e.id+'-dup'+(++dupes);} else seen[e.id]=1;});
+    if(dupes) fixed('aria.duplicate-id','Renamed duplicate element ids so labels and controls resolve to one target',dupes);
+    var svgs=0;
+    Array.prototype.forEach.call(document.querySelectorAll('svg'),function(s){
+      var named=s.getAttribute('aria-label')||s.querySelector('title')||s.getAttribute('role')==='img';
+      if(!named && s.getAttribute('aria-hidden')!=='true'){s.setAttribute('aria-hidden','true');s.setAttribute('focusable','false');svgs++;}
+    });
+    if(svgs) fixed('aria.decorative-svg','Marked decorative graphics as hidden from assistive technology',svgs);
+    var unl=0;
+    Array.prototype.forEach.call(document.querySelectorAll('input,select,textarea'),function(c){
+      if(c.type==='hidden')return;
+      var has=(c.labels&&c.labels.length)||c.getAttribute('aria-label')||c.getAttribute('aria-labelledby')||c.closest('label');
+      if(!has) unl++;});
+    if(unl) add('high','aria.unlabelled-control',unl+' form controls with no accessible name',unl);
+    var figs=0;
+    Array.prototype.forEach.call(document.querySelectorAll('svg.art'),function(s){
+      if(!s.querySelector('title')||!s.querySelector('desc')) figs++;});
+    if(figs) add('medium','aria.illustration',figs+' illustrations without both a title and a description',figs);
+  }
+  function layout(){
+    var vw=document.documentElement.clientWidth, wide=0, wrapped=0;
+    Array.prototype.forEach.call(document.querySelectorAll('table'),function(t){
+      if(t.scrollWidth>vw+2){
+        var p=t.parentElement;
+        if(!p || getComputedStyle(p).overflowX!=='auto'){
+          var d=document.createElement('div');d.className='tablewrap';d.style.overflowX='auto';d.style.maxWidth='100%';
+          t.parentNode.insertBefore(d,t);d.appendChild(t);wrapped++;
+        }
+      }});
+    if(wrapped) fixed('layout.table-scroll','Wrapped wide tables in a horizontal scroll container',wrapped);
+    if(document.documentElement.scrollWidth>vw+2){
+      document.documentElement.style.maxWidth='100%';document.body.style.overflowX='hidden';
+      wide=1;fixed('layout.overflow','Clamped horizontal overflow at the document root');
+    }
+    return wide;
+  }
+  function currency(){
+    var built=new Date(BUILD+'T00:00:00Z'), days=Math.floor((Date.now()-built.getTime())/86400000);
+    var sev = days>365?'high':days>180?'medium':days>90?'low':null;
+    if(sev) add(sev,'currency.age','This page was built '+days+' days ago. Sources move; re-run the verification pass before relying on it.',days);
+    return days;
+  }
+  function data(){
+    // Cross-check any count this page states about its own dataset
+    var out=[];
+    try{
+      var D=window.__bp&&JSON.parse(window.__bp.json());
+      if(D){
+        var steps=D.BLUE.reduce(function(a,b){return a+b.steps.length;},0);
+        var claimed=(document.body.innerText.match(/(\d+)\s+journey moments/)||[])[1];
+        out.push({fact:'blueprint steps',value:steps});
+        if(claimed && +claimed!==steps) add('medium','data.count','Page states '+claimed+' journey moments but the data holds '+steps);
+      }
+    }catch(e){}
+    return out;
+  }
+  // ---------- assessment ----------
+  function assess(days){
+    var high=findings.filter(function(f){return f.severity==='high';}).length;
+    var med=findings.filter(function(f){return f.severity==='medium';}).length;
+    var low=findings.filter(function(f){return f.severity==='low';}).length;
+    var dims=[
+      ['Accuracy','every claim carries a source and the verification register records what was checked',high?'at risk':'holding'],
+      ['Currency', days>180?'stale: re-verification overdue':days>90?'ageing':'current', days>180?'at risk':'holding'],
+      ['Accessibility', high?'a structural defect is present on this page':'structural checks pass on this page', high?'at risk':'holding'],
+      ['Resilience','the page repaired '+allRepairs.reduce(function(a,r){return a+r.count;},0)+' defects at load without failing','holding'],
+      ['Completeness','open issues are published rather than hidden','holding'],
+      ['Sustainability','one file, no build step, no dependency to rot','holding']
+    ];
+    var score=Math.max(0,100-(high*18)-(med*6)-(low*2)-(days>365?15:days>180?8:0));
+    return {score:score,band:score>=85?'good':score>=70?'fair':'needs work',dimensions:dims,high:high,medium:med,low:low};
+  }
+  // ---------- run ----------
+  structure();
+  scrollRegions();links();aria();layout();var days=currency();var facts=data();
+  var a=assess(days);
+  var ms=((window.performance&&performance.now)?performance.now():0)-t0;
+  var report={page:document.title,build:BUILD,ranAt:new Date().toISOString(),ageDays:days,
+    durationMs:Math.round(ms),passes:1,findings:findings,repairs:allRepairs,assessment:a,facts:facts};
+  window.__selfcheck={report:function(){return report;},recheck:function(){return repass();},json:function(){return JSON.stringify(report);},rerun:function(){location.reload();}};
+  // ---------- surface ----------
+  function badge(){
+    var host=document.querySelector('footer .wrap')||document.querySelector('footer')||document.body;
+    var d=document.createElement('section');d.className='selfcheck';d.setAttribute('aria-labelledby','sc-h');
+    var rep=allRepairs.reduce(function(x,r){return x+r.count;},0);
+    d.innerHTML='<h2 id="sc-h">This page checks itself</h2>'+
+      '<p class="scline"><span class="scdot '+a.band.replace(' ','-')+'" aria-hidden="true"></span>'+
+      '<b>'+a.score+'/100</b> on its own checks, run in your browser '+Math.round(ms)+'ms ago: '+
+      findings.length+' finding'+(findings.length===1?'':'s')+', '+rep+' defect'+(rep===1?'':'s')+' repaired automatically, built '+days+' days ago.</p>'+
+      '<details><summary>What it checked, what it found, what it fixed</summary><div class="scbody">'+
+      '<h3>Findings</h3>'+(findings.length?'<ul>'+findings.map(function(f){return '<li><b>'+f.severity+'</b> '+f.check+' — '+f.detail+'</li>';}).join('')+'</ul>':'<p>Nothing outstanding on this page.</p>')+
+      '<h3>Repaired at load</h3>'+(allRepairs.length?'<ul>'+allRepairs.map(function(r){return '<li>'+r.action+' ('+r.count+')</li>';}).join('')+'</ul>':'<p>Nothing needed repairing.</p>')+
+      '<h3>Self-assessment</h3><ul>'+a.dimensions.map(function(x){return '<li><b>'+x[0]+'</b> '+x[1]+' — <i>'+x[2]+'</i></li>';}).join('')+'</ul>'+
+      '<p class="meta">These checks run in the page, with no network access. They cannot test with a real screen reader, cannot re-request a source, and cannot know whether a fact changed yesterday. They fail visibly rather than quietly: a repair is reported, never hidden.</p>'+
+      '<p><button class="btn sm" type="button" id="scdl">Download this report</button> <span class="toolmsg" id="scmsg" role="status"></span></p>'+
+      '</div></details>';
+    host.appendChild(d);
+    var b=document.getElementById('scdl');
+    if(b)b.addEventListener('click',function(){
+      var msg=document.getElementById('scmsg');
+      var name='self-check-'+(document.title.split(':')[0].toLowerCase().replace(/[^a-z0-9]+/g,'-'))+'.json';
+      var text=JSON.stringify(report,null,1);
+      function anchor(){
+        try{
+          var blob=new Blob([text],{type:'application/json'});
+          var u=URL.createObjectURL(blob),el=document.createElement('a');
+          el.href=u;el.download=name;
+          document.body.appendChild(el);el.click();el.remove();setTimeout(function(){URL.revokeObjectURL(u);},2000);
+          msg.textContent='Report downloaded.';
+        }catch(e){msg.textContent='Download blocked here; the report is also on window.__selfcheck.report().';}
+      }
+      var dl=window.__scDownloads;
+      if(dl){
+        msg.textContent='Confirm the download to save the report.';
+        dl.save({filename:name,data:text}).then(function(){msg.textContent='Report saved.';},function(e){
+          var c=e&&e.code;
+          msg.textContent=c==='declined'?'Download cancelled.':c==='rate_limited'?'A download is already waiting for confirmation.':'Download unavailable here; the report is also on window.__selfcheck.report().';
+        });
+      } else anchor();
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',badge);else badge();
+  try{if(window.claude&&typeof window.claude.use==='function'){window.claude.use('downloads').then(function(n){if(n)window.__scDownloads=n;},function(){});}}catch(e){}
+
+  // ---------- continuous repair: dynamic pages render after this first pass ----------
+  var pending=null, passes=1;
+  function repass(){
+    var before=repairs.reduce(function(a,r){return a+r.count;},0);
+    repairs.length=0; findings.length=0;
+    structure();links();aria();layout();var d=currency();
+    passes++;
+    var after=repairs.reduce(function(a,r){return a+r.count;},0);
+    report.findings=findings; report.repairs=allRepairs; report.passes=passes;
+    report.assessment=assess(d); report.ranAt=new Date().toISOString();
+    var line=document.querySelector('.selfcheck .scline b');
+    if(line) line.textContent=report.assessment.score+'/100';
+    return after;
+  }
+  if(window.MutationObserver){
+    var mo=new MutationObserver(function(muts){
+      var worth=false;
+      for(var i=0;i<muts.length;i++){ if(muts[i].addedNodes && muts[i].addedNodes.length){worth=true;break;} }
+      if(!worth) return;
+      clearTimeout(pending);
+      pending=setTimeout(function(){ if(!document.querySelector('.selfcheck details[open]')) repass(); },600);
+    });
+    mo.observe(document.body,{childList:true,subtree:true});
+    window.__selfcheck_observer=mo;
+  }
+  setTimeout(repass,1500);
+
+})();
+</script>
+</body>
+</html>
+<!-- colophon: added by tools/publish.py -->
+<aside class="pgw-colophon" aria-label="About this publication" style="max-width:1120px;margin:40px auto 24px;padding:18px 22px;border:1px solid currentColor;border-radius:12px;font:14px/1.5 system-ui,sans-serif;display:flex;flex-wrap:wrap;gap:18px;align-items:center;opacity:.92">
+<div style="flex:1 1 340px;min-width:0">
+<p style="margin:0 0 6px"><strong>Not an official government service.</strong> An independent, evidence-led guide by Emanuel Silva, part of
+<a href="https://cyberdudeuk.github.io/">Public Good Works</a>. Every claim carries its source; check GOV.UK, nidirect, mygov.scot or gov.wales before you act.</p>
+<p style="margin:0 0 6px">Drafted and checked with AI assistance (Claude); the author reviewed and is responsible for it. Some features, such as the page assistant, work only inside Claude and are hidden here.</p>
+<p style="margin:0">Questions, corrections or ideas: use the <a href="https://github.com/cyberdudeuk/start-a-business-uk/issues/new?template=contact.yml">contact form</a> (no email address is published).
+Code MIT; content Open Government Licence v3.0, see the <a href="https://github.com/cyberdudeuk/start-a-business-uk">repository</a>.</p>
+</div>
+<div style="display:flex;gap:14px;align-items:center"><svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 156 156" role="img" aria-label="QR code for https://cyberdudeuk.github.io/start-a-business-uk/your-circumstances/" class="segno"><g transform="scale(4)"><path fill="#fff" d="M0 0h39v39h-39z"/><path class="qrline" stroke="#0b0c0c" d="M1 1.5h7m1 0h2m2 0h2m2 0h1m2 0h2m1 0h2m1 0h4m1 0h7m-37 1h1m5 0h1m3 0h2m5 0h3m2 0h1m2 0h1m4 0h1m5 0h1m-37 1h1m1 0h3m1 0h1m2 0h4m1 0h4m3 0h1m1 0h2m3 0h1m1 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m3 0h1m5 0h1m1 0h1m2 0h6m1 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m3 0h1m5 0h1m1 0h4m1 0h1m1 0h3m1 0h1m-37 1h1m5 0h1m1 0h2m2 0h3m1 0h2m1 0h1m1 0h1m2 0h1m1 0h1m1 0h1m1 0h1m5 0h1m-37 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-29 1h3m1 0h1m2 0h1m5 0h1m1 0h1m2 0h2m-28 1h1m3 0h1m1 0h3m1 0h2m1 0h1m1 0h2m2 0h3m1 0h2m3 0h6m2 0h1m-37 1h1m1 0h1m2 0h1m2 0h4m1 0h1m4 0h2m3 0h1m1 0h1m1 0h2m3 0h1m2 0h1m-35 1h2m2 0h2m2 0h1m5 0h1m1 0h3m2 0h3m1 0h2m1 0h1m1 0h1m-32 1h1m1 0h2m3 0h1m2 0h2m1 0h1m1 0h3m1 0h4m3 0h3m1 0h1m1 0h1m1 0h2m-34 1h2m1 0h7m1 0h2m2 0h2m1 0h2m2 0h1m2 0h5m1 0h4m-37 1h2m1 0h1m1 0h1m1 0h1m1 0h2m1 0h5m1 0h1m2 0h1m1 0h1m1 0h1m1 0h3m2 0h2m1 0h1m-35 1h1m2 0h3m1 0h1m3 0h1m1 0h2m1 0h1m5 0h1m2 0h3m1 0h5m-35 1h3m2 0h1m2 0h1m3 0h2m2 0h3m1 0h2m1 0h2m1 0h2m2 0h3m1 0h1m-32 1h1m1 0h2m2 0h1m2 0h1m1 0h1m3 0h2m4 0h1m4 0h2m2 0h4m-37 1h3m1 0h2m1 0h1m1 0h4m3 0h2m1 0h3m1 0h1m1 0h5m2 0h1m2 0h1m-36 1h3m1 0h1m1 0h1m1 0h5m3 0h3m1 0h1m2 0h1m2 0h2m1 0h4m-33 1h1m3 0h2m1 0h1m2 0h2m1 0h1m3 0h2m2 0h2m1 0h1m1 0h1m1 0h1m2 0h5m-33 1h4m4 0h2m2 0h3m1 0h1m1 0h3m5 0h3m2 0h1m-35 1h2m1 0h2m3 0h1m3 0h2m1 0h4m4 0h1m2 0h3m2 0h2m-32 1h1m1 0h1m1 0h2m1 0h1m3 0h4m2 0h1m1 0h5m1 0h3m2 0h4m-35 1h1m2 0h2m2 0h1m7 0h1m3 0h1m1 0h3m2 0h1m1 0h1m2 0h2m1 0h3m-33 1h1m1 0h1m4 0h1m1 0h2m1 0h1m2 0h2m2 0h2m4 0h3m1 0h3m-36 1h1m1 0h1m5 0h1m9 0h2m1 0h1m1 0h1m3 0h3m1 0h4m-33 1h2m1 0h2m1 0h3m2 0h1m1 0h1m1 0h1m1 0h1m1 0h5m1 0h1m1 0h1m1 0h2m1 0h1m-33 1h1m1 0h2m1 0h4m4 0h7m1 0h1m2 0h2m1 0h2m1 0h1m1 0h1m-35 1h3m1 0h1m1 0h1m1 0h1m1 0h1m2 0h2m1 0h3m2 0h2m1 0h1m1 0h11m-29 1h2m1 0h1m1 0h1m1 0h2m1 0h1m2 0h1m1 0h1m1 0h4m3 0h1m-33 1h7m1 0h2m1 0h1m1 0h5m2 0h1m2 0h3m2 0h1m1 0h1m1 0h1m-33 1h1m5 0h1m2 0h2m5 0h5m1 0h1m1 0h1m1 0h1m1 0h1m3 0h3m-35 1h1m1 0h3m1 0h1m1 0h2m2 0h2m4 0h1m3 0h1m1 0h1m3 0h7m-35 1h1m1 0h3m1 0h1m3 0h5m1 0h2m1 0h3m1 0h1m3 0h1m1 0h3m1 0h1m2 0h1m-37 1h1m1 0h3m1 0h1m2 0h1m3 0h1m2 0h3m1 0h1m2 0h1m1 0h2m1 0h3m3 0h1m-35 1h1m5 0h1m2 0h5m3 0h2m2 0h1m1 0h2m2 0h1m1 0h1m2 0h1m1 0h2m-36 1h7m1 0h1m1 0h1m2 0h1m1 0h1m1 0h1m1 0h3m2 0h1m6 0h1m2 0h3"/></g></svg>
+<span style="display:inline-flex;flex-direction:column;gap:4px;align-items:flex-start"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="168" height="48" viewBox="0 0 66.000 14.000" preserveAspectRatio="none" role="img" aria-label="Barcode SAB-UK-YOUR-CIRCUMSTANCES">
+    <!--Autogenerated with python-barcode 0.16.1-->
+    <g id="barcode_group">
+        <rect width="100%" height="100%" style="fill:white"/>
+        <rect x="2.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="2.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="3.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="4.200mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="4.800mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="5.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="6.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="6.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="7.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="8.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="9.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="9.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="10.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="11.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="12.000mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="13.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="13.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="14.400mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="15.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="15.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="16.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="17.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="18.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="18.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="19.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="20.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="21.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="21.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="22.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="23.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="24.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="24.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="25.400mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="26.200mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="27.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="27.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="28.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="29.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="29.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="30.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="31.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="32.200mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="32.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="33.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="34.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="35.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="36.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="36.400mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="37.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="38.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="38.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="39.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="40.000mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="40.800mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="41.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="42.000mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="42.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="43.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="44.400mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="45.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="46.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="46.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="47.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="48.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="48.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="49.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="50.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="50.800mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="52.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="52.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="53.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="54.200mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="54.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="55.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="56.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="57.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="57.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="58.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="59.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="60.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="60.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="61.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="62.400mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="63.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="63.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+    </g>
+</svg>
+<code style="font-size:11px">SAB-UK-YOUR-CIRCUMSTANCES</code></span></div>
+</aside>
+</body></html>

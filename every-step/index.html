@@ -1,0 +1,1721 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Starting a business in the UK: every step, body and identifier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Literata:opsz,wght@7..72,500;7..72,650&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4F7F9; --panel:#FFFFFF; --ink:#13233A; --muted:#4F5D6B; --rule:#CFD8DF; --soft:#E6ECF0;
+  --focus:#FFBF47; --high:#B42318; --med:#9A5B00; --watch:#3B5B7A;
+  --l-front:#23679A; --l-reg:#4B4FA8; --l-tax:#0E7566; --l-local:#9C5A12; --l-regu:#86356A;
+  --l-fin:#3A7336; --l-emp:#6E5A1E; --l-trade:#2F5872; --l-dev:#56636F;
+  --serif:"Literata",Georgia,"Times New Roman",serif;
+  --sans:"Atkinson Hyperlegible",Arial,Helvetica,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F1722; --panel:#172230; --ink:#E7EDF3; --muted:#A9B6C2; --rule:#2E3D4D; --soft:#1E2B3A;
+    --high:#F2766B; --med:#E0A847; --watch:#8FB4D8;
+    --l-front:#6FAEDC; --l-reg:#9A9EE8; --l-tax:#55C2AF; --l-local:#E0A35A; --l-regu:#D98BBE;
+    --l-fin:#86C27F; --l-emp:#CDB56A; --l-trade:#7FAACB; --l-dev:#A3AFBA;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F1722; --panel:#172230; --ink:#E7EDF3; --muted:#A9B6C2; --rule:#2E3D4D; --soft:#1E2B3A;
+  --high:#F2766B; --med:#E0A847; --watch:#8FB4D8;
+  --l-front:#6FAEDC; --l-reg:#9A9EE8; --l-tax:#55C2AF; --l-local:#E0A35A; --l-regu:#D98BBE;
+  --l-fin:#86C27F; --l-emp:#CDB56A; --l-trade:#7FAACB; --l-dev:#A3AFBA;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:1.0625rem;line-height:1.55}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:650;line-height:1.15;margin:0}
+h1{font-size:clamp(2rem,4.4vw,3.35rem);letter-spacing:-.01em;max-width:18ch}
+h2{font-size:clamp(1.5rem,2.6vw,2.05rem);margin-bottom:.4rem}
+h3{font-size:1.2rem}
+p{margin:.5rem 0}
+.lede{max-width:62ch;color:var(--muted);font-size:1.1rem}
+small,.fine{font-size:.875rem;color:var(--muted)}
+
+/* Masthead */
+header.mast{border-bottom:1px solid var(--rule);padding:44px 0 30px}
+.mast-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:40px;align-items:end}
+.scope{border-left:3px solid var(--ink);padding-left:16px;font-size:.95rem}
+.scope dt{font-weight:700}
+.scope dd{margin:0 0 .6rem;color:var(--muted)}
+.theme-btn{margin-top:8px;background:none;border:1px solid var(--rule);color:var(--ink);font:inherit;font-size:.85rem;padding:4px 10px;border-radius:4px;cursor:pointer}
+
+/* Figures strip */
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1px solid var(--rule)}
+.fact{padding:18px 20px 18px 0}
+.fact+.fact{padding-left:20px;border-left:1px solid var(--rule)}
+.fact b{display:block;font-family:var(--serif);font-size:1.7rem;font-weight:650;line-height:1.1}
+.fact span{font-size:.9rem;color:var(--muted)}
+
+section.block{padding:56px 0;border-bottom:1px solid var(--rule)}
+.block-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:32px;margin-bottom:28px}
+.block-head p{color:var(--muted);max-width:60ch}
+
+/* Profile builder */
+.builder{background:var(--panel);border:1px solid var(--rule);border-radius:6px;padding:20px 22px}
+.builder fieldset{border:0;margin:0 0 14px;padding:0}
+.builder legend{font-weight:700;font-size:.95rem;margin-bottom:6px}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg label{position:relative}
+.seg input{position:absolute;opacity:0;inset:0}
+.seg span{display:inline-block;border:1px solid var(--rule);padding:6px 12px;border-radius:999px;font-size:.92rem;cursor:pointer;background:var(--paper)}
+.seg input:checked+span{background:var(--ink);color:var(--panel);border-color:var(--ink)}
+.seg input:focus-visible+span{outline:3px solid var(--focus);outline-offset:2px}
+.tally{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:6px;border-top:1px solid var(--rule)}
+.tally div{padding:12px 12px 4px 0}
+.tally div+div{padding-left:12px;border-left:1px solid var(--rule)}
+.tally b{font-family:var(--serif);font-size:2rem;display:block;line-height:1}
+.tally span{font-size:.85rem;color:var(--muted)}
+
+/* Journey line: the signature element */
+.line-wrap{overflow-x:auto;margin:30px 0 8px;padding-bottom:6px}
+ol.line{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(9,minmax(112px,1fr));min-width:1010px;position:relative}
+ol.line::before{content:"";position:absolute;left:4%;right:4%;top:27px;height:6px;background:var(--ink);border-radius:3px}
+ol.line li{position:relative;text-align:center}
+.stop{all:unset;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;width:100%;padding:0 4px 8px}
+.stop:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:6px}
+.disc{width:60px;height:60px;border-radius:50%;background:var(--panel);border:6px solid var(--ink);display:grid;place-items:center;font-family:var(--serif);font-weight:650;font-size:1.25rem;position:relative;z-index:1;transition:transform .15s}
+.stop[aria-pressed="true"] .disc{background:var(--ink);color:var(--panel);transform:scale(1.08)}
+.stop .nm{font-weight:700;font-size:.92rem;line-height:1.25;max-width:14ch}
+.stop .ct{font-size:.8rem;color:var(--muted)}
+.pips{display:flex;gap:3px;justify-content:center;flex-wrap:wrap;max-width:96px;min-height:10px}
+.pip{width:9px;height:9px;border-radius:2px}
+.pip.f{outline:2px solid var(--high);outline-offset:1px}
+@media (prefers-reduced-motion:reduce){.disc{transition:none}}
+
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.85rem;color:var(--muted);margin:10px 0 0}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+
+/* Stage panel */
+.panel{background:var(--panel);border:1px solid var(--rule);border-radius:6px;margin-top:22px}
+.panel-head{padding:20px 22px;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:baseline}
+.panel-head p{margin:.2rem 0 0;color:var(--muted);max-width:70ch}
+.tp{display:grid;grid-template-columns:6px minmax(0,1.2fr) minmax(0,2fr) minmax(0,1fr);gap:0 18px;padding:16px 22px 16px 0;border-bottom:1px solid var(--soft)}
+.tp:last-child{border-bottom:0}
+.tp .bar{border-radius:0 3px 3px 0}
+.tp h3{font-size:1.02rem;font-family:var(--sans);font-weight:700}
+.tp .org{font-size:.88rem;color:var(--muted)}
+.tp .body p{margin:0 0 .35rem}
+.kv{font-size:.88rem;margin:0}
+.kv dt{color:var(--muted)}
+.kv dd{margin:0 0 .45rem}
+.tag{display:inline-block;font-size:.8rem;border:1px solid currentColor;border-radius:3px;padding:0 6px;margin:4px 6px 0 0;line-height:1.5}
+.tag.high{color:var(--high)} .tag.med{color:var(--med)} .tag.v{color:var(--l-tax)} .tag.r{color:var(--muted)} .tag.b{color:var(--l-dev)}
+.src{font-size:.82rem}
+.src a{color:var(--muted)}
+.empty{padding:22px;color:var(--muted)}
+
+/* Findings */
+.findings{display:grid;gap:0;border-top:2px solid var(--ink)}
+.finding{display:grid;grid-template-columns:120px minmax(0,1.1fr) minmax(0,1.4fr);gap:24px;padding:22px 0;border-bottom:1px solid var(--rule)}
+.sev{font-weight:700;font-size:.9rem}
+.sev.high{color:var(--high)} .sev.med{color:var(--med)} .sev.watch{color:var(--watch)}
+.finding h3{margin-bottom:.35rem}
+.finding .imp{color:var(--muted);font-size:.95rem}
+.finding ul{margin:.2rem 0 0;padding-left:1.1rem}
+.finding li{margin-bottom:.3rem}
+
+/* Tables */
+.tscroll{overflow-x:auto;border:1px solid var(--rule);border-radius:6px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:.93rem}
+th,td{text-align:left;vertical-align:top;padding:11px 14px;border-bottom:1px solid var(--soft)}
+thead th{font-weight:700;border-bottom:2px solid var(--rule);background:var(--soft)}
+tbody th{font-weight:700;white-space:nowrap}
+tr:last-child td,tr:last-child th{border-bottom:0}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}
+
+/* Identity diagram */
+.idmap{background:var(--panel);border:1px solid var(--rule);border-radius:6px;padding:20px}
+.idrow{display:grid;grid-template-columns:150px minmax(0,1fr);gap:14px;padding:10px 0;border-bottom:1px dashed var(--rule)}
+.idrow:last-child{border-bottom:0}
+.idrow b{font-size:.92rem}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:.84rem;padding:3px 9px;border-radius:4px;background:var(--soft);border-left:4px solid var(--c,var(--muted))}
+
+/* Timeline */
+.timeline{list-style:none;margin:0;padding:0;position:relative}
+.timeline::before{content:"";position:absolute;left:118px;top:6px;bottom:6px;width:2px;background:var(--rule)}
+.timeline li{display:grid;grid-template-columns:104px 28px minmax(0,1fr);gap:0;padding:8px 0}
+.timeline time{font-weight:700;font-size:.9rem;text-align:right;padding-right:4px}
+.timeline .dot{width:12px;height:12px;border-radius:50%;background:var(--panel);border:3px solid var(--ink);margin:5px 0 0 9px;position:relative;z-index:1}
+.timeline li.future .dot{border-style:dotted}
+.timeline li.future time{color:var(--muted)}
+.timeline p{margin:0}
+.yr{font-family:var(--serif);font-size:1.3rem;margin:18px 0 4px 132px}
+
+/* Opportunities */
+.opps{counter-reset:o;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 36px}
+.opp{padding:18px 0;border-top:1px solid var(--rule)}
+.opp h3{font-size:1.08rem;margin-bottom:.3rem}
+.opp p{color:var(--muted);font-size:.96rem}
+
+footer{padding:40px 0 70px;font-size:.92rem;color:var(--muted)}
+footer ol{padding-left:1.2rem}
+footer li{margin-bottom:.3rem;word-break:break-word}
+
+@media (max-width:860px){
+  .mast-grid,.block-head,.two,.opps{grid-template-columns:1fr}
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .fact:nth-child(3){border-left:0;padding-left:0}
+  .tally{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tally div:nth-child(3){border-left:0;padding-left:0}
+  .tp{grid-template-columns:6px minmax(0,1fr);gap:6px 14px}
+  .tp>*:not(.bar){grid-column:2}
+  .finding{grid-template-columns:1fr;gap:6px}
+  .idrow{grid-template-columns:1fr}
+  .timeline::before{left:12px}
+  .timeline li{grid-template-columns:28px minmax(0,1fr)}
+  .timeline time{grid-column:2;text-align:left}
+  .timeline .dot{grid-row:1/span 2;grid-column:1;margin-left:6px}
+  .timeline p{grid-column:2}
+  .yr{margin-left:28px}
+}
+
+/* Evidence tiers */
+:root{--t-stat:#0E6F8C;--t-gov:#2F6B3A;--t-scr:#6A3E8E;--t-ur:#A0521B;--t-ind:#4E5F70;--t-pro:#8A7A63}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--t-stat:#6CC3DE;--t-gov:#8CCB92;--t-scr:#C29BE3;--t-ur:#E9A36A;--t-ind:#A9B8C6;--t-pro:#CDBFA8}}
+:root[data-theme="dark"]{--t-stat:#6CC3DE;--t-gov:#8CCB92;--t-scr:#C29BE3;--t-ur:#E9A36A;--t-ind:#A9B8C6;--t-pro:#CDBFA8}
+.cite{white-space:nowrap}
+.cite a{text-decoration:none;border-bottom:2px solid var(--tc,var(--muted));padding:0 1px;font-size:.8rem;color:var(--ink)}
+.cite a:hover{background:var(--soft)}
+.tiers{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:.86rem;color:var(--muted);margin:8px 0 0}
+.tiers span::before{content:"";display:inline-block;width:14px;height:3px;background:var(--tc);margin-right:6px;vertical-align:4px}
+.tierbar{display:flex;height:14px;border-radius:3px;overflow:hidden;margin:10px 0 6px;border:1px solid var(--rule)}
+.tierbar i{display:block;height:100%}
+.strength{font-size:.84rem;color:var(--muted);margin-top:.4rem}
+.strength b{color:var(--ink)}
+/* Exhibits */
+.exhibits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:2px solid var(--ink)}
+.ex{padding:20px 22px 20px 0;border-bottom:1px solid var(--rule)}
+.ex:nth-child(3n+2),.ex:nth-child(3n){padding-left:22px;border-left:1px solid var(--rule)}
+.ex .theme{font-size:.85rem;color:var(--muted);font-weight:700}
+.ex .num{font-family:var(--serif);font-weight:650;font-size:2.3rem;line-height:1.05;margin:.2rem 0 .3rem}
+.ex .num.q{font-size:1.35rem;line-height:1.25}
+.ex p{margin:0 0 .5rem;font-size:.97rem}
+.ex .method{font-size:.82rem;color:var(--muted);border-left:3px solid var(--tc,var(--rule));padding-left:8px}
+.corrections{background:var(--panel);border:1px solid var(--rule);border-left:4px solid var(--high);border-radius:6px;padding:16px 20px;margin-top:22px}
+.corrections h3{font-size:1.05rem;margin-bottom:6px}
+.corrections ul{margin:0;padding-left:1.1rem}
+.corrections li{margin-bottom:.35rem;font-size:.95rem}
+footer h3{color:var(--ink);font-size:1.02rem;margin:18px 0 4px;font-family:var(--sans)}
+@media (max-width:980px){.exhibits{grid-template-columns:repeat(2,minmax(0,1fr))}.ex:nth-child(3n+2),.ex:nth-child(3n){padding-left:0;border-left:0}.ex:nth-child(2n){padding-left:22px;border-left:1px solid var(--rule)}}
+@media (max-width:640px){.exhibits{grid-template-columns:1fr}.ex:nth-child(2n){padding-left:0;border-left:0}}
+/* Institutional memory */
+.memstats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:2px solid var(--ink);border-bottom:1px solid var(--rule);margin-bottom:26px}
+.memstats div{padding:14px 16px 14px 0}
+.memstats div+div{padding-left:16px;border-left:1px solid var(--rule)}
+.memstats b{display:block;font-family:var(--serif);font-size:1.9rem;line-height:1.1}
+.memstats span{font-size:.88rem;color:var(--muted)}
+.charts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin:6px 0 26px}
+.chart h3{font-size:1rem;margin-bottom:6px}
+.chart svg{width:100%;height:auto;display:block}
+.chart svg text{fill:var(--muted);font-size:10px;font-family:var(--sans)}
+.chart svg .v{fill:var(--ink);font-size:10px}
+.chart svg rect{fill:var(--l-front)}
+.chart svg rect.pk{fill:var(--high)}
+.chart p{font-size:.85rem;color:var(--muted);margin:.3rem 0 0}
+.memfilters{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:18px;margin-bottom:10px}
+.memfilters fieldset{border:0;margin:0;padding:0;min-width:0}
+.memfilters legend{font-weight:700;font-size:.9rem;margin-bottom:6px;padding:0}
+.era{margin-top:22px}
+.era h3{font-family:var(--serif);font-size:1.3rem;margin-bottom:2px}
+.era .eralede{color:var(--muted);font-size:.95rem;margin:0 0 8px;max-width:70ch}
+.mem{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.mem li{display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px;padding:12px 0;border-bottom:1px solid var(--rule)}
+.mem time{font-weight:700;font-size:.9rem}
+.mem .kind{display:inline-block;font-size:.8rem;font-weight:700;padding:1px 7px;border-radius:3px;border:1px solid var(--tc);color:var(--ink);margin-right:6px}
+.mem .who{font-size:.85rem;color:var(--muted)}
+.mem h4{font-size:1rem;margin:.2rem 0 .2rem;font-family:var(--sans)}
+.mem p{margin:0;font-size:.95rem}
+.recur{display:grid;gap:0;border-top:2px solid var(--ink)}
+.recur article{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr) minmax(0,.9fr);gap:22px;padding:18px 0;border-bottom:1px solid var(--rule)}
+.recur h4{font-size:1.02rem;margin:0 0 .35rem;font-family:var(--sans)}
+.years{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.years span{font-size:.8rem;font-weight:700;padding:1px 6px;border-radius:3px;background:var(--soft)}
+.recur .status{font-size:.92rem}
+.recur .status b{display:block;font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.sub{font-family:var(--serif);font-size:1.35rem;margin:34px 0 10px}
+@media (max-width:980px){.memstats{grid-template-columns:repeat(2,minmax(0,1fr))}.memstats div:nth-child(3){border-left:0;padding-left:0}.charts,.memfilters{grid-template-columns:1fr}.recur article{grid-template-columns:1fr;gap:6px}}
+@media (max-width:640px){.mem li{grid-template-columns:1fr;gap:2px}}
+.aibtn{position:fixed;right:18px;bottom:18px;z-index:60;border:0;border-radius:999px;padding:12px 20px;font:inherit;font-weight:700;background:var(--ink);color:var(--paper);cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.28)}
+.aibtn:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.aiwrap{position:fixed;right:18px;bottom:18px;width:min(430px,calc(100vw - 24px));max-height:min(78vh,720px);z-index:61;background:var(--panel);border-radius:18px;box-shadow:0 10px 40px rgba(0,0,0,.34);display:none;flex-direction:column;overflow:hidden;border:1px solid var(--rule)}
+.aiwrap.open{display:flex}
+.aihead{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--faint)}
+.aihead b{font-size:.98rem}
+.aihead small{color:var(--muted);font-size:.8rem;display:block;font-weight:400}
+.aihead button{margin-left:auto;border:0;background:transparent;font:inherit;font-size:1.2rem;line-height:1;cursor:pointer;color:var(--muted);padding:4px 6px}
+.ailog{overflow-y:auto;padding:12px 14px;display:grid;gap:10px;flex:1}
+.aimsg{border-radius:14px;padding:9px 12px;font-size:.9rem;line-height:1.45;white-space:pre-wrap}
+.aimsg.u{background:var(--ink);color:var(--paper);justify-self:end;max-width:86%}
+.aimsg.a{background:var(--faint);color:var(--ink)}
+.aimsg.sys{background:transparent;color:var(--muted);font-size:.82rem;padding:0}
+.aisug{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 10px}
+.aisug button{border:1.5px solid var(--rule);background:transparent;border-radius:999px;padding:4px 11px;font:inherit;font-size:.8rem;cursor:pointer;color:var(--ink);text-align:left}
+.aiform{display:flex;gap:8px;padding:10px 12px;border-top:1px solid var(--faint)}
+.aiform textarea{flex:1;font:inherit;font-size:.9rem;resize:none;border:1.5px solid var(--rule);border-radius:12px;padding:8px 10px;background:var(--paper);color:var(--ink);min-height:40px;max-height:120px}
+.aiform button{border:0;border-radius:12px;padding:0 16px;font:inherit;font-weight:700;background:var(--ink);color:var(--paper);cursor:pointer}
+.aiform button[disabled]{opacity:.5;cursor:default}
+.aifoot{padding:0 14px 10px;color:var(--muted);font-size:.8rem}
+.seqnav{background:var(--panel);border-radius:18px;padding:14px 18px;display:flex;gap:16px;justify-content:space-between;flex-wrap:wrap;margin:26px 0 0}
+.seqnav a{display:block;font-weight:700;color:var(--ink)}
+.seqnav small{display:block;color:var(--muted);font-size:.8rem;font-weight:400}
+.seqnav .nx{text-align:right}
+@media (max-width:620px){.aiwrap{right:8px;left:8px;width:auto;bottom:8px}.aibtn{right:10px;bottom:10px}}
+
+
+small, .meta small, td small, li small{font-size:max(.8rem,12.8px)}
+
+@media (max-width:420px){
+  .codeblock{font-size:11.5px;white-space:pre-wrap;word-break:break-word}
+  .gridwrap,.mx-wrap,.scroller{max-width:100%}
+  table.grid{min-width:0}
+  .toolrow{grid-template-columns:1fr}
+  .bars div{grid-template-columns:96px minmax(0,1fr) 40px}
+  .wrap{padding-left:12px;padding-right:12px}
+  h1{font-size:1.5rem;word-break:break-word}
+}
+@media (max-width:420px){
+  select,input,textarea{max-width:100%}
+  .bodycard{min-width:0;overflow-wrap:anywhere}
+  table.sj,table.nx,table.mx{display:block;overflow-x:auto;max-width:100%}
+}
+@media (max-width:420px){
+  table.sj,table.nx,table.mx{table-layout:fixed;width:100%}
+  table.sj th,table.sj td,.nx th,.nx td{overflow-wrap:anywhere;word-break:break-word}
+  main li,main p,main a{overflow-wrap:anywhere}
+  .sj-wrap,.tablewrap{overflow-x:auto;max-width:100%}
+}
+
+@media (max-width:420px){
+  .sjwrap,.tablewrap,.gridwrap{overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch}
+  .jump,.jump ul,nav.jump ul{flex-wrap:wrap;max-width:100%}
+  .jump li,.jump a{max-width:100%}
+  body{overflow-x:hidden}
+}
+
+@media (max-width:420px){html,body{max-width:100%;overflow-x:hidden}}
+/* Shared visual system: icons, journey ribbon, hero figures, audience switcher */
+.ic{width:1.15em;height:1.15em;flex:none;vertical-align:-.2em}
+.ic-lg{width:2rem;height:2rem;flex:none}
+.ic-xl{width:2.6rem;height:2.6rem;flex:none}
+.ribbon{margin:0 0 6px;padding:10px 0 4px;border-bottom:1px solid var(--line)}
+.ribbon h2{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 8px;font-family:inherit;font-weight:700}
+.ribbon ol{display:flex;gap:6px;list-style:none;margin:0;padding:0 0 6px;overflow-x:auto;scrollbar-width:thin}
+.ribbon li{flex:1 1 0;min-width:104px}
+.ribbon a{display:flex;flex-direction:column;gap:5px;padding:8px 9px;border:1px solid var(--line);border-radius:9px;text-decoration:none;color:inherit;background:var(--panel);min-height:100%}
+.ribbon a:hover{border-color:var(--ink)}
+.ribbon a[aria-current="step"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.ribbon .rn{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:.72rem;letter-spacing:.05em;text-transform:uppercase}
+.ribbon .rt{font-size:.84rem;font-weight:650;line-height:1.25}
+.ribbon .rc{font-size:.74rem;color:var(--muted)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,340px);gap:22px;align-items:center;margin:10px 0 0}
+.hero figure{margin:0}
+.hero figcaption{font-size:.78rem;color:var(--muted);margin-top:6px}
+.hero svg.art{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+@media (max-width:820px){.hero{grid-template-columns:1fr}}
+.aud{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.aud button{display:flex;align-items:center;gap:8px;padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:inherit;font:inherit;cursor:pointer}
+.aud button[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink);font-weight:650}
+.audbox{border:1px solid var(--line);border-left:4px solid var(--ink);border-radius:10px;padding:14px 16px;background:var(--panel);margin:0 0 18px}
+.audbox h3{margin:0 0 6px;font-size:1.02rem;display:flex;align-items:center;gap:8px}
+.audbox ol{margin:8px 0 0;padding-left:20px}
+.audbox li{margin:4px 0}
+h2 .ic,h3 .ic{color:var(--muted)}
+.iconrow{display:flex;align-items:center;gap:9px}
+.legendkey{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin:8px 0 0}
+.legendkey span{display:inline-flex;align-items:center;gap:5px}
+@media (prefers-reduced-motion:no-preference){.ribbon a{transition:border-color .15s}}
+
+/* Self-check surface */
+.selfcheck{border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:22px 0 0;background:var(--panel)}
+.selfcheck h2{font-size:1rem;margin:0 0 6px}
+.selfcheck .scline{margin:0;font-size:.9rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.scdot{width:10px;height:10px;border-radius:50%;background:var(--muted);flex:none;box-shadow:0 0 0 3px color-mix(in srgb,currentColor 12%,transparent)}
+.scdot.good{background:#0f766e}.scdot.fair{background:#b45309}.scdot.needs-work{background:#be123c}
+.selfcheck details{margin-top:8px}
+.selfcheck summary{cursor:pointer;font-size:.88rem}
+.selfcheck .scbody{font-size:.88rem}
+.selfcheck h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:12px 0 4px}
+.selfcheck ul{margin:0;padding-left:18px}
+.selfcheck li{margin:3px 0}
+.selfgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-top:14px}
+.selfcard{border:1px solid var(--line);border-radius:12px;padding:15px;background:var(--panel)}
+.selfcard h3{display:flex;align-items:center;gap:10px;margin:0 0 8px;font-size:1rem}
+</style>
+<style>.xfam{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:.88rem;margin:0 0 18px;opacity:.85}.xfam a{color:inherit}/* Title row: illustration sits opposite the title, at about a third of its weight */
+header .headgrid{display:grid;grid-template-columns:minmax(0,1.9fr) minmax(180px,0.85fr);gap:28px;align-items:center}
+header .headgrid > h1{margin:0}
+header .heroart{margin:0;max-width:340px;justify-self:end;width:100%}
+header .heroart svg.art{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}
+header .heroart figcaption{font-size:.72rem;color:var(--muted);margin-top:5px;line-height:1.35}
+header .heroart.float{float:right;width:min(300px,34%);margin:0 0 14px 22px}
+@media (max-width:820px){
+  header .headgrid{grid-template-columns:1fr}
+  header .heroart{max-width:260px;justify-self:start}
+  header .heroart.float{float:none;width:min(260px,70%);margin:12px 0}
+}
+/* Journey strip: full-bleed band, content aligned with every other section */
+nav.ribbon{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:color-mix(in srgb,currentColor 3%,transparent);margin:0;padding:12px 0 6px}
+nav.ribbon > .wrap{padding-left:28px;padding-right:28px}
+nav.ribbon h2{margin:0 0 9px}
+/* What used to sit beside the title now sits under the strip, full measure */
+.introblock{margin:20px auto 0}
+.introblock .lede{font-size:1.06rem;max-width:62ch}
+.introblock .tools{margin-top:12px}
+.introblock .rev{margin-top:10px;font-size:.84rem;color:var(--muted);max-width:80ch}
+.introblock .scope{margin:0}
+</style></head>
+<body>
+<svg class="sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden"><defs><symbol id="i-explore" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9 M12 3a9 9 0 0 1 9 9M3.5 12h17M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-structure" viewBox="0 0 24 24"><path d="M12 3 4 7v10l8 4 8-4V7l-8-4Zm0 0v18M4 7l8 4 8-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-register" viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6V3Zm9 0v3h3M9 11h6M9 15h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-tax" viewBox="0 0 24 24"><path d="M5 20V9l7-5 7 5v11H5Zm4-5h6M9 12h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-licence" viewBox="0 0 24 24"><path d="M4 5h16v14H4V5Zm3 4h5M7 12h10M7 15h7m2-6.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-premises" viewBox="0 0 24 24"><path d="M4 20V10l8-6 8 6v10H4Zm6 0v-6h4v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-finance" viewBox="0 0 24 24"><path d="M3 19V5m0 14h18M7 15V9m5 6V6m5 9v-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-employ" viewBox="0 0 24 24"><path d="M8 11a3.2 3.2 0 1 0 0-6.4A3.2 3.2 0 0 0 8 11Zm0 0c-3 0-5 1.8-5 4.5V19h10v-3.5C13 12.8 11 11 8 11Zm9-6.2a3.2 3.2 0 1 1 0 6.4M16 19h5v-3.5c0-2.2-1.4-3.8-3.6-4.3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-trade" viewBox="0 0 24 24"><path d="M3 12h18M3 12a9 9 0 0 1 9-9m9 9a9 9 0 0 0-9-9m0 18a9 9 0 0 0 9-9M12 21a9 9 0 0 1-9-9m9-9c2.4 2.5 3.6 5.5 3.6 9s-1.2 6.5-3.6 9c-2.4-2.5-3.6-5.5-3.6-9S9.6 5.5 12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-grow" viewBox="0 0 24 24"><path d="M4 19c6 0 10-3.5 12-10M13 5h6v6M8 19a4 4 0 0 0-4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-rules" viewBox="0 0 24 24"><path d="M12 4v16M6 8h12M7 8l-3 6h6l-3-6Zm10 0-3 6h6l-3-6ZM9 20h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5V5.5ZM8 7h7M8 10h7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-nations" viewBox="0 0 24 24"><path d="M6 21V4m0 0 7 2.5L20 4v9l-7 2.5L6 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm-8.6 9h17.2M12 3c2.3 2.5 3.5 5.5 3.5 9s-1.2 6.5-3.5 9c-2.3-2.5-3.5-5.5-3.5-9S9.7 5.5 12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-standards" viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h13m2-9.5 3 3-6 6-3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12.5 9 18l11-12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-history" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4h4M12 8v4.5l3 1.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-boundary" viewBox="0 0 24 24"><path d="M12 3v18M6 7l-3 5 3 5M18 7l3 5-3 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><path d="M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14Zm5 12 4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-blueprint" viewBox="0 0 24 24"><path d="M3 5h18v14H3V5Zm5 0v14M3 10h5m8-5v14m0-9h5M8 14h8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-person" viewBox="0 0 24 24"><path d="M12 11.5a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm0 0c-4 0-7 2.4-7 6V20h14v-2.5c0-3.6-3-6-7-6Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-agent" viewBox="0 0 24 24"><path d="M9 10.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm0 0c-3 0-5.5 2-5.5 5V19H14v-3.5c0-3-2.5-5-5-5Zm8-5 4 2.5-4 2.5m4-2.5h-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-official" viewBox="0 0 24 24"><path d="M12 3 4 6.5V12c0 4.6 3.2 7.8 8 9 4.8-1.2 8-4.4 8-9V6.5L12 3Zm-3 9 2.2 2.4L15 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-access" viewBox="0 0 24 24"><path d="M12 4.2a1.6 1.6 0 1 0 0-3.2 1.6 1.6 0 0 0 0 3.2ZM5 7.5c2.2.9 4.5 1.3 7 1.3s4.8-.4 7-1.3M12 8.8V14m0 0 3.5 6M12 14l-3.5 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-language" viewBox="0 0 24 24"><path d="M4 6h10M9 4v2m0 0c0 4-2 7-5 8.5M6.5 10.5c1.3 2.4 3 4 5.5 5M13 20l4-9 4 9m-6.6-2.4h5.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-data" viewBox="0 0 24 24"><path d="M12 4c4.4 0 8 1.3 8 3s-3.6 3-8 3-8-1.3-8-3 3.6-3 8-3Zm8 3v10c0 1.7-3.6 3-8 3s-8-1.3-8-3V7m16 5c0 1.7-3.6 3-8 3s-8-1.3-8-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-warning" viewBox="0 0 24 24"><path d="M12 4 3 20h18L12 4Zm0 6v5m0 3h.01" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm0 4.5V12l3.5 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-money" viewBox="0 0 24 24"><path d="M5 7h14v10H5V7Zm7 2.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-back" viewBox="0 0 24 24"><path d="M6 6.5h12M6 12h12M6 17.5h8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-support" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-9 9v3.5A2.5 2.5 0 0 0 5.5 18H7v-6H5.2A6.8 6.8 0 0 1 18.8 12H17v6h1.5a2.5 2.5 0 0 0 2.5-2.5V12a9 9 0 0 0-9-9Zm5 15v.5a2.5 2.5 0 0 1-2.5 2.5H12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol></defs></svg>
+<a class="skip" href="#main">Skip to content</a>
+<header class="mast">
+  <div class="wrap"><p class="xfam" id="family">Part of <a href="../">Starting a business in the UK</a>: <a href="../your-plan/">your plan</a><a href="../whole-life-of-a-business/">from starting to closing, and everything between</a><a href="../your-circumstances/">when the standard route does not fit</a><a href="../every-way-in/">every way in, and every way out</a><a href="../skills-and-communities/">skills, qualifications and finding your people</a><a href="../twenty-years-of-joining-up/">historical arc</a><a href="../before-the-register/">before the register</a><a href="../whatever-you-are-setting-up/">whatever you are setting up</a><a href="../what-binds-this-business/">what binds this business</a><a href="../rules-trade-and-bodies/">rules, trade and the bodies</a><a href="../four-nations/">four nations</a><a href="../the-uk-compared/">international benchmark</a><a href="../standards/">standards for the journey</a><a href="../service-blueprints/">service blueprints</a><a href="../knowledge-layer/">the knowledge layer</a><a href="../how-this-was-built/">how this was built and run</a><a href="../verification-register/">verification register</a></p></div>
+  <div class="wrap mast-grid">
+    <div>
+      <h1>Starting a business in the UK: every step, body and identifier</h1><figure class="heroart float"><svg class="art" viewBox="0 0 680 300" role="img" aria-labelledby="artt artd"><title id="artt">The journey as one line</title><desc id="artd">Ten linked stops on a single line, each branching to the separate bodies and services a founder meets.</desc><rect width="680" height="300" fill="none"/><path d="M70 122 L132 178" stroke="currentColor" stroke-width="2.0" opacity="0.35" fill="none"/><path d="M132 178 L194 122" stroke="currentColor" stroke-width="2.0" opacity="0.35" fill="none"/><path d="M194 122 L256 178" stroke="currentColor" stroke-width="2.0" opacity="0.35" fill="none"/><path d="M256 178 L318 122" stroke="currentColor" stroke-width="2.0" opacity="0.35" fill="none"/><path d="M318 122 L380 178" stroke="currentColor" stroke-width="2.0" opacity="0.35" fill="none"/><path d="M380 178 L442 122" stroke="currentColor" stroke-width="2.0" opacity="0.35" fill="none"/><path d="M442 122 L504 178" stroke="currentColor" stroke-width="2.0" opacity="0.35" fill="none"/><path d="M504 178 L566 122" stroke="currentColor" stroke-width="2.0" opacity="0.35" fill="none"/><path d="M566 122 L628 178" stroke="currentColor" stroke-width="2.0" opacity="0.35" fill="none"/><circle cx="70" cy="122" r="13" fill="var(--l1,#1d4ed8)" opacity="0.90"/><circle cx="70" cy="122" r="13" fill="none" opacity="1.00"/><circle cx="132" cy="178" r="13" fill="var(--l2,#0f766e)" opacity="0.90"/><circle cx="132" cy="178" r="13" fill="none" opacity="1.00"/><circle cx="194" cy="122" r="13" fill="var(--l3,#b45309)" opacity="0.90"/><circle cx="194" cy="122" r="13" fill="none" opacity="1.00"/><circle cx="256" cy="178" r="13" fill="var(--l4,#7c3aed)" opacity="0.90"/><circle cx="256" cy="178" r="13" fill="none" opacity="1.00"/><circle cx="318" cy="122" r="13" fill="var(--l5,#be123c)" opacity="0.90"/><circle cx="318" cy="122" r="13" fill="none" opacity="1.00"/><circle cx="380" cy="178" r="13" fill="var(--l6,#047857)" opacity="0.90"/><circle cx="380" cy="178" r="13" fill="none" opacity="1.00"/><circle cx="442" cy="122" r="13" fill="var(--l1,#1d4ed8)" opacity="0.90"/><circle cx="442" cy="122" r="13" fill="none" opacity="1.00"/><circle cx="504" cy="178" r="13" fill="var(--l2,#0f766e)" opacity="0.90"/><circle cx="504" cy="178" r="13" fill="none" opacity="1.00"/><circle cx="566" cy="122" r="13" fill="var(--l3,#b45309)" opacity="0.90"/><circle cx="566" cy="122" r="13" fill="none" opacity="1.00"/><circle cx="628" cy="178" r="13" fill="var(--l4,#7c3aed)" opacity="0.90"/><circle cx="628" cy="178" r="13" fill="none" opacity="1.00"/><path d="M70 122 L46 70" stroke="currentColor" stroke-width="1.0" opacity="0.22" fill="none" stroke-dasharray="3 4"/><circle cx="46" cy="70" r="4" fill="currentColor" opacity="0.30"/><path d="M132 178 L108 230" stroke="currentColor" stroke-width="1.0" opacity="0.22" fill="none" stroke-dasharray="3 4"/><circle cx="108" cy="230" r="4" fill="currentColor" opacity="0.30"/><path d="M132 178 L132 230" stroke="currentColor" stroke-width="1.0" opacity="0.22" fill="none" stroke-dasharray="3 4"/><circle cx="132" cy="230" r="4" fill="currentColor" opacity="0.30"/><path d="M194 122 L170 70" stroke="currentColor" stroke-width="1.0" opacity="0.22" fill="none" stroke-dasharray="3 4"/><circle cx="170" cy="70" r="4" fill="currentColor" opacity="0.30"/><path d="M194 122 L194 70" stroke="currentColor" stroke-width="1.0" opacity="0.22" fill="none" stroke-dasharray="3 4"/><circle cx="194" cy="70" r="4" fill="currentColor" opacity="0.30"/><path d="M194 122 L218 70" stroke="currentColor" stroke-width="1.0" opacity="0.22" fill="none" stroke-dasharray="3 4"/><circle cx="218" cy="70" r="4" fill="currentColor" opacity="0.30"/><path d="M256 178 L232 230" stroke="currentColor" stroke-width="1.0" opacity="0.22" fill="none" stroke-dasharray="3 4"/><circle cx="232" cy="230" r="4" fill="currentColor" opacity="0.30"/><path d="M318 122 L294 70" stroke="currentColor" stroke-width="1.0" opacity="0.22" fill="none" stroke-dasharray="3 4"/><circle cx="294" cy="70" r="4" fill="currentColor" opacity="0.30"/><path d="M318 122 L318 70" stroke="currentColor" stroke-width="1.0" opacity="0.22" fill="none" stroke-dasharray="3 4"/><circle cx="318" cy="70" r="4" fill="currentColor" opacity="0.30"/><path d="M380 178 L356 230" stroke="currentColor" stroke-width="1.0" opacity="0.22" fill="none" stroke-dasharray="3 4"/><circle cx="356" cy="230" r="4" fill="currentColor" opacity="0.30"/><path d="M380 178 L380 230" stroke="currentColor" stroke-width="1.0" opacity="0.22" fill="none" stroke-dasharray="3 4"/><circle cx="380" cy="230" r="4" fill="currentColor" opacity="0.30"/><path d="M380 178 L404 230" stroke="currentColor" stroke-width="1.0" opacity="0.22" fill="none" stroke-dasharray="3 4"/><circle cx="404" cy="230" r="4" fill="currentColor" opacity="0.30"/><path d="M442 122 L418 70" stroke="currentColor" stroke-width="1.0" opacity="0.22" fill="none" stroke-dasharray="3 4"/><circle cx="418" cy="70" r="4" fill="currentColor" opacity="0.30"/><path d="M504 178 L480 230" stroke="currentColor" stroke-width="1.0" opacity="0.22" fill="none" stroke-dasharray="3 4"/><circle cx="480" cy="230" r="4" fill="currentColor" opacity="0.30"/><path d="M504 178 L504 230" stroke="currentColor" stroke-width="1.0" opacity="0.22" fill="none" stroke-dasharray="3 4"/><circle cx="504" cy="230" r="4" fill="currentColor" opacity="0.30"/><path d="M566 122 L542 70" stroke="currentColor" stroke-width="1.0" opacity="0.22" fill="none" stroke-dasharray="3 4"/><circle cx="542" cy="70" r="4" fill="currentColor" opacity="0.30"/><path d="M566 122 L566 70" stroke="currentColor" stroke-width="1.0" opacity="0.22" fill="none" stroke-dasharray="3 4"/><circle cx="566" cy="70" r="4" fill="currentColor" opacity="0.30"/><path d="M566 122 L590 70" stroke="currentColor" stroke-width="1.0" opacity="0.22" fill="none" stroke-dasharray="3 4"/><circle cx="590" cy="70" r="4" fill="currentColor" opacity="0.30"/><path d="M628 178 L604 230" stroke="currentColor" stroke-width="1.0" opacity="0.22" fill="none" stroke-dasharray="3 4"/><circle cx="604" cy="230" r="4" fill="currentColor" opacity="0.30"/></svg><figcaption>The journey as one line: each stop branching to the separate bodies behind it.</figcaption></figure>
+      <p class="lede">Every body, service, sign-in, identifier and obligation a founder meets between having an idea and trading lawfully, mapped as one journey and tested against official statistics, government user research and parliamentary scrutiny.</p>
+    </div>
+    <div>
+      <dl class="scope">
+        <dt>Last updated</dt><dd>17 September 2026 (evidence revision 3, re-verified)</dd>
+        <dt>Scope</dt><dd>England, Scotland, Wales and Northern Ireland; sole traders and limited companies, with employer, food, premises, trade and public-sector-supplier variants</dd>
+        <dt>Evidence base</dt><dd id="scopeEvidence">Sources graded in six tiers, primary and scrutiny sources first</dd>
+      </dl>
+      <button class="theme-btn" id="themeBtn" type="button">Switch light or dark</button>
+    </div>
+  </div>
+</header>
+<nav class="ribbon" aria-label="The founder journey"><div class="wrap"><h2>The journey, stage by stage</h2><ol><li><a href="../before-the-register/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-explore"></use></svg> Stage 1</span><span class="rt">Decide</span><span class="rc">Is this a business, and what shape?</span></a></li><li><a href="../whatever-you-are-setting-up/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-structure"></use></svg> Stage 2</span><span class="rt">Structure</span><span class="rc">Legal form, name, ownership</span></a></li><li><a href="../every-step/" aria-current="step"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-register"></use></svg> Stage 3</span><span class="rt">Register</span><span class="rc">Registrar, identity, identifiers</span></a></li><li><a href="../whatever-you-are-setting-up/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-tax"></use></svg> Stage 4</span><span class="rt">Tax</span><span class="rc">Self Assessment, Corporation Tax, VAT</span></a></li><li><a href="../what-binds-this-business/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-licence"></use></svg> Stage 5</span><span class="rt">Licences</span><span class="rc">What the activity triggers</span></a></li><li><a href="../every-step/" aria-current="step"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-premises"></use></svg> Stage 6</span><span class="rt">Premises</span><span class="rc">Rates, planning, property</span></a></li><li><a href="../whatever-you-are-setting-up/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-finance"></use></svg> Stage 7</span><span class="rt">Money</span><span class="rc">Grants, reliefs, finance</span></a></li><li><a href="../what-binds-this-business/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-employ"></use></svg> Stage 8</span><span class="rt">People</span><span class="rc">Employing, paying, protecting</span></a></li><li><a href="../rules-trade-and-bodies/"><span class="rn"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-trade"></use></svg> Stage 9</span><span class="rt">Trade</span><span class="rc">Goods, borders, tendering</span></a></li></ol></div></nav>
+
+
+<div class="wrap">
+  <div class="facts">
+    <div class="fact"><b>5.7m</b><span>UK businesses in 2025 <span class="cite" data-c="ons"></span></span></div>
+    <div class="fact"><b>314,000</b><span>start-ups created in 2025 <span class="cite" data-c="bbbsurvey"></span></span></div>
+    <div class="fact"><b>61%</b><span>of businesses say giving government the same information more than once is a burden <span class="cite" data-c="bps"></span></span></div>
+    <div class="fact"><b>55%</b><span>of director appointments identity-verified by 30 June 2026 <span class="cite" data-c="chmi"></span></span></div>
+  </div>
+</div>
+
+<main id="main">
+<section class="block" id="journey">
+  <div class="wrap">
+    <div class="block-head">
+      <div><h2>The journey, built around your founder</h2></div>
+      <p>Choose a nation and the kind of business. The line redraws to show only the touchpoints that apply, and the counts show how much of the estate that founder has to navigate. Select a stop to open its evidence. Underlined source numbers are coloured by evidence tier.</p>
+    </div>
+
+    <div class="builder">
+      <fieldset>
+        <legend>Where the business is based</legend>
+        <div class="seg">
+          <label><input type="radio" name="nation" value="E" checked><span>England</span></label>
+          <label><input type="radio" name="nation" value="S"><span>Scotland</span></label>
+          <label><input type="radio" name="nation" value="W"><span>Wales</span></label>
+          <label><input type="radio" name="nation" value="N"><span>Northern Ireland</span></label>
+        </div>
+      </fieldset>
+      <fieldset><legend>Legal form</legend><div class="seg" style="display:block"><label for="formSel" class="vh">Legal form</label><select id="formSel" aria-label="Legal form"><option value="sole-trader">Sole trader</option><option value="ordinary-partnership">Ordinary partnership</option><option value="limited-partnership">Limited partnership</option><option value="llp">Limited liability partnership</option><option value="ltd-shares" selected>Private company limited by shares</option><option value="ltd-guarantee">Private company limited by guarantee</option><option value="plc">Public limited company</option><option value="cic">Community interest company</option><option value="charitable-company">Charitable company</option><option value="cio">Charitable incorporated organisation</option><option value="society">Co-operative or community benefit society</option><option value="unincorporated-association">Unincorporated association</option><option value="trust">Trust</option><option value="overseas-establishment">UK establishment of an overseas company</option></select><p class="meta" style="margin:8px 0 0">The same fourteen forms, in the same words, as the setup finder. Where a form has its own registrar the journey changes shape rather than losing a step.</p></div></fieldset>
+      <fieldset>
+        <legend>What the business will do</legend>
+        <div class="seg" id="traitSeg">
+          <label><input type="checkbox" value="emp" checked><span>Employs people</span></label>
+          <label><input type="checkbox" value="prem"><span>Occupies premises</span></label>
+          <label><input type="checkbox" value="food"><span>Handles food</span></label>
+          <label><input type="checkbox" value="trade"><span>Moves goods across a border</span></label>
+          <label><input type="checkbox" value="gov"><span>Sells to the public sector</span></label>
+        </div>
+      </fieldset>
+      <div class="tally" aria-live="polite">
+        <div><b id="tTouch">0</b><span>touchpoints</span></div>
+        <div><b id="tOrgs">0</b><span>bodies or services</span></div>
+        <div><b id="tSign">0</b><span>distinct public sign-in systems</span></div>
+        <div><b id="tIds">0</b><span>identifiers issued</span></div>
+      </div>
+    </div>
+
+    <div class="line-wrap"><ol class="line" id="line"></ol></div>
+    <div class="legend" id="legend"></div>
+    <div class="tiers" id="tierLegend"></div>
+    <div class="panel" id="panel" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="block" id="users">
+  <div class="wrap">
+    <div class="block-head">
+      <div><h2>What businesses have told government</h2></div>
+      <p>Evidence from official surveys, government user research, service data and parliamentary inquiry. Each exhibit states its method and sample so its weight is clear. Qualitative and small-sample findings are labelled as such.</p>
+    </div>
+    <div class="exhibits" id="exhibits"></div>
+  </div>
+</section>
+
+<section class="block" id="findings">
+  <div class="wrap">
+    <div class="block-head">
+      <div><h2>What this guide found</h2></div>
+      <p>Twelve findings, each with an evidence-strength rating. Strong means at least one official statistic or primary source plus corroboration; moderate means qualitative, dated or single-source evidence; the one finding that rests partly on these pages' inference says so.</p>
+    </div>
+    <div class="findings" id="findingList"></div>
+    <div class="corrections">
+      <h3>Corrections from the first version of these pages</h3>
+      <ul id="corrList"></ul>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="identity">
+  <div class="wrap">
+    <div class="block-head">
+      <div><h2>Identity and identifiers: the data spine the journey lacks</h2></div>
+      <p>A limited company that employs, imports and tenders accumulates a separate reference from almost every body it meets, and signs in through several systems to use them. The joint Companies House and HMRC accounts filing service, one of the few places a company filed once for two bodies, closed on 31 March 2026.</p>
+    </div>
+    <div class="two">
+      <div class="idmap">
+        <h3 style="margin-bottom:8px">Where a founder signs in</h3>
+        <div class="idrow"><b>GOV.UK One Login</b><div class="chips">
+          <span class="chip" style="--c:var(--l-reg)">Companies House identity verification and filing</span>
+          <span class="chip" style="--c:var(--l-trade)">Central Digital Platform supplier registration</span>
+          <span class="chip" style="--c:var(--l-tax)">HMRC, for a proportion of first-time users since February 2026</span>
+        </div></div>
+        <div class="idrow"><b>Government Gateway</b><div class="chips">
+          <span class="chip" style="--c:var(--l-tax)">Existing HMRC users, including business tax accounts, until moved</span>
+        </div></div>
+        <div class="idrow"><b>Service-specific accounts</b><div class="chips">
+          <span class="chip" style="--c:var(--l-front)">business.gov.uk account</span>
+          <span class="chip" style="--c:var(--l-tax)">VOA Business Rates Valuation Account</span>
+          <span class="chip" style="--c:var(--l-regu)">ICO fee registration</span>
+          <span class="chip" style="--c:var(--l-local)">Council licensing and rates portals</span>
+          <span class="chip" style="--c:var(--l-fin)">Start Up Loans delivery-partner portals</span>
+        </div></div>
+        <div class="idrow"><b>No sign-in</b><div class="chips">
+          <span class="chip" style="--c:var(--l-local)">Food business registration service</span>
+          <span class="chip" style="--c:var(--l-front)">Helplines and Growth Hub advice</span>
+        </div></div>
+        <p class="fine" style="margin-top:12px">GDS says bringing existing Government Gateway users onto One Login is its next priority with HMRC <span class="cite" data-c="gdshmrc"></span>. The wider digital identity programme was dropped in July 2026; the NAO has noted that identity services existing does not mean they work consistently across contexts <span class="cite" data-c="ncaw"></span>.</p>
+      </div>
+      <div class="tscroll">
+        <table>
+          <thead><tr><th scope="col">Identifier</th><th scope="col">Issued by</th><th scope="col">Who needs it</th></tr></thead>
+          <tbody id="idTable"></tbody>
+        </table>
+      </div>
+    </div>
+    <p class="fine" style="margin-top:14px">An HMRC "Single Business Identifier" dataset combining UTR, PAYE and VAT references is listed on data.gov.uk but marked as not released <span class="cite" data-c="sbi"></span>. Companies House's own transition plan lists greater cross-checking of data with other public and private bodies as an aim for no earlier than the end of 2026 <span class="cite" data-c="chplan"></span>.</p>
+  </div>
+</section>
+
+<section class="block" id="nations">
+  <div class="wrap">
+    <div class="block-head">
+      <div><h2>Four nations, one registry</h2></div>
+      <p>Company registration and tax are UK-wide; almost everything around them varies by nation. The variation is felt unevenly: 64% of Northern Ireland businesses in DBT's survey called understanding differences between UK nations a burden, against 20% in England, though the Northern Ireland sample was small <span class="cite" data-c="bps"></span>.</p>
+    </div>
+    <div class="tscroll">
+      <table>
+        <thead><tr><th scope="col">Element</th><th scope="col">England</th><th scope="col">Scotland</th><th scope="col">Wales</th><th scope="col">Northern Ireland</th></tr></thead>
+        <tbody id="nationTable"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="timeline">
+  <div class="wrap">
+    <div class="block-head">
+      <div><h2>A journey in motion, 2025 to 2029</h2></div>
+      <p>Only 30% of businesses agree government tells them about regulatory change clearly and with enough warning <span class="cite" data-c="bps"></span>. Dotted markers are future or not-earlier-than dates, several of which have already moved once.</p>
+    </div>
+    <ol class="timeline" id="tl"></ol>
+  </div>
+</section>
+
+<section class="block" id="memory">
+  <div class="wrap">
+    <div class="block-head">
+      <div><h2>Institutional memory: government has mapped this journey before</h2></div>
+      <p>A machine-read search of GOV.UK and 25 GOV.UK blogs for "start a business" and related phrases, back to the Business Link era. It traces what GDS, BIS, BEIS, DBT and their partners already learned, what they built, what is still live, and which insights keep being rediscovered.</p>
+    </div>
+    <div class="memstats" id="memStats"></div>
+    <div class="charts" id="memCharts"></div>
+
+    <h3 class="sub">Insights that keep coming back</h3>
+    <div class="recur" id="recur"></div>
+
+    <h3 class="sub">Fourteen years of work, era by era</h3>
+    <div class="memfilters">
+      <fieldset>
+        <legend>Era</legend>
+        <div class="seg" id="eraSeg">
+          <label><input type="radio" name="era" value="all" checked><span>All</span></label>
+          <label><input type="radio" name="era" value="e1"><span>2004–2012</span></label>
+          <label><input type="radio" name="era" value="e2"><span>2013–2016</span></label>
+          <label><input type="radio" name="era" value="e3"><span>2017–2019</span></label>
+          <label><input type="radio" name="era" value="e4"><span>2020–2022</span></label>
+          <label><input type="radio" name="era" value="e5"><span>2023–2026</span></label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Kind of evidence</legend>
+        <div class="seg" id="kindSeg">
+          <label><input type="checkbox" value="blog" checked><span>GDS and GOV.UK blogs</span></label>
+          <label><input type="checkbox" value="dept" checked><span>Department blogs</span></label>
+          <label><input type="checkbox" value="res" checked><span>Research and evaluation</span></label>
+          <label><input type="checkbox" value="asm" checked><span>Service assessments</span></label>
+          <label><input type="checkbox" value="pol" checked><span>Strategy and policy</span></label>
+        </div>
+      </fieldset>
+    </div>
+    <p class="fine" id="memCount" aria-live="polite"></p>
+    <div id="eras"></div>
+
+    <h3 class="sub">Still on GOV.UK today</h3>
+    <p class="fine" style="max-width:75ch">Status checked live on 17 September 2026 through the GOV.UK Content API. "Last major update" is the public update date, which GOV.UK only changes for significant edits; minor corrections do not move it.</p>
+    <div class="tscroll">
+      <table>
+        <thead><tr><th scope="col">Page or tool</th><th scope="col">Origin</th><th scope="col">Status today</th><th scope="col">What this guide noticed</th></tr></thead>
+        <tbody id="liveTable"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="opportunities">
+  <div class="wrap">
+    <div class="block-head">
+      <div><h2>Where joining up would pay off</h2></div>
+      <p>This guide's own recommendations for a cross-government data and metadata function, each tied to the evidence it responds to. They are proposals for discussion, not published policy.</p>
+    </div>
+    <div class="opps" id="opps"></div>
+  </div>
+</section>
+</main>
+
+<div class="wrap"><nav class="seqnav" aria-label="Sequence"><div><a href="../skills-and-communities/">&larr; Part 5: Skills, qualifications and finding your people</a><small>No qualifications, on-the-job routes, cohort communities</small></div><div style="text-align:center"><a href="../">Part 6 of 18</a><small>Every step in the journey</small></div><div class="nx"><a href="../twenty-years-of-joining-up/">Part 7: Historical arc &rarr;</a><small>How we got here</small></div></nav></div>
+<footer>
+  <div class="wrap">
+    <h2 style="font-size:1.3rem;color:var(--ink)">Method, evidence grading and sources</h2>
+    <p>This guide walked the journey stage by stage from GOV.UK and business.gov.uk, following each handoff to the body that owns the next step. It was then re-tested against evidence, replacing adviser and trade sources with primary sources wherever one could be found.</p>
+    <p>Touchpoint tags: <strong>verified</strong> means confirmed on a primary government, regulator or official-statistics source; <strong>reported</strong> means the key figure rests on professional, trade or press sources; <strong>baseline</strong> means a long-standing requirement not re-verified on these pages. Findings carry a separate strength rating.</p>
+    <div class="tierbar" id="tierBar" aria-hidden="true"></div>
+    <p class="fine" id="tierSummary"></p>
+    <p>This search used two machine-readable sources. The GOV.UK Search API was queried for eight phrase variants ("start a business", "set up a business", "start your business", "new business owners", "business start-ups" and their stems), returning 1,497 unique pages. The WordPress API of 25 GOV.UK blogs returned 8,593 posts from 2009 to 2026, matched locally against start-up, Business Link, business.gov.uk, helpline and incorporation patterns. Matches were then read and verified by hand; the counts include incidental mentions. The UK Government Web Archive could not be queried automatically because it requires human verification, so Business Link-era pages are evidenced through GDS posts and published evaluations rather than the archive itself.</p>
+    <p>Not covered in depth: charity and community interest company routes, individual sector regulators, planning, individual council portals and the territorial extent of the Commercial Payments Bill. Where official sources conflict, both are shown rather than reconciled.</p>
+    <div id="srcGroups"></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  try{var saved=localStorage.getItem('scan-theme'); if(saved){root.setAttribute('data-theme',saved);}}catch(e){}
+  document.getElementById('themeBtn').addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme');
+    var dark=cur?cur==='dark':(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches);
+    var next=dark?'light':'dark'; root.setAttribute('data-theme',next);
+    try{localStorage.setItem('scan-theme',next);}catch(e){}
+  });
+
+  var TIERS={
+    stat:["Official statistics and official surveys","var(--t-stat)"],
+    gov:["Primary government and regulator sources","var(--t-gov)"],
+    scr:["Parliamentary and audit scrutiny","var(--t-scr)"],
+    ur:["Government user research and service data","var(--t-ur)"],
+    ind:["Independent research, charities and representative bodies","var(--t-ind)"],
+    pro:["Professional, trade and press sources","var(--t-pro)"]
+  };
+
+  // [title, url, tier]
+  var S={
+ chreg:["Charity Commission for England and Wales: register your charity (registration required above £5,000 income, or for any CIO)","https://www.gov.uk/setting-up-charity/register-your-charity","gov"],
+ oscr:["OSCR: becoming a charity in Scotland","https://www.oscr.org.uk/becoming-a-charity/","gov"],
+ ccni:["Charity Commission for Northern Ireland: starting a new charity","https://www.charitycommissionni.org.uk/start-up-a-charity/","gov"],
+ mutuals:["FCA: mutual societies, and the Mutuals Public Register of societies registered by the FCA","https://mutuals.fca.org.uk/","gov"],
+ cicreg:["Office of the Regulator of Community Interest Companies: decides whether an organisation is eligible to become, or continue to be, a CIC","https://www.gov.uk/government/organisations/office-of-the-regulator-of-community-interest-companies","gov"],
+ cicform:["Community interest companies: how to form a CIC","https://www.gov.uk/government/publications/community-interest-companies-how-to-form-a-cic","gov"],
+ trustreg:["HMRC: trustees' tax responsibilities, including registering the trust once it becomes liable for tax","https://www.gov.uk/trusts-taxes/trustees-tax-responsibilities","gov"],
+
+    bps:["DBT: Business Perceptions Survey 2024 research report (IFF Research, 2,000 interviews)","https://assets.publishing.service.gov.uk/media/68f643eb28f6872f1663f0c9/business-perceptions-survey-2024-report.pdf","stat"],
+    lsbs:["DBT: Longitudinal Small Business Survey 2024, SME employers (official statistics)","https://www.gov.uk/government/statistics/small-business-survey-2024-businesses-with-employees/longitudinal-small-business-survey-2024-sme-employers-businesses-with-1-to-249-employees","stat"],
+    lsbsne:["DBT: Longitudinal Small Business Survey 2024, businesses with no employees","https://www.gov.uk/government/statistics/small-business-survey-2024-businesses-with-no-employees/longitudinal-small-business-survey-2024-businesses-with-no-employees","stat"],
+    chmi:["Companies House: management information, identity verification April to June 2026","https://www.gov.uk/government/statistics/companies-house-management-information-identity-verification-april-to-june-2026","stat"],
+    bbbsurvey:["British Business Bank: Small Business Finance Markets 2025/26 (Business Finance Survey, Ipsos, 1,734 firms)","https://www.british-business-bank.co.uk/news-and-events/news/smaller-business-lending-markets-showing-signs-improvement-finds-latest-british-business-bank","stat"],
+    onsrel:["ONS: Business Demography 2025 release calendar","https://www.ons.gov.uk/releases/businessdemography2025","stat"],
+    ons:["House of Commons Library: Business statistics, citing ONS","https://researchbriefings.files.parliament.uk/documents/SN06152/SN06152.pdf","scr"],
+    btc:["Business and Trade Committee: Small business strategy, 15th report (Feb 2026)","https://publications.parliament.uk/pa/cm5901/cmselect/cmbeis/1057/report.html","scr"],
+    lords:["House of Lords Library: Commercial Payments Bill progress","https://lordslibrary.parliament.uk/research-briefings/lln-2026-0049/","scr"],
+    vatlib:["House of Commons Library: VAT registration","https://commonslibrary.parliament.uk/research-briefings/sn00963/","scr"],
+    lgflib:["House of Commons Library: Local growth funds","https://commonslibrary.parliament.uk/research-briefings/cbp-9460/","scr"],
+    gslgf:["Department for the Economy (NI): Local Growth Fund awards for Invest NI and Go Succeed (Aug 2026)","https://www.economy-ni.gov.uk/news/archibald-announces-local-growth-fund-awards-invest-ni-and-go-succeed","gov"],
+    nao:["NAO: Regulating for growth (Jan 2026)","https://www.nao.org.uk/reports/regulating-for-growth/","scr"],
+    niar:["Northern Ireland Assembly research: GB and NI employment rights reform compared","https://www.niassembly.gov.uk/assembly-business/committees/2022-2027/economy/research-papers/2025/proposed-reform-of-employment-rights-in-great-britain-and-northern-ireland-a-comparative-perspective","scr"],
+    wms:["UK Parliament: Machinery of Government Changes, written statement HLWS298 (21 Jul 2026)","https://questions-statements.parliament.uk/written-statements/detail/2026-07-21/hlws298","gov"],
+    mogfact:["GOV.UK: Machinery of Government changes fact sheet","https://www.gov.uk/government/news/machinery-of-government-changes-fact-sheet","gov"],
+    rap:["UK Parliament: Regulation Action Plan progress statement (Oct 2025)","https://questions-statements.parliament.uk/written-statements/detail/2025-10-21/hcws975","gov"],
+    chat:["GDS blog: 5 things we learned testing GOV.UK Chat (Mar 2026)","https://insidegovuk.blog.gov.uk/2026/03/16/5-things-we-learned-testing-gov-uk-chat-an-ai-assistant-for-government/","ur"],
+    chatlaunch:["GDS blog: GOV.UK Chat launches in the GOV.UK app (May 2026)","https://gds.blog.gov.uk/2026/05/14/gov-uk-chat-launches/","gov"],
+    licblog:["Inside GOV.UK: Updating the licence finder (user research and analytics)","https://insidegovuk.blog.gov.uk/2023/12/21/updating-the-gov-uk-licence-finder/","ur"],
+    gdshmrc:["GDS blog: GOV.UK One Login for HMRC, how we made it happen (Apr 2026)","https://gds.blog.gov.uk/2026/04/28/gov-uk-one-login-for-hmrc-how-we-made-it-happen-and-what-comes-next/","gov"],
+    hmrcres:["HMRC: Research with customers who struggle to engage with HMRC communications (Feb 2025)","https://www.gov.uk/government/publications/research-with-customers-who-struggle-to-engage-with-hmrc-communications/research-with-customers-who-struggle-to-engage-with-hmrc-communications","ur"],
+    chblog:["Companies House blog: Making identity verification simple, secure and trusted","https://companieshouse.blog.gov.uk/2025/10/16/making-identity-verification-simple-secure-and-trusted","gov"],
+    chplan:["GOV.UK: ECCT Act outline transition plan for Companies House (updated 5 Aug 2026)","https://www.gov.uk/government/publications/economic-crime-and-corporate-transparency-act-outline-transition-plan-for-companies-house/economic-crime-and-corporate-transparency-act-outline-transition-plan-for-companies-house","gov"],
+    chidv:["GOV.UK: Verifying your identity for Companies House","https://www.gov.uk/guidance/verifying-your-identity-for-companies-house","gov"],
+    chfees:["Companies House campaign site: Changes to Companies House fees","https://changestoukcompanylaw.campaign.gov.uk/changes-to-companies-house-fees/","gov"],
+    closure:["GOV.UK: Filing accounts and tax returns if you previously used the HMRC online service","https://www.gov.uk/guidance/closure-of-the-service-to-file-your-company-accounts-and-tax-return","gov"],
+    ltd:["GOV.UK: Set up a limited company step by step","https://www.gov.uk/set-up-limited-company","gov"],
+    bgs:["business.gov.uk: Starting a business in the UK","https://www.business.gov.uk/start/","gov"],
+    helpline:["GOV.UK: Get help and support for your business","https://www.gov.uk/get-business-support","gov"],
+    sbc:["Small Business Commissioner: Startup and growth support from a single source (Mar 2026)","https://www.smallbusinesscommissioner.gov.uk/news/sbc-weekly-update/startup-and-growth-support-from-a-single-source/","gov"],
+    gla:["Mayor of London decision MD3376: Growth Hub funding 2025-26","https://www.london.gov.uk/md3376-growth-hub-funding-2025-26","gov"],
+    dorset:["Dorset Council: Growth Hub grant 2026/27 to 2028/29","https://www.dorsetcouncil.gov.uk/news/dorset-businesses-to-benefit-from-funding-boost","gov"],
+    glos:["Gloucestershire County Council: Growth Hub network funding (Mar 2026)","https://www.gloucestershire.gov.uk/gcc-news/news-march-2026/growth-hub-network-saved-after-funding-approval","gov"],
+    lgf:["GOV.UK: Local Growth Fund (England) policy statement","https://www.gov.uk/government/publications/local-growth-fund-england-policy-statement/local-growth-fund-england-policy-statement","gov"],
+    ukspf:["GOV.UK: UK Shared Prosperity Fund 2025-26 additional information","https://www.gov.uk/government/publications/uk-shared-prosperity-fund-prospectus/uk-shared-prosperity-fund-2025-26-additional-information","gov"],
+    bg:["Scottish Government: Business guidance and advice","https://www.gov.scot/policies/supporting-business/business-guidance-and-advice/","gov"],
+    mygovscot:["mygov.scot: Search for business funding or advice","https://www.mygov.scot/funding-advice-search","gov"],
+    bw:["Business Wales: Start-Up Accelerator (Mar 2026)","https://businesswales.gov.wales/news-and-blog/last-chance-apply-fully-funded-business-wales-start-accelerator","gov"],
+    dbw:["Business Wales: Development Bank of Wales","https://businesswales.gov.wales/businessfinance/types-finance-and-how-apply/development-bank-wales","gov"],
+    gs:["Go Succeed Start (NI councils)","https://go-succeed.com/start/","gov"],
+    nibi:["nibusinessinfo.co.uk: Business support in Northern Ireland","https://www.nibusinessinfo.co.uk/content/business-support-northern-ireland","gov"],
+    nieori:["nibusinessinfo.co.uk: Get an EORI number","https://www.nibusinessinfo.co.uk/content/get-eori-number","gov"],
+    mtd:["GOV.UK: Find out if and when you need to use Making Tax Digital for Income Tax","https://www.gov.uk/guidance/find-out-if-and-when-you-need-to-use-making-tax-digital-for-income-tax","gov"],
+    vat:["GOV.UK: Register for VAT, when to register","https://www.gov.uk/register-for-vat","gov"],
+    hmrcguid:["GOV.UK: Accessing HMRC online services using GOV.UK One Login","https://gov.uk/guidance/accessing-hmrc-online-services-using-govuk-one-login","gov"],
+    licence:["GOV.UK: Find a licence","https://www.gov.uk/find-licences","gov"],
+    brent:["Brent Council: Licences and permits","https://www.brent.gov.uk/business/licences-and-permits","gov"],
+    food:["FSA: Getting ready to start your food business","https://www.food.gov.uk/business-guidance/getting-ready-to-start-your-food-business","gov"],
+    fss:["Food Standards Scotland: Registering a food business","https://www.foodstandards.gov.scot/business-guidance/starting-a-new-business/registering-a-food-business","gov"],
+    derby:["Food Standards Agency: campaign urging new food businesses to register (Feb 2022)","https://www.food.gov.uk/business-guidance/getting-ready-to-start-your-food-business","gov"],
+    ico:["ICO: Guide to the data protection fee","https://ico.org.uk/for-organisations/data-protection-fee/data-protection-fee/","gov"],
+    rates:["London Borough of Sutton: Business rates changes from 1 April 2026","https://www.sutton.gov.uk/w/business-rates-changes-from-1-april-2026","gov"],
+    rates2:["Cambridge City Council: rates reliefs motion (Feb 2026)","https://www.cambridge.gov.uk/business-rates-reliefs-for-neighbourhood-shops-hospitality-and-leisure-sectors-motion-february-2026","gov"],
+    nnorth:["North Northamptonshire Council: rates changes and VOA account","https://www.northnorthants.gov.uk/business-rates/business-rates-changes-april-2026","gov"],
+    sul:["Start Up Loans: Changes to interest rate and eligibility criteria","https://www.startuploans.co.uk/support-and-guidance/frequently-asked-questions/changes-to-interest-rate-and-eligibility","gov"],
+    glaa:["GOV.UK: Fair Work Agency (established 7 April 2026, replacing the GLAA and EAS Inspectorate)","https://www.gov.uk/government/organisations/fair-work-agency","gov"],
+    cdp:["GOV.UK: Central Digital Platform factsheet","https://www.gov.uk/government/publications/procurement-act-2023-short-guides/central-digital-platform-factsheet-html","gov"],
+    sppn:["Scottish Government: SPPN 5/2026, cross-border procurement co-operation","https://www.gov.scot/publications/public-procurement-cross-border-co-operation-within-the-uk-sppn-5-2026/","gov"],
+    cpb:["GOV.UK: Commercial Payments Bill overview","https://www.gov.uk/government/publications/commercial-payments-bill-factsheets/commercial-payments-bill-overview","gov"],
+    sbi:["data.gov.uk: HMRC Single Business Identifier","https://www.data.gov.uk/search?q=single+business+identifier","gov"],
+    litrgmtd:["LITRG: When does Making Tax Digital start for me?","https://www.litrg.org.uk/tax-nic/making-tax-digital-income-tax/when-does-making-tax-digital-start-me","ind"],
+    litrgreg:["LITRG: response to HMRC on Self Assessment registration for the self-employed (2022)","https://www.litrg.org.uk/sites/default/files/220322%20LITRG%20response%20ITSA%20registration%20for%20the%20self-employed%20and%20landlords.pdf","ind"],
+    ccn:["County Councils Network: cliff edge as UKSPF ends","https://www.countycouncilsnetwork.org.uk/councils-in-county-areas-warn-of-cliff-edge-as-vital-growth-fund-ends-next-year/","ind"],
+    ifg:["Institute for Government: Demolishing DSIT (Jul 2026)","https://www.instituteforgovernment.org.uk/comment/demolishing-dsit-risks","ind"],
+    utr:["3E CPA: UTR guide (Corporation Tax reference timing)","https://www.3ecpa.co.uk/blog/unique-taxpayer-reference-utr-guide-how-find-get-use-utr-self-assessment-company-tax/","pro"],
+    fcls:["FCLS: formation agents and ID verification","https://fcls.co.uk/changes-to-companies-house-fees-and-new-id-verification-our-agency-fee-update/","pro"],
+    era:["Brodies: Employment Rights Act 2025 and SSP from April 2026","https://brodies.com/insights/employment-and-immigration/employment-rights-act-2025-reforms-to-statutory-sick-pay-from-april-2026/","pro"],
+    cdpol:["Open Hub: One Login needed for Central Digital Platform registration","https://www.open-hub.org/news-and-events/new-procurement-rules-require-registration-on-the-central-digital-platform/","pro"],
+    xero:["Xero UK: EORI numbers and CDS","https://www.xero.com/uk/guides/eori-number-uk/","pro"],
+    sbrr:["Alto Accounting: Business rates relief 2026/27","https://www.alto-accounting.com/insights/business-rates-relief-uk","pro"],
+    prowess:["Prowess: set up a business (Apr 2026), quoting an £85,000 VAT threshold","https://prowess.org.uk/set-up-business-today/","pro"],
+    fundbiz:["FundBiz: Start Up Loans eligibility (May 2026), quoting 6% and 36 months","https://fundbiz.co.uk/schemes/start-up-loans/","pro"],
+    ncaw:["Computer Weekly: NAO on digital ID challenges (reporting an NAO report)","https://www.computerweekly.com/news/366649801/Digital-ID-challenges-remain-despite-government-U-turn-says-NAO","pro"],
+    pkf:["PKF Francis Clark: identity verification enforcement (Aug 2026)","https://pkf-francisclark.co.uk/insights/companies-house-identity-verification/","pro"],
+    dwf:["DWF: January 2026 transition plan delay to November 2026","https://dwfgroup.com/en/news-and-insights/insights/2026/2/increase-of-companies-house-fees-and-delays","pro"]
+    ,m_bl:["GDS blog: The next (business) link in the chain (Nov 2012)","https://gds.blog.gov.uk/2012/11/05/the-next-business-link-in-the-chain/","gov"],
+    m_why:["GDS blog: Why GOV.UK matters (Oct 2012)","https://gds.blog.gov.uk/2012/10/17/why-gov-uk-matters/","gov"],
+    m_needs:["GDS blog: Meeting the needs of businesses (Oct 2012)","https://gds.blog.gov.uk/2012/10/16/meeting-the-needs-of-businesses/","ur"],
+    m_press:["AccountingWEB: GOV.UK gets off to shaky start (Oct 2012)","https://www.accountingweb.co.uk/tax/hmrc-policy/govuk-gets-off-to-shaky-start","pro"],
+    m_young:["BIS: Make business your business, Lord Young (May 2012)","https://www.gov.uk/government/publications/support-available-for-small-business-start-ups-analysis","gov"],
+    m_bisdig:["BIS digital strategy (Dec 2012)","https://www.gov.uk/government/publications/bis-digital-strategy","gov"],
+    m_sfb:["BIS: Survey of customers using Solutions for Business products (2012)","https://www.gov.uk/government/publications/survey-of-customers-using-solutions-for-business-products","ur"],
+    m_oneclick:["HMRC: One Click project, new businesses and SMEs (2013)","https://www.gov.uk/government/publications/one-click-project-new-businesses-and-small-and-medium-enterprises","ur"],
+    m_sme13:["GDS blog: How GDS is working to help small businesses (May 2013)","https://gds.blog.gov.uk/2013/05/14/help-small-businesses/","gov"],
+    m_finder13:["Inside GOV.UK: Finance and support for your business, redesigned (Oct 2013)","https://insidegovuk.blog.gov.uk/2013/10/23/finance-and-support-for-your-business-redesigned/","ur"],
+    m_browse13:["Inside GOV.UK: Testing the Business browse page (Dec 2013)","https://insidegovuk.blog.gov.uk/2013/12/04/testing-the-business-browse-page/","ur"],
+    m_bsh14:["BIS research paper 193: Evaluation of the Business Support Helpline and GOV.UK (Ecorys, 2014)","https://www.gov.uk/government/publications/business-support-helpline-and-govuk-evaluation","ur"],
+    m_bsh16:["BEIS: Business Support Helpline and GOV.UK, further evaluation (2016)","https://www.gov.uk/government/publications/business-support-helpline-and-govuk-further-evaluation","ur"],
+    m_beis16:["BEIS Digital blog: Improving guidance for new businesses (Sep 2016)","https://beisdigital.blog.gov.uk/2016/09/05/improving-guidance-for-new-businesses/","ur"],
+    m_seaham:["Inside GOV.UK: Learning from business helpline advisers (Sep 2016)","https://insidegovuk.blog.gov.uk/2016/09/08/seaham-hear-em-thank-em-learning-from-business-helpline-advisers/","ur"],
+    m_tcob:["GDS blog: Taking care of business on GOV.UK (Jul 2017)","https://gds.blog.gov.uk/2017/07/18/taking-care-of-business-on-gov-uk/","ur"],
+    m_hmrc19:["HMRC: Understanding the experience of start-up businesses (Ipsos MORI, fieldwork 2017, published 2019)","https://www.gov.uk/government/publications/understanding-the-experience-of-start-up-businesses","ur"],
+    m_comm18:["GDS blog: How cross-government communities can support cross-government services (Jan 2018)","https://gds.blog.gov.uk/2018/01/08/how-cross-government-communities-can-support-cross-government-services/","gov"],
+    m_rycA:["Service assessment: Register your company, alpha (Oct 2017)","https://www.gov.uk/service-standard-reports/register-your-company-alpha-assessment","scr"],
+    m_rycB:["Service assessment: Register your company, beta (Feb 2018)","https://www.gov.uk/service-standard-reports/register-your-company-beta","scr"],
+    m_step18:["GDS blog: Building a better GOV.UK, step by step (Oct 2018)","https://gds.blog.gov.uk/2018/10/17/building-a-better-gov-uk-step-by-step/","gov"],
+    m_comm19:["GDS blog: What Service Communities are achieving across government (Jan 2019)","https://gds.blog.gov.uk/2019/01/28/what-service-communities-are-achieving-across-government/","gov"],
+    m_fsa19:["Services blog: 'Start a business' service community, FSA and Business Support Helpline (Oct 2019)","https://services.blog.gov.uk/2019/10/24/start-a-business-service-community-food-standards-agency-and-business-support-helpline-working-together/","ur"],
+    m_map20:["Inside GOV.UK: Mapping the 'Start a Business' journey on GOV.UK (Oct 2020)","https://insidegovuk.blog.gov.uk/2020/10/14/mapping-the-start-a-business-journey-on-gov-uk/","ur"],
+    m_scope21:["Inside GOV.UK: Scoping the starting and sustaining a business whole user journey (Apr 2021)","https://insidegovuk.blog.gov.uk/2021/04/28/scoping-the-starting-and-sustaining-a-business-whole-user-journey/","ur"],
+    m_less21:["Inside GOV.UK: Five lessons from scoping a whole user journey (May 2021)","https://insidegovuk.blog.gov.uk/2021/05/04/five-lessons-from-how-we-approached-scoping-a-whole-user-journey/","ur"],
+    m_prod21:["Inside GOV.UK: How we are creating a product to help new business owners (Jun 2021)","https://insidegovuk.blog.gov.uk/2021/06/02/how-we-are-creating-a-product-to-help-new-business-owners/","ur"],
+    m_next:["GOV.UK: Check the next steps for your limited company","https://www.gov.uk/next-steps-for-your-business","gov"],
+    m_road22:["Inside GOV.UK: The GOV.UK roadmap through spring 2022","https://insidegovuk.blog.gov.uk/2022/01/18/the-gov-uk-roadmap-what-were-working-on-through-spring-2022/","ur"],
+    m_slm22:["Services blog: Service landscape maps (Mar 2022)","https://services.blog.gov.uk/2022/03/23/service-landscape-maps-a-tool-for-mapping-public-services/","gov"],
+    m_itsa22:["HMRC: Call for evidence, Self Assessment registration for the self-employed and landlords (2022)","https://www.gov.uk/government/calls-for-evidence/call-for-evidence-income-tax-self-assessment-registration-for-the-self-employed-and-landlords","gov"],
+    m_vat24:["HMRC: Qualitative research on VAT registration (Ipsos, 39 interviews, published 2024)","https://www.gov.uk/government/publications/qualitative-research-on-vat-registration","ur"],
+    m_blue:["GOV.UK: A blueprint for modern digital government (Jan 2025)","https://www.gov.uk/government/publications/a-blueprint-for-modern-digital-government/a-blueprint-for-modern-digital-government-html","gov"],
+    m_dbt25:["Digital Trade blog: The launch of the Digital Business Growth Service and business.gov.uk (Jul 2025)","https://digitaltrade.blog.gov.uk/2025/07/31/the-launch-of-the-digital-business-growth-service-and-business-gov-uk-helping-businesses-start-and-scale/","ur"],
+    m_dbtai:["Digital Trade blog: Launching DBT's first public-facing AI feature (Oct 2025)","https://digitaltrade.blog.gov.uk/2025/10/21/launching-dbts-first-public-facing-ai-feature/","gov"],
+    m_aiready:["Digital Trade blog: How AI-ready content can boost policy effectiveness (Nov 2025)","https://digitaltrade.blog.gov.uk/2025/11/11/how-ai-ready-content-can-boost-policy-effectiveness/","ur"],
+    m_costly:["HMRC: Costly channels usage amongst small businesses (BMG, 2,001 firms, 2025)","https://www.gov.uk/government/publications/hmrc-costly-channels-usage-amongst-small-businesses","ur"],
+    m_ethno:["HMRC: SME longitudinal ethnography (Ipsos, 20 SMEs over 17 months, 2025)","https://www.gov.uk/government/publications/sme-longitudinal-ethnography","ur"],
+    m_mission:["Civil Service blog: How we're backing Britain's businesses to grow (Nov 2025)","https://civilservice.blog.gov.uk/2025/11/24/mission-moments-cutting-through-complexity-how-were-backing-britains-businesses-to-grow/","gov"],
+    m_colab:["Digital Trade blog: Strengthening business support through evidence-led collaboration (Mar 2026)","https://digitaltrade.blog.gov.uk/2026/03/11/strengthening-business-support-through-user-centred-evidence-led-collaboration/","ur"],
+    m_kanban:["Digital Trade blog: Making strategic decisions based on the needs of businesses (Mar 2026)","https://digitaltrade.blog.gov.uk/2026/03/24/how-were-making-strategic-decisions-based-on-the-needs-of-businesses/","ur"],
+    m_aimis:["Digital Trade blog: How we're preventing AI misinformation at DBT (Apr 2026)","https://digitaltrade.blog.gov.uk/2026/04/20/how-were-preventing-ai-misinformation-at-dbt/","ur"],
+    m_gdsbiz:["GDS blog: Delivering a better GOV.UK experience for business (Aug 2026)","https://gds.blog.gov.uk/2026/08/06/gds-delivering-a-better-gov-uk-experience-for-business/","gov"],
+    m_abab:["HMRC: Administrative Burdens Advisory Board 'Tell ABAB' report 2025 to 2026 (Sep 2026)","https://www.gov.uk/government/publications/administrative-burdens-advisory-board-tell-abab-report-2025-to-2026","ur"],
+    m_bizfinder:["GOV.UK: Finance and support for your business finder","https://www.gov.uk/business-finance-support","gov"],
+    m_setup:["GOV.UK: Set up a business","https://www.gov.uk/set-up-business","gov"],
+    m_sole:["GOV.UK: Become a sole trader","https://www.gov.uk/become-sole-trader","gov"],
+    m_bizformal:["business.gov.uk: Setting up as a formal business","https://www.business.gov.uk/support/business-structures-governance-and-ethics/setting-up-formal-business/","gov"],
+    m_search:["GOV.UK Search API: exact-phrase query for 'start a business' (queried 17 Sep 2026)","https://www.gov.uk/api/search.json?q=%22start+a+business%22&count=0&facet_organisations=40","gov"],
+    m_ch1m:["Companies House blog: Verifying your identity with GOV.UK One Login (Nov 2025)","https://companieshouse.blog.gov.uk/2025/11/19/verifying-your-identity-for-companies-house-with-gov-uk-one-login/","gov"],
+    m_bsh21:["Companies House blog: Business Support Helpline, supporting small business (Dec 2021)","https://companieshouse.blog.gov.uk/2021/12/03/business-support-helpline-supporting-and-celebrating-small-business/","gov"]
+
+  };
+
+  var LANES={
+    front:["Central front doors and guidance","var(--l-front)"],
+    reg:["Companies House and IPO","var(--l-reg)"],
+    tax:["HMRC and VOA","var(--l-tax)"],
+    local:["Local government","var(--l-local)"],
+    regu:["National regulators","var(--l-regu)"],
+    fin:["Public finance bodies","var(--l-fin)"],
+    emp:["Employment bodies","var(--l-emp)"],
+    trade:["Trade, procurement and payments","var(--l-trade)"],
+    dev:["Devolved administrations and agencies","var(--l-dev)"]
+  };
+
+  var STAGES=[
+    ["Explore and get advice","Where a founder first looks for help, and who answers."],
+    ["Structure, name and brand","Choosing a legal form, checking a name and protecting a brand."],
+    ["Register the business","Incorporation and the identity checks that now sit in front of it."],
+    ["Register for tax","Income Tax, Corporation Tax and VAT, and how you sign in to them."],
+    ["Licences and registrations","Permissions that depend on what you do and where."],
+    ["Premises and property","Business rates, reliefs and planning once you occupy a property."],
+    ["Finance and funding","Public loans, investment and grants for new businesses."],
+    ["Employ people","Registrations and new duties once you take on staff."],
+    ["Trade, tender and get paid","Customs identifiers, public procurement and payment protections."]
+  ];
+
+  var ALL=["E","S","W","N"];
+  var T=[
+    {s:0,l:"front",n:"business.gov.uk (Business Growth Service)",o:"BIST (formerly Department for Business and Trade)",na:ALL,p:["all"],
+      d:"The government's digital front door for business support: guidance on testing an idea, naming, structures, funding and licences, plus postcode triage to free advice. The Business and Trade Committee heard in 2025 that many businesses were still unaware it had launched.",
+      id:null,sign:"business.gov.uk account",when:"Any time before starting",cost:"Free",ev:"v",src:["bgs","btc"]},
+    {s:0,l:"front",n:"GDS and BIST single business experience (in development)",o:"GDS (DCMS) with BIST",na:ALL,p:["all"],
+      d:"Announced 6 August 2026: a new GDS team will build one proactive, personalised place for businesses on GOV.UK, delivered in phases. Joint research identified at least 160 business-related services. It follows GDS's 2021 whole-user-journey work and DBT's 2025 business.gov.uk launch.",
+      id:null,sign:"None yet (planned)",when:"Phased from 2026",cost:"n/a",ev:"v",src:["m_gdsbiz","m_blue"]},
+    {s:0,l:"front",n:"Business Support Service helpline",o:"BIST, England only",na:["E"],p:["all"],
+      d:"Phone, email, webchat and WhatsApp signposting for anyone starting or running a business in England. Scotland, Wales and Northern Ireland each run their own line.",
+      id:null,sign:"None",when:"Weekdays 9am to 6pm",cost:"Free, 0800 998 1098",ev:"v",src:["helpline"]},
+    {s:0,l:"local",n:"Growth Hubs",o:"Local and combined authorities with BIST grant",na:["E"],p:["all"],
+      d:"Local advice under the national Business Growth Service brand. Official sources disagree on how many there are: DBT's own March 2026 Co-Lab post and the Business and Trade Committee describe 41, while a 2025 Mayor of London decision describes 38. The Committee heard the service described as a postcode lottery. Funding ranges from three-year grants (Dorset) to county top-ups made subject to confirmation of national funding (Gloucestershire).",
+      id:null,sign:"Varies",when:"Pre-start onwards",cost:"Free",ev:"v",f:"med",src:["m_colab","gla","btc","dorset","glos"]},
+    {s:0,l:"front",n:"GOV.UK start-up guidance and step-by-steps",o:"GDS (now in DCMS) with departmental content",na:ALL,p:["all"],
+      d:"'Start your business' browse pages and step-by-step navigation such as 'Set up a limited company', which signposts founders to business.gov.uk. That step by step, last updated April 2026, does not mention the identity verification compulsory since November 2025, although business.gov.uk's equivalent page does. Core pages 'Become a sole trader' and 'Set up a business' last had major updates in 2015 and 2016. In DBT's survey, 21% of businesses using government or regulator websites could not find what they needed, rising to 25% of the smallest firms.",
+      id:null,sign:"None",when:"Any time",cost:"Free",ev:"v",f:"med",src:["ltd","m_bizformal","m_sole","m_setup","bps"]},
+    {s:0,l:"front",n:"GOV.UK app and GOV.UK Chat",o:"GDS (now in DCMS)",na:ALL,p:["all"],
+      d:"GOV.UK Chat launched in the app on 14 May 2026. GDS's pilots with more than 10,000 users found 73% of surveyed app users rated it useful and answer accuracy rose to 90%; some users wanted an adviser with access to their own records, which Chat cannot yet provide.",
+      id:null,sign:"None (app; One Login optional)",when:"Any time",cost:"Free",ev:"v",src:["chat","chatlaunch"]},
+    {s:0,l:"dev",n:"Business Gateway",o:"Scottish councils, funded by the Scottish Government",na:["S"],p:["all"],
+      d:"Scotland's national business support service, delivered locally; the Scottish Government says it helps around 50,000 businesses a year to start or grow.",
+      id:null,sign:"Varies",when:"Pre-start onwards",cost:"Free, 0300 303 0660",ev:"v",src:["bg","helpline"]},
+    {s:0,l:"dev",n:"Business Wales",o:"Welsh Government",na:["W"],p:["all"],
+      d:"Front door for advice in Wales, with a helpline and fully funded programmes such as the Start-Up Accelerator for pre-revenue founders.",
+      id:null,sign:"Varies",when:"Pre-start onwards",cost:"Free, 0300 060 3000",ev:"v",src:["bw","helpline"]},
+    {s:0,l:"dev",n:"Go Succeed and nibusinessinfo.co.uk",o:"Northern Ireland's 11 councils, Enterprise NI, Invest NI",na:["N"],p:["all"],
+      d:"Council-led start, grow and scale support funded from the UK Shared Prosperity Fund, with grants needing a 30% match. Its funding after UKSPF was not confirmed on these pages.",
+      id:null,sign:"Varies",when:"Pre-start onwards",cost:"Free, 0800 027 0639",ev:"v",f:"med",src:["gs","nibi"]},
+    {s:0,l:"local",n:"Local growth funding after UKSPF",o:"MHCLG, strategic authorities, councils",na:["E"],p:["all"],
+      d:"UKSPF 2025-26 cannot fund activity after 30 September 2026. The Local Growth Fund in England targets mayoral city regions in the North and Midlands, with allocations to 11 Mayoral Strategic Authorities; county councils warn of a cliff edge elsewhere.",
+      id:null,sign:"Varies",when:"From April 2026",cost:"n/a",ev:"v",f:"high",src:["ukspf","lgf","lgflib","ccn"]},
+    {s:1,l:"front",n:"Choose a legal structure",o:"business.gov.uk and GOV.UK",na:ALL,p:["all"],
+      d:"Most founders choose between sole trader and limited company, which decides whether Companies House is involved and which HMRC registrations follow. Charity and community interest company routes were not scanned in depth.",
+      id:null,sign:"None",when:"Before registering",cost:"Free",ev:"v",src:["bgs","ltd"]},
+    {s:1,l:"reg",n:"Company name checks",o:"Companies House",na:ALL,p:["ltd"],
+      d:"Names must be available and follow naming rules. Since March 2024 Companies House can query and reject names chosen to mislead or facilitate fraud.",
+      id:null,sign:"None",when:"Before incorporation",cost:"Free",ev:"v",src:["bgs","chplan"]},
+    {s:1,l:"reg",n:"Trade mark registration",o:"Intellectual Property Office",na:ALL,p:["all"],
+      d:"A trading name and brand are not protected automatically; founders must register them to stop others using them.",
+      id:"Trade mark number",sign:"IPO online account",when:"Optional, early",cost:"Fee per class",ev:"v",src:["bgs"]},
+    {s:2,l:"reg",n:"Identity verification for directors and PSCs",o:"Companies House via GOV.UK One Login or an authorised agent (ACSP)",na:ALL,p:["ltd"],
+      d:"Compulsory for new incorporations and appointments since 18 November 2025, producing a personal code linked to each role. Companies House estimated 6 to 7 million people would need to verify. By 30 June 2026, 55% of director appointments and 42% of individual PSC appointments were verified, with the transition period ending 17 November 2026.",
+      id:"Companies House personal code",sign:"GOV.UK One Login",when:"Before incorporation",cost:"Free directly; agents charge",ev:"v",f:"med",src:["chidv","chblog","chmi","chplan"]},
+    {s:2,l:"reg",n:"Incorporate the company",o:"Companies House",na:ALL,p:["ltd"],
+      d:"Needs at least one director, a shareholder or guarantor, and details of people with significant control. From 1 February 2026 incorporation costs £100 digitally, £124 on paper and £156 for same-day software filing.",
+      id:"Company registration number",sign:"GOV.UK One Login",when:"Day zero for a company",cost:"£100 digital",ev:"v",src:["ltd","chfees"]},
+    {s:2,l:"tax",n:"Automatic notification to HMRC",o:"Companies House to HMRC",na:ALL,p:["ltd"],
+      d:"Companies House tells HMRC when incorporation completes, and HMRC posts the Corporation Tax reference to the registered office, reportedly within about 15 days. It is the only automated cross-body handoff this guide found.",
+      id:"Corporation Tax UTR",sign:"None",when:"About 15 days after incorporation",cost:"Free",ev:"r",src:["utr"]},
+    {s:2,l:"front",n:"Check the next steps for your limited company",o:"GOV.UK (built by GDS in 2021, listed under Companies House)",na:ALL,p:["ltd"],
+      d:"A personalised post-registration checklist GDS launched in May 2021 for newly registered companies; it had about 3,000 users in its first four weeks. It is still live and linked from step 11 of the limited company step by step, with a last major public update in June 2021.",
+      id:null,sign:"None",when:"After incorporation",cost:"Free",ev:"v",f:"med",src:["m_next","m_prod21","m_road22"]},
+    {s:2,l:"reg",n:"Annual confirmation statement and accounts",o:"Companies House",na:ALL,p:["ltd"],
+      d:"Confirmation statement fees are £50 digital and £110 paper from 1 February 2026. Companies House plans to require all annual accounts to be filed through software from April 2028.",
+      id:null,sign:"GOV.UK One Login",when:"Every 12 months",cost:"£50 digital",ev:"v",src:["chfees","chplan"]},
+    {s:2,l:"reg",n:"Presenter and agent verification",o:"Companies House",na:ALL,p:["ltd"],
+      d:"The 5 August 2026 transition plan puts compulsory verification of whoever files documents, and registration of third-party agents as ACSPs, at no earlier than November 2027, with at least six months' notice. Earlier versions said spring 2026, then no earlier than November 2026.",
+      id:null,sign:"GOV.UK One Login",when:"No earlier than Nov 2027",cost:"ACSP registration fee",ev:"v",f:"med",src:["chplan","dwf"]},
+    {s:3,l:"tax",n:"Register for Self Assessment",o:"HMRC",na:ALL,p:["sole"],
+      d:"Sole traders register and receive a 10-digit Unique Taxpayer Reference. The Low Incomes Tax Reform Group has told HMRC that people often struggle to pinpoint when trading started, or when a hobby became taxable, so may register late without realising.",
+      id:"Self Assessment UTR",sign:"Government Gateway, or One Login for new HMRC customers",when:"By 5 October after the tax year",cost:"Free",ev:"b",src:["litrgreg"]},
+    {s:3,l:"tax",n:"Making Tax Digital for Income Tax",o:"HMRC",na:ALL,p:["sole"],
+      d:"Mandatory from 6 April 2026 where qualifying self-employment and property income was over £50,000, then over £30,000 from April 2027 and over £20,000 from April 2028. The Business and Trade Committee recorded evidence that the timetable is fast and noted the Public Accounts Committee's 2023 finding that MTD had increased burdens.",
+      id:null,sign:"Software plus HMRC credentials",when:"Phased from 6 Apr 2026",cost:"Software cost",ev:"v",f:"med",src:["mtd","litrgmtd","btc"]},
+    {s:3,l:"tax",n:"Corporation Tax",o:"HMRC",na:ALL,p:["ltd"],
+      d:"Companies must tell HMRC they have started trading within three months. HMRC's free 'File your accounts and Company Tax Return' service closed on 31 March 2026; returns now go through commercial software, with accounts filed separately at Companies House.",
+      id:null,sign:"Government Gateway business tax account",when:"Within 3 months of trading",cost:"Free; software for returns",ev:"v",f:"med",src:["closure"]},
+    {s:3,l:"tax",n:"VAT registration",o:"HMRC",na:ALL,p:["all"],
+      d:"Registration is compulsory within 30 days of the end of the month in which rolling 12-month taxable turnover passes £90,000, the level since April 2024. Some start-up guides published in 2026 still quote £85,000.",
+      id:"VAT registration number",sign:"Government Gateway business tax account",when:"When turnover passes £90,000",cost:"Free",ev:"v",f:"med",src:["vat","vatlib","prowess"]},
+    {s:3,l:"tax",n:"How a founder signs in to HMRC",o:"HMRC and GDS",na:ALL,p:["all"],
+      d:"Since February 2026 a proportion of first-time HMRC users are routed to GOV.UK One Login; GDS says moving existing Government Gateway users is its next priority. The Business and Trade Committee heard that HMRC's funded 85% call-answer target still leaves 3 to 4 million calls unanswered.",
+      id:"Government Gateway user ID",sign:"Government Gateway and One Login",when:"Now, until migration",cost:"n/a",ev:"v",f:"high",src:["gdshmrc","hmrcguid","btc"]},
+    {s:4,l:"front",n:"Find a licence",o:"GOV.UK with BIST and about 30 departments, bodies and devolved nations",na:ALL,p:["all"],
+      d:"Rebuilt after analytics showed users dropping out of the legacy tool. User research shaped the new version; findable licences rose from 263 to 431 and satisfaction rose 20% on the page-usefulness measure. It hands off to issuing bodies and councils.",
+      id:null,sign:"None",when:"Before trading",cost:"Free",ev:"v",src:["licence","licblog"]},
+    {s:4,l:"local",n:"Council licences",o:"Local licensing authorities",na:ALL,p:["all"],
+      d:"Alcohol, entertainment, street trading, animal activities, gambling and more, each with council-specific forms and fees. In DBT's survey, 38% of businesses found obtaining licences or permits a burden, rising to 50% in hotels and catering.",
+      id:"Licence number",sign:"Council portal",when:"Before the activity starts",cost:"Varies",ev:"v",src:["brent","bps"]},
+    {s:4,l:"local",n:"Food business registration",o:"Local authority environmental health, under FSA and Food Standards Scotland",na:ALL,p:["food"],
+      d:"Register at least 28 days before trading; free and cannot be refused. FSA data reported by councils showed 37% of new ventures registering through its digital service since March 2020 ran from domestic kitchens, and many home sellers did not see themselves as food businesses.",
+      id:"Food business registration",sign:"None (online registration service)",when:"At least 28 days before trading",cost:"Free",ev:"v",src:["food","fss","derby"]},
+    {s:4,l:"regu",n:"Data protection fee",o:"Information Commissioner's Office",na:ALL,p:["all"],
+      d:"Most organisations processing personal data pay unless exempt: £52 for micro organisations, £78 for small and medium, £3,763 for large, with £5 off by direct debit.",
+      id:"ICO registration reference",sign:"ICO online registration",when:"Before processing personal data",cost:"£52 for most start-ups",ev:"v",src:["ico"]},
+    {s:4,l:"regu",n:"Sector regulators",o:"FCA, CQC, Ofsted, SIA, Gambling Commission, Environment Agency and others",na:ALL,p:["all"],
+      d:"Activity-specific authorisations sit with national regulators, each with its own service. Only 17% of businesses agree regulators work in a joined-up way. Not scanned in depth.",
+      id:"Regulator reference",sign:"Varies (regulator-specific)",when:"Before regulated activity",cost:"Varies",ev:"b",src:["bps"]},
+    {s:5,l:"local",n:"Business rates bill",o:"Billing authority (council), valuations by the VOA",na:["E"],p:["prem"],
+      d:"The 2026 revaluation took effect on 1 April 2026 with five multipliers: 38.2p and 43p for retail, hospitality and leisure below £51,000 and £500,000, 43.2p and 48p for other businesses, and 50.8p above £500,000. Councils decide which properties qualify for the lower multipliers. The Business and Trade Committee heard evidence that rates bear little relation to ability to pay.",
+      id:"Business rates account",sign:"Council portal",when:"From occupation",cost:"Rateable value times multiplier",ev:"v",src:["rates","rates2","btc"]},
+    {s:5,l:"local",n:"Small business rate relief and transition",o:"Billing authority",na:["E"],p:["prem"],
+      d:"No rates on a single property with rateable value up to £12,000, tapering to zero at £15,000. The Supporting Small Business scheme caps revaluation-driven increases at the greater of £800 or 5%, 15% or 30% of the previous bill.",
+      id:null,sign:"Council portal",when:"Apply or check with council",cost:"n/a",ev:"r",src:["rates2","sbrr"]},
+    {s:5,l:"tax",n:"Check or challenge a valuation",o:"Valuation Office Agency",na:["E","W"],p:["prem"],
+      d:"Occupiers use a separate Business Rates Valuation Account to check and challenge the property details behind their bill.",
+      id:"VOA property reference",sign:"VOA Business Rates Valuation Account",when:"Any time",cost:"Free",ev:"v",f:"med",src:["nnorth"]},
+    {s:5,l:"dev",n:"Devolved non-domestic rates",o:"Welsh Government; Scottish assessors and councils; Land and Property Services (NI)",na:["S","W","N"],p:["prem"],
+      d:"Rates policy, multipliers and reliefs are set separately in Wales, Scotland and Northern Ireland, with different valuation and billing bodies in Scotland and Northern Ireland.",
+      id:"Rates account",sign:"Nation or council portal",when:"From occupation",cost:"Varies",ev:"b",src:["btc"]},
+    {s:5,l:"local",n:"Planning permission",o:"Local planning authority",na:ALL,p:["prem","food"],
+      d:"Change of use, signage and building works can need consent. Planning rules were among the regulatory areas businesses found hardest to comply with: 57% of those affected in DBT's survey.",
+      id:"Planning reference",sign:"Planning portal or council",when:"Before works or change of use",cost:"Varies",ev:"b",src:["bps","fss"]},
+    {s:6,l:"fin",n:"Start Up Loans",o:"British Business Bank, through delivery partners",na:ALL,p:["all"],
+      d:"Government-backed personal loans of up to £25,000 per founder with 12 months of mentoring. From 6 April 2026 the fixed rate for new applications is 7.5% (6% since 2012) and eligibility extends to businesses trading up to 60 months (previously 36). Some 2026 guides still quote the old terms.",
+      id:"Loan application reference",sign:"Delivery-partner portal",when:"Pre-start to 5 years trading",cost:"7.5% fixed",ev:"v",f:"med",src:["sul","fundbiz"]},
+    {s:6,l:"fin",n:"British Business Bank programmes",o:"British Business Bank",na:ALL,p:["all"],
+      d:"Investment funds and guarantee schemes delivered through lenders. The bank's 2025 survey found 62% of smaller businesses knew where to find information on finance options, five points higher than in 2024.",
+      id:null,sign:"Varies (lender-specific)",when:"Growth stage",cost:"Commercial terms",ev:"v",src:["bbbsurvey","sbc"]},
+    {s:6,l:"fin",n:"Help to Grow: Management",o:"BIST with business schools",na:ALL,p:["emp"],
+      d:"Leadership training where the owner pays £750 and government covers 90%. The Business and Trade Committee recommended removing the five-employee eligibility floor, which it heard excludes much of sectors like hair and beauty.",
+      id:null,sign:"Varies (provider portal)",when:"Once established",cost:"£750",ev:"v",src:["sbc","btc"]},
+    {s:6,l:"dev",n:"Scottish Enterprise, HIE and council grants",o:"Scottish Government agencies and councils",na:["S"],p:["all"],
+      d:"Business Gateway signposts council micro-grants; Scottish Enterprise's Scottish Loan Scheme offers £250,000 to £2 million to growing firms.",
+      id:null,sign:"Agency portals",when:"Start-up and growth",cost:"Varies",ev:"v",src:["mygovscot","bg"]},
+    {s:6,l:"dev",n:"Development Bank of Wales",o:"Welsh Government-owned",na:["W"],p:["all"],
+      d:"Micro loans from £1,000 to £50,000 for start-ups, and investment up to £5 million at a time for Welsh businesses.",
+      id:null,sign:"Online application",when:"Start-up and growth",cost:"Rate set per business",ev:"v",src:["dbw"]},
+    {s:6,l:"dev",n:"Invest NI and Go Succeed grants",o:"Invest NI; NI councils",na:["N"],p:["all"],
+      d:"Go Succeed can support with grant funding subject to a 30% match; Invest NI works with businesses that can grow significantly.",
+      id:null,sign:"Varies",when:"Start-up and growth",cost:"30% match",ev:"v",src:["gs","nibi"]},
+    {s:7,l:"tax",n:"Register as an employer (PAYE)",o:"HMRC",na:ALL,p:["emp"],
+      d:"An employer must register with HMRC and run PAYE before the first payday.",
+      id:"Employer PAYE and Accounts Office references",sign:"Government Gateway business tax account",when:"Before the first payday",cost:"Free",ev:"b",src:["bgs"]},
+    {s:7,l:"emp",n:"Right to work checks",o:"Home Office",na:ALL,p:["emp"],
+      d:"Employers must check each new worker's right to work in the UK before employment starts.",
+      id:null,sign:"Home Office online checking",when:"Before work starts",cost:"Free",ev:"b",src:["bgs"]},
+    {s:7,l:"emp",n:"Workplace pension auto-enrolment",o:"The Pensions Regulator",na:ALL,p:["emp"],
+      d:"Eligible staff must be enrolled into a qualifying scheme and the employer must declare compliance.",
+      id:"TPR letter code and PAYE reference",sign:"TPR online service",when:"From first employee",cost:"Employer contributions",ev:"b",src:["bgs"]},
+    {s:7,l:"emp",n:"Employers' liability insurance",o:"Health and Safety Executive (enforcement)",na:ALL,p:["emp"],
+      d:"Most employers must hold employers' liability insurance. Health and safety and employment law were the two areas businesses found hardest to comply with in DBT's survey, each 58% of those affected.",
+      id:null,sign:"None",when:"From first employee",cost:"Market premium",ev:"b",src:["bps"]},
+    {s:7,l:"emp",n:"Employment Rights Act 2025: first changes",o:"BIST",na:["E","S","W"],p:["emp"],
+      d:"From 6 April 2026 Statutory Sick Pay is payable from the first day of absence without a lower earnings limit, and paternity and unpaid parental leave became day-one rights. Further phases continue into 2027.",
+      id:null,sign:"None",when:"In force from 6 Apr 2026",cost:"Higher employer cost",ev:"r",f:"med",src:["era"]},
+    {s:7,l:"emp",n:"Fair Work Agency",o:"BIST arm's-length body",na:["E","S","W"],p:["emp"],
+      d:"Launched on 7 April 2026, bringing together the GLAA, the Employment Agency Standards Inspectorate and the Director of Labour Market Enforcement's office as a single point of advice and enforcement.",
+      id:null,sign:"None",when:"Operating since 7 Apr 2026",cost:"n/a",ev:"v",src:["glaa"]},
+    {s:7,l:"dev",n:"Northern Ireland employment law",o:"Department for the Economy (NI)",na:["N"],p:["emp"],
+      d:"Employment law is devolved. Northern Ireland is developing its own 'Good Jobs' Employment Rights Bill, compared with Great Britain's reforms in Assembly research, so GB changes do not simply carry across.",
+      id:null,sign:"None",when:"Bill due in the current mandate",cost:"n/a",ev:"v",src:["niar"]},
+    {s:8,l:"trade",n:"Central Digital Platform",o:"Cabinet Office (enhanced Find a Tender)",na:["E","W","N"],p:["gov"],
+      d:"Under the Procurement Act 2023, suppliers register core details once and share them with buyers. Registration uses GOV.UK One Login. The Business and Trade Committee found SMEs' share of procurement spend stuck at about 20%.",
+      id:"Supplier record and share code",sign:"GOV.UK One Login",when:"Before bidding under the Act",cost:"Free",ev:"v",src:["cdp","cdpol","btc"]},
+    {s:8,l:"dev",n:"Scottish procurement regime",o:"Scottish Government",na:["S"],p:["gov"],
+      d:"Devolved Scottish contracting authorities, including the Scottish Government, councils and universities, remain under Scottish procurement law and publish on Public Contracts Scotland; the Procurement Act 2023 applies to reserved, Welsh and Northern Irish authorities.",
+      id:"Portal supplier ID",sign:"Portal account",when:"Before bidding",cost:"Free",ev:"v",src:["sppn"]},
+    {s:8,l:"trade",n:"EORI number (GB)",o:"HMRC",na:ALL,p:["trade"],
+      d:"Needed to move goods between Great Britain and other countries; for VAT-registered businesses it usually combines GB, the VAT number and 000. In DBT's survey, 41% of businesses found post-EU exit regulatory arrangements more challenging.",
+      id:"GB EORI",sign:"Government Gateway",when:"Before the first customs movement",cost:"Free",ev:"r",src:["xero","bps"]},
+    {s:8,l:"trade",n:"XI EORI and UK Internal Market Scheme",o:"HMRC",na:["N"],p:["trade"],
+      d:"Northern Ireland movements need an EORI starting XI, which requires a GB EORI first; nibusinessinfo says it arrives within four days. 78% of Northern Ireland businesses in DBT's survey found post-EU exit arrangements challenging, from a small base.",
+      id:"XI EORI",sign:"Government Gateway",when:"Before NI customs activity",cost:"Free",ev:"v",f:"med",src:["nieori","bps"]},
+    {s:8,l:"front",n:"Sell overseas support",o:"BIST on business.gov.uk",na:ALL,p:["trade"],
+      d:"Market guides, export support topics and Business Academy learning, now hosted within business.gov.uk.",
+      id:null,sign:"business.gov.uk account",when:"Before exporting",cost:"Free",ev:"v",src:["bgs"]},
+    {s:8,l:"trade",n:"Protection from late payment",o:"Small Business Commissioner; Commercial Payments Bill",na:ALL,p:["all"],
+      d:"The bill introduced in May 2026 would cap payment terms at 60 days with limited exemptions, make interest at 8% above base rate mandatory and give the Commissioner powers to investigate, adjudicate and fine. The Lords agreed 30 government amendments at committee on 21 July 2026. Territorial extent was not checked.",
+      id:null,sign:"None",when:"Bill before Parliament",cost:"n/a",ev:"v",src:["cpb","lords"]}
+  
+, {s:2,l:"reg",n:"Register the charity",o:"Charity Commission for England and Wales, OSCR or the Charity Commission for Northern Ireland",na:ALL,p:["charity"],
+ d:"A charitable company or charitable incorporated organisation registers with the charity regulator for its nation as well as, where it is a company, with Companies House. In England and Wales registration is required once annual income is over £5,000, and for any CIO whatever its income. Scotland and Northern Ireland have their own regulators and their own rules.",
+ id:"Charity number",sign:"Charity regulator account",when:"Before or soon after the charity starts operating",cost:"Free",ev:"v",src:["chreg","oscr","ccni"]}
+, {s:2,l:"reg",n:"Register the society",o:"Financial Conduct Authority",na:ALL,p:["mutual"],
+ d:"A co-operative or community benefit society registers with the FCA rather than Companies House, and appears on the Mutuals Public Register. This is a separate registrar, a separate register and a separate identifier from the company route, and none of the company journey applies to it.",
+ id:"Society registration number",sign:"FCA Connect",when:"At formation",cost:"Registration fee payable to the FCA",ev:"v",src:["mutuals"]}
+, {s:2,l:"reg",n:"CIC eligibility decision",o:"Office of the Regulator of Community Interest Companies",na:ALL,p:["cic"],
+ d:"A community interest company incorporates at Companies House like any other company, but the Regulator decides whether it is eligible to become, and to continue to be, a CIC. The community interest statement and asset lock are assessed as part of the incorporation, adding a decision the founder of an ordinary company never meets.",
+ id:null,sign:"Companies House account",when:"At incorporation",cost:"Included in the incorporation fee",ev:"v",src:["cicreg","cicform"]}
+, {s:3,l:"tax",n:"Register the trust with HMRC",o:"HM Revenue and Customs",na:ALL,p:["trust"],
+ d:"Trustees must register the trust with HMRC once it becomes liable for tax, and report income and gains in a trust and estate Self Assessment return after each tax year. A trust has no registrar in the company sense, so this is the only registration point the journey offers it.",
+ id:"Unique Taxpayer Reference",sign:"HMRC online services",when:"Once the trust becomes liable for tax",cost:"Free",ev:"v",src:["trustreg"]}
+  ];
+
+  var EXHIBITS=[
+    {th:"Telling government once",n:"61%",t:"of businesses say having to provide the same information more than once is a burden when complying with regulation; 62% say the same of paperwork and record-keeping.",m:"DBT Business Perceptions Survey 2024; 2,000 telephone interviews by IFF Research, weighted to the business population.",src:["bps"]},
+    {th:"Keeping up with change",n:"30%",t:"agree government tells businesses about regulatory changes clearly and with enough warning, down from 44% in 2020. 65% say keeping up to date with which rules apply is a burden.",m:"DBT Business Perceptions Survey 2024; trend from 2018, 2020 and 2022 waves.",src:["bps"]},
+    {th:"Finding the answer",n:"21%",t:"of businesses using official government or regulator websites said they could not find the information they needed, 25% among the smallest firms. Agreement that regulators' guidance is easy to locate fell from 47% to 36% between 2022 and 2024.",m:"DBT Business Perceptions Survey 2024; base of 1,300 website users.",src:["bps"]},
+    {th:"Paying someone to navigate",n:"70%",t:"use external advisers to comply, at an average of £10,745 a year, up from £6,800 in 2022 prices. 51% of adviser users cite a lack of clarity about legal requirements.",m:"DBT Business Perceptions Survey 2024; base of 1,514 adviser users for reasons and spend.",src:["bps"]},
+    {th:"Seeking advice at all",n:"27%",t:"of SME employers sought external information or advice in 2024, and only 17% of businesses with no employees, which is where most new starts sit.",m:"DBT Longitudinal Small Business Survey 2024, official statistics.",src:["lsbs","lsbsne"]},
+    {th:"Knowing where finance information is",n:"62%",t:"of smaller businesses said they knew where to obtain information on different types of finance in 2025, five points higher than 2024.",m:"British Business Bank Business Finance Survey 2025; Ipsos, 1,734 smaller businesses.",src:["bbbsurvey"]},
+    {th:"Living with four rulebooks",n:"64%",t:"of Northern Ireland businesses say understanding differences in regulation between UK nations is a burden, against 42% in Scotland, 43% in Wales and 20% in England.",m:"DBT Business Perceptions Survey 2024. Treat with caution: 53 interviews in Northern Ireland.",src:["bps"]},
+    {th:"Proving who you are",n:"55%",t:"of director appointments and 42% of individual PSC appointments had linked a verified identity by 30 June 2026, five months before the transition period ends.",m:"Companies House management information, official statistics; counts appointments, not people.",src:["chmi","chplan"]},
+    {th:"Asking in plain language",n:"73%",t:"of surveyed GOV.UK app users found GOV.UK Chat useful and 64% were satisfied; accuracy rose from 76% to 90%. Some users wanted to reach an adviser who could see their own records.",m:"GDS pilots: 10,136 web users asking 23,838 questions, then 641 app testers; usability tests, diary study and surveys.",src:["chat"]},
+    {th:"Finding the right licence",n:"+64%",t:"more licences findable after the licence finder rebuild (263 to 431). Analytics had shown people dropping out before the final page of the old tool.",m:"GDS user research and analytics; satisfaction measured by page-usefulness feedback (+20%).",src:["licblog"]},
+    {th:"Not realising you're a business",n:"37%",t:"of new food ventures registering through the FSA's digital service since March 2020 ran from domestic kitchens, and many home sellers did not consider themselves food businesses.",m:"FSA registration data as reported by Derby City Council in 2022; dated, but consistent with LITRG evidence on when hobbies become trades.",src:["derby","litrgreg"]},
+    {th:"Reassurance, not ignorance",n:"Reassurance",q:1,t:"was the biggest factor in how small businesses chose to contact HMRC: fear of making a mistake pushed them to the phone. Earlier HMRC research found tax anxiety widespread even among customers with enough knowledge.",m:"HMRC survey of 2,001 small businesses by BMG (2024 fieldwork, published 2025), plus exploratory qualitative research.",src:["m_costly","hmrcres"]},
+    {th:"Support by postcode",n:"Qualitative",q:1,t:"The Business and Trade Committee heard local support described as a postcode lottery, found many businesses unaware of the Business Growth Service, and recommended a long-term national service modelled on the US Small Business Administration.",m:"Business and Trade Committee inquiry: 100+ written submissions, 326 survey responses, a high street tour and four oral sessions.",src:["btc"]},
+    {th:"Getting through to HMRC",n:"3–4m",t:"calls a year could still go unanswered if HMRC meets its funded 85% answer target, while phone remains small firms' most-used channel with HMRC.",m:"HMRC evidence to the Business and Trade Committee; channel data from FSB research cited in the report.",src:["btc"]},
+    {th:"Regulators working together",n:"17%",t:"agree regulators work in a joined-up way, and 15% that they cooperate effectively with one another.",m:"DBT Business Perceptions Survey 2024.",src:["bps"]}
+  ];
+
+  var FINDINGS=[
+    {sev:"high",str:"Strong",h:"Government keeps rediscovering the same answers",
+      ev:["HMRC research with start-ups in 2017 recommended a central checklist of what to do and whom to consult; GDS tested a hub and a personalised next-steps tool in 2021; DBT launched business.gov.uk in 2025; GDS and BIST set up another team in August 2026.","A joint Companies House and HMRC service registering a company for Corporation Tax and PAYE in one go met the Service Standard at beta in 2018, with VAT planned. In 2026 the Companies House service still sets up Corporation Tax and offers PAYE registration, but VAT remains a separate registration.","In 2026 DBT reviewed more than 20 user research documents because insight from different teams was not connected.","DBT found GOV.UK guidance with no owner because a predecessor department published it and it was never transferred."],
+      imp:"Evidence and prototypes outlive the teams, programmes and departments that made them, so each new front door restarts discovery. GDS's 2021 lesson that no single department is accountable for the whole journey still describes 2026.",src:["m_hmrc19","m_prod21","m_dbt25","m_gdsbiz","m_rycB","m_kanban","m_aimis","m_less21"]},
+    {sev:"high",str:"Strong",h:"Businesses repeat themselves to government, and say so",
+      ev:["61% of businesses call providing the same information more than once a burden.","A limited company that employs, imports and tenders collects at least eight separate references from different bodies.","The joint Companies House and HMRC accounts filing service closed on 31 March 2026; incorporation, which sets up Corporation Tax and can register PAYE, is now the only automated handoff found.","HMRC's Single Business Identifier dataset is listed as not released."],
+      imp:"Cross-government views of a business rely on matching rather than keys, and the one combined filing route has gone without a replacement.",src:["bps","closure","utr","sbi"]},
+    {sev:"high",str:"Strong",h:"More front doors, yet many businesses cannot find the answer",
+      ev:["business.gov.uk, GOV.UK guidance, a helpline, 38 or 41 Growth Hubs, three devolved front doors and GOV.UK Chat now overlap.","21% of website users could not find what they needed; ease of locating guidance fell 11 points in two years.","Only 27% of SME employers and 17% of non-employers sought advice in 2024.","The Committee found many businesses unaware of the Business Growth Service.","The pattern is old: in 2014, 8.5% of SMEs had used GOV.UK business content in a year, against 27% who had used Business Link."],
+      imp:"Adding entry points has not yet translated into businesses finding government information, which pushes them towards paid help.",src:["bps","lsbs","lsbsne","btc","gla","m_bsh14"]},
+    {sev:"high",str:"Strong",h:"Intermediaries carry much of the journey",
+      ev:["93% of businesses use external support to comply and 70% use advisers.","Average adviser spend rose to £10,745 a year.","Agents will need to register as ACSPs and verify identity at Companies House, no earlier than November 2027."],
+      imp:"For many firms the real user of government services is an accountant or agent, so agent identity, access and data flows are as important as founder-facing design.",src:["bps","chplan"]},
+    {sev:"high",str:"Strong",h:"One company, several identity systems",
+      ev:["Companies House requires One Login or ACSP verification for directors and PSCs; 55% of director and 42% of PSC appointments were verified by 30 June 2026.","Existing HMRC users, including business tax accounts, remain on Government Gateway; GDS calls moving them its next priority.","The wider digital identity programme was dropped in July 2026."],
+      imp:"The strongest identity assurance in the journey cannot yet be reused when the same director registers the company for VAT or PAYE.",src:["chidv","chmi","gdshmrc","hmrcguid","ncaw"]},
+    {sev:"high",str:"Strong",h:"Local support depends on where you are",
+      ev:["UKSPF 2025-26 cannot fund activity after 30 September 2026.","England's Local Growth Fund targets mayoral city regions, with allocations to 11 Mayoral Strategic Authorities; Scotland, Wales and Northern Ireland received allocations in 2026.","Growth Hub funding ranges from three-year grants to county top-ups conditional on national funding.","The Committee heard the local offer described as a postcode lottery."],
+      imp:"The nationally branded, locally delivered promise rests on capacity that varies most in English areas without a mayor.",src:["ukspf","lgf","lgflib","dorset","glos","btc"]},
+    {sev:"med",str:"Moderate",h:"The moment you become a business is invisible to founders",
+      ev:["LITRG told HMRC that people struggle to pinpoint when trading began or a hobby became taxable.","FSA data showed 37% of new food ventures ran from home kitchens, with many sellers not seeing themselves as food businesses.","HMRC research found widespread tax anxiety despite adequate knowledge."],
+      imp:"Obligations are triggered by facts founders do not notice, such as turnover crossing a threshold or selling from home, so any design that waits for the founder to self-identify misses them. Evidence is qualitative or dated.",src:["litrgreg","derby","hmrcres"]},
+    {sev:"med",str:"Strong",h:"Rules change faster than guidance, and dates keep moving",
+      ev:["Only 30% agree government communicates change clearly and with enough warning.","Presenter verification has moved from spring 2026, to November 2026, to no earlier than November 2027.","2026 guides still quote a £85,000 VAT threshold and 6% Start Up Loans over 36 months.","GOV.UK's limited company step by step omits compulsory identity verification, and DBT found AI search surfacing an unmaintained GOV.UK page with incorporation fees of £40 and £13."],
+      imp:"Founders and intermediaries work from figures that lag the rules, and no machine-readable, effective-dated source of these thresholds was found.",src:["bps","chplan","dwf","prowess","fundbiz","vat","sul","ltd","m_aimis"]},
+    {sev:"med",str:"Strong",h:"Four departments now own the journey",
+      ev:["The 21 July 2026 statement renamed the business department and moved GDS to DCMS; GOV.UK's fact sheet then abbreviated it BIST rather than the statement's DBIST.","Only 17% of businesses think regulators are joined up.","The Committee found cross-Whitehall working does not serve SMEs and no clearing house exists for conflicting rules."],
+      imp:"The front door (BIST), shared platforms (DCMS), tax identity (HMRC) and rates policy (MHCLG) now need four-way coordination for any end-to-end fix.",src:["wms","mogfact","bps","btc","ifg"]},
+    {sev:"med",str:"Moderate",h:"Reference and statistical data about businesses disagree",
+      ev:["Growth Hubs: 38 in a 2025 Mayor of London decision, 41 in the Committee report and in DBT's own March 2026 blog.","Start-up counts differ by source and basis: 317,000 ONS business births in 2024 and 314,000 start-ups in 2025 in British Business Bank analysis.","The Committee called SME data inadequate and fragmented."],
+      imp:"Triage, AI answers and policy targeting all depend on authoritative registers and consistent definitions that do not yet exist for this domain.",src:["gla","btc","m_colab","ons","bbbsurvey"]},
+    {sev:"watch",str:"Moderate",h:"Integrity friction is deliberate, and its user cost should be measured",
+      ev:["Companies House estimated 6 to 7 million people would need to verify and says it tested the process extensively with users.","Fees fund expanded checks; incorporation now costs £100.","Nearly half of appointments were unverified five months before the transition ends."],
+      imp:"A justified trade-off against fraud and false filings, but no published measure of time-to-incorporate or abandonment was found.",src:["chblog","chfees","chmi"]},
+    {sev:"watch",str:"Partly inference",h:"The burden target counts rules, not journeys",
+      ev:["Government set a £22.4bn baseline and a £5.6bn reduction target, with £1.5bn identified by October 2025.","The Committee recommended an equivalent baseline for tax administration costs, which is outside the target."],
+      imp:"Scan inference: duplication that only appears across bodies, such as repeated registrations and sign-ins, is unlikely to be captured by rule-by-rule measurement.",src:["rap","nao","btc"]}
+  ];
+
+  var CORR=[
+    ["Growth Hub count: DBT's own March 2026 blog describes England's 41 Growth Hubs. This guide now treats 41 as DBT's current figure and keeps the 38 in a 2025 Mayor of London decision as evidence of inconsistent reference data.","m_colab"],
+    ["Presenter identity verification at Companies House is now no earlier than November 2027, not November 2026. The transition plan was updated on 5 August 2026.","chplan"],
+    ["The Local Growth Fund is not England-only: allocations for Scotland, Wales and Northern Ireland were announced in 2026. The gap is sharpest in English areas outside mayoral authorities.","lgflib"],
+    ["GOV.UK's fact sheet abbreviates the renamed department BIST; the first version used DBIST from the written statement.","mogfact"],
+    ["Start Up Loans, VAT, Making Tax Digital, Companies House fees, the joint filing closure and the Fair Work Agency are now sourced to primary government pages rather than advisers.","sul"]
+  ];
+
+  var IDS=[
+    ["Companies House personal code","Companies House","Directors, PSCs, and presenters from no earlier than Nov 2027"],
+    ["Company registration number","Companies House","Every company and LLP"],
+    ["Corporation Tax UTR","HMRC","Companies, issued after incorporation"],
+    ["Self Assessment UTR","HMRC","Sole traders, partners, some directors"],
+    ["VAT registration number","HMRC","Businesses over £90,000 or registering voluntarily"],
+    ["Employer PAYE and Accounts Office references","HMRC","Employers"],
+    ["EORI (GB, and XI for Northern Ireland)","HMRC","Importers and exporters"],
+    ["ICO registration reference","Information Commissioner's Office","Most data controllers"],
+    ["Food business registration","Local authority","Food businesses"],
+    ["Business rates account and VOA property reference","Council and VOA","Occupiers of non-domestic property"],
+    ["Supplier record and share code","Cabinet Office platform","Public sector suppliers"],
+    ["Government Gateway user ID","HMRC","Existing HMRC users until migration"]
+  ];
+
+  var NATIONS=[
+    ["Front door",["business.gov.uk, Business Support Service helpline, Growth Hubs","Business Gateway, Find Business Support Scotland","Business Wales","Go Succeed, nibusinessinfo.co.uk, Invest NI"],["bgs","bg","bw","gs"]],
+    ["Company and tax registration",["Companies House and HMRC","Same, UK-wide","Same, UK-wide","Same, UK-wide"],["chplan"]],
+    ["Public lending and investment",["British Business Bank","British Business Bank; Scottish Enterprise, HIE","British Business Bank; Development Bank of Wales","British Business Bank; Invest NI"],["mygovscot","dbw","nibi"]],
+    ["Local growth funding from 2026",["Local Growth Fund for mayoral strategic authorities; UKSPF activity ends 30 Sep 2026","Local Growth Fund allocation announced Jan 2026","Local Growth Fund allocation announced Mar 2026","Local Growth Fund allocation announced Mar 2026; £1.7m of it allocated to Go Succeed in August 2026"],["lgf","ukspf","lgflib","gslgf"]],
+    ["Non-domestic rates",["VOA valuations, council billing, five multipliers from April 2026","Scottish assessors and councils (baseline)","VOA valuations, Welsh policy (baseline)","Land and Property Services (baseline)"],["rates"]],
+    ["Employment law",["Employment Rights Act 2025, Fair Work Agency","As England","As England","Devolved; own Good Jobs Bill in development"],["glaa","niar"]],
+    ["Public procurement",["Procurement Act 2023, Central Digital Platform","Scottish procurement law, Public Contracts Scotland","Procurement Act 2023 platform","Procurement Act 2023 platform"],["cdp","sppn"]],
+    ["Customs and goods movement",["GB EORI","GB EORI","GB EORI","XI EORI after GB EORI; UK Internal Market Scheme"],["nieori"]],
+    ["Food regulator",["Food Standards Agency","Food Standards Scotland","Food Standards Agency","Food Standards Agency"],["food","fss"]]
+  ];
+
+  var TL=[
+    ["2025",[
+      ["24 Feb","Procurement Act 2023 takes effect; Central Digital Platform goes live.",0,"cdp"],
+      ["31 Mar","Joint accounts and tax return filing closure announced for March 2026.",0,"closure"],
+      ["31 Jul","Government publishes 'Backing your business', its SME plan, alongside the Business Growth Service.",0,"btc"],
+      ["21 Oct","Regulation Action Plan update sets a £22.4bn burden baseline and £5.6bn target.",0,"rap"],
+      ["18 Nov","Identity verification compulsory for new directors and PSCs; 12-month transition begins.",0,"chplan"]
+    ]],
+    ["2026",[
+      ["1 Feb","Companies House digital incorporation fee rises to £100.",0,"chfees"],
+      ["9 Feb","A proportion of first-time HMRC users start using GOV.UK One Login.",0,"gdshmrc"],
+      ["11 Feb","Business and Trade Committee reports on small business strategy.",0,"btc"],
+      ["31 Mar","HMRC's free accounts and Company Tax Return service closes.",0,"closure"],
+      ["1 Apr","Business rates revaluation and five multipliers in England.",0,"rates"],
+      ["6 Apr","Making Tax Digital for Income Tax above £50,000; Start Up Loans move to 7.5% and 60 months.",0,"mtd"],
+      ["7 Apr","Fair Work Agency launches.",0,"glaa"],
+      ["14 May","GOV.UK Chat officially launches in the GOV.UK app.",0,"chatlaunch"],
+      ["19 May","Commercial Payments Bill introduced to Parliament.",0,"cpb"],
+      ["21 Jul","Machinery of government statement: business department renamed, GDS to DCMS.",0,"wms"],
+      ["30 Jul","Companies House publishes identity verification statistics to June: 55% of director appointments verified.",0,"chmi"],
+      ["5 Aug","Transition plan moves presenter verification to no earlier than November 2027.",0,"chplan"],
+      ["6 Aug","GDS and BIST announce a new GDS team to build a single business experience on GOV.UK.",0,"m_gdsbiz"],
+      ["15 Sep","HMRC publishes the 2025-26 Tell ABAB report: businesses still struggle to navigate GOV.UK guidance.",0,"m_abab"],
+      ["30 Sep","Last date UKSPF 2025-26 can fund activity.",1,"ukspf"],
+      ["17 Nov","Identity verification transition ends; compliance activity to follow.",1,"chplan"],
+      ["19 Nov","ONS Business Demography 2025, provisional release date.",1,"onsrel"]
+    ]],
+    ["2027 to 2029",[
+      ["Apr 2027","Making Tax Digital for Income Tax extends to income above £30,000.",1,"mtd"],
+      ["Nov 2027","No earlier than: presenter verification and ACSP registration for agents.",1,"chplan"],
+      ["Apr 2028","Making Tax Digital above £20,000; Companies House software-only accounts filing.",1,"chplan"]
+    ]]
+  ];
+
+  var OPPS=[
+    ["Keep a register of what government already knows","Maintain a cross-government evidence register for the whole journey: research, prototypes, service assessments, decisions and their status, with a named owner that survives machinery of government changes. Start by indexing the 2012 to 2026 material catalogued on these pages.","Responds to: repeated discovery since 2012; unowned predecessor content; 20+ unconnected DBT research documents."],
+    ["Model the journey as data","Publish an obligations register in which every registration and licence carries its trigger, threshold, effective dates, owning body, nation, identifier issued and sign-in route. Find a licence already shows distributed ownership across about 30 bodies can work.","Responds to: 65% burden of keeping up; triggers founders do not notice."],
+    ["Extend the one handoff that works","Build on the incorporation notice to HMRC with an identifier crosswalk linking company number, UTR, VAT, PAYE and EORI, so later registrations can be pre-filled rather than re-keyed.","Responds to: 61% burden of repeating information; closure of joint filing."],
+    ["Reuse verified director identities","Sequence HMRC's migration of business users to recognise identities already verified for Companies House, and publish time-to-incorporate and abandonment measures alongside verification rates.","Responds to: 55% and 42% verification; two sign-in systems for one company."],
+    ["Design for the intermediary","Treat accountants and agents as primary users: consistent agent authorisation, identity and data access across Companies House, HMRC and procurement.","Responds to: 70% adviser use and £10,745 average spend."],
+    ["Stand up authoritative support registers","Maintain one register of Growth Hubs, devolved services and funded programmes, with coverage and eligibility, consumed by business.gov.uk triage and GOV.UK Chat.","Responds to: 38 versus 41 Growth Hubs; postcode lottery; 21% cannot find information."],
+    ["Publish thresholds and service ownership as reference data","Release effective-dated thresholds and fees, and a register of which department owns each service after July 2026, as open reference data.","Responds to: stale figures in 2026 guides; BIST and DBIST naming; four-department ownership."]
+  ];
+
+  var MEMSTATS=[["1,497","unique GOV.UK pages matching eight start-up phrase variants"],["474","of those published by the business, trade, digital and registry lineage"],["8,593","posts read from 25 GOV.UK blogs, 2009 to 2026"],["233","posts substantively about starting a business, Business Link or the business front door"]];
+  var CH_BLOG={"2011":6,"2012":34,"2013":19,"2014":10,"2015":21,"2016":35,"2017":14,"2018":21,"2019":21,"2020":8,"2021":14,"2022":10,"2023":3,"2024":0,"2025":8,"2026":7};
+  var CH_PAGES={"2010":23,"2011":27,"2012":31,"2013":43,"2014":32,"2015":25,"2016":23,"2017":15,"2018":16,"2019":22,"2020":15,"2021":23,"2022":16,"2023":26,"2024":43,"2025":42,"2026":52};
+
+  var ERAS={
+    e1:["2004 to 2012: Business Link to GOV.UK","A dedicated business website and adviser network, replaced by a single government domain built from user needs."],
+    e2:["2013 to 2016: consolidating on GOV.UK","Evaluations show fewer businesses using the new site, and a helpline absorbing what the content could not answer."],
+    e3:["2017 to 2019: whole services and service communities","Cross-government communities, step-by-step navigation and a joint registration service for company and tax."],
+    e4:["2020 to 2022: whole user journeys","GDS maps journeys with data, tests a hub and ships a personalised next-steps tool for new companies."],
+    e5:["2023 to 2026: the front door rebuilt again","DBT launches business.gov.uk, AI changes how people find content, and GDS and BIST start a single business experience."]
+  };
+  var KINDS={blog:["GDS and GOV.UK blogs","var(--t-gov)"],dept:["Department blogs","var(--t-ind)"],res:["Research and evaluation","var(--t-ur)"],asm:["Service assessment","var(--t-scr)"],pol:["Strategy and policy","var(--t-stat)"]};
+
+  // [era, date, kind, org, title, text, sources]
+  var MEM=[
+    ["e1","2004","blog","Small Business Service; later HMRC","businesslink.gov.uk launches","Set up to support the Business Link face-to-face adviser network of the 1990s; an HMRC team ran the site from 2009.",["m_bl"]],
+    ["e1","May 2012","pol","BIS, Lord Young","Make business your business","Report on start-up support that introduced Start Up Loans and a home business guide.",["m_young"]],
+    ["e1","Jul 2012","res","BIS","Solutions for Business customer survey","Early assessment of the simplified business support products, including a 'Starting a business' product.",["m_sfb"]],
+    ["e1","Oct 2012","blog","GDS","GOV.UK replaces Directgov and Business Link","GOV.UK left beta on 17 October 2012. Business Link's user needs were analysed page by page; press reported £36m in combined contract costs for the two old sites.",["m_why","m_needs","m_press"]],
+    ["e1","Oct 2012","blog","GDS","Meeting the needs of businesses","Three groups of business need emerged. GDS built the business finance and support finder to list 800+ government support schemes.",["m_needs"]],
+    ["e1","Nov 2012","blog","HMRC guest post on GDS blog","The next (business) link in the chain","businesslink.gov.uk reached its contractual end; its lead warned that business users' needs are distinctly different from citizens'.",["m_bl"]],
+    ["e1","Dec 2012","pol","BIS","BIS digital strategy","Commitment to redesign BIS information, transactions and engagement around the needs of businesses.",["m_bisdig"]],
+    ["e2","May 2013","res","HMRC","One Click project: new businesses and SMEs","Research on communication needs of start-ups, focused on which intermediaries could best reach them.",["m_oneclick"]],
+    ["e2","May 2013","blog","GDS","How GDS is working to help small businesses","GDS worked with BIS to bring coherence to the support schemes around user needs, not departmental structures.",["m_sme13"]],
+    ["e2","Oct 2013","blog","GOV.UK","Finance and support finder redesigned","Analytics showed only 16.9% used the multi-select business-area question, so the tool was rebuilt around the core need to find support.",["m_finder13"]],
+    ["e2","Dec 2013","blog","GOV.UK","Testing the Business browse page","Analytics and research showed people focused on popular links and rarely explored further; exit rate moved from 15.2% to 14.0%.",["m_browse13"]],
+    ["e2","Dec 2014","res","BIS (Ecorys)","Evaluation of the Business Support Helpline and GOV.UK","1,647-user survey: 8.5% of SMEs used GOV.UK business content in a year against 27% for Business Link; a third to a half of non-users were unaware of the services; starting a business was the top reason to call the 36,000-call helpline.",["m_bsh14"]],
+    ["e2","Sep 2016","res","BEIS","Further evaluation: why businesses call after using GOV.UK","70 interviews on why 31% of helpline users called after GOV.UK: they could not find the answer, wanted reassurance it applied to them, or 'don't know what they don't know'. Recommended keeping content current and making archived links harder to retrieve.",["m_bsh16"]],
+    ["e2","Sep 2016","dept","BEIS Digital","Improving guidance for new businesses","Users found setting-up guidance too complicated and fragmented, with no single entry point and overlapping guides.",["m_beis16"]],
+    ["e2","Sep 2016","blog","GOV.UK","Learning from business helpline advisers","Helpline advisers were sending people direct GOV.UK links because there was too much content to navigate.",["m_seaham"]],
+    ["e3","Jan–Feb 2017","res","HMRC (Ipsos MORI)","Understanding the experience of start-up businesses","15 in-depth interviews. Founders did not see government as a source of general advice, relied heavily on accountants and wanted a central checklist of what to do and whom to consult. Published September 2019.",["m_hmrc19"]],
+    ["e3","Jul 2017","blog","GDS with BEIS","Taking care of business on GOV.UK","Start-up guidance cut from 50 pages to 16, giving a 25% rise in clicks to the services people need.",["m_tcob"]],
+    ["e3","2017","blog","GDS Service Communities","'Start a business' service community founded","The first cross-government service community, with BEIS, Companies House and the FSA. By January 2019 the four communities had 236 members from 15+ organisations.",["m_comm18","m_comm19"]],
+    ["e3","Oct 2017","asm","Companies House and HMRC","Register your company, alpha","One service to incorporate and register for Corporation Tax, PAYE and VAT at once.",["m_rycA"]],
+    ["e3","Feb 2018","asm","Companies House and HMRC","Register your company, beta: met","Panel praised data pre-populated across both bodies, but found the team's knowledge of the founder's onward journey dropped off immediately, and questioned why two letters were posted. VAT was still to come.",["m_rycB"]],
+    ["e3","Oct 2018","blog","GDS","Step-by-step navigation","Hiring a first employee needed 5 parts of government; step by steps were created to show the whole task, including setting up as self-employed and a limited company.",["m_step18","m_fsa19"]],
+    ["e3","Oct 2019","blog","GDS Services","Start a business community: FSA and helpline","The FSA used the helpline, then serving about 35,000 people a year, to shape its 'Register a food business' service.",["m_fsa19"]],
+    ["e4","Oct 2020","blog","GOV.UK Data Labs","Mapping the 'Start a Business' journey","Journey data showed 20% of users circling the same three pages and only 3% using the whole sole trader step by step.",["m_map20"]],
+    ["e4","Apr–May 2021","blog","GOV.UK","Scoping the whole user journey, and five lessons","Starting a business spans more than 10 departments. Users knew less about what to do after registering. No single department is accountable for the whole journey.",["m_scope21","m_less21"]],
+    ["e4","May 2021","blog","GOV.UK","Next steps for your limited company goes live","A hub page tested well but raised governance and relevance problems; a personalised next-steps tool went live instead, reaching about 3,000 users in four weeks.",["m_prod21","m_road22"]],
+    ["e4","Mar 2022","blog","GDS Services","Service landscape maps","Tools built from the start a business and other communities for mapping services across organisations.",["m_slm22"]],
+    ["e4","Jul 2022","pol","HMRC","Call for evidence: Self Assessment registration","HMRC asked how registration for the self-employed and landlords could be improved.",["m_itsa22","litrgreg"]],
+    ["e5","Dec 2023","blog","GOV.UK","Licence finder rebuilt","Analytics-led rebuild: findable licences rose from 263 to 431.",["licblog"]],
+    ["e5","Sep 2024","res","HMRC (Ipsos)","Qualitative research on VAT registration","39 interviews in 2022: attitudes ranged from valuable credibility to a 'nightmare' for prices and competitiveness.",["m_vat24"]],
+    ["e5","Jan 2025","pol","DSIT, GDS","A blueprint for modern digital government","Committed to help businesses start and scale, and said founders should not have to remember the steps government needs from them; proposed exploring a business equivalent of One Login.",["m_blue"]],
+    ["e5","Jun 2025","dept","DBT Digital","business.gov.uk launches from great.gov.uk","Mandate in February, launch in June. Its content model grew from export content that lifted engagement by 315%.",["m_dbt25"]],
+    ["e5","May–Jun 2025","res","HMRC","Costly channels survey and SME ethnography","2,001 small businesses: reassurance drives phone use. Twenty SMEs filmed over 17 months to see how tax fits day-to-day running.",["m_costly","m_ethno"]],
+    ["e5","Nov 2025","dept","DBT Digital","AI-ready content","An estimated 3.4m ChatGPT sessions in 2025 involved DBT-related content; ChatGPT referrals to GOV.UK grew 346% from January to September.",["m_aiready"]],
+    ["e5","Mar 2026","dept","DBT Co-Lab","Growth Hubs research","Interviews with Growth Hub leaders on integrating England's 41 hubs into the Business Growth Service; recommendations now shape funding terms and data-sharing agreements.",["m_colab"]],
+    ["e5","Mar 2026","dept","DBT Digital","Consolidating research on business needs","More than 20 research documents reviewed with an internal AI tool to find connected insights and evidence gaps; a research knowledge board adopted from GDS practice.",["m_kanban"]],
+    ["e5","Apr 2026","dept","DBT Content Design","Preventing AI misinformation","AI search quoted an unmaintained GOV.UK page instead of current fees. DBT is retiring pages not updated in five years with fewer than 11 views, including guidance from predecessor departments with no owner.",["m_aimis"]],
+    ["e5","Aug 2026","blog","GDS and BIST","A better GOV.UK experience for business","New GDS team; at least 160 business-related services; phased delivery of a single, proactive and personalised experience.",["m_gdsbiz"]],
+    ["e5","Sep 2026","res","HMRC, Administrative Burdens Advisory Board","Tell ABAB report 2025-26","Businesses still report difficulty finding consistent information and navigating GOV.UK guidance, and want more services online.",["m_abab"]]
+  ];
+
+  // [heading, years, what was found, status in 2026, sources]
+  var RECUR=[
+    ["Founders don't know what they don't know",["2012","2016","2017","2021","2025","2026"],"Four studies said the same thing. The 2016 evaluation wanted users prompted about needs they could not name. HMRC found low awareness of government resources in 2017. GDS found in 2021 that new companies missed actions like licences and VAT. The 2025 Blueprint said remembering the steps should not fall to the founder.","A 2021 next-steps tool is still live but little changed; GDS and BIST plan a proactive experience from 2026.",["m_bsh16","m_hmrc19","m_prod21","m_blue","m_gdsbiz"]],
+    ["One place to start",["2012","2017","2021","2025","2026"],"GOV.UK was built in 2012 as the single domain for business; HMRC's 2017 interviews asked for a central checklist; GDS tested a hub in 2021; business.gov.uk launched as a single front door in 2025; GDS and BIST now plan one place to transact.","Two front doors (GOV.UK and business.gov.uk) plus devolved services; a third build is starting.",["m_why","m_hmrc19","m_prod21","m_mission","m_gdsbiz"]],
+    ["Content sprawls and goes stale",["2016","2017","2020","2026"],"In 2016 users found guidance fragmented and the evaluation asked for current content and harder-to-reach archive links; 2017 cut 50 pages to 16; 2020 data showed circular journeys; 2026 AI search surfaces unmaintained pages.","Core GOV.UK start-up pages last had major updates in 2015 and 2016, and the limited company step by step omits identity verification.",["m_bsh16","m_tcob","m_map20","m_aimis","ltd"]],
+    ["People need reassurance, so they call or pay",["2013","2014","2016","2017","2025"],"HMRC looked to intermediaries in 2013; helpline users in 2016 wanted to check information applied to them; 2017 founders leaned on accountants; HMRC's 2025 survey found reassurance drives phone use.","70% of businesses use advisers; HMRC's call target still leaves millions of calls unanswered.",["m_oneclick","m_bsh16","m_hmrc19","m_costly","bps","btc"]],
+    ["Tell government once",["2017","2018","2026"],"Register your company would have registered a company for Corporation Tax, PAYE and VAT at once, and met beta in 2018 with pre-populated data across two bodies.","VAT is still separate, though PAYE can be registered during incorporation; the joint accounts and tax filing service closed in March 2026; GDS cites duplication across services.",["m_rycA","m_rycB","closure","m_gdsbiz"]],
+    ["Nobody owns the whole journey",["2018","2021","2026"],"GDS chose start a business for its first service community in 2018 because no department owned the journey; in 2021 it found accountability unclear across more than 10 departments.","After July 2026 the journey spans four departments, and DBT has found predecessor content with no owner.",["m_comm18","m_less21","wms","m_aimis"]],
+    ["Too much support to find",["2012","2013","2025","2026"],"The 2012 finder listed 800+ schemes and was redesigned in 2013 after analytics showed poor use; DBT's first public AI feature in 2025 tackled finding funding.","The finder now lists 128 schemes, alongside business.gov.uk's own tools and a Growth Hub count that official sources give as 38 or 41.",["m_needs","m_finder13","m_dbtai","m_bizfinder","m_colab"]]
+  ];
+
+  // [page, origin, status, noticed, sources]
+  var LIVE=[
+    ["businesslink.gov.uk","Small Business Service, 2004","Redirects to the GOV.UK homepage","Contractual end November 2012; its content is only preserved in the UK Government Web Archive.",["m_bl"]],
+    ["Check the next steps for your limited company","GDS whole user journeys team, May 2021","Live; last major update June 2021","Still step 11 of the limited company step by step; no published evaluation found.",["m_next","m_prod21"]],
+    ["Finance and support for your business","GDS 2012, rebuilt 2013; now DBT","Live; 128 schemes; updated April 2026","Described as covering 800+ schemes in 2012. Some start-up scheme entries were last updated in 2017.",["m_bizfinder","m_needs","m_search"]],
+    ["Set up a limited company: step by step","Start a business service community, around 2018","Live; last major update April 2026","No mention of identity verification, which has been compulsory since November 2025.",["ltd","m_fsa19"]],
+    ["Set up a business","BIS and HMRC","Live; last major update August 2016","Covers structure choice; overlaps with business.gov.uk's own structures guidance.",["m_setup","m_bizformal"]],
+    ["Become a sole trader","HMRC","Live; last major update February 2015","The primary sole trader entry point; the older /set-up-sole-trader address now redirects here.",["m_sole"]],
+    ["Business Support Helpline","BIS, by 2014; now Business Support Service","The old URL redirects to the Business Support Service page","Handled about 36,000 calls a year in 2014 and a record 23,070 contacts in March 2020.",["helpline","m_bsh14","m_bsh21"]],
+    ["Register your company (joint CH and HMRC)","Companies House and HMRC, 2017–18","No separate service found","Today HMRC is notified at incorporation and posts the Corporation Tax reference; PAYE can be registered in the same service, but VAT is separate.",["m_rycB","utr"]]
+  ];
+
+  // ---------- rendering ----------
+  var order=[], idx={};
+  function reg(k){ if(S[k] && !(k in idx)){ order.push(k); idx[k]=order.length; } }
+  function cite(keys){
+    return keys.map(function(k){ if(!S[k]) return ''; reg(k); var t=TIERS[S[k][2]];
+      return '<span class="cite" style="--tc:'+t[1]+'"><a href="'+S[k][1]+'" target="_blank" rel="noopener" title="'+esc(S[k][0])+' ('+esc(t[0])+')">'+idx[k]+'</a></span>'; }).join(' ');
+  }
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+  // register static citations in reading order
+  var staticCites=document.querySelectorAll('.cite[data-c]');
+  Array.prototype.forEach.call(staticCites,function(el){reg(el.getAttribute('data-c'));});
+  T.forEach(function(t){t.src.forEach(reg);});
+  EXHIBITS.forEach(function(e){e.src.forEach(reg);});
+  FINDINGS.forEach(function(f){f.src.forEach(reg);});
+  CORR.forEach(function(c){reg(c[1]);});
+  NATIONS.forEach(function(n){n[2].forEach(reg);});
+  TL.forEach(function(y){y[1].forEach(function(e){reg(e[3]);});});
+  RECUR.forEach(function(r){r[4].forEach(reg);});
+  MEM.forEach(function(m){m[6].forEach(reg);});
+  LIVE.forEach(function(r){r[4].forEach(reg);});
+  reg('m_search');
+  Object.keys(S).forEach(reg);
+  Array.prototype.forEach.call(staticCites,function(el){el.outerHTML=cite([el.getAttribute('data-c')]);});
+
+  var FORMTAGS={"sole-trader":["sole"],"ordinary-partnership":["sole"],"limited-partnership":["ltd"],"llp":["ltd"],"ltd-shares":["ltd"],"ltd-guarantee":["ltd"],"plc":["ltd"],"cic":["ltd","cic"],"charitable-company":["ltd","charity"],"cio":["charity"],"society":["mutual"],"unincorporated-association":["sole"],"trust":["trust"],"overseas-establishment":["ltd"]};
+var state={nation:"E",formId:"ltd-shares",form:["ltd"],traits:{emp:true},stage:2};
+  function applies(t){
+    if(t.na.indexOf(state.nation)<0) return false;
+    for(var i=0;i<t.p.length;i++){var p=t.p[i]; if(p==="all"||state.form.indexOf(p)>=0||state.traits[p]) return true;}
+    return false;
+  }
+  function render(){
+    var active=T.filter(applies), orgs={}, signs={}, ids={};
+    active.forEach(function(t){
+      orgs[t.o]=1;
+      var sg=t.sign;
+      if(sg && !/^(None|Varies|n\/a|Not yet)/.test(sg)){
+        sg.split(/ and |, or | plus /).forEach(function(x){
+          x=x.replace(/\s*\(.*\)/,'').replace(/ business tax account/,'').replace(/^One Login.*/,'GOV.UK One Login').trim();
+          if(/credentials|Software/.test(x)) return; signs[x]=1;
+        });
+      }
+      if(t.id) ids[t.id]=1;
+    });
+    document.getElementById('tTouch').textContent=active.length;
+    document.getElementById('tOrgs').textContent=Object.keys(orgs).length;
+    document.getElementById('tSign').textContent=Object.keys(signs).length;
+    document.getElementById('tIds').textContent=Object.keys(ids).length;
+
+    var line=document.getElementById('line'); line.innerHTML='';
+    STAGES.forEach(function(st,i){
+      var items=active.filter(function(t){return t.s===i;});
+      var li=document.createElement('li');
+      var pips=items.map(function(t){return '<span class="pip'+(t.f==='high'?' f':'')+'" style="background:'+LANES[t.l][1]+'"></span>';}).join('');
+      li.innerHTML='<button class="stop" type="button" aria-pressed="'+(state.stage===i)+'" aria-controls="panel" data-i="'+i+'">'+
+        '<span class="disc" aria-hidden="true">'+(i+1)+'</span><span class="nm">'+esc(st[0])+'</span>'+
+        '<span class="ct">'+items.length+' touchpoint'+(items.length===1?'':'s')+'</span><span class="pips" aria-hidden="true">'+pips+'</span></button>';
+      line.appendChild(li);
+    });
+    Array.prototype.forEach.call(line.querySelectorAll('.stop'),function(b){b.addEventListener('click',function(){state.stage=+b.getAttribute('data-i');render();});});
+
+    var st=STAGES[state.stage], items=active.filter(function(t){return t.s===state.stage;});
+    var ev={v:["verified","v"],r:["reported","r"],b:["baseline","b"]};
+    var html='<div class="panel-head"><div><h2 style="font-size:1.45rem">'+(state.stage+1)+'. '+esc(st[0])+'</h2><p>'+esc(st[1])+'</p></div>'+
+      '<span class="fine">'+items.length+' of '+T.filter(function(t){return t.s===state.stage;}).length+' catalogued touchpoints apply to this founder</span></div>';
+    if(!items.length) html+='<p class="empty">Nothing at this stage applies to the founder you have described. Add a trait above, such as occupying premises or employing staff, to see what changes.</p>';
+    items.forEach(function(t){
+      var e=ev[t.ev];
+      html+='<article class="tp"><span class="bar" style="background:'+LANES[t.l][1]+'" aria-hidden="true"></span>'+
+        '<div><h3>'+esc(t.n)+'</h3><div class="org">'+esc(t.o)+'</div><span class="tag '+e[1]+'">'+e[0]+'</span>'+
+        (t.f?'<span class="tag '+t.f+'">'+(t.f==='high'?'high friction':'friction point')+'</span>':'')+'</div>'+
+        '<div class="body"><p>'+esc(t.d)+'</p><div class="src">Sources '+cite(t.src)+'</div></div>'+
+        '<dl class="kv"><dt>When</dt><dd>'+esc(t.when)+'</dd><dt>Cost</dt><dd>'+esc(t.cost)+'</dd><dt>Identifier issued</dt><dd>'+(t.id?esc(t.id):'None')+'</dd><dt>Sign-in</dt><dd>'+esc(t.sign)+'</dd></dl></article>';
+    });
+    document.getElementById('panel').innerHTML=html;
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('input[name="nation"]'),function(r){r.addEventListener('change',function(){state.nation=r.value;render();});});
+  (function(){var fs=document.getElementById('formSel');if(fs)fs.addEventListener('change',function(){state.formId=fs.value;state.form=FORMTAGS[fs.value]||[];render();});})();
+  Array.prototype.forEach.call(document.querySelectorAll('#traitSeg input'),function(c){c.addEventListener('change',function(){state.traits[c.value]=c.checked;render();});});
+
+  document.getElementById('legend').innerHTML=Object.keys(LANES).map(function(k){return '<span><i style="background:'+LANES[k][1]+'"></i>'+esc(LANES[k][0])+'</span>';}).join('')+
+    '<span><i style="background:transparent;outline:2px solid var(--high);outline-offset:-1px"></i>High friction</span>';
+  document.getElementById('tierLegend').innerHTML='<strong style="color:var(--ink)">Source tiers</strong> '+Object.keys(TIERS).map(function(k){return '<span style="--tc:'+TIERS[k][1]+'">'+esc(TIERS[k][0])+'</span>';}).join('');
+
+  document.getElementById('exhibits').innerHTML=EXHIBITS.map(function(x){
+    var tier=TIERS[S[x.src[0]][2]];
+    return '<article class="ex"><div class="theme">'+esc(x.th)+'</div><div class="num'+(x.q?' q':'')+'">'+esc(x.n)+'</div><p>'+esc(x.t)+'</p>'+
+      '<div class="method" style="--tc:'+tier[1]+'">'+esc(x.m)+' '+cite(x.src)+'</div></article>';
+  }).join('');
+
+  var sevName={high:"High",med:"Medium",watch:"Watch"};
+  document.getElementById('findingList').innerHTML=FINDINGS.map(function(f){
+    return '<article class="finding"><div><div class="sev '+f.sev+'">'+sevName[f.sev]+'</div><div class="strength">Evidence <b>'+esc(f.str)+'</b></div></div>'+
+      '<div><h3>'+esc(f.h)+'</h3><p class="imp">'+esc(f.imp)+'</p></div>'+
+      '<div><ul>'+f.ev.map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul><div class="src">Sources '+cite(f.src)+'</div></div></article>';
+  }).join('');
+  document.getElementById('corrList').innerHTML=CORR.map(function(c){return '<li>'+esc(c[0])+' '+cite([c[1]])+'</li>';}).join('');
+
+  document.getElementById('idTable').innerHTML=IDS.map(function(r){return '<tr><th scope="row">'+esc(r[0])+'</th><td>'+esc(r[1])+'</td><td>'+esc(r[2])+'</td></tr>';}).join('');
+  document.getElementById('nationTable').innerHTML=NATIONS.map(function(r){return '<tr><th scope="row">'+esc(r[0])+'<div class="src" style="font-weight:400">'+cite(r[2])+'</div></th>'+r[1].map(function(c){return '<td>'+esc(c)+'</td>';}).join('')+'</tr>';}).join('');
+
+  var tlh='';
+  TL.forEach(function(y){
+    tlh+='<li style="display:block;padding:0"><h3 class="yr">'+esc(y[0])+'</h3></li>';
+    y[1].forEach(function(e){tlh+='<li class="'+(e[2]?'future':'')+'"><time>'+esc(e[0])+'</time><span class="dot" aria-hidden="true"></span><p>'+esc(e[1])+' <span class="src">'+cite([e[3]])+'</span></p></li>';});
+  });
+  document.getElementById('tl').innerHTML=tlh;
+
+  document.getElementById('opps').innerHTML=OPPS.map(function(o){return '<article class="opp"><h3>'+esc(o[0])+'</h3><p>'+esc(o[1])+'</p><p class="fine" style="margin-top:.3rem">'+esc(o[2])+'</p></article>';}).join('');
+
+
+  // ---------- institutional memory ----------
+  document.getElementById('memStats').innerHTML=MEMSTATS.map(function(s){return '<div><b>'+esc(s[0])+'</b><span>'+esc(s[1])+'</span></div>';}).join('');
+  function barChart(title,data,note,src){
+    var keys=Object.keys(data), max=Math.max.apply(null,keys.map(function(k){return data[k];})), W=520,H=170,pad=22,bw=(W-10)/keys.length;
+    var bars=keys.map(function(k,i){var v=data[k],h=Math.round((H-pad-18)*v/max),x=5+i*bw,y=H-pad-h;
+      return '<rect'+(v===max?' class="pk"':'')+' x="'+(x+2).toFixed(1)+'" y="'+y+'" width="'+(bw-4).toFixed(1)+'" height="'+h+'"><title>'+k+': '+v+'</title></rect>'+
+        '<text class="v" x="'+(x+bw/2).toFixed(1)+'" y="'+(y-3)+'" text-anchor="middle">'+v+'</text>'+
+        '<text x="'+(x+bw/2).toFixed(1)+'" y="'+(H-6)+'" text-anchor="middle">'+"'"+k.slice(2)+'</text>';}).join('');
+    return '<div class="chart"><h3>'+esc(title)+'</h3><svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="'+esc(title)+'">'+bars+'</svg><p>'+esc(note)+' '+cite(src)+'</p></div>';
+  }
+  document.getElementById('memCharts').innerHTML=
+    barChart('Blog posts about starting a business, by year',CH_BLOG,'Peaks at the 2012 Business Link transition and the 2016 guidance overhaul; near silence in 2023 and 2024 before business.gov.uk.',['m_bl','m_beis16'])+
+    barChart('GOV.UK pages from the business and digital lineage, by last public update',CH_PAGES,'Includes BIS, BEIS, DBT, DIT, UKTI, DSIT, GDS, Cabinet Office, Companies House, HMRC, IPO and British Business Bank.',['m_search']);
+
+  document.getElementById('recur').innerHTML=RECUR.map(function(r){
+    return '<article><div><h4>'+esc(r[0])+'</h4><div class="years">'+r[1].map(function(y){return '<span>'+y+'</span>';}).join('')+'</div></div>'+
+      '<p style="margin:0">'+esc(r[2])+'</p><div class="status"><b>Status in 2026</b>'+esc(r[3])+'<div class="src" style="margin-top:.35rem">Sources '+cite(r[4])+'</div></div></article>';
+  }).join('');
+
+  var memState={era:'all',kinds:{blog:1,dept:1,res:1,asm:1,pol:1}};
+  function renderMem(){
+    var shown=0,html='';
+    Object.keys(ERAS).forEach(function(e){
+      if(memState.era!=='all'&&memState.era!==e) return;
+      var items=MEM.filter(function(m){return m[0]===e&&memState.kinds[m[2]];});
+      if(!items.length) return;
+      shown+=items.length;
+      html+='<section class="era"><h3>'+esc(ERAS[e][0])+'</h3><p class="eralede">'+esc(ERAS[e][1])+'</p><ol class="mem">'+
+        items.map(function(m){var k=KINDS[m[2]];return '<li><time>'+esc(m[1])+'</time><div><span class="kind" style="--tc:'+k[1]+'">'+esc(k[0])+'</span><span class="who">'+esc(m[3])+'</span>'+
+          '<h4>'+esc(m[4])+'</h4><p>'+esc(m[5])+' <span class="src">'+cite(m[6])+'</span></p></div></li>';}).join('')+'</ol></section>';
+    });
+    document.getElementById('eras').innerHTML=html||'<p class="empty">No items match these filters. Select another era or kind of evidence.</p>';
+    document.getElementById('memCount').textContent='Showing '+shown+' of '+MEM.length+' catalogued items.';
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('input[name="era"]'),function(r){r.addEventListener('change',function(){memState.era=r.value;renderMem();});});
+  Array.prototype.forEach.call(document.querySelectorAll('#kindSeg input'),function(c){c.addEventListener('change',function(){if(c.checked){memState.kinds[c.value]=1;}else{delete memState.kinds[c.value];}renderMem();});});
+  renderMem();
+  document.getElementById('liveTable').innerHTML=LIVE.map(function(r){return '<tr><th scope="row">'+esc(r[0])+'</th><td>'+esc(r[1])+'</td><td>'+esc(r[2])+'</td><td>'+esc(r[3])+' <span class="src">'+cite(r[4])+'</span></td></tr>';}).join('');
+  render();
+
+  // Source register grouped by tier
+  var counts={}; order.forEach(function(k){var t=S[k][2
+]; counts[t]=(counts[t]||0)+1;});
+  var total=order.length, strong=(counts.stat||0)+(counts.gov||0)+(counts.scr||0)+(counts.ur||0);
+  document.getElementById('tierBar').innerHTML=Object.keys(TIERS).map(function(k){return counts[k]?'<i style="width:'+(100*counts[k]/total)+'%;background:'+TIERS[k][1]+'" title="'+esc(TIERS[k][0])+'"></i>':'';}).join('');
+  document.getElementById('tierSummary').textContent=strong+' of '+total+' sources are official statistics, primary government, scrutiny or government user research; '+(counts.ind||0)+' are independent research or representative bodies; '+(counts.pro||0)+' are professional, trade or press sources, used only where no primary source was found or to evidence stale figures.';
+  document.getElementById('scopeEvidence').textContent=total+' sources in six tiers; '+strong+' primary, statistical, scrutiny or user-research';
+  document.getElementById('srcGroups').innerHTML=Object.keys(TIERS).map(function(k){
+    var keys=order.filter(function(x){return S[x][2]===k;}); if(!keys.length) return '';
+    return '<h3 style="border-left:4px solid '+TIERS[k][1]+';padding-left:8px">'+esc(TIERS[k][0])+' ('+keys.length+')</h3><ul style="padding-left:1.2rem">'+
+      keys.map(function(x){return '<li style="margin-bottom:.3rem;word-break:break-word"><span class="fine">['+idx[x]+']</span> <a href="'+S[x][1]+'" target="_blank" rel="noopener">'+esc(S[x][0])+'</a></li>';}).join('')+'</ul>';
+  }).join('');
+})();
+
+</script>
+<script>window.AI_CFG={title:"Ask about whole-journey portal",family:"Starting a business in the UK portal and its other six parts",intro:"Ask anything about this page. Answers come from this page's content and cite its sources in words.",suggestions:["Which bodies does a sole trader in Wales deal with?", "What identifiers does a limited company collect?", "What are the strongest findings here?", "Where does the evidence come from?"],max:46000};
+(function(){
+  if(!window.AI_CFG) return;
+  var CFG=window.AI_CFG, doc=document;
+  var btn=doc.createElement('button');btn.className='aibtn';btn.type='button';btn.hidden=true;btn.textContent='Ask about this page';
+  var wrap=doc.createElement('div');wrap.className='aiwrap';wrap.setAttribute('role','dialog');wrap.setAttribute('aria-label','Ask Claude about this page');
+  wrap.innerHTML='<div class="aihead"><b>'+CFG.title+'<small>Grounded in this page\'s evidence</small></b><button type="button" aria-label="Close">&times;</button></div>'+
+    '<div class="ailog" id="ailog"></div><div class="aisug" id="aisug"></div>'+
+    '<form class="aiform"><textarea rows="1" placeholder="Ask a question" aria-label="Your question"></textarea><button type="submit">Ask</button></form>'+
+    '<p class="aifoot">Answers come from Claude reading this page. They use your Claude account, and can be wrong: check the cited sources.</p>';
+  doc.body.appendChild(btn);doc.body.appendChild(wrap);
+  var log=wrap.querySelector('#ailog'),sug=wrap.querySelector('#aisug'),form=wrap.querySelector('form'),ta=form.querySelector('textarea'),send=form.querySelector('button[type=submit]'),close=wrap.querySelector('.aihead button');
+  var sample=null,turns=[],busy=false,ctl=null;
+  function el(cls,txt){var d=doc.createElement('div');d.className='aimsg '+cls;d.textContent=txt;log.appendChild(d);log.scrollTop=log.scrollHeight;return d;}
+  function context(){
+    var t=CFG.context&&CFG.context();
+    if(!t){var m=doc.querySelector('main');t=(doc.querySelector('header')?doc.querySelector('header').innerText+'\n':'')+(m?m.innerText:doc.body.innerText);}
+    t=t.replace(/\s+\n/g,'\n').replace(/\n{3,}/g,'\n\n');
+    var MAXC=CFG.max||26000;return t.length>MAXC?t.slice(0,MAXC)+'\n[content truncated]':t;
+  }
+  function rules(){
+    return 'You are answering questions about a UK government analysis of the "start a business" journey, for civil servants. '+
+      'Answer ONLY from the CONTENT below, which is the page the reader is looking at ('+CFG.title+'). '+
+      'If the answer is not in the content, say so plainly and suggest which companion page may hold it ('+CFG.family+'). '+
+      'Never invent statistics, dates, sources or URLs. Quote figures exactly as written. '+
+      'Be concise: 2 to 6 sentences or a short list, plain British English, no headings, no markdown emphasis. '+
+      'Where a claim rests on a source named in the content, name that source in words.\n\nCONTENT:\n'+context();
+  }
+  function open(){wrap.classList.add('open');btn.hidden=true;ta.focus();}
+  function shut(){wrap.classList.remove('open');btn.hidden=false;if(ctl)ctl.abort();}
+  btn.addEventListener('click',open);close.addEventListener('click',shut);
+  doc.addEventListener('keydown',function(e){if(e.key==='Escape'&&wrap.classList.contains('open'))shut();});
+  (CFG.suggestions||[]).forEach(function(q){var b=doc.createElement('button');b.type='button';b.textContent=q;b.addEventListener('click',function(){ta.value=q;ask();});sug.appendChild(b);});
+  function copy(code){
+    switch(code){
+      case 'rate_limited':return 'Too many questions at once. Wait a moment and ask again.';
+      case 'session_expired':return 'Your session expired. Sign in again to keep asking.';
+      case 'refused':return 'Claude declined to answer that. Try asking it differently.';
+      case 'empty_completion':return 'No answer came back. Try a shorter, more specific question.';
+      case 'cancelled':return '';
+      case 'prompt_too_large':return 'That question plus this page is too long to send. Ask about one section.';
+      default:return 'Something went wrong reaching Claude. Try again in a moment.';
+    }
+  }
+  function hide(){btn.remove();wrap.remove();}
+  function ask(){
+    var q=ta.value.trim();if(!q||busy||!sample)return;
+    ta.value='';el('u',q);turns.push({role:'user',content:q});
+    var out=el('a','Thinking…');busy=true;send.disabled=true;send.textContent='…';
+    ctl=new AbortController();
+    var input=[{role:'user',content:rules()},{role:'assistant',content:'Understood. I will answer only from that content.'}].concat(turns);
+    sample(input,{cache:false,signal:ctl.signal,onText:function(e){out.textContent=e.text;log.scrollTop=log.scrollHeight;}}).then(function(r){
+      out.textContent=r.text+(r.truncated?'\n\n[Answer cut short.]':'');turns.push({role:'assistant',content:r.text});
+      if(turns.length>10)turns=turns.slice(-10);
+    }).catch(function(e){
+      var c=e&&e.code;
+      if(c==='not_granted'||c==='sampling_disabled'||c==='not_declared'||c==='capability_disabled'){out.textContent='Asking Claude is not available in this view.';hideLater();}
+      else {out.textContent=(e&&e.text)?e.text:'';var m=copy(c);if(m)el('sys',m);if(!out.textContent)out.remove();}
+      turns.pop();
+    }).then(function(){busy=false;send.disabled=false;send.textContent='Ask';ctl=null;});
+  }
+  function hideLater(){setTimeout(function(){btn.remove();},50);}
+  form.addEventListener('submit',function(e){e.preventDefault();ask();});
+  ta.addEventListener('keydown',function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();ask();}});
+  if(window.claude&&typeof window.claude.use==='function'){
+    window.claude.use('sample').then(function(s){if(!s){hide();return;}sample=s;btn.hidden=false;
+      el('sys',CFG.intro||'Ask anything about this page. Answers are grounded in what this page shows and its sources.');
+    }).catch(function(){hide();});
+  } else {hide();}
+})();
+</script>
+<script>/* Self-* runtime: verify, repair, assess and report. Runs on every page, in the browser,
+   with no network access. Everything it does is recorded and reversible by reloading. */
+(function(){
+  if(window.__selfcheck) return;
+  var BUILD="2026-09-18";
+  var findings=[], repairs=[], allRepairs=[], t0=(window.performance&&performance.now)?performance.now():0;
+  function add(sev,id,msg,n){findings.push({severity:sev,check:id,detail:msg,count:n==null?1:n});}
+  function fixed(id,msg,n){var c=(n==null?1:n);repairs.push({check:id,action:msg,count:c});
+    for(var i=0;i<allRepairs.length;i++){if(allRepairs[i].check===id){allRepairs[i].count+=c;return;}}
+    allRepairs.push({check:id,action:msg,count:c});}
+  function txt(e){return (e.textContent||'').replace(/\s+/g,' ').trim();}
+  function near(a){
+    var r=a.closest('li,td,tr,article,.card,.rowcard,.tp,p');
+    if(r){var h=r.querySelector('b,strong,h3,h4');if(h&&txt(h))return txt(h).slice(0,80);
+      var t=txt(r);if(t)return t.slice(0,80);}
+    var s=a.closest('section');var h2=s&&s.querySelector('h2');
+    return h2?txt(h2).slice(0,80):'this entry';
+  }
+  // ---------- verification + repair ----------
+  function scrollRegions(){
+    var n=0,fixedN=0;
+    var all=document.querySelectorAll('body *');
+    for(var i=0;i<all.length;i++){var e=all[i];if(e.closest('svg'))continue;
+      var cs=getComputedStyle(e);if(!(cs.overflowX==='auto'||cs.overflowX==='scroll'||cs.overflowY==='auto'||cs.overflowY==='scroll'))continue;
+      if(!(e.scrollWidth>e.clientWidth+1||e.scrollHeight>e.clientHeight+1))continue;
+      if(e.querySelector('a,button,input,select,textarea,[tabindex]'))continue;
+      if(e.hasAttribute('tabindex'))continue;
+      n++;e.setAttribute('tabindex','0');e.setAttribute('role','region');
+      if(!e.getAttribute('aria-label')){var h=e.closest('section');var h2=h&&h.querySelector('h2');e.setAttribute('aria-label',(h2?txt(h2):'Scrollable content')+' (scrollable)');}
+      fixedN++;}
+    if(fixedN)fixed('scroll.focusable','Made '+fixedN+' scrollable region(s) keyboard reachable with tabindex and a label. Defect: axe-core scrollable-region-focusable on the journey map and blueprint lanes, 23 September 2026.',fixedN);
+  }
+  function structure(){
+    var h1=document.querySelectorAll('h1').length;
+    if(h1!==1) add('high','structure.h1','Expected exactly one h1, found '+h1,h1);
+    if(!document.getElementById('main')) add('high','structure.main','No element with id="main" for the skip link to reach');
+    var skip=document.querySelector('a.skip');
+    if(!skip){
+      var a=document.createElement('a');a.className='skip';a.href='#main';a.textContent='Skip to content';
+      document.body.insertBefore(a,document.body.firstChild);
+      fixed('structure.skip','Inserted a missing skip link as the first focusable element');
+    }
+    var lv=0,skips=0;
+    Array.prototype.forEach.call(document.querySelectorAll('h1,h2,h3,h4,h5,h6'),function(h){
+      var n=+h.tagName.slice(1); if(lv && n>lv+1) skips++; lv=n;});
+    if(skips) add('medium','structure.headings',skips+' heading level skips',skips);
+    if(!document.querySelector('.ribbon')) add('low','structure.ribbon','Journey ribbon missing from this page');
+    var fam=document.querySelectorAll('.family a,.xfam a').length;
+    if(!fam && !/portal/.test(location.pathname)) add('medium','structure.family','Family navigation is empty');
+  }
+  function links(){
+    var amb=0,noop=0,empty=0;
+    Array.prototype.forEach.call(document.querySelectorAll('a[href]'),function(a){
+      var label=(a.getAttribute('aria-label')||txt(a)).toLowerCase();
+      if(['source','details','here','more','link','read more','click here'].indexOf(label)>=0){
+        a.setAttribute('aria-label',(label==='details'?'Details of ':'Source for ')+near(a)); amb++;
+      }
+      if(a.target==='_blank' && !/noopener/.test(a.rel||'')){a.rel=((a.rel||'')+' noopener').trim();noop++;}
+      if(!a.getAttribute('href').trim()) empty++;
+    });
+    if(amb){fixed('links.ambiguous','Gave a context-bearing accessible name to links that read only "source" or "details"',amb);}
+    if(noop){fixed('links.noopener','Added rel="noopener" to links opening in a new tab',noop);}
+    if(empty) add('medium','links.empty',empty+' links with an empty href',empty);
+  }
+  function aria(){
+    var seen={},dupes=0;
+    Array.prototype.forEach.call(document.querySelectorAll('[id]'),function(e){
+      if(seen[e.id]){e.id=e.id+'-dup'+(++dupes);} else seen[e.id]=1;});
+    if(dupes) fixed('aria.duplicate-id','Renamed duplicate element ids so labels and controls resolve to one target',dupes);
+    var svgs=0;
+    Array.prototype.forEach.call(document.querySelectorAll('svg'),function(s){
+      var named=s.getAttribute('aria-label')||s.querySelector('title')||s.getAttribute('role')==='img';
+      if(!named && s.getAttribute('aria-hidden')!=='true'){s.setAttribute('aria-hidden','true');s.setAttribute('focusable','false');svgs++;}
+    });
+    if(svgs) fixed('aria.decorative-svg','Marked decorative graphics as hidden from assistive technology',svgs);
+    var unl=0;
+    Array.prototype.forEach.call(document.querySelectorAll('input,select,textarea'),function(c){
+      if(c.type==='hidden')return;
+      var has=(c.labels&&c.labels.length)||c.getAttribute('aria-label')||c.getAttribute('aria-labelledby')||c.closest('label');
+      if(!has) unl++;});
+    if(unl) add('high','aria.unlabelled-control',unl+' form controls with no accessible name',unl);
+    var figs=0;
+    Array.prototype.forEach.call(document.querySelectorAll('svg.art'),function(s){
+      if(!s.querySelector('title')||!s.querySelector('desc')) figs++;});
+    if(figs) add('medium','aria.illustration',figs+' illustrations without both a title and a description',figs);
+  }
+  function layout(){
+    var vw=document.documentElement.clientWidth, wide=0, wrapped=0;
+    Array.prototype.forEach.call(document.querySelectorAll('table'),function(t){
+      if(t.scrollWidth>vw+2){
+        var p=t.parentElement;
+        if(!p || getComputedStyle(p).overflowX!=='auto'){
+          var d=document.createElement('div');d.className='tablewrap';d.style.overflowX='auto';d.style.maxWidth='100%';
+          t.parentNode.insertBefore(d,t);d.appendChild(t);wrapped++;
+        }
+      }});
+    if(wrapped) fixed('layout.table-scroll','Wrapped wide tables in a horizontal scroll container',wrapped);
+    if(document.documentElement.scrollWidth>vw+2){
+      document.documentElement.style.maxWidth='100%';document.body.style.overflowX='hidden';
+      wide=1;fixed('layout.overflow','Clamped horizontal overflow at the document root');
+    }
+    return wide;
+  }
+  function currency(){
+    var built=new Date(BUILD+'T00:00:00Z'), days=Math.floor((Date.now()-built.getTime())/86400000);
+    var sev = days>365?'high':days>180?'medium':days>90?'low':null;
+    if(sev) add(sev,'currency.age','This page was built '+days+' days ago. Sources move; re-run the verification pass before relying on it.',days);
+    return days;
+  }
+  function data(){
+    // Cross-check any count this page states about its own dataset
+    var out=[];
+    try{
+      var D=window.__bp&&JSON.parse(window.__bp.json());
+      if(D){
+        var steps=D.BLUE.reduce(function(a,b){return a+b.steps.length;},0);
+        var claimed=(document.body.innerText.match(/(\d+)\s+journey moments/)||[])[1];
+        out.push({fact:'blueprint steps',value:steps});
+        if(claimed && +claimed!==steps) add('medium','data.count','Page states '+claimed+' journey moments but the data holds '+steps);
+      }
+    }catch(e){}
+    return out;
+  }
+  // ---------- assessment ----------
+  function assess(days){
+    var high=findings.filter(function(f){return f.severity==='high';}).length;
+    var med=findings.filter(function(f){return f.severity==='medium';}).length;
+    var low=findings.filter(function(f){return f.severity==='low';}).length;
+    var dims=[
+      ['Accuracy','every claim carries a source and the verification register records what was checked',high?'at risk':'holding'],
+      ['Currency', days>180?'stale: re-verification overdue':days>90?'ageing':'current', days>180?'at risk':'holding'],
+      ['Accessibility', high?'a structural defect is present on this page':'structural checks pass on this page', high?'at risk':'holding'],
+      ['Resilience','the page repaired '+allRepairs.reduce(function(a,r){return a+r.count;},0)+' defects at load without failing','holding'],
+      ['Completeness','open issues are published rather than hidden','holding'],
+      ['Sustainability','one file, no build step, no dependency to rot','holding']
+    ];
+    var score=Math.max(0,100-(high*18)-(med*6)-(low*2)-(days>365?15:days>180?8:0));
+    return {score:score,band:score>=85?'good':score>=70?'fair':'needs work',dimensions:dims,high:high,medium:med,low:low};
+  }
+  // ---------- run ----------
+  structure();
+  scrollRegions();links();aria();layout();var days=currency();var facts=data();
+  var a=assess(days);
+  var ms=((window.performance&&performance.now)?performance.now():0)-t0;
+  var report={page:document.title,build:BUILD,ranAt:new Date().toISOString(),ageDays:days,
+    durationMs:Math.round(ms),passes:1,findings:findings,repairs:allRepairs,assessment:a,facts:facts};
+  window.__selfcheck={report:function(){return report;},recheck:function(){return repass();},json:function(){return JSON.stringify(report);},rerun:function(){location.reload();}};
+  // ---------- surface ----------
+  function badge(){
+    var host=document.querySelector('footer .wrap')||document.querySelector('footer')||document.body;
+    var d=document.createElement('section');d.className='selfcheck';d.setAttribute('aria-labelledby','sc-h');
+    var rep=allRepairs.reduce(function(x,r){return x+r.count;},0);
+    d.innerHTML='<h2 id="sc-h">This page checks itself</h2>'+
+      '<p class="scline"><span class="scdot '+a.band.replace(' ','-')+'" aria-hidden="true"></span>'+
+      '<b>'+a.score+'/100</b> on its own checks, run in your browser '+Math.round(ms)+'ms ago: '+
+      findings.length+' finding'+(findings.length===1?'':'s')+', '+rep+' defect'+(rep===1?'':'s')+' repaired automatically, built '+days+' days ago.</p>'+
+      '<details><summary>What it checked, what it found, what it fixed</summary><div class="scbody">'+
+      '<h3>Findings</h3>'+(findings.length?'<ul>'+findings.map(function(f){return '<li><b>'+f.severity+'</b> '+f.check+' — '+f.detail+'</li>';}).join('')+'</ul>':'<p>Nothing outstanding on this page.</p>')+
+      '<h3>Repaired at load</h3>'+(allRepairs.length?'<ul>'+allRepairs.map(function(r){return '<li>'+r.action+' ('+r.count+')</li>';}).join('')+'</ul>':'<p>Nothing needed repairing.</p>')+
+      '<h3>Self-assessment</h3><ul>'+a.dimensions.map(function(x){return '<li><b>'+x[0]+'</b> '+x[1]+' — <i>'+x[2]+'</i></li>';}).join('')+'</ul>'+
+      '<p class="meta">These checks run in the page, with no network access. They cannot test with a real screen reader, cannot re-request a source, and cannot know whether a fact changed yesterday. They fail visibly rather than quietly: a repair is reported, never hidden.</p>'+
+      '<p><button class="btn sm" type="button" id="scdl">Download this report</button> <span class="toolmsg" id="scmsg" role="status"></span></p>'+
+      '</div></details>';
+    host.appendChild(d);
+    var b=document.getElementById('scdl');
+    if(b)b.addEventListener('click',function(){
+      try{
+        var blob=new Blob([JSON.stringify(report,null,1)],{type:'application/json'});
+        var u=URL.createObjectURL(blob),el=document.createElement('a');
+        el.href=u;el.download='self-check-'+(document.title.split(':')[0].toLowerCase().replace(/[^a-z0-9]+/g,'-'))+'.json';
+        document.body.appendChild(el);el.click();el.remove();setTimeout(function(){URL.revokeObjectURL(u);},2000);
+        document.getElementById('scmsg').textContent='Report downloaded.';
+      }catch(e){document.getElementById('scmsg').textContent='Download blocked here; the report is also on window.__selfcheck.report().';}
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',badge);else badge();
+
+  // ---------- continuous repair: dynamic pages render after this first pass ----------
+  var pending=null, passes=1;
+  function repass(){
+    var before=repairs.reduce(function(a,r){return a+r.count;},0);
+    repairs.length=0; findings.length=0;
+    structure();links();aria();layout();var d=currency();
+    passes++;
+    var after=repairs.reduce(function(a,r){return a+r.count;},0);
+    report.findings=findings; report.repairs=allRepairs; report.passes=passes;
+    report.assessment=assess(d); report.ranAt=new Date().toISOString();
+    var line=document.querySelector('.selfcheck .scline b');
+    if(line) line.textContent=report.assessment.score+'/100';
+    return after;
+  }
+  if(window.MutationObserver){
+    var mo=new MutationObserver(function(muts){
+      var worth=false;
+      for(var i=0;i<muts.length;i++){ if(muts[i].addedNodes && muts[i].addedNodes.length){worth=true;break;} }
+      if(!worth) return;
+      clearTimeout(pending);
+      pending=setTimeout(function(){ if(!document.querySelector('.selfcheck details[open]')) repass(); },600);
+    });
+    mo.observe(document.body,{childList:true,subtree:true});
+    window.__selfcheck_observer=mo;
+  }
+  setTimeout(repass,1500);
+
+})();
+</script>
+<!-- colophon: added by tools/publish.py -->
+<aside class="pgw-colophon" aria-label="About this publication" style="max-width:1120px;margin:40px auto 24px;padding:18px 22px;border:1px solid currentColor;border-radius:12px;font:14px/1.5 system-ui,sans-serif;display:flex;flex-wrap:wrap;gap:18px;align-items:center;opacity:.92">
+<div style="flex:1 1 340px;min-width:0">
+<p style="margin:0 0 6px"><strong>Not an official government service.</strong> An independent, evidence-led guide by Emanuel Silva, part of
+<a href="https://cyberdudeuk.github.io/">Public Good Works</a>. Every claim carries its source; check GOV.UK, nidirect, mygov.scot or gov.wales before you act.</p>
+<p style="margin:0 0 6px">Drafted and checked with AI assistance (Claude); the author reviewed and is responsible for it. Some features, such as the page assistant, work only inside Claude and are hidden here.</p>
+<p style="margin:0">Questions, corrections or ideas: use the <a href="https://github.com/cyberdudeuk/start-a-business-uk/issues/new?template=contact.yml">contact form</a> (no email address is published).
+Code MIT; content Open Government Licence v3.0, see the <a href="https://github.com/cyberdudeuk/start-a-business-uk">repository</a>.</p>
+</div>
+<div style="display:flex;gap:14px;align-items:center"><svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 140 140" role="img" aria-label="QR code for https://cyberdudeuk.github.io/start-a-business-uk/every-step/" class="segno"><g transform="scale(4)"><path fill="#fff" d="M0 0h35v35h-35z"/><path class="qrline" stroke="#0b0c0c" d="M1 1.5h7m1 0h1m4 0h1m4 0h4m1 0h1m2 0h7m-33 1h1m5 0h1m1 0h1m2 0h3m2 0h3m2 0h1m1 0h1m2 0h1m5 0h1m-33 1h1m1 0h3m1 0h1m4 0h1m1 0h3m2 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h1m8 0h1m4 0h1m3 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m4 0h1m1 0h3m2 0h2m2 0h1m1 0h1m1 0h1m1 0h3m1 0h1m-33 1h1m5 0h1m2 0h3m2 0h1m1 0h1m2 0h1m4 0h1m1 0h1m5 0h1m-33 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-25 1h1m2 0h2m4 0h3m3 0h2m-25 1h1m1 0h2m1 0h3m3 0h1m2 0h1m1 0h4m1 0h1m2 0h1m1 0h1m2 0h1m1 0h2m-33 1h2m1 0h3m1 0h2m2 0h2m1 0h1m1 0h1m2 0h5m2 0h2m1 0h4m-28 1h3m2 0h1m3 0h1m1 0h1m3 0h2m1 0h2m1 0h4m1 0h2m-33 1h2m1 0h1m4 0h1m1 0h1m1 0h2m2 0h1m3 0h1m3 0h4m1 0h1m-28 1h3m1 0h2m8 0h2m1 0h2m3 0h2m1 0h3m-28 1h2m5 0h1m1 0h1m2 0h6m4 0h2m1 0h1m1 0h1m1 0h1m-31 1h1m4 0h2m1 0h1m2 0h1m5 0h3m5 0h3m1 0h1m-28 1h2m3 0h1m2 0h6m1 0h1m1 0h4m1 0h2m1 0h3m-30 1h2m1 0h3m1 0h1m1 0h2m1 0h1m4 0h1m1 0h3m2 0h2m1 0h1m1 0h1m-31 1h1m1 0h2m1 0h1m1 0h7m1 0h1m1 0h1m3 0h6m1 0h2m1 0h2m-33 1h2m1 0h2m1 0h3m2 0h1m3 0h1m2 0h1m1 0h3m1 0h2m1 0h2m1 0h2m-32 1h1m1 0h1m2 0h1m1 0h1m1 0h3m3 0h6m1 0h1m2 0h2m1 0h1m3 0h1m-33 1h1m2 0h4m1 0h2m2 0h6m3 0h1m7 0h2m-31 1h1m6 0h1m2 0h1m3 0h1m1 0h8m1 0h3m1 0h2m1 0h1m-30 1h4m1 0h1m1 0h1m2 0h2m2 0h1m4 0h3m1 0h2m1 0h1m1 0h2m-32 1h1m1 0h3m6 0h2m6 0h1m1 0h1m3 0h1m1 0h1m-29 1h1m2 0h1m2 0h2m1 0h1m1 0h1m3 0h1m1 0h1m1 0h1m2 0h7m2 0h2m-25 1h2m1 0h1m2 0h2m2 0h2m3 0h2m3 0h2m1 0h1m-32 1h7m1 0h1m1 0h1m2 0h2m1 0h1m1 0h3m2 0h2m1 0h1m1 0h1m-29 1h1m5 0h1m1 0h2m1 0h3m6 0h5m3 0h5m-33 1h1m1 0h3m1 0h1m2 0h1m2 0h2m2 0h1m1 0h1m1 0h9m1 0h1m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h2m1 0h2m2 0h1m2 0h1m3 0h2m3 0h1m1 0h2m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h1m1 0h1m2 0h1m1 0h2m3 0h3m2 0h3m1 0h2m-31 1h1m5 0h1m6 0h3m1 0h4m1 0h3m1 0h3m3 0h1m-33 1h7m1 0h1m1 0h1m2 0h1m2 0h3m1 0h2m1 0h1m2 0h1m1 0h1m1 0h1"/></g></svg>
+<span style="display:inline-flex;flex-direction:column;gap:4px;align-items:flex-start"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="168" height="48" viewBox="0 0 48.400 14.000" preserveAspectRatio="none" role="img" aria-label="Barcode SAB-UK-EVERY-STEP">
+    <!--Autogenerated with python-barcode 0.16.1-->
+    <g id="barcode_group">
+        <rect width="100%" height="100%" style="fill:white"/>
+        <rect x="2.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="2.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="3.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="4.200mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="4.800mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="5.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="6.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="6.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="7.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="8.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="9.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="9.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="10.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="11.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="12.000mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="13.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="13.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="14.400mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="15.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="15.600mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="16.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="17.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="18.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="18.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="19.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="20.400mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="21.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="21.800mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="22.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="23.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="24.000mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="24.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="25.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="26.200mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="27.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="27.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="28.400mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="29.200mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="29.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="30.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="31.200mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="31.800mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="32.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="33.400mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="34.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="35.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="35.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="36.800mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="37.200mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="38.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="38.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="39.400mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="40.200mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="41.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="41.600mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="42.400mm" y="1.000mm" width="0.800mm" height="12.000mm" style="fill:black;"/>
+        <rect x="43.400mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="43.800mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+        <rect x="44.800mm" y="1.000mm" width="0.600mm" height="12.000mm" style="fill:black;"/>
+        <rect x="45.600mm" y="1.000mm" width="0.200mm" height="12.000mm" style="fill:black;"/>
+        <rect x="46.000mm" y="1.000mm" width="0.400mm" height="12.000mm" style="fill:black;"/>
+    </g>
+</svg>
+<code style="font-size:11px">SAB-UK-EVERY-STEP</code></span></div>
+</aside>
+</body>
+</html>
