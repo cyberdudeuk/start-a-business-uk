@@ -9,6 +9,11 @@ C5  every page carries the colophon exactly once: not official, AI disclosure, c
 C6  every page has one <title> and the family is complete (hub plus 18 pages)
 C7  the latest recheck is applied: its page exists, no moved address remains, no corrected wording remains
 C8  no link carries a tracking parameter (utm_, gad_, gclid and the like)
+C9  the native guides are in step with data/guides.json (tools/guides.py)
+C10 the safety guide keeps people safe: Exit control, Shift-three-times exit, strict content policy, no third-party
+    request, no storage, no forms, no referrer
+C11 every guide source is an https link on an official or vetted domain, and every guide section has sources
+C12 the hub and Your circumstances signpost both guides, and each guide links back to the pages it builds on
 
 Run:  python3 tools/check.py
       python3 tools/check.py --negative   prove each check fails on a deliberate break (vaccination)
@@ -21,6 +26,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / 'tools'))
+import guides
 import publish
 
 EMAIL = re.compile(r'[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}')
@@ -29,8 +35,17 @@ REL = re.compile(r'''(?:href=|"u"\s*:\s*|'u'\s*:\s*)["'](\.{0,2}/?[a-z0-9-]*/?)[
 
 
 def pages(root):
-    return {aid: publish.ROOT.__class__(root) / ('index.html' if aid == publish.HUB else f'{slug}/index.html')
-            for aid, slug in [(publish.HUB, '')] + list(publish.PAGES.items())}
+    out = {aid: publish.ROOT.__class__(root) / ('index.html' if aid == publish.HUB else f'{slug}/index.html')
+           for aid, slug in [(publish.HUB, '')] + list(publish.PAGES.items())}
+    out.update({g['slug']: Path(root) / g['slug'] / 'index.html' for g in guides.data(root)['guides']})
+    return out
+
+
+# Domains a guide may cite (C11): government, regulators, legislation, and the named charities and public bodies.
+VETTED = re.compile(r'^https://([a-z0-9-]+\.)*(gov\.uk|gov\.wales|gov\.scot|nidirect\.gov\.uk|legislation\.gov\.uk|'
+                    r'policeconduct\.gov\.uk|ico\.org\.uk|ukri\.org|startuploans\.co\.uk|thegazette\.co\.uk|'
+                    r'refugetechsafety\.org|investinwomentaskforce\.org|myworldofwork\.co\.uk|enspire\.ox\.ac\.uk|'
+                    r'newfuturesnetwork\.gov\.uk|discovermybenefits\.mod\.gov\.uk|education\.gov\.uk)/')
 
 
 def problems(root):
@@ -66,6 +81,42 @@ def problems(root):
     for f in [*files.values(), root / 'recheck' / 'index.html']:
         if f.exists() and track.search(f.read_text(encoding='utf-8')):
             out.append(f'C8 {f.relative_to(root)} has a link with a tracking parameter: {track.search(f.read_text(encoding="utf-8")).group(0)[:90]}')
+    # C9: the guides are generated from their data.
+    built = guides.build(root)
+    for g in guides.data(root)['guides']:
+        f = Path(root) / g['slug'] / 'index.html'
+        if f.exists() and f.read_text(encoding='utf-8') != built[f]:
+            out.append(f'C9 {g["slug"]}/index.html is out of step with data/guides.json: run python3 tools/guides.py')
+        # C10 (safety guide only) and C11 (every guide)
+        t = f.read_text(encoding='utf-8') if f.exists() else ''
+        if g['safety'] and t:
+            need = {'Exit control': 'id="exit"', 'Shift exit': "ev.key !== 'Shift'", 'replace': 'location.replace(',
+                    'no referrer': 'name="referrer" content="no-referrer"', 'content policy': "default-src 'none'"}
+            for what, k in need.items():
+                if k not in t:
+                    out.append(f'C10 {g["slug"]} is missing its {what}')
+            if re.search(r'<script[^>]+src=|<link[^>]+(stylesheet|preload|preconnect)|<img[^>]+src="https?:|<iframe|@import|url\(https?:', t):
+                out.append(f'C10 {g["slug"]} makes a third-party request')
+            if re.search(r'localStorage|sessionStorage|indexedDB|document\.cookie|<form', t):
+                out.append(f'C10 {g["slug"]} stores data or has a form')
+        for s in g['sections']:
+            if not s.get('sources'):
+                out.append(f'C11 {g["slug"]}#{s["id"]} has no sources')
+            for x in s.get('sources', []):
+                if not VETTED.match(x['u']):
+                    out.append(f'C11 {g["slug"]}#{s["id"]} cites a source outside the vetted domains: {x["u"]}')
+    # C12: signposts both ways.
+    for rel, targets in (('index.html', ('start-safely/', 'starting-out-or-again/')),
+                         ('your-circumstances/index.html', ('../start-safely/', '../starting-out-or-again/'))):
+        f = Path(root) / rel
+        t = f.read_text(encoding='utf-8') if f.exists() else ''
+        for tg in targets:
+            if f'href="{tg}"' not in t.split(publish.GUIDE_MARK, 1)[-1][:2000]:
+                out.append(f'C12 {rel} does not signpost {tg} at the top of its content')
+    for g in guides.data(root)['guides']:
+        f = Path(root) / g['slug'] / 'index.html'
+        if f.exists() and 'href="../your-circumstances/"' not in f.read_text(encoding='utf-8'):
+            out.append(f'C12 {g["slug"]} does not link back to Your circumstances')
     rc = publish.recheck()
     rp = root / 'recheck' / 'index.html'
     if not rp.exists():
@@ -94,6 +145,11 @@ BREAKS = {
     'C6': lambda r: (r / 'knowledge-layer' / 'index.html').unlink(),
     'C8': lambda r: _edit(r, 'standards/index.html', lambda t: t + '<a href="https://www.gov.uk/x?utm_source=y">x</a>'),
     'C7': lambda r: _edit(r, 'every-step/index.html', lambda t: t + '<a href="https://www.great.gov.uk/">x</a>'),
+    'C10': lambda r: _edit(r, 'start-safely/index.html', lambda t: t.replace('id="exit"', 'id="leave"')),
+    'C9': lambda r: _edit(r, 'data/guides.json', lambda t: t.replace('Keeping your name', 'Keeping your names', 1)),
+    'C10b': lambda r: _edit(r, 'start-safely/index.html', lambda t: t + '<script src="https://cdn.example.com/x.js"></script>'),
+    'C11': lambda r: _edit(r, 'data/guides.json', lambda t: t.replace('https://refugetechsafety.org/secure-your-tech/', 'https://example.com/tips', 1)),
+    'C12': lambda r: _edit(r, 'index.html', lambda t: t.replace('href="start-safely/"', 'href="#"')),
 }
 
 
@@ -109,7 +165,7 @@ def negative():
             tmp = Path(t) / 'site'
             shutil.copytree(ROOT, tmp, ignore=shutil.ignore_patterns('.git'))
             brk(tmp)
-            caught = any(p.startswith(code) for p in problems(tmp))
+            caught = any(p.startswith(code.rstrip('b') + ' ') for p in problems(tmp))
             print(f'vaccination {code}: {"caught" if caught else "NOT CAUGHT"}')
             if not caught:
                 failed.append(code)
@@ -120,5 +176,5 @@ if __name__ == '__main__':
     if '--negative' in sys.argv:
         sys.exit(negative())
     found = problems(ROOT)
-    print('FAIL\n' + '\n'.join(found) if found else f'PASS: 8 checks on {len(pages(ROOT))} pages')
+    print('FAIL\n' + '\n'.join(found) if found else f'PASS: 12 checks on {len(pages(ROOT))} pages')
     sys.exit(1 if found else 0)

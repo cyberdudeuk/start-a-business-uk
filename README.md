@@ -37,6 +37,8 @@
 | [The knowledge layer: graph, glossary, dictionary and ontology](knowledge-layer/) | `knowledge-layer/` |
 | [Verification register: every claim and its source](verification-register/) | `verification-register/` |
 | [How this was built and how it is run](how-this-was-built/) | `how-this-was-built/` |
+| **Guide:** [Start and run a business safely](start-safely/): keeping your details away from people who should not find you | `start-safely/` |
+| **Guide:** [Starting out, or starting again](starting-out-or-again/): young people, women, and adults coming back after time away | `starting-out-or-again/` |
 
 ## How it is published
 
@@ -45,9 +47,16 @@ site: the home page at the root, every other page in its own folder, links betwe
 corrected, and a colophon added to every page (not official, AI disclosure, contact form, licence, QR code and barcode).
 GitHub Pages serves the `main` branch as it is: there is no build step.
 
+The two guides are not artifacts: they are written as data in `data/guides.json` (every section with its official
+sources and the date checked) and built by `tools/guides.py`. They link to the detail the other pages already hold
+rather than repeat it, and use the words defined once in the shared glossary of the 360º portals
+(`data/shared-glossary.json`, a copy of the launchpad's file). The safety guide makes no third-party request, stores
+nothing, has no forms, and has an Exit control (button, or Shift pressed three times).
+
 ```bash
 python3 tools/publish.py /path/to/exports   # after re-exporting pages; needs segno and python-barcode
-python3 tools/check.py                      # 8 checks on every page
+python3 tools/guides.py                     # after editing data/guides.json
+python3 tools/check.py                      # 12 checks on every page
 python3 tools/check.py --negative           # proves each check fails on a deliberate break
 ```
 
@@ -68,6 +77,7 @@ sources that have gone. `tools/publish.py` applies it on every publish and build
 | Nothing: the site is static and checks run on every push | Always | None |
 | Recheck sources and time-sensitive facts (scripted link check, then official sources for fees, thresholds and dates) | Each quarter, or when a rule changes | Half a day |
 | Replace or withdraw claims resting on sources that have gone (43 at the last recheck) | After each recheck | A day for the current backlog |
+| Recheck the two guides' 35 sources and the helpline numbers | Each quarter, with the recheck | An hour |
 | Answer contact-form issues | As they come | Minutes each |
 
 The pages flag their own age: from 90 days after the build date they say re-verification is due.

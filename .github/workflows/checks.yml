@@ -1,4 +1,5 @@
-# Runs the site checks on every push and pull request: every page published, no link back to a private
+# Runs the site checks on every push and pull request: every page published (and the two native guides in step with
+# their data), no link back to a private
 # artifact, every link between pages resolving, no email address, no retired names, the colophon on every page.
 # Then proves each check fails on a deliberate break. Free; no secrets; read-only.
 name: Checks

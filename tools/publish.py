@@ -49,6 +49,24 @@ RENAMES = [(re.compile(r'Office of the Chief Data Officer \(OCDO\)'), 'Governmen
            (re.compile(r'\bOCDO\b'), 'Government Data Directorate')]
 LINK = re.compile(r'https://claude\.ai/artifact/([A-Za-z0-9]{20,24})')
 MARK = '<!-- colophon: added by tools/publish.py -->'
+GUIDE_MARK = '<!-- guides: added by tools/publish.py -->'
+# The two guides built natively by tools/guides.py, signposted near the top of the pages they extend.
+GUIDE_LINKS = {
+    HUB: 'Two new guides: <a href="start-safely/">start and run a business safely</a>, if someone could use your details to find you; and <a href="starting-out-or-again/">starting out, or starting again</a>, for young people, women and adults coming back after time away.',
+    '69RUHRCB7eoEDtpQmBQcCF': 'Need to keep your address and activity private for your safety? <a href="../start-safely/">Start and run a business safely</a> goes beyond the address route below. Young, a woman founder, or coming back after time away? <a href="../starting-out-or-again/">Starting out, or starting again</a>.',
+}
+
+
+def signpost(text, aid):
+    """Put the guides callout at the top of the main content, once."""
+    if aid not in GUIDE_LINKS or GUIDE_MARK in text:
+        return text
+    anchor = '<main class="wrap" id="main">'
+    if anchor not in text:
+        raise SystemExit(f'no main element to signpost the guides on {aid}')
+    box = (f'{anchor}\n{GUIDE_MARK}<section id="s-guides" aria-labelledby="h-guides" style="border-left:6px solid #5c5a11;padding:.8rem 1.1rem;margin:1rem 0">'
+           f'<h2 id="h-guides" style="margin:0 0 .3rem;font-size:1.15rem">New guides</h2><p class="intro" style="margin:0">{GUIDE_LINKS[aid]}</p></section>')
+    return text.replace(anchor, box, 1)
 RECHECK = ROOT / 'data' / 'recheck-2026-11-22.json'  # the latest recheck: moved sources, corrected facts, gone sources
 STAMP = ('Last updated 17 September 2026.', 'Last updated 17 September 2026; sources and time-sensitive facts rechecked 22 November 2026 (see the recheck page).')
 
@@ -128,7 +146,7 @@ def barcode_svg(text):
 
 
 def colophon(aid):
-    slug = '' if aid == HUB else ('recheck' if aid == 'recheck' else PAGES[aid])
+    slug = '' if aid == HUB else PAGES.get(aid, aid)  # a family page, the recheck page or a native guide
     url = f'{SITE}{slug}/' if slug else SITE
     code = 'SAB-UK-' + (slug.upper() or 'HOME')[:24]
     return f'''{MARK}
@@ -191,7 +209,7 @@ def publish(src):
     (ROOT / 'recheck').mkdir(exist_ok=True)
     (ROOT / 'recheck' / 'index.html').write_text(recheck_page() + colophon('recheck'), encoding='utf-8')
     for aid in [HUB, *PAGES]:
-        text = texts[aid]
+        text = signpost(texts[aid], aid)
         if MARK not in text:
             i = text.lower().rfind('</body>')
             text = text[:i] + colophon(aid) + '\n' + text[i:] if i >= 0 else text + colophon(aid)
