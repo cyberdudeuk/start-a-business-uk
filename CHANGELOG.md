@@ -1,5 +1,14 @@
 # Changelog
 
+## 22 November 2026: if your business involves your children
+
+- New section in *Starting out, or starting again*: children cannot be appointed directors (and acting as one
+  still carries liability), working age and council permits, performance licences for performing, modelling and
+  content, and where the rules differ. Four official sources, link-checked. This closes the CHEET gap named in the
+  360º portals plan: the duties stay with the adult; who is held or missed when children work belongs to
+  Young Person 360º.
+- `data/guides.json` is now saved in standard JSON formatting, so later scripted edits stay small.
+
 ## 22 November 2026: two guides for people starting out, starting again, or needing to stay safe
 
 - New guide, **Start and run a business safely**: for survivors of domestic abuse, stalking or harassment. What each

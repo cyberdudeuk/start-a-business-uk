@@ -8,26 +8,63 @@
       "strap": "Keeping your name, address and activity away from people who should not find you",
       "safety": true,
       "lede": "Starting a business, training or performing can put your name and address on public records. If someone is trying to find or control you, plan what becomes public before you register anything. This guide is for survivors of domestic abuse, stalking or harassment, and for anyone whose safety depends on staying hard to find.",
-      "who": ["Survivors of domestic abuse, stalking or harassment, of any gender", "People living in a refuge or other safe accommodation", "Anyone helping a survivor, such as a support worker or business adviser"],
+      "who": [
+        "Survivors of domestic abuse, stalking or harassment, of any gender",
+        "People living in a refuge or other safe accommodation",
+        "Anyone helping a survivor, such as a support worker or business adviser"
+      ],
       "sections": [
         {
           "id": "help-now",
           "title": "If you need help now",
           "short": "In danger now: call 999. All helplines below are free and open 24 hours unless stated.",
           "items": [
-            {"h": "If you cannot speak on a 999 call", "p": "From a mobile, dial 999, listen to the operator, and cough or tap the phone if you can. If you are prompted, press 55 so the operator knows it is a genuine emergency. Staying silent without pressing 55 can end the call."},
-            {"h": "England", "p": "National Domestic Abuse Helpline, run by Refuge: 0808 2000 247."},
-            {"h": "Scotland", "p": "Domestic Abuse and Forced Marriage Helpline: 0800 027 1234."},
-            {"h": "Wales", "p": "Live Fear Free: 0808 80 10 800. Calls are welcomed in Welsh."},
-            {"h": "Northern Ireland", "p": "Domestic and Sexual Abuse Helpline: 0808 802 1414."},
-            {"h": "Men, and LGBT+ people", "p": "Men's Advice Line: 0808 801 0327. Galop, the National LGBT+ Domestic Abuse Helpline: 0800 999 5428. Check each service for its opening hours."},
-            {"h": "In your language", "p": "GOV.UK's guidance on getting help for domestic abuse is translated into other languages."}
+            {
+              "h": "If you cannot speak on a 999 call",
+              "p": "From a mobile, dial 999, listen to the operator, and cough or tap the phone if you can. If you are prompted, press 55 so the operator knows it is a genuine emergency. Staying silent without pressing 55 can end the call."
+            },
+            {
+              "h": "England",
+              "p": "National Domestic Abuse Helpline, run by Refuge: 0808 2000 247."
+            },
+            {
+              "h": "Scotland",
+              "p": "Domestic Abuse and Forced Marriage Helpline: 0800 027 1234."
+            },
+            {
+              "h": "Wales",
+              "p": "Live Fear Free: 0808 80 10 800. Calls are welcomed in Welsh."
+            },
+            {
+              "h": "Northern Ireland",
+              "p": "Domestic and Sexual Abuse Helpline: 0808 802 1414."
+            },
+            {
+              "h": "Men, and LGBT+ people",
+              "p": "Men's Advice Line: 0808 801 0327. Galop, the National LGBT+ Domestic Abuse Helpline: 0800 999 5428. Check each service for its opening hours."
+            },
+            {
+              "h": "In your language",
+              "p": "GOV.UK's guidance on getting help for domestic abuse is translated into other languages."
+            }
           ],
           "sources": [
-            {"t": "IOPC: Make Yourself Heard, the Silent Solution", "u": "https://www.policeconduct.gov.uk/our-work/key-areas-of-work/silent-solution"},
-            {"t": "GOV.UK: Domestic abuse, how to get help", "u": "https://www.gov.uk/guidance/domestic-abuse-how-to-get-help"},
-            {"t": "GOV.UK: Report domestic abuse", "u": "https://www.gov.uk/report-domestic-abuse"},
-            {"t": "nidirect: 24 hour domestic and sexual abuse helpline", "u": "https://www.nidirect.gov.uk/articles/domestic-and-sexual-abuse-helpline"}
+            {
+              "t": "IOPC: Make Yourself Heard, the Silent Solution",
+              "u": "https://www.policeconduct.gov.uk/our-work/key-areas-of-work/silent-solution"
+            },
+            {
+              "t": "GOV.UK: Domestic abuse, how to get help",
+              "u": "https://www.gov.uk/guidance/domestic-abuse-how-to-get-help"
+            },
+            {
+              "t": "GOV.UK: Report domestic abuse",
+              "u": "https://www.gov.uk/report-domestic-abuse"
+            },
+            {
+              "t": "nidirect: 24 hour domestic and sexual abuse helpline",
+              "u": "https://www.nidirect.gov.uk/articles/domestic-and-sexual-abuse-helpline"
+            }
           ]
         },
         {
@@ -35,13 +72,28 @@
           "title": "Make your devices and accounts safe first",
           "short": "Someone may be able to see your phone, email or location. Changing settings can alert them, so plan with a support service.",
           "items": [
-            {"h": "Use a device and an email account the other person cannot reach", "p": "Do your business research and set-up on a device they have never had access to, with a new email account and a phone number that is only for the business."},
-            {"h": "Location and connected accounts", "p": "Phones, cloud accounts, social media and home devices can share your location. Refuge's tech safety guides take you through turning off location sharing, changing passwords and removing connected devices, step by step."},
-            {"h": "Plan before you change anything", "p": "Refuge warns that some things you do to increase your security or privacy might alert an abuser. Save any evidence first, and make a safety plan with a domestic abuse service before you change settings or delete anything."},
-            {"h": "Leaving this page", "p": "The Exit button takes you to a weather page and stops the back button returning here. It does not clear your browser history: Refuge's guides explain how to do that safely."}
+            {
+              "h": "Use a device and an email account the other person cannot reach",
+              "p": "Do your business research and set-up on a device they have never had access to, with a new email account and a phone number that is only for the business."
+            },
+            {
+              "h": "Location and connected accounts",
+              "p": "Phones, cloud accounts, social media and home devices can share your location. Refuge's tech safety guides take you through turning off location sharing, changing passwords and removing connected devices, step by step."
+            },
+            {
+              "h": "Plan before you change anything",
+              "p": "Refuge warns that some things you do to increase your security or privacy might alert an abuser. Save any evidence first, and make a safety plan with a domestic abuse service before you change settings or delete anything."
+            },
+            {
+              "h": "Leaving this page",
+              "p": "The Exit button takes you to a weather page and stops the back button returning here. It does not clear your browser history: Refuge's guides explain how to do that safely."
+            }
           ],
           "sources": [
-            {"t": "Refuge: Tech safety", "u": "https://refugetechsafety.org/secure-your-tech/"}
+            {
+              "t": "Refuge: Tech safety",
+              "u": "https://refugetechsafety.org/secure-your-tech/"
+            }
           ]
         },
         {
@@ -49,36 +101,93 @@
           "title": "Choose how to set up, knowing what becomes public",
           "short": "A sole trader is not on the Companies House register. A limited company is, with some details protected by default and more that you can apply to protect.",
           "items": [
-            {"h": "As a sole trader", "p": "You register with HMRC, which does not publish your details. Your invoices must show your name, and if you trade under a business name they must also give an address where legal documents can be delivered to you. That address does not have to be your home."},
-            {"h": "As a limited company: shown by default", "p": "The register shows each director's name and service address. Your home address and full date of birth are not published on the register. The company's registered office address is public."},
-            {"h": "The registered office", "p": "It must be an 'appropriate address' where delivery can be acknowledged. A PO Box is no longer allowed. You can use a third-party agent's address if it meets the rules, which keeps your home off the register."},
-            {"h": "Apply to protect more", "p": "If you are at serious risk, a director or person with significant control can apply to stop Companies House giving their home address to credit reference agencies. A person with significant control can apply to have all their information kept off the public register. It costs £100. You cannot protect your home address if it is the company's registered office."},
-            {"h": "Apply before you register", "p": "If you can, apply for protection before your details reach Companies House. Removing information already published is harder than never publishing it. The police and other specified public authorities can still ask Companies House for protected information."},
-            {"h": "Changes in the law", "p": "The Economic Crime and Corporate Transparency Act 2023 set out wider protection, for example for a refuge's address. Check Companies House's current guidance for what you can apply for today."}
+            {
+              "h": "As a sole trader",
+              "p": "You register with HMRC, which does not publish your details. Your invoices must show your name, and if you trade under a business name they must also give an address where legal documents can be delivered to you. That address does not have to be your home."
+            },
+            {
+              "h": "As a limited company: shown by default",
+              "p": "The register shows each director's name and service address. Your home address and full date of birth are not published on the register. The company's registered office address is public."
+            },
+            {
+              "h": "The registered office",
+              "p": "It must be an 'appropriate address' where delivery can be acknowledged. A PO Box is no longer allowed. You can use a third-party agent's address if it meets the rules, which keeps your home off the register."
+            },
+            {
+              "h": "Apply to protect more",
+              "p": "If you are at serious risk, a director or person with significant control can apply to stop Companies House giving their home address to credit reference agencies. A person with significant control can apply to have all their information kept off the public register. It costs £100. You cannot protect your home address if it is the company's registered office."
+            },
+            {
+              "h": "Apply before you register",
+              "p": "If you can, apply for protection before your details reach Companies House. Removing information already published is harder than never publishing it. The police and other specified public authorities can still ask Companies House for protected information."
+            },
+            {
+              "h": "Changes in the law",
+              "p": "The Economic Crime and Corporate Transparency Act 2023 set out wider protection, for example for a refuge's address. Check Companies House's current guidance for what you can apply for today."
+            }
           ],
           "sources": [
-            {"t": "GOV.UK: Invoices, what they must include", "u": "https://www.gov.uk/invoicing-and-taking-payment-from-customers/invoices-what-they-must-include"},
-            {"t": "Companies House: Applying to protect your personal information", "u": "https://www.gov.uk/guidance/applying-to-protect-your-personal-information-on-the-companies-house-register"},
-            {"t": "GOV.UK: Rules for registered office addresses", "u": "https://www.gov.uk/limited-company-formation/company-address"},
-            {"t": "GOV.UK: Economic Crime and Corporate Transparency Act 2023 factsheets", "u": "https://www.gov.uk/government/publications/economic-crime-and-corporate-transparency-act-2023-factsheets"}
+            {
+              "t": "GOV.UK: Invoices, what they must include",
+              "u": "https://www.gov.uk/invoicing-and-taking-payment-from-customers/invoices-what-they-must-include"
+            },
+            {
+              "t": "Companies House: Applying to protect your personal information",
+              "u": "https://www.gov.uk/guidance/applying-to-protect-your-personal-information-on-the-companies-house-register"
+            },
+            {
+              "t": "GOV.UK: Rules for registered office addresses",
+              "u": "https://www.gov.uk/limited-company-formation/company-address"
+            },
+            {
+              "t": "GOV.UK: Economic Crime and Corporate Transparency Act 2023 factsheets",
+              "u": "https://www.gov.uk/government/publications/economic-crime-and-corporate-transparency-act-2023-factsheets"
+            }
           ],
-          "see": {"t": "The statutory route in more detail: Your circumstances, starting from home or without a safe address", "u": "../your-circumstances/"}
+          "see": {
+            "t": "The statutory route in more detail: Your circumstances, starting from home or without a safe address",
+            "u": "../your-circumstances/"
+          }
         },
         {
           "id": "registers",
           "title": "Other public records to watch",
           "short": "Your address can reach the public through the data protection register, the electoral register, licences and online listings.",
           "items": [
-            {"h": "The data protection fee register", "p": "Most businesses that handle personal information pay the Information Commissioner's Office a data protection fee, and the ICO publishes the name and address on a public register. If you work from home, give a PO Box or other address instead, or call the ICO helpline on 0303 123 1113 to keep a home address off the register."},
-            {"h": "The electoral register", "p": "If your safety would be at risk, you can register to vote anonymously, so your name and address are not shown. Being anonymous can make credit checks harder: you get a certificate of anonymous registration that you can show credit reference agencies or a bank."},
-            {"h": "Licences and professional registers", "p": "Some licences and professional registers are public. Before you apply, ask the licensing body or regulator what they publish and whether an address can be withheld for safety."},
-            {"h": "Websites, listings and reviews", "p": "Map listings, domain registrations, social media and review sites can show where you work. Use a business address that is not your home, and check what each one makes public before you set it up."}
+            {
+              "h": "The data protection fee register",
+              "p": "Most businesses that handle personal information pay the Information Commissioner's Office a data protection fee, and the ICO publishes the name and address on a public register. If you work from home, give a PO Box or other address instead, or call the ICO helpline on 0303 123 1113 to keep a home address off the register."
+            },
+            {
+              "h": "The electoral register",
+              "p": "If your safety would be at risk, you can register to vote anonymously, so your name and address are not shown. Being anonymous can make credit checks harder: you get a certificate of anonymous registration that you can show credit reference agencies or a bank."
+            },
+            {
+              "h": "Licences and professional registers",
+              "p": "Some licences and professional registers are public. Before you apply, ask the licensing body or regulator what they publish and whether an address can be withheld for safety."
+            },
+            {
+              "h": "Websites, listings and reviews",
+              "p": "Map listings, domain registrations, social media and review sites can show where you work. Use a business address that is not your home, and check what each one makes public before you set it up."
+            }
           ],
           "sources": [
-            {"t": "GOV.UK: Pay the data protection fee", "u": "https://www.gov.uk/data-protection-register-notify-ico-personal-data"},
-            {"t": "ICO: Information we collect and publish", "u": "https://ico.org.uk/for-organisations/data-protection-fee/data-protection-fee/information-we-will-collect-and-publish"},
-            {"t": "GOV.UK: Register to vote anonymously", "u": "https://www.gov.uk/government/publications/register-to-vote-anonymously-paper-form"},
-            {"t": "ICO: The electoral register", "u": "https://ico.org.uk/for-the-public/your-data-and-elections/electoral-register/"}
+            {
+              "t": "GOV.UK: Pay the data protection fee",
+              "u": "https://www.gov.uk/data-protection-register-notify-ico-personal-data"
+            },
+            {
+              "t": "ICO: Information we collect and publish",
+              "u": "https://ico.org.uk/for-organisations/data-protection-fee/data-protection-fee/information-we-will-collect-and-publish"
+            },
+            {
+              "t": "GOV.UK: Register to vote anonymously",
+              "u": "https://www.gov.uk/government/publications/register-to-vote-anonymously-paper-form"
+            },
+            {
+              "t": "ICO: The electoral register",
+              "u": "https://ico.org.uk/for-the-public/your-data-and-elections/electoral-register/"
+            }
           ]
         },
         {
@@ -86,13 +195,28 @@
           "title": "Training, exams and performing",
           "short": "Courses, exam boards and venues hold your details too. Ask what they share before you enrol or perform.",
           "items": [
-            {"h": "Enrolling on a course or exam", "p": "Use your safe email and address. Ask the provider who sees your details, whether names appear on attendance lists, certificates, results lists, photos or social media, and how to opt out."},
-            {"h": "Performing or working in public", "p": "You can work under a professional or trading name, but contracts and legal documents still need your legal name. Ask venues, agents and organisers not to publish your schedule or location in advance."},
-            {"h": "If something is published by mistake", "p": "Ask the organisation to remove it straight away, and tell your support service so they can update your safety plan."}
+            {
+              "h": "Enrolling on a course or exam",
+              "p": "Use your safe email and address. Ask the provider who sees your details, whether names appear on attendance lists, certificates, results lists, photos or social media, and how to opt out."
+            },
+            {
+              "h": "Performing or working in public",
+              "p": "You can work under a professional or trading name, but contracts and legal documents still need your legal name. Ask venues, agents and organisers not to publish your schedule or location in advance."
+            },
+            {
+              "h": "If something is published by mistake",
+              "p": "Ask the organisation to remove it straight away, and tell your support service so they can update your safety plan."
+            }
           ],
           "sources": [
-            {"t": "GOV.UK: Invoices, what they must include (names and addresses)", "u": "https://www.gov.uk/invoicing-and-taking-payment-from-customers/invoices-what-they-must-include"},
-            {"t": "Refuge: Tech safety", "u": "https://refugetechsafety.org/secure-your-tech/"}
+            {
+              "t": "GOV.UK: Invoices, what they must include (names and addresses)",
+              "u": "https://www.gov.uk/invoicing-and-taking-payment-from-customers/invoices-what-they-must-include"
+            },
+            {
+              "t": "Refuge: Tech safety",
+              "u": "https://refugetechsafety.org/secure-your-tech/"
+            }
           ],
           "note": "This section is practical advice drawn from the sources above, not a legal requirement."
         },
@@ -101,14 +225,29 @@
           "title": "Money, benefits and support",
           "short": "Keep business money in an account only you control. Benefits, Start Up Loans and Access to Work are covered elsewhere in this guide.",
           "items": [
-            {"h": "A separate account in your name only", "p": "Open a business account that only you can see and use, with statements going to your safe email or address."},
-            {"h": "If someone has controlled your money", "p": "The helplines above can help you plan safely, including if your credit file is affected."},
-            {"h": "Benefits and loans", "p": "How self-employment works with Universal Credit, and how Start Up Loans work, are covered in Your circumstances. Starting out, or starting again covers support for young people, women and people coming back after time away."}
+            {
+              "h": "A separate account in your name only",
+              "p": "Open a business account that only you can see and use, with statements going to your safe email or address."
+            },
+            {
+              "h": "If someone has controlled your money",
+              "p": "The helplines above can help you plan safely, including if your credit file is affected."
+            },
+            {
+              "h": "Benefits and loans",
+              "p": "How self-employment works with Universal Credit, and how Start Up Loans work, are covered in Your circumstances. Starting out, or starting again covers support for young people, women and people coming back after time away."
+            }
           ],
           "sources": [
-            {"t": "GOV.UK: Domestic abuse, how to get help", "u": "https://www.gov.uk/guidance/domestic-abuse-how-to-get-help"}
+            {
+              "t": "GOV.UK: Domestic abuse, how to get help",
+              "u": "https://www.gov.uk/guidance/domestic-abuse-how-to-get-help"
+            }
           ],
-          "see": {"t": "Founders on Universal Credit, and carers: Your circumstances", "u": "../your-circumstances/"}
+          "see": {
+            "t": "Founders on Universal Credit, and carers: Your circumstances",
+            "u": "../your-circumstances/"
+          }
         }
       ]
     },
@@ -118,93 +257,290 @@
       "strap": "For young people, women, and adults coming back after time away",
       "safety": false,
       "lede": "Running your own business is one way into work, beside a job, learning or training. This guide shows what changes with your age and situation, the support made for you, and where to learn or retrain first if you want to. If your safety depends on staying hard to find, start with Start and run a business safely.",
-      "who": ["Young people aged 16 to 24, including those not in work, learning or training, and care leavers", "Young women and women of any age", "Adults coming back after raising a family, caring, a sabbatical or illness, prison, or the armed forces"],
+      "who": [
+        "Young people aged 16 to 24, including those not in work, learning or training, and care leavers",
+        "Young women and women of any age",
+        "Adults coming back after raising a family, caring, a sabbatical or illness, prison, or the armed forces",
+        "Parents whose business involves their children, for example a family business or content featuring children"
+      ],
       "sections": [
         {
           "id": "young",
           "title": "If you are 16 to 24",
           "short": "You can be a company director from 16. Most start-up money starts at 18. Support made for young people runs to 25 in Wales and to 30 through The King's Trust.",
           "items": [
-            {"h": "Age 16 and 17", "p": "You can be appointed a company director from 16, but you cannot get a Start Up Loan until you are 18. At this age, learning or training alongside a small idea is usually the stronger start."},
-            {"h": "Start Up Loans, from 18", "p": "A government-backed personal loan of £500 to £25,000 for a business that has been trading for less than five years, with free mentoring. You need to be 18 or over and live in the UK. You can apply while getting Universal Credit."},
-            {"h": "The King's Trust Enterprise programme, 18 to 30", "p": "Free workshops, one-to-one support and the chance to apply for funding, across England, Scotland, Wales and Northern Ireland."},
-            {"h": "In Wales, 25 and under", "p": "Big Ideas Wales, part of the Young Person's Guarantee, offers free advice and a Young Person's Start Up Grant of up to £2,000. The grant particularly targets young people who are unemployed or not in education or training."},
-            {"h": "In Scotland, 18 to 30", "p": "The First Minister's Start Up Challenge, a 2025 Programme for Government commitment run with The King's Trust, offers an accelerated entrepreneurial apprenticeship for young people from disadvantaged or under-represented backgrounds. Check gov.scot for whether it is open."},
-            {"h": "On Universal Credit", "p": "If self-employment is your main job, you may get a start-up period of up to 12 months, when your actual earnings are used and the minimum income floor does not apply. You will need to show your work coach you are building the business."},
-            {"h": "Care leavers", "p": "You can ask your personal adviser to include starting a business in your pathway plan, alongside work, learning and training."}
+            {
+              "h": "Age 16 and 17",
+              "p": "You can be appointed a company director from 16, but you cannot get a Start Up Loan until you are 18. At this age, learning or training alongside a small idea is usually the stronger start."
+            },
+            {
+              "h": "Start Up Loans, from 18",
+              "p": "A government-backed personal loan of £500 to £25,000 for a business that has been trading for less than five years, with free mentoring. You need to be 18 or over and live in the UK. You can apply while getting Universal Credit."
+            },
+            {
+              "h": "The King's Trust Enterprise programme, 18 to 30",
+              "p": "Free workshops, one-to-one support and the chance to apply for funding, across England, Scotland, Wales and Northern Ireland."
+            },
+            {
+              "h": "In Wales, 25 and under",
+              "p": "Big Ideas Wales, part of the Young Person's Guarantee, offers free advice and a Young Person's Start Up Grant of up to £2,000. The grant particularly targets young people who are unemployed or not in education or training."
+            },
+            {
+              "h": "In Scotland, 18 to 30",
+              "p": "The First Minister's Start Up Challenge, a 2025 Programme for Government commitment run with The King's Trust, offers an accelerated entrepreneurial apprenticeship for young people from disadvantaged or under-represented backgrounds. Check gov.scot for whether it is open."
+            },
+            {
+              "h": "On Universal Credit",
+              "p": "If self-employment is your main job, you may get a start-up period of up to 12 months, when your actual earnings are used and the minimum income floor does not apply. You will need to show your work coach you are building the business."
+            },
+            {
+              "h": "Care leavers",
+              "p": "You can ask your personal adviser to include starting a business in your pathway plan, alongside work, learning and training."
+            }
           ],
           "sources": [
-            {"t": "Companies Act 2006, section 157", "u": "https://www.legislation.gov.uk/ukpga/2006/46/section/157"},
-            {"t": "GOV.UK: Start Up Loans", "u": "https://www.gov.uk/apply-start-up-loan"},
-            {"t": "The Gazette: How to apply for a Start Up Loan (mentoring)", "u": "https://www.thegazette.co.uk/all-notices/content/103937"},
-            {"t": "Start Up Loans: Eligibility questions", "u": "https://www.startuploans.co.uk/support-and-guidance/frequently-asked-questions/eligibility"},
-            {"t": "GOV.UK: Enterprise programme for young people", "u": "https://www.gov.uk/business-finance-support/enterprise-programme-for-young-people-uk"},
-            {"t": "Business Wales: Young Person's Start Up Grant guidance", "u": "https://businesswales.gov.wales/bigideas/node/1022"},
-            {"t": "gov.scot: The First Minister's Start Up Challenge", "u": "https://www.gov.scot/news/the-first-ministers-start-up-challenge/"},
-            {"t": "GOV.UK: Self-employment and Universal Credit", "u": "https://www.gov.uk/self-employment-and-universal-credit"}
+            {
+              "t": "Companies Act 2006, section 157",
+              "u": "https://www.legislation.gov.uk/ukpga/2006/46/section/157"
+            },
+            {
+              "t": "GOV.UK: Start Up Loans",
+              "u": "https://www.gov.uk/apply-start-up-loan"
+            },
+            {
+              "t": "The Gazette: How to apply for a Start Up Loan (mentoring)",
+              "u": "https://www.thegazette.co.uk/all-notices/content/103937"
+            },
+            {
+              "t": "Start Up Loans: Eligibility questions",
+              "u": "https://www.startuploans.co.uk/support-and-guidance/frequently-asked-questions/eligibility"
+            },
+            {
+              "t": "GOV.UK: Enterprise programme for young people",
+              "u": "https://www.gov.uk/business-finance-support/enterprise-programme-for-young-people-uk"
+            },
+            {
+              "t": "Business Wales: Young Person's Start Up Grant guidance",
+              "u": "https://businesswales.gov.wales/bigideas/node/1022"
+            },
+            {
+              "t": "gov.scot: The First Minister's Start Up Challenge",
+              "u": "https://www.gov.scot/news/the-first-ministers-start-up-challenge/"
+            },
+            {
+              "t": "GOV.UK: Self-employment and Universal Credit",
+              "u": "https://www.gov.uk/self-employment-and-universal-credit"
+            }
           ],
-          "see": {"t": "Younger founders and care leavers in detail: Your circumstances", "u": "../your-circumstances/"}
+          "see": {
+            "t": "Younger founders and care leavers in detail: Your circumstances",
+            "u": "../your-circumstances/"
+          }
         },
         {
           "id": "women",
           "title": "Young women and women of any age",
           "short": "Most help is open to everyone. Women-specific funding exists, but it is aimed at innovative or fast-growing businesses and is very competitive.",
           "items": [
-            {"h": "Women in Innovation Awards", "p": "Innovate UK runs awards for women founders. In the 2026 round, 61 winners each received a £75,000 grant and 12 months of business support, in advanced manufacturing, digital and technologies, and life sciences. Places are few, so treat it as one option, not a plan."},
-            {"h": "Investment for women-led businesses", "p": "The Invest in Women Taskforce, backed by the British Business Bank, is building funds that invest in women-led businesses. It suits businesses seeking equity investment, not most first-time founders."},
-            {"h": "Lenders and investors", "p": "Firms that sign the Investing in Women Code commit to improving access to finance for women. Ask a lender or investor whether they have signed."},
-            {"h": "Childcare, caring and confidence", "p": "Childcare, being a single parent and caring responsibilities are covered in Your circumstances. Women's networks and communities are listed in Skills and communities."},
-            {"h": "Safety", "p": "If someone could use your business details to find you, read Start and run a business safely before you register anything."}
+            {
+              "h": "Women in Innovation Awards",
+              "p": "Innovate UK runs awards for women founders. In the 2026 round, 61 winners each received a £75,000 grant and 12 months of business support, in advanced manufacturing, digital and technologies, and life sciences. Places are few, so treat it as one option, not a plan."
+            },
+            {
+              "h": "Investment for women-led businesses",
+              "p": "The Invest in Women Taskforce, backed by the British Business Bank, is building funds that invest in women-led businesses. It suits businesses seeking equity investment, not most first-time founders."
+            },
+            {
+              "h": "Lenders and investors",
+              "p": "Firms that sign the Investing in Women Code commit to improving access to finance for women. Ask a lender or investor whether they have signed."
+            },
+            {
+              "h": "Childcare, caring and confidence",
+              "p": "Childcare, being a single parent and caring responsibilities are covered in Your circumstances. Women's networks and communities are listed in Skills and communities."
+            },
+            {
+              "h": "Safety",
+              "p": "If someone could use your business details to find you, read Start and run a business safely before you register anything."
+            }
           ],
           "sources": [
-            {"t": "UKRI: Innovate UK backs 100 women founders", "u": "https://www.ukri.org/news/innovate-uk-backs-100-women-shaping-the-uks-future-industries/"},
-            {"t": "Invest in Women Taskforce: About", "u": "https://www.investinwomentaskforce.org/about-us/about-the-taskforce/"},
-            {"t": "GOV.UK: Research shows backing female-led businesses is good for growth", "u": "https://www.gov.uk/government/news/research-shows-backing-female-led-businesses-is-good-for-growth"}
+            {
+              "t": "UKRI: Innovate UK backs 100 women founders",
+              "u": "https://www.ukri.org/news/innovate-uk-backs-100-women-shaping-the-uks-future-industries/"
+            },
+            {
+              "t": "Invest in Women Taskforce: About",
+              "u": "https://www.investinwomentaskforce.org/about-us/about-the-taskforce/"
+            },
+            {
+              "t": "GOV.UK: Research shows backing female-led businesses is good for growth",
+              "u": "https://www.gov.uk/government/news/research-shows-backing-female-led-businesses-is-good-for-growth"
+            }
           ],
-          "see": {"t": "Women founders, single parents and networks: Your circumstances, and Skills and communities", "u": "../skills-and-communities/"}
+          "see": {
+            "t": "Women founders, single parents and networks: Your circumstances, and Skills and communities",
+            "u": "../skills-and-communities/"
+          }
         },
         {
           "id": "learn-first",
           "title": "Learn or retrain first, at any age",
           "short": "Nothing requires a qualification to register a business, but skills change what you can do and charge. Free and funded courses for adults exist in every nation.",
           "items": [
-            {"h": "England: English and maths", "p": "If you are 19 or over and do not have GCSE English or maths at grade 4 (C) or equivalent, you are legally entitled to free study up to and including level 2. Free essential digital skills courses are also available."},
-            {"h": "England: a first level 3 qualification", "p": "Free Courses for Jobs: if you are 19 or over and do not have a level 3 qualification (equivalent to A levels), you can choose from over 400 free courses."},
-            {"h": "England: Skills Bootcamps", "p": "Free, flexible courses lasting up to 16 weeks, in areas such as digital and construction."},
-            {"h": "Wales: Personal Learning Accounts", "p": "Fully funded part-time courses for people aged 19 or over living in Wales, including employed and self-employed people and full-time carers, unpaid ones included. Some courses have an earnings limit."},
-            {"h": "Scotland", "p": "Skills Development Scotland's My World of Work has careers advice and Individual Training Accounts that help pay for a course. Check the current eligibility there."},
-            {"h": "Northern Ireland", "p": "The Careers Service on nidirect gives free, impartial careers advice and information about courses."},
-            {"h": "Free careers advice", "p": "National Careers Service (England), Careers Wales, My World of Work (Scotland) and the Careers Service (Northern Ireland)."}
+            {
+              "h": "England: English and maths",
+              "p": "If you are 19 or over and do not have GCSE English or maths at grade 4 (C) or equivalent, you are legally entitled to free study up to and including level 2. Free essential digital skills courses are also available."
+            },
+            {
+              "h": "England: a first level 3 qualification",
+              "p": "Free Courses for Jobs: if you are 19 or over and do not have a level 3 qualification (equivalent to A levels), you can choose from over 400 free courses."
+            },
+            {
+              "h": "England: Skills Bootcamps",
+              "p": "Free, flexible courses lasting up to 16 weeks, in areas such as digital and construction."
+            },
+            {
+              "h": "Wales: Personal Learning Accounts",
+              "p": "Fully funded part-time courses for people aged 19 or over living in Wales, including employed and self-employed people and full-time carers, unpaid ones included. Some courses have an earnings limit."
+            },
+            {
+              "h": "Scotland",
+              "p": "Skills Development Scotland's My World of Work has careers advice and Individual Training Accounts that help pay for a course. Check the current eligibility there."
+            },
+            {
+              "h": "Northern Ireland",
+              "p": "The Careers Service on nidirect gives free, impartial careers advice and information about courses."
+            },
+            {
+              "h": "Free careers advice",
+              "p": "National Careers Service (England), Careers Wales, My World of Work (Scotland) and the Careers Service (Northern Ireland)."
+            }
           ],
           "sources": [
-            {"t": "DfE: Free courses and additional training", "u": "https://find-employer-schemes.education.gov.uk/schemes/free-courses-and-additional-training-for-your-employees"},
-            {"t": "GOV.UK: Free courses for jobs", "u": "https://www.gov.uk/guidance/free-courses-for-jobs"},
-            {"t": "GOV.UK: Improve your English, maths and IT skills", "u": "https://www.gov.uk/improve-english-maths-it-skills"},
-            {"t": "Careers Wales: Personal Learning Account", "u": "https://careerswales.gov.wales/courses-and-training/funding-your-studies/personal-learning-accounts"},
-            {"t": "Working Wales: Personal Learning Account", "u": "https://workingwales.gov.wales/personal-learning-account"},
-            {"t": "My World of Work", "u": "https://www.myworldofwork.co.uk/"},
-            {"t": "nidirect: Careers", "u": "https://www.nidirect.gov.uk/campaigns/careers"},
-            {"t": "National Careers Service", "u": "https://nationalcareers.service.gov.uk/"}
+            {
+              "t": "DfE: Free courses and additional training",
+              "u": "https://find-employer-schemes.education.gov.uk/schemes/free-courses-and-additional-training-for-your-employees"
+            },
+            {
+              "t": "GOV.UK: Free courses for jobs",
+              "u": "https://www.gov.uk/guidance/free-courses-for-jobs"
+            },
+            {
+              "t": "GOV.UK: Improve your English, maths and IT skills",
+              "u": "https://www.gov.uk/improve-english-maths-it-skills"
+            },
+            {
+              "t": "Careers Wales: Personal Learning Account",
+              "u": "https://careerswales.gov.wales/courses-and-training/funding-your-studies/personal-learning-accounts"
+            },
+            {
+              "t": "Working Wales: Personal Learning Account",
+              "u": "https://workingwales.gov.wales/personal-learning-account"
+            },
+            {
+              "t": "My World of Work",
+              "u": "https://www.myworldofwork.co.uk/"
+            },
+            {
+              "t": "nidirect: Careers",
+              "u": "https://www.nidirect.gov.uk/campaigns/careers"
+            },
+            {
+              "t": "National Careers Service",
+              "u": "https://nationalcareers.service.gov.uk/"
+            }
           ],
-          "see": {"t": "Skills, qualifications and learning on the job: Skills and communities", "u": "../skills-and-communities/"}
+          "see": {
+            "t": "Skills, qualifications and learning on the job: Skills and communities",
+            "u": "../skills-and-communities/"
+          }
         },
         {
           "id": "coming-back",
           "title": "Coming back after time away",
           "short": "Whatever kept you away, the same first steps apply: check how earnings affect any benefits, refresh skills if you want to, and use the support made for your situation.",
           "items": [
-            {"h": "After raising a family or caring", "p": "How self-employment works with Universal Credit and with caring is in Your circumstances. In Wales, Personal Learning Accounts are open to full-time carers, including unpaid carers."},
-            {"h": "After a sabbatical or illness", "p": "If a health condition or disability affects your work, Access to Work can cover self-employment; Your circumstances has the detail."},
-            {"h": "After prison", "p": "In England and Wales, prisons have Employment Hubs where staff and partners help with job and training plans before release. What a criminal record changes when you start a business is in Your circumstances."},
-            {"h": "After the armed forces", "p": "The Career Transition Partnership is the official resettlement service, usually from two years before discharge to two years after. Standard and Enhanced Learning Credits can help pay for training. Veterans' support is in Your circumstances."}
+            {
+              "h": "After raising a family or caring",
+              "p": "How self-employment works with Universal Credit and with caring is in Your circumstances. In Wales, Personal Learning Accounts are open to full-time carers, including unpaid carers."
+            },
+            {
+              "h": "After a sabbatical or illness",
+              "p": "If a health condition or disability affects your work, Access to Work can cover self-employment; Your circumstances has the detail."
+            },
+            {
+              "h": "After prison",
+              "p": "In England and Wales, prisons have Employment Hubs where staff and partners help with job and training plans before release. What a criminal record changes when you start a business is in Your circumstances."
+            },
+            {
+              "h": "After the armed forces",
+              "p": "The Career Transition Partnership is the official resettlement service, usually from two years before discharge to two years after. Standard and Enhanced Learning Credits can help pay for training. Veterans' support is in Your circumstances."
+            }
           ],
           "sources": [
-            {"t": "New Futures Network: Employment Hubs", "u": "https://newfuturesnetwork.gov.uk/employment-hubs/"},
-            {"t": "GOV.UK: Career Transition Partnership", "u": "https://www.gov.uk/veteran-support-organisations/career-transition-partnership"},
-            {"t": "MOD: Resettlement (Discover my benefits)", "u": "https://discovermybenefits.mod.gov.uk/army/professional-development/resettlement/"},
-            {"t": "Careers Wales: Personal Learning Account", "u": "https://careerswales.gov.wales/courses-and-training/funding-your-studies/personal-learning-accounts"}
+            {
+              "t": "New Futures Network: Employment Hubs",
+              "u": "https://newfuturesnetwork.gov.uk/employment-hubs/"
+            },
+            {
+              "t": "GOV.UK: Career Transition Partnership",
+              "u": "https://www.gov.uk/veteran-support-organisations/career-transition-partnership"
+            },
+            {
+              "t": "MOD: Resettlement (Discover my benefits)",
+              "u": "https://discovermybenefits.mod.gov.uk/army/professional-development/resettlement/"
+            },
+            {
+              "t": "Careers Wales: Personal Learning Account",
+              "u": "https://careerswales.gov.wales/courses-and-training/funding-your-studies/personal-learning-accounts"
+            }
           ],
-          "see": {"t": "Carers, criminal records, veterans and disability in detail: Your circumstances", "u": "../your-circumstances/"}
+          "see": {
+            "t": "Carers, criminal records, veterans and disability in detail: Your circumstances",
+            "u": "../your-circumstances/"
+          }
+        },
+        {
+          "id": "children",
+          "title": "If your business involves your children",
+          "short": "Children can help in a family business, but the business and its duties stay with the adult. Check the rules on age, permits and performance licences before a child works or appears in what you sell.",
+          "items": [
+            {
+              "h": "Children cannot be directors",
+              "p": "Nobody under 16 can be appointed a company director. Someone who acts as a director without being appointed can still be held liable, so do not ask a child to run the company in practice."
+            },
+            {
+              "h": "Working age and permits",
+              "p": "Children can work part-time from 14, and from 13 in some council areas. Most councils need a business to get a child employment permit before it employs a school-age child. Ask your council's education department or education welfare service whether this applies to a family business."
+            },
+            {
+              "h": "Performing, modelling and content",
+              "p": "Children working in areas such as television, theatre and modelling need a performance licence. Before a child appears in content you sell or earn money from, ask your council whether a licence is needed, and keep their personal details out of it."
+            },
+            {
+              "h": "Where this applies",
+              "p": "This is GOV.UK guidance. Rules and permits are run by local councils and differ across the UK, so check with your council, or on nidirect or mygov.scot."
+            }
+          ],
+          "sources": [
+            {
+              "t": "GOV.UK: Child employment",
+              "u": "https://www.gov.uk/child-employment"
+            },
+            {
+              "t": "GOV.UK: Local council rules for child employment permits",
+              "u": "https://www.gov.uk/child-employment/local-council-rules-for-child-employment-permits"
+            },
+            {
+              "t": "Companies Act 2006, section 157",
+              "u": "https://www.legislation.gov.uk/ukpga/2006/46/section/157"
+            },
+            {
+              "t": "Companies Act 2006 explanatory notes: section 157",
+              "u": "https://www.legislation.gov.uk/ukpga/2006/46/notes/division/5/29/4"
+            }
+          ],
+          "note": "Who is held, seen or missed by the system when children work is covered by Young Person 360º: before the label, once it is published."
         }
       ]
     }
