@@ -35,6 +35,7 @@ ICONS = {  # simple line icons, decorative (aria-hidden)
     'women': '<circle cx="12" cy="8" r="4"/><path d="M12 12v9M9 18h6"/>',
     'learn-first': '<path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2z"/><path d="M4 21V5"/>',
     'coming-back': '<path d="M4 12a8 8 0 1 0 3-6.2"/><path d="M4 4v5h5"/>',
+    'children': '<circle cx="8" cy="7" r="3"/><circle cx="17" cy="10" r="2.2"/><path d="M3 20v-1a5 5 0 0110 0v1M13.5 20v-.5a3.5 3.5 0 017 0v.5"/>',
 }
 
 CSS = '''
