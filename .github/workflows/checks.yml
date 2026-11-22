@@ -16,5 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - run: pip install ruff==0.17.5 && ruff check tools
+      # C9 rebuilds the guides, whose colophon draws the QR code and barcode: the same pinned packages publish.py uses.
+      - run: pip install segno==1.6.6 python-barcode==0.16.1
       - run: python tools/check.py
       - run: python tools/check.py --negative
