@@ -7,6 +7,8 @@ C3  no email address is published (contact is by form only)
 C4  retired names never appear (Office of the Chief Data Officer, OCDO)
 C5  every page carries the colophon exactly once: not official, AI disclosure, contact form, licence, QR code
 C6  every page has one <title> and the family is complete (hub plus 18 pages)
+C7  the latest recheck is applied: its page exists, no moved address remains, no corrected wording remains
+C8  no link carries a tracking parameter (utm_, gad_, gclid and the like)
 
 Run:  python3 tools/check.py
       python3 tools/check.py --negative   prove each check fails on a deliberate break (vaccination)
@@ -60,6 +62,26 @@ def problems(root):
             out.append(f'C5 {name} has {n} colophon(s) or one missing a required part')
         if len(re.findall(r'<title>', t)) < 1:
             out.append(f'C6 {name} has no title')
+    track = re.compile(r'https?://[^"\'\s<>]*[?&](utm_[a-z]+|gad_[a-z]+|gclid|gbraid|wbraid|fbclid|msclkid|mc_cid|mc_eid|_gl)=', re.IGNORECASE)
+    for f in [*files.values(), root / 'recheck' / 'index.html']:
+        if f.exists() and track.search(f.read_text(encoding='utf-8')):
+            out.append(f'C8 {f.relative_to(root)} has a link with a tracking parameter: {track.search(f.read_text(encoding="utf-8")).group(0)[:90]}')
+    rc = publish.recheck()
+    rp = root / 'recheck' / 'index.html'
+    if not rp.exists():
+        out.append('C7 the recheck page is missing')
+    for f in files.values():
+        if not f.exists():
+            continue
+        t = f.read_text(encoding='utf-8')
+        name = str(f.relative_to(root))
+        stale = [u for u in rc['url_updates'] if publish.url_pattern(u).search(t)]
+        if stale:
+            out.append(f'C7 {name} still cites {len(stale)} moved address(es), e.g. {stale[0]}')
+        if any(c['old'] in t for c in rc['corrections']):
+            out.append(f'C7 {name} still carries wording the recheck corrected')
+        if 'recheck/' not in t.split(publish.MARK, 1)[-1]:
+            out.append(f'C7 {name} does not link to the recheck page')
     return out
 
 
@@ -70,6 +92,8 @@ BREAKS = {
     'C4': lambda r: _edit(r, 'index.html', lambda t: t + 'OCDO'),
     'C5': lambda r: _edit(r, 'four-nations/index.html', lambda t: t.replace(publish.MARK, '')),
     'C6': lambda r: (r / 'knowledge-layer' / 'index.html').unlink(),
+    'C8': lambda r: _edit(r, 'standards/index.html', lambda t: t + '<a href="https://www.gov.uk/x?utm_source=y">x</a>'),
+    'C7': lambda r: _edit(r, 'every-step/index.html', lambda t: t + '<a href="https://www.great.gov.uk/">x</a>'),
 }
 
 
@@ -96,5 +120,5 @@ if __name__ == '__main__':
     if '--negative' in sys.argv:
         sys.exit(negative())
     found = problems(ROOT)
-    print('FAIL\n' + '\n'.join(found) if found else f'PASS: 6 checks on {len(pages(ROOT))} pages')
+    print('FAIL\n' + '\n'.join(found) if found else f'PASS: 8 checks on {len(pages(ROOT))} pages')
     sys.exit(1 if found else 0)

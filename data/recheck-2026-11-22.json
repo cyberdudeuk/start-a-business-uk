@@ -1,0 +1,1086 @@
+{
+ "checked": "2026-11-22",
+ "content_built": "2026-09-17",
+ "summary": {
+  "sources": 1116,
+  "answering": 1015,
+  "gone": 43,
+  "moved": 101,
+  "not_reachable_by_the_checker": 55
+ },
+ "method": "Every external address cited across the 19 pages was requested (HEAD, then GET) on 22 November 2026. Answering means it returned a page; gone means 404 or 410; moved means it now redirects; not reachable means the site refused or timed out for an automated check, which is not proof the page has gone. Time-sensitive facts were checked against the official source named.",
+ "facts": [
+  {
+   "fact": "Incorporation costs £100 online or by software, £124 on paper, £156 same day",
+   "status": "confirmed",
+   "source": "https://www.gov.uk/government/publications/companies-house-fees/companies-house-fees"
+  },
+  {
+   "fact": "VAT registration threshold £90,000 (since April 2024); guides still quoting £85,000 are out of date",
+   "status": "confirmed",
+   "source": "https://www.gov.uk/how-vat-works/vat-thresholds"
+  },
+  {
+   "fact": "Making Tax Digital for Income Tax: over £50,000 from April 2026, £30,000 from April 2027, £20,000 from April 2028",
+   "status": "confirmed",
+   "source": "https://www.gov.uk/guidance/find-out-if-and-when-you-need-to-use-making-tax-digital-for-income-tax"
+  },
+  {
+   "fact": "Identity verification compulsory for new directors and PSCs since 18 November 2025",
+   "status": "confirmed",
+   "source": "https://www.gov.uk/government/statistical-data-sets/companies-house-management-information-identity-verification-july-to-september-2026"
+  },
+  {
+   "fact": "Identity verification for people who only file documents: no earlier than November 2027",
+   "status": "confirmed against current reporting; GOV.UK now says only \"at a later date\"",
+   "source": "https://www.gov.uk/government/news/identity-verification-is-making-the-uks-company-register-more-trustworthy"
+  },
+  {
+   "fact": "Northern Ireland Small Business Rate Relief: 50% to £2,000 NAV, 25% to £5,000, 20% to £15,000; extended to 31 March 2027",
+   "status": "confirmed",
+   "source": "https://www.nibusinessinfo.co.uk/content/rate-support-schemes-extended-2026-27"
+  },
+  {
+   "fact": "Identity verification uptake (was 30 June 2026 figures) and the end of the transition period",
+   "status": "updated: September 2026 figures; transition ended 17 November 2026",
+   "source": "https://www.gov.uk/government/statistical-data-sets/companies-house-management-information-identity-verification-july-to-september-2026"
+  }
+ ],
+ "corrections": [
+  {
+   "old": "By 30 June 2026, 55% of director appointments and 42% of individual PSC appointments were verified, with the transition period ending 17 November 2026.",
+   "new": "By 30 September 2026, 78% of director appointments and 66% of individual PSC appointments were verified. The transition period for existing directors and PSCs ended on 17 November 2026; not verifying on time is an offence, and the Insolvency Service secured the first convictions in September 2026."
+  },
+  {
+   "old": "55% of director appointments and 42% of individual PSC appointments had linked a verified identity by 30 June 2026, five months before the transition period ends.",
+   "new": "78% of director appointments and 66% of individual PSC appointments had linked a verified identity by 30 September 2026, seven weeks before the transition period ended on 17 November 2026."
+  },
+  {
+   "old": "55% of director and 42% of PSC appointments were verified by 30 June 2026.",
+   "new": "78% of director and 66% of PSC appointments were verified by 30 September 2026."
+  },
+  {
+   "old": "55% of director appointments identity-verified by 30 June 2026",
+   "new": "78% of director appointments identity-verified by 30 September 2026"
+  },
+  {
+   "old": "Spreadsheet Table 1: directors 55.33%, individual PSCs 41.86% verified (quarter to 30 June 2026; July 2026 publication includes a correction adding dormant companies).",
+   "new": "Spreadsheet Table 1: directors 78.03%, individual PSCs 65.56%, LLP members 72.97% verified at 30 September 2026 (published 29 October 2026, rechecked 22 November 2026). The July 2026 publication corrected earlier quarters to include dormant companies."
+  }
+ ],
+ "url_updates": {
+  "https://www.food.gov.uk/business-guidance/getting-ready-to-start-your-food-business": {
+   "to": "https://www.gov.uk/guidance/starting-a-food-business#getting-ready-to-start-your-food-business",
+   "kind": "moved to a new page"
+  },
+  "https://www.gov.uk/guidance/childminders-and-childcare-providers-register-with-ofsted": {
+   "to": "https://www.gov.uk/government/collections/early-years-and-childcare-registration",
+   "kind": "moved to a new page"
+  },
+  "https://www.mygov.scot/business-rates-relief": {
+   "to": "https://www.mygov.scot/non-domestic-rates-relief",
+   "kind": "moved to a new page"
+  },
+  "https://www.gov.uk/guidance/filing-your-companys-confirmation-statement": {
+   "to": "https://www.gov.uk/running-a-limited-company/confirmation-statement",
+   "kind": "moved to a new page"
+  },
+  "https://gigabitvoucher.culture.gov.uk/": {
+   "to": "https://www.gov.uk/government/publications/gigabit-broadband-voucher-scheme-information",
+   "kind": "moved to a new page"
+  },
+  "https://www.investni.com/support-for-business/support-for-innovation-driven-start-ups": {
+   "to": "https://www.investni.com/support-for-business/support-for-high-potential-start-ups",
+   "kind": "moved to a new page"
+  },
+  "https://businesswales.gov.wales/topics-and-guidance/accelerated-growth-programme": {
+   "to": "https://businesswales.gov.wales/topics-and-guidance/accelerated-growth-programme/accelerated-growth-programme",
+   "kind": "moved to a new page"
+  },
+  "https://businesswales.gov.wales/specialist-services/boss-business-online-support-service": {
+   "to": "https://businesswales.gov.wales/boss/",
+   "kind": "moved to a new page"
+  },
+  "https://www.businessgrowthhub.com/services/accessing-finance-for-your-business": {
+   "to": "https://www.businessgrowthhub.com/support/services/funding/",
+   "kind": "moved to a new page"
+  },
+  "https://www.mygov.scot/funding-opportunities/": {
+   "to": "https://www.mygov.scot/funding-advice-search",
+   "kind": "moved to a new page"
+  },
+  "https://www.heritagefund.org.uk/funding/national-lottery-grant-heritage/250k-5million": {
+   "to": "https://www.heritagefund.org.uk/funding",
+   "kind": "moved to a new page"
+  },
+  "https://wenta.co.uk/business-advice/business-support-programmes/barnet-london-borough-council-business-support-programme": {
+   "to": "https://wenta.co.uk/business-support/business-support-programmes/",
+   "kind": "moved to a new page"
+  },
+  "http://www.bigissueinvest.com": {
+   "to": "https://www.bigissue.com/invest/",
+   "kind": "moved to a new page"
+  },
+  "https://wenta.co.uk/business-advice/business-support-programmes/central-bedfordshire-council-start-up-support-programme?utm_source=GOV&utm_medium=WEB&utm_campaign=WBCGOVWEBPROGCBC&utm_id=WBC&utm_term=PROGRAMMES&utm_content=CBC": {
+   "to": "https://wenta.co.uk/business-support/business-support-programmes/",
+   "kind": "moved to a new page"
+  },
+  "https://www.sbi.business/hi3/home": {
+   "to": "https://www.southbankinnovation.co.uk/latest/collaboration-in-action-the-power-of-the-workshop-with-hi3",
+   "kind": "moved to a new page"
+  },
+  "https://www.northyorks.gov.uk/community-and-volunteering/grants-and-funding/inspire-fund": {
+   "to": "https://www.northyorks.gov.uk/community-and-volunteering/grants-and-funding/community-and-volunteering/grants-and-funding/inspire-fund",
+   "kind": "moved to a new page"
+  },
+  "https://londonbp.co.uk/propertyadviceservice/": {
+   "to": "https://londonbp.co.uk/business-support-programmes/property-advice-service-get-free-commercial-property-advice/",
+   "kind": "moved to a new page"
+  },
+  "https://www.pbc.co.uk/pbc-free-business-support": {
+   "to": "https://www.pbc.co.uk/pbc-programmes-all",
+   "kind": "moved to a new page"
+  },
+  "http://www.visiteden.co.uk/trade-section/business-support-and-engagement/eden-tourism-grants/": {
+   "to": "https://www.visiteden.co.uk/trade-pages/business-support-and-engagement/visit-eden-tourism-grants/",
+   "kind": "moved to a new page"
+  },
+  "https://wenta.co.uk/business-advice/get-enterprising?utm_source=GOV&utm_medium=WEB&utm_campaign=WBCGOVWEBPROGGE&utm_id=WBC&utm_term=PROGRAMMES&utm_content=GE": {
+   "to": "https://wenta.co.uk/business-support/business-support-programmes/get-enterprising/",
+   "kind": "moved to a new page"
+  },
+  "https://www.twozerolancs.com/": {
+   "to": "https://www.boostbusinesslancashire.co.uk/scaleup",
+   "kind": "moved to a new page"
+  },
+  "https://wenta.co.uk/business-advice/business-support-programmes/welwyn-hatfield-action-zero": {
+   "to": "https://wenta.co.uk/business-support/business-support-programmes/welwyn-hatfield-action-zero/",
+   "kind": "moved to a new page"
+  },
+  "http://www.biorenewables.org/our-work/flexible-project-funding/": {
+   "to": "https://www.biorenewables.org/work-with-us/",
+   "kind": "moved to a new page"
+  },
+  "https://wenta.co.uk/business-advice/business-support-programmes/watford-net-zero": {
+   "to": "https://wenta.co.uk/business-support/action-zero/",
+   "kind": "moved to a new page"
+  },
+  "https://wenta.co.uk/action-zero-landing-page/hertsmere-borough-council-and-wenta-partner-to-provide-support-for-smes": {
+   "to": "https://wenta.co.uk/business-support/business-support-programmes/hertsmere-action-zero/",
+   "kind": "moved to a new page"
+  },
+  "https://www.countycouncilsnetwork.org.uk/councils-in-county-areas-warn-of-cliff-edge-as-vital-growth-fund-ends-next-year/": {
+   "to": "https://www.countycouncilsnetwork.org.uk/news/councils-in-county-areas-warn-of-cliff-edge-as-vital-growth-fund-ends-next-year",
+   "kind": "moved to a new page"
+  },
+  "https://businesswales.gov.wales/businessfinance/types-finance-and-how-apply/development-bank-wales": {
+   "to": "https://businesswales.gov.wales/specialist-services/development-bank-wales",
+   "kind": "moved to a new page"
+  },
+  "https://www.gov.uk/business-support-helpline": {
+   "to": "https://www.gov.uk/get-business-support",
+   "kind": "moved to a new page"
+  },
+  "https://www.icureprogramme.com/": {
+   "to": "https://iuk-business-connect.org.uk/programme/icure/",
+   "kind": "moved to a new page"
+  },
+  "https://www.gov.uk/guidance/find-a-skills-bootcamp": {
+   "to": "https://www.gov.uk/government/organisations/department-for-education",
+   "kind": "moved to a new page"
+  },
+  "https://www.allbrightcollective.com/": {
+   "to": "https://allbrighteverywoman.com/hub/",
+   "kind": "moved to a new page"
+  },
+  "https://www.gov.uk/national-insurance/what-you-pay-national-insurance-on": {
+   "to": "https://www.gov.uk/national-insurance",
+   "kind": "moved to a new page"
+  },
+  "https://www.bl.uk/business-and-ip-centre": {
+   "to": "https://www.bl.uk/bipc",
+   "kind": "moved to a new page"
+  },
+  "https://www.gov.uk/street-trading-licence": {
+   "to": "https://www.gov.uk/find-licences/street-trading-licence",
+   "kind": "moved to a new page"
+  },
+  "https://www.gov.uk/vat-registration": {
+   "to": "https://www.gov.uk/register-for-vat",
+   "kind": "moved to a new page"
+  },
+  "https://www.gov.uk/options-for-paying-off-your-debts": {
+   "to": "https://www.gov.uk/options-for-dealing-with-your-debts",
+   "kind": "moved to a new page"
+  },
+  "https://www.gov.uk/apply-for-business-rate-relief": {
+   "to": "https://www.gov.uk/business-rates-relief",
+   "kind": "moved to a new page"
+  },
+  "https://www.gov.uk/repaying-your-student-loan/self-employed": {
+   "to": "https://www.gov.uk/repaying-your-student-loan",
+   "kind": "moved to a new page"
+  },
+  "https://www.gov.uk/guidance/get-an-hmrc-agent-services-account": {
+   "to": "https://www.gov.uk/guidance/apply-for-an-agent-services-account",
+   "kind": "moved to a new page"
+  },
+  "https://www.gov.uk/food-business-registration": {
+   "to": "https://www.gov.uk/guidance/food-business-registration",
+   "kind": "moved to a new page"
+  },
+  "https://www.gov.uk/apply-for-business-rate-relief/rural-rate-relief": {
+   "to": "https://www.gov.uk/business-rates-relief/rural-rate-relief",
+   "kind": "moved to a new page"
+  },
+  "https://british-business-bank.co.uk/research-alone-together": {
+   "to": "https://www.british-business-bank.co.uk/our-impact/research-and-publications/alone-together-entrepreneurship-diversity-uk",
+   "kind": "moved to a new page"
+  },
+  "https://www.gov.uk/government/collections/ai-airlock-the-regulatory-sandbox-for-aiamd": {
+   "to": "https://www.gov.uk/government/collections/ai-airlock-a-regulatory-sandbox-for-ai-enabled-medical-devices",
+   "kind": "moved to a new page"
+  },
+  "https://www.caa.co.uk/innovation/": {
+   "to": "https://www.caa.co.uk/about-us/research-and-innovation/",
+   "kind": "moved to a new page"
+  },
+  "https://naturalresources.wales/": {
+   "to": "https://naturalresources.wales/splash?orig=%2F&lang=cy",
+   "kind": "moved to a new page"
+  },
+  "https://www.daera-ni.gov.uk/northern-ireland-environment-agency": {
+   "to": "https://www.daera-ni.gov.uk/articles/northern-ireland-environment-agency",
+   "kind": "moved to a new page"
+  },
+  "https://www.gov.uk/guidance/knowledge-transfer-partnerships-what-they-are-and-how-to-apply": {
+   "to": "https://www.ukri.org/councils/innovate-uk/guidance-for-applicants/guidance-for-specific-funds/knowledge-transfer-partnership-guidance/",
+   "kind": "moved to a new page"
+  },
+  "https://www.gov.uk/guidance/reporting-rules-for-digital-platforms": {
+   "to": "https://www.gov.uk/guidance/check-if-you-need-to-register-as-a-digital-platform-operator",
+   "kind": "moved to a new page"
+  },
+  "https://www.find-tender.service.gov.uk/": {
+   "to": "https://www.find-tender.service.gov.uk/Search",
+   "kind": "moved to a new page"
+  },
+  "https://www.startuploans.co.uk/sharia-compliant-finance": {
+   "to": "https://www.startuploans.co.uk/about-the-loan/what-is-a-start-up-loan/sharia-compliant-finance",
+   "kind": "moved to a new page"
+  },
+  "https://british-business-bank.co.uk/about/research-and-publications/small-business-finance-markets-report-2021/factsheet": {
+   "to": "https://www.british-business-bank.co.uk/our-impact/research-and-publications/small-business-finance-markets-report-2021/factsheet",
+   "kind": "moved to a new page"
+  },
+  "https://www.gov.uk/government/publications/trading-with-developing-nations/uk-generalised-scheme-of-preferences": {
+   "to": "https://www.gov.uk/government/collections/trading-with-developing-nations",
+   "kind": "moved to a new page"
+  },
+  "https://www.fsb.org.uk/wales": {
+   "to": "https://www.fsb.org.uk/membership/support-near-you/wales",
+   "kind": "moved to a new page"
+  },
+  "https://www.fsb.org.uk/regions/northern-ireland": {
+   "to": "https://www.fsb.org.uk/membership/support-near-you",
+   "kind": "moved to a new page"
+  },
+  "https://www.gemconsortium.org/country-profile/121": {
+   "to": "https://www.gemconsortium.org/economy-profiles/united-kingdom-2",
+   "kind": "moved to a new page"
+  },
+  "https://www.gov.uk/vat-returns/deadlines": {
+   "to": "https://www.gov.uk/submit-vat-return",
+   "kind": "moved to a new page"
+  },
+  "https://sprintlaw.co.nz/articles/how-to-register-a-business-in-new-zealand-companies-office-nzbn-key-steps/": {
+   "to": "https://sprintlaw.co.nz/articles/how-to-register-a-business-in-new-zealand-step-by-step-guide/",
+   "kind": "moved to a new page"
+  },
+  "https://licence1.business.gov.sg/licence1/": {
+   "to": "https://licence1.business.gov.sg/licence1/authentication/showLogin.action",
+   "kind": "moved to a new page"
+  },
+  "https://businessfactorynt.co.uk/": {
+   "to": "https://businessnorthtyneside.co.uk/",
+   "kind": "now goes to a home or landing page"
+  },
+  "http://www.nwes.org.uk/advice-and-training": {
+   "to": "https://www.nwes.org.uk/",
+   "kind": "now goes to a home or landing page"
+  },
+  "http://www.pne-enterprise.org/": {
+   "to": "https://www.pne.org/",
+   "kind": "now goes to a home or landing page"
+  },
+  "http://www.investinmanchester.com/": {
+   "to": "https://www.investmanchester.co.uk/",
+   "kind": "now goes to a home or landing page"
+  },
+  "https://wrap.org.uk/": {
+   "to": "https://www.wrap.ngo/",
+   "kind": "now goes to a home or landing page"
+  },
+  "https://www.gov.uk/government/news": {
+   "to": "https://www.gov.uk/search/news-and-communications",
+   "kind": "now goes to a home or landing page"
+  },
+  "https://api.trade-tariff.service.gov.uk/": {
+   "to": "https://docs.trade-tariff.service.gov.uk/",
+   "kind": "now goes to a home or landing page"
+  },
+  "https://www.great.gov.uk/": {
+   "to": "https://www.business.gov.uk/",
+   "kind": "now goes to a home or landing page"
+  },
+  "https://www.bvca.co.uk/": {
+   "to": "https://www.ukprivatecapital.co.uk/",
+   "kind": "now goes to a home or landing page"
+  },
+  "https://register.ofqual.gov.uk/": {
+   "to": "https://find-a-qualification.services.ofqual.gov.uk/error/404",
+   "kind": "now goes to a home or landing page"
+  },
+  "https://www.wisecampaign.org.uk/": {
+   "to": "https://wise.theiet.org/",
+   "kind": "now goes to a home or landing page"
+  },
+  "https://iuk.ktn-uk.org/": {
+   "to": "https://iuk-business-connect.org.uk/",
+   "kind": "now goes to a home or landing page"
+  },
+  "https://www.careinspectorate.com/": {
+   "to": "https://www.careinspectorate.scot:443/",
+   "kind": "now goes to a home or landing page"
+  },
+  "https://www.northernirelandchamber.com/": {
+   "to": "https://www.nichamber.com/",
+   "kind": "now goes to a home or landing page"
+  },
+  "https://www.nhbf.co.uk/": {
+   "to": "https://www.nhbf.co.uk/home/",
+   "kind": "now goes to a home or landing page"
+  },
+  "https://www.blacktechfest.com/": {
+   "to": "https://www.joinbtf.com/",
+   "kind": "now goes to a home or landing page"
+  },
+  "http://www.bcrs.org.uk": {
+   "to": "https://bcrs.org.uk/",
+   "kind": "same page, new form of address"
+  },
+  "http://www.befund.org": {
+   "to": "https://www.befund.org/",
+   "kind": "same page, new form of address"
+  },
+  "http://www.finance-for-enterprise.co.uk": {
+   "to": "https://finance-for-enterprise.co.uk/",
+   "kind": "same page, new form of address"
+  },
+  "http://thekeyfund.co.uk/": {
+   "to": "https://thekeyfund.co.uk/",
+   "kind": "same page, new form of address"
+  },
+  "http://www.first-enterprise.co.uk/business-loans/": {
+   "to": "https://www.first-enterprise.co.uk/business-loans",
+   "kind": "same page, new form of address"
+  },
+  "http://www.acas.org.uk": {
+   "to": "https://www.acas.org.uk/",
+   "kind": "same page, new form of address"
+  },
+  "http://www.investsefton.com": {
+   "to": "https://www.investsefton.com/",
+   "kind": "same page, new form of address"
+  },
+  "https://gov.uk/guidance/accessing-hmrc-online-services-using-govuk-one-login": {
+   "to": "https://www.gov.uk/guidance/accessing-hmrc-online-services-using-govuk-one-login",
+   "kind": "same page, new form of address"
+  },
+  "https://www.businessdebtline.org/": {
+   "to": "https://businessdebtline.org/",
+   "kind": "same page, new form of address"
+  },
+  "https://www.womenindata.co.uk/": {
+   "to": "https://womenindata.co.uk/",
+   "kind": "same page, new form of address"
+  },
+  "https://www.prowess.org.uk/": {
+   "to": "https://prowess.org.uk/",
+   "kind": "same page, new form of address"
+  },
+  "https://www.ukrn.org.uk/": {
+   "to": "https://ukrn.org.uk/",
+   "kind": "same page, new form of address"
+  },
+  "https://data.gov.uk/": {
+   "to": "https://www.data.gov.uk/",
+   "kind": "same page, new form of address"
+  },
+  "https://www.prosper.scot/": {
+   "to": "https://prosper.scot/",
+   "kind": "same page, new form of address"
+  },
+  "https://beerandpub.com/": {
+   "to": "https://www.beerandpub.com/",
+   "kind": "same page, new form of address"
+  },
+  "https://www.startupcoalition.io/": {
+   "to": "http://startupcoalition.io/",
+   "kind": "same page, new form of address"
+  },
+  "https://www.bsif.co.uk/": {
+   "to": "https://bsif.co.uk/",
+   "kind": "same page, new form of address"
+  },
+  "https://www.freshproduce.org.uk/": {
+   "to": "https://freshproduce.org.uk/",
+   "kind": "same page, new form of address"
+  },
+  "https://www.wsta.co.uk/": {
+   "to": "https://wsta.co.uk/",
+   "kind": "same page, new form of address"
+  },
+  "https://www.fla.org.uk/": {
+   "to": "https://fla.org.uk/",
+   "kind": "same page, new form of address"
+  },
+  "https://www.adassoc.org.uk/": {
+   "to": "https://adassoc.org.uk/",
+   "kind": "same page, new form of address"
+  },
+  "https://www.tourismalliance.com/": {
+   "to": "https://tourismalliance.com/",
+   "kind": "same page, new form of address"
+  },
+  "https://aiforg.com/": {
+   "to": "https://www.aiforg.com/",
+   "kind": "same page, new form of address"
+  },
+  "https://www.awarding.org.uk/": {
+   "to": "https://awarding.org.uk/",
+   "kind": "same page, new form of address"
+  },
+  "https://aelp.org.uk/": {
+   "to": "https://www.aelp.org.uk/",
+   "kind": "same page, new form of address"
+  },
+  "https://northlanarkshire.gov.uk/your-community/equalities/equality-and-fairer-scotland-duty-impact-assessments/enterprise-and-communities-eqia/insourcing-business-gateway-lanarkshire-service": {
+   "to": "https://www.northlanarkshire.gov.uk/your-community/equalities/equality-and-fairer-scotland-duty-impact-assessments/enterprise-and-communities-eqia/insourcing-business-gateway-lanarkshire-service",
+   "kind": "same page, new form of address"
+  },
+  "https://businessdataguide.com/blog/jurisdictions/estonia-company-search-guide": {
+   "to": "https://www.businessdataguide.com/blog/jurisdictions/estonia-company-search-guide",
+   "kind": "same page, new form of address"
+  },
+  "https://www.gov.uk/government/statistics/companies-house-management-information-identity-verification-april-to-june-2026": {
+   "to": "https://www.gov.uk/government/statistical-data-sets/companies-house-management-information-identity-verification-july-to-september-2026",
+   "kind": "replaced by the newer quarter (fact updated)"
+  }
+ },
+ "gone": [
+  {
+   "url": "https://data.gov.uk/dataset/single-business-identifier",
+   "status": 404,
+   "pages": [
+    "home",
+    "how-this-was-built",
+    "verification-register"
+   ]
+  },
+  {
+   "url": "https://developer-specs.company-information.service.gov.uk/streaming-api/guides/overview",
+   "status": 404,
+   "pages": [
+    "home",
+    "verification-register",
+    "whatever-you-are-setting-up"
+   ]
+  },
+  {
+   "url": "https://eportugal.gov.pt/en-GB/inicio/espaco-empresa/guia-a-a-z/cid-2-faseneg-0-constituir-a-empresa",
+   "status": 404,
+   "pages": [
+    "home",
+    "the-uk-compared",
+    "verification-register"
+   ]
+  },
+  {
+   "url": "https://findbusinesssupport.gov.scot/service/consultancy-and-advice/accelerating-innovation-through-business-academic-partnership",
+   "status": 404,
+   "pages": [
+    "home",
+    "verification-register",
+    "whatever-you-are-setting-up"
+   ]
+  },
+  {
+   "url": "https://findbusinesssupport.gov.scot/service/consultancy-and-advice/boosting-capital-capability-support-service",
+   "status": 404,
+   "pages": [
+    "home",
+    "verification-register",
+    "whatever-you-are-setting-up"
+   ]
+  },
+  {
+   "url": "https://findbusinesssupport.gov.scot/service/consultancy-and-advice/digital-transformation-support",
+   "status": 404,
+   "pages": [
+    "home",
+    "verification-register",
+    "whatever-you-are-setting-up"
+   ]
+  },
+  {
+   "url": "https://findbusinesssupport.gov.scot/service/consultancy-and-advice/falkirk-council-energy-efficiency-and-carbon-reduction-support",
+   "status": 404,
+   "pages": [
+    "home",
+    "verification-register",
+    "whatever-you-are-setting-up"
+   ]
+  },
+  {
+   "url": "https://findbusinesssupport.gov.scot/service/consultancy-and-advice/leadership-diagnostic-tool",
+   "status": 404,
+   "pages": [
+    "home",
+    "verification-register",
+    "whatever-you-are-setting-up"
+   ]
+  },
+  {
+   "url": "https://findbusinesssupport.gov.scot/service/funding/ai-adoption-grant",
+   "status": 404,
+   "pages": [
+    "home",
+    "verification-register",
+    "whatever-you-are-setting-up"
+   ]
+  },
+  {
+   "url": "https://findbusinesssupport.gov.scot/service/funding/boosting-capital-investment-implementation-grant",
+   "status": 404,
+   "pages": [
+    "home",
+    "verification-register",
+    "whatever-you-are-setting-up"
+   ]
+  },
+  {
+   "url": "https://findbusinesssupport.gov.scot/service/funding/cairngorms-fire-recovery-fund",
+   "status": 404,
+   "pages": [
+    "home",
+    "verification-register",
+    "whatever-you-are-setting-up"
+   ]
+  },
+  {
+   "url": "https://findbusinesssupport.gov.scot/service/funding/funding-to-develop-your-workforce-practices",
+   "status": 404,
+   "pages": [
+    "home",
+    "verification-register",
+    "whatever-you-are-setting-up"
+   ]
+  },
+  {
+   "url": "https://findbusinesssupport.gov.scot/service/funding/glasgow-city-council-tech-event-and-meetup-subsidy",
+   "status": 404,
+   "pages": [
+    "home",
+    "verification-register",
+    "whatever-you-are-setting-up"
+   ]
+  },
+  {
+   "url": "https://findbusinesssupport.gov.scot/service/funding/oil-and-gas-transition-training-fund",
+   "status": 404,
+   "pages": [
+    "home",
+    "verification-register",
+    "whatever-you-are-setting-up"
+   ]
+  },
+  {
+   "url": "https://findbusinesssupport.gov.scot/service/funding/research-and-development-grants",
+   "status": 404,
+   "pages": [
+    "home",
+    "verification-register",
+    "whatever-you-are-setting-up"
+   ]
+  },
+  {
+   "url": "https://findbusinesssupport.gov.scot/service/funding/west-lothian-council-energy-resilience-grant",
+   "status": 404,
+   "pages": [
+    "home",
+    "verification-register",
+    "whatever-you-are-setting-up"
+   ]
+  },
+  {
+   "url": "https://findbusinesssupport.gov.scot/service/funding/west-lothian-council-high-growth-start-up-grant",
+   "status": 404,
+   "pages": [
+    "home",
+    "verification-register",
+    "whatever-you-are-setting-up"
+   ]
+  },
+  {
+   "url": "https://findbusinesssupport.gov.scot/service/funding/west-lothian-council-intro-to-business-grant",
+   "status": 404,
+   "pages": [
+    "home",
+    "verification-register",
+    "whatever-you-are-setting-up"
+   ]
+  },
+  {
+   "url": "https://findbusinesssupport.gov.scot/service/funding/west-lothian-council-project-grant",
+   "status": 404,
+   "pages": [
+    "home",
+    "verification-register",
+    "whatever-you-are-setting-up"
+   ]
+  },
+  {
+   "url": "https://findbusinesssupport.gov.scot/service/funding/west-lothian-employment-pathway-grant",
+   "status": 404,
+   "pages": [
+    "home",
+    "verification-register",
+    "whatever-you-are-setting-up"
+   ]
+  },
+  {
+   "url": "https://findbusinesssupport.gov.scot/service/programmes/free-carbon-baseline-measurement-for-glasgow-businesses",
+   "status": 404,
+   "pages": [
+    "home",
+    "verification-register",
+    "whatever-you-are-setting-up"
+   ]
+  },
+  {
+   "url": "https://findbusinesssupport.gov.scot/service/programmes/international-pathways-to-scale-female-founder-programme",
+   "status": 404,
+   "pages": [
+    "home",
+    "verification-register",
+    "whatever-you-are-setting-up"
+   ]
+  },
+  {
+   "url": "https://findbusinesssupport.gov.scot/service/programmes/strategic-leadership-for-ai-data-and-technology",
+   "status": 404,
+   "pages": [
+    "home",
+    "verification-register",
+    "whatever-you-are-setting-up"
+   ]
+  },
+  {
+   "url": "https://findbusinesssupport.gov.scot/service/self-help-guides/selling-or-closing-your-business-the-basics",
+   "status": 404,
+   "pages": [
+    "home",
+    "whole-life-of-a-business"
+   ]
+  },
+  {
+   "url": "https://findbusinesssupport.gov.scot/service/training/fife-meet-the-buyer",
+   "status": 404,
+   "pages": [
+    "home",
+    "verification-register",
+    "whatever-you-are-setting-up"
+   ]
+  },
+  {
+   "url": "https://findbusinesssupport.gov.scot/service/training/forth-valley-meet-the-real-buyer",
+   "status": 404,
+   "pages": [
+    "home",
+    "verification-register",
+    "whatever-you-are-setting-up"
+   ]
+  },
+  {
+   "url": "https://findbusinesssupport.gov.scot/service/training/lanarkshire-meet-the-real-buyer",
+   "status": 404,
+   "pages": [
+    "home",
+    "verification-register",
+    "whatever-you-are-setting-up"
+   ]
+  },
+  {
+   "url": "https://findbusinesssupport.gov.scot/service/training/meet-the-buyer-north",
+   "status": 404,
+   "pages": [
+    "home",
+    "verification-register",
+    "whatever-you-are-setting-up"
+   ]
+  },
+  {
+   "url": "https://findbusinesssupport.gov.scot/service/training/meet-the-buyer-south",
+   "status": 404,
+   "pages": [
+    "home",
+    "verification-register",
+    "whatever-you-are-setting-up"
+   ]
+  },
+  {
+   "url": "https://siccodes.co.uk/guide/sic-2026-codes-guide",
+   "status": 404,
+   "pages": [
+    "home",
+    "how-this-was-built"
+   ]
+  },
+  {
+   "url": "https://www.bva.co.uk/",
+   "status": 404,
+   "pages": [
+    "home",
+    "rules-trade-and-bodies",
+    "verification-register"
+   ]
+  },
+  {
+   "url": "https://www.cwrt.uk.com/business-loans/",
+   "status": 404,
+   "pages": [
+    "home",
+    "verification-register",
+    "whatever-you-are-setting-up"
+   ]
+  },
+  {
+   "url": "https://www.cwrt.uk.com/duplex-investment-fund",
+   "status": 404,
+   "pages": [
+    "home",
+    "verification-register",
+    "whatever-you-are-setting-up"
+   ]
+  },
+  {
+   "url": "https://www.food.gov.uk/print/pdf/node/8481",
+   "status": 404,
+   "pages": [
+    "home",
+    "how-this-was-built",
+    "verification-register"
+   ]
+  },
+  {
+   "url": "https://www.frontierdevelopmentcapital.com/amsci/",
+   "status": 404,
+   "pages": [
+    "home",
+    "verification-register",
+    "whatever-you-are-setting-up"
+   ]
+  },
+  {
+   "url": "https://www.fsb.org.uk/northern-ireland",
+   "status": 404,
+   "pages": [
+    "rules-trade-and-bodies"
+   ]
+  },
+  {
+   "url": "https://www.gov.uk/business-finance-support/advanced-manufacturing-supply-chain-initiative-recycled-fund-england",
+   "status": 410,
+   "pages": [
+    "home",
+    "verification-register",
+    "whatever-you-are-setting-up"
+   ]
+  },
+  {
+   "url": "https://www.gov.uk/business-finance-support/enterprising-ashfield",
+   "status": 410,
+   "pages": [
+    "home",
+    "verification-register",
+    "whatever-you-are-setting-up"
+   ]
+  },
+  {
+   "url": "https://www.gov.wales/welsh-language-standards",
+   "status": 404,
+   "pages": [
+    "home"
+   ]
+  },
+  {
+   "url": "https://www.llyw.cymru/safonaur-gymraeg",
+   "status": 404,
+   "pages": [
+    "home"
+   ]
+  },
+  {
+   "url": "https://www.northernireland.gov.uk/news/minister-calls-urgent-clarity-future-funding-go-succeed",
+   "status": 404,
+   "pages": [
+    "four-nations",
+    "home",
+    "verification-register"
+   ]
+  },
+  {
+   "url": "https://www.welshlanguagecommissioner.wales/organisations/the-welsh-language-standards",
+   "status": 404,
+   "pages": [
+    "home"
+   ]
+  },
+  {
+   "url": "https://www2.gov.pt/en/servicos/criar-uma-empresa-na-hora",
+   "status": 404,
+   "pages": [
+    "the-uk-compared",
+    "verification-register"
+   ]
+  }
+ ],
+ "not_reachable": [
+  {
+   "url": "http://www.betterbusinessfinance.co.uk/?finance-finder",
+   "status": "403"
+  },
+  {
+   "url": "http://www.bipwestdevon.biz/grants-and-funding.html",
+   "status": "500"
+  },
+  {
+   "url": "http://www.manchester.gov.uk/info/200039/emergencies/6174/business_continuity_planning/7",
+   "status": "403"
+  },
+  {
+   "url": "http://www.npif.co.uk",
+   "status": "ERR:URLError"
+  },
+  {
+   "url": "https://bifa.org/",
+   "status": "403"
+  },
+  {
+   "url": "https://bills.parliament.uk/bills/4035",
+   "status": "403"
+  },
+  {
+   "url": "https://commonslibrary.parliament.uk/research-briefings/cbp-9460/",
+   "status": "403"
+  },
+  {
+   "url": "https://commonslibrary.parliament.uk/research-briefings/sn00963/",
+   "status": "403"
+  },
+  {
+   "url": "https://employeeownership.co.uk/",
+   "status": "302"
+  },
+  {
+   "url": "https://github.com/UKGovernmentBEIS/open-regulation-platform-alpha",
+   "status": "403"
+  },
+  {
+   "url": "https://historicengland.org.uk/services-skills/grants/our-grant-schemes/repair-grants/",
+   "status": "403"
+  },
+  {
+   "url": "https://lordslibrary.parliament.uk/research-briefings/lln-2026-0049/",
+   "status": "403"
+  },
+  {
+   "url": "https://parliament.scot/-/media/files/committees/economy-and-fair-work-committee/correspondence/2023/sg-response-to-ana-stewart-and-mark-logans-report.pdf",
+   "status": "ERR:URLError"
+  },
+  {
+   "url": "https://publications.parliament.uk/pa/cm5901/cmselect/cmbeis/1057/report.html",
+   "status": "403"
+  },
+  {
+   "url": "https://publications.parliament.uk/pa/cm5901/cmselect/cmwomeq/711/report.html",
+   "status": "403"
+  },
+  {
+   "url": "https://questions-statements.parliament.uk/written-statements/detail/2025-10-21/hcws975",
+   "status": "403"
+  },
+  {
+   "url": "https://questions-statements.parliament.uk/written-statements/detail/2026-07-21/hlws298",
+   "status": "403"
+  },
+  {
+   "url": "https://register-of-charities.charitycommission.gov.uk/",
+   "status": "ERR:TimeoutError"
+  },
+  {
+   "url": "https://researchbriefings.files.parliament.uk/documents/SN06152/SN06152.pdf",
+   "status": "403"
+  },
+  {
+   "url": "https://thepaymentsassociation.org/",
+   "status": "403"
+  },
+  {
+   "url": "https://www",
+   "status": "ERR:URLError"
+  },
+  {
+   "url": "https://www.abi.org.uk/",
+   "status": "403"
+  },
+  {
+   "url": "https://www.abrs.gov.au/director-identification-number/top-questions-when-applying-director-id",
+   "status": "ERR:TimeoutError"
+  },
+  {
+   "url": "https://www.abrs.gov.au/director-identification-number/who-needs-apply-and-when",
+   "status": "ERR:TimeoutError"
+  },
+  {
+   "url": "https://www.abta.com/",
+   "status": "403"
+  },
+  {
+   "url": "https://www.ato.gov.au/businesses-and-organisations/starting-registering-or-closing-a-business/registration-obligations-for-businesses/work-out-which-registrations-you-need/business-or-company-registrations",
+   "status": "403"
+  },
+  {
+   "url": "https://www.bmf.org.uk/",
+   "status": "302"
+  },
+  {
+   "url": "https://www.bpif.org.uk/",
+   "status": "ERR:URLError"
+  },
+  {
+   "url": "https://www.canada.ca/en/innovation-science-economic-development/news/2019/06/bizpal-simplifies-access-to-information-on-permits-and-licences-for-canadian-businesses.html",
+   "status": "ERR:TimeoutError"
+  },
+  {
+   "url": "https://www.cia.org.uk/",
+   "status": "405"
+  },
+  {
+   "url": "https://www.cinemauk.org.uk/",
+   "status": "ERR:URLError"
+  },
+  {
+   "url": "https://www.cosla.gov.uk/about-cosla/our-teams/business-gateway",
+   "status": "403"
+  },
+  {
+   "url": "https://www.dairyuk.org/",
+   "status": "403"
+  },
+  {
+   "url": "https://www.dentalgroups.co.uk/",
+   "status": "ERR:URLError"
+  },
+  {
+   "url": "https://www.dorsetcouncil.gov.uk/low-carbon-dorset",
+   "status": "403"
+  },
+  {
+   "url": "https://www.dorsetcouncil.gov.uk/news/dorset-businesses-to-benefit-from-funding-boost",
+   "status": "403"
+  },
+  {
+   "url": "https://www.fdean.gov.uk/business-and-licensing/business-support-and-advice/finance-and-funding/",
+   "status": "403"
+  },
+  {
+   "url": "https://www.greatermanchester-ca.gov.uk/what-we-do/investment/gm-advance/",
+   "status": "500"
+  },
+  {
+   "url": "https://www.innovateukedge.ukri.org/",
+   "status": "ERR:URLError"
+  },
+  {
+   "url": "https://www.lawscot.org.uk/",
+   "status": "403"
+  },
+  {
+   "url": "https://www.lawsociety.org.uk/",
+   "status": "403"
+  },
+  {
+   "url": "https://www.nacas.org.uk/",
+   "status": "ERR:URLError"
+  },
+  {
+   "url": "https://www.npa.co.uk/",
+   "status": "403"
+  },
+  {
+   "url": "https://www.ntu.ac.uk/business-and-employers/financial-and-funded-support",
+   "status": "403"
+  },
+  {
+   "url": "https://www.ntu.ac.uk/business-and-employers/financial-and-funded-support/enterprising-ashfield",
+   "status": "403"
+  },
+  {
+   "url": "https://www.ofwat.gov.uk/",
+   "status": "403"
+  },
+  {
+   "url": "https://www.open.ac.uk/",
+   "status": "403"
+  },
+  {
+   "url": "https://www.ox.ac.uk/research/support/governance-and-committees/research-policies/equity-sharing",
+   "status": "403"
+  },
+  {
+   "url": "https://www.select.org.uk/",
+   "status": "302"
+  },
+  {
+   "url": "https://www.stem.org.uk/",
+   "status": "403"
+  },
+  {
+   "url": "https://www.sutton.gov.uk/w/business-rates-changes-from-1-april-2026",
+   "status": "403"
+  },
+  {
+   "url": "https://www.uk.coop/",
+   "status": "403"
+  },
+  {
+   "url": "https://www.ukfinance.org.uk/",
+   "status": "403"
+  },
+  {
+   "url": "https://www.vatcalc.com/united-kingdom/uk-2029-mandatory-b2b-e-invoicing/",
+   "status": "403"
+  },
+  {
+   "url": "https://www.youarefirst.co.uk/",
+   "status": "500"
+  }
+ ],
+ "not_citations": [
+  "https://fonts.googleapis.com",
+  "https://fonts.gstatic.com",
+  "https://gov.uk/def/start-a-business/"
+ ]
+}
